@@ -70,6 +70,42 @@ value_bitsize(u64 value)
         return 8;
 }
 
+// TODO(psv): Same as RM but change opcode?
+u8*
+emit_arith_mr_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form)
+{
+    u8* start = stream;
+    s8 disp_offset = 0;
+
+    u8 opcode = (form.target_bit_size == 8) ? ADD_MR8 : ADD_MR;
+
+    if(form.sib_mode == MODE_NONE)
+    {
+        stream = emit_opcode_rm(stream, opcode, form.target_bit_size, form.source, RSP, form.target);
+        *stream++ = make_modrm(form.mode, register_representation(form.target), register_representation(form.source));
+    }
+    else
+    {
+        // has sib byte
+        stream = emit_opcode_rm(stream, opcode, form.target_bit_size, form.sib_base, form.sib_index, form.target);
+        *stream++ = make_modrm(form.mode, register_representation(form.target), register_representation(RSP));
+        *stream++ = make_sib((u8)form.sib_mode, register_representation(form.sib_index), register_representation(form.sib_base));
+    }
+
+    disp_offset = stream - start;
+    stream = emit_displacement(form.mode, stream, form.disp8, form.disp32);
+    if((stream - start) == disp_offset) disp_offset = -1;
+
+    if(out_info)
+    {
+        out_info->instr_byte_size = stream - start;
+        out_info->immediate_offset = -1;
+        out_info->diplacement_offset = disp_offset;
+    }
+
+    return stream;
+}
+
 u8* 
 emit_arith_rm_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form)
 {

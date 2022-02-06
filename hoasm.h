@@ -462,6 +462,7 @@ u8* emit_arith_mi_sib(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_In
 
 u8* emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
 u8* emit_arith_rm_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
+u8* emit_arith_mr_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
 
 static X64_AddrForm 
 make_mi_direct(X64_Register target)
@@ -559,23 +560,7 @@ make_mi_indirect_sib(X64_Register base, X64_Register index, X64_SibMode sib_mode
 }
 
 static X64_AddrForm
-make_rm_direct(X64_Register dest, X64_Register source)
-{
-	assert(register_get_bitsize(dest) == register_get_bitsize(source));
-
-	X64_AddrForm form = (X64_AddrForm) { 
-		.target = dest, 
-		.target_bit_size = register_get_bitsize(dest),
-		.source = source,
-		.sib_mode = MODE_NONE,
-		.mode = DIRECT,
-	};
-
-	return form;
-}
-
-static X64_AddrForm
-make_rm_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
+make_reg_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
 {
 	assert(register_get_bitsize(dest) == ptr_bitsize);
 
@@ -624,12 +609,30 @@ make_rm_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsiz
 }
 
 static X64_AddrForm
-make_rm_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
+make_rm_direct(X64_Register dest, X64_Register source)
 {
-	assert(src_base != REG_NONE);
-	assert(index != RSP);
-	assert(register_get_bitsize(dest) == ptr_bitsize);
+	assert(register_get_bitsize(dest) == register_get_bitsize(source));
 
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = dest, 
+		.target_bit_size = register_get_bitsize(dest),
+		.source = source,
+		.sib_mode = MODE_NONE,
+		.mode = DIRECT,
+	};
+
+	return form;
+}
+
+static X64_AddrForm
+make_rm_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	return make_reg_indirect(dest, source, ptr_bitsize, displacement);
+}
+
+static X64_AddrForm
+make_reg_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
+{
 	X64_AddrForm form = (X64_AddrForm) { 
 		.target = dest, 
 		.target_bit_size = ptr_bitsize,
@@ -660,4 +663,46 @@ make_rm_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register inde
 	}
 
 	return form;
+}
+
+static X64_AddrForm
+make_rm_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	assert(src_base != REG_NONE);
+	assert(index != RSP);
+	assert(register_get_bitsize(dest) == ptr_bitsize);
+
+	return make_reg_indirect_sib(dest, src_base, index, sib_mode, ptr_bitsize, displacement);
+}
+
+static X64_AddrForm
+make_mr_direct(X64_Register dest, X64_Register source)
+{
+	assert(register_get_bitsize(dest) == register_get_bitsize(source));
+
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = source, 
+		.target_bit_size = register_get_bitsize(source),
+		.source = dest,
+		.sib_mode = MODE_NONE,
+		.mode = DIRECT,
+	};
+
+	return form;
+}
+
+static X64_AddrForm
+make_mr_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	return make_reg_indirect(source, dest, ptr_bitsize, displacement);
+}
+
+static X64_AddrForm
+make_mr_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	assert(src_base != REG_NONE);
+	assert(index != RSP);
+	assert(register_get_bitsize(src_base) == ptr_bitsize);
+
+	return make_reg_indirect_sib(src_base, dest, index, sib_mode, ptr_bitsize, displacement);
 }
