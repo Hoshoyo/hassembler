@@ -3,7 +3,7 @@
 #include "../hoasm.h"
 
 u8*
-emit_sib_test(u8* stream)
+emit_mi_test(u8* stream)
 {
     // Direct
 #if 0
@@ -88,6 +88,163 @@ emit_sib_test(u8* stream)
     }
 #endif
     
+    return stream;
+}
+
+u8*
+emit_sib_test(u8* stream)
+{
+    // SIB X0
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_QWORDPTR, 0), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_DWORDPTR, 0), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_WORDPTR, 0), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_BYTEPTR, 0), 0x12);
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_QWORDPTR, 0), 0x1234);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_DWORDPTR, 0), 0x1234);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_WORDPTR, 0), 0x1234);
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_QWORDPTR, 0), 0x12345678);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X0, ADDR_DWORDPTR, 0), 0x12345678);
+        }
+    }
+#endif
+
+    // SIB X2
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_QWORDPTR, 0), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_DWORDPTR, 0), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_WORDPTR, 0), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_BYTEPTR, 0), 0x12);
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_QWORDPTR, 0), 0x1234);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_DWORDPTR, 0), 0x1234);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_WORDPTR, 0), 0x1234);
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_QWORDPTR, 0), 0x12345678);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X2, ADDR_DWORDPTR, 0), 0x12345678);
+        }
+    }
+#endif
+    
+    // SIB X4 Byte Displaced
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_QWORDPTR, 0x15), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_DWORDPTR, 0x15), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_WORDPTR, 0x15), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_BYTEPTR, 0x15), 0x12);
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_QWORDPTR, 0x15), 0x1234);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_DWORDPTR, 0x15), 0x1234);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_WORDPTR, 0x15), 0x1234);
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_QWORDPTR, 0x15), 0x12345678);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X4, ADDR_DWORDPTR, 0x15), 0x12345678);
+        }
+    }
+#endif
+
+    // SIB X8 DWORD Displaced
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_QWORDPTR, 0x15161718), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_DWORDPTR, 0x15161718), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_WORDPTR, 0x15161718), 0x12);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_BYTEPTR, 0x15161718), 0x12);
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_QWORDPTR, 0x15161718), 0x1234);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_DWORDPTR, 0x15161718), 0x1234);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_WORDPTR, 0x15161718), 0x1234);
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = REG_NONE; j <= R15; ++j)
+        {
+            if(j == RSP) continue;
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_QWORDPTR, 0x15161718), 0x12345678);
+            stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect_sib(i, j, SIB_X8, ADDR_DWORDPTR, 0x15161718), 0x12345678);
+        }
+    }
+#endif
     return stream;
 }
 
@@ -593,6 +750,7 @@ int main(int argc, char** argv)
 	{
 		//stream = emit_add_test(stream);
         stream = emit_sib_test(stream);
+        //stream = emit_mi_test(stream);
 	}
 
 	fwrite(code, 1, stream - code, out);

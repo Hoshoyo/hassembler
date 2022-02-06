@@ -321,7 +321,7 @@ emit_opcode(u8* stream, u8 opcode, int bitsize, X64_Register dest, X64_Register 
 	if(bitsize == 16)
 		*stream++ = 0x66; // operand size override
     if(bitsize == 64 || using_extended_register)
-		*stream++ = make_rex(register_is_extended(dest), 0, register_is_extended(src), bitsize == 64);
+		*stream++ = make_rex(register_is_extended(dest), register_is_extended(src), 0, bitsize == 64);
     else if(bitsize == 8)
     {
         if( dest == SPL || dest == BPL || dest == SIL || dest == DIL ||
@@ -342,7 +342,7 @@ emit_opcode_2bytes(u8* stream, u16 opcode, int bitsize, X64_Register dest, X64_R
 	if(bitsize == 16)
 		*stream++ = 0x66; // operand size override
     if(bitsize == 64 || using_extended_register)
-		*stream++ = make_rex(register_is_extended(dest), 0, register_is_extended(src), bitsize == 64);
+		*stream++ = make_rex(register_is_extended(dest), register_is_extended(src), 0, bitsize == 64);
     else if(bitsize == 8)
     {
         if( dest == SPL || dest == BPL || dest == SIL || dest == DIL ||
@@ -376,6 +376,13 @@ typedef enum {
 	ADDR_QWORDPTR = 64,
 } X64_AddrSize;
 
+typedef enum {
+	SIB_X0 = 0,
+	SIB_X2 = 1,
+	SIB_X4 = 2,
+	SIB_X8 = 3,
+} X64_SibMode;
+
 typedef struct {
 	X64_Addressing_Mode mode;
 
@@ -404,6 +411,7 @@ u8* emit_arith_mi_a(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Inst
 u8* emit_arith_mr(Instr_Emit_Result* out_info, X64_Arithmetic_Instr instr, u8* stream, X64_Register dest, X64_Register src, X64_Addressing_Mode mode, u8 disp8, uint32_t disp32);
 u8* emit_arith_rm(Instr_Emit_Result* out_info, X64_Arithmetic_Instr instr, u8* stream, X64_Register dest, X64_Register src, X64_Addressing_Mode mode, u8 disp8, uint32_t disp32);
 u8* emit_arith_mi_sib(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Addressing_Mode mode, X64_Addressing_Mode displacement_mode, X64_Register index, X64_Register base, Int_Value value, u8 disp8, uint32_t disp32);
+
 u8* emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
 
 static X64_AddrForm 
@@ -446,7 +454,7 @@ make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement
 		{
 			form.sib_mode = SIB_INDIRECT;
 			form.mode = INDIRECT_BYTE_DISPLACED;
-			form.sib_base = RBP;
+			form.sib_base = target;
 			form.sib_index = RSP;
 		}
 	}
@@ -456,8 +464,46 @@ make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement
 	{
 		// need sib byte
 		form.sib_mode = SIB_INDIRECT;
-		form.sib_base = RSP;
+		form.sib_base = target;;
 		form.sib_index = RSP;
+	}
+
+	return form;
+}
+
+static X64_AddrForm
+make_mi_indirect_sib(X64_Register base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u32 displacement)
+{
+	assert(base != REG_NONE);
+	assert(index != RSP);
+
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = REG_NONE, 
+		.target_bit_size = ptr_bitsize,
+		.source = REG_NONE,
+		.sib_mode = sib_mode,
+		.sib_base = base,
+		.sib_index = (index == REG_NONE) ? RSP : index,
+	};
+
+	if(displacement > 0xff)
+	{
+		form.disp32 = displacement;
+		form.mode = INDIRECT_DWORD_DISPLACED;
+	}
+	else if(displacement > 0)
+	{
+		form.disp8 = (u8)displacement;
+		form.mode = INDIRECT_BYTE_DISPLACED;	
+	}
+	else
+	{
+		form.mode = INDIRECT;
+	}
+
+	if(register_equivalent(base, RBP))
+	{
+		form.mode = INDIRECT_BYTE_DISPLACED;
 	}
 
 	return form;

@@ -91,8 +91,7 @@ emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_I
     else
     {
         // has sib byte
-        X64_Register ext = register_is_extended(form.target) ? R12 : RSP;
-        stream = emit_opcode(stream, opcode, form.target_bit_size, ext, ext);
+        stream = emit_opcode(stream, opcode, form.target_bit_size, form.sib_base, form.sib_index);
         *stream++ = make_modrm(form.mode, instr_digit, register_representation(RSP));
         *stream++ = make_sib((u8)form.sib_mode, register_representation(form.sib_index), register_representation(form.sib_base));
     }
