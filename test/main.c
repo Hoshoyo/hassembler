@@ -3,12 +3,125 @@
 #include "../hoasm.h"
 
 u8*
+emit_sib_test(u8* stream)
+{
+    // Direct
+#if 0
+    for(X64_Register i = RAX; i <= DIL; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_direct(i), 0x12);
+    }
+    for(X64_Register i = RAX; i <= R15W; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_direct(i), 0x1234);
+    }
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_direct(i), 0x12345678);
+    }
+#endif
+
+    // Indirect
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_BYTEPTR, 0), 0x12);
+    }
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x1234);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x1234);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0), 0x1234);
+    }
+
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x12345678);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x12345678);
+    }
+#endif
+
+    // Indirect byte displaced
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0x15), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_BYTEPTR, 0x15), 0x12);
+    }
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x1234);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x1234);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0x15), 0x1234);
+    }
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x12345678);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x12345678);
+    }
+#endif
+
+    // Indirect dword displaced
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0x15161718), 0x12);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_BYTEPTR, 0x15161718), 0x12);
+    }
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x1234);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x1234);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0x15161718), 0x1234);
+    }
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x12345678);
+        stream = emit_arith_mi_complete(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x12345678);
+    }
+#endif
+    
+    return stream;
+}
+
+u8*
 emit_add_test(u8* stream)
 {
     X64_Arithmetic_Instr instr = ARITH_ADD;
     X64_Addressing_Mode  addr_mode = DIRECT;
 
-    stream = emit_arith_mi(0, stream, instr, INDIRECT, SPL, (Int_Value){.v64 = 0x12}, 0, 0);
+    //stream = emit_arith_mi(0, stream, instr, INDIRECT_DWORD_DISPLACED, RSP, (Int_Value){.v64 = 0x12345678}, 0, 0x12345678);
+    
+    // no scaling index
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT, RSP, RBX, (Int_Value){.v32 = 0x12}, 0, 0);
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT, RSP, RSP, (Int_Value){.v32 = 0x12}, 0, 0);
+
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT_X2, RCX, RBX, (Int_Value){.v32 = 0x12}, 0, 0);
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT_X4, RCX, RBX, (Int_Value){.v32 = 0x12}, 0, 0);
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT_X8, INDIRECT_DWORD_DISPLACED, RCX, RBX, (Int_Value){.v32 = 0x12345678}, 0, 0x12345678);
+
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT_X8, INDIRECT_BYTE_DISPLACED, RCX, RBX, (Int_Value){.v32 = 0x12345678}, 0x12, 0);
+
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT_X8, INDIRECT, RCX, RBX, (Int_Value){.v32 = 0x12345678}, 0, 0);
+
+    //   48 81 45 00 78 56 34 12 add         qword ptr [rbp],12345678h 
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT, INDIRECT_BYTE_DISPLACED, RSP, CH, (Int_Value){.v32 = 0x12345678}, 0x12, 0);
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT, INDIRECT, RSP, RBP, (Int_Value){.v32 = 0x5555}, 0, 0x12345);
+
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT, INDIRECT_DWORD_DISPLACED, RSP, RBP, (Int_Value){.v32 = 0x12345678}, 0, 0x12345);
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT, INDIRECT_BYTE_DISPLACED, RSP, RSP, (Int_Value){.v32 = 0x12345678}, 0x12, 0);
+
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT, INDIRECT_BYTE_DISPLACED, RCX, RBP, (Int_Value){.v32 = 0x12345678}, 0x12, 0);
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT, INDIRECT_DWORD_DISPLACED, RCX, RBP, (Int_Value){.v32 = 0x12345678}, 0, 0x12345678);
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT_X4, INDIRECT_BYTE_DISPLACED, RCX, RBP, (Int_Value){.v32 = 0x12345678}, 0x12, 0);
+    //stream = emit_arith_mi_sib(0, stream, instr, SIB_INDIRECT_X8, INDIRECT_DWORD_DISPLACED, RCX, RBP, (Int_Value){.v32 = 0x12345678}, 0, 0x12345678);
 
 #if 0
     // MI Direct immediate to register Mod 3
@@ -478,7 +591,8 @@ int main(int argc, char** argv)
 	u8* stream = code;
 	
 	{
-		stream = emit_add_test(stream);
+		//stream = emit_add_test(stream);
+        stream = emit_sib_test(stream);
 	}
 
 	fwrite(code, 1, stream - code, out);

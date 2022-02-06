@@ -62,10 +62,11 @@ typedef enum {
 } X64_XMM_Register;
 
 typedef enum  {
-	INDIRECT = 0,
-	INDIRECT_BYTE_DISPLACED = 1,
-	INDIRECT_DWORD_DISPLACED = 2,
-	DIRECT = 3,
+	MODE_NONE = -1,
+	INDIRECT = 0, SIB_INDIRECT = 0,
+	INDIRECT_BYTE_DISPLACED = 1, SIB_INDIRECT_X2 = 1,
+	INDIRECT_DWORD_DISPLACED = 2, SIB_INDIRECT_X4 = 2,
+	DIRECT = 3, SIB_INDIRECT_X8 = 3,
 } X64_Addressing_Mode;
 
 typedef enum {
@@ -282,6 +283,37 @@ emit_int_value(u8* stream, int bitsize, Int_Value value)
 }
 
 static u8*
+emit_int_imm(u8* stream, u64 value, int target_bitsize)
+{
+	if(value > 0xffffffff)
+	{
+		*(uint64_t*)stream = value;
+		stream += sizeof(uint64_t);
+	}
+	else if(value > 0xffff)
+	{
+		*(uint32_t*)stream = (uint32_t)value;
+		stream += sizeof(uint32_t);
+	}
+	else if(value > 0xff && target_bitsize == 16)
+	{
+		*(uint16_t*)stream = (uint16_t)value;
+		stream += sizeof(uint16_t);
+	}
+	else if(value > 0xff)
+	{
+		*(uint32_t*)stream = (uint32_t)value;
+		stream += sizeof(uint32_t);
+	}
+	else
+	{
+		*(uint8_t*)stream = (uint8_t)value;
+		stream += sizeof(uint8_t);
+	}
+	return stream;
+}
+
+static u8*
 emit_opcode(u8* stream, u8 opcode, int bitsize, X64_Register dest, X64_Register src)
 {
     bool using_extended_register = register_is_extended(dest) || register_is_extended(src);
@@ -337,9 +369,96 @@ emit_displacement(X64_Addressing_Mode mode, u8* stream, u8 disp8, uint32_t disp3
 	return stream;
 }
 
+typedef enum {
+	ADDR_BYTEPTR  = 8,
+	ADDR_WORDPTR  = 16,
+	ADDR_DWORDPTR = 32,
+	ADDR_QWORDPTR = 64,
+} X64_AddrSize;
+
+typedef struct {
+	X64_Addressing_Mode mode;
+
+	// Registers
+	X64_Register target;
+	X64_Register source;
+
+	X64_AddrSize target_bit_size;
+
+	// Displacement
+	union {
+		u8  disp8;
+		u32 disp32;
+	};
+
+	// SIB
+	X64_Register        sib_base;
+	X64_Register        sib_index;
+	X64_Addressing_Mode sib_mode;
+} X64_AddrForm;
+
 // arithmetic
 u8* emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Addressing_Mode mode, X64_Register dest, Int_Value value, u8 disp8, uint32_t disp32);
 u8* emit_arith_mi_imm8_sext(Instr_Emit_Result* out_info, u8* stream, int instr_digit, X64_Register dest, s8 value, X64_Addressing_Mode mode, u8 displ8, uint32_t displ32);
 u8* emit_arith_mi_a(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Register dest, Int_Value value);
 u8* emit_arith_mr(Instr_Emit_Result* out_info, X64_Arithmetic_Instr instr, u8* stream, X64_Register dest, X64_Register src, X64_Addressing_Mode mode, u8 disp8, uint32_t disp32);
 u8* emit_arith_rm(Instr_Emit_Result* out_info, X64_Arithmetic_Instr instr, u8* stream, X64_Register dest, X64_Register src, X64_Addressing_Mode mode, u8 disp8, uint32_t disp32);
+u8* emit_arith_mi_sib(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Addressing_Mode mode, X64_Addressing_Mode displacement_mode, X64_Register index, X64_Register base, Int_Value value, u8 disp8, uint32_t disp32);
+u8* emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
+
+static X64_AddrForm 
+make_mi_direct(X64_Register target)
+{
+	return (X64_AddrForm) {
+		.target = target,
+		.mode = DIRECT,
+		.source = REG_NONE,
+		.sib_mode = MODE_NONE,
+		.target_bit_size = register_get_bitsize(target),
+	};
+}
+
+static X64_AddrForm 
+make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement)
+{
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = target, 
+		.target_bit_size = ptr_bitsize,
+		.source = REG_NONE,
+		.sib_mode = MODE_NONE,
+	};
+
+	if(displacement > 0xff)
+	{
+		form.disp32 = displacement;
+		form.mode = INDIRECT_DWORD_DISPLACED;
+	}
+	else if(displacement > 0)
+	{
+		form.disp8 = (u8)displacement;
+		form.mode = INDIRECT_BYTE_DISPLACED;	
+	}
+	else
+	{
+		form.mode = INDIRECT;
+		// RBP is an exception in the indirect mode, we need a sib byte in this case
+		if(register_equivalent(target, RBP))
+		{
+			form.sib_mode = SIB_INDIRECT;
+			form.mode = INDIRECT_BYTE_DISPLACED;
+			form.sib_base = RBP;
+			form.sib_index = RSP;
+		}
+	}
+
+	// RSP is an exception, we need a SIB byte in that case
+	if(register_equivalent(target, RSP))
+	{
+		// need sib byte
+		form.sib_mode = SIB_INDIRECT;
+		form.sib_base = RSP;
+		form.sib_index = RSP;
+	}
+
+	return form;
+}
