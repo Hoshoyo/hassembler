@@ -313,6 +313,54 @@ emit_int_imm(u8* stream, u64 value, int target_bitsize)
 	return stream;
 }
 
+// TODO(psv): change this function to a single one
+static u8*
+emit_opcode_mi(u8* stream, u8 opcode, int bitsize, X64_Register dest, X64_Register src)
+{
+    bool using_extended_register = register_is_extended(dest) || register_is_extended(src);
+
+	if(bitsize == 16)
+		*stream++ = 0x66; // operand size override
+    if(bitsize == 64 || using_extended_register)
+		*stream++ = make_rex(register_is_extended(dest), register_is_extended(src), 0, bitsize == 64);
+    else if(bitsize == 8)
+    {
+        if( dest == SPL || dest == BPL || dest == SIL || dest == DIL ||
+            src == SPL || src == BPL || src == SIL || src == DIL)
+        {
+            *stream++ = make_rex(0,0,0,0);
+        }
+    }
+    *stream++ = opcode;
+    return stream;
+}
+
+// NOTE(psv): correct function for emitting opcode
+static u8*
+emit_opcode_rm(u8* stream, u8 opcode, int bitsize, X64_Register base, X64_Register index, X64_Register reg)
+{
+    bool using_extended_register = register_is_extended(base) || register_is_extended(index) || register_is_extended(reg);
+
+	if(bitsize == 16)
+		*stream++ = 0x66; // operand size override
+    if(bitsize == 64 || using_extended_register)
+	{
+		// b x r w
+		*stream++ = make_rex(register_is_extended(base), register_is_extended(index), register_is_extended(reg), bitsize == 64);		
+	}
+    else if(bitsize == 8)
+    {
+        if( reg == SPL || reg == BPL || reg == SIL || reg == DIL ||
+			base == SPL || base == BPL || base == SIL || base == DIL ||
+            index == SPL || index == BPL || index == SIL || index == DIL)
+        {
+            *stream++ = make_rex(0,0,0,0);
+        }
+    }
+    *stream++ = opcode;
+    return stream;
+}
+
 static u8*
 emit_opcode(u8* stream, u8 opcode, int bitsize, X64_Register dest, X64_Register src)
 {
@@ -321,7 +369,7 @@ emit_opcode(u8* stream, u8 opcode, int bitsize, X64_Register dest, X64_Register 
 	if(bitsize == 16)
 		*stream++ = 0x66; // operand size override
     if(bitsize == 64 || using_extended_register)
-		*stream++ = make_rex(register_is_extended(dest), register_is_extended(src), 0, bitsize == 64);
+		*stream++ = make_rex(register_is_extended(dest), 0, register_is_extended(src), bitsize == 64);
     else if(bitsize == 8)
     {
         if( dest == SPL || dest == BPL || dest == SIL || dest == DIL ||
@@ -413,6 +461,7 @@ u8* emit_arith_rm(Instr_Emit_Result* out_info, X64_Arithmetic_Instr instr, u8* s
 u8* emit_arith_mi_sib(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Addressing_Mode mode, X64_Addressing_Mode displacement_mode, X64_Register index, X64_Register base, Int_Value value, u8 disp8, uint32_t disp32);
 
 u8* emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
+u8* emit_arith_rm_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
 
 static X64_AddrForm 
 make_mi_direct(X64_Register target)
@@ -464,7 +513,7 @@ make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement
 	{
 		// need sib byte
 		form.sib_mode = SIB_INDIRECT;
-		form.sib_base = target;;
+		form.sib_base = target;
 		form.sib_index = RSP;
 	}
 
@@ -501,7 +550,111 @@ make_mi_indirect_sib(X64_Register base, X64_Register index, X64_SibMode sib_mode
 		form.mode = INDIRECT;
 	}
 
-	if(register_equivalent(base, RBP))
+	if(register_equivalent(base, RBP) && form.mode == INDIRECT)
+	{
+		form.mode = INDIRECT_BYTE_DISPLACED;
+	}
+
+	return form;
+}
+
+static X64_AddrForm
+make_rm_direct(X64_Register dest, X64_Register source)
+{
+	assert(register_get_bitsize(dest) == register_get_bitsize(source));
+
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = dest, 
+		.target_bit_size = register_get_bitsize(dest),
+		.source = source,
+		.sib_mode = MODE_NONE,
+		.mode = DIRECT,
+	};
+
+	return form;
+}
+
+static X64_AddrForm
+make_rm_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	assert(register_get_bitsize(dest) == ptr_bitsize);
+
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = dest, 
+		.target_bit_size = ptr_bitsize,
+		.source = source,
+		.sib_mode = MODE_NONE,
+	};
+
+	if(displacement > 0xff)
+	{
+		form.disp32 = displacement;
+		form.mode = INDIRECT_DWORD_DISPLACED;
+	}
+	else if(displacement > 0)
+	{
+		form.disp8 = (u8)displacement;
+		form.mode = INDIRECT_BYTE_DISPLACED;	
+	}
+	else
+	{
+		form.mode = INDIRECT;
+		// RBP is an exception in the indirect mode, we need a sib byte in this case
+		if(register_equivalent(source, RBP))
+		{
+			form.sib_mode = SIB_INDIRECT;
+			form.mode = INDIRECT_BYTE_DISPLACED;
+			form.sib_base = source;
+			form.target = dest;
+			form.sib_index = RSP;
+		}
+	}
+
+	// RSP is an exception, we need a SIB byte in that case
+	if(register_equivalent(source, RSP))
+	{
+		// need sib byte
+		form.sib_mode = SIB_INDIRECT;
+		form.sib_base = source;
+		form.target = dest;
+		form.sib_index = RSP;
+	}
+
+	return form;
+}
+
+static X64_AddrForm
+make_rm_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	assert(src_base != REG_NONE);
+	assert(index != RSP);
+	assert(register_get_bitsize(dest) == ptr_bitsize);
+
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = dest, 
+		.target_bit_size = ptr_bitsize,
+		.source = src_base,
+		.sib_mode = sib_mode,
+		.sib_base = src_base,
+		.sib_index = (index == REG_NONE) ? RSP : index,
+	};
+
+	if(displacement > 0xff)
+	{
+		form.disp32 = displacement;
+		form.mode = INDIRECT_DWORD_DISPLACED;
+	}
+	else if(displacement > 0)
+	{
+		form.disp8 = (u8)displacement;
+		form.mode = INDIRECT_BYTE_DISPLACED;	
+	}
+	else
+	{
+		form.mode = INDIRECT;
+	}
+
+	if(register_equivalent(src_base, RBP) && form.mode == INDIRECT)
 	{
 		form.mode = INDIRECT_BYTE_DISPLACED;
 	}
