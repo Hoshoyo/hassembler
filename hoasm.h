@@ -62,11 +62,11 @@ typedef enum {
 } X64_XMM_Register;
 
 typedef enum  {
-	MODE_NONE = -1,
-	INDIRECT = 0, SIB_INDIRECT = 0,
-	INDIRECT_BYTE_DISPLACED = 1, SIB_INDIRECT_X2 = 1,
-	INDIRECT_DWORD_DISPLACED = 2, SIB_INDIRECT_X4 = 2,
-	DIRECT = 3, SIB_INDIRECT_X8 = 3,
+	MODE_NONE                = -1,
+	INDIRECT                 = 0,
+	INDIRECT_BYTE_DISPLACED  = 1,
+	INDIRECT_DWORD_DISPLACED = 2,
+	DIRECT                   = 3,
 } X64_Addressing_Mode;
 
 typedef enum {
@@ -425,7 +425,7 @@ typedef enum {
 } X64_AddrSize;
 
 typedef enum {
-	SIB_X0 = 0,
+	SIB_X1 = 0,
 	SIB_X2 = 1,
 	SIB_X4 = 2,
 	SIB_X8 = 3,
@@ -452,18 +452,17 @@ typedef struct {
 	X64_Addressing_Mode sib_mode;
 } X64_AddrForm;
 
-// arithmetic
-u8* emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Addressing_Mode mode, X64_Register dest, Int_Value value, u8 disp8, uint32_t disp32);
-u8* emit_arith_mi_imm8_sext(Instr_Emit_Result* out_info, u8* stream, int instr_digit, X64_Register dest, s8 value, X64_Addressing_Mode mode, u8 displ8, uint32_t displ32);
-u8* emit_arith_mi_a(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Register dest, Int_Value value);
-u8* emit_arith_mr(Instr_Emit_Result* out_info, X64_Arithmetic_Instr instr, u8* stream, X64_Register dest, X64_Register src, X64_Addressing_Mode mode, u8 disp8, uint32_t disp32);
-u8* emit_arith_rm(Instr_Emit_Result* out_info, X64_Arithmetic_Instr instr, u8* stream, X64_Register dest, X64_Register src, X64_Addressing_Mode mode, u8 disp8, uint32_t disp32);
-u8* emit_arith_mi_sib(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Addressing_Mode mode, X64_Addressing_Mode displacement_mode, X64_Register index, X64_Register base, Int_Value value, u8 disp8, uint32_t disp32);
-
+u8* emit_arith_mi_a(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Register dest, u64 imm_value);
 u8* emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
 u8* emit_arith_rm_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
 u8* emit_arith_mr_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
 
+/*
+	Addressing modes creation
+*/
+
+// Create an addressing mode for MI direct.
+// Example: add rax, 12h
 static X64_AddrForm 
 make_mi_direct(X64_Register target)
 {
@@ -476,6 +475,8 @@ make_mi_direct(X64_Register target)
 	};
 }
 
+// Create an addressing mode for MI indirect.
+// Example: add dword ptr[rax+15h], 12h
 static X64_AddrForm 
 make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement)
 {
@@ -502,7 +503,7 @@ make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement
 		// RBP is an exception in the indirect mode, we need a sib byte in this case
 		if(register_equivalent(target, RBP))
 		{
-			form.sib_mode = SIB_INDIRECT;
+			form.sib_mode = SIB_X1;
 			form.mode = INDIRECT_BYTE_DISPLACED;
 			form.sib_base = target;
 			form.sib_index = RSP;
@@ -513,7 +514,7 @@ make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement
 	if(register_equivalent(target, RSP))
 	{
 		// need sib byte
-		form.sib_mode = SIB_INDIRECT;
+		form.sib_mode = SIB_X1;
 		form.sib_base = target;
 		form.sib_index = RSP;
 	}
@@ -521,6 +522,8 @@ make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement
 	return form;
 }
 
+// Create an addressing mode for MI SIB indirect.
+// Example: add dword ptr[rax+rbx*2+15h], 12h
 static X64_AddrForm
 make_mi_indirect_sib(X64_Register base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u32 displacement)
 {
@@ -559,6 +562,8 @@ make_mi_indirect_sib(X64_Register base, X64_Register index, X64_SibMode sib_mode
 	return form;
 }
 
+// Create a generic addressing mode indirect.
+// Example: add dword ptr[rax+15h], rcx
 static X64_AddrForm
 make_reg_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
 {
@@ -587,7 +592,7 @@ make_reg_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsi
 		// RBP is an exception in the indirect mode, we need a sib byte in this case
 		if(register_equivalent(source, RBP))
 		{
-			form.sib_mode = SIB_INDIRECT;
+			form.sib_mode = SIB_X1;
 			form.mode = INDIRECT_BYTE_DISPLACED;
 			form.sib_base = source;
 			form.target = dest;
@@ -599,7 +604,7 @@ make_reg_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsi
 	if(register_equivalent(source, RSP))
 	{
 		// need sib byte
-		form.sib_mode = SIB_INDIRECT;
+		form.sib_mode = SIB_X1;
 		form.sib_base = source;
 		form.target = dest;
 		form.sib_index = RSP;
@@ -608,6 +613,8 @@ make_reg_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsi
 	return form;
 }
 
+// Create an addressing mode for RM direct.
+// Example: rax, rcx
 static X64_AddrForm
 make_rm_direct(X64_Register dest, X64_Register source)
 {
@@ -624,12 +631,16 @@ make_rm_direct(X64_Register dest, X64_Register source)
 	return form;
 }
 
+// Create an addressing mode for RM indirect.
+// Example: add rcx, dword ptr[rax+15h]
 static X64_AddrForm
 make_rm_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
 {
 	return make_reg_indirect(dest, source, ptr_bitsize, displacement);
 }
 
+// Create a generic addressing mode for SIB indirect.
+// Example: add rcx, dword ptr[rax+rcx*2+15h]
 static X64_AddrForm
 make_reg_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
 {
@@ -665,6 +676,8 @@ make_reg_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register ind
 	return form;
 }
 
+// Create an addressing mode for RM SIB indirect.
+// Example: add rcx, dword ptr[rax+rcx*2+15h]
 static X64_AddrForm
 make_rm_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
 {
@@ -675,6 +688,8 @@ make_rm_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register inde
 	return make_reg_indirect_sib(dest, src_base, index, sib_mode, ptr_bitsize, displacement);
 }
 
+// Create an addressing mode for MR direct.
+// Example: rcx, rax
 static X64_AddrForm
 make_mr_direct(X64_Register dest, X64_Register source)
 {
@@ -691,12 +706,16 @@ make_mr_direct(X64_Register dest, X64_Register source)
 	return form;
 }
 
+// Create an addressing mode for MR indirect.
+// Example: add dword ptr[rax+15h], rcx
 static X64_AddrForm
 make_mr_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
 {
 	return make_reg_indirect(source, dest, ptr_bitsize, displacement);
 }
 
+// Create an addressing mode for MR SIB indirect.
+// Example: add dword ptr[rax+rcx*2+15h], rcx
 static X64_AddrForm
 make_mr_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
 {
