@@ -452,10 +452,9 @@ typedef struct {
 	X64_Addressing_Mode sib_mode;
 } X64_AddrForm;
 
-u8* emit_arith_mi_a(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_Register dest, u64 imm_value);
-u8* emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
-u8* emit_arith_rm_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
-u8* emit_arith_mr_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
+u8* emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
+u8* emit_arith_rm(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
+u8* emit_arith_mr(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
 
 /*
 	Addressing modes creation
@@ -487,7 +486,15 @@ make_mi_indirect(X64_Register target, X64_AddrSize ptr_bitsize, u32 displacement
 		.sib_mode = MODE_NONE,
 	};
 
-	if(displacement > 0xff)
+	if(register_equivalent(target, REG_NONE))
+	{
+		form.sib_mode = MODE_NONE;
+		form.mode = INDIRECT;
+		form.disp32 = displacement;
+		form.target = RBP;
+		form.target_bit_size = ptr_bitsize;
+	}
+	else if(displacement > 0xff)
 	{
 		form.disp32 = displacement;
 		form.mode = INDIRECT_DWORD_DISPLACED;
@@ -556,7 +563,7 @@ make_mi_indirect_sib(X64_Register base, X64_Register index, X64_SibMode sib_mode
 
 	if(register_equivalent(base, RBP) && form.mode == INDIRECT)
 	{
-		form.mode = INDIRECT_BYTE_DISPLACED;
+		//form.mode = INDIRECT_BYTE_DISPLACED;
 	}
 
 	return form;

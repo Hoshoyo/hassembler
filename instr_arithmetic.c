@@ -115,14 +115,14 @@ emit_arith(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_d
 }
 
 u8*
-emit_arith_mr_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form)
+emit_arith_mr(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form)
 {
     u8 opcode = (form.target_bit_size == 8) ? ADD_MR8 : ADD_MR;
     return emit_arith(out_info, stream, instr_digit, form, opcode);
 }
 
 u8* 
-emit_arith_rm_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form)
+emit_arith_rm(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form)
 {
     u8 opcode = (form.target_bit_size == 8) ? ADD_RM8 : ADD_RM;
     return emit_arith(out_info, stream, instr_digit, form, opcode);
@@ -154,7 +154,7 @@ emit_arith_mi_a(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr in
 }
 
 u8*
-emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value)
+emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value)
 {
     assert(value_bitsize(imm_value) <= form.target_bit_size && value_bitsize(imm_value) < 64);
 
@@ -187,7 +187,7 @@ emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_I
     }
 
     disp_offset = stream - start;
-    stream = emit_displacement(form.mode, stream, form.disp8, form.disp32);
+    stream = emit_displacement((register_representation(form.target) == RBP) ? INDIRECT_DWORD_DISPLACED : form.mode, stream, form.disp8, form.disp32);
     if((stream - start) == disp_offset) disp_offset = -1;
 
     imm_offset = stream - start;
@@ -202,32 +202,3 @@ emit_arith_mi_complete(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_I
     }
     return stream;
 }
-
-#if 0
-    // This is relative memory direct access
-    u8* start = stream;
-    s8 imm_offset = 0;
-    s8 disp_offset = 0;
-
-    u8 opcode = (register_get_bitsize(base) == 8) ? ADD_IMM8 : ADD_IMM;
-    int bitsize = register_get_bitsize(base);
-    stream = emit_opcode(stream, opcode, register_get_bitsize(base), base, base);
-    *stream++ = make_modrm(displacement_mode, instr_digit, register_representation(base));
-
-    //*stream++ = make_sib((u8)sib_mode, register_representation(index), register_representation(base));
-
-    disp_offset = stream - start;
-    stream = emit_displacement(INDIRECT_DWORD_DISPLACED, stream, disp8, disp32);
-    if((stream - start) == disp_offset) disp_offset = -1;
-
-    imm_offset = stream - start;
-    stream = emit_int_value(stream, MIN(32, register_get_bitsize(base)), value);
-    if((stream - start) == imm_offset) imm_offset = -1;
-
-    if(out_info)
-    {
-        out_info->instr_byte_size = stream - start;
-        out_info->diplacement_offset = disp_offset;
-        out_info->immediate_offset = imm_offset;
-    }
-#endif
