@@ -563,7 +563,7 @@ make_mi_indirect_sib(X64_Register base, X64_Register index, X64_SibMode sib_mode
 
 	if(register_equivalent(base, RBP) && form.mode == INDIRECT)
 	{
-		//form.mode = INDIRECT_BYTE_DISPLACED;
+		form.mode = INDIRECT_BYTE_DISPLACED;
 	}
 
 	return form;

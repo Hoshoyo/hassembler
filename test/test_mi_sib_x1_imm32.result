@@ -1,0 +1,519 @@
+
+test.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00000000 <.data>:
+       0:	48 81 04 20 78 56 34 12 	add    QWORD PTR [rax+riz*1],0x12345678
+       8:	81 04 20 78 56 34 12 	add    DWORD PTR [rax+riz*1],0x12345678
+       f:	48 81 04 00 78 56 34 12 	add    QWORD PTR [rax+rax*1],0x12345678
+      17:	81 04 00 78 56 34 12 	add    DWORD PTR [rax+rax*1],0x12345678
+      1e:	48 81 04 08 78 56 34 12 	add    QWORD PTR [rax+rcx*1],0x12345678
+      26:	81 04 08 78 56 34 12 	add    DWORD PTR [rax+rcx*1],0x12345678
+      2d:	48 81 04 10 78 56 34 12 	add    QWORD PTR [rax+rdx*1],0x12345678
+      35:	81 04 10 78 56 34 12 	add    DWORD PTR [rax+rdx*1],0x12345678
+      3c:	48 81 04 18 78 56 34 12 	add    QWORD PTR [rax+rbx*1],0x12345678
+      44:	81 04 18 78 56 34 12 	add    DWORD PTR [rax+rbx*1],0x12345678
+      4b:	48 81 04 28 78 56 34 12 	add    QWORD PTR [rax+rbp*1],0x12345678
+      53:	81 04 28 78 56 34 12 	add    DWORD PTR [rax+rbp*1],0x12345678
+      5a:	48 81 04 30 78 56 34 12 	add    QWORD PTR [rax+rsi*1],0x12345678
+      62:	81 04 30 78 56 34 12 	add    DWORD PTR [rax+rsi*1],0x12345678
+      69:	48 81 04 38 78 56 34 12 	add    QWORD PTR [rax+rdi*1],0x12345678
+      71:	81 04 38 78 56 34 12 	add    DWORD PTR [rax+rdi*1],0x12345678
+      78:	4a 81 04 00 78 56 34 12 	add    QWORD PTR [rax+r8*1],0x12345678
+      80:	42 81 04 00 78 56 34 12 	add    DWORD PTR [rax+r8*1],0x12345678
+      88:	4a 81 04 08 78 56 34 12 	add    QWORD PTR [rax+r9*1],0x12345678
+      90:	42 81 04 08 78 56 34 12 	add    DWORD PTR [rax+r9*1],0x12345678
+      98:	4a 81 04 10 78 56 34 12 	add    QWORD PTR [rax+r10*1],0x12345678
+      a0:	42 81 04 10 78 56 34 12 	add    DWORD PTR [rax+r10*1],0x12345678
+      a8:	4a 81 04 18 78 56 34 12 	add    QWORD PTR [rax+r11*1],0x12345678
+      b0:	42 81 04 18 78 56 34 12 	add    DWORD PTR [rax+r11*1],0x12345678
+      b8:	4a 81 04 20 78 56 34 12 	add    QWORD PTR [rax+r12*1],0x12345678
+      c0:	42 81 04 20 78 56 34 12 	add    DWORD PTR [rax+r12*1],0x12345678
+      c8:	4a 81 04 28 78 56 34 12 	add    QWORD PTR [rax+r13*1],0x12345678
+      d0:	42 81 04 28 78 56 34 12 	add    DWORD PTR [rax+r13*1],0x12345678
+      d8:	4a 81 04 30 78 56 34 12 	add    QWORD PTR [rax+r14*1],0x12345678
+      e0:	42 81 04 30 78 56 34 12 	add    DWORD PTR [rax+r14*1],0x12345678
+      e8:	4a 81 04 38 78 56 34 12 	add    QWORD PTR [rax+r15*1],0x12345678
+      f0:	42 81 04 38 78 56 34 12 	add    DWORD PTR [rax+r15*1],0x12345678
+      f8:	48 81 04 21 78 56 34 12 	add    QWORD PTR [rcx+riz*1],0x12345678
+     100:	81 04 21 78 56 34 12 	add    DWORD PTR [rcx+riz*1],0x12345678
+     107:	48 81 04 01 78 56 34 12 	add    QWORD PTR [rcx+rax*1],0x12345678
+     10f:	81 04 01 78 56 34 12 	add    DWORD PTR [rcx+rax*1],0x12345678
+     116:	48 81 04 09 78 56 34 12 	add    QWORD PTR [rcx+rcx*1],0x12345678
+     11e:	81 04 09 78 56 34 12 	add    DWORD PTR [rcx+rcx*1],0x12345678
+     125:	48 81 04 11 78 56 34 12 	add    QWORD PTR [rcx+rdx*1],0x12345678
+     12d:	81 04 11 78 56 34 12 	add    DWORD PTR [rcx+rdx*1],0x12345678
+     134:	48 81 04 19 78 56 34 12 	add    QWORD PTR [rcx+rbx*1],0x12345678
+     13c:	81 04 19 78 56 34 12 	add    DWORD PTR [rcx+rbx*1],0x12345678
+     143:	48 81 04 29 78 56 34 12 	add    QWORD PTR [rcx+rbp*1],0x12345678
+     14b:	81 04 29 78 56 34 12 	add    DWORD PTR [rcx+rbp*1],0x12345678
+     152:	48 81 04 31 78 56 34 12 	add    QWORD PTR [rcx+rsi*1],0x12345678
+     15a:	81 04 31 78 56 34 12 	add    DWORD PTR [rcx+rsi*1],0x12345678
+     161:	48 81 04 39 78 56 34 12 	add    QWORD PTR [rcx+rdi*1],0x12345678
+     169:	81 04 39 78 56 34 12 	add    DWORD PTR [rcx+rdi*1],0x12345678
+     170:	4a 81 04 01 78 56 34 12 	add    QWORD PTR [rcx+r8*1],0x12345678
+     178:	42 81 04 01 78 56 34 12 	add    DWORD PTR [rcx+r8*1],0x12345678
+     180:	4a 81 04 09 78 56 34 12 	add    QWORD PTR [rcx+r9*1],0x12345678
+     188:	42 81 04 09 78 56 34 12 	add    DWORD PTR [rcx+r9*1],0x12345678
+     190:	4a 81 04 11 78 56 34 12 	add    QWORD PTR [rcx+r10*1],0x12345678
+     198:	42 81 04 11 78 56 34 12 	add    DWORD PTR [rcx+r10*1],0x12345678
+     1a0:	4a 81 04 19 78 56 34 12 	add    QWORD PTR [rcx+r11*1],0x12345678
+     1a8:	42 81 04 19 78 56 34 12 	add    DWORD PTR [rcx+r11*1],0x12345678
+     1b0:	4a 81 04 21 78 56 34 12 	add    QWORD PTR [rcx+r12*1],0x12345678
+     1b8:	42 81 04 21 78 56 34 12 	add    DWORD PTR [rcx+r12*1],0x12345678
+     1c0:	4a 81 04 29 78 56 34 12 	add    QWORD PTR [rcx+r13*1],0x12345678
+     1c8:	42 81 04 29 78 56 34 12 	add    DWORD PTR [rcx+r13*1],0x12345678
+     1d0:	4a 81 04 31 78 56 34 12 	add    QWORD PTR [rcx+r14*1],0x12345678
+     1d8:	42 81 04 31 78 56 34 12 	add    DWORD PTR [rcx+r14*1],0x12345678
+     1e0:	4a 81 04 39 78 56 34 12 	add    QWORD PTR [rcx+r15*1],0x12345678
+     1e8:	42 81 04 39 78 56 34 12 	add    DWORD PTR [rcx+r15*1],0x12345678
+     1f0:	48 81 04 22 78 56 34 12 	add    QWORD PTR [rdx+riz*1],0x12345678
+     1f8:	81 04 22 78 56 34 12 	add    DWORD PTR [rdx+riz*1],0x12345678
+     1ff:	48 81 04 02 78 56 34 12 	add    QWORD PTR [rdx+rax*1],0x12345678
+     207:	81 04 02 78 56 34 12 	add    DWORD PTR [rdx+rax*1],0x12345678
+     20e:	48 81 04 0a 78 56 34 12 	add    QWORD PTR [rdx+rcx*1],0x12345678
+     216:	81 04 0a 78 56 34 12 	add    DWORD PTR [rdx+rcx*1],0x12345678
+     21d:	48 81 04 12 78 56 34 12 	add    QWORD PTR [rdx+rdx*1],0x12345678
+     225:	81 04 12 78 56 34 12 	add    DWORD PTR [rdx+rdx*1],0x12345678
+     22c:	48 81 04 1a 78 56 34 12 	add    QWORD PTR [rdx+rbx*1],0x12345678
+     234:	81 04 1a 78 56 34 12 	add    DWORD PTR [rdx+rbx*1],0x12345678
+     23b:	48 81 04 2a 78 56 34 12 	add    QWORD PTR [rdx+rbp*1],0x12345678
+     243:	81 04 2a 78 56 34 12 	add    DWORD PTR [rdx+rbp*1],0x12345678
+     24a:	48 81 04 32 78 56 34 12 	add    QWORD PTR [rdx+rsi*1],0x12345678
+     252:	81 04 32 78 56 34 12 	add    DWORD PTR [rdx+rsi*1],0x12345678
+     259:	48 81 04 3a 78 56 34 12 	add    QWORD PTR [rdx+rdi*1],0x12345678
+     261:	81 04 3a 78 56 34 12 	add    DWORD PTR [rdx+rdi*1],0x12345678
+     268:	4a 81 04 02 78 56 34 12 	add    QWORD PTR [rdx+r8*1],0x12345678
+     270:	42 81 04 02 78 56 34 12 	add    DWORD PTR [rdx+r8*1],0x12345678
+     278:	4a 81 04 0a 78 56 34 12 	add    QWORD PTR [rdx+r9*1],0x12345678
+     280:	42 81 04 0a 78 56 34 12 	add    DWORD PTR [rdx+r9*1],0x12345678
+     288:	4a 81 04 12 78 56 34 12 	add    QWORD PTR [rdx+r10*1],0x12345678
+     290:	42 81 04 12 78 56 34 12 	add    DWORD PTR [rdx+r10*1],0x12345678
+     298:	4a 81 04 1a 78 56 34 12 	add    QWORD PTR [rdx+r11*1],0x12345678
+     2a0:	42 81 04 1a 78 56 34 12 	add    DWORD PTR [rdx+r11*1],0x12345678
+     2a8:	4a 81 04 22 78 56 34 12 	add    QWORD PTR [rdx+r12*1],0x12345678
+     2b0:	42 81 04 22 78 56 34 12 	add    DWORD PTR [rdx+r12*1],0x12345678
+     2b8:	4a 81 04 2a 78 56 34 12 	add    QWORD PTR [rdx+r13*1],0x12345678
+     2c0:	42 81 04 2a 78 56 34 12 	add    DWORD PTR [rdx+r13*1],0x12345678
+     2c8:	4a 81 04 32 78 56 34 12 	add    QWORD PTR [rdx+r14*1],0x12345678
+     2d0:	42 81 04 32 78 56 34 12 	add    DWORD PTR [rdx+r14*1],0x12345678
+     2d8:	4a 81 04 3a 78 56 34 12 	add    QWORD PTR [rdx+r15*1],0x12345678
+     2e0:	42 81 04 3a 78 56 34 12 	add    DWORD PTR [rdx+r15*1],0x12345678
+     2e8:	48 81 04 23 78 56 34 12 	add    QWORD PTR [rbx+riz*1],0x12345678
+     2f0:	81 04 23 78 56 34 12 	add    DWORD PTR [rbx+riz*1],0x12345678
+     2f7:	48 81 04 03 78 56 34 12 	add    QWORD PTR [rbx+rax*1],0x12345678
+     2ff:	81 04 03 78 56 34 12 	add    DWORD PTR [rbx+rax*1],0x12345678
+     306:	48 81 04 0b 78 56 34 12 	add    QWORD PTR [rbx+rcx*1],0x12345678
+     30e:	81 04 0b 78 56 34 12 	add    DWORD PTR [rbx+rcx*1],0x12345678
+     315:	48 81 04 13 78 56 34 12 	add    QWORD PTR [rbx+rdx*1],0x12345678
+     31d:	81 04 13 78 56 34 12 	add    DWORD PTR [rbx+rdx*1],0x12345678
+     324:	48 81 04 1b 78 56 34 12 	add    QWORD PTR [rbx+rbx*1],0x12345678
+     32c:	81 04 1b 78 56 34 12 	add    DWORD PTR [rbx+rbx*1],0x12345678
+     333:	48 81 04 2b 78 56 34 12 	add    QWORD PTR [rbx+rbp*1],0x12345678
+     33b:	81 04 2b 78 56 34 12 	add    DWORD PTR [rbx+rbp*1],0x12345678
+     342:	48 81 04 33 78 56 34 12 	add    QWORD PTR [rbx+rsi*1],0x12345678
+     34a:	81 04 33 78 56 34 12 	add    DWORD PTR [rbx+rsi*1],0x12345678
+     351:	48 81 04 3b 78 56 34 12 	add    QWORD PTR [rbx+rdi*1],0x12345678
+     359:	81 04 3b 78 56 34 12 	add    DWORD PTR [rbx+rdi*1],0x12345678
+     360:	4a 81 04 03 78 56 34 12 	add    QWORD PTR [rbx+r8*1],0x12345678
+     368:	42 81 04 03 78 56 34 12 	add    DWORD PTR [rbx+r8*1],0x12345678
+     370:	4a 81 04 0b 78 56 34 12 	add    QWORD PTR [rbx+r9*1],0x12345678
+     378:	42 81 04 0b 78 56 34 12 	add    DWORD PTR [rbx+r9*1],0x12345678
+     380:	4a 81 04 13 78 56 34 12 	add    QWORD PTR [rbx+r10*1],0x12345678
+     388:	42 81 04 13 78 56 34 12 	add    DWORD PTR [rbx+r10*1],0x12345678
+     390:	4a 81 04 1b 78 56 34 12 	add    QWORD PTR [rbx+r11*1],0x12345678
+     398:	42 81 04 1b 78 56 34 12 	add    DWORD PTR [rbx+r11*1],0x12345678
+     3a0:	4a 81 04 23 78 56 34 12 	add    QWORD PTR [rbx+r12*1],0x12345678
+     3a8:	42 81 04 23 78 56 34 12 	add    DWORD PTR [rbx+r12*1],0x12345678
+     3b0:	4a 81 04 2b 78 56 34 12 	add    QWORD PTR [rbx+r13*1],0x12345678
+     3b8:	42 81 04 2b 78 56 34 12 	add    DWORD PTR [rbx+r13*1],0x12345678
+     3c0:	4a 81 04 33 78 56 34 12 	add    QWORD PTR [rbx+r14*1],0x12345678
+     3c8:	42 81 04 33 78 56 34 12 	add    DWORD PTR [rbx+r14*1],0x12345678
+     3d0:	4a 81 04 3b 78 56 34 12 	add    QWORD PTR [rbx+r15*1],0x12345678
+     3d8:	42 81 04 3b 78 56 34 12 	add    DWORD PTR [rbx+r15*1],0x12345678
+     3e0:	48 81 04 24 78 56 34 12 	add    QWORD PTR [rsp],0x12345678
+     3e8:	81 04 24 78 56 34 12 	add    DWORD PTR [rsp],0x12345678
+     3ef:	48 81 04 04 78 56 34 12 	add    QWORD PTR [rsp+rax*1],0x12345678
+     3f7:	81 04 04 78 56 34 12 	add    DWORD PTR [rsp+rax*1],0x12345678
+     3fe:	48 81 04 0c 78 56 34 12 	add    QWORD PTR [rsp+rcx*1],0x12345678
+     406:	81 04 0c 78 56 34 12 	add    DWORD PTR [rsp+rcx*1],0x12345678
+     40d:	48 81 04 14 78 56 34 12 	add    QWORD PTR [rsp+rdx*1],0x12345678
+     415:	81 04 14 78 56 34 12 	add    DWORD PTR [rsp+rdx*1],0x12345678
+     41c:	48 81 04 1c 78 56 34 12 	add    QWORD PTR [rsp+rbx*1],0x12345678
+     424:	81 04 1c 78 56 34 12 	add    DWORD PTR [rsp+rbx*1],0x12345678
+     42b:	48 81 04 2c 78 56 34 12 	add    QWORD PTR [rsp+rbp*1],0x12345678
+     433:	81 04 2c 78 56 34 12 	add    DWORD PTR [rsp+rbp*1],0x12345678
+     43a:	48 81 04 34 78 56 34 12 	add    QWORD PTR [rsp+rsi*1],0x12345678
+     442:	81 04 34 78 56 34 12 	add    DWORD PTR [rsp+rsi*1],0x12345678
+     449:	48 81 04 3c 78 56 34 12 	add    QWORD PTR [rsp+rdi*1],0x12345678
+     451:	81 04 3c 78 56 34 12 	add    DWORD PTR [rsp+rdi*1],0x12345678
+     458:	4a 81 04 04 78 56 34 12 	add    QWORD PTR [rsp+r8*1],0x12345678
+     460:	42 81 04 04 78 56 34 12 	add    DWORD PTR [rsp+r8*1],0x12345678
+     468:	4a 81 04 0c 78 56 34 12 	add    QWORD PTR [rsp+r9*1],0x12345678
+     470:	42 81 04 0c 78 56 34 12 	add    DWORD PTR [rsp+r9*1],0x12345678
+     478:	4a 81 04 14 78 56 34 12 	add    QWORD PTR [rsp+r10*1],0x12345678
+     480:	42 81 04 14 78 56 34 12 	add    DWORD PTR [rsp+r10*1],0x12345678
+     488:	4a 81 04 1c 78 56 34 12 	add    QWORD PTR [rsp+r11*1],0x12345678
+     490:	42 81 04 1c 78 56 34 12 	add    DWORD PTR [rsp+r11*1],0x12345678
+     498:	4a 81 04 24 78 56 34 12 	add    QWORD PTR [rsp+r12*1],0x12345678
+     4a0:	42 81 04 24 78 56 34 12 	add    DWORD PTR [rsp+r12*1],0x12345678
+     4a8:	4a 81 04 2c 78 56 34 12 	add    QWORD PTR [rsp+r13*1],0x12345678
+     4b0:	42 81 04 2c 78 56 34 12 	add    DWORD PTR [rsp+r13*1],0x12345678
+     4b8:	4a 81 04 34 78 56 34 12 	add    QWORD PTR [rsp+r14*1],0x12345678
+     4c0:	42 81 04 34 78 56 34 12 	add    DWORD PTR [rsp+r14*1],0x12345678
+     4c8:	4a 81 04 3c 78 56 34 12 	add    QWORD PTR [rsp+r15*1],0x12345678
+     4d0:	42 81 04 3c 78 56 34 12 	add    DWORD PTR [rsp+r15*1],0x12345678
+     4d8:	48 81 44 25 00 78 56 34 12 	add    QWORD PTR [rbp+riz*1+0x0],0x12345678
+     4e1:	81 44 25 00 78 56 34 12 	add    DWORD PTR [rbp+riz*1+0x0],0x12345678
+     4e9:	48 81 44 05 00 78 56 34 12 	add    QWORD PTR [rbp+rax*1+0x0],0x12345678
+     4f2:	81 44 05 00 78 56 34 12 	add    DWORD PTR [rbp+rax*1+0x0],0x12345678
+     4fa:	48 81 44 0d 00 78 56 34 12 	add    QWORD PTR [rbp+rcx*1+0x0],0x12345678
+     503:	81 44 0d 00 78 56 34 12 	add    DWORD PTR [rbp+rcx*1+0x0],0x12345678
+     50b:	48 81 44 15 00 78 56 34 12 	add    QWORD PTR [rbp+rdx*1+0x0],0x12345678
+     514:	81 44 15 00 78 56 34 12 	add    DWORD PTR [rbp+rdx*1+0x0],0x12345678
+     51c:	48 81 44 1d 00 78 56 34 12 	add    QWORD PTR [rbp+rbx*1+0x0],0x12345678
+     525:	81 44 1d 00 78 56 34 12 	add    DWORD PTR [rbp+rbx*1+0x0],0x12345678
+     52d:	48 81 44 2d 00 78 56 34 12 	add    QWORD PTR [rbp+rbp*1+0x0],0x12345678
+     536:	81 44 2d 00 78 56 34 12 	add    DWORD PTR [rbp+rbp*1+0x0],0x12345678
+     53e:	48 81 44 35 00 78 56 34 12 	add    QWORD PTR [rbp+rsi*1+0x0],0x12345678
+     547:	81 44 35 00 78 56 34 12 	add    DWORD PTR [rbp+rsi*1+0x0],0x12345678
+     54f:	48 81 44 3d 00 78 56 34 12 	add    QWORD PTR [rbp+rdi*1+0x0],0x12345678
+     558:	81 44 3d 00 78 56 34 12 	add    DWORD PTR [rbp+rdi*1+0x0],0x12345678
+     560:	4a 81 44 05 00 78 56 34 12 	add    QWORD PTR [rbp+r8*1+0x0],0x12345678
+     569:	42 81 44 05 00 78 56 34 12 	add    DWORD PTR [rbp+r8*1+0x0],0x12345678
+     572:	4a 81 44 0d 00 78 56 34 12 	add    QWORD PTR [rbp+r9*1+0x0],0x12345678
+     57b:	42 81 44 0d 00 78 56 34 12 	add    DWORD PTR [rbp+r9*1+0x0],0x12345678
+     584:	4a 81 44 15 00 78 56 34 12 	add    QWORD PTR [rbp+r10*1+0x0],0x12345678
+     58d:	42 81 44 15 00 78 56 34 12 	add    DWORD PTR [rbp+r10*1+0x0],0x12345678
+     596:	4a 81 44 1d 00 78 56 34 12 	add    QWORD PTR [rbp+r11*1+0x0],0x12345678
+     59f:	42 81 44 1d 00 78 56 34 12 	add    DWORD PTR [rbp+r11*1+0x0],0x12345678
+     5a8:	4a 81 44 25 00 78 56 34 12 	add    QWORD PTR [rbp+r12*1+0x0],0x12345678
+     5b1:	42 81 44 25 00 78 56 34 12 	add    DWORD PTR [rbp+r12*1+0x0],0x12345678
+     5ba:	4a 81 44 2d 00 78 56 34 12 	add    QWORD PTR [rbp+r13*1+0x0],0x12345678
+     5c3:	42 81 44 2d 00 78 56 34 12 	add    DWORD PTR [rbp+r13*1+0x0],0x12345678
+     5cc:	4a 81 44 35 00 78 56 34 12 	add    QWORD PTR [rbp+r14*1+0x0],0x12345678
+     5d5:	42 81 44 35 00 78 56 34 12 	add    DWORD PTR [rbp+r14*1+0x0],0x12345678
+     5de:	4a 81 44 3d 00 78 56 34 12 	add    QWORD PTR [rbp+r15*1+0x0],0x12345678
+     5e7:	42 81 44 3d 00 78 56 34 12 	add    DWORD PTR [rbp+r15*1+0x0],0x12345678
+     5f0:	48 81 04 26 78 56 34 12 	add    QWORD PTR [rsi+riz*1],0x12345678
+     5f8:	81 04 26 78 56 34 12 	add    DWORD PTR [rsi+riz*1],0x12345678
+     5ff:	48 81 04 06 78 56 34 12 	add    QWORD PTR [rsi+rax*1],0x12345678
+     607:	81 04 06 78 56 34 12 	add    DWORD PTR [rsi+rax*1],0x12345678
+     60e:	48 81 04 0e 78 56 34 12 	add    QWORD PTR [rsi+rcx*1],0x12345678
+     616:	81 04 0e 78 56 34 12 	add    DWORD PTR [rsi+rcx*1],0x12345678
+     61d:	48 81 04 16 78 56 34 12 	add    QWORD PTR [rsi+rdx*1],0x12345678
+     625:	81 04 16 78 56 34 12 	add    DWORD PTR [rsi+rdx*1],0x12345678
+     62c:	48 81 04 1e 78 56 34 12 	add    QWORD PTR [rsi+rbx*1],0x12345678
+     634:	81 04 1e 78 56 34 12 	add    DWORD PTR [rsi+rbx*1],0x12345678
+     63b:	48 81 04 2e 78 56 34 12 	add    QWORD PTR [rsi+rbp*1],0x12345678
+     643:	81 04 2e 78 56 34 12 	add    DWORD PTR [rsi+rbp*1],0x12345678
+     64a:	48 81 04 36 78 56 34 12 	add    QWORD PTR [rsi+rsi*1],0x12345678
+     652:	81 04 36 78 56 34 12 	add    DWORD PTR [rsi+rsi*1],0x12345678
+     659:	48 81 04 3e 78 56 34 12 	add    QWORD PTR [rsi+rdi*1],0x12345678
+     661:	81 04 3e 78 56 34 12 	add    DWORD PTR [rsi+rdi*1],0x12345678
+     668:	4a 81 04 06 78 56 34 12 	add    QWORD PTR [rsi+r8*1],0x12345678
+     670:	42 81 04 06 78 56 34 12 	add    DWORD PTR [rsi+r8*1],0x12345678
+     678:	4a 81 04 0e 78 56 34 12 	add    QWORD PTR [rsi+r9*1],0x12345678
+     680:	42 81 04 0e 78 56 34 12 	add    DWORD PTR [rsi+r9*1],0x12345678
+     688:	4a 81 04 16 78 56 34 12 	add    QWORD PTR [rsi+r10*1],0x12345678
+     690:	42 81 04 16 78 56 34 12 	add    DWORD PTR [rsi+r10*1],0x12345678
+     698:	4a 81 04 1e 78 56 34 12 	add    QWORD PTR [rsi+r11*1],0x12345678
+     6a0:	42 81 04 1e 78 56 34 12 	add    DWORD PTR [rsi+r11*1],0x12345678
+     6a8:	4a 81 04 26 78 56 34 12 	add    QWORD PTR [rsi+r12*1],0x12345678
+     6b0:	42 81 04 26 78 56 34 12 	add    DWORD PTR [rsi+r12*1],0x12345678
+     6b8:	4a 81 04 2e 78 56 34 12 	add    QWORD PTR [rsi+r13*1],0x12345678
+     6c0:	42 81 04 2e 78 56 34 12 	add    DWORD PTR [rsi+r13*1],0x12345678
+     6c8:	4a 81 04 36 78 56 34 12 	add    QWORD PTR [rsi+r14*1],0x12345678
+     6d0:	42 81 04 36 78 56 34 12 	add    DWORD PTR [rsi+r14*1],0x12345678
+     6d8:	4a 81 04 3e 78 56 34 12 	add    QWORD PTR [rsi+r15*1],0x12345678
+     6e0:	42 81 04 3e 78 56 34 12 	add    DWORD PTR [rsi+r15*1],0x12345678
+     6e8:	48 81 04 27 78 56 34 12 	add    QWORD PTR [rdi+riz*1],0x12345678
+     6f0:	81 04 27 78 56 34 12 	add    DWORD PTR [rdi+riz*1],0x12345678
+     6f7:	48 81 04 07 78 56 34 12 	add    QWORD PTR [rdi+rax*1],0x12345678
+     6ff:	81 04 07 78 56 34 12 	add    DWORD PTR [rdi+rax*1],0x12345678
+     706:	48 81 04 0f 78 56 34 12 	add    QWORD PTR [rdi+rcx*1],0x12345678
+     70e:	81 04 0f 78 56 34 12 	add    DWORD PTR [rdi+rcx*1],0x12345678
+     715:	48 81 04 17 78 56 34 12 	add    QWORD PTR [rdi+rdx*1],0x12345678
+     71d:	81 04 17 78 56 34 12 	add    DWORD PTR [rdi+rdx*1],0x12345678
+     724:	48 81 04 1f 78 56 34 12 	add    QWORD PTR [rdi+rbx*1],0x12345678
+     72c:	81 04 1f 78 56 34 12 	add    DWORD PTR [rdi+rbx*1],0x12345678
+     733:	48 81 04 2f 78 56 34 12 	add    QWORD PTR [rdi+rbp*1],0x12345678
+     73b:	81 04 2f 78 56 34 12 	add    DWORD PTR [rdi+rbp*1],0x12345678
+     742:	48 81 04 37 78 56 34 12 	add    QWORD PTR [rdi+rsi*1],0x12345678
+     74a:	81 04 37 78 56 34 12 	add    DWORD PTR [rdi+rsi*1],0x12345678
+     751:	48 81 04 3f 78 56 34 12 	add    QWORD PTR [rdi+rdi*1],0x12345678
+     759:	81 04 3f 78 56 34 12 	add    DWORD PTR [rdi+rdi*1],0x12345678
+     760:	4a 81 04 07 78 56 34 12 	add    QWORD PTR [rdi+r8*1],0x12345678
+     768:	42 81 04 07 78 56 34 12 	add    DWORD PTR [rdi+r8*1],0x12345678
+     770:	4a 81 04 0f 78 56 34 12 	add    QWORD PTR [rdi+r9*1],0x12345678
+     778:	42 81 04 0f 78 56 34 12 	add    DWORD PTR [rdi+r9*1],0x12345678
+     780:	4a 81 04 17 78 56 34 12 	add    QWORD PTR [rdi+r10*1],0x12345678
+     788:	42 81 04 17 78 56 34 12 	add    DWORD PTR [rdi+r10*1],0x12345678
+     790:	4a 81 04 1f 78 56 34 12 	add    QWORD PTR [rdi+r11*1],0x12345678
+     798:	42 81 04 1f 78 56 34 12 	add    DWORD PTR [rdi+r11*1],0x12345678
+     7a0:	4a 81 04 27 78 56 34 12 	add    QWORD PTR [rdi+r12*1],0x12345678
+     7a8:	42 81 04 27 78 56 34 12 	add    DWORD PTR [rdi+r12*1],0x12345678
+     7b0:	4a 81 04 2f 78 56 34 12 	add    QWORD PTR [rdi+r13*1],0x12345678
+     7b8:	42 81 04 2f 78 56 34 12 	add    DWORD PTR [rdi+r13*1],0x12345678
+     7c0:	4a 81 04 37 78 56 34 12 	add    QWORD PTR [rdi+r14*1],0x12345678
+     7c8:	42 81 04 37 78 56 34 12 	add    DWORD PTR [rdi+r14*1],0x12345678
+     7d0:	4a 81 04 3f 78 56 34 12 	add    QWORD PTR [rdi+r15*1],0x12345678
+     7d8:	42 81 04 3f 78 56 34 12 	add    DWORD PTR [rdi+r15*1],0x12345678
+     7e0:	49 81 04 20 78 56 34 12 	add    QWORD PTR [r8+riz*1],0x12345678
+     7e8:	41 81 04 20 78 56 34 12 	add    DWORD PTR [r8+riz*1],0x12345678
+     7f0:	49 81 04 00 78 56 34 12 	add    QWORD PTR [r8+rax*1],0x12345678
+     7f8:	41 81 04 00 78 56 34 12 	add    DWORD PTR [r8+rax*1],0x12345678
+     800:	49 81 04 08 78 56 34 12 	add    QWORD PTR [r8+rcx*1],0x12345678
+     808:	41 81 04 08 78 56 34 12 	add    DWORD PTR [r8+rcx*1],0x12345678
+     810:	49 81 04 10 78 56 34 12 	add    QWORD PTR [r8+rdx*1],0x12345678
+     818:	41 81 04 10 78 56 34 12 	add    DWORD PTR [r8+rdx*1],0x12345678
+     820:	49 81 04 18 78 56 34 12 	add    QWORD PTR [r8+rbx*1],0x12345678
+     828:	41 81 04 18 78 56 34 12 	add    DWORD PTR [r8+rbx*1],0x12345678
+     830:	49 81 04 28 78 56 34 12 	add    QWORD PTR [r8+rbp*1],0x12345678
+     838:	41 81 04 28 78 56 34 12 	add    DWORD PTR [r8+rbp*1],0x12345678
+     840:	49 81 04 30 78 56 34 12 	add    QWORD PTR [r8+rsi*1],0x12345678
+     848:	41 81 04 30 78 56 34 12 	add    DWORD PTR [r8+rsi*1],0x12345678
+     850:	49 81 04 38 78 56 34 12 	add    QWORD PTR [r8+rdi*1],0x12345678
+     858:	41 81 04 38 78 56 34 12 	add    DWORD PTR [r8+rdi*1],0x12345678
+     860:	4b 81 04 00 78 56 34 12 	add    QWORD PTR [r8+r8*1],0x12345678
+     868:	43 81 04 00 78 56 34 12 	add    DWORD PTR [r8+r8*1],0x12345678
+     870:	4b 81 04 08 78 56 34 12 	add    QWORD PTR [r8+r9*1],0x12345678
+     878:	43 81 04 08 78 56 34 12 	add    DWORD PTR [r8+r9*1],0x12345678
+     880:	4b 81 04 10 78 56 34 12 	add    QWORD PTR [r8+r10*1],0x12345678
+     888:	43 81 04 10 78 56 34 12 	add    DWORD PTR [r8+r10*1],0x12345678
+     890:	4b 81 04 18 78 56 34 12 	add    QWORD PTR [r8+r11*1],0x12345678
+     898:	43 81 04 18 78 56 34 12 	add    DWORD PTR [r8+r11*1],0x12345678
+     8a0:	4b 81 04 20 78 56 34 12 	add    QWORD PTR [r8+r12*1],0x12345678
+     8a8:	43 81 04 20 78 56 34 12 	add    DWORD PTR [r8+r12*1],0x12345678
+     8b0:	4b 81 04 28 78 56 34 12 	add    QWORD PTR [r8+r13*1],0x12345678
+     8b8:	43 81 04 28 78 56 34 12 	add    DWORD PTR [r8+r13*1],0x12345678
+     8c0:	4b 81 04 30 78 56 34 12 	add    QWORD PTR [r8+r14*1],0x12345678
+     8c8:	43 81 04 30 78 56 34 12 	add    DWORD PTR [r8+r14*1],0x12345678
+     8d0:	4b 81 04 38 78 56 34 12 	add    QWORD PTR [r8+r15*1],0x12345678
+     8d8:	43 81 04 38 78 56 34 12 	add    DWORD PTR [r8+r15*1],0x12345678
+     8e0:	49 81 04 21 78 56 34 12 	add    QWORD PTR [r9+riz*1],0x12345678
+     8e8:	41 81 04 21 78 56 34 12 	add    DWORD PTR [r9+riz*1],0x12345678
+     8f0:	49 81 04 01 78 56 34 12 	add    QWORD PTR [r9+rax*1],0x12345678
+     8f8:	41 81 04 01 78 56 34 12 	add    DWORD PTR [r9+rax*1],0x12345678
+     900:	49 81 04 09 78 56 34 12 	add    QWORD PTR [r9+rcx*1],0x12345678
+     908:	41 81 04 09 78 56 34 12 	add    DWORD PTR [r9+rcx*1],0x12345678
+     910:	49 81 04 11 78 56 34 12 	add    QWORD PTR [r9+rdx*1],0x12345678
+     918:	41 81 04 11 78 56 34 12 	add    DWORD PTR [r9+rdx*1],0x12345678
+     920:	49 81 04 19 78 56 34 12 	add    QWORD PTR [r9+rbx*1],0x12345678
+     928:	41 81 04 19 78 56 34 12 	add    DWORD PTR [r9+rbx*1],0x12345678
+     930:	49 81 04 29 78 56 34 12 	add    QWORD PTR [r9+rbp*1],0x12345678
+     938:	41 81 04 29 78 56 34 12 	add    DWORD PTR [r9+rbp*1],0x12345678
+     940:	49 81 04 31 78 56 34 12 	add    QWORD PTR [r9+rsi*1],0x12345678
+     948:	41 81 04 31 78 56 34 12 	add    DWORD PTR [r9+rsi*1],0x12345678
+     950:	49 81 04 39 78 56 34 12 	add    QWORD PTR [r9+rdi*1],0x12345678
+     958:	41 81 04 39 78 56 34 12 	add    DWORD PTR [r9+rdi*1],0x12345678
+     960:	4b 81 04 01 78 56 34 12 	add    QWORD PTR [r9+r8*1],0x12345678
+     968:	43 81 04 01 78 56 34 12 	add    DWORD PTR [r9+r8*1],0x12345678
+     970:	4b 81 04 09 78 56 34 12 	add    QWORD PTR [r9+r9*1],0x12345678
+     978:	43 81 04 09 78 56 34 12 	add    DWORD PTR [r9+r9*1],0x12345678
+     980:	4b 81 04 11 78 56 34 12 	add    QWORD PTR [r9+r10*1],0x12345678
+     988:	43 81 04 11 78 56 34 12 	add    DWORD PTR [r9+r10*1],0x12345678
+     990:	4b 81 04 19 78 56 34 12 	add    QWORD PTR [r9+r11*1],0x12345678
+     998:	43 81 04 19 78 56 34 12 	add    DWORD PTR [r9+r11*1],0x12345678
+     9a0:	4b 81 04 21 78 56 34 12 	add    QWORD PTR [r9+r12*1],0x12345678
+     9a8:	43 81 04 21 78 56 34 12 	add    DWORD PTR [r9+r12*1],0x12345678
+     9b0:	4b 81 04 29 78 56 34 12 	add    QWORD PTR [r9+r13*1],0x12345678
+     9b8:	43 81 04 29 78 56 34 12 	add    DWORD PTR [r9+r13*1],0x12345678
+     9c0:	4b 81 04 31 78 56 34 12 	add    QWORD PTR [r9+r14*1],0x12345678
+     9c8:	43 81 04 31 78 56 34 12 	add    DWORD PTR [r9+r14*1],0x12345678
+     9d0:	4b 81 04 39 78 56 34 12 	add    QWORD PTR [r9+r15*1],0x12345678
+     9d8:	43 81 04 39 78 56 34 12 	add    DWORD PTR [r9+r15*1],0x12345678
+     9e0:	49 81 04 22 78 56 34 12 	add    QWORD PTR [r10+riz*1],0x12345678
+     9e8:	41 81 04 22 78 56 34 12 	add    DWORD PTR [r10+riz*1],0x12345678
+     9f0:	49 81 04 02 78 56 34 12 	add    QWORD PTR [r10+rax*1],0x12345678
+     9f8:	41 81 04 02 78 56 34 12 	add    DWORD PTR [r10+rax*1],0x12345678
+     a00:	49 81 04 0a 78 56 34 12 	add    QWORD PTR [r10+rcx*1],0x12345678
+     a08:	41 81 04 0a 78 56 34 12 	add    DWORD PTR [r10+rcx*1],0x12345678
+     a10:	49 81 04 12 78 56 34 12 	add    QWORD PTR [r10+rdx*1],0x12345678
+     a18:	41 81 04 12 78 56 34 12 	add    DWORD PTR [r10+rdx*1],0x12345678
+     a20:	49 81 04 1a 78 56 34 12 	add    QWORD PTR [r10+rbx*1],0x12345678
+     a28:	41 81 04 1a 78 56 34 12 	add    DWORD PTR [r10+rbx*1],0x12345678
+     a30:	49 81 04 2a 78 56 34 12 	add    QWORD PTR [r10+rbp*1],0x12345678
+     a38:	41 81 04 2a 78 56 34 12 	add    DWORD PTR [r10+rbp*1],0x12345678
+     a40:	49 81 04 32 78 56 34 12 	add    QWORD PTR [r10+rsi*1],0x12345678
+     a48:	41 81 04 32 78 56 34 12 	add    DWORD PTR [r10+rsi*1],0x12345678
+     a50:	49 81 04 3a 78 56 34 12 	add    QWORD PTR [r10+rdi*1],0x12345678
+     a58:	41 81 04 3a 78 56 34 12 	add    DWORD PTR [r10+rdi*1],0x12345678
+     a60:	4b 81 04 02 78 56 34 12 	add    QWORD PTR [r10+r8*1],0x12345678
+     a68:	43 81 04 02 78 56 34 12 	add    DWORD PTR [r10+r8*1],0x12345678
+     a70:	4b 81 04 0a 78 56 34 12 	add    QWORD PTR [r10+r9*1],0x12345678
+     a78:	43 81 04 0a 78 56 34 12 	add    DWORD PTR [r10+r9*1],0x12345678
+     a80:	4b 81 04 12 78 56 34 12 	add    QWORD PTR [r10+r10*1],0x12345678
+     a88:	43 81 04 12 78 56 34 12 	add    DWORD PTR [r10+r10*1],0x12345678
+     a90:	4b 81 04 1a 78 56 34 12 	add    QWORD PTR [r10+r11*1],0x12345678
+     a98:	43 81 04 1a 78 56 34 12 	add    DWORD PTR [r10+r11*1],0x12345678
+     aa0:	4b 81 04 22 78 56 34 12 	add    QWORD PTR [r10+r12*1],0x12345678
+     aa8:	43 81 04 22 78 56 34 12 	add    DWORD PTR [r10+r12*1],0x12345678
+     ab0:	4b 81 04 2a 78 56 34 12 	add    QWORD PTR [r10+r13*1],0x12345678
+     ab8:	43 81 04 2a 78 56 34 12 	add    DWORD PTR [r10+r13*1],0x12345678
+     ac0:	4b 81 04 32 78 56 34 12 	add    QWORD PTR [r10+r14*1],0x12345678
+     ac8:	43 81 04 32 78 56 34 12 	add    DWORD PTR [r10+r14*1],0x12345678
+     ad0:	4b 81 04 3a 78 56 34 12 	add    QWORD PTR [r10+r15*1],0x12345678
+     ad8:	43 81 04 3a 78 56 34 12 	add    DWORD PTR [r10+r15*1],0x12345678
+     ae0:	49 81 04 23 78 56 34 12 	add    QWORD PTR [r11+riz*1],0x12345678
+     ae8:	41 81 04 23 78 56 34 12 	add    DWORD PTR [r11+riz*1],0x12345678
+     af0:	49 81 04 03 78 56 34 12 	add    QWORD PTR [r11+rax*1],0x12345678
+     af8:	41 81 04 03 78 56 34 12 	add    DWORD PTR [r11+rax*1],0x12345678
+     b00:	49 81 04 0b 78 56 34 12 	add    QWORD PTR [r11+rcx*1],0x12345678
+     b08:	41 81 04 0b 78 56 34 12 	add    DWORD PTR [r11+rcx*1],0x12345678
+     b10:	49 81 04 13 78 56 34 12 	add    QWORD PTR [r11+rdx*1],0x12345678
+     b18:	41 81 04 13 78 56 34 12 	add    DWORD PTR [r11+rdx*1],0x12345678
+     b20:	49 81 04 1b 78 56 34 12 	add    QWORD PTR [r11+rbx*1],0x12345678
+     b28:	41 81 04 1b 78 56 34 12 	add    DWORD PTR [r11+rbx*1],0x12345678
+     b30:	49 81 04 2b 78 56 34 12 	add    QWORD PTR [r11+rbp*1],0x12345678
+     b38:	41 81 04 2b 78 56 34 12 	add    DWORD PTR [r11+rbp*1],0x12345678
+     b40:	49 81 04 33 78 56 34 12 	add    QWORD PTR [r11+rsi*1],0x12345678
+     b48:	41 81 04 33 78 56 34 12 	add    DWORD PTR [r11+rsi*1],0x12345678
+     b50:	49 81 04 3b 78 56 34 12 	add    QWORD PTR [r11+rdi*1],0x12345678
+     b58:	41 81 04 3b 78 56 34 12 	add    DWORD PTR [r11+rdi*1],0x12345678
+     b60:	4b 81 04 03 78 56 34 12 	add    QWORD PTR [r11+r8*1],0x12345678
+     b68:	43 81 04 03 78 56 34 12 	add    DWORD PTR [r11+r8*1],0x12345678
+     b70:	4b 81 04 0b 78 56 34 12 	add    QWORD PTR [r11+r9*1],0x12345678
+     b78:	43 81 04 0b 78 56 34 12 	add    DWORD PTR [r11+r9*1],0x12345678
+     b80:	4b 81 04 13 78 56 34 12 	add    QWORD PTR [r11+r10*1],0x12345678
+     b88:	43 81 04 13 78 56 34 12 	add    DWORD PTR [r11+r10*1],0x12345678
+     b90:	4b 81 04 1b 78 56 34 12 	add    QWORD PTR [r11+r11*1],0x12345678
+     b98:	43 81 04 1b 78 56 34 12 	add    DWORD PTR [r11+r11*1],0x12345678
+     ba0:	4b 81 04 23 78 56 34 12 	add    QWORD PTR [r11+r12*1],0x12345678
+     ba8:	43 81 04 23 78 56 34 12 	add    DWORD PTR [r11+r12*1],0x12345678
+     bb0:	4b 81 04 2b 78 56 34 12 	add    QWORD PTR [r11+r13*1],0x12345678
+     bb8:	43 81 04 2b 78 56 34 12 	add    DWORD PTR [r11+r13*1],0x12345678
+     bc0:	4b 81 04 33 78 56 34 12 	add    QWORD PTR [r11+r14*1],0x12345678
+     bc8:	43 81 04 33 78 56 34 12 	add    DWORD PTR [r11+r14*1],0x12345678
+     bd0:	4b 81 04 3b 78 56 34 12 	add    QWORD PTR [r11+r15*1],0x12345678
+     bd8:	43 81 04 3b 78 56 34 12 	add    DWORD PTR [r11+r15*1],0x12345678
+     be0:	49 81 04 24 78 56 34 12 	add    QWORD PTR [r12],0x12345678
+     be8:	41 81 04 24 78 56 34 12 	add    DWORD PTR [r12],0x12345678
+     bf0:	49 81 04 04 78 56 34 12 	add    QWORD PTR [r12+rax*1],0x12345678
+     bf8:	41 81 04 04 78 56 34 12 	add    DWORD PTR [r12+rax*1],0x12345678
+     c00:	49 81 04 0c 78 56 34 12 	add    QWORD PTR [r12+rcx*1],0x12345678
+     c08:	41 81 04 0c 78 56 34 12 	add    DWORD PTR [r12+rcx*1],0x12345678
+     c10:	49 81 04 14 78 56 34 12 	add    QWORD PTR [r12+rdx*1],0x12345678
+     c18:	41 81 04 14 78 56 34 12 	add    DWORD PTR [r12+rdx*1],0x12345678
+     c20:	49 81 04 1c 78 56 34 12 	add    QWORD PTR [r12+rbx*1],0x12345678
+     c28:	41 81 04 1c 78 56 34 12 	add    DWORD PTR [r12+rbx*1],0x12345678
+     c30:	49 81 04 2c 78 56 34 12 	add    QWORD PTR [r12+rbp*1],0x12345678
+     c38:	41 81 04 2c 78 56 34 12 	add    DWORD PTR [r12+rbp*1],0x12345678
+     c40:	49 81 04 34 78 56 34 12 	add    QWORD PTR [r12+rsi*1],0x12345678
+     c48:	41 81 04 34 78 56 34 12 	add    DWORD PTR [r12+rsi*1],0x12345678
+     c50:	49 81 04 3c 78 56 34 12 	add    QWORD PTR [r12+rdi*1],0x12345678
+     c58:	41 81 04 3c 78 56 34 12 	add    DWORD PTR [r12+rdi*1],0x12345678
+     c60:	4b 81 04 04 78 56 34 12 	add    QWORD PTR [r12+r8*1],0x12345678
+     c68:	43 81 04 04 78 56 34 12 	add    DWORD PTR [r12+r8*1],0x12345678
+     c70:	4b 81 04 0c 78 56 34 12 	add    QWORD PTR [r12+r9*1],0x12345678
+     c78:	43 81 04 0c 78 56 34 12 	add    DWORD PTR [r12+r9*1],0x12345678
+     c80:	4b 81 04 14 78 56 34 12 	add    QWORD PTR [r12+r10*1],0x12345678
+     c88:	43 81 04 14 78 56 34 12 	add    DWORD PTR [r12+r10*1],0x12345678
+     c90:	4b 81 04 1c 78 56 34 12 	add    QWORD PTR [r12+r11*1],0x12345678
+     c98:	43 81 04 1c 78 56 34 12 	add    DWORD PTR [r12+r11*1],0x12345678
+     ca0:	4b 81 04 24 78 56 34 12 	add    QWORD PTR [r12+r12*1],0x12345678
+     ca8:	43 81 04 24 78 56 34 12 	add    DWORD PTR [r12+r12*1],0x12345678
+     cb0:	4b 81 04 2c 78 56 34 12 	add    QWORD PTR [r12+r13*1],0x12345678
+     cb8:	43 81 04 2c 78 56 34 12 	add    DWORD PTR [r12+r13*1],0x12345678
+     cc0:	4b 81 04 34 78 56 34 12 	add    QWORD PTR [r12+r14*1],0x12345678
+     cc8:	43 81 04 34 78 56 34 12 	add    DWORD PTR [r12+r14*1],0x12345678
+     cd0:	4b 81 04 3c 78 56 34 12 	add    QWORD PTR [r12+r15*1],0x12345678
+     cd8:	43 81 04 3c 78 56 34 12 	add    DWORD PTR [r12+r15*1],0x12345678
+     ce0:	49 81 44 25 00 78 56 34 12 	add    QWORD PTR [r13+riz*1+0x0],0x12345678
+     ce9:	41 81 44 25 00 78 56 34 12 	add    DWORD PTR [r13+riz*1+0x0],0x12345678
+     cf2:	49 81 44 05 00 78 56 34 12 	add    QWORD PTR [r13+rax*1+0x0],0x12345678
+     cfb:	41 81 44 05 00 78 56 34 12 	add    DWORD PTR [r13+rax*1+0x0],0x12345678
+     d04:	49 81 44 0d 00 78 56 34 12 	add    QWORD PTR [r13+rcx*1+0x0],0x12345678
+     d0d:	41 81 44 0d 00 78 56 34 12 	add    DWORD PTR [r13+rcx*1+0x0],0x12345678
+     d16:	49 81 44 15 00 78 56 34 12 	add    QWORD PTR [r13+rdx*1+0x0],0x12345678
+     d1f:	41 81 44 15 00 78 56 34 12 	add    DWORD PTR [r13+rdx*1+0x0],0x12345678
+     d28:	49 81 44 1d 00 78 56 34 12 	add    QWORD PTR [r13+rbx*1+0x0],0x12345678
+     d31:	41 81 44 1d 00 78 56 34 12 	add    DWORD PTR [r13+rbx*1+0x0],0x12345678
+     d3a:	49 81 44 2d 00 78 56 34 12 	add    QWORD PTR [r13+rbp*1+0x0],0x12345678
+     d43:	41 81 44 2d 00 78 56 34 12 	add    DWORD PTR [r13+rbp*1+0x0],0x12345678
+     d4c:	49 81 44 35 00 78 56 34 12 	add    QWORD PTR [r13+rsi*1+0x0],0x12345678
+     d55:	41 81 44 35 00 78 56 34 12 	add    DWORD PTR [r13+rsi*1+0x0],0x12345678
+     d5e:	49 81 44 3d 00 78 56 34 12 	add    QWORD PTR [r13+rdi*1+0x0],0x12345678
+     d67:	41 81 44 3d 00 78 56 34 12 	add    DWORD PTR [r13+rdi*1+0x0],0x12345678
+     d70:	4b 81 44 05 00 78 56 34 12 	add    QWORD PTR [r13+r8*1+0x0],0x12345678
+     d79:	43 81 44 05 00 78 56 34 12 	add    DWORD PTR [r13+r8*1+0x0],0x12345678
+     d82:	4b 81 44 0d 00 78 56 34 12 	add    QWORD PTR [r13+r9*1+0x0],0x12345678
+     d8b:	43 81 44 0d 00 78 56 34 12 	add    DWORD PTR [r13+r9*1+0x0],0x12345678
+     d94:	4b 81 44 15 00 78 56 34 12 	add    QWORD PTR [r13+r10*1+0x0],0x12345678
+     d9d:	43 81 44 15 00 78 56 34 12 	add    DWORD PTR [r13+r10*1+0x0],0x12345678
+     da6:	4b 81 44 1d 00 78 56 34 12 	add    QWORD PTR [r13+r11*1+0x0],0x12345678
+     daf:	43 81 44 1d 00 78 56 34 12 	add    DWORD PTR [r13+r11*1+0x0],0x12345678
+     db8:	4b 81 44 25 00 78 56 34 12 	add    QWORD PTR [r13+r12*1+0x0],0x12345678
+     dc1:	43 81 44 25 00 78 56 34 12 	add    DWORD PTR [r13+r12*1+0x0],0x12345678
+     dca:	4b 81 44 2d 00 78 56 34 12 	add    QWORD PTR [r13+r13*1+0x0],0x12345678
+     dd3:	43 81 44 2d 00 78 56 34 12 	add    DWORD PTR [r13+r13*1+0x0],0x12345678
+     ddc:	4b 81 44 35 00 78 56 34 12 	add    QWORD PTR [r13+r14*1+0x0],0x12345678
+     de5:	43 81 44 35 00 78 56 34 12 	add    DWORD PTR [r13+r14*1+0x0],0x12345678
+     dee:	4b 81 44 3d 00 78 56 34 12 	add    QWORD PTR [r13+r15*1+0x0],0x12345678
+     df7:	43 81 44 3d 00 78 56 34 12 	add    DWORD PTR [r13+r15*1+0x0],0x12345678
+     e00:	49 81 04 26 78 56 34 12 	add    QWORD PTR [r14+riz*1],0x12345678
+     e08:	41 81 04 26 78 56 34 12 	add    DWORD PTR [r14+riz*1],0x12345678
+     e10:	49 81 04 06 78 56 34 12 	add    QWORD PTR [r14+rax*1],0x12345678
+     e18:	41 81 04 06 78 56 34 12 	add    DWORD PTR [r14+rax*1],0x12345678
+     e20:	49 81 04 0e 78 56 34 12 	add    QWORD PTR [r14+rcx*1],0x12345678
+     e28:	41 81 04 0e 78 56 34 12 	add    DWORD PTR [r14+rcx*1],0x12345678
+     e30:	49 81 04 16 78 56 34 12 	add    QWORD PTR [r14+rdx*1],0x12345678
+     e38:	41 81 04 16 78 56 34 12 	add    DWORD PTR [r14+rdx*1],0x12345678
+     e40:	49 81 04 1e 78 56 34 12 	add    QWORD PTR [r14+rbx*1],0x12345678
+     e48:	41 81 04 1e 78 56 34 12 	add    DWORD PTR [r14+rbx*1],0x12345678
+     e50:	49 81 04 2e 78 56 34 12 	add    QWORD PTR [r14+rbp*1],0x12345678
+     e58:	41 81 04 2e 78 56 34 12 	add    DWORD PTR [r14+rbp*1],0x12345678
+     e60:	49 81 04 36 78 56 34 12 	add    QWORD PTR [r14+rsi*1],0x12345678
+     e68:	41 81 04 36 78 56 34 12 	add    DWORD PTR [r14+rsi*1],0x12345678
+     e70:	49 81 04 3e 78 56 34 12 	add    QWORD PTR [r14+rdi*1],0x12345678
+     e78:	41 81 04 3e 78 56 34 12 	add    DWORD PTR [r14+rdi*1],0x12345678
+     e80:	4b 81 04 06 78 56 34 12 	add    QWORD PTR [r14+r8*1],0x12345678
+     e88:	43 81 04 06 78 56 34 12 	add    DWORD PTR [r14+r8*1],0x12345678
+     e90:	4b 81 04 0e 78 56 34 12 	add    QWORD PTR [r14+r9*1],0x12345678
+     e98:	43 81 04 0e 78 56 34 12 	add    DWORD PTR [r14+r9*1],0x12345678
+     ea0:	4b 81 04 16 78 56 34 12 	add    QWORD PTR [r14+r10*1],0x12345678
+     ea8:	43 81 04 16 78 56 34 12 	add    DWORD PTR [r14+r10*1],0x12345678
+     eb0:	4b 81 04 1e 78 56 34 12 	add    QWORD PTR [r14+r11*1],0x12345678
+     eb8:	43 81 04 1e 78 56 34 12 	add    DWORD PTR [r14+r11*1],0x12345678
+     ec0:	4b 81 04 26 78 56 34 12 	add    QWORD PTR [r14+r12*1],0x12345678
+     ec8:	43 81 04 26 78 56 34 12 	add    DWORD PTR [r14+r12*1],0x12345678
+     ed0:	4b 81 04 2e 78 56 34 12 	add    QWORD PTR [r14+r13*1],0x12345678
+     ed8:	43 81 04 2e 78 56 34 12 	add    DWORD PTR [r14+r13*1],0x12345678
+     ee0:	4b 81 04 36 78 56 34 12 	add    QWORD PTR [r14+r14*1],0x12345678
+     ee8:	43 81 04 36 78 56 34 12 	add    DWORD PTR [r14+r14*1],0x12345678
+     ef0:	4b 81 04 3e 78 56 34 12 	add    QWORD PTR [r14+r15*1],0x12345678
+     ef8:	43 81 04 3e 78 56 34 12 	add    DWORD PTR [r14+r15*1],0x12345678
+     f00:	49 81 04 27 78 56 34 12 	add    QWORD PTR [r15+riz*1],0x12345678
+     f08:	41 81 04 27 78 56 34 12 	add    DWORD PTR [r15+riz*1],0x12345678
+     f10:	49 81 04 07 78 56 34 12 	add    QWORD PTR [r15+rax*1],0x12345678
+     f18:	41 81 04 07 78 56 34 12 	add    DWORD PTR [r15+rax*1],0x12345678
+     f20:	49 81 04 0f 78 56 34 12 	add    QWORD PTR [r15+rcx*1],0x12345678
+     f28:	41 81 04 0f 78 56 34 12 	add    DWORD PTR [r15+rcx*1],0x12345678
+     f30:	49 81 04 17 78 56 34 12 	add    QWORD PTR [r15+rdx*1],0x12345678
+     f38:	41 81 04 17 78 56 34 12 	add    DWORD PTR [r15+rdx*1],0x12345678
+     f40:	49 81 04 1f 78 56 34 12 	add    QWORD PTR [r15+rbx*1],0x12345678
+     f48:	41 81 04 1f 78 56 34 12 	add    DWORD PTR [r15+rbx*1],0x12345678
+     f50:	49 81 04 2f 78 56 34 12 	add    QWORD PTR [r15+rbp*1],0x12345678
+     f58:	41 81 04 2f 78 56 34 12 	add    DWORD PTR [r15+rbp*1],0x12345678
+     f60:	49 81 04 37 78 56 34 12 	add    QWORD PTR [r15+rsi*1],0x12345678
+     f68:	41 81 04 37 78 56 34 12 	add    DWORD PTR [r15+rsi*1],0x12345678
+     f70:	49 81 04 3f 78 56 34 12 	add    QWORD PTR [r15+rdi*1],0x12345678
+     f78:	41 81 04 3f 78 56 34 12 	add    DWORD PTR [r15+rdi*1],0x12345678
+     f80:	4b 81 04 07 78 56 34 12 	add    QWORD PTR [r15+r8*1],0x12345678
+     f88:	43 81 04 07 78 56 34 12 	add    DWORD PTR [r15+r8*1],0x12345678
+     f90:	4b 81 04 0f 78 56 34 12 	add    QWORD PTR [r15+r9*1],0x12345678
+     f98:	43 81 04 0f 78 56 34 12 	add    DWORD PTR [r15+r9*1],0x12345678
+     fa0:	4b 81 04 17 78 56 34 12 	add    QWORD PTR [r15+r10*1],0x12345678
+     fa8:	43 81 04 17 78 56 34 12 	add    DWORD PTR [r15+r10*1],0x12345678
+     fb0:	4b 81 04 1f 78 56 34 12 	add    QWORD PTR [r15+r11*1],0x12345678
+     fb8:	43 81 04 1f 78 56 34 12 	add    DWORD PTR [r15+r11*1],0x12345678
+     fc0:	4b 81 04 27 78 56 34 12 	add    QWORD PTR [r15+r12*1],0x12345678
+     fc8:	43 81 04 27 78 56 34 12 	add    DWORD PTR [r15+r12*1],0x12345678
+     fd0:	4b 81 04 2f 78 56 34 12 	add    QWORD PTR [r15+r13*1],0x12345678
+     fd8:	43 81 04 2f 78 56 34 12 	add    DWORD PTR [r15+r13*1],0x12345678
+     fe0:	4b 81 04 37 78 56 34 12 	add    QWORD PTR [r15+r14*1],0x12345678
+     fe8:	43 81 04 37 78 56 34 12 	add    DWORD PTR [r15+r14*1],0x12345678
+     ff0:	4b 81 04 3f 78 56 34 12 	add    QWORD PTR [r15+r15*1],0x12345678
+     ff8:	43 81 04 3f 78 56 34 12 	add    DWORD PTR [r15+r15*1],0x12345678

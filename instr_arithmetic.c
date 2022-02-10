@@ -29,6 +29,15 @@
 #define OR_RM8 0x0A
 
 static u8
+mi_opcode(X64_Arithmetic_Instr instr, int reg_bitsize, int imm_bitsize)
+{
+    u8 opcode = 0x80; // imm8
+    if(reg_bitsize > 8) opcode += 1;    // 0x81
+    if(imm_bitsize == 8 && reg_bitsize > 8) opcode += 2;   // 0x83
+    return opcode;
+}
+
+static u8
 mr_opcode(X64_Arithmetic_Instr instr, int bitsize)
 {
     u8 opcode = 0;
@@ -159,8 +168,10 @@ emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr inst
     assert(value_bitsize(imm_value) <= form.target_bit_size && value_bitsize(imm_value) < 64);
 
     // In case is RAX, EAX, AX or AL optimize it by generating a shorter instruction
-    if(form.mode == DIRECT && (form.target == RAX || form.target == EAX || form.target == AX || form.target == AL) &&
-        value_bitsize(imm_value) <= form.target_bit_size)   
+    if(form.mode == DIRECT && 
+        ((form.target == RAX || form.target == EAX) && value_bitsize(imm_value) >= 16) || 
+        (form.target == AX && value_bitsize(imm_value) <= 16) || 
+        (form.target == AL) && value_bitsize(imm_value) == 8)
     {
         return emit_arith_mi_a(out_info, stream, instr_digit, form.target, imm_value);
     }
@@ -169,25 +180,25 @@ emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr inst
     s8 imm_offset = 0;
     s8 disp_offset = 0;
 
-    u8 opcode = ADD_IMM;
-    if(value_bitsize(imm_value) == 8)
-        opcode = (form.target_bit_size == 8) ? ADD_IMM8 : ADDS_IMM8;
-    
+    u8 opcode = mi_opcode(instr_digit, form.target_bit_size, value_bitsize(imm_value));    
     if(form.sib_mode == MODE_NONE)
     {
-        stream = emit_opcode(stream, opcode, form.target_bit_size, form.target, form.target);
+        stream = emit_opcode_mi(stream, opcode, form.target_bit_size, form.target, form.source);
         *stream++ = make_modrm(form.mode, instr_digit, register_representation(form.target));
     }
     else
     {
         // has sib byte
-        stream = emit_opcode(stream, opcode, form.target_bit_size, form.sib_base, form.sib_index);
+        stream = emit_opcode_mi(stream, opcode, form.target_bit_size, form.sib_base, form.sib_index);
         *stream++ = make_modrm(form.mode, instr_digit, register_representation(RSP));
         *stream++ = make_sib((u8)form.sib_mode, register_representation(form.sib_index), register_representation(form.sib_base));
     }
 
     disp_offset = stream - start;
-    stream = emit_displacement((register_representation(form.target) == RBP) ? INDIRECT_DWORD_DISPLACED : form.mode, stream, form.disp8, form.disp32);
+    if(form.mode == INDIRECT)
+        stream = emit_displacement((register_representation(form.target) == RBP) ? INDIRECT_DWORD_DISPLACED : form.mode, stream, form.disp8, form.disp32);
+    else
+        stream = emit_displacement(form.mode, stream, form.disp8, form.disp32);
     if((stream - start) == disp_offset) disp_offset = -1;
 
     imm_offset = stream - start;
