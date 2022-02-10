@@ -373,7 +373,7 @@ emit_rm_test(u8* stream)
 #endif
 
     // Indirect
-#if TEST_MR_INDIRECT_64
+#if TEST_RM_INDIRECT_64
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -382,7 +382,7 @@ emit_rm_test(u8* stream)
         }
     }
 #endif
-#if TEST_MR_INDIRECT_32
+#if TEST_RM_INDIRECT_32
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
@@ -391,7 +391,7 @@ emit_rm_test(u8* stream)
         }
     }
 #endif
-#if TEST_MR_INDIRECT_16
+#if TEST_RM_INDIRECT_16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
@@ -400,7 +400,7 @@ emit_rm_test(u8* stream)
         }
     }
 #endif
-#if TEST_MR_INDIRECT_8
+#if TEST_RM_INDIRECT_8
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = AL; j <= DIL; ++j)

@@ -1,0 +1,1175 @@
+
+test.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00000000 <.data>:
+   0:	48 01 c0             	add    rax,rax
+   3:	48 01 c8             	add    rax,rcx
+   6:	48 01 d0             	add    rax,rdx
+   9:	48 01 d8             	add    rax,rbx
+   c:	48 01 e0             	add    rax,rsp
+   f:	48 01 e8             	add    rax,rbp
+  12:	48 01 f0             	add    rax,rsi
+  15:	48 01 f8             	add    rax,rdi
+  18:	4c 01 c0             	add    rax,r8
+  1b:	4c 01 c8             	add    rax,r9
+  1e:	4c 01 d0             	add    rax,r10
+  21:	4c 01 d8             	add    rax,r11
+  24:	4c 01 e0             	add    rax,r12
+  27:	4c 01 e8             	add    rax,r13
+  2a:	4c 01 f0             	add    rax,r14
+  2d:	4c 01 f8             	add    rax,r15
+  30:	48 01 c1             	add    rcx,rax
+  33:	48 01 c9             	add    rcx,rcx
+  36:	48 01 d1             	add    rcx,rdx
+  39:	48 01 d9             	add    rcx,rbx
+  3c:	48 01 e1             	add    rcx,rsp
+  3f:	48 01 e9             	add    rcx,rbp
+  42:	48 01 f1             	add    rcx,rsi
+  45:	48 01 f9             	add    rcx,rdi
+  48:	4c 01 c1             	add    rcx,r8
+  4b:	4c 01 c9             	add    rcx,r9
+  4e:	4c 01 d1             	add    rcx,r10
+  51:	4c 01 d9             	add    rcx,r11
+  54:	4c 01 e1             	add    rcx,r12
+  57:	4c 01 e9             	add    rcx,r13
+  5a:	4c 01 f1             	add    rcx,r14
+  5d:	4c 01 f9             	add    rcx,r15
+  60:	48 01 c2             	add    rdx,rax
+  63:	48 01 ca             	add    rdx,rcx
+  66:	48 01 d2             	add    rdx,rdx
+  69:	48 01 da             	add    rdx,rbx
+  6c:	48 01 e2             	add    rdx,rsp
+  6f:	48 01 ea             	add    rdx,rbp
+  72:	48 01 f2             	add    rdx,rsi
+  75:	48 01 fa             	add    rdx,rdi
+  78:	4c 01 c2             	add    rdx,r8
+  7b:	4c 01 ca             	add    rdx,r9
+  7e:	4c 01 d2             	add    rdx,r10
+  81:	4c 01 da             	add    rdx,r11
+  84:	4c 01 e2             	add    rdx,r12
+  87:	4c 01 ea             	add    rdx,r13
+  8a:	4c 01 f2             	add    rdx,r14
+  8d:	4c 01 fa             	add    rdx,r15
+  90:	48 01 c3             	add    rbx,rax
+  93:	48 01 cb             	add    rbx,rcx
+  96:	48 01 d3             	add    rbx,rdx
+  99:	48 01 db             	add    rbx,rbx
+  9c:	48 01 e3             	add    rbx,rsp
+  9f:	48 01 eb             	add    rbx,rbp
+  a2:	48 01 f3             	add    rbx,rsi
+  a5:	48 01 fb             	add    rbx,rdi
+  a8:	4c 01 c3             	add    rbx,r8
+  ab:	4c 01 cb             	add    rbx,r9
+  ae:	4c 01 d3             	add    rbx,r10
+  b1:	4c 01 db             	add    rbx,r11
+  b4:	4c 01 e3             	add    rbx,r12
+  b7:	4c 01 eb             	add    rbx,r13
+  ba:	4c 01 f3             	add    rbx,r14
+  bd:	4c 01 fb             	add    rbx,r15
+  c0:	48 01 c4             	add    rsp,rax
+  c3:	48 01 cc             	add    rsp,rcx
+  c6:	48 01 d4             	add    rsp,rdx
+  c9:	48 01 dc             	add    rsp,rbx
+  cc:	48 01 e4             	add    rsp,rsp
+  cf:	48 01 ec             	add    rsp,rbp
+  d2:	48 01 f4             	add    rsp,rsi
+  d5:	48 01 fc             	add    rsp,rdi
+  d8:	4c 01 c4             	add    rsp,r8
+  db:	4c 01 cc             	add    rsp,r9
+  de:	4c 01 d4             	add    rsp,r10
+  e1:	4c 01 dc             	add    rsp,r11
+  e4:	4c 01 e4             	add    rsp,r12
+  e7:	4c 01 ec             	add    rsp,r13
+  ea:	4c 01 f4             	add    rsp,r14
+  ed:	4c 01 fc             	add    rsp,r15
+  f0:	48 01 c5             	add    rbp,rax
+  f3:	48 01 cd             	add    rbp,rcx
+  f6:	48 01 d5             	add    rbp,rdx
+  f9:	48 01 dd             	add    rbp,rbx
+  fc:	48 01 e5             	add    rbp,rsp
+  ff:	48 01 ed             	add    rbp,rbp
+ 102:	48 01 f5             	add    rbp,rsi
+ 105:	48 01 fd             	add    rbp,rdi
+ 108:	4c 01 c5             	add    rbp,r8
+ 10b:	4c 01 cd             	add    rbp,r9
+ 10e:	4c 01 d5             	add    rbp,r10
+ 111:	4c 01 dd             	add    rbp,r11
+ 114:	4c 01 e5             	add    rbp,r12
+ 117:	4c 01 ed             	add    rbp,r13
+ 11a:	4c 01 f5             	add    rbp,r14
+ 11d:	4c 01 fd             	add    rbp,r15
+ 120:	48 01 c6             	add    rsi,rax
+ 123:	48 01 ce             	add    rsi,rcx
+ 126:	48 01 d6             	add    rsi,rdx
+ 129:	48 01 de             	add    rsi,rbx
+ 12c:	48 01 e6             	add    rsi,rsp
+ 12f:	48 01 ee             	add    rsi,rbp
+ 132:	48 01 f6             	add    rsi,rsi
+ 135:	48 01 fe             	add    rsi,rdi
+ 138:	4c 01 c6             	add    rsi,r8
+ 13b:	4c 01 ce             	add    rsi,r9
+ 13e:	4c 01 d6             	add    rsi,r10
+ 141:	4c 01 de             	add    rsi,r11
+ 144:	4c 01 e6             	add    rsi,r12
+ 147:	4c 01 ee             	add    rsi,r13
+ 14a:	4c 01 f6             	add    rsi,r14
+ 14d:	4c 01 fe             	add    rsi,r15
+ 150:	48 01 c7             	add    rdi,rax
+ 153:	48 01 cf             	add    rdi,rcx
+ 156:	48 01 d7             	add    rdi,rdx
+ 159:	48 01 df             	add    rdi,rbx
+ 15c:	48 01 e7             	add    rdi,rsp
+ 15f:	48 01 ef             	add    rdi,rbp
+ 162:	48 01 f7             	add    rdi,rsi
+ 165:	48 01 ff             	add    rdi,rdi
+ 168:	4c 01 c7             	add    rdi,r8
+ 16b:	4c 01 cf             	add    rdi,r9
+ 16e:	4c 01 d7             	add    rdi,r10
+ 171:	4c 01 df             	add    rdi,r11
+ 174:	4c 01 e7             	add    rdi,r12
+ 177:	4c 01 ef             	add    rdi,r13
+ 17a:	4c 01 f7             	add    rdi,r14
+ 17d:	4c 01 ff             	add    rdi,r15
+ 180:	49 01 c0             	add    r8,rax
+ 183:	49 01 c8             	add    r8,rcx
+ 186:	49 01 d0             	add    r8,rdx
+ 189:	49 01 d8             	add    r8,rbx
+ 18c:	49 01 e0             	add    r8,rsp
+ 18f:	49 01 e8             	add    r8,rbp
+ 192:	49 01 f0             	add    r8,rsi
+ 195:	49 01 f8             	add    r8,rdi
+ 198:	4d 01 c0             	add    r8,r8
+ 19b:	4d 01 c8             	add    r8,r9
+ 19e:	4d 01 d0             	add    r8,r10
+ 1a1:	4d 01 d8             	add    r8,r11
+ 1a4:	4d 01 e0             	add    r8,r12
+ 1a7:	4d 01 e8             	add    r8,r13
+ 1aa:	4d 01 f0             	add    r8,r14
+ 1ad:	4d 01 f8             	add    r8,r15
+ 1b0:	49 01 c1             	add    r9,rax
+ 1b3:	49 01 c9             	add    r9,rcx
+ 1b6:	49 01 d1             	add    r9,rdx
+ 1b9:	49 01 d9             	add    r9,rbx
+ 1bc:	49 01 e1             	add    r9,rsp
+ 1bf:	49 01 e9             	add    r9,rbp
+ 1c2:	49 01 f1             	add    r9,rsi
+ 1c5:	49 01 f9             	add    r9,rdi
+ 1c8:	4d 01 c1             	add    r9,r8
+ 1cb:	4d 01 c9             	add    r9,r9
+ 1ce:	4d 01 d1             	add    r9,r10
+ 1d1:	4d 01 d9             	add    r9,r11
+ 1d4:	4d 01 e1             	add    r9,r12
+ 1d7:	4d 01 e9             	add    r9,r13
+ 1da:	4d 01 f1             	add    r9,r14
+ 1dd:	4d 01 f9             	add    r9,r15
+ 1e0:	49 01 c2             	add    r10,rax
+ 1e3:	49 01 ca             	add    r10,rcx
+ 1e6:	49 01 d2             	add    r10,rdx
+ 1e9:	49 01 da             	add    r10,rbx
+ 1ec:	49 01 e2             	add    r10,rsp
+ 1ef:	49 01 ea             	add    r10,rbp
+ 1f2:	49 01 f2             	add    r10,rsi
+ 1f5:	49 01 fa             	add    r10,rdi
+ 1f8:	4d 01 c2             	add    r10,r8
+ 1fb:	4d 01 ca             	add    r10,r9
+ 1fe:	4d 01 d2             	add    r10,r10
+ 201:	4d 01 da             	add    r10,r11
+ 204:	4d 01 e2             	add    r10,r12
+ 207:	4d 01 ea             	add    r10,r13
+ 20a:	4d 01 f2             	add    r10,r14
+ 20d:	4d 01 fa             	add    r10,r15
+ 210:	49 01 c3             	add    r11,rax
+ 213:	49 01 cb             	add    r11,rcx
+ 216:	49 01 d3             	add    r11,rdx
+ 219:	49 01 db             	add    r11,rbx
+ 21c:	49 01 e3             	add    r11,rsp
+ 21f:	49 01 eb             	add    r11,rbp
+ 222:	49 01 f3             	add    r11,rsi
+ 225:	49 01 fb             	add    r11,rdi
+ 228:	4d 01 c3             	add    r11,r8
+ 22b:	4d 01 cb             	add    r11,r9
+ 22e:	4d 01 d3             	add    r11,r10
+ 231:	4d 01 db             	add    r11,r11
+ 234:	4d 01 e3             	add    r11,r12
+ 237:	4d 01 eb             	add    r11,r13
+ 23a:	4d 01 f3             	add    r11,r14
+ 23d:	4d 01 fb             	add    r11,r15
+ 240:	49 01 c4             	add    r12,rax
+ 243:	49 01 cc             	add    r12,rcx
+ 246:	49 01 d4             	add    r12,rdx
+ 249:	49 01 dc             	add    r12,rbx
+ 24c:	49 01 e4             	add    r12,rsp
+ 24f:	49 01 ec             	add    r12,rbp
+ 252:	49 01 f4             	add    r12,rsi
+ 255:	49 01 fc             	add    r12,rdi
+ 258:	4d 01 c4             	add    r12,r8
+ 25b:	4d 01 cc             	add    r12,r9
+ 25e:	4d 01 d4             	add    r12,r10
+ 261:	4d 01 dc             	add    r12,r11
+ 264:	4d 01 e4             	add    r12,r12
+ 267:	4d 01 ec             	add    r12,r13
+ 26a:	4d 01 f4             	add    r12,r14
+ 26d:	4d 01 fc             	add    r12,r15
+ 270:	49 01 c5             	add    r13,rax
+ 273:	49 01 cd             	add    r13,rcx
+ 276:	49 01 d5             	add    r13,rdx
+ 279:	49 01 dd             	add    r13,rbx
+ 27c:	49 01 e5             	add    r13,rsp
+ 27f:	49 01 ed             	add    r13,rbp
+ 282:	49 01 f5             	add    r13,rsi
+ 285:	49 01 fd             	add    r13,rdi
+ 288:	4d 01 c5             	add    r13,r8
+ 28b:	4d 01 cd             	add    r13,r9
+ 28e:	4d 01 d5             	add    r13,r10
+ 291:	4d 01 dd             	add    r13,r11
+ 294:	4d 01 e5             	add    r13,r12
+ 297:	4d 01 ed             	add    r13,r13
+ 29a:	4d 01 f5             	add    r13,r14
+ 29d:	4d 01 fd             	add    r13,r15
+ 2a0:	49 01 c6             	add    r14,rax
+ 2a3:	49 01 ce             	add    r14,rcx
+ 2a6:	49 01 d6             	add    r14,rdx
+ 2a9:	49 01 de             	add    r14,rbx
+ 2ac:	49 01 e6             	add    r14,rsp
+ 2af:	49 01 ee             	add    r14,rbp
+ 2b2:	49 01 f6             	add    r14,rsi
+ 2b5:	49 01 fe             	add    r14,rdi
+ 2b8:	4d 01 c6             	add    r14,r8
+ 2bb:	4d 01 ce             	add    r14,r9
+ 2be:	4d 01 d6             	add    r14,r10
+ 2c1:	4d 01 de             	add    r14,r11
+ 2c4:	4d 01 e6             	add    r14,r12
+ 2c7:	4d 01 ee             	add    r14,r13
+ 2ca:	4d 01 f6             	add    r14,r14
+ 2cd:	4d 01 fe             	add    r14,r15
+ 2d0:	49 01 c7             	add    r15,rax
+ 2d3:	49 01 cf             	add    r15,rcx
+ 2d6:	49 01 d7             	add    r15,rdx
+ 2d9:	49 01 df             	add    r15,rbx
+ 2dc:	49 01 e7             	add    r15,rsp
+ 2df:	49 01 ef             	add    r15,rbp
+ 2e2:	49 01 f7             	add    r15,rsi
+ 2e5:	49 01 ff             	add    r15,rdi
+ 2e8:	4d 01 c7             	add    r15,r8
+ 2eb:	4d 01 cf             	add    r15,r9
+ 2ee:	4d 01 d7             	add    r15,r10
+ 2f1:	4d 01 df             	add    r15,r11
+ 2f4:	4d 01 e7             	add    r15,r12
+ 2f7:	4d 01 ef             	add    r15,r13
+ 2fa:	4d 01 f7             	add    r15,r14
+ 2fd:	4d 01 ff             	add    r15,r15
+ 300:	01 c0                	add    eax,eax
+ 302:	01 c8                	add    eax,ecx
+ 304:	01 d0                	add    eax,edx
+ 306:	01 d8                	add    eax,ebx
+ 308:	01 e0                	add    eax,esp
+ 30a:	01 e8                	add    eax,ebp
+ 30c:	01 f0                	add    eax,esi
+ 30e:	01 f8                	add    eax,edi
+ 310:	44 01 c0             	add    eax,r8d
+ 313:	44 01 c8             	add    eax,r9d
+ 316:	44 01 d0             	add    eax,r10d
+ 319:	44 01 d8             	add    eax,r11d
+ 31c:	44 01 e0             	add    eax,r12d
+ 31f:	44 01 e8             	add    eax,r13d
+ 322:	44 01 f0             	add    eax,r14d
+ 325:	44 01 f8             	add    eax,r15d
+ 328:	01 c1                	add    ecx,eax
+ 32a:	01 c9                	add    ecx,ecx
+ 32c:	01 d1                	add    ecx,edx
+ 32e:	01 d9                	add    ecx,ebx
+ 330:	01 e1                	add    ecx,esp
+ 332:	01 e9                	add    ecx,ebp
+ 334:	01 f1                	add    ecx,esi
+ 336:	01 f9                	add    ecx,edi
+ 338:	44 01 c1             	add    ecx,r8d
+ 33b:	44 01 c9             	add    ecx,r9d
+ 33e:	44 01 d1             	add    ecx,r10d
+ 341:	44 01 d9             	add    ecx,r11d
+ 344:	44 01 e1             	add    ecx,r12d
+ 347:	44 01 e9             	add    ecx,r13d
+ 34a:	44 01 f1             	add    ecx,r14d
+ 34d:	44 01 f9             	add    ecx,r15d
+ 350:	01 c2                	add    edx,eax
+ 352:	01 ca                	add    edx,ecx
+ 354:	01 d2                	add    edx,edx
+ 356:	01 da                	add    edx,ebx
+ 358:	01 e2                	add    edx,esp
+ 35a:	01 ea                	add    edx,ebp
+ 35c:	01 f2                	add    edx,esi
+ 35e:	01 fa                	add    edx,edi
+ 360:	44 01 c2             	add    edx,r8d
+ 363:	44 01 ca             	add    edx,r9d
+ 366:	44 01 d2             	add    edx,r10d
+ 369:	44 01 da             	add    edx,r11d
+ 36c:	44 01 e2             	add    edx,r12d
+ 36f:	44 01 ea             	add    edx,r13d
+ 372:	44 01 f2             	add    edx,r14d
+ 375:	44 01 fa             	add    edx,r15d
+ 378:	01 c3                	add    ebx,eax
+ 37a:	01 cb                	add    ebx,ecx
+ 37c:	01 d3                	add    ebx,edx
+ 37e:	01 db                	add    ebx,ebx
+ 380:	01 e3                	add    ebx,esp
+ 382:	01 eb                	add    ebx,ebp
+ 384:	01 f3                	add    ebx,esi
+ 386:	01 fb                	add    ebx,edi
+ 388:	44 01 c3             	add    ebx,r8d
+ 38b:	44 01 cb             	add    ebx,r9d
+ 38e:	44 01 d3             	add    ebx,r10d
+ 391:	44 01 db             	add    ebx,r11d
+ 394:	44 01 e3             	add    ebx,r12d
+ 397:	44 01 eb             	add    ebx,r13d
+ 39a:	44 01 f3             	add    ebx,r14d
+ 39d:	44 01 fb             	add    ebx,r15d
+ 3a0:	01 c4                	add    esp,eax
+ 3a2:	01 cc                	add    esp,ecx
+ 3a4:	01 d4                	add    esp,edx
+ 3a6:	01 dc                	add    esp,ebx
+ 3a8:	01 e4                	add    esp,esp
+ 3aa:	01 ec                	add    esp,ebp
+ 3ac:	01 f4                	add    esp,esi
+ 3ae:	01 fc                	add    esp,edi
+ 3b0:	44 01 c4             	add    esp,r8d
+ 3b3:	44 01 cc             	add    esp,r9d
+ 3b6:	44 01 d4             	add    esp,r10d
+ 3b9:	44 01 dc             	add    esp,r11d
+ 3bc:	44 01 e4             	add    esp,r12d
+ 3bf:	44 01 ec             	add    esp,r13d
+ 3c2:	44 01 f4             	add    esp,r14d
+ 3c5:	44 01 fc             	add    esp,r15d
+ 3c8:	01 c5                	add    ebp,eax
+ 3ca:	01 cd                	add    ebp,ecx
+ 3cc:	01 d5                	add    ebp,edx
+ 3ce:	01 dd                	add    ebp,ebx
+ 3d0:	01 e5                	add    ebp,esp
+ 3d2:	01 ed                	add    ebp,ebp
+ 3d4:	01 f5                	add    ebp,esi
+ 3d6:	01 fd                	add    ebp,edi
+ 3d8:	44 01 c5             	add    ebp,r8d
+ 3db:	44 01 cd             	add    ebp,r9d
+ 3de:	44 01 d5             	add    ebp,r10d
+ 3e1:	44 01 dd             	add    ebp,r11d
+ 3e4:	44 01 e5             	add    ebp,r12d
+ 3e7:	44 01 ed             	add    ebp,r13d
+ 3ea:	44 01 f5             	add    ebp,r14d
+ 3ed:	44 01 fd             	add    ebp,r15d
+ 3f0:	01 c6                	add    esi,eax
+ 3f2:	01 ce                	add    esi,ecx
+ 3f4:	01 d6                	add    esi,edx
+ 3f6:	01 de                	add    esi,ebx
+ 3f8:	01 e6                	add    esi,esp
+ 3fa:	01 ee                	add    esi,ebp
+ 3fc:	01 f6                	add    esi,esi
+ 3fe:	01 fe                	add    esi,edi
+ 400:	44 01 c6             	add    esi,r8d
+ 403:	44 01 ce             	add    esi,r9d
+ 406:	44 01 d6             	add    esi,r10d
+ 409:	44 01 de             	add    esi,r11d
+ 40c:	44 01 e6             	add    esi,r12d
+ 40f:	44 01 ee             	add    esi,r13d
+ 412:	44 01 f6             	add    esi,r14d
+ 415:	44 01 fe             	add    esi,r15d
+ 418:	01 c7                	add    edi,eax
+ 41a:	01 cf                	add    edi,ecx
+ 41c:	01 d7                	add    edi,edx
+ 41e:	01 df                	add    edi,ebx
+ 420:	01 e7                	add    edi,esp
+ 422:	01 ef                	add    edi,ebp
+ 424:	01 f7                	add    edi,esi
+ 426:	01 ff                	add    edi,edi
+ 428:	44 01 c7             	add    edi,r8d
+ 42b:	44 01 cf             	add    edi,r9d
+ 42e:	44 01 d7             	add    edi,r10d
+ 431:	44 01 df             	add    edi,r11d
+ 434:	44 01 e7             	add    edi,r12d
+ 437:	44 01 ef             	add    edi,r13d
+ 43a:	44 01 f7             	add    edi,r14d
+ 43d:	44 01 ff             	add    edi,r15d
+ 440:	41 01 c0             	add    r8d,eax
+ 443:	41 01 c8             	add    r8d,ecx
+ 446:	41 01 d0             	add    r8d,edx
+ 449:	41 01 d8             	add    r8d,ebx
+ 44c:	41 01 e0             	add    r8d,esp
+ 44f:	41 01 e8             	add    r8d,ebp
+ 452:	41 01 f0             	add    r8d,esi
+ 455:	41 01 f8             	add    r8d,edi
+ 458:	45 01 c0             	add    r8d,r8d
+ 45b:	45 01 c8             	add    r8d,r9d
+ 45e:	45 01 d0             	add    r8d,r10d
+ 461:	45 01 d8             	add    r8d,r11d
+ 464:	45 01 e0             	add    r8d,r12d
+ 467:	45 01 e8             	add    r8d,r13d
+ 46a:	45 01 f0             	add    r8d,r14d
+ 46d:	45 01 f8             	add    r8d,r15d
+ 470:	41 01 c1             	add    r9d,eax
+ 473:	41 01 c9             	add    r9d,ecx
+ 476:	41 01 d1             	add    r9d,edx
+ 479:	41 01 d9             	add    r9d,ebx
+ 47c:	41 01 e1             	add    r9d,esp
+ 47f:	41 01 e9             	add    r9d,ebp
+ 482:	41 01 f1             	add    r9d,esi
+ 485:	41 01 f9             	add    r9d,edi
+ 488:	45 01 c1             	add    r9d,r8d
+ 48b:	45 01 c9             	add    r9d,r9d
+ 48e:	45 01 d1             	add    r9d,r10d
+ 491:	45 01 d9             	add    r9d,r11d
+ 494:	45 01 e1             	add    r9d,r12d
+ 497:	45 01 e9             	add    r9d,r13d
+ 49a:	45 01 f1             	add    r9d,r14d
+ 49d:	45 01 f9             	add    r9d,r15d
+ 4a0:	41 01 c2             	add    r10d,eax
+ 4a3:	41 01 ca             	add    r10d,ecx
+ 4a6:	41 01 d2             	add    r10d,edx
+ 4a9:	41 01 da             	add    r10d,ebx
+ 4ac:	41 01 e2             	add    r10d,esp
+ 4af:	41 01 ea             	add    r10d,ebp
+ 4b2:	41 01 f2             	add    r10d,esi
+ 4b5:	41 01 fa             	add    r10d,edi
+ 4b8:	45 01 c2             	add    r10d,r8d
+ 4bb:	45 01 ca             	add    r10d,r9d
+ 4be:	45 01 d2             	add    r10d,r10d
+ 4c1:	45 01 da             	add    r10d,r11d
+ 4c4:	45 01 e2             	add    r10d,r12d
+ 4c7:	45 01 ea             	add    r10d,r13d
+ 4ca:	45 01 f2             	add    r10d,r14d
+ 4cd:	45 01 fa             	add    r10d,r15d
+ 4d0:	41 01 c3             	add    r11d,eax
+ 4d3:	41 01 cb             	add    r11d,ecx
+ 4d6:	41 01 d3             	add    r11d,edx
+ 4d9:	41 01 db             	add    r11d,ebx
+ 4dc:	41 01 e3             	add    r11d,esp
+ 4df:	41 01 eb             	add    r11d,ebp
+ 4e2:	41 01 f3             	add    r11d,esi
+ 4e5:	41 01 fb             	add    r11d,edi
+ 4e8:	45 01 c3             	add    r11d,r8d
+ 4eb:	45 01 cb             	add    r11d,r9d
+ 4ee:	45 01 d3             	add    r11d,r10d
+ 4f1:	45 01 db             	add    r11d,r11d
+ 4f4:	45 01 e3             	add    r11d,r12d
+ 4f7:	45 01 eb             	add    r11d,r13d
+ 4fa:	45 01 f3             	add    r11d,r14d
+ 4fd:	45 01 fb             	add    r11d,r15d
+ 500:	41 01 c4             	add    r12d,eax
+ 503:	41 01 cc             	add    r12d,ecx
+ 506:	41 01 d4             	add    r12d,edx
+ 509:	41 01 dc             	add    r12d,ebx
+ 50c:	41 01 e4             	add    r12d,esp
+ 50f:	41 01 ec             	add    r12d,ebp
+ 512:	41 01 f4             	add    r12d,esi
+ 515:	41 01 fc             	add    r12d,edi
+ 518:	45 01 c4             	add    r12d,r8d
+ 51b:	45 01 cc             	add    r12d,r9d
+ 51e:	45 01 d4             	add    r12d,r10d
+ 521:	45 01 dc             	add    r12d,r11d
+ 524:	45 01 e4             	add    r12d,r12d
+ 527:	45 01 ec             	add    r12d,r13d
+ 52a:	45 01 f4             	add    r12d,r14d
+ 52d:	45 01 fc             	add    r12d,r15d
+ 530:	41 01 c5             	add    r13d,eax
+ 533:	41 01 cd             	add    r13d,ecx
+ 536:	41 01 d5             	add    r13d,edx
+ 539:	41 01 dd             	add    r13d,ebx
+ 53c:	41 01 e5             	add    r13d,esp
+ 53f:	41 01 ed             	add    r13d,ebp
+ 542:	41 01 f5             	add    r13d,esi
+ 545:	41 01 fd             	add    r13d,edi
+ 548:	45 01 c5             	add    r13d,r8d
+ 54b:	45 01 cd             	add    r13d,r9d
+ 54e:	45 01 d5             	add    r13d,r10d
+ 551:	45 01 dd             	add    r13d,r11d
+ 554:	45 01 e5             	add    r13d,r12d
+ 557:	45 01 ed             	add    r13d,r13d
+ 55a:	45 01 f5             	add    r13d,r14d
+ 55d:	45 01 fd             	add    r13d,r15d
+ 560:	41 01 c6             	add    r14d,eax
+ 563:	41 01 ce             	add    r14d,ecx
+ 566:	41 01 d6             	add    r14d,edx
+ 569:	41 01 de             	add    r14d,ebx
+ 56c:	41 01 e6             	add    r14d,esp
+ 56f:	41 01 ee             	add    r14d,ebp
+ 572:	41 01 f6             	add    r14d,esi
+ 575:	41 01 fe             	add    r14d,edi
+ 578:	45 01 c6             	add    r14d,r8d
+ 57b:	45 01 ce             	add    r14d,r9d
+ 57e:	45 01 d6             	add    r14d,r10d
+ 581:	45 01 de             	add    r14d,r11d
+ 584:	45 01 e6             	add    r14d,r12d
+ 587:	45 01 ee             	add    r14d,r13d
+ 58a:	45 01 f6             	add    r14d,r14d
+ 58d:	45 01 fe             	add    r14d,r15d
+ 590:	41 01 c7             	add    r15d,eax
+ 593:	41 01 cf             	add    r15d,ecx
+ 596:	41 01 d7             	add    r15d,edx
+ 599:	41 01 df             	add    r15d,ebx
+ 59c:	41 01 e7             	add    r15d,esp
+ 59f:	41 01 ef             	add    r15d,ebp
+ 5a2:	41 01 f7             	add    r15d,esi
+ 5a5:	41 01 ff             	add    r15d,edi
+ 5a8:	45 01 c7             	add    r15d,r8d
+ 5ab:	45 01 cf             	add    r15d,r9d
+ 5ae:	45 01 d7             	add    r15d,r10d
+ 5b1:	45 01 df             	add    r15d,r11d
+ 5b4:	45 01 e7             	add    r15d,r12d
+ 5b7:	45 01 ef             	add    r15d,r13d
+ 5ba:	45 01 f7             	add    r15d,r14d
+ 5bd:	45 01 ff             	add    r15d,r15d
+ 5c0:	66 01 c0             	add    ax,ax
+ 5c3:	66 01 c8             	add    ax,cx
+ 5c6:	66 01 d0             	add    ax,dx
+ 5c9:	66 01 d8             	add    ax,bx
+ 5cc:	66 01 e0             	add    ax,sp
+ 5cf:	66 01 e8             	add    ax,bp
+ 5d2:	66 01 f0             	add    ax,si
+ 5d5:	66 01 f8             	add    ax,di
+ 5d8:	66 44 01 c0          	add    ax,r8w
+ 5dc:	66 44 01 c8          	add    ax,r9w
+ 5e0:	66 44 01 d0          	add    ax,r10w
+ 5e4:	66 44 01 d8          	add    ax,r11w
+ 5e8:	66 44 01 e0          	add    ax,r12w
+ 5ec:	66 44 01 e8          	add    ax,r13w
+ 5f0:	66 44 01 f0          	add    ax,r14w
+ 5f4:	66 44 01 f8          	add    ax,r15w
+ 5f8:	66 01 c1             	add    cx,ax
+ 5fb:	66 01 c9             	add    cx,cx
+ 5fe:	66 01 d1             	add    cx,dx
+ 601:	66 01 d9             	add    cx,bx
+ 604:	66 01 e1             	add    cx,sp
+ 607:	66 01 e9             	add    cx,bp
+ 60a:	66 01 f1             	add    cx,si
+ 60d:	66 01 f9             	add    cx,di
+ 610:	66 44 01 c1          	add    cx,r8w
+ 614:	66 44 01 c9          	add    cx,r9w
+ 618:	66 44 01 d1          	add    cx,r10w
+ 61c:	66 44 01 d9          	add    cx,r11w
+ 620:	66 44 01 e1          	add    cx,r12w
+ 624:	66 44 01 e9          	add    cx,r13w
+ 628:	66 44 01 f1          	add    cx,r14w
+ 62c:	66 44 01 f9          	add    cx,r15w
+ 630:	66 01 c2             	add    dx,ax
+ 633:	66 01 ca             	add    dx,cx
+ 636:	66 01 d2             	add    dx,dx
+ 639:	66 01 da             	add    dx,bx
+ 63c:	66 01 e2             	add    dx,sp
+ 63f:	66 01 ea             	add    dx,bp
+ 642:	66 01 f2             	add    dx,si
+ 645:	66 01 fa             	add    dx,di
+ 648:	66 44 01 c2          	add    dx,r8w
+ 64c:	66 44 01 ca          	add    dx,r9w
+ 650:	66 44 01 d2          	add    dx,r10w
+ 654:	66 44 01 da          	add    dx,r11w
+ 658:	66 44 01 e2          	add    dx,r12w
+ 65c:	66 44 01 ea          	add    dx,r13w
+ 660:	66 44 01 f2          	add    dx,r14w
+ 664:	66 44 01 fa          	add    dx,r15w
+ 668:	66 01 c3             	add    bx,ax
+ 66b:	66 01 cb             	add    bx,cx
+ 66e:	66 01 d3             	add    bx,dx
+ 671:	66 01 db             	add    bx,bx
+ 674:	66 01 e3             	add    bx,sp
+ 677:	66 01 eb             	add    bx,bp
+ 67a:	66 01 f3             	add    bx,si
+ 67d:	66 01 fb             	add    bx,di
+ 680:	66 44 01 c3          	add    bx,r8w
+ 684:	66 44 01 cb          	add    bx,r9w
+ 688:	66 44 01 d3          	add    bx,r10w
+ 68c:	66 44 01 db          	add    bx,r11w
+ 690:	66 44 01 e3          	add    bx,r12w
+ 694:	66 44 01 eb          	add    bx,r13w
+ 698:	66 44 01 f3          	add    bx,r14w
+ 69c:	66 44 01 fb          	add    bx,r15w
+ 6a0:	66 01 c4             	add    sp,ax
+ 6a3:	66 01 cc             	add    sp,cx
+ 6a6:	66 01 d4             	add    sp,dx
+ 6a9:	66 01 dc             	add    sp,bx
+ 6ac:	66 01 e4             	add    sp,sp
+ 6af:	66 01 ec             	add    sp,bp
+ 6b2:	66 01 f4             	add    sp,si
+ 6b5:	66 01 fc             	add    sp,di
+ 6b8:	66 44 01 c4          	add    sp,r8w
+ 6bc:	66 44 01 cc          	add    sp,r9w
+ 6c0:	66 44 01 d4          	add    sp,r10w
+ 6c4:	66 44 01 dc          	add    sp,r11w
+ 6c8:	66 44 01 e4          	add    sp,r12w
+ 6cc:	66 44 01 ec          	add    sp,r13w
+ 6d0:	66 44 01 f4          	add    sp,r14w
+ 6d4:	66 44 01 fc          	add    sp,r15w
+ 6d8:	66 01 c5             	add    bp,ax
+ 6db:	66 01 cd             	add    bp,cx
+ 6de:	66 01 d5             	add    bp,dx
+ 6e1:	66 01 dd             	add    bp,bx
+ 6e4:	66 01 e5             	add    bp,sp
+ 6e7:	66 01 ed             	add    bp,bp
+ 6ea:	66 01 f5             	add    bp,si
+ 6ed:	66 01 fd             	add    bp,di
+ 6f0:	66 44 01 c5          	add    bp,r8w
+ 6f4:	66 44 01 cd          	add    bp,r9w
+ 6f8:	66 44 01 d5          	add    bp,r10w
+ 6fc:	66 44 01 dd          	add    bp,r11w
+ 700:	66 44 01 e5          	add    bp,r12w
+ 704:	66 44 01 ed          	add    bp,r13w
+ 708:	66 44 01 f5          	add    bp,r14w
+ 70c:	66 44 01 fd          	add    bp,r15w
+ 710:	66 01 c6             	add    si,ax
+ 713:	66 01 ce             	add    si,cx
+ 716:	66 01 d6             	add    si,dx
+ 719:	66 01 de             	add    si,bx
+ 71c:	66 01 e6             	add    si,sp
+ 71f:	66 01 ee             	add    si,bp
+ 722:	66 01 f6             	add    si,si
+ 725:	66 01 fe             	add    si,di
+ 728:	66 44 01 c6          	add    si,r8w
+ 72c:	66 44 01 ce          	add    si,r9w
+ 730:	66 44 01 d6          	add    si,r10w
+ 734:	66 44 01 de          	add    si,r11w
+ 738:	66 44 01 e6          	add    si,r12w
+ 73c:	66 44 01 ee          	add    si,r13w
+ 740:	66 44 01 f6          	add    si,r14w
+ 744:	66 44 01 fe          	add    si,r15w
+ 748:	66 01 c7             	add    di,ax
+ 74b:	66 01 cf             	add    di,cx
+ 74e:	66 01 d7             	add    di,dx
+ 751:	66 01 df             	add    di,bx
+ 754:	66 01 e7             	add    di,sp
+ 757:	66 01 ef             	add    di,bp
+ 75a:	66 01 f7             	add    di,si
+ 75d:	66 01 ff             	add    di,di
+ 760:	66 44 01 c7          	add    di,r8w
+ 764:	66 44 01 cf          	add    di,r9w
+ 768:	66 44 01 d7          	add    di,r10w
+ 76c:	66 44 01 df          	add    di,r11w
+ 770:	66 44 01 e7          	add    di,r12w
+ 774:	66 44 01 ef          	add    di,r13w
+ 778:	66 44 01 f7          	add    di,r14w
+ 77c:	66 44 01 ff          	add    di,r15w
+ 780:	66 41 01 c0          	add    r8w,ax
+ 784:	66 41 01 c8          	add    r8w,cx
+ 788:	66 41 01 d0          	add    r8w,dx
+ 78c:	66 41 01 d8          	add    r8w,bx
+ 790:	66 41 01 e0          	add    r8w,sp
+ 794:	66 41 01 e8          	add    r8w,bp
+ 798:	66 41 01 f0          	add    r8w,si
+ 79c:	66 41 01 f8          	add    r8w,di
+ 7a0:	66 45 01 c0          	add    r8w,r8w
+ 7a4:	66 45 01 c8          	add    r8w,r9w
+ 7a8:	66 45 01 d0          	add    r8w,r10w
+ 7ac:	66 45 01 d8          	add    r8w,r11w
+ 7b0:	66 45 01 e0          	add    r8w,r12w
+ 7b4:	66 45 01 e8          	add    r8w,r13w
+ 7b8:	66 45 01 f0          	add    r8w,r14w
+ 7bc:	66 45 01 f8          	add    r8w,r15w
+ 7c0:	66 41 01 c1          	add    r9w,ax
+ 7c4:	66 41 01 c9          	add    r9w,cx
+ 7c8:	66 41 01 d1          	add    r9w,dx
+ 7cc:	66 41 01 d9          	add    r9w,bx
+ 7d0:	66 41 01 e1          	add    r9w,sp
+ 7d4:	66 41 01 e9          	add    r9w,bp
+ 7d8:	66 41 01 f1          	add    r9w,si
+ 7dc:	66 41 01 f9          	add    r9w,di
+ 7e0:	66 45 01 c1          	add    r9w,r8w
+ 7e4:	66 45 01 c9          	add    r9w,r9w
+ 7e8:	66 45 01 d1          	add    r9w,r10w
+ 7ec:	66 45 01 d9          	add    r9w,r11w
+ 7f0:	66 45 01 e1          	add    r9w,r12w
+ 7f4:	66 45 01 e9          	add    r9w,r13w
+ 7f8:	66 45 01 f1          	add    r9w,r14w
+ 7fc:	66 45 01 f9          	add    r9w,r15w
+ 800:	66 41 01 c2          	add    r10w,ax
+ 804:	66 41 01 ca          	add    r10w,cx
+ 808:	66 41 01 d2          	add    r10w,dx
+ 80c:	66 41 01 da          	add    r10w,bx
+ 810:	66 41 01 e2          	add    r10w,sp
+ 814:	66 41 01 ea          	add    r10w,bp
+ 818:	66 41 01 f2          	add    r10w,si
+ 81c:	66 41 01 fa          	add    r10w,di
+ 820:	66 45 01 c2          	add    r10w,r8w
+ 824:	66 45 01 ca          	add    r10w,r9w
+ 828:	66 45 01 d2          	add    r10w,r10w
+ 82c:	66 45 01 da          	add    r10w,r11w
+ 830:	66 45 01 e2          	add    r10w,r12w
+ 834:	66 45 01 ea          	add    r10w,r13w
+ 838:	66 45 01 f2          	add    r10w,r14w
+ 83c:	66 45 01 fa          	add    r10w,r15w
+ 840:	66 41 01 c3          	add    r11w,ax
+ 844:	66 41 01 cb          	add    r11w,cx
+ 848:	66 41 01 d3          	add    r11w,dx
+ 84c:	66 41 01 db          	add    r11w,bx
+ 850:	66 41 01 e3          	add    r11w,sp
+ 854:	66 41 01 eb          	add    r11w,bp
+ 858:	66 41 01 f3          	add    r11w,si
+ 85c:	66 41 01 fb          	add    r11w,di
+ 860:	66 45 01 c3          	add    r11w,r8w
+ 864:	66 45 01 cb          	add    r11w,r9w
+ 868:	66 45 01 d3          	add    r11w,r10w
+ 86c:	66 45 01 db          	add    r11w,r11w
+ 870:	66 45 01 e3          	add    r11w,r12w
+ 874:	66 45 01 eb          	add    r11w,r13w
+ 878:	66 45 01 f3          	add    r11w,r14w
+ 87c:	66 45 01 fb          	add    r11w,r15w
+ 880:	66 41 01 c4          	add    r12w,ax
+ 884:	66 41 01 cc          	add    r12w,cx
+ 888:	66 41 01 d4          	add    r12w,dx
+ 88c:	66 41 01 dc          	add    r12w,bx
+ 890:	66 41 01 e4          	add    r12w,sp
+ 894:	66 41 01 ec          	add    r12w,bp
+ 898:	66 41 01 f4          	add    r12w,si
+ 89c:	66 41 01 fc          	add    r12w,di
+ 8a0:	66 45 01 c4          	add    r12w,r8w
+ 8a4:	66 45 01 cc          	add    r12w,r9w
+ 8a8:	66 45 01 d4          	add    r12w,r10w
+ 8ac:	66 45 01 dc          	add    r12w,r11w
+ 8b0:	66 45 01 e4          	add    r12w,r12w
+ 8b4:	66 45 01 ec          	add    r12w,r13w
+ 8b8:	66 45 01 f4          	add    r12w,r14w
+ 8bc:	66 45 01 fc          	add    r12w,r15w
+ 8c0:	66 41 01 c5          	add    r13w,ax
+ 8c4:	66 41 01 cd          	add    r13w,cx
+ 8c8:	66 41 01 d5          	add    r13w,dx
+ 8cc:	66 41 01 dd          	add    r13w,bx
+ 8d0:	66 41 01 e5          	add    r13w,sp
+ 8d4:	66 41 01 ed          	add    r13w,bp
+ 8d8:	66 41 01 f5          	add    r13w,si
+ 8dc:	66 41 01 fd          	add    r13w,di
+ 8e0:	66 45 01 c5          	add    r13w,r8w
+ 8e4:	66 45 01 cd          	add    r13w,r9w
+ 8e8:	66 45 01 d5          	add    r13w,r10w
+ 8ec:	66 45 01 dd          	add    r13w,r11w
+ 8f0:	66 45 01 e5          	add    r13w,r12w
+ 8f4:	66 45 01 ed          	add    r13w,r13w
+ 8f8:	66 45 01 f5          	add    r13w,r14w
+ 8fc:	66 45 01 fd          	add    r13w,r15w
+ 900:	66 41 01 c6          	add    r14w,ax
+ 904:	66 41 01 ce          	add    r14w,cx
+ 908:	66 41 01 d6          	add    r14w,dx
+ 90c:	66 41 01 de          	add    r14w,bx
+ 910:	66 41 01 e6          	add    r14w,sp
+ 914:	66 41 01 ee          	add    r14w,bp
+ 918:	66 41 01 f6          	add    r14w,si
+ 91c:	66 41 01 fe          	add    r14w,di
+ 920:	66 45 01 c6          	add    r14w,r8w
+ 924:	66 45 01 ce          	add    r14w,r9w
+ 928:	66 45 01 d6          	add    r14w,r10w
+ 92c:	66 45 01 de          	add    r14w,r11w
+ 930:	66 45 01 e6          	add    r14w,r12w
+ 934:	66 45 01 ee          	add    r14w,r13w
+ 938:	66 45 01 f6          	add    r14w,r14w
+ 93c:	66 45 01 fe          	add    r14w,r15w
+ 940:	66 41 01 c7          	add    r15w,ax
+ 944:	66 41 01 cf          	add    r15w,cx
+ 948:	66 41 01 d7          	add    r15w,dx
+ 94c:	66 41 01 df          	add    r15w,bx
+ 950:	66 41 01 e7          	add    r15w,sp
+ 954:	66 41 01 ef          	add    r15w,bp
+ 958:	66 41 01 f7          	add    r15w,si
+ 95c:	66 41 01 ff          	add    r15w,di
+ 960:	66 45 01 c7          	add    r15w,r8w
+ 964:	66 45 01 cf          	add    r15w,r9w
+ 968:	66 45 01 d7          	add    r15w,r10w
+ 96c:	66 45 01 df          	add    r15w,r11w
+ 970:	66 45 01 e7          	add    r15w,r12w
+ 974:	66 45 01 ef          	add    r15w,r13w
+ 978:	66 45 01 f7          	add    r15w,r14w
+ 97c:	66 45 01 ff          	add    r15w,r15w
+ 980:	00 c0                	add    al,al
+ 982:	00 c8                	add    al,cl
+ 984:	00 d0                	add    al,dl
+ 986:	00 d8                	add    al,bl
+ 988:	00 e0                	add    al,ah
+ 98a:	00 e8                	add    al,ch
+ 98c:	00 f0                	add    al,dh
+ 98e:	00 f8                	add    al,bh
+ 990:	44 00 c0             	add    al,r8b
+ 993:	44 00 c8             	add    al,r9b
+ 996:	44 00 d0             	add    al,r10b
+ 999:	44 00 d8             	add    al,r11b
+ 99c:	44 00 e0             	add    al,r12b
+ 99f:	44 00 e8             	add    al,r13b
+ 9a2:	44 00 f0             	add    al,r14b
+ 9a5:	44 00 f8             	add    al,r15b
+ 9a8:	40 00 e0             	add    al,spl
+ 9ab:	40 00 e8             	add    al,bpl
+ 9ae:	40 00 f0             	add    al,sil
+ 9b1:	40 00 f8             	add    al,dil
+ 9b4:	00 c1                	add    cl,al
+ 9b6:	00 c9                	add    cl,cl
+ 9b8:	00 d1                	add    cl,dl
+ 9ba:	00 d9                	add    cl,bl
+ 9bc:	00 e1                	add    cl,ah
+ 9be:	00 e9                	add    cl,ch
+ 9c0:	00 f1                	add    cl,dh
+ 9c2:	00 f9                	add    cl,bh
+ 9c4:	44 00 c1             	add    cl,r8b
+ 9c7:	44 00 c9             	add    cl,r9b
+ 9ca:	44 00 d1             	add    cl,r10b
+ 9cd:	44 00 d9             	add    cl,r11b
+ 9d0:	44 00 e1             	add    cl,r12b
+ 9d3:	44 00 e9             	add    cl,r13b
+ 9d6:	44 00 f1             	add    cl,r14b
+ 9d9:	44 00 f9             	add    cl,r15b
+ 9dc:	40 00 e1             	add    cl,spl
+ 9df:	40 00 e9             	add    cl,bpl
+ 9e2:	40 00 f1             	add    cl,sil
+ 9e5:	40 00 f9             	add    cl,dil
+ 9e8:	00 c2                	add    dl,al
+ 9ea:	00 ca                	add    dl,cl
+ 9ec:	00 d2                	add    dl,dl
+ 9ee:	00 da                	add    dl,bl
+ 9f0:	00 e2                	add    dl,ah
+ 9f2:	00 ea                	add    dl,ch
+ 9f4:	00 f2                	add    dl,dh
+ 9f6:	00 fa                	add    dl,bh
+ 9f8:	44 00 c2             	add    dl,r8b
+ 9fb:	44 00 ca             	add    dl,r9b
+ 9fe:	44 00 d2             	add    dl,r10b
+ a01:	44 00 da             	add    dl,r11b
+ a04:	44 00 e2             	add    dl,r12b
+ a07:	44 00 ea             	add    dl,r13b
+ a0a:	44 00 f2             	add    dl,r14b
+ a0d:	44 00 fa             	add    dl,r15b
+ a10:	40 00 e2             	add    dl,spl
+ a13:	40 00 ea             	add    dl,bpl
+ a16:	40 00 f2             	add    dl,sil
+ a19:	40 00 fa             	add    dl,dil
+ a1c:	00 c3                	add    bl,al
+ a1e:	00 cb                	add    bl,cl
+ a20:	00 d3                	add    bl,dl
+ a22:	00 db                	add    bl,bl
+ a24:	00 e3                	add    bl,ah
+ a26:	00 eb                	add    bl,ch
+ a28:	00 f3                	add    bl,dh
+ a2a:	00 fb                	add    bl,bh
+ a2c:	44 00 c3             	add    bl,r8b
+ a2f:	44 00 cb             	add    bl,r9b
+ a32:	44 00 d3             	add    bl,r10b
+ a35:	44 00 db             	add    bl,r11b
+ a38:	44 00 e3             	add    bl,r12b
+ a3b:	44 00 eb             	add    bl,r13b
+ a3e:	44 00 f3             	add    bl,r14b
+ a41:	44 00 fb             	add    bl,r15b
+ a44:	40 00 e3             	add    bl,spl
+ a47:	40 00 eb             	add    bl,bpl
+ a4a:	40 00 f3             	add    bl,sil
+ a4d:	40 00 fb             	add    bl,dil
+ a50:	00 c4                	add    ah,al
+ a52:	00 cc                	add    ah,cl
+ a54:	00 d4                	add    ah,dl
+ a56:	00 dc                	add    ah,bl
+ a58:	00 e4                	add    ah,ah
+ a5a:	00 ec                	add    ah,ch
+ a5c:	00 f4                	add    ah,dh
+ a5e:	00 fc                	add    ah,bh
+ a60:	44 00 c4             	add    spl,r8b
+ a63:	44 00 cc             	add    spl,r9b
+ a66:	44 00 d4             	add    spl,r10b
+ a69:	44 00 dc             	add    spl,r11b
+ a6c:	44 00 e4             	add    spl,r12b
+ a6f:	44 00 ec             	add    spl,r13b
+ a72:	44 00 f4             	add    spl,r14b
+ a75:	44 00 fc             	add    spl,r15b
+ a78:	40 00 e4             	add    spl,spl
+ a7b:	40 00 ec             	add    spl,bpl
+ a7e:	40 00 f4             	add    spl,sil
+ a81:	40 00 fc             	add    spl,dil
+ a84:	00 c5                	add    ch,al
+ a86:	00 cd                	add    ch,cl
+ a88:	00 d5                	add    ch,dl
+ a8a:	00 dd                	add    ch,bl
+ a8c:	00 e5                	add    ch,ah
+ a8e:	00 ed                	add    ch,ch
+ a90:	00 f5                	add    ch,dh
+ a92:	00 fd                	add    ch,bh
+ a94:	44 00 c5             	add    bpl,r8b
+ a97:	44 00 cd             	add    bpl,r9b
+ a9a:	44 00 d5             	add    bpl,r10b
+ a9d:	44 00 dd             	add    bpl,r11b
+ aa0:	44 00 e5             	add    bpl,r12b
+ aa3:	44 00 ed             	add    bpl,r13b
+ aa6:	44 00 f5             	add    bpl,r14b
+ aa9:	44 00 fd             	add    bpl,r15b
+ aac:	40 00 e5             	add    bpl,spl
+ aaf:	40 00 ed             	add    bpl,bpl
+ ab2:	40 00 f5             	add    bpl,sil
+ ab5:	40 00 fd             	add    bpl,dil
+ ab8:	00 c6                	add    dh,al
+ aba:	00 ce                	add    dh,cl
+ abc:	00 d6                	add    dh,dl
+ abe:	00 de                	add    dh,bl
+ ac0:	00 e6                	add    dh,ah
+ ac2:	00 ee                	add    dh,ch
+ ac4:	00 f6                	add    dh,dh
+ ac6:	00 fe                	add    dh,bh
+ ac8:	44 00 c6             	add    sil,r8b
+ acb:	44 00 ce             	add    sil,r9b
+ ace:	44 00 d6             	add    sil,r10b
+ ad1:	44 00 de             	add    sil,r11b
+ ad4:	44 00 e6             	add    sil,r12b
+ ad7:	44 00 ee             	add    sil,r13b
+ ada:	44 00 f6             	add    sil,r14b
+ add:	44 00 fe             	add    sil,r15b
+ ae0:	40 00 e6             	add    sil,spl
+ ae3:	40 00 ee             	add    sil,bpl
+ ae6:	40 00 f6             	add    sil,sil
+ ae9:	40 00 fe             	add    sil,dil
+ aec:	00 c7                	add    bh,al
+ aee:	00 cf                	add    bh,cl
+ af0:	00 d7                	add    bh,dl
+ af2:	00 df                	add    bh,bl
+ af4:	00 e7                	add    bh,ah
+ af6:	00 ef                	add    bh,ch
+ af8:	00 f7                	add    bh,dh
+ afa:	00 ff                	add    bh,bh
+ afc:	44 00 c7             	add    dil,r8b
+ aff:	44 00 cf             	add    dil,r9b
+ b02:	44 00 d7             	add    dil,r10b
+ b05:	44 00 df             	add    dil,r11b
+ b08:	44 00 e7             	add    dil,r12b
+ b0b:	44 00 ef             	add    dil,r13b
+ b0e:	44 00 f7             	add    dil,r14b
+ b11:	44 00 ff             	add    dil,r15b
+ b14:	40 00 e7             	add    dil,spl
+ b17:	40 00 ef             	add    dil,bpl
+ b1a:	40 00 f7             	add    dil,sil
+ b1d:	40 00 ff             	add    dil,dil
+ b20:	41 00 c0             	add    r8b,al
+ b23:	41 00 c8             	add    r8b,cl
+ b26:	41 00 d0             	add    r8b,dl
+ b29:	41 00 d8             	add    r8b,bl
+ b2c:	41 00 e0             	add    r8b,spl
+ b2f:	41 00 e8             	add    r8b,bpl
+ b32:	41 00 f0             	add    r8b,sil
+ b35:	41 00 f8             	add    r8b,dil
+ b38:	45 00 c0             	add    r8b,r8b
+ b3b:	45 00 c8             	add    r8b,r9b
+ b3e:	45 00 d0             	add    r8b,r10b
+ b41:	45 00 d8             	add    r8b,r11b
+ b44:	45 00 e0             	add    r8b,r12b
+ b47:	45 00 e8             	add    r8b,r13b
+ b4a:	45 00 f0             	add    r8b,r14b
+ b4d:	45 00 f8             	add    r8b,r15b
+ b50:	41 00 e0             	add    r8b,spl
+ b53:	41 00 e8             	add    r8b,bpl
+ b56:	41 00 f0             	add    r8b,sil
+ b59:	41 00 f8             	add    r8b,dil
+ b5c:	41 00 c1             	add    r9b,al
+ b5f:	41 00 c9             	add    r9b,cl
+ b62:	41 00 d1             	add    r9b,dl
+ b65:	41 00 d9             	add    r9b,bl
+ b68:	41 00 e1             	add    r9b,spl
+ b6b:	41 00 e9             	add    r9b,bpl
+ b6e:	41 00 f1             	add    r9b,sil
+ b71:	41 00 f9             	add    r9b,dil
+ b74:	45 00 c1             	add    r9b,r8b
+ b77:	45 00 c9             	add    r9b,r9b
+ b7a:	45 00 d1             	add    r9b,r10b
+ b7d:	45 00 d9             	add    r9b,r11b
+ b80:	45 00 e1             	add    r9b,r12b
+ b83:	45 00 e9             	add    r9b,r13b
+ b86:	45 00 f1             	add    r9b,r14b
+ b89:	45 00 f9             	add    r9b,r15b
+ b8c:	41 00 e1             	add    r9b,spl
+ b8f:	41 00 e9             	add    r9b,bpl
+ b92:	41 00 f1             	add    r9b,sil
+ b95:	41 00 f9             	add    r9b,dil
+ b98:	41 00 c2             	add    r10b,al
+ b9b:	41 00 ca             	add    r10b,cl
+ b9e:	41 00 d2             	add    r10b,dl
+ ba1:	41 00 da             	add    r10b,bl
+ ba4:	41 00 e2             	add    r10b,spl
+ ba7:	41 00 ea             	add    r10b,bpl
+ baa:	41 00 f2             	add    r10b,sil
+ bad:	41 00 fa             	add    r10b,dil
+ bb0:	45 00 c2             	add    r10b,r8b
+ bb3:	45 00 ca             	add    r10b,r9b
+ bb6:	45 00 d2             	add    r10b,r10b
+ bb9:	45 00 da             	add    r10b,r11b
+ bbc:	45 00 e2             	add    r10b,r12b
+ bbf:	45 00 ea             	add    r10b,r13b
+ bc2:	45 00 f2             	add    r10b,r14b
+ bc5:	45 00 fa             	add    r10b,r15b
+ bc8:	41 00 e2             	add    r10b,spl
+ bcb:	41 00 ea             	add    r10b,bpl
+ bce:	41 00 f2             	add    r10b,sil
+ bd1:	41 00 fa             	add    r10b,dil
+ bd4:	41 00 c3             	add    r11b,al
+ bd7:	41 00 cb             	add    r11b,cl
+ bda:	41 00 d3             	add    r11b,dl
+ bdd:	41 00 db             	add    r11b,bl
+ be0:	41 00 e3             	add    r11b,spl
+ be3:	41 00 eb             	add    r11b,bpl
+ be6:	41 00 f3             	add    r11b,sil
+ be9:	41 00 fb             	add    r11b,dil
+ bec:	45 00 c3             	add    r11b,r8b
+ bef:	45 00 cb             	add    r11b,r9b
+ bf2:	45 00 d3             	add    r11b,r10b
+ bf5:	45 00 db             	add    r11b,r11b
+ bf8:	45 00 e3             	add    r11b,r12b
+ bfb:	45 00 eb             	add    r11b,r13b
+ bfe:	45 00 f3             	add    r11b,r14b
+ c01:	45 00 fb             	add    r11b,r15b
+ c04:	41 00 e3             	add    r11b,spl
+ c07:	41 00 eb             	add    r11b,bpl
+ c0a:	41 00 f3             	add    r11b,sil
+ c0d:	41 00 fb             	add    r11b,dil
+ c10:	41 00 c4             	add    r12b,al
+ c13:	41 00 cc             	add    r12b,cl
+ c16:	41 00 d4             	add    r12b,dl
+ c19:	41 00 dc             	add    r12b,bl
+ c1c:	41 00 e4             	add    r12b,spl
+ c1f:	41 00 ec             	add    r12b,bpl
+ c22:	41 00 f4             	add    r12b,sil
+ c25:	41 00 fc             	add    r12b,dil
+ c28:	45 00 c4             	add    r12b,r8b
+ c2b:	45 00 cc             	add    r12b,r9b
+ c2e:	45 00 d4             	add    r12b,r10b
+ c31:	45 00 dc             	add    r12b,r11b
+ c34:	45 00 e4             	add    r12b,r12b
+ c37:	45 00 ec             	add    r12b,r13b
+ c3a:	45 00 f4             	add    r12b,r14b
+ c3d:	45 00 fc             	add    r12b,r15b
+ c40:	41 00 e4             	add    r12b,spl
+ c43:	41 00 ec             	add    r12b,bpl
+ c46:	41 00 f4             	add    r12b,sil
+ c49:	41 00 fc             	add    r12b,dil
+ c4c:	41 00 c5             	add    r13b,al
+ c4f:	41 00 cd             	add    r13b,cl
+ c52:	41 00 d5             	add    r13b,dl
+ c55:	41 00 dd             	add    r13b,bl
+ c58:	41 00 e5             	add    r13b,spl
+ c5b:	41 00 ed             	add    r13b,bpl
+ c5e:	41 00 f5             	add    r13b,sil
+ c61:	41 00 fd             	add    r13b,dil
+ c64:	45 00 c5             	add    r13b,r8b
+ c67:	45 00 cd             	add    r13b,r9b
+ c6a:	45 00 d5             	add    r13b,r10b
+ c6d:	45 00 dd             	add    r13b,r11b
+ c70:	45 00 e5             	add    r13b,r12b
+ c73:	45 00 ed             	add    r13b,r13b
+ c76:	45 00 f5             	add    r13b,r14b
+ c79:	45 00 fd             	add    r13b,r15b
+ c7c:	41 00 e5             	add    r13b,spl
+ c7f:	41 00 ed             	add    r13b,bpl
+ c82:	41 00 f5             	add    r13b,sil
+ c85:	41 00 fd             	add    r13b,dil
+ c88:	41 00 c6             	add    r14b,al
+ c8b:	41 00 ce             	add    r14b,cl
+ c8e:	41 00 d6             	add    r14b,dl
+ c91:	41 00 de             	add    r14b,bl
+ c94:	41 00 e6             	add    r14b,spl
+ c97:	41 00 ee             	add    r14b,bpl
+ c9a:	41 00 f6             	add    r14b,sil
+ c9d:	41 00 fe             	add    r14b,dil
+ ca0:	45 00 c6             	add    r14b,r8b
+ ca3:	45 00 ce             	add    r14b,r9b
+ ca6:	45 00 d6             	add    r14b,r10b
+ ca9:	45 00 de             	add    r14b,r11b
+ cac:	45 00 e6             	add    r14b,r12b
+ caf:	45 00 ee             	add    r14b,r13b
+ cb2:	45 00 f6             	add    r14b,r14b
+ cb5:	45 00 fe             	add    r14b,r15b
+ cb8:	41 00 e6             	add    r14b,spl
+ cbb:	41 00 ee             	add    r14b,bpl
+ cbe:	41 00 f6             	add    r14b,sil
+ cc1:	41 00 fe             	add    r14b,dil
+ cc4:	41 00 c7             	add    r15b,al
+ cc7:	41 00 cf             	add    r15b,cl
+ cca:	41 00 d7             	add    r15b,dl
+ ccd:	41 00 df             	add    r15b,bl
+ cd0:	41 00 e7             	add    r15b,spl
+ cd3:	41 00 ef             	add    r15b,bpl
+ cd6:	41 00 f7             	add    r15b,sil
+ cd9:	41 00 ff             	add    r15b,dil
+ cdc:	45 00 c7             	add    r15b,r8b
+ cdf:	45 00 cf             	add    r15b,r9b
+ ce2:	45 00 d7             	add    r15b,r10b
+ ce5:	45 00 df             	add    r15b,r11b
+ ce8:	45 00 e7             	add    r15b,r12b
+ ceb:	45 00 ef             	add    r15b,r13b
+ cee:	45 00 f7             	add    r15b,r14b
+ cf1:	45 00 ff             	add    r15b,r15b
+ cf4:	41 00 e7             	add    r15b,spl
+ cf7:	41 00 ef             	add    r15b,bpl
+ cfa:	41 00 f7             	add    r15b,sil
+ cfd:	41 00 ff             	add    r15b,dil
+ d00:	40 00 c4             	add    spl,al
+ d03:	40 00 cc             	add    spl,cl
+ d06:	40 00 d4             	add    spl,dl
+ d09:	40 00 dc             	add    spl,bl
+ d0c:	40 00 e4             	add    spl,spl
+ d0f:	40 00 ec             	add    spl,bpl
+ d12:	40 00 f4             	add    spl,sil
+ d15:	40 00 fc             	add    spl,dil
+ d18:	44 00 c4             	add    spl,r8b
+ d1b:	44 00 cc             	add    spl,r9b
+ d1e:	44 00 d4             	add    spl,r10b
+ d21:	44 00 dc             	add    spl,r11b
+ d24:	44 00 e4             	add    spl,r12b
+ d27:	44 00 ec             	add    spl,r13b
+ d2a:	44 00 f4             	add    spl,r14b
+ d2d:	44 00 fc             	add    spl,r15b
+ d30:	40 00 e4             	add    spl,spl
+ d33:	40 00 ec             	add    spl,bpl
+ d36:	40 00 f4             	add    spl,sil
+ d39:	40 00 fc             	add    spl,dil
+ d3c:	40 00 c5             	add    bpl,al
+ d3f:	40 00 cd             	add    bpl,cl
+ d42:	40 00 d5             	add    bpl,dl
+ d45:	40 00 dd             	add    bpl,bl
+ d48:	40 00 e5             	add    bpl,spl
+ d4b:	40 00 ed             	add    bpl,bpl
+ d4e:	40 00 f5             	add    bpl,sil
+ d51:	40 00 fd             	add    bpl,dil
+ d54:	44 00 c5             	add    bpl,r8b
+ d57:	44 00 cd             	add    bpl,r9b
+ d5a:	44 00 d5             	add    bpl,r10b
+ d5d:	44 00 dd             	add    bpl,r11b
+ d60:	44 00 e5             	add    bpl,r12b
+ d63:	44 00 ed             	add    bpl,r13b
+ d66:	44 00 f5             	add    bpl,r14b
+ d69:	44 00 fd             	add    bpl,r15b
+ d6c:	40 00 e5             	add    bpl,spl
+ d6f:	40 00 ed             	add    bpl,bpl
+ d72:	40 00 f5             	add    bpl,sil
+ d75:	40 00 fd             	add    bpl,dil
+ d78:	40 00 c6             	add    sil,al
+ d7b:	40 00 ce             	add    sil,cl
+ d7e:	40 00 d6             	add    sil,dl
+ d81:	40 00 de             	add    sil,bl
+ d84:	40 00 e6             	add    sil,spl
+ d87:	40 00 ee             	add    sil,bpl
+ d8a:	40 00 f6             	add    sil,sil
+ d8d:	40 00 fe             	add    sil,dil
+ d90:	44 00 c6             	add    sil,r8b
+ d93:	44 00 ce             	add    sil,r9b
+ d96:	44 00 d6             	add    sil,r10b
+ d99:	44 00 de             	add    sil,r11b
+ d9c:	44 00 e6             	add    sil,r12b
+ d9f:	44 00 ee             	add    sil,r13b
+ da2:	44 00 f6             	add    sil,r14b
+ da5:	44 00 fe             	add    sil,r15b
+ da8:	40 00 e6             	add    sil,spl
+ dab:	40 00 ee             	add    sil,bpl
+ dae:	40 00 f6             	add    sil,sil
+ db1:	40 00 fe             	add    sil,dil
+ db4:	40 00 c7             	add    dil,al
+ db7:	40 00 cf             	add    dil,cl
+ dba:	40 00 d7             	add    dil,dl
+ dbd:	40 00 df             	add    dil,bl
+ dc0:	40 00 e7             	add    dil,spl
+ dc3:	40 00 ef             	add    dil,bpl
+ dc6:	40 00 f7             	add    dil,sil
+ dc9:	40 00 ff             	add    dil,dil
+ dcc:	44 00 c7             	add    dil,r8b
+ dcf:	44 00 cf             	add    dil,r9b
+ dd2:	44 00 d7             	add    dil,r10b
+ dd5:	44 00 df             	add    dil,r11b
+ dd8:	44 00 e7             	add    dil,r12b
+ ddb:	44 00 ef             	add    dil,r13b
+ dde:	44 00 f7             	add    dil,r14b
+ de1:	44 00 ff             	add    dil,r15b
+ de4:	40 00 e7             	add    dil,spl
+ de7:	40 00 ef             	add    dil,bpl
+ dea:	40 00 f7             	add    dil,sil
+ ded:	40 00 ff             	add    dil,dil

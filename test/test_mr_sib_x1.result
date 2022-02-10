@@ -1,0 +1,1095 @@
+
+test.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00000000 <.data>:
+       0:	4a 01 04 28          	add    QWORD PTR [rax+r13*1],rax
+       4:	4a 01 0c 28          	add    QWORD PTR [rax+r13*1],rcx
+       8:	4a 01 14 28          	add    QWORD PTR [rax+r13*1],rdx
+       c:	4a 01 1c 28          	add    QWORD PTR [rax+r13*1],rbx
+      10:	4a 01 24 28          	add    QWORD PTR [rax+r13*1],rsp
+      14:	4a 01 2c 28          	add    QWORD PTR [rax+r13*1],rbp
+      18:	4a 01 34 28          	add    QWORD PTR [rax+r13*1],rsi
+      1c:	4a 01 3c 28          	add    QWORD PTR [rax+r13*1],rdi
+      20:	4e 01 04 28          	add    QWORD PTR [rax+r13*1],r8
+      24:	4e 01 0c 28          	add    QWORD PTR [rax+r13*1],r9
+      28:	4e 01 14 28          	add    QWORD PTR [rax+r13*1],r10
+      2c:	4e 01 1c 28          	add    QWORD PTR [rax+r13*1],r11
+      30:	4e 01 24 28          	add    QWORD PTR [rax+r13*1],r12
+      34:	4e 01 2c 28          	add    QWORD PTR [rax+r13*1],r13
+      38:	4e 01 34 28          	add    QWORD PTR [rax+r13*1],r14
+      3c:	4e 01 3c 28          	add    QWORD PTR [rax+r13*1],r15
+      40:	4a 01 04 29          	add    QWORD PTR [rcx+r13*1],rax
+      44:	4a 01 0c 29          	add    QWORD PTR [rcx+r13*1],rcx
+      48:	4a 01 14 29          	add    QWORD PTR [rcx+r13*1],rdx
+      4c:	4a 01 1c 29          	add    QWORD PTR [rcx+r13*1],rbx
+      50:	4a 01 24 29          	add    QWORD PTR [rcx+r13*1],rsp
+      54:	4a 01 2c 29          	add    QWORD PTR [rcx+r13*1],rbp
+      58:	4a 01 34 29          	add    QWORD PTR [rcx+r13*1],rsi
+      5c:	4a 01 3c 29          	add    QWORD PTR [rcx+r13*1],rdi
+      60:	4e 01 04 29          	add    QWORD PTR [rcx+r13*1],r8
+      64:	4e 01 0c 29          	add    QWORD PTR [rcx+r13*1],r9
+      68:	4e 01 14 29          	add    QWORD PTR [rcx+r13*1],r10
+      6c:	4e 01 1c 29          	add    QWORD PTR [rcx+r13*1],r11
+      70:	4e 01 24 29          	add    QWORD PTR [rcx+r13*1],r12
+      74:	4e 01 2c 29          	add    QWORD PTR [rcx+r13*1],r13
+      78:	4e 01 34 29          	add    QWORD PTR [rcx+r13*1],r14
+      7c:	4e 01 3c 29          	add    QWORD PTR [rcx+r13*1],r15
+      80:	4a 01 04 2a          	add    QWORD PTR [rdx+r13*1],rax
+      84:	4a 01 0c 2a          	add    QWORD PTR [rdx+r13*1],rcx
+      88:	4a 01 14 2a          	add    QWORD PTR [rdx+r13*1],rdx
+      8c:	4a 01 1c 2a          	add    QWORD PTR [rdx+r13*1],rbx
+      90:	4a 01 24 2a          	add    QWORD PTR [rdx+r13*1],rsp
+      94:	4a 01 2c 2a          	add    QWORD PTR [rdx+r13*1],rbp
+      98:	4a 01 34 2a          	add    QWORD PTR [rdx+r13*1],rsi
+      9c:	4a 01 3c 2a          	add    QWORD PTR [rdx+r13*1],rdi
+      a0:	4e 01 04 2a          	add    QWORD PTR [rdx+r13*1],r8
+      a4:	4e 01 0c 2a          	add    QWORD PTR [rdx+r13*1],r9
+      a8:	4e 01 14 2a          	add    QWORD PTR [rdx+r13*1],r10
+      ac:	4e 01 1c 2a          	add    QWORD PTR [rdx+r13*1],r11
+      b0:	4e 01 24 2a          	add    QWORD PTR [rdx+r13*1],r12
+      b4:	4e 01 2c 2a          	add    QWORD PTR [rdx+r13*1],r13
+      b8:	4e 01 34 2a          	add    QWORD PTR [rdx+r13*1],r14
+      bc:	4e 01 3c 2a          	add    QWORD PTR [rdx+r13*1],r15
+      c0:	4a 01 04 2b          	add    QWORD PTR [rbx+r13*1],rax
+      c4:	4a 01 0c 2b          	add    QWORD PTR [rbx+r13*1],rcx
+      c8:	4a 01 14 2b          	add    QWORD PTR [rbx+r13*1],rdx
+      cc:	4a 01 1c 2b          	add    QWORD PTR [rbx+r13*1],rbx
+      d0:	4a 01 24 2b          	add    QWORD PTR [rbx+r13*1],rsp
+      d4:	4a 01 2c 2b          	add    QWORD PTR [rbx+r13*1],rbp
+      d8:	4a 01 34 2b          	add    QWORD PTR [rbx+r13*1],rsi
+      dc:	4a 01 3c 2b          	add    QWORD PTR [rbx+r13*1],rdi
+      e0:	4e 01 04 2b          	add    QWORD PTR [rbx+r13*1],r8
+      e4:	4e 01 0c 2b          	add    QWORD PTR [rbx+r13*1],r9
+      e8:	4e 01 14 2b          	add    QWORD PTR [rbx+r13*1],r10
+      ec:	4e 01 1c 2b          	add    QWORD PTR [rbx+r13*1],r11
+      f0:	4e 01 24 2b          	add    QWORD PTR [rbx+r13*1],r12
+      f4:	4e 01 2c 2b          	add    QWORD PTR [rbx+r13*1],r13
+      f8:	4e 01 34 2b          	add    QWORD PTR [rbx+r13*1],r14
+      fc:	4e 01 3c 2b          	add    QWORD PTR [rbx+r13*1],r15
+     100:	4a 01 04 2c          	add    QWORD PTR [rsp+r13*1],rax
+     104:	4a 01 0c 2c          	add    QWORD PTR [rsp+r13*1],rcx
+     108:	4a 01 14 2c          	add    QWORD PTR [rsp+r13*1],rdx
+     10c:	4a 01 1c 2c          	add    QWORD PTR [rsp+r13*1],rbx
+     110:	4a 01 24 2c          	add    QWORD PTR [rsp+r13*1],rsp
+     114:	4a 01 2c 2c          	add    QWORD PTR [rsp+r13*1],rbp
+     118:	4a 01 34 2c          	add    QWORD PTR [rsp+r13*1],rsi
+     11c:	4a 01 3c 2c          	add    QWORD PTR [rsp+r13*1],rdi
+     120:	4e 01 04 2c          	add    QWORD PTR [rsp+r13*1],r8
+     124:	4e 01 0c 2c          	add    QWORD PTR [rsp+r13*1],r9
+     128:	4e 01 14 2c          	add    QWORD PTR [rsp+r13*1],r10
+     12c:	4e 01 1c 2c          	add    QWORD PTR [rsp+r13*1],r11
+     130:	4e 01 24 2c          	add    QWORD PTR [rsp+r13*1],r12
+     134:	4e 01 2c 2c          	add    QWORD PTR [rsp+r13*1],r13
+     138:	4e 01 34 2c          	add    QWORD PTR [rsp+r13*1],r14
+     13c:	4e 01 3c 2c          	add    QWORD PTR [rsp+r13*1],r15
+     140:	4a 01 44 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],rax
+     145:	4a 01 4c 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],rcx
+     14a:	4a 01 54 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],rdx
+     14f:	4a 01 5c 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],rbx
+     154:	4a 01 64 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],rsp
+     159:	4a 01 6c 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],rbp
+     15e:	4a 01 74 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],rsi
+     163:	4a 01 7c 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],rdi
+     168:	4e 01 44 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],r8
+     16d:	4e 01 4c 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],r9
+     172:	4e 01 54 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],r10
+     177:	4e 01 5c 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],r11
+     17c:	4e 01 64 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],r12
+     181:	4e 01 6c 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],r13
+     186:	4e 01 74 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],r14
+     18b:	4e 01 7c 2d 00       	add    QWORD PTR [rbp+r13*1+0x0],r15
+     190:	4a 01 04 2e          	add    QWORD PTR [rsi+r13*1],rax
+     194:	4a 01 0c 2e          	add    QWORD PTR [rsi+r13*1],rcx
+     198:	4a 01 14 2e          	add    QWORD PTR [rsi+r13*1],rdx
+     19c:	4a 01 1c 2e          	add    QWORD PTR [rsi+r13*1],rbx
+     1a0:	4a 01 24 2e          	add    QWORD PTR [rsi+r13*1],rsp
+     1a4:	4a 01 2c 2e          	add    QWORD PTR [rsi+r13*1],rbp
+     1a8:	4a 01 34 2e          	add    QWORD PTR [rsi+r13*1],rsi
+     1ac:	4a 01 3c 2e          	add    QWORD PTR [rsi+r13*1],rdi
+     1b0:	4e 01 04 2e          	add    QWORD PTR [rsi+r13*1],r8
+     1b4:	4e 01 0c 2e          	add    QWORD PTR [rsi+r13*1],r9
+     1b8:	4e 01 14 2e          	add    QWORD PTR [rsi+r13*1],r10
+     1bc:	4e 01 1c 2e          	add    QWORD PTR [rsi+r13*1],r11
+     1c0:	4e 01 24 2e          	add    QWORD PTR [rsi+r13*1],r12
+     1c4:	4e 01 2c 2e          	add    QWORD PTR [rsi+r13*1],r13
+     1c8:	4e 01 34 2e          	add    QWORD PTR [rsi+r13*1],r14
+     1cc:	4e 01 3c 2e          	add    QWORD PTR [rsi+r13*1],r15
+     1d0:	4a 01 04 2f          	add    QWORD PTR [rdi+r13*1],rax
+     1d4:	4a 01 0c 2f          	add    QWORD PTR [rdi+r13*1],rcx
+     1d8:	4a 01 14 2f          	add    QWORD PTR [rdi+r13*1],rdx
+     1dc:	4a 01 1c 2f          	add    QWORD PTR [rdi+r13*1],rbx
+     1e0:	4a 01 24 2f          	add    QWORD PTR [rdi+r13*1],rsp
+     1e4:	4a 01 2c 2f          	add    QWORD PTR [rdi+r13*1],rbp
+     1e8:	4a 01 34 2f          	add    QWORD PTR [rdi+r13*1],rsi
+     1ec:	4a 01 3c 2f          	add    QWORD PTR [rdi+r13*1],rdi
+     1f0:	4e 01 04 2f          	add    QWORD PTR [rdi+r13*1],r8
+     1f4:	4e 01 0c 2f          	add    QWORD PTR [rdi+r13*1],r9
+     1f8:	4e 01 14 2f          	add    QWORD PTR [rdi+r13*1],r10
+     1fc:	4e 01 1c 2f          	add    QWORD PTR [rdi+r13*1],r11
+     200:	4e 01 24 2f          	add    QWORD PTR [rdi+r13*1],r12
+     204:	4e 01 2c 2f          	add    QWORD PTR [rdi+r13*1],r13
+     208:	4e 01 34 2f          	add    QWORD PTR [rdi+r13*1],r14
+     20c:	4e 01 3c 2f          	add    QWORD PTR [rdi+r13*1],r15
+     210:	4b 01 04 28          	add    QWORD PTR [r8+r13*1],rax
+     214:	4b 01 0c 28          	add    QWORD PTR [r8+r13*1],rcx
+     218:	4b 01 14 28          	add    QWORD PTR [r8+r13*1],rdx
+     21c:	4b 01 1c 28          	add    QWORD PTR [r8+r13*1],rbx
+     220:	4b 01 24 28          	add    QWORD PTR [r8+r13*1],rsp
+     224:	4b 01 2c 28          	add    QWORD PTR [r8+r13*1],rbp
+     228:	4b 01 34 28          	add    QWORD PTR [r8+r13*1],rsi
+     22c:	4b 01 3c 28          	add    QWORD PTR [r8+r13*1],rdi
+     230:	4f 01 04 28          	add    QWORD PTR [r8+r13*1],r8
+     234:	4f 01 0c 28          	add    QWORD PTR [r8+r13*1],r9
+     238:	4f 01 14 28          	add    QWORD PTR [r8+r13*1],r10
+     23c:	4f 01 1c 28          	add    QWORD PTR [r8+r13*1],r11
+     240:	4f 01 24 28          	add    QWORD PTR [r8+r13*1],r12
+     244:	4f 01 2c 28          	add    QWORD PTR [r8+r13*1],r13
+     248:	4f 01 34 28          	add    QWORD PTR [r8+r13*1],r14
+     24c:	4f 01 3c 28          	add    QWORD PTR [r8+r13*1],r15
+     250:	4b 01 04 29          	add    QWORD PTR [r9+r13*1],rax
+     254:	4b 01 0c 29          	add    QWORD PTR [r9+r13*1],rcx
+     258:	4b 01 14 29          	add    QWORD PTR [r9+r13*1],rdx
+     25c:	4b 01 1c 29          	add    QWORD PTR [r9+r13*1],rbx
+     260:	4b 01 24 29          	add    QWORD PTR [r9+r13*1],rsp
+     264:	4b 01 2c 29          	add    QWORD PTR [r9+r13*1],rbp
+     268:	4b 01 34 29          	add    QWORD PTR [r9+r13*1],rsi
+     26c:	4b 01 3c 29          	add    QWORD PTR [r9+r13*1],rdi
+     270:	4f 01 04 29          	add    QWORD PTR [r9+r13*1],r8
+     274:	4f 01 0c 29          	add    QWORD PTR [r9+r13*1],r9
+     278:	4f 01 14 29          	add    QWORD PTR [r9+r13*1],r10
+     27c:	4f 01 1c 29          	add    QWORD PTR [r9+r13*1],r11
+     280:	4f 01 24 29          	add    QWORD PTR [r9+r13*1],r12
+     284:	4f 01 2c 29          	add    QWORD PTR [r9+r13*1],r13
+     288:	4f 01 34 29          	add    QWORD PTR [r9+r13*1],r14
+     28c:	4f 01 3c 29          	add    QWORD PTR [r9+r13*1],r15
+     290:	4b 01 04 2a          	add    QWORD PTR [r10+r13*1],rax
+     294:	4b 01 0c 2a          	add    QWORD PTR [r10+r13*1],rcx
+     298:	4b 01 14 2a          	add    QWORD PTR [r10+r13*1],rdx
+     29c:	4b 01 1c 2a          	add    QWORD PTR [r10+r13*1],rbx
+     2a0:	4b 01 24 2a          	add    QWORD PTR [r10+r13*1],rsp
+     2a4:	4b 01 2c 2a          	add    QWORD PTR [r10+r13*1],rbp
+     2a8:	4b 01 34 2a          	add    QWORD PTR [r10+r13*1],rsi
+     2ac:	4b 01 3c 2a          	add    QWORD PTR [r10+r13*1],rdi
+     2b0:	4f 01 04 2a          	add    QWORD PTR [r10+r13*1],r8
+     2b4:	4f 01 0c 2a          	add    QWORD PTR [r10+r13*1],r9
+     2b8:	4f 01 14 2a          	add    QWORD PTR [r10+r13*1],r10
+     2bc:	4f 01 1c 2a          	add    QWORD PTR [r10+r13*1],r11
+     2c0:	4f 01 24 2a          	add    QWORD PTR [r10+r13*1],r12
+     2c4:	4f 01 2c 2a          	add    QWORD PTR [r10+r13*1],r13
+     2c8:	4f 01 34 2a          	add    QWORD PTR [r10+r13*1],r14
+     2cc:	4f 01 3c 2a          	add    QWORD PTR [r10+r13*1],r15
+     2d0:	4b 01 04 2b          	add    QWORD PTR [r11+r13*1],rax
+     2d4:	4b 01 0c 2b          	add    QWORD PTR [r11+r13*1],rcx
+     2d8:	4b 01 14 2b          	add    QWORD PTR [r11+r13*1],rdx
+     2dc:	4b 01 1c 2b          	add    QWORD PTR [r11+r13*1],rbx
+     2e0:	4b 01 24 2b          	add    QWORD PTR [r11+r13*1],rsp
+     2e4:	4b 01 2c 2b          	add    QWORD PTR [r11+r13*1],rbp
+     2e8:	4b 01 34 2b          	add    QWORD PTR [r11+r13*1],rsi
+     2ec:	4b 01 3c 2b          	add    QWORD PTR [r11+r13*1],rdi
+     2f0:	4f 01 04 2b          	add    QWORD PTR [r11+r13*1],r8
+     2f4:	4f 01 0c 2b          	add    QWORD PTR [r11+r13*1],r9
+     2f8:	4f 01 14 2b          	add    QWORD PTR [r11+r13*1],r10
+     2fc:	4f 01 1c 2b          	add    QWORD PTR [r11+r13*1],r11
+     300:	4f 01 24 2b          	add    QWORD PTR [r11+r13*1],r12
+     304:	4f 01 2c 2b          	add    QWORD PTR [r11+r13*1],r13
+     308:	4f 01 34 2b          	add    QWORD PTR [r11+r13*1],r14
+     30c:	4f 01 3c 2b          	add    QWORD PTR [r11+r13*1],r15
+     310:	4b 01 04 2c          	add    QWORD PTR [r12+r13*1],rax
+     314:	4b 01 0c 2c          	add    QWORD PTR [r12+r13*1],rcx
+     318:	4b 01 14 2c          	add    QWORD PTR [r12+r13*1],rdx
+     31c:	4b 01 1c 2c          	add    QWORD PTR [r12+r13*1],rbx
+     320:	4b 01 24 2c          	add    QWORD PTR [r12+r13*1],rsp
+     324:	4b 01 2c 2c          	add    QWORD PTR [r12+r13*1],rbp
+     328:	4b 01 34 2c          	add    QWORD PTR [r12+r13*1],rsi
+     32c:	4b 01 3c 2c          	add    QWORD PTR [r12+r13*1],rdi
+     330:	4f 01 04 2c          	add    QWORD PTR [r12+r13*1],r8
+     334:	4f 01 0c 2c          	add    QWORD PTR [r12+r13*1],r9
+     338:	4f 01 14 2c          	add    QWORD PTR [r12+r13*1],r10
+     33c:	4f 01 1c 2c          	add    QWORD PTR [r12+r13*1],r11
+     340:	4f 01 24 2c          	add    QWORD PTR [r12+r13*1],r12
+     344:	4f 01 2c 2c          	add    QWORD PTR [r12+r13*1],r13
+     348:	4f 01 34 2c          	add    QWORD PTR [r12+r13*1],r14
+     34c:	4f 01 3c 2c          	add    QWORD PTR [r12+r13*1],r15
+     350:	4b 01 44 2d 00       	add    QWORD PTR [r13+r13*1+0x0],rax
+     355:	4b 01 4c 2d 00       	add    QWORD PTR [r13+r13*1+0x0],rcx
+     35a:	4b 01 54 2d 00       	add    QWORD PTR [r13+r13*1+0x0],rdx
+     35f:	4b 01 5c 2d 00       	add    QWORD PTR [r13+r13*1+0x0],rbx
+     364:	4b 01 64 2d 00       	add    QWORD PTR [r13+r13*1+0x0],rsp
+     369:	4b 01 6c 2d 00       	add    QWORD PTR [r13+r13*1+0x0],rbp
+     36e:	4b 01 74 2d 00       	add    QWORD PTR [r13+r13*1+0x0],rsi
+     373:	4b 01 7c 2d 00       	add    QWORD PTR [r13+r13*1+0x0],rdi
+     378:	4f 01 44 2d 00       	add    QWORD PTR [r13+r13*1+0x0],r8
+     37d:	4f 01 4c 2d 00       	add    QWORD PTR [r13+r13*1+0x0],r9
+     382:	4f 01 54 2d 00       	add    QWORD PTR [r13+r13*1+0x0],r10
+     387:	4f 01 5c 2d 00       	add    QWORD PTR [r13+r13*1+0x0],r11
+     38c:	4f 01 64 2d 00       	add    QWORD PTR [r13+r13*1+0x0],r12
+     391:	4f 01 6c 2d 00       	add    QWORD PTR [r13+r13*1+0x0],r13
+     396:	4f 01 74 2d 00       	add    QWORD PTR [r13+r13*1+0x0],r14
+     39b:	4f 01 7c 2d 00       	add    QWORD PTR [r13+r13*1+0x0],r15
+     3a0:	4b 01 04 2e          	add    QWORD PTR [r14+r13*1],rax
+     3a4:	4b 01 0c 2e          	add    QWORD PTR [r14+r13*1],rcx
+     3a8:	4b 01 14 2e          	add    QWORD PTR [r14+r13*1],rdx
+     3ac:	4b 01 1c 2e          	add    QWORD PTR [r14+r13*1],rbx
+     3b0:	4b 01 24 2e          	add    QWORD PTR [r14+r13*1],rsp
+     3b4:	4b 01 2c 2e          	add    QWORD PTR [r14+r13*1],rbp
+     3b8:	4b 01 34 2e          	add    QWORD PTR [r14+r13*1],rsi
+     3bc:	4b 01 3c 2e          	add    QWORD PTR [r14+r13*1],rdi
+     3c0:	4f 01 04 2e          	add    QWORD PTR [r14+r13*1],r8
+     3c4:	4f 01 0c 2e          	add    QWORD PTR [r14+r13*1],r9
+     3c8:	4f 01 14 2e          	add    QWORD PTR [r14+r13*1],r10
+     3cc:	4f 01 1c 2e          	add    QWORD PTR [r14+r13*1],r11
+     3d0:	4f 01 24 2e          	add    QWORD PTR [r14+r13*1],r12
+     3d4:	4f 01 2c 2e          	add    QWORD PTR [r14+r13*1],r13
+     3d8:	4f 01 34 2e          	add    QWORD PTR [r14+r13*1],r14
+     3dc:	4f 01 3c 2e          	add    QWORD PTR [r14+r13*1],r15
+     3e0:	4b 01 04 2f          	add    QWORD PTR [r15+r13*1],rax
+     3e4:	4b 01 0c 2f          	add    QWORD PTR [r15+r13*1],rcx
+     3e8:	4b 01 14 2f          	add    QWORD PTR [r15+r13*1],rdx
+     3ec:	4b 01 1c 2f          	add    QWORD PTR [r15+r13*1],rbx
+     3f0:	4b 01 24 2f          	add    QWORD PTR [r15+r13*1],rsp
+     3f4:	4b 01 2c 2f          	add    QWORD PTR [r15+r13*1],rbp
+     3f8:	4b 01 34 2f          	add    QWORD PTR [r15+r13*1],rsi
+     3fc:	4b 01 3c 2f          	add    QWORD PTR [r15+r13*1],rdi
+     400:	4f 01 04 2f          	add    QWORD PTR [r15+r13*1],r8
+     404:	4f 01 0c 2f          	add    QWORD PTR [r15+r13*1],r9
+     408:	4f 01 14 2f          	add    QWORD PTR [r15+r13*1],r10
+     40c:	4f 01 1c 2f          	add    QWORD PTR [r15+r13*1],r11
+     410:	4f 01 24 2f          	add    QWORD PTR [r15+r13*1],r12
+     414:	4f 01 2c 2f          	add    QWORD PTR [r15+r13*1],r13
+     418:	4f 01 34 2f          	add    QWORD PTR [r15+r13*1],r14
+     41c:	4f 01 3c 2f          	add    QWORD PTR [r15+r13*1],r15
+     420:	42 01 04 28          	add    DWORD PTR [rax+r13*1],eax
+     424:	42 01 0c 28          	add    DWORD PTR [rax+r13*1],ecx
+     428:	42 01 14 28          	add    DWORD PTR [rax+r13*1],edx
+     42c:	42 01 1c 28          	add    DWORD PTR [rax+r13*1],ebx
+     430:	42 01 24 28          	add    DWORD PTR [rax+r13*1],esp
+     434:	42 01 2c 28          	add    DWORD PTR [rax+r13*1],ebp
+     438:	42 01 34 28          	add    DWORD PTR [rax+r13*1],esi
+     43c:	42 01 3c 28          	add    DWORD PTR [rax+r13*1],edi
+     440:	46 01 04 28          	add    DWORD PTR [rax+r13*1],r8d
+     444:	46 01 0c 28          	add    DWORD PTR [rax+r13*1],r9d
+     448:	46 01 14 28          	add    DWORD PTR [rax+r13*1],r10d
+     44c:	46 01 1c 28          	add    DWORD PTR [rax+r13*1],r11d
+     450:	46 01 24 28          	add    DWORD PTR [rax+r13*1],r12d
+     454:	46 01 2c 28          	add    DWORD PTR [rax+r13*1],r13d
+     458:	46 01 34 28          	add    DWORD PTR [rax+r13*1],r14d
+     45c:	46 01 3c 28          	add    DWORD PTR [rax+r13*1],r15d
+     460:	42 01 04 29          	add    DWORD PTR [rcx+r13*1],eax
+     464:	42 01 0c 29          	add    DWORD PTR [rcx+r13*1],ecx
+     468:	42 01 14 29          	add    DWORD PTR [rcx+r13*1],edx
+     46c:	42 01 1c 29          	add    DWORD PTR [rcx+r13*1],ebx
+     470:	42 01 24 29          	add    DWORD PTR [rcx+r13*1],esp
+     474:	42 01 2c 29          	add    DWORD PTR [rcx+r13*1],ebp
+     478:	42 01 34 29          	add    DWORD PTR [rcx+r13*1],esi
+     47c:	42 01 3c 29          	add    DWORD PTR [rcx+r13*1],edi
+     480:	46 01 04 29          	add    DWORD PTR [rcx+r13*1],r8d
+     484:	46 01 0c 29          	add    DWORD PTR [rcx+r13*1],r9d
+     488:	46 01 14 29          	add    DWORD PTR [rcx+r13*1],r10d
+     48c:	46 01 1c 29          	add    DWORD PTR [rcx+r13*1],r11d
+     490:	46 01 24 29          	add    DWORD PTR [rcx+r13*1],r12d
+     494:	46 01 2c 29          	add    DWORD PTR [rcx+r13*1],r13d
+     498:	46 01 34 29          	add    DWORD PTR [rcx+r13*1],r14d
+     49c:	46 01 3c 29          	add    DWORD PTR [rcx+r13*1],r15d
+     4a0:	42 01 04 2a          	add    DWORD PTR [rdx+r13*1],eax
+     4a4:	42 01 0c 2a          	add    DWORD PTR [rdx+r13*1],ecx
+     4a8:	42 01 14 2a          	add    DWORD PTR [rdx+r13*1],edx
+     4ac:	42 01 1c 2a          	add    DWORD PTR [rdx+r13*1],ebx
+     4b0:	42 01 24 2a          	add    DWORD PTR [rdx+r13*1],esp
+     4b4:	42 01 2c 2a          	add    DWORD PTR [rdx+r13*1],ebp
+     4b8:	42 01 34 2a          	add    DWORD PTR [rdx+r13*1],esi
+     4bc:	42 01 3c 2a          	add    DWORD PTR [rdx+r13*1],edi
+     4c0:	46 01 04 2a          	add    DWORD PTR [rdx+r13*1],r8d
+     4c4:	46 01 0c 2a          	add    DWORD PTR [rdx+r13*1],r9d
+     4c8:	46 01 14 2a          	add    DWORD PTR [rdx+r13*1],r10d
+     4cc:	46 01 1c 2a          	add    DWORD PTR [rdx+r13*1],r11d
+     4d0:	46 01 24 2a          	add    DWORD PTR [rdx+r13*1],r12d
+     4d4:	46 01 2c 2a          	add    DWORD PTR [rdx+r13*1],r13d
+     4d8:	46 01 34 2a          	add    DWORD PTR [rdx+r13*1],r14d
+     4dc:	46 01 3c 2a          	add    DWORD PTR [rdx+r13*1],r15d
+     4e0:	42 01 04 2b          	add    DWORD PTR [rbx+r13*1],eax
+     4e4:	42 01 0c 2b          	add    DWORD PTR [rbx+r13*1],ecx
+     4e8:	42 01 14 2b          	add    DWORD PTR [rbx+r13*1],edx
+     4ec:	42 01 1c 2b          	add    DWORD PTR [rbx+r13*1],ebx
+     4f0:	42 01 24 2b          	add    DWORD PTR [rbx+r13*1],esp
+     4f4:	42 01 2c 2b          	add    DWORD PTR [rbx+r13*1],ebp
+     4f8:	42 01 34 2b          	add    DWORD PTR [rbx+r13*1],esi
+     4fc:	42 01 3c 2b          	add    DWORD PTR [rbx+r13*1],edi
+     500:	46 01 04 2b          	add    DWORD PTR [rbx+r13*1],r8d
+     504:	46 01 0c 2b          	add    DWORD PTR [rbx+r13*1],r9d
+     508:	46 01 14 2b          	add    DWORD PTR [rbx+r13*1],r10d
+     50c:	46 01 1c 2b          	add    DWORD PTR [rbx+r13*1],r11d
+     510:	46 01 24 2b          	add    DWORD PTR [rbx+r13*1],r12d
+     514:	46 01 2c 2b          	add    DWORD PTR [rbx+r13*1],r13d
+     518:	46 01 34 2b          	add    DWORD PTR [rbx+r13*1],r14d
+     51c:	46 01 3c 2b          	add    DWORD PTR [rbx+r13*1],r15d
+     520:	42 01 04 2c          	add    DWORD PTR [rsp+r13*1],eax
+     524:	42 01 0c 2c          	add    DWORD PTR [rsp+r13*1],ecx
+     528:	42 01 14 2c          	add    DWORD PTR [rsp+r13*1],edx
+     52c:	42 01 1c 2c          	add    DWORD PTR [rsp+r13*1],ebx
+     530:	42 01 24 2c          	add    DWORD PTR [rsp+r13*1],esp
+     534:	42 01 2c 2c          	add    DWORD PTR [rsp+r13*1],ebp
+     538:	42 01 34 2c          	add    DWORD PTR [rsp+r13*1],esi
+     53c:	42 01 3c 2c          	add    DWORD PTR [rsp+r13*1],edi
+     540:	46 01 04 2c          	add    DWORD PTR [rsp+r13*1],r8d
+     544:	46 01 0c 2c          	add    DWORD PTR [rsp+r13*1],r9d
+     548:	46 01 14 2c          	add    DWORD PTR [rsp+r13*1],r10d
+     54c:	46 01 1c 2c          	add    DWORD PTR [rsp+r13*1],r11d
+     550:	46 01 24 2c          	add    DWORD PTR [rsp+r13*1],r12d
+     554:	46 01 2c 2c          	add    DWORD PTR [rsp+r13*1],r13d
+     558:	46 01 34 2c          	add    DWORD PTR [rsp+r13*1],r14d
+     55c:	46 01 3c 2c          	add    DWORD PTR [rsp+r13*1],r15d
+     560:	42 01 44 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],eax
+     565:	42 01 4c 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],ecx
+     56a:	42 01 54 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],edx
+     56f:	42 01 5c 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],ebx
+     574:	42 01 64 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],esp
+     579:	42 01 6c 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],ebp
+     57e:	42 01 74 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],esi
+     583:	42 01 7c 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],edi
+     588:	46 01 44 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],r8d
+     58d:	46 01 4c 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],r9d
+     592:	46 01 54 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],r10d
+     597:	46 01 5c 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],r11d
+     59c:	46 01 64 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],r12d
+     5a1:	46 01 6c 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],r13d
+     5a6:	46 01 74 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],r14d
+     5ab:	46 01 7c 2d 00       	add    DWORD PTR [rbp+r13*1+0x0],r15d
+     5b0:	42 01 04 2e          	add    DWORD PTR [rsi+r13*1],eax
+     5b4:	42 01 0c 2e          	add    DWORD PTR [rsi+r13*1],ecx
+     5b8:	42 01 14 2e          	add    DWORD PTR [rsi+r13*1],edx
+     5bc:	42 01 1c 2e          	add    DWORD PTR [rsi+r13*1],ebx
+     5c0:	42 01 24 2e          	add    DWORD PTR [rsi+r13*1],esp
+     5c4:	42 01 2c 2e          	add    DWORD PTR [rsi+r13*1],ebp
+     5c8:	42 01 34 2e          	add    DWORD PTR [rsi+r13*1],esi
+     5cc:	42 01 3c 2e          	add    DWORD PTR [rsi+r13*1],edi
+     5d0:	46 01 04 2e          	add    DWORD PTR [rsi+r13*1],r8d
+     5d4:	46 01 0c 2e          	add    DWORD PTR [rsi+r13*1],r9d
+     5d8:	46 01 14 2e          	add    DWORD PTR [rsi+r13*1],r10d
+     5dc:	46 01 1c 2e          	add    DWORD PTR [rsi+r13*1],r11d
+     5e0:	46 01 24 2e          	add    DWORD PTR [rsi+r13*1],r12d
+     5e4:	46 01 2c 2e          	add    DWORD PTR [rsi+r13*1],r13d
+     5e8:	46 01 34 2e          	add    DWORD PTR [rsi+r13*1],r14d
+     5ec:	46 01 3c 2e          	add    DWORD PTR [rsi+r13*1],r15d
+     5f0:	42 01 04 2f          	add    DWORD PTR [rdi+r13*1],eax
+     5f4:	42 01 0c 2f          	add    DWORD PTR [rdi+r13*1],ecx
+     5f8:	42 01 14 2f          	add    DWORD PTR [rdi+r13*1],edx
+     5fc:	42 01 1c 2f          	add    DWORD PTR [rdi+r13*1],ebx
+     600:	42 01 24 2f          	add    DWORD PTR [rdi+r13*1],esp
+     604:	42 01 2c 2f          	add    DWORD PTR [rdi+r13*1],ebp
+     608:	42 01 34 2f          	add    DWORD PTR [rdi+r13*1],esi
+     60c:	42 01 3c 2f          	add    DWORD PTR [rdi+r13*1],edi
+     610:	46 01 04 2f          	add    DWORD PTR [rdi+r13*1],r8d
+     614:	46 01 0c 2f          	add    DWORD PTR [rdi+r13*1],r9d
+     618:	46 01 14 2f          	add    DWORD PTR [rdi+r13*1],r10d
+     61c:	46 01 1c 2f          	add    DWORD PTR [rdi+r13*1],r11d
+     620:	46 01 24 2f          	add    DWORD PTR [rdi+r13*1],r12d
+     624:	46 01 2c 2f          	add    DWORD PTR [rdi+r13*1],r13d
+     628:	46 01 34 2f          	add    DWORD PTR [rdi+r13*1],r14d
+     62c:	46 01 3c 2f          	add    DWORD PTR [rdi+r13*1],r15d
+     630:	43 01 04 28          	add    DWORD PTR [r8+r13*1],eax
+     634:	43 01 0c 28          	add    DWORD PTR [r8+r13*1],ecx
+     638:	43 01 14 28          	add    DWORD PTR [r8+r13*1],edx
+     63c:	43 01 1c 28          	add    DWORD PTR [r8+r13*1],ebx
+     640:	43 01 24 28          	add    DWORD PTR [r8+r13*1],esp
+     644:	43 01 2c 28          	add    DWORD PTR [r8+r13*1],ebp
+     648:	43 01 34 28          	add    DWORD PTR [r8+r13*1],esi
+     64c:	43 01 3c 28          	add    DWORD PTR [r8+r13*1],edi
+     650:	47 01 04 28          	add    DWORD PTR [r8+r13*1],r8d
+     654:	47 01 0c 28          	add    DWORD PTR [r8+r13*1],r9d
+     658:	47 01 14 28          	add    DWORD PTR [r8+r13*1],r10d
+     65c:	47 01 1c 28          	add    DWORD PTR [r8+r13*1],r11d
+     660:	47 01 24 28          	add    DWORD PTR [r8+r13*1],r12d
+     664:	47 01 2c 28          	add    DWORD PTR [r8+r13*1],r13d
+     668:	47 01 34 28          	add    DWORD PTR [r8+r13*1],r14d
+     66c:	47 01 3c 28          	add    DWORD PTR [r8+r13*1],r15d
+     670:	43 01 04 29          	add    DWORD PTR [r9+r13*1],eax
+     674:	43 01 0c 29          	add    DWORD PTR [r9+r13*1],ecx
+     678:	43 01 14 29          	add    DWORD PTR [r9+r13*1],edx
+     67c:	43 01 1c 29          	add    DWORD PTR [r9+r13*1],ebx
+     680:	43 01 24 29          	add    DWORD PTR [r9+r13*1],esp
+     684:	43 01 2c 29          	add    DWORD PTR [r9+r13*1],ebp
+     688:	43 01 34 29          	add    DWORD PTR [r9+r13*1],esi
+     68c:	43 01 3c 29          	add    DWORD PTR [r9+r13*1],edi
+     690:	47 01 04 29          	add    DWORD PTR [r9+r13*1],r8d
+     694:	47 01 0c 29          	add    DWORD PTR [r9+r13*1],r9d
+     698:	47 01 14 29          	add    DWORD PTR [r9+r13*1],r10d
+     69c:	47 01 1c 29          	add    DWORD PTR [r9+r13*1],r11d
+     6a0:	47 01 24 29          	add    DWORD PTR [r9+r13*1],r12d
+     6a4:	47 01 2c 29          	add    DWORD PTR [r9+r13*1],r13d
+     6a8:	47 01 34 29          	add    DWORD PTR [r9+r13*1],r14d
+     6ac:	47 01 3c 29          	add    DWORD PTR [r9+r13*1],r15d
+     6b0:	43 01 04 2a          	add    DWORD PTR [r10+r13*1],eax
+     6b4:	43 01 0c 2a          	add    DWORD PTR [r10+r13*1],ecx
+     6b8:	43 01 14 2a          	add    DWORD PTR [r10+r13*1],edx
+     6bc:	43 01 1c 2a          	add    DWORD PTR [r10+r13*1],ebx
+     6c0:	43 01 24 2a          	add    DWORD PTR [r10+r13*1],esp
+     6c4:	43 01 2c 2a          	add    DWORD PTR [r10+r13*1],ebp
+     6c8:	43 01 34 2a          	add    DWORD PTR [r10+r13*1],esi
+     6cc:	43 01 3c 2a          	add    DWORD PTR [r10+r13*1],edi
+     6d0:	47 01 04 2a          	add    DWORD PTR [r10+r13*1],r8d
+     6d4:	47 01 0c 2a          	add    DWORD PTR [r10+r13*1],r9d
+     6d8:	47 01 14 2a          	add    DWORD PTR [r10+r13*1],r10d
+     6dc:	47 01 1c 2a          	add    DWORD PTR [r10+r13*1],r11d
+     6e0:	47 01 24 2a          	add    DWORD PTR [r10+r13*1],r12d
+     6e4:	47 01 2c 2a          	add    DWORD PTR [r10+r13*1],r13d
+     6e8:	47 01 34 2a          	add    DWORD PTR [r10+r13*1],r14d
+     6ec:	47 01 3c 2a          	add    DWORD PTR [r10+r13*1],r15d
+     6f0:	43 01 04 2b          	add    DWORD PTR [r11+r13*1],eax
+     6f4:	43 01 0c 2b          	add    DWORD PTR [r11+r13*1],ecx
+     6f8:	43 01 14 2b          	add    DWORD PTR [r11+r13*1],edx
+     6fc:	43 01 1c 2b          	add    DWORD PTR [r11+r13*1],ebx
+     700:	43 01 24 2b          	add    DWORD PTR [r11+r13*1],esp
+     704:	43 01 2c 2b          	add    DWORD PTR [r11+r13*1],ebp
+     708:	43 01 34 2b          	add    DWORD PTR [r11+r13*1],esi
+     70c:	43 01 3c 2b          	add    DWORD PTR [r11+r13*1],edi
+     710:	47 01 04 2b          	add    DWORD PTR [r11+r13*1],r8d
+     714:	47 01 0c 2b          	add    DWORD PTR [r11+r13*1],r9d
+     718:	47 01 14 2b          	add    DWORD PTR [r11+r13*1],r10d
+     71c:	47 01 1c 2b          	add    DWORD PTR [r11+r13*1],r11d
+     720:	47 01 24 2b          	add    DWORD PTR [r11+r13*1],r12d
+     724:	47 01 2c 2b          	add    DWORD PTR [r11+r13*1],r13d
+     728:	47 01 34 2b          	add    DWORD PTR [r11+r13*1],r14d
+     72c:	47 01 3c 2b          	add    DWORD PTR [r11+r13*1],r15d
+     730:	43 01 04 2c          	add    DWORD PTR [r12+r13*1],eax
+     734:	43 01 0c 2c          	add    DWORD PTR [r12+r13*1],ecx
+     738:	43 01 14 2c          	add    DWORD PTR [r12+r13*1],edx
+     73c:	43 01 1c 2c          	add    DWORD PTR [r12+r13*1],ebx
+     740:	43 01 24 2c          	add    DWORD PTR [r12+r13*1],esp
+     744:	43 01 2c 2c          	add    DWORD PTR [r12+r13*1],ebp
+     748:	43 01 34 2c          	add    DWORD PTR [r12+r13*1],esi
+     74c:	43 01 3c 2c          	add    DWORD PTR [r12+r13*1],edi
+     750:	47 01 04 2c          	add    DWORD PTR [r12+r13*1],r8d
+     754:	47 01 0c 2c          	add    DWORD PTR [r12+r13*1],r9d
+     758:	47 01 14 2c          	add    DWORD PTR [r12+r13*1],r10d
+     75c:	47 01 1c 2c          	add    DWORD PTR [r12+r13*1],r11d
+     760:	47 01 24 2c          	add    DWORD PTR [r12+r13*1],r12d
+     764:	47 01 2c 2c          	add    DWORD PTR [r12+r13*1],r13d
+     768:	47 01 34 2c          	add    DWORD PTR [r12+r13*1],r14d
+     76c:	47 01 3c 2c          	add    DWORD PTR [r12+r13*1],r15d
+     770:	43 01 44 2d 00       	add    DWORD PTR [r13+r13*1+0x0],eax
+     775:	43 01 4c 2d 00       	add    DWORD PTR [r13+r13*1+0x0],ecx
+     77a:	43 01 54 2d 00       	add    DWORD PTR [r13+r13*1+0x0],edx
+     77f:	43 01 5c 2d 00       	add    DWORD PTR [r13+r13*1+0x0],ebx
+     784:	43 01 64 2d 00       	add    DWORD PTR [r13+r13*1+0x0],esp
+     789:	43 01 6c 2d 00       	add    DWORD PTR [r13+r13*1+0x0],ebp
+     78e:	43 01 74 2d 00       	add    DWORD PTR [r13+r13*1+0x0],esi
+     793:	43 01 7c 2d 00       	add    DWORD PTR [r13+r13*1+0x0],edi
+     798:	47 01 44 2d 00       	add    DWORD PTR [r13+r13*1+0x0],r8d
+     79d:	47 01 4c 2d 00       	add    DWORD PTR [r13+r13*1+0x0],r9d
+     7a2:	47 01 54 2d 00       	add    DWORD PTR [r13+r13*1+0x0],r10d
+     7a7:	47 01 5c 2d 00       	add    DWORD PTR [r13+r13*1+0x0],r11d
+     7ac:	47 01 64 2d 00       	add    DWORD PTR [r13+r13*1+0x0],r12d
+     7b1:	47 01 6c 2d 00       	add    DWORD PTR [r13+r13*1+0x0],r13d
+     7b6:	47 01 74 2d 00       	add    DWORD PTR [r13+r13*1+0x0],r14d
+     7bb:	47 01 7c 2d 00       	add    DWORD PTR [r13+r13*1+0x0],r15d
+     7c0:	43 01 04 2e          	add    DWORD PTR [r14+r13*1],eax
+     7c4:	43 01 0c 2e          	add    DWORD PTR [r14+r13*1],ecx
+     7c8:	43 01 14 2e          	add    DWORD PTR [r14+r13*1],edx
+     7cc:	43 01 1c 2e          	add    DWORD PTR [r14+r13*1],ebx
+     7d0:	43 01 24 2e          	add    DWORD PTR [r14+r13*1],esp
+     7d4:	43 01 2c 2e          	add    DWORD PTR [r14+r13*1],ebp
+     7d8:	43 01 34 2e          	add    DWORD PTR [r14+r13*1],esi
+     7dc:	43 01 3c 2e          	add    DWORD PTR [r14+r13*1],edi
+     7e0:	47 01 04 2e          	add    DWORD PTR [r14+r13*1],r8d
+     7e4:	47 01 0c 2e          	add    DWORD PTR [r14+r13*1],r9d
+     7e8:	47 01 14 2e          	add    DWORD PTR [r14+r13*1],r10d
+     7ec:	47 01 1c 2e          	add    DWORD PTR [r14+r13*1],r11d
+     7f0:	47 01 24 2e          	add    DWORD PTR [r14+r13*1],r12d
+     7f4:	47 01 2c 2e          	add    DWORD PTR [r14+r13*1],r13d
+     7f8:	47 01 34 2e          	add    DWORD PTR [r14+r13*1],r14d
+     7fc:	47 01 3c 2e          	add    DWORD PTR [r14+r13*1],r15d
+     800:	43 01 04 2f          	add    DWORD PTR [r15+r13*1],eax
+     804:	43 01 0c 2f          	add    DWORD PTR [r15+r13*1],ecx
+     808:	43 01 14 2f          	add    DWORD PTR [r15+r13*1],edx
+     80c:	43 01 1c 2f          	add    DWORD PTR [r15+r13*1],ebx
+     810:	43 01 24 2f          	add    DWORD PTR [r15+r13*1],esp
+     814:	43 01 2c 2f          	add    DWORD PTR [r15+r13*1],ebp
+     818:	43 01 34 2f          	add    DWORD PTR [r15+r13*1],esi
+     81c:	43 01 3c 2f          	add    DWORD PTR [r15+r13*1],edi
+     820:	47 01 04 2f          	add    DWORD PTR [r15+r13*1],r8d
+     824:	47 01 0c 2f          	add    DWORD PTR [r15+r13*1],r9d
+     828:	47 01 14 2f          	add    DWORD PTR [r15+r13*1],r10d
+     82c:	47 01 1c 2f          	add    DWORD PTR [r15+r13*1],r11d
+     830:	47 01 24 2f          	add    DWORD PTR [r15+r13*1],r12d
+     834:	47 01 2c 2f          	add    DWORD PTR [r15+r13*1],r13d
+     838:	47 01 34 2f          	add    DWORD PTR [r15+r13*1],r14d
+     83c:	47 01 3c 2f          	add    DWORD PTR [r15+r13*1],r15d
+     840:	66 42 01 04 28       	add    WORD PTR [rax+r13*1],ax
+     845:	66 42 01 0c 28       	add    WORD PTR [rax+r13*1],cx
+     84a:	66 42 01 14 28       	add    WORD PTR [rax+r13*1],dx
+     84f:	66 42 01 1c 28       	add    WORD PTR [rax+r13*1],bx
+     854:	66 42 01 24 28       	add    WORD PTR [rax+r13*1],sp
+     859:	66 42 01 2c 28       	add    WORD PTR [rax+r13*1],bp
+     85e:	66 42 01 34 28       	add    WORD PTR [rax+r13*1],si
+     863:	66 42 01 3c 28       	add    WORD PTR [rax+r13*1],di
+     868:	66 46 01 04 28       	add    WORD PTR [rax+r13*1],r8w
+     86d:	66 46 01 0c 28       	add    WORD PTR [rax+r13*1],r9w
+     872:	66 46 01 14 28       	add    WORD PTR [rax+r13*1],r10w
+     877:	66 46 01 1c 28       	add    WORD PTR [rax+r13*1],r11w
+     87c:	66 46 01 24 28       	add    WORD PTR [rax+r13*1],r12w
+     881:	66 46 01 2c 28       	add    WORD PTR [rax+r13*1],r13w
+     886:	66 46 01 34 28       	add    WORD PTR [rax+r13*1],r14w
+     88b:	66 46 01 3c 28       	add    WORD PTR [rax+r13*1],r15w
+     890:	66 42 01 04 29       	add    WORD PTR [rcx+r13*1],ax
+     895:	66 42 01 0c 29       	add    WORD PTR [rcx+r13*1],cx
+     89a:	66 42 01 14 29       	add    WORD PTR [rcx+r13*1],dx
+     89f:	66 42 01 1c 29       	add    WORD PTR [rcx+r13*1],bx
+     8a4:	66 42 01 24 29       	add    WORD PTR [rcx+r13*1],sp
+     8a9:	66 42 01 2c 29       	add    WORD PTR [rcx+r13*1],bp
+     8ae:	66 42 01 34 29       	add    WORD PTR [rcx+r13*1],si
+     8b3:	66 42 01 3c 29       	add    WORD PTR [rcx+r13*1],di
+     8b8:	66 46 01 04 29       	add    WORD PTR [rcx+r13*1],r8w
+     8bd:	66 46 01 0c 29       	add    WORD PTR [rcx+r13*1],r9w
+     8c2:	66 46 01 14 29       	add    WORD PTR [rcx+r13*1],r10w
+     8c7:	66 46 01 1c 29       	add    WORD PTR [rcx+r13*1],r11w
+     8cc:	66 46 01 24 29       	add    WORD PTR [rcx+r13*1],r12w
+     8d1:	66 46 01 2c 29       	add    WORD PTR [rcx+r13*1],r13w
+     8d6:	66 46 01 34 29       	add    WORD PTR [rcx+r13*1],r14w
+     8db:	66 46 01 3c 29       	add    WORD PTR [rcx+r13*1],r15w
+     8e0:	66 42 01 04 2a       	add    WORD PTR [rdx+r13*1],ax
+     8e5:	66 42 01 0c 2a       	add    WORD PTR [rdx+r13*1],cx
+     8ea:	66 42 01 14 2a       	add    WORD PTR [rdx+r13*1],dx
+     8ef:	66 42 01 1c 2a       	add    WORD PTR [rdx+r13*1],bx
+     8f4:	66 42 01 24 2a       	add    WORD PTR [rdx+r13*1],sp
+     8f9:	66 42 01 2c 2a       	add    WORD PTR [rdx+r13*1],bp
+     8fe:	66 42 01 34 2a       	add    WORD PTR [rdx+r13*1],si
+     903:	66 42 01 3c 2a       	add    WORD PTR [rdx+r13*1],di
+     908:	66 46 01 04 2a       	add    WORD PTR [rdx+r13*1],r8w
+     90d:	66 46 01 0c 2a       	add    WORD PTR [rdx+r13*1],r9w
+     912:	66 46 01 14 2a       	add    WORD PTR [rdx+r13*1],r10w
+     917:	66 46 01 1c 2a       	add    WORD PTR [rdx+r13*1],r11w
+     91c:	66 46 01 24 2a       	add    WORD PTR [rdx+r13*1],r12w
+     921:	66 46 01 2c 2a       	add    WORD PTR [rdx+r13*1],r13w
+     926:	66 46 01 34 2a       	add    WORD PTR [rdx+r13*1],r14w
+     92b:	66 46 01 3c 2a       	add    WORD PTR [rdx+r13*1],r15w
+     930:	66 42 01 04 2b       	add    WORD PTR [rbx+r13*1],ax
+     935:	66 42 01 0c 2b       	add    WORD PTR [rbx+r13*1],cx
+     93a:	66 42 01 14 2b       	add    WORD PTR [rbx+r13*1],dx
+     93f:	66 42 01 1c 2b       	add    WORD PTR [rbx+r13*1],bx
+     944:	66 42 01 24 2b       	add    WORD PTR [rbx+r13*1],sp
+     949:	66 42 01 2c 2b       	add    WORD PTR [rbx+r13*1],bp
+     94e:	66 42 01 34 2b       	add    WORD PTR [rbx+r13*1],si
+     953:	66 42 01 3c 2b       	add    WORD PTR [rbx+r13*1],di
+     958:	66 46 01 04 2b       	add    WORD PTR [rbx+r13*1],r8w
+     95d:	66 46 01 0c 2b       	add    WORD PTR [rbx+r13*1],r9w
+     962:	66 46 01 14 2b       	add    WORD PTR [rbx+r13*1],r10w
+     967:	66 46 01 1c 2b       	add    WORD PTR [rbx+r13*1],r11w
+     96c:	66 46 01 24 2b       	add    WORD PTR [rbx+r13*1],r12w
+     971:	66 46 01 2c 2b       	add    WORD PTR [rbx+r13*1],r13w
+     976:	66 46 01 34 2b       	add    WORD PTR [rbx+r13*1],r14w
+     97b:	66 46 01 3c 2b       	add    WORD PTR [rbx+r13*1],r15w
+     980:	66 42 01 04 2c       	add    WORD PTR [rsp+r13*1],ax
+     985:	66 42 01 0c 2c       	add    WORD PTR [rsp+r13*1],cx
+     98a:	66 42 01 14 2c       	add    WORD PTR [rsp+r13*1],dx
+     98f:	66 42 01 1c 2c       	add    WORD PTR [rsp+r13*1],bx
+     994:	66 42 01 24 2c       	add    WORD PTR [rsp+r13*1],sp
+     999:	66 42 01 2c 2c       	add    WORD PTR [rsp+r13*1],bp
+     99e:	66 42 01 34 2c       	add    WORD PTR [rsp+r13*1],si
+     9a3:	66 42 01 3c 2c       	add    WORD PTR [rsp+r13*1],di
+     9a8:	66 46 01 04 2c       	add    WORD PTR [rsp+r13*1],r8w
+     9ad:	66 46 01 0c 2c       	add    WORD PTR [rsp+r13*1],r9w
+     9b2:	66 46 01 14 2c       	add    WORD PTR [rsp+r13*1],r10w
+     9b7:	66 46 01 1c 2c       	add    WORD PTR [rsp+r13*1],r11w
+     9bc:	66 46 01 24 2c       	add    WORD PTR [rsp+r13*1],r12w
+     9c1:	66 46 01 2c 2c       	add    WORD PTR [rsp+r13*1],r13w
+     9c6:	66 46 01 34 2c       	add    WORD PTR [rsp+r13*1],r14w
+     9cb:	66 46 01 3c 2c       	add    WORD PTR [rsp+r13*1],r15w
+     9d0:	66 42 01 44 2d 00    	add    WORD PTR [rbp+r13*1+0x0],ax
+     9d6:	66 42 01 4c 2d 00    	add    WORD PTR [rbp+r13*1+0x0],cx
+     9dc:	66 42 01 54 2d 00    	add    WORD PTR [rbp+r13*1+0x0],dx
+     9e2:	66 42 01 5c 2d 00    	add    WORD PTR [rbp+r13*1+0x0],bx
+     9e8:	66 42 01 64 2d 00    	add    WORD PTR [rbp+r13*1+0x0],sp
+     9ee:	66 42 01 6c 2d 00    	add    WORD PTR [rbp+r13*1+0x0],bp
+     9f4:	66 42 01 74 2d 00    	add    WORD PTR [rbp+r13*1+0x0],si
+     9fa:	66 42 01 7c 2d 00    	add    WORD PTR [rbp+r13*1+0x0],di
+     a00:	66 46 01 44 2d 00    	add    WORD PTR [rbp+r13*1+0x0],r8w
+     a06:	66 46 01 4c 2d 00    	add    WORD PTR [rbp+r13*1+0x0],r9w
+     a0c:	66 46 01 54 2d 00    	add    WORD PTR [rbp+r13*1+0x0],r10w
+     a12:	66 46 01 5c 2d 00    	add    WORD PTR [rbp+r13*1+0x0],r11w
+     a18:	66 46 01 64 2d 00    	add    WORD PTR [rbp+r13*1+0x0],r12w
+     a1e:	66 46 01 6c 2d 00    	add    WORD PTR [rbp+r13*1+0x0],r13w
+     a24:	66 46 01 74 2d 00    	add    WORD PTR [rbp+r13*1+0x0],r14w
+     a2a:	66 46 01 7c 2d 00    	add    WORD PTR [rbp+r13*1+0x0],r15w
+     a30:	66 42 01 04 2e       	add    WORD PTR [rsi+r13*1],ax
+     a35:	66 42 01 0c 2e       	add    WORD PTR [rsi+r13*1],cx
+     a3a:	66 42 01 14 2e       	add    WORD PTR [rsi+r13*1],dx
+     a3f:	66 42 01 1c 2e       	add    WORD PTR [rsi+r13*1],bx
+     a44:	66 42 01 24 2e       	add    WORD PTR [rsi+r13*1],sp
+     a49:	66 42 01 2c 2e       	add    WORD PTR [rsi+r13*1],bp
+     a4e:	66 42 01 34 2e       	add    WORD PTR [rsi+r13*1],si
+     a53:	66 42 01 3c 2e       	add    WORD PTR [rsi+r13*1],di
+     a58:	66 46 01 04 2e       	add    WORD PTR [rsi+r13*1],r8w
+     a5d:	66 46 01 0c 2e       	add    WORD PTR [rsi+r13*1],r9w
+     a62:	66 46 01 14 2e       	add    WORD PTR [rsi+r13*1],r10w
+     a67:	66 46 01 1c 2e       	add    WORD PTR [rsi+r13*1],r11w
+     a6c:	66 46 01 24 2e       	add    WORD PTR [rsi+r13*1],r12w
+     a71:	66 46 01 2c 2e       	add    WORD PTR [rsi+r13*1],r13w
+     a76:	66 46 01 34 2e       	add    WORD PTR [rsi+r13*1],r14w
+     a7b:	66 46 01 3c 2e       	add    WORD PTR [rsi+r13*1],r15w
+     a80:	66 42 01 04 2f       	add    WORD PTR [rdi+r13*1],ax
+     a85:	66 42 01 0c 2f       	add    WORD PTR [rdi+r13*1],cx
+     a8a:	66 42 01 14 2f       	add    WORD PTR [rdi+r13*1],dx
+     a8f:	66 42 01 1c 2f       	add    WORD PTR [rdi+r13*1],bx
+     a94:	66 42 01 24 2f       	add    WORD PTR [rdi+r13*1],sp
+     a99:	66 42 01 2c 2f       	add    WORD PTR [rdi+r13*1],bp
+     a9e:	66 42 01 34 2f       	add    WORD PTR [rdi+r13*1],si
+     aa3:	66 42 01 3c 2f       	add    WORD PTR [rdi+r13*1],di
+     aa8:	66 46 01 04 2f       	add    WORD PTR [rdi+r13*1],r8w
+     aad:	66 46 01 0c 2f       	add    WORD PTR [rdi+r13*1],r9w
+     ab2:	66 46 01 14 2f       	add    WORD PTR [rdi+r13*1],r10w
+     ab7:	66 46 01 1c 2f       	add    WORD PTR [rdi+r13*1],r11w
+     abc:	66 46 01 24 2f       	add    WORD PTR [rdi+r13*1],r12w
+     ac1:	66 46 01 2c 2f       	add    WORD PTR [rdi+r13*1],r13w
+     ac6:	66 46 01 34 2f       	add    WORD PTR [rdi+r13*1],r14w
+     acb:	66 46 01 3c 2f       	add    WORD PTR [rdi+r13*1],r15w
+     ad0:	66 43 01 04 28       	add    WORD PTR [r8+r13*1],ax
+     ad5:	66 43 01 0c 28       	add    WORD PTR [r8+r13*1],cx
+     ada:	66 43 01 14 28       	add    WORD PTR [r8+r13*1],dx
+     adf:	66 43 01 1c 28       	add    WORD PTR [r8+r13*1],bx
+     ae4:	66 43 01 24 28       	add    WORD PTR [r8+r13*1],sp
+     ae9:	66 43 01 2c 28       	add    WORD PTR [r8+r13*1],bp
+     aee:	66 43 01 34 28       	add    WORD PTR [r8+r13*1],si
+     af3:	66 43 01 3c 28       	add    WORD PTR [r8+r13*1],di
+     af8:	66 47 01 04 28       	add    WORD PTR [r8+r13*1],r8w
+     afd:	66 47 01 0c 28       	add    WORD PTR [r8+r13*1],r9w
+     b02:	66 47 01 14 28       	add    WORD PTR [r8+r13*1],r10w
+     b07:	66 47 01 1c 28       	add    WORD PTR [r8+r13*1],r11w
+     b0c:	66 47 01 24 28       	add    WORD PTR [r8+r13*1],r12w
+     b11:	66 47 01 2c 28       	add    WORD PTR [r8+r13*1],r13w
+     b16:	66 47 01 34 28       	add    WORD PTR [r8+r13*1],r14w
+     b1b:	66 47 01 3c 28       	add    WORD PTR [r8+r13*1],r15w
+     b20:	66 43 01 04 29       	add    WORD PTR [r9+r13*1],ax
+     b25:	66 43 01 0c 29       	add    WORD PTR [r9+r13*1],cx
+     b2a:	66 43 01 14 29       	add    WORD PTR [r9+r13*1],dx
+     b2f:	66 43 01 1c 29       	add    WORD PTR [r9+r13*1],bx
+     b34:	66 43 01 24 29       	add    WORD PTR [r9+r13*1],sp
+     b39:	66 43 01 2c 29       	add    WORD PTR [r9+r13*1],bp
+     b3e:	66 43 01 34 29       	add    WORD PTR [r9+r13*1],si
+     b43:	66 43 01 3c 29       	add    WORD PTR [r9+r13*1],di
+     b48:	66 47 01 04 29       	add    WORD PTR [r9+r13*1],r8w
+     b4d:	66 47 01 0c 29       	add    WORD PTR [r9+r13*1],r9w
+     b52:	66 47 01 14 29       	add    WORD PTR [r9+r13*1],r10w
+     b57:	66 47 01 1c 29       	add    WORD PTR [r9+r13*1],r11w
+     b5c:	66 47 01 24 29       	add    WORD PTR [r9+r13*1],r12w
+     b61:	66 47 01 2c 29       	add    WORD PTR [r9+r13*1],r13w
+     b66:	66 47 01 34 29       	add    WORD PTR [r9+r13*1],r14w
+     b6b:	66 47 01 3c 29       	add    WORD PTR [r9+r13*1],r15w
+     b70:	66 43 01 04 2a       	add    WORD PTR [r10+r13*1],ax
+     b75:	66 43 01 0c 2a       	add    WORD PTR [r10+r13*1],cx
+     b7a:	66 43 01 14 2a       	add    WORD PTR [r10+r13*1],dx
+     b7f:	66 43 01 1c 2a       	add    WORD PTR [r10+r13*1],bx
+     b84:	66 43 01 24 2a       	add    WORD PTR [r10+r13*1],sp
+     b89:	66 43 01 2c 2a       	add    WORD PTR [r10+r13*1],bp
+     b8e:	66 43 01 34 2a       	add    WORD PTR [r10+r13*1],si
+     b93:	66 43 01 3c 2a       	add    WORD PTR [r10+r13*1],di
+     b98:	66 47 01 04 2a       	add    WORD PTR [r10+r13*1],r8w
+     b9d:	66 47 01 0c 2a       	add    WORD PTR [r10+r13*1],r9w
+     ba2:	66 47 01 14 2a       	add    WORD PTR [r10+r13*1],r10w
+     ba7:	66 47 01 1c 2a       	add    WORD PTR [r10+r13*1],r11w
+     bac:	66 47 01 24 2a       	add    WORD PTR [r10+r13*1],r12w
+     bb1:	66 47 01 2c 2a       	add    WORD PTR [r10+r13*1],r13w
+     bb6:	66 47 01 34 2a       	add    WORD PTR [r10+r13*1],r14w
+     bbb:	66 47 01 3c 2a       	add    WORD PTR [r10+r13*1],r15w
+     bc0:	66 43 01 04 2b       	add    WORD PTR [r11+r13*1],ax
+     bc5:	66 43 01 0c 2b       	add    WORD PTR [r11+r13*1],cx
+     bca:	66 43 01 14 2b       	add    WORD PTR [r11+r13*1],dx
+     bcf:	66 43 01 1c 2b       	add    WORD PTR [r11+r13*1],bx
+     bd4:	66 43 01 24 2b       	add    WORD PTR [r11+r13*1],sp
+     bd9:	66 43 01 2c 2b       	add    WORD PTR [r11+r13*1],bp
+     bde:	66 43 01 34 2b       	add    WORD PTR [r11+r13*1],si
+     be3:	66 43 01 3c 2b       	add    WORD PTR [r11+r13*1],di
+     be8:	66 47 01 04 2b       	add    WORD PTR [r11+r13*1],r8w
+     bed:	66 47 01 0c 2b       	add    WORD PTR [r11+r13*1],r9w
+     bf2:	66 47 01 14 2b       	add    WORD PTR [r11+r13*1],r10w
+     bf7:	66 47 01 1c 2b       	add    WORD PTR [r11+r13*1],r11w
+     bfc:	66 47 01 24 2b       	add    WORD PTR [r11+r13*1],r12w
+     c01:	66 47 01 2c 2b       	add    WORD PTR [r11+r13*1],r13w
+     c06:	66 47 01 34 2b       	add    WORD PTR [r11+r13*1],r14w
+     c0b:	66 47 01 3c 2b       	add    WORD PTR [r11+r13*1],r15w
+     c10:	66 43 01 04 2c       	add    WORD PTR [r12+r13*1],ax
+     c15:	66 43 01 0c 2c       	add    WORD PTR [r12+r13*1],cx
+     c1a:	66 43 01 14 2c       	add    WORD PTR [r12+r13*1],dx
+     c1f:	66 43 01 1c 2c       	add    WORD PTR [r12+r13*1],bx
+     c24:	66 43 01 24 2c       	add    WORD PTR [r12+r13*1],sp
+     c29:	66 43 01 2c 2c       	add    WORD PTR [r12+r13*1],bp
+     c2e:	66 43 01 34 2c       	add    WORD PTR [r12+r13*1],si
+     c33:	66 43 01 3c 2c       	add    WORD PTR [r12+r13*1],di
+     c38:	66 47 01 04 2c       	add    WORD PTR [r12+r13*1],r8w
+     c3d:	66 47 01 0c 2c       	add    WORD PTR [r12+r13*1],r9w
+     c42:	66 47 01 14 2c       	add    WORD PTR [r12+r13*1],r10w
+     c47:	66 47 01 1c 2c       	add    WORD PTR [r12+r13*1],r11w
+     c4c:	66 47 01 24 2c       	add    WORD PTR [r12+r13*1],r12w
+     c51:	66 47 01 2c 2c       	add    WORD PTR [r12+r13*1],r13w
+     c56:	66 47 01 34 2c       	add    WORD PTR [r12+r13*1],r14w
+     c5b:	66 47 01 3c 2c       	add    WORD PTR [r12+r13*1],r15w
+     c60:	66 43 01 44 2d 00    	add    WORD PTR [r13+r13*1+0x0],ax
+     c66:	66 43 01 4c 2d 00    	add    WORD PTR [r13+r13*1+0x0],cx
+     c6c:	66 43 01 54 2d 00    	add    WORD PTR [r13+r13*1+0x0],dx
+     c72:	66 43 01 5c 2d 00    	add    WORD PTR [r13+r13*1+0x0],bx
+     c78:	66 43 01 64 2d 00    	add    WORD PTR [r13+r13*1+0x0],sp
+     c7e:	66 43 01 6c 2d 00    	add    WORD PTR [r13+r13*1+0x0],bp
+     c84:	66 43 01 74 2d 00    	add    WORD PTR [r13+r13*1+0x0],si
+     c8a:	66 43 01 7c 2d 00    	add    WORD PTR [r13+r13*1+0x0],di
+     c90:	66 47 01 44 2d 00    	add    WORD PTR [r13+r13*1+0x0],r8w
+     c96:	66 47 01 4c 2d 00    	add    WORD PTR [r13+r13*1+0x0],r9w
+     c9c:	66 47 01 54 2d 00    	add    WORD PTR [r13+r13*1+0x0],r10w
+     ca2:	66 47 01 5c 2d 00    	add    WORD PTR [r13+r13*1+0x0],r11w
+     ca8:	66 47 01 64 2d 00    	add    WORD PTR [r13+r13*1+0x0],r12w
+     cae:	66 47 01 6c 2d 00    	add    WORD PTR [r13+r13*1+0x0],r13w
+     cb4:	66 47 01 74 2d 00    	add    WORD PTR [r13+r13*1+0x0],r14w
+     cba:	66 47 01 7c 2d 00    	add    WORD PTR [r13+r13*1+0x0],r15w
+     cc0:	66 43 01 04 2e       	add    WORD PTR [r14+r13*1],ax
+     cc5:	66 43 01 0c 2e       	add    WORD PTR [r14+r13*1],cx
+     cca:	66 43 01 14 2e       	add    WORD PTR [r14+r13*1],dx
+     ccf:	66 43 01 1c 2e       	add    WORD PTR [r14+r13*1],bx
+     cd4:	66 43 01 24 2e       	add    WORD PTR [r14+r13*1],sp
+     cd9:	66 43 01 2c 2e       	add    WORD PTR [r14+r13*1],bp
+     cde:	66 43 01 34 2e       	add    WORD PTR [r14+r13*1],si
+     ce3:	66 43 01 3c 2e       	add    WORD PTR [r14+r13*1],di
+     ce8:	66 47 01 04 2e       	add    WORD PTR [r14+r13*1],r8w
+     ced:	66 47 01 0c 2e       	add    WORD PTR [r14+r13*1],r9w
+     cf2:	66 47 01 14 2e       	add    WORD PTR [r14+r13*1],r10w
+     cf7:	66 47 01 1c 2e       	add    WORD PTR [r14+r13*1],r11w
+     cfc:	66 47 01 24 2e       	add    WORD PTR [r14+r13*1],r12w
+     d01:	66 47 01 2c 2e       	add    WORD PTR [r14+r13*1],r13w
+     d06:	66 47 01 34 2e       	add    WORD PTR [r14+r13*1],r14w
+     d0b:	66 47 01 3c 2e       	add    WORD PTR [r14+r13*1],r15w
+     d10:	66 43 01 04 2f       	add    WORD PTR [r15+r13*1],ax
+     d15:	66 43 01 0c 2f       	add    WORD PTR [r15+r13*1],cx
+     d1a:	66 43 01 14 2f       	add    WORD PTR [r15+r13*1],dx
+     d1f:	66 43 01 1c 2f       	add    WORD PTR [r15+r13*1],bx
+     d24:	66 43 01 24 2f       	add    WORD PTR [r15+r13*1],sp
+     d29:	66 43 01 2c 2f       	add    WORD PTR [r15+r13*1],bp
+     d2e:	66 43 01 34 2f       	add    WORD PTR [r15+r13*1],si
+     d33:	66 43 01 3c 2f       	add    WORD PTR [r15+r13*1],di
+     d38:	66 47 01 04 2f       	add    WORD PTR [r15+r13*1],r8w
+     d3d:	66 47 01 0c 2f       	add    WORD PTR [r15+r13*1],r9w
+     d42:	66 47 01 14 2f       	add    WORD PTR [r15+r13*1],r10w
+     d47:	66 47 01 1c 2f       	add    WORD PTR [r15+r13*1],r11w
+     d4c:	66 47 01 24 2f       	add    WORD PTR [r15+r13*1],r12w
+     d51:	66 47 01 2c 2f       	add    WORD PTR [r15+r13*1],r13w
+     d56:	66 47 01 34 2f       	add    WORD PTR [r15+r13*1],r14w
+     d5b:	66 47 01 3c 2f       	add    WORD PTR [r15+r13*1],r15w
+     d60:	42 00 04 28          	add    BYTE PTR [rax+r13*1],al
+     d64:	42 00 0c 28          	add    BYTE PTR [rax+r13*1],cl
+     d68:	42 00 14 28          	add    BYTE PTR [rax+r13*1],dl
+     d6c:	42 00 1c 28          	add    BYTE PTR [rax+r13*1],bl
+     d70:	42 00 24 28          	add    BYTE PTR [rax+r13*1],spl
+     d74:	42 00 2c 28          	add    BYTE PTR [rax+r13*1],bpl
+     d78:	42 00 34 28          	add    BYTE PTR [rax+r13*1],sil
+     d7c:	42 00 3c 28          	add    BYTE PTR [rax+r13*1],dil
+     d80:	46 00 04 28          	add    BYTE PTR [rax+r13*1],r8b
+     d84:	46 00 0c 28          	add    BYTE PTR [rax+r13*1],r9b
+     d88:	46 00 14 28          	add    BYTE PTR [rax+r13*1],r10b
+     d8c:	46 00 1c 28          	add    BYTE PTR [rax+r13*1],r11b
+     d90:	46 00 24 28          	add    BYTE PTR [rax+r13*1],r12b
+     d94:	46 00 2c 28          	add    BYTE PTR [rax+r13*1],r13b
+     d98:	46 00 34 28          	add    BYTE PTR [rax+r13*1],r14b
+     d9c:	46 00 3c 28          	add    BYTE PTR [rax+r13*1],r15b
+     da0:	42 00 24 28          	add    BYTE PTR [rax+r13*1],spl
+     da4:	42 00 2c 28          	add    BYTE PTR [rax+r13*1],bpl
+     da8:	42 00 34 28          	add    BYTE PTR [rax+r13*1],sil
+     dac:	42 00 3c 28          	add    BYTE PTR [rax+r13*1],dil
+     db0:	42 00 04 29          	add    BYTE PTR [rcx+r13*1],al
+     db4:	42 00 0c 29          	add    BYTE PTR [rcx+r13*1],cl
+     db8:	42 00 14 29          	add    BYTE PTR [rcx+r13*1],dl
+     dbc:	42 00 1c 29          	add    BYTE PTR [rcx+r13*1],bl
+     dc0:	42 00 24 29          	add    BYTE PTR [rcx+r13*1],spl
+     dc4:	42 00 2c 29          	add    BYTE PTR [rcx+r13*1],bpl
+     dc8:	42 00 34 29          	add    BYTE PTR [rcx+r13*1],sil
+     dcc:	42 00 3c 29          	add    BYTE PTR [rcx+r13*1],dil
+     dd0:	46 00 04 29          	add    BYTE PTR [rcx+r13*1],r8b
+     dd4:	46 00 0c 29          	add    BYTE PTR [rcx+r13*1],r9b
+     dd8:	46 00 14 29          	add    BYTE PTR [rcx+r13*1],r10b
+     ddc:	46 00 1c 29          	add    BYTE PTR [rcx+r13*1],r11b
+     de0:	46 00 24 29          	add    BYTE PTR [rcx+r13*1],r12b
+     de4:	46 00 2c 29          	add    BYTE PTR [rcx+r13*1],r13b
+     de8:	46 00 34 29          	add    BYTE PTR [rcx+r13*1],r14b
+     dec:	46 00 3c 29          	add    BYTE PTR [rcx+r13*1],r15b
+     df0:	42 00 24 29          	add    BYTE PTR [rcx+r13*1],spl
+     df4:	42 00 2c 29          	add    BYTE PTR [rcx+r13*1],bpl
+     df8:	42 00 34 29          	add    BYTE PTR [rcx+r13*1],sil
+     dfc:	42 00 3c 29          	add    BYTE PTR [rcx+r13*1],dil
+     e00:	42 00 04 2a          	add    BYTE PTR [rdx+r13*1],al
+     e04:	42 00 0c 2a          	add    BYTE PTR [rdx+r13*1],cl
+     e08:	42 00 14 2a          	add    BYTE PTR [rdx+r13*1],dl
+     e0c:	42 00 1c 2a          	add    BYTE PTR [rdx+r13*1],bl
+     e10:	42 00 24 2a          	add    BYTE PTR [rdx+r13*1],spl
+     e14:	42 00 2c 2a          	add    BYTE PTR [rdx+r13*1],bpl
+     e18:	42 00 34 2a          	add    BYTE PTR [rdx+r13*1],sil
+     e1c:	42 00 3c 2a          	add    BYTE PTR [rdx+r13*1],dil
+     e20:	46 00 04 2a          	add    BYTE PTR [rdx+r13*1],r8b
+     e24:	46 00 0c 2a          	add    BYTE PTR [rdx+r13*1],r9b
+     e28:	46 00 14 2a          	add    BYTE PTR [rdx+r13*1],r10b
+     e2c:	46 00 1c 2a          	add    BYTE PTR [rdx+r13*1],r11b
+     e30:	46 00 24 2a          	add    BYTE PTR [rdx+r13*1],r12b
+     e34:	46 00 2c 2a          	add    BYTE PTR [rdx+r13*1],r13b
+     e38:	46 00 34 2a          	add    BYTE PTR [rdx+r13*1],r14b
+     e3c:	46 00 3c 2a          	add    BYTE PTR [rdx+r13*1],r15b
+     e40:	42 00 24 2a          	add    BYTE PTR [rdx+r13*1],spl
+     e44:	42 00 2c 2a          	add    BYTE PTR [rdx+r13*1],bpl
+     e48:	42 00 34 2a          	add    BYTE PTR [rdx+r13*1],sil
+     e4c:	42 00 3c 2a          	add    BYTE PTR [rdx+r13*1],dil
+     e50:	42 00 04 2b          	add    BYTE PTR [rbx+r13*1],al
+     e54:	42 00 0c 2b          	add    BYTE PTR [rbx+r13*1],cl
+     e58:	42 00 14 2b          	add    BYTE PTR [rbx+r13*1],dl
+     e5c:	42 00 1c 2b          	add    BYTE PTR [rbx+r13*1],bl
+     e60:	42 00 24 2b          	add    BYTE PTR [rbx+r13*1],spl
+     e64:	42 00 2c 2b          	add    BYTE PTR [rbx+r13*1],bpl
+     e68:	42 00 34 2b          	add    BYTE PTR [rbx+r13*1],sil
+     e6c:	42 00 3c 2b          	add    BYTE PTR [rbx+r13*1],dil
+     e70:	46 00 04 2b          	add    BYTE PTR [rbx+r13*1],r8b
+     e74:	46 00 0c 2b          	add    BYTE PTR [rbx+r13*1],r9b
+     e78:	46 00 14 2b          	add    BYTE PTR [rbx+r13*1],r10b
+     e7c:	46 00 1c 2b          	add    BYTE PTR [rbx+r13*1],r11b
+     e80:	46 00 24 2b          	add    BYTE PTR [rbx+r13*1],r12b
+     e84:	46 00 2c 2b          	add    BYTE PTR [rbx+r13*1],r13b
+     e88:	46 00 34 2b          	add    BYTE PTR [rbx+r13*1],r14b
+     e8c:	46 00 3c 2b          	add    BYTE PTR [rbx+r13*1],r15b
+     e90:	42 00 24 2b          	add    BYTE PTR [rbx+r13*1],spl
+     e94:	42 00 2c 2b          	add    BYTE PTR [rbx+r13*1],bpl
+     e98:	42 00 34 2b          	add    BYTE PTR [rbx+r13*1],sil
+     e9c:	42 00 3c 2b          	add    BYTE PTR [rbx+r13*1],dil
+     ea0:	42 00 04 2c          	add    BYTE PTR [rsp+r13*1],al
+     ea4:	42 00 0c 2c          	add    BYTE PTR [rsp+r13*1],cl
+     ea8:	42 00 14 2c          	add    BYTE PTR [rsp+r13*1],dl
+     eac:	42 00 1c 2c          	add    BYTE PTR [rsp+r13*1],bl
+     eb0:	42 00 24 2c          	add    BYTE PTR [rsp+r13*1],spl
+     eb4:	42 00 2c 2c          	add    BYTE PTR [rsp+r13*1],bpl
+     eb8:	42 00 34 2c          	add    BYTE PTR [rsp+r13*1],sil
+     ebc:	42 00 3c 2c          	add    BYTE PTR [rsp+r13*1],dil
+     ec0:	46 00 04 2c          	add    BYTE PTR [rsp+r13*1],r8b
+     ec4:	46 00 0c 2c          	add    BYTE PTR [rsp+r13*1],r9b
+     ec8:	46 00 14 2c          	add    BYTE PTR [rsp+r13*1],r10b
+     ecc:	46 00 1c 2c          	add    BYTE PTR [rsp+r13*1],r11b
+     ed0:	46 00 24 2c          	add    BYTE PTR [rsp+r13*1],r12b
+     ed4:	46 00 2c 2c          	add    BYTE PTR [rsp+r13*1],r13b
+     ed8:	46 00 34 2c          	add    BYTE PTR [rsp+r13*1],r14b
+     edc:	46 00 3c 2c          	add    BYTE PTR [rsp+r13*1],r15b
+     ee0:	42 00 24 2c          	add    BYTE PTR [rsp+r13*1],spl
+     ee4:	42 00 2c 2c          	add    BYTE PTR [rsp+r13*1],bpl
+     ee8:	42 00 34 2c          	add    BYTE PTR [rsp+r13*1],sil
+     eec:	42 00 3c 2c          	add    BYTE PTR [rsp+r13*1],dil
+     ef0:	42 00 44 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],al
+     ef5:	42 00 4c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],cl
+     efa:	42 00 54 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],dl
+     eff:	42 00 5c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],bl
+     f04:	42 00 64 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],spl
+     f09:	42 00 6c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],bpl
+     f0e:	42 00 74 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],sil
+     f13:	42 00 7c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],dil
+     f18:	46 00 44 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],r8b
+     f1d:	46 00 4c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],r9b
+     f22:	46 00 54 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],r10b
+     f27:	46 00 5c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],r11b
+     f2c:	46 00 64 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],r12b
+     f31:	46 00 6c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],r13b
+     f36:	46 00 74 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],r14b
+     f3b:	46 00 7c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],r15b
+     f40:	42 00 64 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],spl
+     f45:	42 00 6c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],bpl
+     f4a:	42 00 74 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],sil
+     f4f:	42 00 7c 2d 00       	add    BYTE PTR [rbp+r13*1+0x0],dil
+     f54:	42 00 04 2e          	add    BYTE PTR [rsi+r13*1],al
+     f58:	42 00 0c 2e          	add    BYTE PTR [rsi+r13*1],cl
+     f5c:	42 00 14 2e          	add    BYTE PTR [rsi+r13*1],dl
+     f60:	42 00 1c 2e          	add    BYTE PTR [rsi+r13*1],bl
+     f64:	42 00 24 2e          	add    BYTE PTR [rsi+r13*1],spl
+     f68:	42 00 2c 2e          	add    BYTE PTR [rsi+r13*1],bpl
+     f6c:	42 00 34 2e          	add    BYTE PTR [rsi+r13*1],sil
+     f70:	42 00 3c 2e          	add    BYTE PTR [rsi+r13*1],dil
+     f74:	46 00 04 2e          	add    BYTE PTR [rsi+r13*1],r8b
+     f78:	46 00 0c 2e          	add    BYTE PTR [rsi+r13*1],r9b
+     f7c:	46 00 14 2e          	add    BYTE PTR [rsi+r13*1],r10b
+     f80:	46 00 1c 2e          	add    BYTE PTR [rsi+r13*1],r11b
+     f84:	46 00 24 2e          	add    BYTE PTR [rsi+r13*1],r12b
+     f88:	46 00 2c 2e          	add    BYTE PTR [rsi+r13*1],r13b
+     f8c:	46 00 34 2e          	add    BYTE PTR [rsi+r13*1],r14b
+     f90:	46 00 3c 2e          	add    BYTE PTR [rsi+r13*1],r15b
+     f94:	42 00 24 2e          	add    BYTE PTR [rsi+r13*1],spl
+     f98:	42 00 2c 2e          	add    BYTE PTR [rsi+r13*1],bpl
+     f9c:	42 00 34 2e          	add    BYTE PTR [rsi+r13*1],sil
+     fa0:	42 00 3c 2e          	add    BYTE PTR [rsi+r13*1],dil
+     fa4:	42 00 04 2f          	add    BYTE PTR [rdi+r13*1],al
+     fa8:	42 00 0c 2f          	add    BYTE PTR [rdi+r13*1],cl
+     fac:	42 00 14 2f          	add    BYTE PTR [rdi+r13*1],dl
+     fb0:	42 00 1c 2f          	add    BYTE PTR [rdi+r13*1],bl
+     fb4:	42 00 24 2f          	add    BYTE PTR [rdi+r13*1],spl
+     fb8:	42 00 2c 2f          	add    BYTE PTR [rdi+r13*1],bpl
+     fbc:	42 00 34 2f          	add    BYTE PTR [rdi+r13*1],sil
+     fc0:	42 00 3c 2f          	add    BYTE PTR [rdi+r13*1],dil
+     fc4:	46 00 04 2f          	add    BYTE PTR [rdi+r13*1],r8b
+     fc8:	46 00 0c 2f          	add    BYTE PTR [rdi+r13*1],r9b
+     fcc:	46 00 14 2f          	add    BYTE PTR [rdi+r13*1],r10b
+     fd0:	46 00 1c 2f          	add    BYTE PTR [rdi+r13*1],r11b
+     fd4:	46 00 24 2f          	add    BYTE PTR [rdi+r13*1],r12b
+     fd8:	46 00 2c 2f          	add    BYTE PTR [rdi+r13*1],r13b
+     fdc:	46 00 34 2f          	add    BYTE PTR [rdi+r13*1],r14b
+     fe0:	46 00 3c 2f          	add    BYTE PTR [rdi+r13*1],r15b
+     fe4:	42 00 24 2f          	add    BYTE PTR [rdi+r13*1],spl
+     fe8:	42 00 2c 2f          	add    BYTE PTR [rdi+r13*1],bpl
+     fec:	42 00 34 2f          	add    BYTE PTR [rdi+r13*1],sil
+     ff0:	42 00 3c 2f          	add    BYTE PTR [rdi+r13*1],dil
+     ff4:	43 00 04 28          	add    BYTE PTR [r8+r13*1],al
+     ff8:	43 00 0c 28          	add    BYTE PTR [r8+r13*1],cl
+     ffc:	43 00 14 28          	add    BYTE PTR [r8+r13*1],dl
+    1000:	43 00 1c 28          	add    BYTE PTR [r8+r13*1],bl
+    1004:	43 00 24 28          	add    BYTE PTR [r8+r13*1],spl
+    1008:	43 00 2c 28          	add    BYTE PTR [r8+r13*1],bpl
+    100c:	43 00 34 28          	add    BYTE PTR [r8+r13*1],sil
+    1010:	43 00 3c 28          	add    BYTE PTR [r8+r13*1],dil
+    1014:	47 00 04 28          	add    BYTE PTR [r8+r13*1],r8b
+    1018:	47 00 0c 28          	add    BYTE PTR [r8+r13*1],r9b
+    101c:	47 00 14 28          	add    BYTE PTR [r8+r13*1],r10b
+    1020:	47 00 1c 28          	add    BYTE PTR [r8+r13*1],r11b
+    1024:	47 00 24 28          	add    BYTE PTR [r8+r13*1],r12b
+    1028:	47 00 2c 28          	add    BYTE PTR [r8+r13*1],r13b
+    102c:	47 00 34 28          	add    BYTE PTR [r8+r13*1],r14b
+    1030:	47 00 3c 28          	add    BYTE PTR [r8+r13*1],r15b
+    1034:	43 00 24 28          	add    BYTE PTR [r8+r13*1],spl
+    1038:	43 00 2c 28          	add    BYTE PTR [r8+r13*1],bpl
+    103c:	43 00 34 28          	add    BYTE PTR [r8+r13*1],sil
+    1040:	43 00 3c 28          	add    BYTE PTR [r8+r13*1],dil
+    1044:	43 00 04 29          	add    BYTE PTR [r9+r13*1],al
+    1048:	43 00 0c 29          	add    BYTE PTR [r9+r13*1],cl
+    104c:	43 00 14 29          	add    BYTE PTR [r9+r13*1],dl
+    1050:	43 00 1c 29          	add    BYTE PTR [r9+r13*1],bl
+    1054:	43 00 24 29          	add    BYTE PTR [r9+r13*1],spl
+    1058:	43 00 2c 29          	add    BYTE PTR [r9+r13*1],bpl
+    105c:	43 00 34 29          	add    BYTE PTR [r9+r13*1],sil
+    1060:	43 00 3c 29          	add    BYTE PTR [r9+r13*1],dil
+    1064:	47 00 04 29          	add    BYTE PTR [r9+r13*1],r8b
+    1068:	47 00 0c 29          	add    BYTE PTR [r9+r13*1],r9b
+    106c:	47 00 14 29          	add    BYTE PTR [r9+r13*1],r10b
+    1070:	47 00 1c 29          	add    BYTE PTR [r9+r13*1],r11b
+    1074:	47 00 24 29          	add    BYTE PTR [r9+r13*1],r12b
+    1078:	47 00 2c 29          	add    BYTE PTR [r9+r13*1],r13b
+    107c:	47 00 34 29          	add    BYTE PTR [r9+r13*1],r14b
+    1080:	47 00 3c 29          	add    BYTE PTR [r9+r13*1],r15b
+    1084:	43 00 24 29          	add    BYTE PTR [r9+r13*1],spl
+    1088:	43 00 2c 29          	add    BYTE PTR [r9+r13*1],bpl
+    108c:	43 00 34 29          	add    BYTE PTR [r9+r13*1],sil
+    1090:	43 00 3c 29          	add    BYTE PTR [r9+r13*1],dil
+    1094:	43 00 04 2a          	add    BYTE PTR [r10+r13*1],al
+    1098:	43 00 0c 2a          	add    BYTE PTR [r10+r13*1],cl
+    109c:	43 00 14 2a          	add    BYTE PTR [r10+r13*1],dl
+    10a0:	43 00 1c 2a          	add    BYTE PTR [r10+r13*1],bl
+    10a4:	43 00 24 2a          	add    BYTE PTR [r10+r13*1],spl
+    10a8:	43 00 2c 2a          	add    BYTE PTR [r10+r13*1],bpl
+    10ac:	43 00 34 2a          	add    BYTE PTR [r10+r13*1],sil
+    10b0:	43 00 3c 2a          	add    BYTE PTR [r10+r13*1],dil
+    10b4:	47 00 04 2a          	add    BYTE PTR [r10+r13*1],r8b
+    10b8:	47 00 0c 2a          	add    BYTE PTR [r10+r13*1],r9b
+    10bc:	47 00 14 2a          	add    BYTE PTR [r10+r13*1],r10b
+    10c0:	47 00 1c 2a          	add    BYTE PTR [r10+r13*1],r11b
+    10c4:	47 00 24 2a          	add    BYTE PTR [r10+r13*1],r12b
+    10c8:	47 00 2c 2a          	add    BYTE PTR [r10+r13*1],r13b
+    10cc:	47 00 34 2a          	add    BYTE PTR [r10+r13*1],r14b
+    10d0:	47 00 3c 2a          	add    BYTE PTR [r10+r13*1],r15b
+    10d4:	43 00 24 2a          	add    BYTE PTR [r10+r13*1],spl
+    10d8:	43 00 2c 2a          	add    BYTE PTR [r10+r13*1],bpl
+    10dc:	43 00 34 2a          	add    BYTE PTR [r10+r13*1],sil
+    10e0:	43 00 3c 2a          	add    BYTE PTR [r10+r13*1],dil
+    10e4:	43 00 04 2b          	add    BYTE PTR [r11+r13*1],al
+    10e8:	43 00 0c 2b          	add    BYTE PTR [r11+r13*1],cl
+    10ec:	43 00 14 2b          	add    BYTE PTR [r11+r13*1],dl
+    10f0:	43 00 1c 2b          	add    BYTE PTR [r11+r13*1],bl
+    10f4:	43 00 24 2b          	add    BYTE PTR [r11+r13*1],spl
+    10f8:	43 00 2c 2b          	add    BYTE PTR [r11+r13*1],bpl
+    10fc:	43 00 34 2b          	add    BYTE PTR [r11+r13*1],sil
+    1100:	43 00 3c 2b          	add    BYTE PTR [r11+r13*1],dil
+    1104:	47 00 04 2b          	add    BYTE PTR [r11+r13*1],r8b
+    1108:	47 00 0c 2b          	add    BYTE PTR [r11+r13*1],r9b
+    110c:	47 00 14 2b          	add    BYTE PTR [r11+r13*1],r10b
+    1110:	47 00 1c 2b          	add    BYTE PTR [r11+r13*1],r11b
+    1114:	47 00 24 2b          	add    BYTE PTR [r11+r13*1],r12b
+    1118:	47 00 2c 2b          	add    BYTE PTR [r11+r13*1],r13b
+    111c:	47 00 34 2b          	add    BYTE PTR [r11+r13*1],r14b
+    1120:	47 00 3c 2b          	add    BYTE PTR [r11+r13*1],r15b
+    1124:	43 00 24 2b          	add    BYTE PTR [r11+r13*1],spl
+    1128:	43 00 2c 2b          	add    BYTE PTR [r11+r13*1],bpl
+    112c:	43 00 34 2b          	add    BYTE PTR [r11+r13*1],sil
+    1130:	43 00 3c 2b          	add    BYTE PTR [r11+r13*1],dil
+    1134:	43 00 04 2c          	add    BYTE PTR [r12+r13*1],al
+    1138:	43 00 0c 2c          	add    BYTE PTR [r12+r13*1],cl
+    113c:	43 00 14 2c          	add    BYTE PTR [r12+r13*1],dl
+    1140:	43 00 1c 2c          	add    BYTE PTR [r12+r13*1],bl
+    1144:	43 00 24 2c          	add    BYTE PTR [r12+r13*1],spl
+    1148:	43 00 2c 2c          	add    BYTE PTR [r12+r13*1],bpl
+    114c:	43 00 34 2c          	add    BYTE PTR [r12+r13*1],sil
+    1150:	43 00 3c 2c          	add    BYTE PTR [r12+r13*1],dil
+    1154:	47 00 04 2c          	add    BYTE PTR [r12+r13*1],r8b
+    1158:	47 00 0c 2c          	add    BYTE PTR [r12+r13*1],r9b
+    115c:	47 00 14 2c          	add    BYTE PTR [r12+r13*1],r10b
+    1160:	47 00 1c 2c          	add    BYTE PTR [r12+r13*1],r11b
+    1164:	47 00 24 2c          	add    BYTE PTR [r12+r13*1],r12b
+    1168:	47 00 2c 2c          	add    BYTE PTR [r12+r13*1],r13b
+    116c:	47 00 34 2c          	add    BYTE PTR [r12+r13*1],r14b
+    1170:	47 00 3c 2c          	add    BYTE PTR [r12+r13*1],r15b
+    1174:	43 00 24 2c          	add    BYTE PTR [r12+r13*1],spl
+    1178:	43 00 2c 2c          	add    BYTE PTR [r12+r13*1],bpl
+    117c:	43 00 34 2c          	add    BYTE PTR [r12+r13*1],sil
+    1180:	43 00 3c 2c          	add    BYTE PTR [r12+r13*1],dil
+    1184:	43 00 44 2d 00       	add    BYTE PTR [r13+r13*1+0x0],al
+    1189:	43 00 4c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],cl
+    118e:	43 00 54 2d 00       	add    BYTE PTR [r13+r13*1+0x0],dl
+    1193:	43 00 5c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],bl
+    1198:	43 00 64 2d 00       	add    BYTE PTR [r13+r13*1+0x0],spl
+    119d:	43 00 6c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],bpl
+    11a2:	43 00 74 2d 00       	add    BYTE PTR [r13+r13*1+0x0],sil
+    11a7:	43 00 7c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],dil
+    11ac:	47 00 44 2d 00       	add    BYTE PTR [r13+r13*1+0x0],r8b
+    11b1:	47 00 4c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],r9b
+    11b6:	47 00 54 2d 00       	add    BYTE PTR [r13+r13*1+0x0],r10b
+    11bb:	47 00 5c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],r11b
+    11c0:	47 00 64 2d 00       	add    BYTE PTR [r13+r13*1+0x0],r12b
+    11c5:	47 00 6c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],r13b
+    11ca:	47 00 74 2d 00       	add    BYTE PTR [r13+r13*1+0x0],r14b
+    11cf:	47 00 7c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],r15b
+    11d4:	43 00 64 2d 00       	add    BYTE PTR [r13+r13*1+0x0],spl
+    11d9:	43 00 6c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],bpl
+    11de:	43 00 74 2d 00       	add    BYTE PTR [r13+r13*1+0x0],sil
+    11e3:	43 00 7c 2d 00       	add    BYTE PTR [r13+r13*1+0x0],dil
+    11e8:	43 00 04 2e          	add    BYTE PTR [r14+r13*1],al
+    11ec:	43 00 0c 2e          	add    BYTE PTR [r14+r13*1],cl
+    11f0:	43 00 14 2e          	add    BYTE PTR [r14+r13*1],dl
+    11f4:	43 00 1c 2e          	add    BYTE PTR [r14+r13*1],bl
+    11f8:	43 00 24 2e          	add    BYTE PTR [r14+r13*1],spl
+    11fc:	43 00 2c 2e          	add    BYTE PTR [r14+r13*1],bpl
+    1200:	43 00 34 2e          	add    BYTE PTR [r14+r13*1],sil
+    1204:	43 00 3c 2e          	add    BYTE PTR [r14+r13*1],dil
+    1208:	47 00 04 2e          	add    BYTE PTR [r14+r13*1],r8b
+    120c:	47 00 0c 2e          	add    BYTE PTR [r14+r13*1],r9b
+    1210:	47 00 14 2e          	add    BYTE PTR [r14+r13*1],r10b
+    1214:	47 00 1c 2e          	add    BYTE PTR [r14+r13*1],r11b
+    1218:	47 00 24 2e          	add    BYTE PTR [r14+r13*1],r12b
+    121c:	47 00 2c 2e          	add    BYTE PTR [r14+r13*1],r13b
+    1220:	47 00 34 2e          	add    BYTE PTR [r14+r13*1],r14b
+    1224:	47 00 3c 2e          	add    BYTE PTR [r14+r13*1],r15b
+    1228:	43 00 24 2e          	add    BYTE PTR [r14+r13*1],spl
+    122c:	43 00 2c 2e          	add    BYTE PTR [r14+r13*1],bpl
+    1230:	43 00 34 2e          	add    BYTE PTR [r14+r13*1],sil
+    1234:	43 00 3c 2e          	add    BYTE PTR [r14+r13*1],dil
+    1238:	43 00 04 2f          	add    BYTE PTR [r15+r13*1],al
+    123c:	43 00 0c 2f          	add    BYTE PTR [r15+r13*1],cl
+    1240:	43 00 14 2f          	add    BYTE PTR [r15+r13*1],dl
+    1244:	43 00 1c 2f          	add    BYTE PTR [r15+r13*1],bl
+    1248:	43 00 24 2f          	add    BYTE PTR [r15+r13*1],spl
+    124c:	43 00 2c 2f          	add    BYTE PTR [r15+r13*1],bpl
+    1250:	43 00 34 2f          	add    BYTE PTR [r15+r13*1],sil
+    1254:	43 00 3c 2f          	add    BYTE PTR [r15+r13*1],dil
+    1258:	47 00 04 2f          	add    BYTE PTR [r15+r13*1],r8b
+    125c:	47 00 0c 2f          	add    BYTE PTR [r15+r13*1],r9b
+    1260:	47 00 14 2f          	add    BYTE PTR [r15+r13*1],r10b
+    1264:	47 00 1c 2f          	add    BYTE PTR [r15+r13*1],r11b
+    1268:	47 00 24 2f          	add    BYTE PTR [r15+r13*1],r12b
+    126c:	47 00 2c 2f          	add    BYTE PTR [r15+r13*1],r13b
+    1270:	47 00 34 2f          	add    BYTE PTR [r15+r13*1],r14b
+    1274:	47 00 3c 2f          	add    BYTE PTR [r15+r13*1],r15b
+    1278:	43 00 24 2f          	add    BYTE PTR [r15+r13*1],spl
+    127c:	43 00 2c 2f          	add    BYTE PTR [r15+r13*1],bpl
+    1280:	43 00 34 2f          	add    BYTE PTR [r15+r13*1],sil
+    1284:	43 00 3c 2f          	add    BYTE PTR [r15+r13*1],dil

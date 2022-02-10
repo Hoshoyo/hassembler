@@ -160,14 +160,14 @@ emit_arith(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_d
 u8*
 emit_arith_mr(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form)
 {
-    u8 opcode = (form.target_bit_size == 8) ? ADD_MR8 : ADD_MR;
+    u8 opcode = mr_opcode(instr_digit, form.target_bit_size);
     return emit_arith(out_info, stream, instr_digit, form, opcode);
 }
 
 u8* 
 emit_arith_rm(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form)
 {
-    u8 opcode = (form.target_bit_size == 8) ? ADD_RM8 : ADD_RM;
+    u8 opcode = rm_opcode(instr_digit, form.target_bit_size);
     return emit_arith(out_info, stream, instr_digit, form, opcode);
 }
 
