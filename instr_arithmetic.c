@@ -9,6 +9,20 @@
 #define ADD_RM 0x03
 #define ADD_AL 0x04
 #define ADD_A 0x05
+#define AND_AL 0x24
+#define AND_A 0x25
+#define OR_AL 0xc
+#define OR_A 0xd
+#define ADC_AL 0x14
+#define ADC_A 0x15
+#define SBB_AL 0x1c
+#define SBB_A 0x1d
+#define SUB_AL 0x2c
+#define SUB_A 0x2d
+#define XOR_AL 0x34
+#define XOR_A 0x35
+#define CMP_AL 0x3c
+#define CMP_A 0x3d
 
 #define ADD_MR8 0x00
 #define CMP_MR8 0x38
@@ -34,6 +48,26 @@ mi_opcode(X64_Arithmetic_Instr instr, int reg_bitsize, int imm_bitsize)
     u8 opcode = 0x80; // imm8
     if(reg_bitsize > 8) opcode += 1;    // 0x81
     if(imm_bitsize == 8 && reg_bitsize > 8) opcode += 2;   // 0x83
+    return opcode;
+}
+
+static u8
+mi_opcode_a(X64_Arithmetic_Instr instr, int bitsize)
+{
+    u8 opcode = 0;
+    switch(instr)
+    {
+        case ARITH_AND: opcode = AND_AL; break;
+        case ARITH_OR:  opcode = OR_AL; break;
+        case ARITH_XOR: opcode = XOR_AL; break;
+        case ARITH_ADD: opcode = ADD_AL; break;
+        case ARITH_ADC: opcode = ADC_AL; break;
+        case ARITH_SUB: opcode = SUB_AL; break;
+        case ARITH_SBB: opcode = SBB_AL; break;
+        case ARITH_CMP: opcode = CMP_AL; break;
+        default: assert(0 && "invalid instruction"); break;
+    }
+    if(bitsize > 8) opcode += 1;
     return opcode;
 }
 
@@ -146,7 +180,7 @@ emit_arith_mi_a(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr in
 
     assert(dest == AL || dest == AX || dest == EAX || dest == RAX);
 
-    stream = emit_opcode(stream, (dest == AL) ? ADD_AL : ADD_A, register_get_bitsize(dest), dest, dest);
+    stream = emit_opcode(stream, mi_opcode_a(instr_digit, register_get_bitsize(dest)), register_get_bitsize(dest), dest, dest);
 
     imm_offset = stream - start;
     stream = emit_int_value(stream, MIN(32, register_get_bitsize(dest)), (Int_Value){.v64 = imm_value} );

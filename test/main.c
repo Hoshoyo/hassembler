@@ -78,10 +78,12 @@
 #define TEST_MI_SIB_X4_BYTE_DISPLACED_IMM32 0
 #define TEST_MI_SIB_X8_DWORD_DISPLACED_IMM8 0
 #define TEST_MI_SIB_X8_DWORD_DISPLACED_IMM16 0
-#define TEST_MI_SIB_X8_DWORD_DISPLACED_IMM32 1
+#define TEST_MI_SIB_X8_DWORD_DISPLACED_IMM32 0
 
 // RIP rel
 #define TEST_RIP_REL 0
+
+static X64_Arithmetic_Instr instr = ARITH_CMP;
 
 u8*
 emit_mi_test(u8* stream)
@@ -90,15 +92,15 @@ emit_mi_test(u8* stream)
 #if TEST_MI_DIRECT
     for(X64_Register i = RAX; i <= DIL; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_direct(i), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_direct(i), 0x12);
     }
     for(X64_Register i = RAX; i <= R15W; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_direct(i), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_direct(i), 0x1234);
     }
     for(X64_Register i = RAX; i <= R15D; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_direct(i), 0x12345678);
+        stream = emit_arith_mi(0, stream, instr, make_mi_direct(i), 0x12345678);
     }
 #endif
 
@@ -106,22 +108,22 @@ emit_mi_test(u8* stream)
 #if TEST_MI_INDIRECT
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_BYTEPTR, 0), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_WORDPTR, 0), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_BYTEPTR, 0), 0x12);
     }
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x1234);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x1234);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_WORDPTR, 0), 0x1234);
     }
 
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x12345678);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x12345678);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0), 0x12345678);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0), 0x12345678);
     }
 #endif
 
@@ -129,21 +131,21 @@ emit_mi_test(u8* stream)
 #if TEST_MI_INDIRECT_BYTE_DISPLACED
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0x15), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_BYTEPTR, 0x15), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_WORDPTR, 0x15), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_BYTEPTR, 0x15), 0x12);
     }
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x1234);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x1234);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0x15), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_WORDPTR, 0x15), 0x1234);
     }
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x12345678);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x12345678);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0x15), 0x12345678);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0x15), 0x12345678);
     }
 #endif
 
@@ -151,21 +153,21 @@ emit_mi_test(u8* stream)
 #if TEST_MI_INDIRECT_DWORD_DISPLACED
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0x15161718), 0x12);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_BYTEPTR, 0x15161718), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_WORDPTR, 0x15161718), 0x12);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_BYTEPTR, 0x15161718), 0x12);
     }
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x1234);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x1234);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_WORDPTR, 0x15161718), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x1234);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_WORDPTR, 0x15161718), 0x1234);
     }
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x12345678);
-        stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x12345678);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_QWORDPTR, 0x15161718), 0x12345678);
+        stream = emit_arith_mi(0, stream, instr, make_mi_indirect(i, ADDR_DWORDPTR, 0x15161718), 0x12345678);
     }
 #endif
     
@@ -175,7 +177,6 @@ emit_mi_test(u8* stream)
 u8*
 emit_mi_sib_test(u8* stream)
 {
-    X64_Arithmetic_Instr instr = ARITH_ADD;
     // SIB X1
 #if TEST_MI_SIB_X1_IMM8
     for(X64_Register i = RAX; i <= R15; ++i)
@@ -333,7 +334,6 @@ emit_mi_sib_test(u8* stream)
 u8*
 emit_rm_test(u8* stream)
 {
-    X64_Arithmetic_Instr instr = ARITH_ADD;
     // RM Direct
 #if TEST_RM_DIRECT_64
     for(X64_Register i = RAX; i <= R15; ++i)
@@ -491,7 +491,6 @@ emit_rm_test(u8* stream)
 u8*
 emit_rm_sib_test(u8* stream)
 {
-    X64_Arithmetic_Instr instr = ARITH_ADD;
     X64_Register index_reg = R13;
     assert(index_reg != RSP);
     
@@ -614,8 +613,6 @@ emit_rm_sib_test(u8* stream)
 u8*
 emit_mr_test(u8* stream)
 {
-    X64_Arithmetic_Instr instr = ARITH_ADD;
-
     // MR Direct
 #if TEST_MR_DIRECT_64
     for(X64_Register i = RAX; i <= R15; ++i)
@@ -774,7 +771,6 @@ emit_mr_test(u8* stream)
 u8*
 emit_mr_sib_test(u8* stream)
 {
-    X64_Arithmetic_Instr instr = ARITH_ADD;
     X64_Register index_reg = R13;
     assert(index_reg != RSP);
     
