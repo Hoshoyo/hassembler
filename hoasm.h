@@ -843,3 +843,4 @@ make_mc_indirect_sib(X64_Register dst_base, X64_Register index, X64_SibMode sib_
 
 u8* emit_mov_mi(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form, u64 imm_value);
 u8* emit_mov_oi(Instr_Emit_Result* out_info, u8* stream, X64_Register dest, u64 imm_value);
+u8* emit_mov_mr(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
