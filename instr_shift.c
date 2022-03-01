@@ -1,14 +1,14 @@
 #include "hoasm.h"
 
 #define SHL_M1 0xd0
+#define SHL_MC 0xd2
 
 u8*
-emit_shift_m1(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form)
+emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, u8 opcode, X64_AddrForm form)
 {
     u8* start = stream;
     s8 disp_offset = 0;
 
-    u8 opcode = SHL_M1;
     if(form.target_bit_size >= 16) 
         opcode += 1;
 
@@ -37,4 +37,16 @@ emit_shift_m1(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction ins
     }
 
     return stream;
+}
+
+u8*
+emit_shift_m1(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form)
+{
+    return emit_shift(out_info, stream, instr_digit, SHL_M1, form);
+}
+
+u8*
+emit_shift_mc(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form)
+{
+    return emit_shift(out_info, stream, instr_digit, SHL_MC, form);
 }

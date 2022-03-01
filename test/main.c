@@ -1034,6 +1034,138 @@ emit_shift_m1_test_sib(u8* stream)
     return stream;
 }
 
+u8*
+emit_shift_mc_test(u8* stream)
+{
+    // DIRECT
+#if 0
+    for(X64_Register i = AL; i <= DIL; ++i)
+    {
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_direct(i));
+    }
+#endif
+#if 0
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_direct(i));
+    }
+#endif
+#if 0
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_direct(i));
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_direct(i));
+    }
+#endif
+
+    // INDIRECT
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 8, 0));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 16, 0));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 32, 0));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 64, 0));
+    }
+#endif
+
+    // INDIRECT BYTE DISPLACED
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 8, 0x15));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 16, 0x15));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 32, 0x15));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 64, 0x15));
+    }
+#endif
+
+    // INDIRECT DWORD DISPLACED
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 8, 0x15161718));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 16, 0x15161718));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 32, 0x15161718));
+        stream = emit_shift_mc(0, stream, sinstr, make_mc_indirect(i, 64, 0x15161718));
+    }
+#endif
+    
+    return stream;
+}
+
+u8*
+emit_shift_mc_test_sib(u8* stream)
+{
+#if 0
+    X64_Register index_reg = RCX;
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_shift_mc(0, stream, instr, make_mc_indirect_sib(i, index_reg, SIB_X1, ADDR_QWORDPTR, 0));
+        }
+    }
+#endif
+#if 0
+    X64_Register index_reg = RBP;
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_shift_mc(0, stream, instr, make_mc_indirect_sib(i, index_reg, SIB_X2, ADDR_QWORDPTR, 0));
+        }
+    }
+#endif
+#if 0
+    X64_Register index_reg = RBP;
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_shift_mc(0, stream, instr, make_mc_indirect_sib(i, index_reg, SIB_X4, ADDR_DWORDPTR, 0x16));
+        }
+    }
+#endif
+#if 0
+    X64_Register index_reg = RBP;
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_shift_mc(0, stream, instr, make_mc_indirect_sib(i, index_reg, SIB_X8, ADDR_WORDPTR, 0x151617));
+        }
+    }
+#endif
+#if 0
+    X64_Register index_reg = RBP;
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_shift_mc(0, stream, instr, make_mc_indirect_sib(i, index_reg, SIB_X1, ADDR_WORDPTR, 0));
+        }
+    }
+#endif
+#if 0
+    X64_Register index_reg = RBP;
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_shift_mc(0, stream, instr, make_mc_indirect_sib(i, index_reg, SIB_X1, ADDR_BYTEPTR, 0));
+        }
+    }
+#endif
+    return stream;
+}
+
+
 uint8_t*
 emit_test(u8* stream)
 {
@@ -1069,6 +1201,8 @@ int main(int argc, char** argv)
     {
         stream = emit_shift_m1_test(stream);
         stream = emit_shift_m1_test_sib(stream);
+        stream = emit_shift_mc_test(stream);
+        stream = emit_shift_mc_test_sib(stream);
     }
 
     //stream = emit_test(stream);

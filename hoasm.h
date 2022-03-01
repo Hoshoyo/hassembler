@@ -734,6 +734,7 @@ make_mr_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register inde
 }
 
 u8* emit_shift_m1(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form);
+u8* emit_shift_mc(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form);
 
 static X64_AddrForm
 make_m1_direct(X64_Register dest)
@@ -826,4 +827,22 @@ make_m1_indirect_sib(X64_Register dst_base, X64_Register index, X64_SibMode sib_
 	}
 
 	return form;
+}
+
+static X64_AddrForm
+make_mc_indirect(X64_Register dest, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	return make_m1_indirect(dest, ptr_bitsize, displacement);
+}
+
+static X64_AddrForm
+make_mc_direct(X64_Register dest)
+{
+	return make_m1_direct(dest);
+}
+
+static X64_AddrForm
+make_mc_indirect_sib(X64_Register dst_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	return make_m1_indirect_sib(dst_base, index, sib_mode, ptr_bitsize, displacement);
 }
