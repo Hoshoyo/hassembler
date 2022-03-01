@@ -21,6 +21,9 @@ value_bitsize(u64 value)
         return 8;
 }
 
+#define MOVE_OI 0xB8
+#define MOVE_OI8 0xB0
+
 #define MOV_DIGIT 0
 
 u8*
@@ -63,5 +66,34 @@ emit_mov_mi(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form, u64 imm_
         out_info->diplacement_offset = disp_offset;
         out_info->immediate_offset = imm_offset;
     }
+    return stream;
+}
+
+u8*
+emit_mov_oi(Instr_Emit_Result* out_info, u8* stream, X64_Register dest, u64 imm_value)
+{
+    assert(value_bitsize(imm_value) <= register_get_bitsize(dest));
+
+    u8* start = stream;
+    s32 imm_offset = -1;
+
+    s32 val_bitsize = MAX(value_bitsize(imm_value), register_get_bitsize(dest));
+
+    u8 opcode = (val_bitsize == 8) ? MOVE_OI8 : MOVE_OI;
+    opcode = (opcode | register_representation(dest));
+
+    stream = emit_opcode(stream, opcode, val_bitsize, dest, REG_NONE);
+
+    imm_offset = stream - start;
+    stream = emit_int_value(stream, register_get_bitsize(dest), (Int_Value){.v64 = imm_value});
+    assert(stream - start != imm_offset);
+
+    if(out_info)
+    {
+        out_info->instr_byte_size = stream - start;
+        out_info->immediate_offset = imm_offset;
+        out_info->diplacement_offset = -1; // there is no displacement
+    }
+
     return stream;
 }

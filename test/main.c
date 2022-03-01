@@ -1361,6 +1361,37 @@ emit_mov_mi_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_mov_oi_test(u8* stream)
+{
+    // DIRECT
+#if 0
+    for(X64_Register i = AL; i <= DIL; ++i)
+    {
+        stream = emit_mov_oi(0, stream, i, 0x15);
+    }
+#endif
+#if 0
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        stream = emit_mov_oi(0, stream, i, 0x15);
+    }
+#endif
+#if 0
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        stream = emit_mov_oi(0, stream, i, 0x15);
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_mov_oi(0, stream, i, 0x15);
+    }
+#endif
+    return stream;
+}
+
 uint8_t*
 emit_test(u8* stream)
 {
@@ -1404,6 +1435,7 @@ int main(int argc, char** argv)
 
     {
         stream = emit_mov_mi_test(stream);
+        stream = emit_mov_oi_test(stream);
     }
 
     //stream = emit_test(stream);
