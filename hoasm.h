@@ -88,6 +88,16 @@ typedef enum {
 } X64_Arithmetic_Instr;
 
 typedef enum {
+	ROL = 0,
+	ROR = 1,
+	RCL = 2,
+	RCR = 3,
+	SHL = 4,
+	SHR = 5,
+	SAR = 7
+} X64_Shift_Instruction;
+
+typedef enum {
 	NOT = 2,
 	NEG = 3,
 	MUL = 4,
@@ -157,16 +167,6 @@ typedef enum {
 	SSE_CVT_F64_F32 = 0x5A,
 	SSE_CVT_F64_INT32 = 0x2c, // 0x2D -> no truncation
 } X64_SSE_Convert_Instr;
-
-typedef enum {
-	ROL = 0,
-	ROR = 1,
-	RCL = 2,
-	RCR = 3,
-	SHL = 4,
-	SHR = 5,
-	SAR = 7
-} X64_Shift_Instruction;
 
 typedef enum {
 	CMOVE  = 0x44,
@@ -731,4 +731,99 @@ make_mr_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register inde
 	assert(register_get_bitsize(src_base) == ptr_bitsize);
 
 	return make_reg_indirect_sib(src_base, dest, index, sib_mode, ptr_bitsize, displacement);
+}
+
+u8* emit_shift_m1(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form);
+
+static X64_AddrForm
+make_m1_direct(X64_Register dest)
+{
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = dest, 
+		.target_bit_size = register_get_bitsize(dest),
+		.source = REG_NONE,
+		.sib_mode = MODE_NONE,
+		.mode = DIRECT,
+	};
+
+	return form;
+}
+
+static X64_AddrForm
+make_m1_indirect(X64_Register dest, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	assert(register_get_bitsize(dest) == 64);
+
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = dest, 
+		.target_bit_size = ptr_bitsize,
+		.source = REG_NONE,
+		.sib_mode = MODE_NONE,
+	};
+
+	if(displacement > 0xff)
+	{
+		form.disp32 = displacement;
+		form.mode = INDIRECT_DWORD_DISPLACED;
+	}
+	else if(displacement > 0)
+	{
+		form.disp8 = (u8)displacement;
+		form.mode = INDIRECT_BYTE_DISPLACED;	
+	}
+	else
+	{
+		form.mode = INDIRECT;
+		if(register_equivalent(dest, RBP))
+		{
+			form.mode = INDIRECT_BYTE_DISPLACED;
+		}
+	}
+
+	// RSP is an exception, we need a SIB byte in that case
+	if(register_equivalent(dest, RSP))
+	{
+		// need sib byte
+		form.sib_mode = SIB_X1;
+		form.sib_base = dest;
+		form.target = dest;
+		form.sib_index = RSP;
+	}
+
+	return form;
+}
+
+static X64_AddrForm
+make_m1_indirect_sib(X64_Register dst_base, X64_Register index, X64_SibMode sib_mode, X64_AddrSize ptr_bitsize, u64 displacement)
+{
+	X64_AddrForm form = (X64_AddrForm) { 
+		.target = dst_base, 
+		.target_bit_size = ptr_bitsize,
+		.source = REG_NONE,
+		.sib_mode = sib_mode,
+		.sib_base = dst_base,
+		.sib_index = (index == REG_NONE) ? RSP : index,
+	};
+
+	if(displacement > 0xff)
+	{
+		form.disp32 = displacement;
+		form.mode = INDIRECT_DWORD_DISPLACED;
+	}
+	else if(displacement > 0)
+	{
+		form.disp8 = (u8)displacement;
+		form.mode = INDIRECT_BYTE_DISPLACED;	
+	}
+	else
+	{
+		form.mode = INDIRECT;
+	}
+
+	if(register_equivalent(dst_base, RBP) && form.mode == INDIRECT)
+	{
+		form.mode = INDIRECT_BYTE_DISPLACED;
+	}
+
+	return form;
 }
