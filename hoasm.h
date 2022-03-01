@@ -351,13 +351,12 @@ emit_opcode_rm(u8* stream, u8 opcode, int bitsize, X64_Register base, X64_Regist
 	u8 rex_prefix = 0;
 	if(bitsize == 16)
 	{
-		//*stream++ = 0x66; // operand size override
-		rex_prefix |= 0x66;
+		*stream++ = 0x66; // operand size override
 	}
     if(bitsize == 64 || using_extended_register)
 	{
 		// b x r w		
-		rex_prefix |= make_rex(register_is_extended(base), register_is_extended(index), register_is_extended(reg), bitsize == 64);
+		*stream++ = make_rex(register_is_extended(base), register_is_extended(index), register_is_extended(reg), bitsize == 64);
 	}
     else if(bitsize == 8)
     {
@@ -368,12 +367,44 @@ emit_opcode_rm(u8* stream, u8 opcode, int bitsize, X64_Register base, X64_Regist
 			rex_prefix = make_rex(0,0,0,0);
         }
     }
-	if(register_get_bitsize(base) == 32 && register_is_segment(reg))// && bitsize != 32)
+	else if(register_get_bitsize(base) == 32 && register_is_segment(reg))
 	{
-		rex_prefix |= 0x67;
+		*stream++ = 0x67;
 	}
-	if(rex_prefix != 0)
-		*stream++ = rex_prefix;
+
+    *stream++ = opcode;
+    return stream;
+}
+
+static u8*
+emit_opcode_mr(u8* stream, u8 opcode, int bitsize, X64_Register base, X64_Register index, X64_Register reg)
+{
+    bool using_extended_register = register_is_extended(base) || register_is_extended(index) || register_is_extended(reg);
+
+	u8 rex_prefix = 0;
+	if(bitsize == 16)
+	{
+		*stream++ = 0x66; // operand size override
+	}
+    if(bitsize == 64 || using_extended_register)
+	{
+		// b x r w		
+		*stream++ = make_rex(register_is_extended(base), register_is_extended(index), register_is_extended(reg), bitsize == 64);
+	}
+    else if(bitsize == 8)
+    {
+        if( reg == SPL || reg == BPL || reg == SIL || reg == DIL ||
+			base == SPL || base == BPL || base == SIL || base == DIL ||
+            index == SPL || index == BPL || index == SIL || index == DIL)
+        {
+			rex_prefix = make_rex(0,0,0,0);
+        }
+    }
+	else if(register_get_bitsize(base) == 32 && register_is_segment(reg) && bitsize != 32)
+	{
+		*stream++ = 0x67;
+	}
+
     *stream++ = opcode;
     return stream;
 }
@@ -645,7 +676,7 @@ make_reg_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsi
 static X64_AddrForm
 make_rm_direct(X64_Register dest, X64_Register source)
 {
-	assert(register_get_bitsize(dest) == register_get_bitsize(source));
+	assert((register_get_bitsize(dest) == register_get_bitsize(source)) || (register_is_segment(dest) && register_get_bitsize(source) > 8));
 
 	X64_AddrForm form = (X64_AddrForm) { 
 		.target = dest, 
@@ -874,3 +905,4 @@ u8* emit_mov_oi(Instr_Emit_Result* out_info, u8* stream, X64_Register dest, u64 
 u8* emit_mov_mr(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
 u8* emit_mov_rm(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
 u8* emit_mov_mr_sreg(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
+u8* emit_mov_rm_sreg(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
