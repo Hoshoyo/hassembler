@@ -100,14 +100,14 @@ emit_mov_oi(Instr_Emit_Result* out_info, u8* stream, X64_Register dest, u64 imm_
 
 #define MOV_MR8 0x88
 #define MOV_MR 0x89
+#define MOV_RM8 0x8A
+#define MOV_RM 0x8B
 
 u8*
-emit_mov_mr(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
+emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form, u8 opcode)
 {
     u8* start = stream;
     s8 disp_offset = 0;
-
-    u8 opcode = (register_get_bitsize(form.target) == 8) ? MOV_MR8 : MOV_MR;
 
     if(form.sib_mode == MODE_NONE)
     {
@@ -134,4 +134,18 @@ emit_mov_mr(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
     }
 
     return stream;
+}
+
+u8*
+emit_mov_mr(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
+{
+    u8 opcode = (register_get_bitsize(form.target) == 8) ? MOV_MR8 : MOV_MR;
+    return emit_mov(out_info, stream, form, opcode);
+}
+
+u8* 
+emit_mov_rm(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
+{
+    u8 opcode = (register_get_bitsize(form.target) == 8) ? MOV_RM8 : MOV_RM;
+    return emit_mov(out_info, stream, form, opcode);
 }

@@ -1671,6 +1671,285 @@ emit_mov_mr_sib_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_mov_rm_test(u8* stream)
+{
+    // RM Direct
+#if TEST_RM_DIRECT_64
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_direct(i, j));
+        }
+    }
+#endif
+#if TEST_RM_DIRECT_32
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = EAX; j <= R15D; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_direct(i, j));
+        }
+    }
+#endif
+#if TEST_RM_DIRECT_16
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_direct(i, j));
+        }
+    }
+#endif
+#if TEST_RM_DIRECT_8
+    for(X64_Register i = AL; i <= DIL; ++i)
+    {
+        for(X64_Register j = AL; j <= DIL; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_direct(i, j));
+        }
+    }
+#endif
+
+    // Indirect
+#if TEST_RM_INDIRECT_64
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_QWORDPTR, 0));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_32
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = EAX; j <= R15D; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_DWORDPTR, 0));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_16
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_WORDPTR, 0));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_8
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AL; j <= DIL; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_BYTEPTR, 0));
+        }
+    }
+#endif
+
+    // Indirect byte displaced
+#if TEST_RM_INDIRECT_BYTE_DISPLACED_64
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_QWORDPTR, 0x15));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_BYTE_DISPLACED_32
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = EAX; j <= R15D; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_DWORDPTR, 0x15));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_BYTE_DISPLACED_16
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_WORDPTR, 0x15));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_BYTE_DISPLACED_8
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AL; j <= DIL; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_BYTEPTR, 0x15));
+        }
+    }
+#endif
+
+    // Indirect dword displaced
+#if TEST_RM_INDIRECT_DWORD_DISPLACED_64
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_QWORDPTR, 0x15161718));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_DWORD_DISPLACED_32
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = EAX; j <= R15D; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_DWORDPTR, 0x15161718));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_DWORD_DISPLACED_16
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_WORDPTR, 0x15161718));
+        }
+    }
+#endif
+#if TEST_RM_INDIRECT_DWORD_DISPLACED_8
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AL; j <= DIL; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect(j, i, ADDR_BYTEPTR, 0x15161718));
+        }
+    }
+#endif
+    return stream;
+}
+
+u8*
+emit_mov_rm_sib_test(u8* stream)
+{
+    X64_Register index_reg = R13;
+    assert(index_reg != RSP);
+    
+    // SIB INDIRECT X1
+#if TEST_RM_SIB_X1_64
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X1, ADDR_QWORDPTR, 0));
+        }
+    }
+#endif
+#if TEST_RM_SIB_X1_32
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = EAX; j <= R15D; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X1, ADDR_DWORDPTR, 0));
+        }
+    }
+#endif
+#if TEST_RM_SIB_X1_16
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X1, ADDR_WORDPTR, 0));
+        }
+    }
+#endif
+#if TEST_RM_SIB_X1_8
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AL; j <= DIL; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X1, ADDR_BYTEPTR, 0));
+        }
+    }
+#endif
+
+    // SIB INDIRECT_BYTE_DISPLACED X2
+#if TEST_RM_SIB_BYTE_DISPLACED_X2_64
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X2, ADDR_QWORDPTR, 0x15));
+        }
+    }
+#endif
+#if TEST_RM_SIB_BYTE_DISPLACED_X2_32
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = EAX; j <= R15D; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X2, ADDR_DWORDPTR, 0x15));
+        }
+    }
+#endif
+#if TEST_RM_SIB_BYTE_DISPLACED_X2_16
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X2, ADDR_WORDPTR, 0x15));
+        }
+    }
+#endif
+#if TEST_RM_SIB_BYTE_DISPLACED_X2_8
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AL; j <= DIL; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X2, ADDR_BYTEPTR, 0x15));
+        }
+    }
+#endif
+
+    // SIB INDIRECT_DWORD_DISPLACED X8
+#if TEST_RM_SIB_DWORD_DISPLACED_X8_64
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_QWORDPTR, 0x15161718));
+        }
+    }
+#endif
+#if TEST_RM_SIB_DWORD_DISPLACED_X8_32
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = EAX; j <= R15D; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_DWORDPTR, 0x15161718));
+        }
+    }
+#endif
+#if TEST_RM_SIB_DWORD_DISPLACED_X8_16
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_WORDPTR, 0x15161718));
+        }
+    }
+#endif
+#if TEST_RM_SIB_DWORD_DISPLACED_X8_8
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = AL; j <= DIL; ++j)
+        {
+            stream = emit_mov_rm(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_BYTEPTR, 0x15161718));
+        }
+    }
+#endif
+    return stream;
+}
+
 uint8_t*
 emit_test(u8* stream)
 {
@@ -1692,7 +1971,6 @@ int main(int argc, char** argv)
     //u8 value = 0x24;
     //printf("Mod=%x, Reg=%x, r/m=%x\n", 0x3 & (value >> 6), 0x7 & (value >> 3), 0x7 & value);
 
-    #if 0
 	{
         stream = emit_mi_sib_test(stream);
         stream = emit_mi_test(stream);
@@ -1710,13 +1988,13 @@ int main(int argc, char** argv)
         stream = emit_shift_mi_test(stream);
         stream = emit_shift_mi_test_sib(stream);
     }
-    #endif
-
     {
         stream = emit_mov_mi_test(stream);
         stream = emit_mov_oi_test(stream);
         stream = emit_mov_mr_test(stream);
         stream = emit_mov_mr_sib_test(stream);
+        stream = emit_mov_rm_test(stream);
+        stream = emit_mov_rm_sib_test(stream);
     }
 
     //stream = emit_test(stream);
