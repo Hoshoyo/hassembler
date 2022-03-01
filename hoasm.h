@@ -72,6 +72,8 @@ typedef enum  {
 	INDIRECT_BYTE_DISPLACED  = 1,
 	INDIRECT_DWORD_DISPLACED = 2,
 	DIRECT                   = 3,
+	MOFFS_FD                 = 4,
+	MOFFS_TD                 = 5,
 } X64_Addressing_Mode;
 
 typedef enum {
@@ -194,6 +196,19 @@ typedef struct {
 
 #define MAX(A, B) (((A) > (B)) ? (A) : (B))
 #define MIN(A, B) (((A) < (B)) ? (A) : (B))
+
+static int
+value_bitsize(u64 value)
+{
+    if(value > 0xffffffff)
+        return 64;
+	else if(value > 0xffff)
+        return 32;
+	else if(value > 0xff)
+        return 16;
+    else
+        return 8;
+}
 
 // mod 2 bits 
 // rm  3 bits	= right side = src
@@ -488,16 +503,20 @@ typedef struct {
 
 	X64_AddrSize target_bit_size;
 
-	// Displacement
+	// Displacement or moffs
 	union {
 		u8  disp8;
 		u32 disp32;
+		u64 moffs_value;
 	};
 
 	// SIB
 	X64_Register        sib_base;
 	X64_Register        sib_index;
 	X64_Addressing_Mode sib_mode;
+
+	// Moffs
+	X64_Register moffs_base;
 } X64_AddrForm;
 
 u8* emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
@@ -900,9 +919,62 @@ make_mc_indirect_sib(X64_Register dst_base, X64_Register index, X64_SibMode sib_
 	return make_m1_indirect_sib(dst_base, index, sib_mode, ptr_bitsize, displacement);
 }
 
+static X64_AddrForm
+make_fd(X64_Register base, u64 offset, X64_AddrSize bitsize)
+{
+	assert(register_is_segment(base) || base == REG_NONE);
+	X64_AddrForm form = (X64_AddrForm) { 
+		.mode = MOFFS_FD,
+		.target_bit_size = bitsize,
+		.source = REG_NONE,
+		.sib_mode = MODE_NONE,
+		.moffs_base = base,
+	};
+
+	switch(bitsize)
+	{
+		case 64: form.target = RAX; break;
+		case 32: form.target = EAX; break;
+		case 16: form.target = AX; break;
+		case 8 : form.target = AL; break;
+		default: assert(0); break;
+	}
+
+	form.moffs_value = offset;
+
+	return form;
+}
+
+static X64_AddrForm
+make_td(X64_Register base, u64 offset, X64_AddrSize bitsize)
+{
+	assert(register_is_segment(base) || base == REG_NONE);
+	X64_AddrForm form = (X64_AddrForm) { 
+		.mode = MOFFS_TD,
+		.target_bit_size = bitsize,
+		.source = REG_NONE,
+		.sib_mode = MODE_NONE,
+		.moffs_base = base,
+	};
+
+	switch(bitsize)
+	{
+		case 64: form.target = RAX; break;
+		case 32: form.target = EAX; break;
+		case 16: form.target = AX; break;
+		case 8 : form.target = AL; break;
+		default: assert(0); break;
+	}
+
+	form.moffs_value = offset;
+
+	return form;
+}
+
 u8* emit_mov_mi(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form, u64 imm_value);
 u8* emit_mov_oi(Instr_Emit_Result* out_info, u8* stream, X64_Register dest, u64 imm_value);
 u8* emit_mov_mr(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
 u8* emit_mov_rm(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
 u8* emit_mov_mr_sreg(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
 u8* emit_mov_rm_sreg(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
+u8* emit_mov_moffs(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);

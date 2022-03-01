@@ -1548,7 +1548,6 @@ emit_mov_mr_sib_test_sreg(u8* stream)
 u8*
 emit_mov_rm_test_sreg(u8* stream)
 {
-    //stream = emit_mov_rm_sreg(0, stream, make_rm_direct(ES, R8));
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
@@ -1694,6 +1693,45 @@ emit_mov_rm_sib_test_sreg(u8* stream)
         {
             stream = emit_mov_rm_sreg(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_WORDPTR, 0x15161718));
         }
+    }
+#endif
+    return stream;
+}
+
+u8* 
+emit_mov_moffs_test(u8* stream)
+{
+    // MOFFS FD
+#if 0
+    stream = emit_mov_moffs(0, stream, make_fd(REG_NONE, 0x12345678, 64));
+    stream = emit_mov_moffs(0, stream, make_fd(REG_NONE, 0x12345678, 32));
+    stream = emit_mov_moffs(0, stream, make_fd(REG_NONE, 0x12345678, 16));
+    stream = emit_mov_moffs(0, stream, make_fd(REG_NONE, 0x12345678, 8));
+#endif
+#if 0
+    for(X64_Register i = ES; i <= GS; ++i)
+    {
+        stream = emit_mov_moffs(0, stream, make_fd(i, 0x12345678, 64));
+        stream = emit_mov_moffs(0, stream, make_fd(i, 0x12345678, 32));
+        stream = emit_mov_moffs(0, stream, make_fd(i, 0x12345678, 16));
+        stream = emit_mov_moffs(0, stream, make_fd(i, 0x12345678, 8));
+    }
+#endif
+
+    // MOFFS TD
+#if 0
+    stream = emit_mov_moffs(0, stream, make_td(REG_NONE, 0x12345678, 64));
+    stream = emit_mov_moffs(0, stream, make_td(REG_NONE, 0x12345678, 32));
+    stream = emit_mov_moffs(0, stream, make_td(REG_NONE, 0x12345678, 16));
+    stream = emit_mov_moffs(0, stream, make_td(REG_NONE, 0x12345678, 8));
+#endif
+#if 0
+    for(X64_Register i = ES; i <= GS; ++i)
+    {
+        stream = emit_mov_moffs(0, stream, make_td(i, 0x12345678, 64));
+        stream = emit_mov_moffs(0, stream, make_td(i, 0x12345678, 32));
+        stream = emit_mov_moffs(0, stream, make_td(i, 0x12345678, 16));
+        stream = emit_mov_moffs(0, stream, make_td(i, 0x12345678, 8));
     }
 #endif
     return stream;
@@ -2302,6 +2340,7 @@ int main(int argc, char** argv)
         stream = emit_mov_mr_sib_test_sreg(stream);
         stream = emit_mov_rm_test_sreg(stream);
         stream = emit_mov_rm_sib_test_sreg(stream);
+        stream = emit_mov_moffs_test(stream);
     }
     
 

@@ -111,19 +111,6 @@ rm_opcode(X64_Arithmetic_Instr instr, int bitsize)
     return opcode;
 }
 
-static int
-value_bitsize(u64 value)
-{
-    if(value > 0xffffffff)
-        return 64;
-	else if(value > 0xffff)
-        return 32;
-	else if(value > 0xff)
-        return 16;
-    else
-        return 8;
-}
-
 u8*
 emit_arith(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u8 opcode)
 {

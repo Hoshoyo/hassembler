@@ -8,19 +8,6 @@ mi_opcode(X64_Arithmetic_Instr instr, int reg_bitsize, int imm_bitsize)
     return opcode;
 }
 
-static int
-value_bitsize(u64 value)
-{
-    if(value > 0xffffffff)
-        return 64;
-	else if(value > 0xffff)
-        return 32;
-	else if(value > 0xff)
-        return 16;
-    else
-        return 8;
-}
-
 #define MOVE_OI 0xB8
 #define MOVE_OI8 0xB0
 
@@ -238,3 +225,56 @@ emit_mov_rm_sreg(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
 
     return stream;
 }
+
+u8* 
+emit_mov_moffs(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
+{
+    u8* start = stream;
+    s8 imm_offset = 0;
+    u8 opcode = (form.mode == MOFFS_FD) ? 0xa0 : 0xa2;
+    if(form.target_bit_size > 8) opcode += 1;
+
+    switch(form.moffs_base)
+    {
+        case CS: *stream++ = 0x2e; break;
+        case SS: *stream++ = 0x36; break;
+        case DS: *stream++ = 0x3e; break;
+        case ES: *stream++ = 0x26; break;
+        case FS: *stream++ = 0x64; break;
+        case GS: *stream++ = 0x65; break;
+        default: break;
+    }
+
+    if(form.target_bit_size == 64)
+    {
+        *stream++ = make_rex(0,0,0,1);
+    }
+    else if(form.target_bit_size == 16)
+    {
+        *stream++ = 0x66;
+    }
+
+    *stream++ = opcode;
+
+    imm_offset = stream - start;
+    stream = emit_int_value(stream, 64, (Int_Value){.v64 = form.moffs_value});
+    assert(stream - start != imm_offset);
+
+    if(out_info)
+    {
+        out_info->instr_byte_size = stream - start;
+        out_info->diplacement_offset = -1;
+        out_info->immediate_offset = imm_offset;
+    }
+
+    return stream;
+}
+
+/*
+• 2EH — CS segment override (use with any branch instruction is reserved).
+• 36H — SS segment override prefix (use with any branch instruction is reserved).
+• 3EH — DS segment override prefix (use with any branch instruction is reserved).
+• 26H — ES segment override prefix (use with any branch instruction is reserved).
+• 64H — FS segment override prefix (use with any branch instruction is reserved).
+• 65H — GS segment override prefix (use with any branch instruction is reserved).
+*/
