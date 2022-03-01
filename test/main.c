@@ -1296,6 +1296,71 @@ emit_shift_mi_test_sib(u8* stream)
     return stream;
 }
 
+u8*
+emit_mov_mi_test(u8* stream)
+{
+    // DIRECT
+#if 0
+    for(X64_Register i = AL; i <= DIL; ++i)
+    {
+        stream = emit_mov_mi(0, stream, make_mi_direct(i), 0x15);
+    }
+#endif
+#if 0
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        stream = emit_mov_mi(0, stream, make_mi_direct(i), 0x15);
+    }
+#endif
+#if 0
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        stream = emit_mov_mi(0, stream, make_mi_direct(i), 0x15);
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_mov_mi(0, stream, make_mi_direct(i), 0x15);
+    }
+#endif
+
+    // INDIRECT
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 8, 0), 0x15);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 16, 0), 0x15);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 32, 0), 0x15);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 64, 0), 0x15);
+    }
+#endif
+
+    // INDIRECT BYTE DISPLACED
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 8, 0x15), 0x17);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 16, 0x15), 0x17);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 32, 0x15), 0x17);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 64, 0x15), 0x17);
+    }
+#endif
+
+    // INDIRECT DWORD DISPLACED
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 8, 0x15161718), 0x15);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 16, 0x15161718), 0x15);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 32, 0x15161718), 0x15);
+        stream = emit_mov_mi(0, stream, make_mi_indirect(i, 64, 0x15161718), 0x15);
+    }
+#endif
+    
+    return stream;
+}
+
 uint8_t*
 emit_test(u8* stream)
 {
@@ -1327,7 +1392,6 @@ int main(int argc, char** argv)
         stream = emit_mr_sib_test(stream);
         stream = emit_rel_test(stream);
 	}
-    #endif
     {
         stream = emit_shift_m1_test(stream);
         stream = emit_shift_m1_test_sib(stream);
@@ -1335,6 +1399,11 @@ int main(int argc, char** argv)
         stream = emit_shift_mc_test_sib(stream);
         stream = emit_shift_mi_test(stream);
         stream = emit_shift_mi_test_sib(stream);
+    }
+    #endif
+
+    {
+        stream = emit_mov_mi_test(stream);
     }
 
     //stream = emit_test(stream);

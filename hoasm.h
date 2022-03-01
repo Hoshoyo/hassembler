@@ -70,13 +70,6 @@ typedef enum  {
 } X64_Addressing_Mode;
 
 typedef enum {
-	MOV_MR8 = 0x88,
-	MOV_MR = 0x89,
-	MOV_RM8 = 0x8A,
-	MOV_RM = 0x8B,
-} X64_Mov_Instr;
-
-typedef enum {
 	ARITH_ADD = 0,
 	ARITH_OR = 1,
 	ARITH_ADC = 2,	// add with carry
@@ -847,3 +840,5 @@ make_mc_indirect_sib(X64_Register dst_base, X64_Register index, X64_SibMode sib_
 {
 	return make_m1_indirect_sib(dst_base, index, sib_mode, ptr_bitsize, displacement);
 }
+
+u8* emit_mov_mi(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form, u64 imm_value);
