@@ -735,6 +735,7 @@ make_mr_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register inde
 
 u8* emit_shift_m1(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form);
 u8* emit_shift_mc(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form);
+u8* emit_shift_mi(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form, u64 imm_value);
 
 static X64_AddrForm
 make_m1_direct(X64_Register dest)
