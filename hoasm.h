@@ -55,6 +55,11 @@ typedef enum {
     R8B, R9B, R10B, R11B, R12B, R13B, R14B, R15B,
 
 	SPL, BPL, SIL, DIL,
+
+	// Segment registers
+	ES, CS, SS, DS, FS, GS,
+
+	REG_COUNT,
 } X64_Register;
 
 typedef enum {
@@ -231,7 +236,9 @@ register_representation(X64_Register r)
 	if(r < AL) return (r - R8W);
 	if(r < R8B) return (r - AL);
 	if(r < SPL) return (r - R8B);
-	return (r - SPL + 4);
+	if(r < ES) return (r - SPL);
+	if(r < REG_COUNT) return (r - ES);
+	return (r - REG_COUNT);
 }
 
 static bool
@@ -252,12 +259,19 @@ register_is_extended(X64_Register r)
 		(r >= R8B && r <= R15B);
 }
 
+static bool
+register_is_segment(X64_Register r)
+{
+	return(r >= ES && r <= GS);
+}
+
 static int
 register_get_bitsize(X64_Register r)
 {
     if(r >= RAX && r <= R15) return 64;
     if(r >= EAX && r <= R15D) return 32;
     if(r >= AX && r <= R15W) return 16;
+	if(r >= ES && r <= GS) return 16;
     return 8;
 }
 
@@ -334,12 +348,16 @@ emit_opcode_rm(u8* stream, u8 opcode, int bitsize, X64_Register base, X64_Regist
 {
     bool using_extended_register = register_is_extended(base) || register_is_extended(index) || register_is_extended(reg);
 
+	u8 rex_prefix = 0;
 	if(bitsize == 16)
-		*stream++ = 0x66; // operand size override
+	{
+		//*stream++ = 0x66; // operand size override
+		rex_prefix |= 0x66;
+	}
     if(bitsize == 64 || using_extended_register)
 	{
-		// b x r w
-		*stream++ = make_rex(register_is_extended(base), register_is_extended(index), register_is_extended(reg), bitsize == 64);		
+		// b x r w		
+		rex_prefix |= make_rex(register_is_extended(base), register_is_extended(index), register_is_extended(reg), bitsize == 64);
 	}
     else if(bitsize == 8)
     {
@@ -347,9 +365,15 @@ emit_opcode_rm(u8* stream, u8 opcode, int bitsize, X64_Register base, X64_Regist
 			base == SPL || base == BPL || base == SIL || base == DIL ||
             index == SPL || index == BPL || index == SIL || index == DIL)
         {
-            *stream++ = make_rex(0,0,0,0);
+			rex_prefix = make_rex(0,0,0,0);
         }
     }
+	if(register_get_bitsize(base) == 32 && register_is_segment(reg))// && bitsize != 32)
+	{
+		rex_prefix |= 0x67;
+	}
+	if(rex_prefix != 0)
+		*stream++ = rex_prefix;
     *stream++ = opcode;
     return stream;
 }
@@ -592,11 +616,14 @@ make_reg_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsi
 		// RBP is an exception in the indirect mode, we need a sib byte in this case
 		if(register_equivalent(source, RBP))
 		{
-			form.sib_mode = SIB_X1;
+			// TODO(psv): why was this here?
+			//form.sib_mode = SIB_X1;
+			//form.mode = INDIRECT_BYTE_DISPLACED;
+			//form.sib_base = source;
+			//form.target = dest;
+			//form.sib_index = RSP;
+
 			form.mode = INDIRECT_BYTE_DISPLACED;
-			form.sib_base = source;
-			form.target = dest;
-			form.sib_index = RSP;
 		}
 	}
 
@@ -693,11 +720,11 @@ make_rm_indirect_sib(X64_Register dest, X64_Register src_base, X64_Register inde
 static X64_AddrForm
 make_mr_direct(X64_Register dest, X64_Register source)
 {
-	assert(register_get_bitsize(dest) == register_get_bitsize(source));
+	assert((register_get_bitsize(dest) == register_get_bitsize(source)) || (register_is_segment(source) && register_get_bitsize(dest) > 8));
 
 	X64_AddrForm form = (X64_AddrForm) { 
 		.target = source, 
-		.target_bit_size = register_get_bitsize(source),
+		.target_bit_size = register_get_bitsize(dest),
 		.source = dest,
 		.sib_mode = MODE_NONE,
 		.mode = DIRECT,
@@ -709,9 +736,10 @@ make_mr_direct(X64_Register dest, X64_Register source)
 // Create an addressing mode for MR indirect.
 // Example: add dword ptr[rax+15h], rcx
 static X64_AddrForm
-make_mr_indirect(X64_Register dest, X64_Register source, X64_AddrSize ptr_bitsize, u64 displacement)
+make_mr_indirect(X64_Register dest, X64_Register source, X64_AddrSize mem_bitsize, u64 displacement)
 {
-	return make_reg_indirect(source, dest, ptr_bitsize, displacement);
+	assert(!register_is_segment(source) || (register_is_segment(source) && mem_bitsize == 16));
+	return make_reg_indirect(source, dest, mem_bitsize, displacement);
 }
 
 // Create an addressing mode for MR SIB indirect.
@@ -845,3 +873,4 @@ u8* emit_mov_mi(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form, u64 
 u8* emit_mov_oi(Instr_Emit_Result* out_info, u8* stream, X64_Register dest, u64 imm_value);
 u8* emit_mov_mr(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
 u8* emit_mov_rm(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
+u8* emit_mov_mr_sreg(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
