@@ -192,6 +192,14 @@ emit_mov_mr_sreg(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
     return stream;
 }
 
+/*
+• 2EH — CS segment override (use with any branch instruction is reserved).
+• 36H — SS segment override prefix (use with any branch instruction is reserved).
+• 3EH — DS segment override prefix (use with any branch instruction is reserved).
+• 26H — ES segment override prefix (use with any branch instruction is reserved).
+• 64H — FS segment override prefix (use with any branch instruction is reserved).
+• 65H — GS segment override prefix (use with any branch instruction is reserved).
+*/
 u8*
 emit_mov_rm_sreg(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
 {
@@ -269,12 +277,3 @@ emit_mov_moffs(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
 
     return stream;
 }
-
-/*
-• 2EH — CS segment override (use with any branch instruction is reserved).
-• 36H — SS segment override prefix (use with any branch instruction is reserved).
-• 3EH — DS segment override prefix (use with any branch instruction is reserved).
-• 26H — ES segment override prefix (use with any branch instruction is reserved).
-• 64H — FS segment override prefix (use with any branch instruction is reserved).
-• 65H — GS segment override prefix (use with any branch instruction is reserved).
-*/

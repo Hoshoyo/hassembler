@@ -2295,6 +2295,99 @@ emit_mov_rm_sib_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_mul_test(u8* stream)
+{
+#if 0
+    for(X64_Register i = RAX; i <= DIL; ++i)
+    {
+        stream = emit_mul_new(0, stream, mk_m_direct(i));
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0, ADDR_DWORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0, ADDR_BYTEPTR));
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0x15, ADDR_QWORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0x15, ADDR_DWORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0x15, ADDR_WORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0x15, ADDR_BYTEPTR));
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0x15161718, ADDR_DWORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mul_new(0, stream, mk_m_indirect(i, 0x15161718, ADDR_BYTEPTR));
+    }
+#endif
+    return stream;
+}
+
+u8*
+emit_mul_sib_test(u8* stream)
+{
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X1, 0, ADDR_QWORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X1, 0, ADDR_DWORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X1, 0, ADDR_WORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X1, 0, ADDR_BYTEPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X2, 0, ADDR_QWORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X2, 0, ADDR_DWORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X2, 0, ADDR_WORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X2, 0, ADDR_BYTEPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X4, 0x15, ADDR_QWORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X4, 0x15, ADDR_DWORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X4, 0x15, ADDR_WORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X4, 0x15, ADDR_BYTEPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X8, 0x15161718, ADDR_QWORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X8, 0x15161718, ADDR_DWORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X8, 0x15161718, ADDR_WORDPTR));
+            stream = emit_mul_new(0, stream, mk_m_indirect_sib(i, j, SIB_X8, 0x15161718, ADDR_BYTEPTR));
+        }
+    }
+#endif
+    return stream;
+}
+
 uint8_t*
 emit_test(u8* stream)
 {
@@ -2309,8 +2402,14 @@ int main(int argc, char** argv)
 	u8* code = (u8*)calloc(1, 1024*1024);
 	u8* stream = code;
 
-    u8 value = 0x4;
+    u8 value = 0x23;
     printf("%x: Mod=%x, Reg=%x, r/m=%x\n", value, 0x3 & (value >> 6), 0x7 & (value >> 3), 0x7 & value);
+    
+    X64_REX rex = *(X64_REX*)&value;
+    printf("%x: b: %x, x: %x, r: %x, w: %x\n", value, rex.B, rex.X, rex.R, rex.W);
+
+    u8 sib = make_sib(SIB_X1, RCX, RBX);
+    printf("Sib: %x\n", sib);
 
 	{
         stream = emit_mi_sib_test(stream);
@@ -2342,7 +2441,10 @@ int main(int argc, char** argv)
         stream = emit_mov_rm_sib_test_sreg(stream);
         stream = emit_mov_moffs_test(stream);
     }
-    
+    {
+        stream = emit_mul_test(stream);
+        stream = emit_mul_sib_test(stream);
+    }
 
     //stream = emit_test(stream);
 
