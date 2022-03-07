@@ -1219,7 +1219,7 @@ mk_rmi_direct(X64_Register reg, X64_Register rm, u32 immediate, s32 immediate_bi
 	result.immediate_bitsize = immediate_bitsize;
 	if(immediate_bitsize == 0)
 		result.immediate_bitsize = value_bitsize(immediate);
-		
+
 	return result;
 }
 
@@ -1239,6 +1239,23 @@ mk_rmi_indirect(X64_Register reg, X64_Register rm, u32 displacement, X64_AddrSiz
 
 	return result;
 }
+
+// TODO(psv): RSP is not valid for sib don't allow it
+static X64_AddrMode
+mk_rmi_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize, u32 immediate, s32 immediate_bitsize)
+{
+	assert(immediate_bitsize <= 32);
+	assert(immediate_bitsize == 0 || value_bitsize(immediate) <= immediate_bitsize);
+	assert(register_get_bitsize(reg) > 8);
+
+	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.immediate = immediate;
+	result.immediate_bitsize = immediate_bitsize;
+	result.reg = reg;
+
+	return result;
+}
+
 
 u8* emit_mul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_div(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
