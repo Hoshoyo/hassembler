@@ -482,58 +482,6 @@ emit_displacement(X64_Addressing_Mode mode, u8* stream, u8 disp8, uint32_t disp3
 	return stream;
 }
 
-static u8*
-emit_size_override(u8* stream, X64_AddrSize ptr_size, X64_Register rm, X64_Addressing_Mode mode)
-{
-    if(mode != DIRECT && register_get_bitsize(rm) == 32)
-    {
-        // Address-size override prefix.
-        *stream++ = 0x67;
-    }
-
-    if(mode != DIRECT && ptr_size == 16)
-    {
-        // Operand-size override prefix is encoded using 66H
-        *stream++ = 0x66;
-    }
-
-    return stream;
-}
-
-/*
-    8-bit general-purpose registers: AL, BL, CL, DL, SIL, DIL, SPL, BPL, and R8B-R15B are available using REX
-    prefixes; AL, BL, CL, DL, AH, BH, CH, DH are available without using REX prefixes.
-*/
-static u8*
-emit_rex(u8* stream, X64_Register reg, X64_Register rm, X64_Register index, X64_Register base, X64_AddrSize ptr_size, X64_Addressing_Mode mode)
-{
-    u8 b = 0, x = 0, r = 0, w = 0;
-
-    w = (mode == DIRECT) ? register_get_bitsize(rm) == 64 : ptr_size == 64;
-
-    if(index == REG_NONE && base == REG_NONE)
-    {
-        // Memory Addressing Without an SIB Byte; REX.X Not Used
-        // Register-Register Addressing (No Memory Operand); REX.X Not Used
-        r = register_is_extended(reg);
-        b = register_is_extended(rm);
-    }
-    else
-    {
-        // Memory Addressing With a SIB Byte
-        r = register_is_extended(reg);
-        b = register_is_extended(base);
-        x = register_is_extended(index);
-    }
-
-    if(r != 0 || x != 0 || b != 0 || w != 0 || (reg >= SPL && reg <= DIL) || (rm >= SPL && rm <= DIL))
-    {
-        *stream++ = make_rex(b, x, r, w);
-    }
-
-    return stream;
-}
-
 static void
 fill_outinfo(Instr_Emit_Result* out_info, s8 byte_size, s8 disp_offset, s8 imm_offset)
 {
@@ -598,9 +546,83 @@ typedef struct {
 	X64_Register moffs_base;
 } X64_AddrForm;
 
+typedef struct {
+	X64_Register        reg;
+	X64_Register        rm;		// sib base whenever sib is the mode
+	X64_Register        sib_index;
+	X64_Register        sib_base;
+	X64_Addressing_Mode addr_mode;
+	X64_SibMode         sib_mode;
+
+	u64 displacement;
+	u64 immediate;
+
+	s32 displacement_bitsize;
+	s32 immediate_bitsize;
+
+	s32 ptr_bitsize;	// only valid when rm is not REG_NONE
+} X64_AddrMode;
+
 u8* emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
 u8* emit_arith_rm(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
 u8* emit_arith_mr(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form);
+
+static u8*
+emit_size_override(u8* stream, X64_AddrSize ptr_size, X64_Register rm, X64_Addressing_Mode mode)
+{
+    if(mode != DIRECT && register_get_bitsize(rm) == 32)
+    {
+        // Address-size override prefix.
+        *stream++ = 0x67;
+    }
+
+    if(mode != DIRECT && ptr_size == 16)
+    {
+        // Operand-size override prefix is encoded using 66H
+        *stream++ = 0x66;
+    }
+
+	if(mode == DIRECT && register_get_bitsize(rm) == 16)
+	{
+		*stream++ = 0x66;
+	}
+
+    return stream;
+}
+
+/*
+    8-bit general-purpose registers: AL, BL, CL, DL, SIL, DIL, SPL, BPL, and R8B-R15B are available using REX
+    prefixes; AL, BL, CL, DL, AH, BH, CH, DH are available without using REX prefixes.
+*/
+static u8*
+emit_rex(u8* stream, X64_Register reg, X64_Register rm, X64_Register index, X64_Register base, X64_AddrSize ptr_size, X64_Addressing_Mode mode)
+{
+    u8 b = 0, x = 0, r = 0, w = 0;
+
+    w = (mode == DIRECT) ? register_get_bitsize(rm) == 64 : ptr_size == 64;
+
+    if(index == REG_NONE && base == REG_NONE)
+    {
+        // Memory Addressing Without an SIB Byte; REX.X Not Used
+        // Register-Register Addressing (No Memory Operand); REX.X Not Used
+        r = register_is_extended(reg);
+        b = register_is_extended(rm);
+    }
+    else
+    {
+        // Memory Addressing With a SIB Byte
+        r = register_is_extended(reg);
+        b = register_is_extended(base);
+        x = register_is_extended(index);
+    }
+
+    if(r != 0 || x != 0 || b != 0 || w != 0 || (reg >= SPL && reg <= DIL) || (rm >= SPL && rm <= DIL))
+    {
+        *stream++ = make_rex(b, x, r, w);
+    }
+
+    return stream;
+}	
 
 /*
 	Addressing modes creation
@@ -1074,23 +1096,6 @@ u8* emit_mov_moffs(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
 
 // ----------------------------------
 
-typedef struct {
-	X64_Register        reg;
-	X64_Register        rm;		// sib base whenever sib is the mode
-	X64_Register        sib_index;
-	X64_Register        sib_base;
-	X64_Addressing_Mode addr_mode;
-	X64_SibMode         sib_mode;
-
-	u64 displacement;
-	u64 immediate;
-
-	s32 displacement_bitsize;
-	s32 immediate_bitsize;
-
-	s32 ptr_bitsize;	// only valid when rm is not REG_NONE
-} X64_AddrMode;
-
 static X64_AddrMode
 mk_base(X64_Addressing_Mode mode)
 {
@@ -1141,6 +1146,7 @@ mk_m_indirect(X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
 		result.sib_base = REG_NONE;
 		result.sib_base = rm;
 		result.sib_index = RSP;
+		result.rm = RSP;	// needed, for representing no register
 	}
 	else if(result.addr_mode == INDIRECT && register_equivalent(rm, RBP))
 	{
@@ -1164,7 +1170,7 @@ mk_m_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32
 
 	X64_AddrMode result = mk_base(INDIRECT);
 	result.reg = REG_NONE;
-	result.rm = rm;
+	result.rm = RSP;	// needed, for representing no register
 	result.displacement = displacement;
 	result.displacement_bitsize = value_bitsize(displacement);
 	result.ptr_bitsize = ptr_bitsize;
@@ -1190,4 +1196,51 @@ mk_m_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32
 	return result;
 }
 
+static X64_AddrMode
+mk_rm_direct(X64_Register reg, X64_Register rm)
+{
+	X64_AddrMode result = mk_base(DIRECT);
+	result.reg = reg;
+	result.rm = rm;
+	return result;
+}
+
+static X64_AddrMode
+mk_rmi_direct(X64_Register reg, X64_Register rm, u32 immediate, s32 immediate_bitsize)
+{
+	assert(immediate_bitsize <= 32);
+	assert(immediate_bitsize == 0 || value_bitsize(immediate) <= immediate_bitsize);
+	assert(register_get_bitsize(reg) > 8);
+
+	X64_AddrMode result = mk_base(DIRECT);
+	result.reg = reg;
+	result.rm = rm;
+	result.immediate = immediate;
+	result.immediate_bitsize = immediate_bitsize;
+	if(immediate_bitsize == 0)
+		result.immediate_bitsize = value_bitsize(immediate);
+		
+	return result;
+}
+
+static X64_AddrMode
+mk_rmi_indirect(X64_Register reg, X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize, u32 immediate, s32 immediate_bitsize)
+{
+	assert(immediate_bitsize <= 32);
+	assert(immediate_bitsize == 0 || value_bitsize(immediate) <= immediate_bitsize);
+	assert(register_get_bitsize(reg) > 8);
+
+	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
+	result.reg = reg;
+	result.immediate = immediate;
+	result.immediate_bitsize = immediate_bitsize;
+	if(immediate_bitsize == 0)
+		result.immediate_bitsize = value_bitsize(immediate);
+
+	return result;
+}
+
 u8* emit_mul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_div(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_idiv(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_imul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
