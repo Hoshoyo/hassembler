@@ -3,4 +3,5 @@
 
 start:
     mov     al, [es:0x0475]
+    movsx ax, eax
     ret

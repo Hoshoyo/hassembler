@@ -74,6 +74,7 @@ typedef enum  {
 	DIRECT                   = 3,
 	MOFFS_FD                 = 4,
 	MOFFS_TD                 = 5,
+	MODE_ZO                  = 6,
 } X64_Addressing_Mode;
 
 typedef enum {
@@ -599,7 +600,14 @@ emit_rex(u8* stream, X64_Register reg, X64_Register rm, X64_Register index, X64_
 {
     u8 b = 0, x = 0, r = 0, w = 0;
 
-    w = (mode == DIRECT) ? register_get_bitsize(rm) == 64 : ptr_size == 64;
+	if(mode == DIRECT)
+	{
+		w =  (register_get_bitsize(rm) == 64) || (register_get_bitsize(rm) <= 32 && register_get_bitsize(reg) == 64);
+	}
+	else
+	{
+		w = (ptr_size == 64) || (register_get_bitsize(reg) == 64);
+	}
 
     if(index == REG_NONE && base == REG_NONE)
     {
@@ -1256,8 +1264,30 @@ mk_rmi_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_S
 	return result;
 }
 
+static X64_AddrMode
+mk_zo()
+{
+	return mk_base(MODE_ZO);
+}
+
+static X64_AddrMode
+mk_rm_indirect(X64_Register reg, X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	assert(register_get_bitsize(reg) > 8);
+
+	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
+	result.reg = reg;
+
+	return result;
+}
 
 u8* emit_mul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_div(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_idiv(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_imul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_neg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_nop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_not(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
