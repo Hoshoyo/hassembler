@@ -1,5 +1,7 @@
 #include "hoasm.h"
 
+#define INC_DIGIT 0
+#define DEC_DIGIT 1
 #define NOT_DIGIT 2
 #define NEG_DIGIT 3
 #define MUL_DIGIT 4
@@ -108,6 +110,26 @@ emit_not(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 }
 
 u8*
+emit_dec(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xfe : 0xff;
+    amode.reg = DEC_DIGIT;
+    return emit_mul_complete(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_inc(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xfe : 0xff;
+    amode.reg = INC_DIGIT;
+    return emit_mul_complete(out_info, stream, amode, opcode);
+}
+
+u8*
 emit_nop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {
     if(amode.addr_mode == MODE_ZO)
@@ -147,7 +169,6 @@ emit_imul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
         opcode.bytes[1] = 0xaf;
         opcode.byte_count = 2;
     }
-    // RM Op/En
     return emit_mul_complete(out_info, stream, amode, opcode);
 }
 

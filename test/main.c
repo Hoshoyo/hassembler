@@ -2504,6 +2504,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
+
     return stream;
 }
 
@@ -2929,6 +2930,99 @@ emit_neg_sib_test(u8* stream)
 }
 
 u8*
+emit_dec_test(u8* stream)
+{
+#if 0
+    for(X64_Register i = RAX; i <= DIL; ++i)
+    {
+        stream = emit_dec(0, stream, mk_m_direct(i));
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0, ADDR_DWORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0, ADDR_BYTEPTR));
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0x15, ADDR_QWORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0x15, ADDR_DWORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0x15, ADDR_WORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0x15, ADDR_BYTEPTR));
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0x15161718, ADDR_DWORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_dec(0, stream, mk_m_indirect(i, 0x15161718, ADDR_BYTEPTR));
+    }
+#endif
+    return stream;
+}
+
+u8*
+emit_dec_sib_test(u8* stream)
+{
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X1, 0, ADDR_QWORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X1, 0, ADDR_DWORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X1, 0, ADDR_WORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X1, 0, ADDR_BYTEPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X2, 0, ADDR_QWORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X2, 0, ADDR_DWORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X2, 0, ADDR_WORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X2, 0, ADDR_BYTEPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X4, 0x15, ADDR_QWORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X4, 0x15, ADDR_DWORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X4, 0x15, ADDR_WORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X4, 0x15, ADDR_BYTEPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X8, 0x15161718, ADDR_QWORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X8, 0x15161718, ADDR_DWORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X8, 0x15161718, ADDR_WORDPTR));
+            stream = emit_dec(0, stream, mk_m_indirect_sib(i, j, SIB_X8, 0x15161718, ADDR_BYTEPTR));
+        }
+    }
+#endif
+    return stream;
+}
+
+u8*
 emit_not_test(u8* stream)
 {
 #if 0
@@ -3155,6 +3249,10 @@ int main(int argc, char** argv)
     {
         stream = emit_not_test(stream);
         stream = emit_not_sib_test(stream);
+    }
+    {
+        stream = emit_dec_test(stream);
+        stream = emit_dec_sib_test(stream);
     }
     {
         stream = emit_movsxd_rm_test(stream);

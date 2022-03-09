@@ -599,15 +599,7 @@ static u8*
 emit_rex(u8* stream, X64_Register reg, X64_Register rm, X64_Register index, X64_Register base, X64_AddrSize ptr_size, X64_Addressing_Mode mode)
 {
     u8 b = 0, x = 0, r = 0, w = 0;
-
-	if(mode == DIRECT)
-	{
-		w =  (register_get_bitsize(rm) == 64) || (register_get_bitsize(rm) <= 32 && register_get_bitsize(reg) == 64);
-	}
-	else
-	{
-		w = (ptr_size == 64) || (register_get_bitsize(reg) == 64);
-	}
+	w = (mode == DIRECT) ? register_get_bitsize(rm) == 64 : ptr_size == 64;
 
     if(index == REG_NONE && base == REG_NONE)
     {
@@ -1154,7 +1146,7 @@ mk_m_indirect(X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
 		result.sib_base = REG_NONE;
 		result.sib_base = rm;
 		result.sib_index = RSP;
-		result.rm = RSP;	// needed, for representing no register
+		result.rm = (register_get_bitsize(rm) == 32) ? ESP : RSP;	// needed, for representing no register
 	}
 	else if(result.addr_mode == INDIRECT && register_equivalent(rm, RBP))
 	{
@@ -1178,7 +1170,7 @@ mk_m_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32
 
 	X64_AddrMode result = mk_base(INDIRECT);
 	result.reg = REG_NONE;
-	result.rm = RSP;	// needed, for representing no register
+	result.rm = (register_get_bitsize(rm) == 32) ? ESP : RSP;	// needed, for representing no register
 	result.displacement = displacement;
 	result.displacement_bitsize = value_bitsize(displacement);
 	result.ptr_bitsize = ptr_bitsize;
@@ -1288,6 +1280,8 @@ u8* emit_imul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_neg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_nop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_not(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_dec(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_iec(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
