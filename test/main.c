@@ -3179,6 +3179,35 @@ emit_nop_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_jcc_test(u8* stream)
+{
+    X64_Jump_Conditional_Short jccs[] = {
+        JE, JZ, JNE, JNZ,
+        
+        // UNSIGNED
+        JA, JNA, JAE, JNAE, JB, JNC, JBE, JNBE,
+
+        //SIGNED
+        JG, JNG, JGE, JNGE, JL, JNL, JLE, JNLE,
+
+        // SPECIAL
+        JO, JNO, JS, JNS, JP, JPE, JNP, JPO,
+    };
+
+    stream = emit_jecxz(0, stream, 0x15);
+    stream = emit_jrcxz(0, stream, 0x15);
+
+    for(s32 i = 0; i < sizeof(jccs) / sizeof(*jccs); ++i)
+    {
+        stream = emit_jcc(0, stream, jccs[i], 0x15, 8);
+        stream = emit_jcc(0, stream, jccs[i], 0x15, 16);
+        stream = emit_jcc(0, stream, jccs[i], 0x15, 32);
+    }
+
+    return stream;
+}
+
 uint8_t*
 emit_test(u8* stream)
 {
@@ -3257,6 +3286,9 @@ int main(int argc, char** argv)
     {
         stream = emit_movsxd_rm_test(stream);
         stream = emit_movsx_rm_test(stream);
+    }
+    {
+        stream = emit_jcc_test(stream);
     }
 
     //stream = emit_test(stream);

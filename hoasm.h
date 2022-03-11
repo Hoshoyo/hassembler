@@ -118,11 +118,11 @@ typedef enum {
 	// UNSIGNED
 	JA   = 0x77,		// op1 > op2
 	JNA  = 0x76,		// !(op1 > op2)
+	JBE  = 0x76,		// op1 <= op2
 	JAE  = 0x73,		// op1 >= op2
 	JNAE = 0x72,		// !(op1 >= op2)
 	JB   = 0x72,		// op1 < op2
 	JNC  = 0x73,		// !(op1 < op2)
-	JBE  = 0x76,		// op1 <= op2
 	JNBE = 0x77,		// !(op1 <= op2)
 
 	//SIGNED
@@ -1285,3 +1285,7 @@ u8* emit_iec(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
+u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
+u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
