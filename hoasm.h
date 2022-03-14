@@ -1289,3 +1289,18 @@ u8* emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
 u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
 u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
+
+u8* emit_int3(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_int0(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_int1(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_int(Instr_Emit_Result* out_info, u8* stream, u8 rel);
+
+u8* emit_leave(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_leave16(Instr_Emit_Result* out_info, u8* stream);
+
+typedef struct {
+    u8 bytes[3];
+    s8 byte_count;
+} X64_Opcode;
+
+u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode);

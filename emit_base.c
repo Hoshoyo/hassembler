@@ -1,12 +1,5 @@
 #include "hoasm.h"
 
-#define NEG_DIGIT 3
-
-typedef struct {
-    u8 bytes[3];
-    s8 byte_count;
-} X64_Opcode;
-
 u8*
 emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode)
 {
@@ -41,14 +34,4 @@ emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X6
     fill_outinfo(out_info, stream - start, disp_offset, imm_offset);
     
     return stream;
-}
-
-u8*
-emit_neg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
-{
-    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
-    X64_Opcode opcode = {.byte_count = 1};
-    opcode.bytes[0] = (bitsize == 8) ? 0xf6 : 0xf7;
-    amode.reg = NEG_DIGIT;
-    return emit_mul_complete(out_info, stream, amode, opcode);
 }

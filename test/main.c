@@ -3195,6 +3195,7 @@ emit_jcc_test(u8* stream)
         JO, JNO, JS, JNS, JP, JPE, JNP, JPO,
     };
 
+#if 0
     stream = emit_jecxz(0, stream, 0x15);
     stream = emit_jrcxz(0, stream, 0x15);
 
@@ -3204,6 +3205,27 @@ emit_jcc_test(u8* stream)
         stream = emit_jcc(0, stream, jccs[i], 0x15, 16);
         stream = emit_jcc(0, stream, jccs[i], 0x15, 32);
     }
+#endif
+
+    return stream;
+}
+
+u8*
+emit_int_test(u8* stream)
+{
+#if 0
+    stream = emit_int1(0, stream);
+    stream = emit_int3(0, stream);
+    stream = emit_int(0, stream, 0x15);
+#endif
+    return stream;
+}
+
+u8*
+emit_stack_test(u8* stream)
+{
+    stream = emit_leave(0, stream);
+    stream = emit_leave16(0, stream);
 
     return stream;
 }
@@ -3289,6 +3311,12 @@ int main(int argc, char** argv)
     }
     {
         stream = emit_jcc_test(stream);
+    }
+    {
+        stream = emit_int_test(stream);
+    }
+    {
+        stream = emit_stack_test(stream);
     }
 
     //stream = emit_test(stream);
