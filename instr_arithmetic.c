@@ -234,3 +234,24 @@ emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr inst
     }
     return stream;
 }
+
+u8*
+emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    if(amode.immediate_bitsize > 0)
+    {
+        u8 op = 0x80; // imm8
+        if(bitsize > 8) op += 1;    // 0x81
+        if(amode.immediate_bitsize == 8 && bitsize > 8) op += 2;   // 0x83
+        opcode.bytes[0] = op;
+
+        if(amode.addr_mode == DIRECT && amode.immediate_bitsize == 16 && register_get_bitsize(amode.rm) > 16)
+            amode.immediate_bitsize = 32;
+        else if(amode.addr_mode != DIRECT && amode.immediate_bitsize == 16 && amode.ptr_bitsize > 16)
+            amode.immediate_bitsize = 32;
+    }
+    amode.reg = instr;
+    return emit_instruction(out_info, stream, amode, opcode);
+}

@@ -1273,6 +1273,75 @@ mk_rm_indirect(X64_Register reg, X64_Register rm, u32 displacement, X64_AddrSize
 	return result;
 }
 
+static X64_AddrMode
+mk_mi_direct(X64_Register rm, u32 immediate, s32 immediate_bitsize)
+{
+	assert(immediate_bitsize <= 32);
+	assert(immediate_bitsize == 0 || value_bitsize(immediate) <= immediate_bitsize);
+
+	X64_AddrMode result = mk_base(DIRECT);
+	result.reg = REG_NONE;
+	result.rm = rm;
+	result.immediate = immediate;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? value_bitsize(immediate) : immediate_bitsize;
+
+	return result;
+}
+
+static X64_AddrMode
+mk_mi_indirect(X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize, u32 immediate, s32 immediate_bitsize)
+{
+	assert(rm >= RAX && rm <= R15D);
+
+	X64_AddrMode result = mk_base(INDIRECT);
+	result.rm = rm;
+	result.displacement = displacement;
+	result.displacement_bitsize = value_bitsize(displacement);
+	result.ptr_bitsize = ptr_bitsize;
+	result.immediate = immediate;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? value_bitsize(immediate) : immediate_bitsize;
+
+	if(displacement > 0xff)
+	{	
+		result.addr_mode = INDIRECT_DWORD_DISPLACED;
+	}
+	else if(displacement > 0)
+	{
+		result.addr_mode = INDIRECT_BYTE_DISPLACED;	
+	}
+
+	if(register_equivalent(rm, RSP))
+	{
+		// need sib byte
+		result.sib_mode = SIB_X1;
+		result.sib_base = REG_NONE;
+		result.sib_base = rm;
+		result.sib_index = RSP;
+		result.rm = (register_get_bitsize(rm) == 32) ? ESP : RSP;	// needed, for representing no register
+	}
+	else if(result.addr_mode == INDIRECT && register_equivalent(rm, RBP))
+	{
+		result.addr_mode = INDIRECT_BYTE_DISPLACED;
+		result.displacement_bitsize = 8;
+	}
+	return result;
+}
+
+static X64_AddrMode
+mk_mi_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize, u32 immediate, s32 immediate_bitsize)
+{
+	assert(immediate_bitsize <= 32);
+	assert(immediate_bitsize == 0 || value_bitsize(immediate) <= immediate_bitsize);
+
+	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.immediate = immediate;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? value_bitsize(immediate) : immediate_bitsize;
+	if(result.sib_index == REG_NONE) result.sib_index = RSP;
+	if(result.sib_base == REG_NONE) result.sib_base = RSP;
+
+	return result;
+}
+
 u8* emit_mul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_div(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_idiv(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
@@ -1304,3 +1373,5 @@ typedef struct {
 } X64_Opcode;
 
 u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode);
+
+u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode);
