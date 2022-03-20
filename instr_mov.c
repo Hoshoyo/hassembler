@@ -306,9 +306,49 @@ emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
         } break;
         case ADDR_MODE_MR: {
             opcode.bytes[0] = (bitsize > 8) ? 0x89 : 0x88;
+            if(register_is_segment(amode.reg))
+                opcode.bytes[0] = 0x8C;
+            if (amode.addr_mode != DIRECT && amode.ptr_bitsize == 16)
+                amode.ptr_bitsize = 32;
         } break;
         case ADDR_MODE_RM: {
             opcode.bytes[0] = (bitsize > 8) ? 0x8B : 0x8A;
+            if(register_is_segment(amode.reg))
+                opcode.bytes[0] = 0x8E;
+            if (amode.addr_mode != DIRECT && amode.ptr_bitsize == 16)
+                amode.ptr_bitsize = 32;
+        } break;
+        case ADDR_MODE_FD: {
+            opcode.bytes[0] = (bitsize > 8) ? 0xA1 : 0xA0;
+            if(amode.rm != REG_NONE)
+            {
+                switch(amode.moffs_base)
+                {
+                    case CS: *stream++ = 0x2e; break;
+                    case SS: *stream++ = 0x36; break;
+                    case DS: *stream++ = 0x3e; break;
+                    case ES: *stream++ = 0x26; break;
+                    case FS: *stream++ = 0x64; break;
+                    case GS: *stream++ = 0x65; break;
+                    default: break;
+                }
+            }
+        } break;
+        case ADDR_MODE_TD: {
+            opcode.bytes[0] = (bitsize > 8) ? 0xA3 : 0xA2;
+            if(amode.rm != REG_NONE)
+            {
+                switch(amode.moffs_base)
+                {
+                    case CS: *stream++ = 0x2e; break;
+                    case SS: *stream++ = 0x36; break;
+                    case DS: *stream++ = 0x3e; break;
+                    case ES: *stream++ = 0x26; break;
+                    case FS: *stream++ = 0x64; break;
+                    case GS: *stream++ = 0x65; break;
+                    default: break;
+                }
+            }
         } break;
     }
 

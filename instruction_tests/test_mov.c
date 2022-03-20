@@ -104,34 +104,34 @@ emit_mov_mr_test_sreg(u8* stream)
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, ES));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, CS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, SS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, DS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, FS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, GS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, ES));
+        stream = emit_mov(0, stream, mk_mr_direct(i, CS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, SS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, DS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, FS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, GS));
     }
 #endif
 #if 0
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, ES));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, CS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, SS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, DS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, FS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, GS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, ES));
+        stream = emit_mov(0, stream, mk_mr_direct(i, CS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, SS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, DS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, FS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, GS));
     }
 #endif
 #if 0
     for(X64_Register i = AX; i <= R15W; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, ES));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, CS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, SS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, DS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, FS));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_direct(i, GS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, ES));
+        stream = emit_mov(0, stream, mk_mr_direct(i, CS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, SS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, DS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, FS));
+        stream = emit_mov(0, stream, mk_mr_direct(i, GS));
     }
 #endif
 
@@ -139,23 +139,23 @@ emit_mov_mr_test_sreg(u8* stream)
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, ES, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, CS, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, SS, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, DS, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, FS, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, GS, 16, 0));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, CS, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, SS, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, DS, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, FS, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0, ADDR_WORDPTR));
     }
 #endif
 #if 0
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, ES, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, CS, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, SS, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, DS, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, FS, 16, 0));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, GS, 16, 0));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, CS, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, SS, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, DS, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, FS, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0, ADDR_WORDPTR));
     }
 #endif
 
@@ -163,23 +163,23 @@ emit_mov_mr_test_sreg(u8* stream)
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, ES, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, CS, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, SS, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, DS, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, FS, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, GS, 16, 0x15));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, CS, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, SS, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, DS, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, FS, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0x15, ADDR_WORDPTR));
     }
 #endif
 #if 0
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, ES, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, CS, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, SS, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, DS, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, FS, 16, 0x15));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, GS, 16, 0x15));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, CS, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, SS, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, DS, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, FS, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0x15, ADDR_WORDPTR));
     }
 #endif
 
@@ -187,23 +187,23 @@ emit_mov_mr_test_sreg(u8* stream)
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, ES, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, CS, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, SS, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, DS, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, FS, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, GS, 16, 0x15161718));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, CS, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, SS, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, DS, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, FS, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0x15161718, ADDR_WORDPTR));
     }
 #endif
 #if 0
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, ES, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, CS, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, SS, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, DS, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, FS, 16, 0x15161718));
-        stream = emit_mov_mr_sreg(0, stream, make_mr_indirect(i, GS, 16, 0x15161718));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, CS, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, SS, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, DS, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, FS, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0x15161718, ADDR_WORDPTR));
     }
 #endif
 
@@ -222,7 +222,7 @@ emit_mov_mr_sib_test_sreg(u8* stream)
     {
         for(X64_Register j = ES; j <= GS; ++j)
         {
-            stream = emit_mov_mr_sreg(0, stream, make_mr_indirect_sib(i, j, index_reg, SIB_X1, ADDR_WORDPTR, 0));
+            stream = emit_mov(0, stream, mk_mr_indirect_sib(i, j, index_reg, SIB_X1, 0, ADDR_WORDPTR));
         }
     }
 #endif
@@ -233,7 +233,7 @@ emit_mov_mr_sib_test_sreg(u8* stream)
     {
         for(X64_Register j = ES; j <= GS; ++j)
         {
-            stream = emit_mov_mr_sreg(0, stream, make_mr_indirect_sib(i, j, index_reg, SIB_X2, ADDR_WORDPTR, 0x15));
+            stream = emit_mov(0, stream, mk_mr_indirect_sib(i, j, index_reg, SIB_X2, 0x15, ADDR_WORDPTR));
         }
     }
 #endif
@@ -244,7 +244,7 @@ emit_mov_mr_sib_test_sreg(u8* stream)
     {
         for(X64_Register j = ES; j <= GS; ++j)
         {
-            stream = emit_mov_mr_sreg(0, stream, make_mr_indirect_sib(i, j, index_reg, SIB_X8, ADDR_WORDPTR, 0x15161718));
+            stream = emit_mov(0, stream, mk_mr_indirect_sib(i, j, index_reg, SIB_X8, 0x15161718, ADDR_WORDPTR));
         }
     }
 #endif
@@ -257,34 +257,34 @@ emit_mov_rm_test_sreg(u8* stream)
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(ES, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(CS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(SS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(DS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(FS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(GS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(ES, i));
+        stream = emit_mov(0, stream, mk_rm_direct(CS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(SS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(DS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(FS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(GS, i));
     }
 #endif
 #if 0
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(ES, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(CS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(SS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(DS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(FS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(GS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(ES, i));
+        stream = emit_mov(0, stream, mk_rm_direct(CS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(SS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(DS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(FS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(GS, i));
     }
 #endif
 #if 0
     for(X64_Register i = AX; i <= R15W; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(ES, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(CS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(SS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(DS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(FS, i));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_direct(GS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(ES, i));
+        stream = emit_mov(0, stream, mk_rm_direct(CS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(SS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(DS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(FS, i));
+        stream = emit_mov(0, stream, mk_rm_direct(GS, i));
     }
 #endif
 
@@ -292,23 +292,23 @@ emit_mov_rm_test_sreg(u8* stream)
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(ES, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(CS, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(SS, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(DS, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(FS, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(GS, i, 16, 0));
+        stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(CS, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(SS, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(DS, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(FS, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0, ADDR_WORDPTR));
     }
 #endif
 #if 0
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(ES, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(CS, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(SS, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(DS, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(FS, i, 16, 0));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(GS, i, 16, 0));
+        stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(CS, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(SS, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(DS, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(FS, i, 0, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0, ADDR_WORDPTR));
     }
 #endif
 
@@ -316,23 +316,23 @@ emit_mov_rm_test_sreg(u8* stream)
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(ES, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(CS, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(SS, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(DS, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(FS, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(GS, i, 16, 0x15));
+        stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(CS, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(SS, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(DS, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(FS, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0x15, ADDR_WORDPTR));
     }
 #endif
 #if 0
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(ES, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(CS, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(SS, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(DS, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(FS, i, 16, 0x15));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(GS, i, 16, 0x15));
+        stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(CS, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(SS, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(DS, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(FS, i, 0x15, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0x15, ADDR_WORDPTR));
     }
 #endif
 
@@ -340,23 +340,23 @@ emit_mov_rm_test_sreg(u8* stream)
 #if 0
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(ES, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(CS, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(SS, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(DS, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(FS, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(GS, i, 16, 0x15161718));
+        stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(CS, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(SS, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(DS, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(FS, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0x15161718, ADDR_WORDPTR));
     }
 #endif
 #if 0
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(ES, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(CS, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(SS, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(DS, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(FS, i, 16, 0x15161718));
-        stream = emit_mov_rm_sreg(0, stream, make_rm_indirect(GS, i, 16, 0x15161718));
+        stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(CS, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(SS, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(DS, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(FS, i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0x15161718, ADDR_WORDPTR));
     }
 #endif
 
@@ -370,34 +370,34 @@ emit_mov_rm_sib_test_sreg(u8* stream)
     assert(index_reg != RSP);
 
     // SIB INDIRECT X1
-#if TEST_MR_SIB_X1_16
+#if TEST_RM_SIB_X1_16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = ES; j <= GS; ++j)
         {
-            stream = emit_mov_rm_sreg(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X1, ADDR_WORDPTR, 0));
+            stream = emit_mov(0, stream, mk_rm_indirect_sib(j, i, index_reg, SIB_X1, 0, ADDR_WORDPTR));
         }
     }
 #endif
 
     // SIB INDIRECT_BYTE_DISPLACED X2
-#if TEST_MR_SIB_BYTE_DISPLACED_X2_16
+#if TEST_RM_SIB_BYTE_DISPLACED_X2_16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = ES; j <= GS; ++j)
         {
-            stream = emit_mov_rm_sreg(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X2, ADDR_WORDPTR, 0x15));
+            stream = emit_mov(0, stream, mk_rm_indirect_sib(j, i, index_reg, SIB_X2, 0x15, ADDR_WORDPTR));
         }
     }
 #endif
 
     // SIB INDIRECT_DWORD_DISPLACED X8
-#if TEST_MR_SIB_DWORD_DISPLACED_X8_16
+#if TEST_RM_SIB_DWORD_DISPLACED_X8_16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = ES; j <= GS; ++j)
         {
-            stream = emit_mov_rm_sreg(0, stream, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_WORDPTR, 0x15161718));
+            stream = emit_mov(0, stream, mk_rm_indirect_sib(j, i, index_reg, SIB_X8, 0x15161718, ADDR_WORDPTR));
         }
     }
 #endif
@@ -409,35 +409,35 @@ emit_mov_moffs_test(u8* stream)
 {
     // MOFFS FD
 #if 0
-    stream = emit_mov_moffs(0, stream, make_fd(REG_NONE, 0x12345678, 64));
-    stream = emit_mov_moffs(0, stream, make_fd(REG_NONE, 0x12345678, 32));
-    stream = emit_mov_moffs(0, stream, make_fd(REG_NONE, 0x12345678, 16));
-    stream = emit_mov_moffs(0, stream, make_fd(REG_NONE, 0x12345678, 8));
+    stream = emit_mov(0, stream, mk_fd(REG_NONE, 0x12345678, 64));
+    stream = emit_mov(0, stream, mk_fd(REG_NONE, 0x12345678, 32));
+    stream = emit_mov(0, stream, mk_fd(REG_NONE, 0x12345678, 16));
+    stream = emit_mov(0, stream, mk_fd(REG_NONE, 0x12345678, 8));
 #endif
 #if 0
     for(X64_Register i = ES; i <= GS; ++i)
     {
-        stream = emit_mov_moffs(0, stream, make_fd(i, 0x12345678, 64));
-        stream = emit_mov_moffs(0, stream, make_fd(i, 0x12345678, 32));
-        stream = emit_mov_moffs(0, stream, make_fd(i, 0x12345678, 16));
-        stream = emit_mov_moffs(0, stream, make_fd(i, 0x12345678, 8));
+        stream = emit_mov(0, stream, mk_fd(i, 0x12345678, 64));
+        stream = emit_mov(0, stream, mk_fd(i, 0x12345678, 32));
+        stream = emit_mov(0, stream, mk_fd(i, 0x12345678, 16));
+        stream = emit_mov(0, stream, mk_fd(i, 0x12345678, 8));
     }
 #endif
 
     // MOFFS TD
 #if 0
-    stream = emit_mov_moffs(0, stream, make_td(REG_NONE, 0x12345678, 64));
-    stream = emit_mov_moffs(0, stream, make_td(REG_NONE, 0x12345678, 32));
-    stream = emit_mov_moffs(0, stream, make_td(REG_NONE, 0x12345678, 16));
-    stream = emit_mov_moffs(0, stream, make_td(REG_NONE, 0x12345678, 8));
+    stream = emit_mov(0, stream, mk_td(REG_NONE, 0x12345678, 64));
+    stream = emit_mov(0, stream, mk_td(REG_NONE, 0x12345678, 32));
+    stream = emit_mov(0, stream, mk_td(REG_NONE, 0x12345678, 16));
+    stream = emit_mov(0, stream, mk_td(REG_NONE, 0x12345678, 8));
 #endif
 #if 0
     for(X64_Register i = ES; i <= GS; ++i)
     {
-        stream = emit_mov_moffs(0, stream, make_td(i, 0x12345678, 64));
-        stream = emit_mov_moffs(0, stream, make_td(i, 0x12345678, 32));
-        stream = emit_mov_moffs(0, stream, make_td(i, 0x12345678, 16));
-        stream = emit_mov_moffs(0, stream, make_td(i, 0x12345678, 8));
+        stream = emit_mov(0, stream, mk_td(i, 0x12345678, 64));
+        stream = emit_mov(0, stream, mk_td(i, 0x12345678, 32));
+        stream = emit_mov(0, stream, mk_td(i, 0x12345678, 16));
+        stream = emit_mov(0, stream, mk_td(i, 0x12345678, 8));
     }
 #endif
     return stream;
@@ -1227,11 +1227,11 @@ int main()
         end = emit_mov_mr_sib_test(end);
         end = emit_mov_rm_test(end);
         end = emit_mov_rm_sib_test(end);
-        //end = emit_mov_mr_test_sreg(end);
-        //end = emit_mov_mr_sib_test_sreg(end);
-        //end = emit_mov_rm_test_sreg(end);
-        //end = emit_mov_rm_sib_test_sreg(end);
-        //end = emit_mov_moffs_test(end);
+        end = emit_mov_mr_test_sreg(end);
+        end = emit_mov_mr_sib_test_sreg(end);
+        end = emit_mov_rm_test_sreg(end);
+        end = emit_mov_rm_sib_test_sreg(end);
+        end = emit_mov_moffs_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

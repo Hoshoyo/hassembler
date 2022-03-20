@@ -566,6 +566,7 @@ typedef struct {
 	X64_Register        rm;		// sib base whenever sib is the mode
 	X64_Register        sib_index;
 	X64_Register        sib_base;
+	X64_Register        moffs_base;
 	X64_Addressing_Mode addr_mode;
 	X64_SibMode         sib_mode;
 
@@ -1122,6 +1123,7 @@ mk_base(X64_Addressing_Mode mode, X64_AddrMode_Type type)
 		.sib_index   = REG_NONE,
 		.rm          = REG_NONE,
 		.reg         = REG_NONE,
+		.moffs_base  = REG_NONE,
 		.ptr_bitsize = 0,
 	};
 }
@@ -1414,6 +1416,48 @@ mk_oi(X64_Register rm, u32 immediate, s32 immediate_bitsize)
 	result.reg = REG_NONE;
 	result.immediate = immediate;
 	result.immediate_bitsize = (immediate_bitsize == 0) ? MAX(8, value_bitsize(immediate)) : immediate_bitsize;
+	return result;
+}
+
+static X64_AddrMode
+mk_fd(X64_Register base, u64 offset, X64_AddrSize bitsize)
+{
+	assert(register_is_segment(base) || base == REG_NONE);
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_FD);
+	result.moffs_base = base;
+	result.immediate_bitsize = 64;
+	result.immediate = offset;
+
+	switch(bitsize)
+	{
+		case 64: result.rm = RAX; break;
+		case 32: result.rm = EAX; break;
+		case 16: result.rm = AX; break;
+		case 8 : result.rm = AL; break;
+		default: assert(0); break;
+	}
+
+	return result;
+}
+
+static X64_AddrMode
+mk_td(X64_Register base, u64 offset, X64_AddrSize bitsize)
+{
+	assert(register_is_segment(base) || base == REG_NONE);
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_TD);
+	result.moffs_base = base;
+	result.immediate_bitsize = 64;
+	result.immediate = offset;
+
+	switch(bitsize)
+	{
+		case 64: result.rm = RAX; break;
+		case 32: result.rm = EAX; break;
+		case 16: result.rm = AX; break;
+		case 8 : result.rm = AL; break;
+		default: assert(0); break;
+	}
+	
 	return result;
 }
 
