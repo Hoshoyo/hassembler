@@ -277,3 +277,40 @@ emit_mov_moffs(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form)
 
     return stream;
 }
+
+// ------------
+u8*
+emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_OI: {
+            // TODO(psv): assert invalid cases here
+            opcode.bytes[0] = ((bitsize > 8) ? 0xB8 : 0xB0) | register_representation(amode.rm);
+        } break;
+        case ADDR_MODE_MI: {
+            assert(value_bitsize(amode.immediate) <= bitsize && amode.immediate_bitsize < 64);
+
+            u8 op = 0xC6;               // imm8
+            if(bitsize > 8) op += 1;    // 0xC7
+            opcode.bytes[0] = op;
+
+            if(amode.addr_mode == DIRECT && amode.immediate_bitsize == 16 && register_get_bitsize(amode.rm) > 16)
+                amode.immediate_bitsize = 32;
+            else if(amode.addr_mode != DIRECT && amode.immediate_bitsize == 16 && amode.ptr_bitsize > 16)
+                amode.immediate_bitsize = 32;
+            amode.reg = 0; // /0
+        } break;
+        case ADDR_MODE_MR: {
+            opcode.bytes[0] = (bitsize > 8) ? 0x89 : 0x88;
+        } break;
+        case ADDR_MODE_RM: {
+            opcode.bytes[0] = (bitsize > 8) ? 0x8B : 0x8A;
+        } break;
+    }
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}

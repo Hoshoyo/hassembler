@@ -253,11 +253,11 @@ emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr in
             amode.immediate_bitsize = 32;
         amode.reg = instr;
     }
-    else if(amode.is_rm)
+    else if(amode.mode_type == ADDR_MODE_RM)
     {
         opcode.bytes[0] = rm_opcode(instr, bitsize);
     }
-    else
+    else if(amode.mode_type == ADDR_MODE_MR)
     {
         opcode.bytes[0] = mr_opcode(instr, bitsize);
     }

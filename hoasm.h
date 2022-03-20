@@ -547,7 +547,21 @@ typedef struct {
 	X64_Register moffs_base;
 } X64_AddrForm;
 
+typedef enum {
+	ADDR_MODE_NONE = 0,
+	ADDR_MODE_M,
+	ADDR_MODE_RM,
+	ADDR_MODE_MR,
+	ADDR_MODE_OI,
+	ADDR_MODE_MI,
+	ADDR_MODE_RMI,
+	ADDR_MODE_TD,
+	ADDR_MODE_FD,
+	ADDR_MODE_ZO,
+} X64_AddrMode_Type;
+
 typedef struct {
+	X64_AddrMode_Type   mode_type;
 	X64_Register        reg;
 	X64_Register        rm;		// sib base whenever sib is the mode
 	X64_Register        sib_index;
@@ -562,8 +576,6 @@ typedef struct {
 	s32 immediate_bitsize;
 
 	s32 ptr_bitsize;	// only valid when rm is not REG_NONE
-
-	bool is_rm;
 } X64_AddrMode;
 
 u8* emit_arith_mi(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr_digit, X64_AddrForm form, u64 imm_value);
@@ -1099,10 +1111,11 @@ u8* emit_mov_moffs(Instr_Emit_Result* out_info, u8* stream, X64_AddrForm form);
 // ----------------------------------
 
 static X64_AddrMode
-mk_base(X64_Addressing_Mode mode)
+mk_base(X64_Addressing_Mode mode, X64_AddrMode_Type type)
 {
 	return (X64_AddrMode)
 	{
+		.mode_type   = type,
 		.addr_mode   = mode,
 		.sib_mode    = MODE_NONE,
 		.sib_base    = REG_NONE,
@@ -1116,7 +1129,7 @@ mk_base(X64_Addressing_Mode mode)
 static X64_AddrMode
 mk_m_direct(X64_Register rm)
 {
-	X64_AddrMode result = mk_base(DIRECT);
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_M);
 	result.rm = rm;
 	return result;
 }
@@ -1127,7 +1140,7 @@ mk_m_indirect(X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
 	// TODO(psv): put this somewhere else
 	//assert(rm >= RAX && rm <= R15D);
 
-	X64_AddrMode result = mk_base(INDIRECT);
+	X64_AddrMode result = mk_base(INDIRECT, ADDR_MODE_M);
 	result.rm = rm;
 	result.displacement = displacement;
 	result.displacement_bitsize = value_bitsize(displacement);
@@ -1171,7 +1184,7 @@ mk_m_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32
 		rm = temp;
 	}
 
-	X64_AddrMode result = mk_base(INDIRECT);
+	X64_AddrMode result = mk_base(INDIRECT, ADDR_MODE_M);
 	result.reg = REG_NONE;
 	result.rm = (register_get_bitsize(rm) == 32) ? ESP : RSP;	// needed, for representing no register
 	result.displacement = displacement;
@@ -1202,20 +1215,18 @@ mk_m_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32
 static X64_AddrMode
 mk_rm_direct(X64_Register reg, X64_Register rm)
 {
-	X64_AddrMode result = mk_base(DIRECT);
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_RM);
 	result.reg = reg;
 	result.rm = rm;
-	result.is_rm = true;
 	return result;
 }
 
 static X64_AddrMode
 mk_mr_direct(X64_Register rm, X64_Register reg)
 {
-	X64_AddrMode result = mk_base(DIRECT);
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_MR);
 	result.reg = reg;
 	result.rm = rm;
-	result.is_rm = false;
 	return result;
 }
 
@@ -1226,7 +1237,7 @@ mk_rmi_direct(X64_Register reg, X64_Register rm, u32 immediate, s32 immediate_bi
 	assert(immediate_bitsize == 0 || value_bitsize(immediate) <= immediate_bitsize);
 	assert(register_get_bitsize(reg) > 8);
 
-	X64_AddrMode result = mk_base(DIRECT);
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_RMI);
 	result.reg = reg;
 	result.rm = rm;
 	result.immediate = immediate;
@@ -1245,6 +1256,7 @@ mk_rmi_indirect(X64_Register reg, X64_Register rm, u32 displacement, X64_AddrSiz
 	assert(register_get_bitsize(reg) > 8);
 
 	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_RMI;
 	result.reg = reg;
 	result.immediate = immediate;
 	result.immediate_bitsize = immediate_bitsize;
@@ -1263,6 +1275,7 @@ mk_rmi_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_S
 	assert(register_get_bitsize(reg) > 8);
 
 	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_RMI;
 	result.immediate = immediate;
 	result.immediate_bitsize = immediate_bitsize;
 	result.reg = reg;
@@ -1273,15 +1286,15 @@ mk_rmi_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_S
 static X64_AddrMode
 mk_zo()
 {
-	return mk_base(MODE_ZO);
+	return mk_base(MODE_ZO, ADDR_MODE_ZO);
 }
 
 static X64_AddrMode
 mk_rm_indirect(X64_Register reg, X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
 {
 	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_RM;
 	result.reg = reg;
-	result.is_rm = true;
 
 	return result;
 }
@@ -1290,8 +1303,8 @@ static X64_AddrMode
 mk_mr_indirect(X64_Register rm, X64_Register reg, u32 displacement, X64_AddrSize ptr_bitsize)
 {
 	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MR;
 	result.reg = reg;
-	result.is_rm = false;
 
 	return result;
 }
@@ -1300,8 +1313,8 @@ static X64_AddrMode
 mk_rm_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize)
 {
 	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_RM;
 	result.reg = reg;
-	result.is_rm = true;
 
 	return result;
 }
@@ -1310,8 +1323,8 @@ static X64_AddrMode
 mk_mr_indirect_sib(X64_Register rm, X64_Register reg, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize)
 {
 	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MR;
 	result.reg = reg;
-	result.is_rm = false;
 
 	return result;
 }
@@ -1322,11 +1335,11 @@ mk_mi_direct(X64_Register rm, u32 immediate, s32 immediate_bitsize)
 	assert(immediate_bitsize <= 32);
 	assert(immediate_bitsize == 0 || value_bitsize(immediate) <= immediate_bitsize);
 
-	X64_AddrMode result = mk_base(DIRECT);
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_MI);
 	result.reg = REG_NONE;
 	result.rm = rm;
 	result.immediate = immediate;
-	result.immediate_bitsize = (immediate_bitsize == 0) ? value_bitsize(immediate) : immediate_bitsize;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? MAX(8, value_bitsize(immediate)) : immediate_bitsize;
 
 	return result;
 }
@@ -1336,13 +1349,13 @@ mk_mi_indirect(X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize, u32 
 {
 	assert((rm >= RAX && rm <= R15D) || rm == REG_NONE);
 
-	X64_AddrMode result = mk_base(INDIRECT);
+	X64_AddrMode result = mk_base(INDIRECT, ADDR_MODE_MI);
 	result.rm = rm;
 	result.displacement = displacement;
 	result.displacement_bitsize = value_bitsize(displacement);
 	result.ptr_bitsize = ptr_bitsize;
 	result.immediate = immediate;
-	result.immediate_bitsize = (immediate_bitsize == 0) ? value_bitsize(immediate) : immediate_bitsize;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? MAX(8, value_bitsize(immediate)) : immediate_bitsize;
 
 	if(register_equivalent(rm, REG_NONE))
 	{
@@ -1384,11 +1397,23 @@ mk_mi_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u3
 	assert(immediate_bitsize == 0 || value_bitsize(immediate) <= immediate_bitsize);
 
 	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MI;
 	result.immediate = immediate;
-	result.immediate_bitsize = (immediate_bitsize == 0) ? value_bitsize(immediate) : immediate_bitsize;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? MAX(8, value_bitsize(immediate)) : immediate_bitsize;
 	if(result.sib_index == REG_NONE) result.sib_index = RSP;
 	if(result.sib_base == REG_NONE) result.sib_base = RSP;
 
+	return result;
+}
+
+static X64_AddrMode
+mk_oi(X64_Register rm, u32 immediate, s32 immediate_bitsize)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_OI);
+	result.rm = rm;
+	result.reg = REG_NONE;
+	result.immediate = immediate;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? MAX(8, value_bitsize(immediate)) : immediate_bitsize;
 	return result;
 }
 
@@ -1423,5 +1448,5 @@ typedef struct {
 } X64_Opcode;
 
 u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode);
-
 u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode);
+u8* emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
