@@ -339,7 +339,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_direct(i, j));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_direct(i, j));
         }
     }
 #endif
@@ -348,7 +348,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_direct(i, j));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_direct(i, j));
         }
     }
 #endif
@@ -357,7 +357,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_direct(i, j));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_direct(i, j));
         }
     }
 #endif
@@ -366,7 +366,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_direct(i, j));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_direct(i, j));
         }
     }
 #endif
@@ -377,34 +377,35 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_QWORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0, ADDR_QWORDPTR));
         }
     }
 #endif
 #if TEST_RM_INDIRECT_32
-    for(X64_Register i = RAX; i <= R15; ++i)
+    for(X64_Register j = EAX; j <= R15D; ++j)
     {
-        for(X64_Register j = EAX; j <= R15D; ++j)
+        for(X64_Register i = RAX; i <= R15D; ++i)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_DWORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0, ADDR_DWORDPTR));
         }
     }
 #endif
 #if TEST_RM_INDIRECT_16
-    for(X64_Register i = RAX; i <= R15; ++i)
+    for(X64_Register j = AX; j <= R15W; ++j)
     {
-        for(X64_Register j = AX; j <= R15W; ++j)
+        for(X64_Register i = RAX; i <= R15; ++i)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_WORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0, ADDR_WORDPTR));
         }
     }
 #endif
 #if TEST_RM_INDIRECT_8
-    for(X64_Register i = RAX; i <= R15; ++i)
+    for(X64_Register j = AL; j <= DIL; ++j)
     {
-        for(X64_Register j = AL; j <= DIL; ++j)
+        for(X64_Register i = RAX; i <= R15D; ++i)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_BYTEPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0, ADDR_BYTEPTR));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -415,7 +416,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_QWORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0x15, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -424,7 +425,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_DWORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0x15, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -433,7 +434,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_WORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0x15, ADDR_WORDPTR));
         }
     }
 #endif
@@ -442,7 +443,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_BYTEPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0x15, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -453,7 +454,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_QWORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0x15161718, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -462,7 +463,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_DWORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0x15161718, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -471,7 +472,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_WORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0x15161718, ADDR_WORDPTR));
         }
     }
 #endif
@@ -480,7 +481,7 @@ emit_rm_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect(j, i, ADDR_BYTEPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect(j, i, 0x15161718, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -499,7 +500,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(i, j, index_reg, SIB_X1, ADDR_QWORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X1, 0, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -508,7 +509,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X1, ADDR_DWORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X1, 0, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -517,7 +518,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X1, ADDR_WORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X1, 0, ADDR_WORDPTR));
         }
     }
 #endif
@@ -526,7 +527,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X1, ADDR_BYTEPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X1, 0, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -537,7 +538,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(i, j, index_reg, SIB_X2, ADDR_QWORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X2, 0x15, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -546,7 +547,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X2, ADDR_DWORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X2, 0x15, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -555,7 +556,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X2, ADDR_WORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X2, 0x15, ADDR_WORDPTR));
         }
     }
 #endif
@@ -564,7 +565,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X2, ADDR_BYTEPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X2, 0x15, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -575,7 +576,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(i, j, index_reg, SIB_X8, ADDR_QWORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(i, j, index_reg, SIB_X8, 0x15161718, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -584,7 +585,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_DWORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X8, 0x15161718, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -593,7 +594,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_WORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X8, 0x15161718, ADDR_WORDPTR));
         }
     }
 #endif
@@ -602,7 +603,7 @@ emit_rm_sib_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_rm(0, stream, instr, make_rm_indirect_sib(j, i, index_reg, SIB_X8, ADDR_BYTEPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_rm_indirect_sib(j, i, index_reg, SIB_X8, 0x15161718, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -618,7 +619,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_direct(i, j));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_direct(i, j));
         }
     }
 #endif
@@ -627,7 +628,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_direct(i, j));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_direct(i, j));
         }
     }
 #endif
@@ -636,7 +637,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_direct(i, j));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_direct(i, j));
         }
     }
 #endif
@@ -645,7 +646,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_direct(i, j));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_direct(i, j));
         }
     }
 #endif
@@ -656,7 +657,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(j, i, ADDR_QWORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -665,7 +666,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_DWORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -674,7 +675,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_WORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0, ADDR_WORDPTR));
         }
     }
 #endif
@@ -683,7 +684,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_BYTEPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -694,7 +695,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_QWORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0x15, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -703,7 +704,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_DWORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0x15, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -712,7 +713,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_WORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0x15, ADDR_WORDPTR));
         }
     }
 #endif
@@ -721,7 +722,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_BYTEPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0x15, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -732,7 +733,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_QWORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0x15161718, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -741,7 +742,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_DWORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0x15161718, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -750,7 +751,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_WORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0x15161718, ADDR_WORDPTR));
         }
     }
 #endif
@@ -759,7 +760,7 @@ emit_mr_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect(i, j, ADDR_BYTEPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect(i, j, 0x15161718, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -779,7 +780,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X1, ADDR_QWORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X1, 0, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -788,7 +789,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X1, ADDR_DWORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X1, 0, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -797,7 +798,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X1, ADDR_WORDPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X1, 0, ADDR_WORDPTR));
         }
     }
 #endif
@@ -806,7 +807,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X1, ADDR_BYTEPTR, 0));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X1, 0, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -817,7 +818,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X2, ADDR_QWORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X2, 0x15, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -826,7 +827,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X2, ADDR_DWORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X2, 0x15, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -835,7 +836,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X2, ADDR_WORDPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X2, 0x15, ADDR_WORDPTR));
         }
     }
 #endif
@@ -844,7 +845,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X2, ADDR_BYTEPTR, 0x15));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X2, 0x15, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -855,7 +856,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X8, ADDR_QWORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X8, 0x15161718, ADDR_QWORDPTR));
         }
     }
 #endif
@@ -864,7 +865,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X8, ADDR_DWORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X8, 0x15161718, ADDR_DWORDPTR));
         }
     }
 #endif
@@ -873,7 +874,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X8, ADDR_WORDPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X8, 0x15161718, ADDR_WORDPTR));
         }
     }
 #endif
@@ -882,7 +883,7 @@ emit_mr_sib_test(u8* stream)
     {
         for(X64_Register j = AL; j <= DIL; ++j)
         {
-            stream = emit_arith_mr(0, stream, instr, make_mr_indirect_sib(i, j, index_reg, SIB_X8, ADDR_BYTEPTR, 0x15161718));
+            stream = emit_arithmetic(0, stream, instr, mk_mr_indirect_sib(i, j, index_reg, SIB_X8, 0x15161718, ADDR_BYTEPTR));
         }
     }
 #endif
@@ -892,12 +893,11 @@ emit_mr_sib_test(u8* stream)
 u8*
 emit_rel_test(u8* stream)
 {
-#if TEST_RIP_REL
-    stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(REG_NONE, 64, 0x15), 0x6666);
-    stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(REG_NONE, 32, 0x15), 0x6666);
-    stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(REG_NONE, 16, 0x15), 0x6666);
-    stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect(REG_NONE, 8, 0x15), 0x66);
-#endif
+    stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_QWORDPTR, 0x66667777, 32));
+    stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_DWORDPTR, 0x66667777, 32));
+    stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_WORDPTR, 0x6666, 16));
+    stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_BYTEPTR, 0x66, 8));
+
     return stream;
 }
 
@@ -910,10 +910,11 @@ int main()
     {
         end = emit_mi_test(stream);
         end = emit_mi_sib_test(stream);
-        //end = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_direct(RAX, 0x15, 8));
-
-        //end = emit_arith_mi(0, stream, instr, make_mi_direct(RBX), 0x1234);
-        //end = emit_arithmetic(0, stream, instr, mk_mi_direct(RAX, 0x1234, 32));
+        end = emit_rm_test(stream);
+        end = emit_rm_sib_test(stream);
+        end = emit_mr_test(stream);
+        end = emit_mr_sib_test(stream);
+        end = emit_rel_test(stream);
     }
 
     fwrite(stream, 1, end - stream, out);
