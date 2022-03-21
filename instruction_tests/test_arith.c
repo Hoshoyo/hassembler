@@ -893,10 +893,12 @@ emit_mr_sib_test(u8* stream)
 u8*
 emit_rel_test(u8* stream)
 {
+#if 0
     stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_QWORDPTR, 0x66667777, 32));
     stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_DWORDPTR, 0x66667777, 32));
     stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_WORDPTR, 0x6666, 16));
     stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_BYTEPTR, 0x66, 8));
+#endif
 
     return stream;
 }
@@ -906,15 +908,15 @@ int main()
     #define FILENAME "test_arith.bin"
     FILE* out = fopen(FILENAME, "wb");
 	u8* stream = (u8*)calloc(1, 1024*1024);
-    u8* end = 0;
+    u8* end = stream;
     {
-        end = emit_mi_test(stream);
-        end = emit_mi_sib_test(stream);
-        end = emit_rm_test(stream);
-        end = emit_rm_sib_test(stream);
-        end = emit_mr_test(stream);
-        end = emit_mr_sib_test(stream);
-        end = emit_rel_test(stream);
+        end = emit_mi_test(end);
+        end = emit_mi_sib_test(end);
+        end = emit_rm_test(end);
+        end = emit_rm_sib_test(end);
+        end = emit_mr_test(end);
+        end = emit_mr_sib_test(end);
+        end = emit_rel_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

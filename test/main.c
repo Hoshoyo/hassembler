@@ -3233,7 +3233,6 @@ emit_stack_test(u8* stream)
 uint8_t*
 emit_test(u8* stream)
 {
-    stream = emit_arith_mi(0, stream, ARITH_ADD, make_mi_indirect_sib(RBP, RAX, SIB_X2, ADDR_QWORDPTR, 0), 0x12);
 
     return stream;
 }
