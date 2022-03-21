@@ -399,7 +399,7 @@ emit_shift_mi_test_sib(u8* stream)
 
 int main()
 {
-    #define FILENAME "test_arith.bin"
+    #define FILENAME "test_shift.bin"
     FILE* out = fopen(FILENAME, "wb");
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;
