@@ -3,17 +3,13 @@
 u8*
 emit_int3(Instr_Emit_Result* out_info, u8* stream)
 {
-    *stream++ = 0xcc;
-    fill_outinfo(out_info, 1, -1, -1);
-    return stream;
+    return emit_single_byte_instruction(out_info, stream, 0xcc);
 }
 
 u8*
 emit_int1(Instr_Emit_Result* out_info, u8* stream)
 {
-    *stream++ = 0xf1;
-    fill_outinfo(out_info, 1, -1, -1);
-    return stream;
+    return emit_single_byte_instruction(out_info, stream, 0xf1);
 }
 
 u8*
@@ -28,9 +24,7 @@ emit_int(Instr_Emit_Result* out_info, u8* stream, u8 rel)
 u8*
 emit_leave(Instr_Emit_Result* out_info, u8* stream)
 {
-    *stream++ = 0xc9;
-    fill_outinfo(out_info, 1, -1, -1);
-    return stream;
+    return emit_single_byte_instruction(out_info, stream, 0xc9);
 }
 
 u8*

@@ -11,14 +11,6 @@
 #define NOP_DIGIT 0
 
 u8*
-emit_single_byte_instruction(Instr_Emit_Result* out_info, u8* stream, u8 opcode)
-{
-    *stream++ = 0x90;
-    fill_outinfo(out_info, 1, -1, -1);
-    return stream;
-}
-
-u8*
 emit_mul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {
     s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
@@ -91,7 +83,7 @@ emit_inc(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 u8*
 emit_nop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {
-    if(amode.addr_mode == MODE_ZO)
+    if(amode.mode_type == ADDR_MODE_ZO)
     {
         return emit_single_byte_instruction(out_info, stream, 0x90);
     }

@@ -22,19 +22,6 @@ typedef struct {
 	u8 W : 1;		// 0 = Operand size determined by CS.D. 1 = 64 bit operand size
 	u8 high : 4;	// Must be 4 (0b0100)
 } X64_REX;
-
-typedef union {
-    uint8_t  v8;
-    uint16_t v16;
-    uint32_t v32;
-    uint64_t v64;
-} Int_Value;
-typedef union {
-	int8_t  v8;
-	int16_t v16;
-	int32_t v32;
-	int64_t v64;
-} SInt_Value;
 	
 typedef enum {
 	REG_NONE = -1,
@@ -72,9 +59,6 @@ typedef enum  {
 	INDIRECT_BYTE_DISPLACED  = 1,
 	INDIRECT_DWORD_DISPLACED = 2,
 	DIRECT                   = 3,
-	MOFFS_FD                 = 4,
-	MOFFS_TD                 = 5,
-	MODE_ZO                  = 6,
 } X64_Addressing_Mode;
 
 typedef enum {
@@ -89,22 +73,22 @@ typedef enum {
 } X64_Arithmetic_Instr;
 
 typedef enum {
-	ROL = 0,
-	ROR = 1,
-	RCL = 2,
-	RCR = 3,
-	SHL = 4,
-	SHR = 5,
-	SAR = 7
+	ROL = 0,	// Rotate left
+	ROR = 1,	// Rotate right
+	RCL = 2,	// Rotate left + 1
+	RCR = 3,	// Rotate right + 1
+	SHL = 4,	// Shift left
+	SHR = 5,	// Shift right
+	SAR = 7		// Shift arithmetic right
 } X64_Shift_Instruction;
 
 typedef enum {
-	NOT = 2,
-	NEG = 3,
-	MUL = 4,
-	IMUL = 5,
-	DIV = 6,
-	IDIV = 7,
+	NOT = 2,	// logic not
+	NEG = 3,	// negative (0-x)
+	MUL = 4,	// multiply unsigned
+	IMUL = 5,	// multiply signed
+	DIV = 6,	// divide unsigned
+	IDIV = 7,	// divide signed
 } X64_Multiplicative_Instr;
 
 // prefix 0x0f for near + nearopcode
@@ -293,196 +277,6 @@ register_get_bitsize(X64_Register r)
     return 8;
 }
 
-static u8*
-emit_int_value(u8* stream, int bitsize, Int_Value value)
-{
-	switch(bitsize)
-    {
-        case 8:  *(uint8_t*)stream = value.v8; break;
-        case 16: *(uint16_t*)stream = value.v16; break;
-        case 32: *(uint32_t*)stream = value.v32; break;
-        case 64: *(uint64_t*)stream = value.v64; break;
-    }
-    stream += (bitsize / 8);
-	return stream;
-}
-
-static u8*
-emit_int_imm(u8* stream, u64 value, int target_bitsize)
-{
-	if(value > 0xffffffff)
-	{
-		*(uint64_t*)stream = value;
-		stream += sizeof(uint64_t);
-	}
-	else if(value > 0xffff)
-	{
-		*(uint32_t*)stream = (uint32_t)value;
-		stream += sizeof(uint32_t);
-	}
-	else if(value > 0xff && target_bitsize == 16)
-	{
-		*(uint16_t*)stream = (uint16_t)value;
-		stream += sizeof(uint16_t);
-	}
-	else if(value > 0xff)
-	{
-		*(uint32_t*)stream = (uint32_t)value;
-		stream += sizeof(uint32_t);
-	}
-	else
-	{
-		*(uint8_t*)stream = (uint8_t)value;
-		stream += sizeof(uint8_t);
-	}
-	return stream;
-}
-
-// TODO(psv): change this function to a single one
-static u8*
-emit_opcode_mi(u8* stream, u8 opcode, int bitsize, X64_Register dest, X64_Register src)
-{
-    bool using_extended_register = register_is_extended(dest) || register_is_extended(src);
-
-	if(bitsize == 16)
-		*stream++ = 0x66; // operand size override
-    if(bitsize == 64 || using_extended_register)
-		*stream++ = make_rex(register_is_extended(dest), register_is_extended(src), 0, bitsize == 64);
-    else if(bitsize == 8)
-    {
-        if( dest == SPL || dest == BPL || dest == SIL || dest == DIL ||
-            src == SPL || src == BPL || src == SIL || src == DIL)
-        {
-            *stream++ = make_rex(0,0,0,0);
-        }
-    }
-    *stream++ = opcode;
-    return stream;
-}
-
-// NOTE(psv): correct function for emitting opcode
-static u8*
-emit_opcode_rm(u8* stream, u8 opcode, int bitsize, X64_Register base, X64_Register index, X64_Register reg)
-{
-    bool using_extended_register = register_is_extended(base) || register_is_extended(index) || register_is_extended(reg);
-
-	u8 rex_prefix = 0;
-	if(bitsize == 16)
-	{
-		*stream++ = 0x66; // operand size override
-	}
-    if(bitsize == 64 || using_extended_register)
-	{
-		// b x r w		
-		*stream++ = make_rex(register_is_extended(base), register_is_extended(index), register_is_extended(reg), bitsize == 64);
-	}
-    else if(bitsize == 8)
-    {
-        if( reg == SPL || reg == BPL || reg == SIL || reg == DIL ||
-			base == SPL || base == BPL || base == SIL || base == DIL ||
-            index == SPL || index == BPL || index == SIL || index == DIL)
-        {
-			*stream++ = make_rex(0,0,0,0);
-        }
-    }
-	else if(register_get_bitsize(base) == 32 && register_is_segment(reg))
-	{
-		*stream++ = 0x67;
-	}
-
-    *stream++ = opcode;
-    return stream;
-}
-
-static u8*
-emit_opcode_mr(u8* stream, u8 opcode, int bitsize, X64_Register base, X64_Register index, X64_Register reg)
-{
-    bool using_extended_register = register_is_extended(base) || register_is_extended(index) || register_is_extended(reg);
-
-	u8 rex_prefix = 0;
-	if(bitsize == 16)
-	{
-		*stream++ = 0x66; // operand size override
-	}
-    if(bitsize == 64 || using_extended_register)
-	{
-		// b x r w		
-		*stream++ = make_rex(register_is_extended(base), register_is_extended(index), register_is_extended(reg), bitsize == 64);
-	}
-    else if(bitsize == 8)
-    {
-        if( reg == SPL || reg == BPL || reg == SIL || reg == DIL ||
-			base == SPL || base == BPL || base == SIL || base == DIL ||
-            index == SPL || index == BPL || index == SIL || index == DIL)
-        {
-			*stream++ = make_rex(0,0,0,0);
-        }
-    }
-	else if(register_get_bitsize(base) == 32 && register_is_segment(reg) && bitsize != 32)
-	{
-		*stream++ = 0x67;
-	}
-
-    *stream++ = opcode;
-    return stream;
-}
-
-static u8*
-emit_opcode(u8* stream, u8 opcode, int bitsize, X64_Register dest, X64_Register src)
-{
-    bool using_extended_register = register_is_extended(dest) || register_is_extended(src);
-
-	if(bitsize == 16)
-		*stream++ = 0x66; // operand size override
-    if(bitsize == 64 || using_extended_register)
-		*stream++ = make_rex(register_is_extended(dest), 0, register_is_extended(src), bitsize == 64);
-    else if(bitsize == 8)
-    {
-        if( dest == SPL || dest == BPL || dest == SIL || dest == DIL ||
-            src == SPL || src == BPL || src == SIL || src == DIL)
-        {
-            *stream++ = make_rex(0,0,0,0);
-        }
-    }
-    *stream++ = opcode;
-    return stream;
-}
-
-static u8*
-emit_opcode_2bytes(u8* stream, u16 opcode, int bitsize, X64_Register dest, X64_Register src)
-{
-    bool using_extended_register = register_is_extended(dest) || register_is_extended(src);
-
-	if(bitsize == 16)
-		*stream++ = 0x66; // operand size override
-    if(bitsize == 64 || using_extended_register)
-		*stream++ = make_rex(register_is_extended(dest), register_is_extended(src), 0, bitsize == 64);
-    else if(bitsize == 8)
-    {
-        if( dest == SPL || dest == BPL || dest == SIL || dest == DIL ||
-            src == SPL || src == BPL || src == SIL || src == DIL)
-        {
-            *stream++ = make_rex(0,0,0,0);
-        }
-    }
-    *(u16*)stream = opcode;
-	stream += sizeof(u16);
-    return stream;
-}
-
-static u8*
-emit_displacement(X64_Addressing_Mode mode, u8* stream, u8 disp8, uint32_t disp32)
-{
-	if(mode == INDIRECT_BYTE_DISPLACED)
-        *stream++ = disp8;
-	else if(mode == INDIRECT_DWORD_DISPLACED)
-	{
-		*(uint32_t*)stream = disp32;
-		stream += sizeof(uint32_t);
-	}
-	return stream;
-}
-
 static void
 fill_outinfo(Instr_Emit_Result* out_info, s8 byte_size, s8 disp_offset, s8 imm_offset)
 {
@@ -507,6 +301,19 @@ emit_value_raw(u8* stream, u64 value, s32 bitsize)
 
     return stream;
 }
+
+static u8*
+emit_single_byte_instruction(Instr_Emit_Result* out_info, u8* stream, u8 opcode)
+{
+    *stream++ = opcode;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+typedef struct {
+    u8 bytes[3];
+    s8 byte_count;
+} X64_Opcode;
 
 typedef enum {
 	ADDR_BYTEPTR  = 8,
@@ -611,16 +418,6 @@ emit_rex(u8* stream, X64_Register reg, X64_Register rm, X64_Register index, X64_
 
     return stream;
 }
-
-
-
-
-
-
-
-
-
-
 
 // ----------------------------------
 
@@ -801,7 +598,7 @@ mk_rmi_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_S
 static X64_AddrMode
 mk_zo()
 {
-	return mk_base(MODE_ZO, ADDR_MODE_ZO);
+	return mk_base(DIRECT, ADDR_MODE_ZO);
 }
 
 static X64_AddrMode
@@ -1046,11 +843,6 @@ u8* emit_int(Instr_Emit_Result* out_info, u8* stream, u8 rel);
 
 u8* emit_leave(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_leave16(Instr_Emit_Result* out_info, u8* stream);
-
-typedef struct {
-    u8 bytes[3];
-    s8 byte_count;
-} X64_Opcode;
 
 u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode);
 u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode);
