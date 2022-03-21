@@ -284,6 +284,7 @@ emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {
     s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
     X64_Opcode opcode = {.byte_count = 1};
+    s8 extra_byte = 0;
 
     switch(amode.mode_type)
     {
@@ -332,6 +333,7 @@ emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
                     case GS: *stream++ = 0x65; break;
                     default: break;
                 }
+                extra_byte = 1;
             }
         } break;
         case ADDR_MODE_TD: {
@@ -348,9 +350,17 @@ emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
                     case GS: *stream++ = 0x65; break;
                     default: break;
                 }
+                extra_byte = 1;
             }
         } break;
     }
 
-    return emit_instruction(out_info, stream, amode, opcode);
+    u8* result = emit_instruction(out_info, stream, amode, opcode);
+    if(out_info && extra_byte > 0)
+    {
+        out_info->instr_byte_size += extra_byte;
+        out_info->immediate_offset += ((out_info->immediate_offset != -1) ? extra_byte : 0);
+        out_info->diplacement_offset += ((out_info->diplacement_offset != -1) ? extra_byte : 0);
+    }
+    return result;
 }

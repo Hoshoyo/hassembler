@@ -5,7 +5,7 @@
 #define SHL_MI 0xc0
 
 u8*
-emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, u8 opcode, X64_AddrForm form)
+emit_shift_2(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, u8 opcode, X64_AddrForm form)
 {
     u8* start = stream;
     s8 disp_offset = 0;
@@ -43,13 +43,13 @@ emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_
 u8*
 emit_shift_m1(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form)
 {
-    return emit_shift(out_info, stream, instr_digit, SHL_M1, form);
+    return emit_shift_2(out_info, stream, instr_digit, SHL_M1, form);
 }
 
 u8*
 emit_shift_mc(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrForm form)
 {
-    return emit_shift(out_info, stream, instr_digit, SHL_MC, form);
+    return emit_shift_2(out_info, stream, instr_digit, SHL_MC, form);
 }
 
 u8*
@@ -94,4 +94,28 @@ emit_shift_mi(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction ins
     }
 
     return stream;
+}
+
+u8*
+emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_M1: {
+            opcode.bytes[0] = (bitsize > 8) ? 0xD1 : 0xD0;
+            amode.reg = instr;
+        } break;
+        case ADDR_MODE_MC: {
+            opcode.bytes[0] = (bitsize > 8) ? 0xD3 : 0xD2;
+            amode.reg = instr;
+        } break;
+        case ADDR_MODE_MI: {
+            assert(amode.immediate_bitsize == 8);
+            opcode.bytes[0] = (bitsize > 8) ? 0xC1 : 0xC0;
+            amode.reg = instr;
+        } break;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
 }

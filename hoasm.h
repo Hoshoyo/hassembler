@@ -558,6 +558,8 @@ typedef enum {
 	ADDR_MODE_TD,
 	ADDR_MODE_FD,
 	ADDR_MODE_ZO,
+	ADDR_MODE_M1,
+	ADDR_MODE_MC,
 } X64_AddrMode_Type;
 
 typedef struct {
@@ -1461,6 +1463,54 @@ mk_td(X64_Register base, u64 offset, X64_AddrSize bitsize)
 	return result;
 }
 
+static X64_AddrMode
+mk_m1_direct(X64_Register rm)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_M1);
+	result.rm = rm;
+	return result;
+}
+
+static X64_AddrMode
+mk_m1_indirect(X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_M1;
+	return result;
+}
+
+static X64_AddrMode
+mk_m1_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_M1;
+	return result;
+}
+
+static X64_AddrMode
+mk_mc_direct(X64_Register rm)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_MC);
+	result.rm = rm;
+	return result;
+}
+
+static X64_AddrMode
+mk_mc_indirect(X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MC;
+	return result;
+}
+
+static X64_AddrMode
+mk_mc_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MC;
+	return result;
+}
+
 u8* emit_mul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_div(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_idiv(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
@@ -1494,3 +1544,4 @@ typedef struct {
 u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode);
 u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode);
 u8* emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrMode amode);
