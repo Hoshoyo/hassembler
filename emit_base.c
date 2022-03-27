@@ -6,10 +6,12 @@ emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X6
     u8* start = stream;    
 
     // Prefix size override
-    stream = emit_size_override(stream, amode.ptr_bitsize, amode.rm, amode.addr_mode);
+    if(!(amode.flags & ADDRMODE_FLAG_NO_SIZE_OVERRIDE))
+        stream = emit_size_override(stream, amode.ptr_bitsize, amode.rm, amode.addr_mode);
 
     // REX prefix
-    stream = emit_rex(stream, amode.reg, amode.rm, amode.sib_index, amode.sib_base, amode.ptr_bitsize, amode.addr_mode);
+    if(!(amode.flags & ADDRMODE_FLAG_NO_REX))
+        stream = emit_rex(stream, amode.reg, amode.rm, amode.sib_index, amode.sib_base, amode.ptr_bitsize, amode.addr_mode, amode.flags);
 
     // Opcode
     for(int i = 0; i < opcode.byte_count; ++i) *stream++ = opcode.bytes[i];

@@ -167,10 +167,8 @@ typedef enum {
 } X64_CMOVcc_Instruction;
 
 typedef enum {
-	RET_NEAR = 0xC3,
-	RET_FAR  = 0xCB,
-	RET_NEAR_STACK_POP = 0xC2,
-	RET_FAR_STACK_POP = 0xCA,
+	RET_NEAR,
+	RET_FAR,
 } X64_Ret_Instruction;
 
 typedef struct {
@@ -342,7 +340,13 @@ typedef enum {
 	ADDR_MODE_ZO,
 	ADDR_MODE_M1,
 	ADDR_MODE_MC,
+	ADDR_MODE_I,
+	ADDR_MODE_O,
 } X64_AddrMode_Type;
+
+#define ADDRMODE_FLAG_NO_SIZE_OVERRIDE (1 << 0)
+#define ADDRMODE_FLAG_NO_REX  (1 << 1)
+#define ADDRMODE_FLAG_NO_REXW (1 << 2)
 
 typedef struct {
 	X64_AddrMode_Type   mode_type;
@@ -361,6 +365,8 @@ typedef struct {
 	s32 immediate_bitsize;
 
 	s32 ptr_bitsize;	// only valid when rm is not REG_NONE
+
+	u32 flags;
 } X64_AddrMode;
 
 static u8*
@@ -391,10 +397,12 @@ emit_size_override(u8* stream, X64_AddrSize ptr_size, X64_Register rm, X64_Addre
     prefixes; AL, BL, CL, DL, AH, BH, CH, DH are available without using REX prefixes.
 */
 static u8*
-emit_rex(u8* stream, X64_Register reg, X64_Register rm, X64_Register index, X64_Register base, X64_AddrSize ptr_size, X64_Addressing_Mode mode)
+emit_rex(u8* stream, X64_Register reg, X64_Register rm, X64_Register index, X64_Register base, X64_AddrSize ptr_size, X64_Addressing_Mode mode, u32 flags)
 {
     u8 b = 0, x = 0, r = 0, w = 0;
 	w = (mode == DIRECT) ? register_get_bitsize(rm) == 64 : ptr_size == 64;
+	if(flags & ADDRMODE_FLAG_NO_REXW)
+		w = 0;
 
     if(index == REG_NONE && base == REG_NONE)
     {
@@ -435,6 +443,7 @@ mk_base(X64_Addressing_Mode mode, X64_AddrMode_Type type)
 		.reg         = REG_NONE,
 		.moffs_base  = REG_NONE,
 		.ptr_bitsize = 0,
+		.flags       = 0,
 	};
 }
 
@@ -602,6 +611,22 @@ mk_zo()
 }
 
 static X64_AddrMode
+mk_zo_reg(X64_Register reg)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_ZO);
+	result.reg = reg;
+	return result;
+}
+
+static X64_AddrMode
+mk_o(X64_Register reg)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_O);
+	result.reg = reg;
+	return result;
+}
+
+static X64_AddrMode
 mk_rm_indirect(X64_Register reg, X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
 {
 	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
@@ -730,6 +755,15 @@ mk_oi(X64_Register rm, u32 immediate, s32 immediate_bitsize)
 }
 
 static X64_AddrMode
+mk_i(u32 immediate, s32 immediate_bitsize)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_I);
+	result.immediate = immediate;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? MAX(8, value_bitsize(immediate)) : immediate_bitsize;
+	return result;
+}
+
+static X64_AddrMode
 mk_fd(X64_Register base, u64 offset, X64_AddrSize bitsize)
 {
 	assert(register_is_segment(base) || base == REG_NONE);
@@ -835,6 +869,9 @@ u8* emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
 u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
 u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
+
+u8* emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 imm);
+u8* emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_int3(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_int0(Instr_Emit_Result* out_info, u8* stream);

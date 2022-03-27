@@ -1016,8 +1016,8 @@ emit_movsxd_rm_test(u8* stream)
 #endif
 
     // Indirect
-#if 0
-    for(X64_Register i = RAX; i <= R15; ++i)
+#if 1
+    for(X64_Register i = RAX; i <= R15D; ++i)
     {
         for(X64_Register j = RAX; j <= R15D; ++j)
         {
@@ -1232,6 +1232,10 @@ int main()
         end = emit_mov_rm_test_sreg(end);
         end = emit_mov_rm_sib_test_sreg(end);
         end = emit_mov_moffs_test(end);
+    }
+    {
+        end = emit_movsx_rm_test(end);
+        end = emit_movsxd_rm_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);
