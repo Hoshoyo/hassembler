@@ -619,6 +619,15 @@ mk_zo_reg(X64_Register reg)
 }
 
 static X64_AddrMode
+mk_zo_reg_bitsize(X64_Register reg, s32 bitsize)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_ZO);
+	result.reg = reg;
+	result.ptr_bitsize = bitsize;
+	return result;
+}
+
+static X64_AddrMode
 mk_o(X64_Register reg)
 {
 	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_O);
@@ -872,6 +881,7 @@ u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
 
 u8* emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 imm);
 u8* emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_pop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_int3(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_int0(Instr_Emit_Result* out_info, u8* stream);

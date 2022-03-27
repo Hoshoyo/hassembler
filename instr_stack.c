@@ -73,6 +73,7 @@ emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 i
 }
 
 #define PUSH_DIGIT 6
+#define POP_DIGIT 0
 
 u8*
 emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
@@ -112,9 +113,9 @@ emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
             assert(register_get_bitsize(amode.reg) == 16 || register_get_bitsize(amode.reg) == 64);
             
             if(register_get_bitsize(amode.reg) == 16)
-            {
                 *stream++ = 0x66;
-            }
+            if(register_is_extended(amode.reg))
+                *stream++ = make_rex(1, 0, 0, 0);
             *stream++ = 0x50 | (0x7 & register_representation(amode.reg));            
             fill_outinfo(out_info, stream - start, -1, -1);
         } break;
@@ -125,9 +126,51 @@ emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
             opcode.bytes[0] = 0xff;
             amode.reg = PUSH_DIGIT;
             if(bitsize == 64)
-            {
                 amode.flags |= ADDRMODE_FLAG_NO_REXW;
-            }
+
+            stream = emit_instruction(out_info, stream, amode, opcode);
+        } break;
+    }
+    return stream;
+}
+
+u8* 
+emit_pop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    u8* start = stream;
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_ZO: {
+            assert(amode.reg == FS || amode.reg == GS);
+
+            if(amode.ptr_bitsize == 16)
+                *stream++ = 0x66;
+
+            *stream++ = 0x0F;
+            if(amode.reg == FS)
+                *stream++ = 0xA1;
+            else if(amode.reg == GS)
+                *stream++ = 0xA9;
+            fill_outinfo(out_info, stream - start, -1, -1);
+        } break;
+        case ADDR_MODE_O: {
+            assert(register_get_bitsize(amode.reg) == 16 || register_get_bitsize(amode.reg) == 64);
+            
+            if(register_get_bitsize(amode.reg) == 16)
+                *stream++ = 0x66;
+            if(register_is_extended(amode.reg))
+                *stream++ = make_rex(1, 0, 0, 0);
+            *stream++ = 0x58 | (0x7 & register_representation(amode.reg));            
+            fill_outinfo(out_info, stream - start, -1, -1);
+        } break;
+        case ADDR_MODE_M: {
+            s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+            assert(bitsize == 16 || bitsize == 64);
+            X64_Opcode opcode = {.byte_count = 1};
+            opcode.bytes[0] = 0x8f;
+            amode.reg = POP_DIGIT;
+            if(bitsize == 64)
+                amode.flags |= ADDRMODE_FLAG_NO_REXW;
 
             stream = emit_instruction(out_info, stream, amode, opcode);
         } break;
