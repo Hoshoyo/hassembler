@@ -916,3 +916,4 @@ u8* emit_leave16(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode);
 u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode);
 u8* emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrMode amode);
+u8* emit_lea(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

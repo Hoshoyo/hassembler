@@ -130,3 +130,13 @@ emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr in
     }
     return emit_instruction(out_info, stream, amode, opcode);
 }
+
+u8*
+emit_lea(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = 0x8d;
+    assert(register_get_bitsize(amode.reg) > 8);
+    assert(amode.addr_mode != DIRECT);
+    return emit_instruction(out_info, stream, amode, opcode);
+}

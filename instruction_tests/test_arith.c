@@ -903,6 +903,133 @@ emit_rel_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_lea_test(u8* stream)
+{
+    // Indirect
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0, ADDR_QWORDPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0, ADDR_DWORDPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0, ADDR_WORDPTR));
+        }
+    }
+#endif
+
+    // Indirect byte displaced
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_QWORDPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_DWORDPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_WORDPTR));
+        }
+    }
+#endif
+
+    // Indirect dword displaced
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0x15161718, ADDR_QWORDPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0x15161718, ADDR_DWORDPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect(i, j, 0x15161718, ADDR_WORDPTR));
+        }
+    }
+#endif
+    return stream;
+}
+
+u8*
+emit_lea_sib_test(u8* stream)
+{
+    X64_Register index = R13;
+    // Indirect sib
+#if 0
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X1, 0, ADDR_QWORDPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X2, 0x15, ADDR_DWORDPTR));
+        }
+    }
+#endif
+#if 0
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            stream = emit_lea(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X4, 0x15161718, ADDR_WORDPTR));
+        }
+    }
+#endif
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_arith.bin"
@@ -917,6 +1044,10 @@ int main()
         end = emit_mr_test(end);
         end = emit_mr_sib_test(end);
         end = emit_rel_test(end);
+    }
+    {
+        end = emit_lea_test(end);
+        end = emit_lea_sib_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);
