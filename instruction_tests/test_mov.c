@@ -1214,6 +1214,198 @@ emit_movsx_rm_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_cmovcc_test(u8* stream)
+{
+    X64_CMOVcc_Instruction i = CMOVE;
+    // Direct
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_direct(j, k));
+            }
+        }
+    }
+#endif
+
+    // Indirect
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0, ADDR_QWORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0, ADDR_DWORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0, ADDR_WORDPTR));
+            }
+        }
+    }
+#endif
+    // TODO(psv): forbid 8 bits
+
+    // Indirect byte displaced
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0x15, ADDR_QWORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0x15, ADDR_DWORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0x15, ADDR_WORDPTR));
+            }
+        }
+    }
+#endif
+
+    // Indirect dword displaced
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0x15161718, ADDR_QWORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0x15161718, ADDR_DWORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect(j, k, 0x15161718, ADDR_WORDPTR));
+            }
+        }
+    }
+#endif
+    return stream;
+}
+
+u8*
+emit_cmovcc_sib_test(u8* stream)
+{
+    X64_Register index = R13;
+    X64_CMOVcc_Instruction i = CMOVE;
+
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect_sib(j, k, index, SIB_X1, 0, ADDR_QWORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect_sib(j, k, index, SIB_X2, 0, ADDR_DWORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect_sib(j, k, index, SIB_X4, 0x15, ADDR_WORDPTR));
+            }
+        }
+    }
+#endif
+#if 0
+    for(i = CMOVE; i <= CMOVG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15; ++j)
+        {
+            for(X64_Register k = RAX; k <= R15D; ++k)
+            {
+                stream = emit_cmovcc(0, stream, i, mk_rm_indirect_sib(j, k, index, SIB_X8, 0x15161718, ADDR_QWORDPTR));
+            }
+        }
+    }
+#endif
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_mov.bin"
@@ -1234,8 +1426,12 @@ int main()
         end = emit_mov_moffs_test(end);
     }
     {
-        end = emit_movsx_rm_test(end);
-        end = emit_movsxd_rm_test(end);
+        //end = emit_movsx_rm_test(end);
+        //end = emit_movsxd_rm_test(end);
+    }
+    {
+        end = emit_cmovcc_test(end);
+        end = emit_cmovcc_sib_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

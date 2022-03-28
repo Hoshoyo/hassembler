@@ -95,3 +95,12 @@ emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     }
     return result;
 }
+
+u8*
+emit_cmovcc(Instr_Emit_Result* out_info, u8* stream, X64_CMOVcc_Instruction instr, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = (u8)instr;
+    return emit_instruction(out_info, stream, amode, opcode);
+}

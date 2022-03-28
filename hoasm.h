@@ -154,16 +154,36 @@ typedef enum {
 } X64_SSE_Convert_Instr;
 
 typedef enum {
-	CMOVE  = 0x44,
-	CMOVNE = 0x45,
-	CMOVA  = 0x47,
-	CMOVAE = 0x43,
-	CMOVB  = 0x42,
-	CMOVBE = 0x46,
-	CMOVG  = 0x4f,
-	CMOVGE = 0x4d,
-	CMOVL  = 0x4c,
-	CMOVLE = 0x4e,
+	CMOVE   = 0x44,	// equal
+	CMOVZ   = 0x44, // zero
+	CMOVNE  = 0x45,	// not equal
+	CMOVNZ  = 0x45, // not zero
+	CMOVA   = 0x47,	// above
+	CMOVNBE = 0x47, // not below or equal
+	CMOVAE  = 0x43,	// above or equal
+	CMOVNB	= 0x43, // not below
+	CMOVNC  = 0x43, // not carry
+	CMOVB   = 0x42,	// below
+	CMOVC   = 0x42,	// carry = 1
+	CMOVNAE = 0x42, // not above or equal
+	CMOVBE  = 0x46,	// below or equal
+	CMOVNA  = 0x46, // not above
+	CMOVG   = 0x4f,	// greater
+	CMOVNLE = 0x4f, // not less or equal
+	CMOVGE  = 0x4d,	// greater or equal
+	CMOVNL  = 0x4d, // not less
+	CMOVL   = 0x4c,	// less
+	CMOVNGE = 0x4c, // not greater or equal
+	CMOVLE  = 0x4e,	// less or equal
+	CMVONG  = 0x4e, // not greater
+	CMOVNO  = 0x41, // not overflow
+	CMOVNP  = 0x4b, // not parity
+	CMOVPO  = 0x4b, // parity odd
+	CMOVNS  = 0x49, // not sign
+	CMOVO   = 0x40, // overflow
+	CMOVP   = 0x4a, // parity
+	CMOVPE  = 0x4a, // parity even
+	CMOVS   = 0x48, // sign
 } X64_CMOVcc_Instruction;
 
 typedef enum {
@@ -872,8 +892,10 @@ u8* emit_not(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_dec(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_iec(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
+u8* emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cmovcc(Instr_Emit_Result* out_info, u8* stream, X64_CMOVcc_Instruction instr, X64_AddrMode amode);
 
 u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
 u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
@@ -893,5 +915,4 @@ u8* emit_leave16(Instr_Emit_Result* out_info, u8* stream);
 
 u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode);
 u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode);
-u8* emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrMode amode);
