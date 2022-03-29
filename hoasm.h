@@ -362,6 +362,7 @@ typedef enum {
 	ADDR_MODE_MC,
 	ADDR_MODE_I,
 	ADDR_MODE_O,
+	ADDR_MODE_D,
 } X64_AddrMode_Type;
 
 #define ADDRMODE_FLAG_NO_SIZE_OVERRIDE (1 << 0)
@@ -882,6 +883,15 @@ mk_mc_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u3
 	return result;
 }
 
+static X64_AddrMode
+mk_d(u32 relative)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_D);
+	result.immediate = relative;
+	result.immediate_bitsize = MAX(8, value_bitsize(relative));
+	return result;
+}
+
 u8* emit_mul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_div(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_idiv(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
@@ -900,6 +910,8 @@ u8* emit_cmovcc(Instr_Emit_Result* out_info, u8* stream, X64_CMOVcc_Instruction 
 u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
 u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
 u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
+u8* emit_jmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 imm);
 u8* emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

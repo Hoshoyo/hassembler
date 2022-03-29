@@ -46,3 +46,62 @@ emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel)
     fill_outinfo(out_info, 2, -1, 1);
     return stream;
 }
+
+/*
+m16:16, m16:32 & m16:64 — A memory operand containing a far pointer composed of two numbers. The
+number to the left of the colon corresponds to the pointer's segment selector. The number to the right
+corresponds to its offset.
+*/
+#define JMP_RM_DIGIT 4
+#define JMP_RM_SEG_DIGIT 5
+u8*
+emit_jmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_D: {
+            assert(amode.immediate_bitsize == 8 || amode.immediate_bitsize == 32);
+            if(amode.immediate_bitsize == 8)
+            {
+                *stream++ = 0xeb;
+                *stream++ = (u8)amode.immediate;
+                fill_outinfo(out_info, 1 + sizeof(u8), -1, 1);
+            }
+            else
+            {
+                *stream++ = 0xe9;
+                *(u32*)stream = (u32)amode.immediate;
+                stream += sizeof(u32);
+                fill_outinfo(out_info, 1 + sizeof(u32), -1, 1);
+            }
+        } break;
+        case ADDR_MODE_M: {
+            assert(amode.ptr_bitsize == 64);
+            s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+            X64_Opcode opcode = {.byte_count = 1};
+            opcode.bytes[0] = 0xff;
+            amode.reg = JMP_RM_DIGIT;
+            if(bitsize == 64)
+                amode.flags |= ADDRMODE_FLAG_NO_REXW;
+            stream = emit_instruction(out_info, stream, amode, opcode);
+        } break;
+    }
+    return stream;
+}
+
+u8*
+emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_M)
+    {
+        //assert(amode.ptr_bitsize == 64);
+        s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+        X64_Opcode opcode = {.byte_count = 1};
+        opcode.bytes[0] = 0xff;
+        amode.reg = JMP_RM_SEG_DIGIT;
+        //if(bitsize == 64)
+        //    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    return stream;
+}
