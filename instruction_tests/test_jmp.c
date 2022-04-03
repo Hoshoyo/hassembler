@@ -2,10 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define TEST_JMP 1
+
 u8*
 emit_ret_test(u8* stream)
 {
-#if 0
+#if TEST_JMP
     stream = emit_ret(0, stream, RET_NEAR, 0);
     stream = emit_ret(0, stream, RET_NEAR, 0x15);
     stream = emit_ret(0, stream, RET_FAR, 0);
@@ -18,20 +20,20 @@ u8*
 emit_push_test(u8* stream)
 {
     // ZO
-#if 0
+#if TEST_JMP
     stream = emit_push(0, stream, mk_zo_reg(FS));
     stream = emit_push(0, stream, mk_zo_reg(GS));
 #endif
 
     // Immediate
-#if 0
+#if TEST_JMP
     stream = emit_push(0, stream, mk_i(0x16, 8));
     stream = emit_push(0, stream, mk_i(0x1617, 16));
     stream = emit_push(0, stream, mk_i(0x16171819, 32));
 #endif
 
     // O
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_push(0, stream, mk_o(i));
     for(X64_Register i = AX; i <= R15W; ++i)
@@ -39,28 +41,28 @@ emit_push_test(u8* stream)
 #endif
 
     // M direct
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_push(0, stream, mk_m_direct(i));
     for(X64_Register i = AX; i <= R15W; ++i)
         stream = emit_push(0, stream, mk_m_direct(i));
 #endif
     // M indirect
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_push(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_push(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
 #endif
     // M indirect byte displaced
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_push(0, stream, mk_m_indirect(i, 0x15, ADDR_QWORDPTR));
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_push(0, stream, mk_m_indirect(i, 0x15, ADDR_WORDPTR));
 #endif
     // M indirect dword displaced
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_push(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
     for(X64_Register i = RAX; i <= R15; ++i)
@@ -73,7 +75,7 @@ u8*
 emit_push_sib_test(u8* stream)
 {
     X64_Register index = R13;
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -82,7 +84,7 @@ emit_push_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -91,7 +93,7 @@ emit_push_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -100,7 +102,7 @@ emit_push_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -116,7 +118,7 @@ u8*
 emit_pop_test(u8* stream)
 {
     // ZO
-#if 0
+#if TEST_JMP
     stream = emit_pop(0, stream, mk_zo_reg_bitsize(FS, 16));
     stream = emit_pop(0, stream, mk_zo_reg_bitsize(GS, 16));
     stream = emit_pop(0, stream, mk_zo_reg_bitsize(FS, 64));
@@ -124,7 +126,7 @@ emit_pop_test(u8* stream)
 #endif
 
     // O
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_pop(0, stream, mk_o(i));
     for(X64_Register i = AX; i <= R15W; ++i)
@@ -132,28 +134,28 @@ emit_pop_test(u8* stream)
 #endif
 
     // M direct
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_pop(0, stream, mk_m_direct(i));
     for(X64_Register i = AX; i <= R15W; ++i)
         stream = emit_pop(0, stream, mk_m_direct(i));
 #endif
     // M indirect
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_pop(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_pop(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
 #endif
     // M indirect byte displaced
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_pop(0, stream, mk_m_indirect(i, 0x15, ADDR_QWORDPTR));
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_pop(0, stream, mk_m_indirect(i, 0x15, ADDR_WORDPTR));
 #endif
     // M indirect dword displaced
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
         stream = emit_pop(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
     for(X64_Register i = RAX; i <= R15; ++i)
@@ -166,7 +168,7 @@ u8*
 emit_pop_sib_test(u8* stream)
 {
     X64_Register index = R13;
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -175,7 +177,7 @@ emit_pop_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -184,7 +186,7 @@ emit_pop_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -193,7 +195,7 @@ emit_pop_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -208,29 +210,29 @@ emit_pop_sib_test(u8* stream)
 u8*
 emit_jmp_test(u8* stream)
 {
-#if 0
+#if TEST_JMP
     stream = emit_jmp(0, stream, mk_d(0x16));
     stream = emit_jmp(0, stream, mk_d(0x16171810));
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_jmp(0, stream, mk_m_direct(i));
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_jmp(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_jmp(0, stream, mk_m_indirect(i, 0x15, ADDR_QWORDPTR));
     }
 #endif
-#if 0
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_jmp(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
@@ -238,18 +240,20 @@ emit_jmp_test(u8* stream)
 #endif
 
     // TODO check this
-#if 1
+#if TEST_JMP
     for(X64_Register i = RAX; i <= R15D; ++i)
     {
-        if(i == 0) *stream++= 0x48;
         stream = emit_fjmp(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
     }
 #endif
-#if 0
+#if TEST_JMP
+    // TODO(psv): check why this shows DWORD PTR
+    /*
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         stream = emit_fjmp(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
     }
+    */
 #endif
     return stream;
 }

@@ -2,29 +2,91 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MOV_TEST 1
+
+// MR
+#define TEST_MR_DIRECT_64 1
+#define TEST_MR_DIRECT_32 1
+#define TEST_MR_DIRECT_16 1
+#define TEST_MR_DIRECT_8  1
+#define TEST_MR_INDIRECT_64 1
+#define TEST_MR_INDIRECT_32 1
+#define TEST_MR_INDIRECT_16 1
+#define TEST_MR_INDIRECT_8  1
+#define TEST_MR_INDIRECT_BYTE_DISPLACED_64 1
+#define TEST_MR_INDIRECT_BYTE_DISPLACED_32 1
+#define TEST_MR_INDIRECT_BYTE_DISPLACED_16 1
+#define TEST_MR_INDIRECT_BYTE_DISPLACED_8  1
+#define TEST_MR_INDIRECT_DWORD_DISPLACED_64 1
+#define TEST_MR_INDIRECT_DWORD_DISPLACED_32 1
+#define TEST_MR_INDIRECT_DWORD_DISPLACED_16 1
+#define TEST_MR_INDIRECT_DWORD_DISPLACED_8  1
+#define TEST_MR_SIB_X1_64 1
+#define TEST_MR_SIB_X1_32 1
+#define TEST_MR_SIB_X1_16 1
+#define TEST_MR_SIB_X1_8  1
+#define TEST_MR_SIB_BYTE_DISPLACED_X2_64 1
+#define TEST_MR_SIB_BYTE_DISPLACED_X2_32 1
+#define TEST_MR_SIB_BYTE_DISPLACED_X2_16 1
+#define TEST_MR_SIB_BYTE_DISPLACED_X2_8  1
+#define TEST_MR_SIB_DWORD_DISPLACED_X8_64 1
+#define TEST_MR_SIB_DWORD_DISPLACED_X8_32 1
+#define TEST_MR_SIB_DWORD_DISPLACED_X8_16 1
+#define TEST_MR_SIB_DWORD_DISPLACED_X8_8  1
+
+// RM
+#define TEST_RM_DIRECT_64 1
+#define TEST_RM_DIRECT_32 1
+#define TEST_RM_DIRECT_16 1
+#define TEST_RM_DIRECT_8  1
+#define TEST_RM_INDIRECT_64 1
+#define TEST_RM_INDIRECT_32 1
+#define TEST_RM_INDIRECT_16 1
+#define TEST_RM_INDIRECT_8  1
+#define TEST_RM_INDIRECT_BYTE_DISPLACED_64 1
+#define TEST_RM_INDIRECT_BYTE_DISPLACED_32 1
+#define TEST_RM_INDIRECT_BYTE_DISPLACED_16 1
+#define TEST_RM_INDIRECT_BYTE_DISPLACED_8  1
+#define TEST_RM_INDIRECT_DWORD_DISPLACED_64 1
+#define TEST_RM_INDIRECT_DWORD_DISPLACED_32 1
+#define TEST_RM_INDIRECT_DWORD_DISPLACED_16 1
+#define TEST_RM_INDIRECT_DWORD_DISPLACED_8  1
+#define TEST_RM_SIB_X1_64 1
+#define TEST_RM_SIB_X1_32 1
+#define TEST_RM_SIB_X1_16 1
+#define TEST_RM_SIB_X1_8  1
+#define TEST_RM_SIB_BYTE_DISPLACED_X2_64 1
+#define TEST_RM_SIB_BYTE_DISPLACED_X2_32 1
+#define TEST_RM_SIB_BYTE_DISPLACED_X2_16 1
+#define TEST_RM_SIB_BYTE_DISPLACED_X2_8  1
+#define TEST_RM_SIB_DWORD_DISPLACED_X8_64 1
+#define TEST_RM_SIB_DWORD_DISPLACED_X8_32 1
+#define TEST_RM_SIB_DWORD_DISPLACED_X8_16 1
+#define TEST_RM_SIB_DWORD_DISPLACED_X8_8  1
+
 u8*
 emit_mov_mi_test(u8* stream)
 {
     // DIRECT
-#if 0
+#if MOV_TEST
     for(X64_Register i = AL; i <= DIL; ++i)
     {
         stream = emit_mov(0, stream, mk_mi_direct(i, 0x15, 8));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         stream = emit_mov(0, stream, mk_mi_direct(i, 0x15, 16));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_mi_direct(i, 0x15, 32));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_mi_direct(i, 0x15, 32));
@@ -32,7 +94,7 @@ emit_mov_mi_test(u8* stream)
 #endif
 
     // INDIRECT
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_mi_indirect(i, 0, ADDR_BYTEPTR, 0x15, 8));
@@ -43,7 +105,7 @@ emit_mov_mi_test(u8* stream)
 #endif
 
     // INDIRECT BYTE DISPLACED
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_mi_indirect(i, 0x17, ADDR_BYTEPTR, 0x15, 8));
@@ -54,7 +116,7 @@ emit_mov_mi_test(u8* stream)
 #endif
 
     // INDIRECT DWORD DISPLACED
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_mi_indirect(i, 0x15161718, ADDR_BYTEPTR, 0x15, 8));
@@ -71,25 +133,25 @@ u8*
 emit_mov_oi_test(u8* stream)
 {
     // DIRECT
-#if 0
+#if MOV_TEST
     for(X64_Register i = AL; i <= DIL; ++i)
     {
         stream = emit_mov(0, stream, mk_oi(i, 0x15, 8));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         stream = emit_mov(0, stream, mk_oi(i, 0x15, 16));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_oi(i, 0x15, 32));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_oi(i, 0x15, 64));
@@ -101,7 +163,7 @@ emit_mov_oi_test(u8* stream)
 u8*
 emit_mov_mr_test_sreg(u8* stream)
 {
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_direct(i, ES));
@@ -112,7 +174,7 @@ emit_mov_mr_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_mr_direct(i, GS));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_direct(i, ES));
@@ -123,7 +185,7 @@ emit_mov_mr_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_mr_direct(i, GS));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_direct(i, ES));
@@ -136,7 +198,7 @@ emit_mov_mr_test_sreg(u8* stream)
 #endif
 
     // Indirect
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0, ADDR_WORDPTR));
@@ -147,7 +209,7 @@ emit_mov_mr_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0, ADDR_WORDPTR));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0, ADDR_WORDPTR));
@@ -160,7 +222,7 @@ emit_mov_mr_test_sreg(u8* stream)
 #endif
 
     // Indirect byte displaced
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0x15, ADDR_WORDPTR));
@@ -171,7 +233,7 @@ emit_mov_mr_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0x15, ADDR_WORDPTR));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0x15, ADDR_WORDPTR));
@@ -184,7 +246,7 @@ emit_mov_mr_test_sreg(u8* stream)
 #endif
 
     // Indirect dword displaced
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0x15161718, ADDR_WORDPTR));
@@ -195,7 +257,7 @@ emit_mov_mr_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_mr_indirect(i, GS, 0x15161718, ADDR_WORDPTR));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_mr_indirect(i, ES, 0x15161718, ADDR_WORDPTR));
@@ -254,7 +316,7 @@ emit_mov_mr_sib_test_sreg(u8* stream)
 u8*
 emit_mov_rm_test_sreg(u8* stream)
 {
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_direct(ES, i));
@@ -265,7 +327,7 @@ emit_mov_rm_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_rm_direct(GS, i));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_direct(ES, i));
@@ -276,7 +338,7 @@ emit_mov_rm_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_rm_direct(GS, i));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_direct(ES, i));
@@ -289,7 +351,7 @@ emit_mov_rm_test_sreg(u8* stream)
 #endif
 
     // Indirect
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0, ADDR_WORDPTR));
@@ -300,7 +362,7 @@ emit_mov_rm_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0, ADDR_WORDPTR));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0, ADDR_WORDPTR));
@@ -313,7 +375,7 @@ emit_mov_rm_test_sreg(u8* stream)
 #endif
 
     // Indirect byte displaced
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0x15, ADDR_WORDPTR));
@@ -324,7 +386,7 @@ emit_mov_rm_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0x15, ADDR_WORDPTR));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0x15, ADDR_WORDPTR));
@@ -337,7 +399,7 @@ emit_mov_rm_test_sreg(u8* stream)
 #endif
 
     // Indirect dword displaced
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0x15161718, ADDR_WORDPTR));
@@ -348,7 +410,7 @@ emit_mov_rm_test_sreg(u8* stream)
         stream = emit_mov(0, stream, mk_rm_indirect(GS, i, 0x15161718, ADDR_WORDPTR));
     }
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         stream = emit_mov(0, stream, mk_rm_indirect(ES, i, 0x15161718, ADDR_WORDPTR));
@@ -408,13 +470,13 @@ u8*
 emit_mov_moffs_test(u8* stream)
 {
     // MOFFS FD
-#if 0
+#if MOV_TEST
     stream = emit_mov(0, stream, mk_fd(REG_NONE, 0x12345678, 64));
     stream = emit_mov(0, stream, mk_fd(REG_NONE, 0x12345678, 32));
     stream = emit_mov(0, stream, mk_fd(REG_NONE, 0x12345678, 16));
     stream = emit_mov(0, stream, mk_fd(REG_NONE, 0x12345678, 8));
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = ES; i <= GS; ++i)
     {
         stream = emit_mov(0, stream, mk_fd(i, 0x12345678, 64));
@@ -425,13 +487,13 @@ emit_mov_moffs_test(u8* stream)
 #endif
 
     // MOFFS TD
-#if 0
+#if MOV_TEST
     stream = emit_mov(0, stream, mk_td(REG_NONE, 0x12345678, 64));
     stream = emit_mov(0, stream, mk_td(REG_NONE, 0x12345678, 32));
     stream = emit_mov(0, stream, mk_td(REG_NONE, 0x12345678, 16));
     stream = emit_mov(0, stream, mk_td(REG_NONE, 0x12345678, 8));
 #endif
-#if 0
+#if MOV_TEST
     for(X64_Register i = ES; i <= GS; ++i)
     {
         stream = emit_mov(0, stream, mk_td(i, 0x12345678, 64));
@@ -1004,7 +1066,7 @@ emit_mov_rm_sib_test(u8* stream)
 u8*
 emit_movsxd_rm_test(u8* stream)
 {
-#if 0
+#if MOV_TEST
     // RM Direct
     for(X64_Register i = RAX; i <= R15; ++i)
     {
@@ -1016,7 +1078,7 @@ emit_movsxd_rm_test(u8* stream)
 #endif
 
     // Indirect
-#if 1
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15D; ++i)
     {
         for(X64_Register j = RAX; j <= R15D; ++j)
@@ -1027,7 +1089,7 @@ emit_movsxd_rm_test(u8* stream)
 #endif
 
     // Indirect byte displaced
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15D; ++j)
@@ -1038,7 +1100,7 @@ emit_movsxd_rm_test(u8* stream)
 #endif
 
     // Indirect dword displaced
-#if 0
+#if MOV_TEST
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15D; ++j)
@@ -1054,7 +1116,7 @@ u8*
 emit_movsx_rm_test(u8* stream)
 {
     // Direct
-#if 0
+#if MOV_TEST
     // RM Direct R64_R8
     for(X64_Register i = RAX; i <= R15; ++i)
     {
@@ -1064,7 +1126,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Direct R32_R8
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
@@ -1074,7 +1136,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Direct R16_R8
     for(X64_Register i = AX; i <= R15W; ++i)
     {
@@ -1084,7 +1146,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Direct R64_R16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
@@ -1094,7 +1156,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Direct R32_R16
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
@@ -1106,7 +1168,7 @@ emit_movsx_rm_test(u8* stream)
 #endif
 
     // Indirect
-#if 0
+#if MOV_TEST
     // RM Indirect R64_R8
     for(X64_Register i = RAX; i <= R15; ++i)
     {
@@ -1117,7 +1179,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Indirect R32_R8
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
@@ -1127,7 +1189,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Indirect R16_R8
     for(X64_Register i = AX; i <= R15W; ++i)
     {
@@ -1137,7 +1199,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Indirect R64_R16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
@@ -1147,7 +1209,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Indirect R32_R16
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
@@ -1159,7 +1221,7 @@ emit_movsx_rm_test(u8* stream)
 #endif
 
     // Indirect byte displaced
-#if 0
+#if MOV_TEST
     // RM Indirect BD R64_R8
     for(X64_Register i = RAX; i <= R15; ++i)
     {
@@ -1170,7 +1232,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Indirect R32_R8
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
@@ -1180,7 +1242,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Indirect R16_R8
     for(X64_Register i = AX; i <= R15W; ++i)
     {
@@ -1190,7 +1252,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Indirect R64_R16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
@@ -1200,7 +1262,7 @@ emit_movsx_rm_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     // RM Indirect R32_R16
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
@@ -1219,7 +1281,7 @@ emit_cmovcc_test(u8* stream)
 {
     X64_CMOVcc_Instruction i = CMOVE;
     // Direct
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1233,7 +1295,7 @@ emit_cmovcc_test(u8* stream)
 #endif
 
     // Indirect
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1245,7 +1307,7 @@ emit_cmovcc_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1257,7 +1319,7 @@ emit_cmovcc_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
@@ -1272,7 +1334,7 @@ emit_cmovcc_test(u8* stream)
     // TODO(psv): forbid 8 bits
 
     // Indirect byte displaced
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1284,7 +1346,7 @@ emit_cmovcc_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1296,7 +1358,7 @@ emit_cmovcc_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
@@ -1310,7 +1372,7 @@ emit_cmovcc_test(u8* stream)
 #endif
 
     // Indirect dword displaced
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1322,7 +1384,7 @@ emit_cmovcc_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1334,7 +1396,7 @@ emit_cmovcc_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = AX; j <= R15W; ++j)
@@ -1355,7 +1417,7 @@ emit_cmovcc_sib_test(u8* stream)
     X64_Register index = R13;
     X64_CMOVcc_Instruction i = CMOVE;
 
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1367,7 +1429,7 @@ emit_cmovcc_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1379,7 +1441,7 @@ emit_cmovcc_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1391,7 +1453,7 @@ emit_cmovcc_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if MOV_TEST
     for(i = CMOVE; i <= CMOVG; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1426,7 +1488,7 @@ int main()
         end = emit_mov_moffs_test(end);
     }
     {
-        //end = emit_movsx_rm_test(end);
+        end = emit_movsx_rm_test(end);
         //end = emit_movsxd_rm_test(end);
     }
     {

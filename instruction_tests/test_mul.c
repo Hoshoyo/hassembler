@@ -47,6 +47,6 @@ int main()
     fwrite(stream, 1, end - stream, out);
 	fclose(out);
 
-    system("objdump -D -Mintel,x86-64 -b binary -m i386 -w " FILENAME " > mul_result.res");
+    system("objdump -D -Mintel,x86-64 -b binary -m i386 -w " FILENAME);
     return 0;
 }

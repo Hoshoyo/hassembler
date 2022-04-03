@@ -80,6 +80,21 @@
 #define TEST_MI_SIB_X8_DWORD_DISPLACED_IMM16 1
 #define TEST_MI_SIB_X8_DWORD_DISPLACED_IMM32 1
 
+#define TEST_RELATIVE 1
+
+#define TEST_LEA_INDIRECT_64 1
+#define TEST_LEA_INDIRECT_32 1
+#define TEST_LEA_INDIRECT_16 1
+#define TEST_LEA_INDIRECT_BYTE_DISPLACED_64 1
+#define TEST_LEA_INDIRECT_BYTE_DISPLACED_32 1
+#define TEST_LEA_INDIRECT_BYTE_DISPLACED_16 1
+#define TEST_LEA_INDIRECT_DWORD_DISPLACED_64 1
+#define TEST_LEA_INDIRECT_DWORD_DISPLACED_32 1
+#define TEST_LEA_INDIRECT_DWORD_DISPLACED_16 1
+#define TEST_LEA_SIB_X1_64 1
+#define TEST_LEA_SIB_X2_BYTE_DISPLACED_32 1
+#define TEST_LEA_SIB_X4_DWORD_DISPLACED_16 1
+
 X64_Arithmetic_Instr instr = ARITH_ADD;
 
 u8*
@@ -893,7 +908,7 @@ emit_mr_sib_test(u8* stream)
 u8*
 emit_rel_test(u8* stream)
 {
-#if 0
+#if TEST_RELATIVE
     stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_QWORDPTR, 0x66667777, 32));
     stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_DWORDPTR, 0x66667777, 32));
     stream = emit_arithmetic(0, stream, ARITH_ADD, mk_mi_indirect(REG_NONE, 0x15, ADDR_WORDPTR, 0x6666, 16));
@@ -907,7 +922,7 @@ u8*
 emit_lea_test(u8* stream)
 {
     // Indirect
-#if 0
+#if TEST_LEA_INDIRECT_64
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -916,7 +931,7 @@ emit_lea_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_LEA_INDIRECT_32
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -925,7 +940,7 @@ emit_lea_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_LEA_INDIRECT_16
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -936,7 +951,7 @@ emit_lea_test(u8* stream)
 #endif
 
     // Indirect byte displaced
-#if 0
+#if TEST_LEA_INDIRECT_BYTE_DISPLACED_64
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -945,7 +960,7 @@ emit_lea_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_LEA_INDIRECT_BYTE_DISPLACED_32
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -954,7 +969,7 @@ emit_lea_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_LEA_INDIRECT_BYTE_DISPLACED_16
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -965,7 +980,7 @@ emit_lea_test(u8* stream)
 #endif
 
     // Indirect dword displaced
-#if 0
+#if TEST_LEA_INDIRECT_DWORD_DISPLACED_64
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -974,7 +989,7 @@ emit_lea_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_LEA_INDIRECT_DWORD_DISPLACED_32
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -983,7 +998,7 @@ emit_lea_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_LEA_INDIRECT_DWORD_DISPLACED_16
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1000,7 +1015,7 @@ emit_lea_sib_test(u8* stream)
 {
     X64_Register index = R13;
     // Indirect sib
-#if 0
+#if TEST_LEA_SIB_X1_64
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1009,7 +1024,7 @@ emit_lea_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_LEA_SIB_X2_BYTE_DISPLACED_32
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
@@ -1018,7 +1033,7 @@ emit_lea_sib_test(u8* stream)
         }
     }
 #endif
-#if 0
+#if TEST_LEA_SIB_X4_DWORD_DISPLACED_16
     for(X64_Register i = AX; i <= R15W; ++i)
     {
         for(X64_Register j = RAX; j <= R15; ++j)
