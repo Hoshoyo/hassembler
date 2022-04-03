@@ -912,6 +912,8 @@ u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
 u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
 u8* emit_jmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_call(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_fcall(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 imm);
 u8* emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

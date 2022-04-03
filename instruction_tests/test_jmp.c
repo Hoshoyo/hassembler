@@ -258,6 +258,47 @@ emit_jmp_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_call_test(u8* stream)
+{
+#if TEST_JMP
+    stream = emit_call(0, stream, mk_d(0x16171810));
+#endif
+#if TEST_JMP
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_call(0, stream, mk_m_direct(i));
+    }
+#endif
+#if TEST_JMP
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_call(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
+    }
+#endif
+#if TEST_JMP
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_call(0, stream, mk_m_indirect(i, 0x15, ADDR_QWORDPTR));
+    }
+#endif
+#if TEST_JMP
+    for(X64_Register i = RAX; i <= R15; ++i)
+    {
+        stream = emit_call(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
+    }
+#endif
+
+    // TODO check this
+#if TEST_JMP
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_fcall(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
+    }
+#endif
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_jmp.bin"
@@ -271,6 +312,7 @@ int main()
         end = emit_pop_test(end);
         end = emit_pop_sib_test(end);
         end = emit_jmp_test(end);
+        end = emit_call_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

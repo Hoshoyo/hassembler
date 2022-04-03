@@ -1,5 +1,5 @@
 @echo off
 
 pushd bin
-cl /Zi /nologo ../main.c ../../*.c
+cl /Zi /nologo ../test.c ../../*.c
 popd
