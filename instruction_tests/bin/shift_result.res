@@ -1,5 +1,5 @@
 
-test_shift.bin:     file format binary
+../test_shift.bin:     file format binary
 
 
 Disassembly of section .data:
@@ -5393,3 +5393,12251 @@ Disassembly of section .data:
     6c59:	41 c0 2c 2f 15       	shr    BYTE PTR [r15+rbp*1],0x15
     6c5e:	41 c0 2c 2f 15       	shr    BYTE PTR [r15+rbp*1],0x15
     6c63:	41 c0 2c 2f 15       	shr    BYTE PTR [r15+rbp*1],0x15
+    6c68:	f6 c0 12             	test   al,0x12
+    6c6b:	f6 c1 12             	test   cl,0x12
+    6c6e:	f6 c2 12             	test   dl,0x12
+    6c71:	f6 c3 12             	test   bl,0x12
+    6c74:	f6 c4 12             	test   ah,0x12
+    6c77:	f6 c5 12             	test   ch,0x12
+    6c7a:	f6 c6 12             	test   dh,0x12
+    6c7d:	f6 c7 12             	test   bh,0x12
+    6c80:	41 f6 c0 12          	test   r8b,0x12
+    6c84:	41 f6 c1 12          	test   r9b,0x12
+    6c88:	41 f6 c2 12          	test   r10b,0x12
+    6c8c:	41 f6 c3 12          	test   r11b,0x12
+    6c90:	41 f6 c4 12          	test   r12b,0x12
+    6c94:	41 f6 c5 12          	test   r13b,0x12
+    6c98:	41 f6 c6 12          	test   r14b,0x12
+    6c9c:	41 f6 c7 12          	test   r15b,0x12
+    6ca0:	40 f6 c4 12          	test   spl,0x12
+    6ca4:	40 f6 c5 12          	test   bpl,0x12
+    6ca8:	40 f6 c6 12          	test   sil,0x12
+    6cac:	40 f6 c7 12          	test   dil,0x12
+    6cb0:	66 f7 c0 34 12       	test   ax,0x1234
+    6cb5:	66 f7 c1 34 12       	test   cx,0x1234
+    6cba:	66 f7 c2 34 12       	test   dx,0x1234
+    6cbf:	66 f7 c3 34 12       	test   bx,0x1234
+    6cc4:	66 f7 c4 34 12       	test   sp,0x1234
+    6cc9:	66 f7 c5 34 12       	test   bp,0x1234
+    6cce:	66 f7 c6 34 12       	test   si,0x1234
+    6cd3:	66 f7 c7 34 12       	test   di,0x1234
+    6cd8:	66 41 f7 c0 34 12    	test   r8w,0x1234
+    6cde:	66 41 f7 c1 34 12    	test   r9w,0x1234
+    6ce4:	66 41 f7 c2 34 12    	test   r10w,0x1234
+    6cea:	66 41 f7 c3 34 12    	test   r11w,0x1234
+    6cf0:	66 41 f7 c4 34 12    	test   r12w,0x1234
+    6cf6:	66 41 f7 c5 34 12    	test   r13w,0x1234
+    6cfc:	66 41 f7 c6 34 12    	test   r14w,0x1234
+    6d02:	66 41 f7 c7 34 12    	test   r15w,0x1234
+    6d08:	48 f7 c0 78 56 34 12 	test   rax,0x12345678
+    6d0f:	48 f7 c1 78 56 34 12 	test   rcx,0x12345678
+    6d16:	48 f7 c2 78 56 34 12 	test   rdx,0x12345678
+    6d1d:	48 f7 c3 78 56 34 12 	test   rbx,0x12345678
+    6d24:	48 f7 c4 78 56 34 12 	test   rsp,0x12345678
+    6d2b:	48 f7 c5 78 56 34 12 	test   rbp,0x12345678
+    6d32:	48 f7 c6 78 56 34 12 	test   rsi,0x12345678
+    6d39:	48 f7 c7 78 56 34 12 	test   rdi,0x12345678
+    6d40:	49 f7 c0 78 56 34 12 	test   r8,0x12345678
+    6d47:	49 f7 c1 78 56 34 12 	test   r9,0x12345678
+    6d4e:	49 f7 c2 78 56 34 12 	test   r10,0x12345678
+    6d55:	49 f7 c3 78 56 34 12 	test   r11,0x12345678
+    6d5c:	49 f7 c4 78 56 34 12 	test   r12,0x12345678
+    6d63:	49 f7 c5 78 56 34 12 	test   r13,0x12345678
+    6d6a:	49 f7 c6 78 56 34 12 	test   r14,0x12345678
+    6d71:	49 f7 c7 78 56 34 12 	test   r15,0x12345678
+    6d78:	f7 c0 78 56 34 12    	test   eax,0x12345678
+    6d7e:	f7 c1 78 56 34 12    	test   ecx,0x12345678
+    6d84:	f7 c2 78 56 34 12    	test   edx,0x12345678
+    6d8a:	f7 c3 78 56 34 12    	test   ebx,0x12345678
+    6d90:	f7 c4 78 56 34 12    	test   esp,0x12345678
+    6d96:	f7 c5 78 56 34 12    	test   ebp,0x12345678
+    6d9c:	f7 c6 78 56 34 12    	test   esi,0x12345678
+    6da2:	f7 c7 78 56 34 12    	test   edi,0x12345678
+    6da8:	41 f7 c0 78 56 34 12 	test   r8d,0x12345678
+    6daf:	41 f7 c1 78 56 34 12 	test   r9d,0x12345678
+    6db6:	41 f7 c2 78 56 34 12 	test   r10d,0x12345678
+    6dbd:	41 f7 c3 78 56 34 12 	test   r11d,0x12345678
+    6dc4:	41 f7 c4 78 56 34 12 	test   r12d,0x12345678
+    6dcb:	41 f7 c5 78 56 34 12 	test   r13d,0x12345678
+    6dd2:	41 f7 c6 78 56 34 12 	test   r14d,0x12345678
+    6dd9:	41 f7 c7 78 56 34 12 	test   r15d,0x12345678
+    6de0:	f6 00 12             	test   BYTE PTR [rax],0x12
+    6de3:	f6 01 12             	test   BYTE PTR [rcx],0x12
+    6de6:	f6 02 12             	test   BYTE PTR [rdx],0x12
+    6de9:	f6 03 12             	test   BYTE PTR [rbx],0x12
+    6dec:	f6 04 24 12          	test   BYTE PTR [rsp],0x12
+    6df0:	f6 45 00 12          	test   BYTE PTR [rbp+0x0],0x12
+    6df4:	f6 06 12             	test   BYTE PTR [rsi],0x12
+    6df7:	f6 07 12             	test   BYTE PTR [rdi],0x12
+    6dfa:	41 f6 00 12          	test   BYTE PTR [r8],0x12
+    6dfe:	41 f6 01 12          	test   BYTE PTR [r9],0x12
+    6e02:	41 f6 02 12          	test   BYTE PTR [r10],0x12
+    6e06:	41 f6 03 12          	test   BYTE PTR [r11],0x12
+    6e0a:	41 f6 04 24 12       	test   BYTE PTR [r12],0x12
+    6e0f:	41 f6 45 00 12       	test   BYTE PTR [r13+0x0],0x12
+    6e14:	41 f6 06 12          	test   BYTE PTR [r14],0x12
+    6e18:	41 f6 07 12          	test   BYTE PTR [r15],0x12
+    6e1c:	67 f6 00 12          	test   BYTE PTR [eax],0x12
+    6e20:	67 f6 01 12          	test   BYTE PTR [ecx],0x12
+    6e24:	67 f6 02 12          	test   BYTE PTR [edx],0x12
+    6e28:	67 f6 03 12          	test   BYTE PTR [ebx],0x12
+    6e2c:	67 f6 04 24 12       	test   BYTE PTR [esp],0x12
+    6e31:	67 f6 45 00 12       	test   BYTE PTR [ebp+0x0],0x12
+    6e36:	67 f6 06 12          	test   BYTE PTR [esi],0x12
+    6e3a:	67 f6 07 12          	test   BYTE PTR [edi],0x12
+    6e3e:	67 41 f6 00 12       	test   BYTE PTR [r8d],0x12
+    6e43:	67 41 f6 01 12       	test   BYTE PTR [r9d],0x12
+    6e48:	67 41 f6 02 12       	test   BYTE PTR [r10d],0x12
+    6e4d:	67 41 f6 03 12       	test   BYTE PTR [r11d],0x12
+    6e52:	67 41 f6 04 24 12    	test   BYTE PTR [r12d],0x12
+    6e58:	67 41 f6 45 00 12    	test   BYTE PTR [r13d+0x0],0x12
+    6e5e:	67 41 f6 06 12       	test   BYTE PTR [r14d],0x12
+    6e63:	67 41 f6 07 12       	test   BYTE PTR [r15d],0x12
+    6e68:	66 f7 00 34 12       	test   WORD PTR [rax],0x1234
+    6e6d:	66 f7 01 34 12       	test   WORD PTR [rcx],0x1234
+    6e72:	66 f7 02 34 12       	test   WORD PTR [rdx],0x1234
+    6e77:	66 f7 03 34 12       	test   WORD PTR [rbx],0x1234
+    6e7c:	66 f7 04 24 34 12    	test   WORD PTR [rsp],0x1234
+    6e82:	66 f7 45 00 34 12    	test   WORD PTR [rbp+0x0],0x1234
+    6e88:	66 f7 06 34 12       	test   WORD PTR [rsi],0x1234
+    6e8d:	66 f7 07 34 12       	test   WORD PTR [rdi],0x1234
+    6e92:	66 41 f7 00 34 12    	test   WORD PTR [r8],0x1234
+    6e98:	66 41 f7 01 34 12    	test   WORD PTR [r9],0x1234
+    6e9e:	66 41 f7 02 34 12    	test   WORD PTR [r10],0x1234
+    6ea4:	66 41 f7 03 34 12    	test   WORD PTR [r11],0x1234
+    6eaa:	66 41 f7 04 24 34 12 	test   WORD PTR [r12],0x1234
+    6eb1:	66 41 f7 45 00 34 12 	test   WORD PTR [r13+0x0],0x1234
+    6eb8:	66 41 f7 06 34 12    	test   WORD PTR [r14],0x1234
+    6ebe:	66 41 f7 07 34 12    	test   WORD PTR [r15],0x1234
+    6ec4:	67 66 f7 00 34 12    	test   WORD PTR [eax],0x1234
+    6eca:	67 66 f7 01 34 12    	test   WORD PTR [ecx],0x1234
+    6ed0:	67 66 f7 02 34 12    	test   WORD PTR [edx],0x1234
+    6ed6:	67 66 f7 03 34 12    	test   WORD PTR [ebx],0x1234
+    6edc:	67 66 f7 04 24 34 12 	test   WORD PTR [esp],0x1234
+    6ee3:	67 66 f7 45 00 34 12 	test   WORD PTR [ebp+0x0],0x1234
+    6eea:	67 66 f7 06 34 12    	test   WORD PTR [esi],0x1234
+    6ef0:	67 66 f7 07 34 12    	test   WORD PTR [edi],0x1234
+    6ef6:	67 66 41 f7 00 34 12 	test   WORD PTR [r8d],0x1234
+    6efd:	67 66 41 f7 01 34 12 	test   WORD PTR [r9d],0x1234
+    6f04:	67 66 41 f7 02 34 12 	test   WORD PTR [r10d],0x1234
+    6f0b:	67 66 41 f7 03 34 12 	test   WORD PTR [r11d],0x1234
+    6f12:	67 66 41 f7 04 24 34 12 	test   WORD PTR [r12d],0x1234
+    6f1a:	67 66 41 f7 45 00 34 12 	test   WORD PTR [r13d+0x0],0x1234
+    6f22:	67 66 41 f7 06 34 12 	test   WORD PTR [r14d],0x1234
+    6f29:	67 66 41 f7 07 34 12 	test   WORD PTR [r15d],0x1234
+    6f30:	48 f7 00 78 56 34 12 	test   QWORD PTR [rax],0x12345678
+    6f37:	f7 00 78 56 34 12    	test   DWORD PTR [rax],0x12345678
+    6f3d:	48 f7 01 78 56 34 12 	test   QWORD PTR [rcx],0x12345678
+    6f44:	f7 01 78 56 34 12    	test   DWORD PTR [rcx],0x12345678
+    6f4a:	48 f7 02 78 56 34 12 	test   QWORD PTR [rdx],0x12345678
+    6f51:	f7 02 78 56 34 12    	test   DWORD PTR [rdx],0x12345678
+    6f57:	48 f7 03 78 56 34 12 	test   QWORD PTR [rbx],0x12345678
+    6f5e:	f7 03 78 56 34 12    	test   DWORD PTR [rbx],0x12345678
+    6f64:	48 f7 04 24 78 56 34 12 	test   QWORD PTR [rsp],0x12345678
+    6f6c:	f7 04 24 78 56 34 12 	test   DWORD PTR [rsp],0x12345678
+    6f73:	48 f7 45 00 78 56 34 12 	test   QWORD PTR [rbp+0x0],0x12345678
+    6f7b:	f7 45 00 78 56 34 12 	test   DWORD PTR [rbp+0x0],0x12345678
+    6f82:	48 f7 06 78 56 34 12 	test   QWORD PTR [rsi],0x12345678
+    6f89:	f7 06 78 56 34 12    	test   DWORD PTR [rsi],0x12345678
+    6f8f:	48 f7 07 78 56 34 12 	test   QWORD PTR [rdi],0x12345678
+    6f96:	f7 07 78 56 34 12    	test   DWORD PTR [rdi],0x12345678
+    6f9c:	49 f7 00 78 56 34 12 	test   QWORD PTR [r8],0x12345678
+    6fa3:	41 f7 00 78 56 34 12 	test   DWORD PTR [r8],0x12345678
+    6faa:	49 f7 01 78 56 34 12 	test   QWORD PTR [r9],0x12345678
+    6fb1:	41 f7 01 78 56 34 12 	test   DWORD PTR [r9],0x12345678
+    6fb8:	49 f7 02 78 56 34 12 	test   QWORD PTR [r10],0x12345678
+    6fbf:	41 f7 02 78 56 34 12 	test   DWORD PTR [r10],0x12345678
+    6fc6:	49 f7 03 78 56 34 12 	test   QWORD PTR [r11],0x12345678
+    6fcd:	41 f7 03 78 56 34 12 	test   DWORD PTR [r11],0x12345678
+    6fd4:	49 f7 04 24 78 56 34 12 	test   QWORD PTR [r12],0x12345678
+    6fdc:	41 f7 04 24 78 56 34 12 	test   DWORD PTR [r12],0x12345678
+    6fe4:	49 f7 45 00 78 56 34 12 	test   QWORD PTR [r13+0x0],0x12345678
+    6fec:	41 f7 45 00 78 56 34 12 	test   DWORD PTR [r13+0x0],0x12345678
+    6ff4:	49 f7 06 78 56 34 12 	test   QWORD PTR [r14],0x12345678
+    6ffb:	41 f7 06 78 56 34 12 	test   DWORD PTR [r14],0x12345678
+    7002:	49 f7 07 78 56 34 12 	test   QWORD PTR [r15],0x12345678
+    7009:	41 f7 07 78 56 34 12 	test   DWORD PTR [r15],0x12345678
+    7010:	67 48 f7 00 78 56 34 12 	test   QWORD PTR [eax],0x12345678
+    7018:	67 f7 00 78 56 34 12 	test   DWORD PTR [eax],0x12345678
+    701f:	67 48 f7 01 78 56 34 12 	test   QWORD PTR [ecx],0x12345678
+    7027:	67 f7 01 78 56 34 12 	test   DWORD PTR [ecx],0x12345678
+    702e:	67 48 f7 02 78 56 34 12 	test   QWORD PTR [edx],0x12345678
+    7036:	67 f7 02 78 56 34 12 	test   DWORD PTR [edx],0x12345678
+    703d:	67 48 f7 03 78 56 34 12 	test   QWORD PTR [ebx],0x12345678
+    7045:	67 f7 03 78 56 34 12 	test   DWORD PTR [ebx],0x12345678
+    704c:	67 48 f7 04 24 78 56 34 12 	test   QWORD PTR [esp],0x12345678
+    7055:	67 f7 04 24 78 56 34 12 	test   DWORD PTR [esp],0x12345678
+    705d:	67 48 f7 45 00 78 56 34 12 	test   QWORD PTR [ebp+0x0],0x12345678
+    7066:	67 f7 45 00 78 56 34 12 	test   DWORD PTR [ebp+0x0],0x12345678
+    706e:	67 48 f7 06 78 56 34 12 	test   QWORD PTR [esi],0x12345678
+    7076:	67 f7 06 78 56 34 12 	test   DWORD PTR [esi],0x12345678
+    707d:	67 48 f7 07 78 56 34 12 	test   QWORD PTR [edi],0x12345678
+    7085:	67 f7 07 78 56 34 12 	test   DWORD PTR [edi],0x12345678
+    708c:	67 49 f7 00 78 56 34 12 	test   QWORD PTR [r8d],0x12345678
+    7094:	67 41 f7 00 78 56 34 12 	test   DWORD PTR [r8d],0x12345678
+    709c:	67 49 f7 01 78 56 34 12 	test   QWORD PTR [r9d],0x12345678
+    70a4:	67 41 f7 01 78 56 34 12 	test   DWORD PTR [r9d],0x12345678
+    70ac:	67 49 f7 02 78 56 34 12 	test   QWORD PTR [r10d],0x12345678
+    70b4:	67 41 f7 02 78 56 34 12 	test   DWORD PTR [r10d],0x12345678
+    70bc:	67 49 f7 03 78 56 34 12 	test   QWORD PTR [r11d],0x12345678
+    70c4:	67 41 f7 03 78 56 34 12 	test   DWORD PTR [r11d],0x12345678
+    70cc:	67 49 f7 04 24 78 56 34 12 	test   QWORD PTR [r12d],0x12345678
+    70d5:	67 41 f7 04 24 78 56 34 12 	test   DWORD PTR [r12d],0x12345678
+    70de:	67 49 f7 45 00 78 56 34 12 	test   QWORD PTR [r13d+0x0],0x12345678
+    70e7:	67 41 f7 45 00 78 56 34 12 	test   DWORD PTR [r13d+0x0],0x12345678
+    70f0:	67 49 f7 06 78 56 34 12 	test   QWORD PTR [r14d],0x12345678
+    70f8:	67 41 f7 06 78 56 34 12 	test   DWORD PTR [r14d],0x12345678
+    7100:	67 49 f7 07 78 56 34 12 	test   QWORD PTR [r15d],0x12345678
+    7108:	67 41 f7 07 78 56 34 12 	test   DWORD PTR [r15d],0x12345678
+    7110:	f6 40 15 12          	test   BYTE PTR [rax+0x15],0x12
+    7114:	f6 41 15 12          	test   BYTE PTR [rcx+0x15],0x12
+    7118:	f6 42 15 12          	test   BYTE PTR [rdx+0x15],0x12
+    711c:	f6 43 15 12          	test   BYTE PTR [rbx+0x15],0x12
+    7120:	f6 44 24 15 12       	test   BYTE PTR [rsp+0x15],0x12
+    7125:	f6 45 15 12          	test   BYTE PTR [rbp+0x15],0x12
+    7129:	f6 46 15 12          	test   BYTE PTR [rsi+0x15],0x12
+    712d:	f6 47 15 12          	test   BYTE PTR [rdi+0x15],0x12
+    7131:	41 f6 40 15 12       	test   BYTE PTR [r8+0x15],0x12
+    7136:	41 f6 41 15 12       	test   BYTE PTR [r9+0x15],0x12
+    713b:	41 f6 42 15 12       	test   BYTE PTR [r10+0x15],0x12
+    7140:	41 f6 43 15 12       	test   BYTE PTR [r11+0x15],0x12
+    7145:	41 f6 44 24 15 12    	test   BYTE PTR [r12+0x15],0x12
+    714b:	41 f6 45 15 12       	test   BYTE PTR [r13+0x15],0x12
+    7150:	41 f6 46 15 12       	test   BYTE PTR [r14+0x15],0x12
+    7155:	41 f6 47 15 12       	test   BYTE PTR [r15+0x15],0x12
+    715a:	67 f6 40 15 12       	test   BYTE PTR [eax+0x15],0x12
+    715f:	67 f6 41 15 12       	test   BYTE PTR [ecx+0x15],0x12
+    7164:	67 f6 42 15 12       	test   BYTE PTR [edx+0x15],0x12
+    7169:	67 f6 43 15 12       	test   BYTE PTR [ebx+0x15],0x12
+    716e:	67 f6 44 24 15 12    	test   BYTE PTR [esp+0x15],0x12
+    7174:	67 f6 45 15 12       	test   BYTE PTR [ebp+0x15],0x12
+    7179:	67 f6 46 15 12       	test   BYTE PTR [esi+0x15],0x12
+    717e:	67 f6 47 15 12       	test   BYTE PTR [edi+0x15],0x12
+    7183:	67 41 f6 40 15 12    	test   BYTE PTR [r8d+0x15],0x12
+    7189:	67 41 f6 41 15 12    	test   BYTE PTR [r9d+0x15],0x12
+    718f:	67 41 f6 42 15 12    	test   BYTE PTR [r10d+0x15],0x12
+    7195:	67 41 f6 43 15 12    	test   BYTE PTR [r11d+0x15],0x12
+    719b:	67 41 f6 44 24 15 12 	test   BYTE PTR [r12d+0x15],0x12
+    71a2:	67 41 f6 45 15 12    	test   BYTE PTR [r13d+0x15],0x12
+    71a8:	67 41 f6 46 15 12    	test   BYTE PTR [r14d+0x15],0x12
+    71ae:	67 41 f6 47 15 12    	test   BYTE PTR [r15d+0x15],0x12
+    71b4:	66 f7 40 15 34 12    	test   WORD PTR [rax+0x15],0x1234
+    71ba:	66 f7 41 15 34 12    	test   WORD PTR [rcx+0x15],0x1234
+    71c0:	66 f7 42 15 34 12    	test   WORD PTR [rdx+0x15],0x1234
+    71c6:	66 f7 43 15 34 12    	test   WORD PTR [rbx+0x15],0x1234
+    71cc:	66 f7 44 24 15 34 12 	test   WORD PTR [rsp+0x15],0x1234
+    71d3:	66 f7 45 15 34 12    	test   WORD PTR [rbp+0x15],0x1234
+    71d9:	66 f7 46 15 34 12    	test   WORD PTR [rsi+0x15],0x1234
+    71df:	66 f7 47 15 34 12    	test   WORD PTR [rdi+0x15],0x1234
+    71e5:	66 41 f7 40 15 34 12 	test   WORD PTR [r8+0x15],0x1234
+    71ec:	66 41 f7 41 15 34 12 	test   WORD PTR [r9+0x15],0x1234
+    71f3:	66 41 f7 42 15 34 12 	test   WORD PTR [r10+0x15],0x1234
+    71fa:	66 41 f7 43 15 34 12 	test   WORD PTR [r11+0x15],0x1234
+    7201:	66 41 f7 44 24 15 34 12 	test   WORD PTR [r12+0x15],0x1234
+    7209:	66 41 f7 45 15 34 12 	test   WORD PTR [r13+0x15],0x1234
+    7210:	66 41 f7 46 15 34 12 	test   WORD PTR [r14+0x15],0x1234
+    7217:	66 41 f7 47 15 34 12 	test   WORD PTR [r15+0x15],0x1234
+    721e:	67 66 f7 40 15 34 12 	test   WORD PTR [eax+0x15],0x1234
+    7225:	67 66 f7 41 15 34 12 	test   WORD PTR [ecx+0x15],0x1234
+    722c:	67 66 f7 42 15 34 12 	test   WORD PTR [edx+0x15],0x1234
+    7233:	67 66 f7 43 15 34 12 	test   WORD PTR [ebx+0x15],0x1234
+    723a:	67 66 f7 44 24 15 34 12 	test   WORD PTR [esp+0x15],0x1234
+    7242:	67 66 f7 45 15 34 12 	test   WORD PTR [ebp+0x15],0x1234
+    7249:	67 66 f7 46 15 34 12 	test   WORD PTR [esi+0x15],0x1234
+    7250:	67 66 f7 47 15 34 12 	test   WORD PTR [edi+0x15],0x1234
+    7257:	67 66 41 f7 40 15 34 12 	test   WORD PTR [r8d+0x15],0x1234
+    725f:	67 66 41 f7 41 15 34 12 	test   WORD PTR [r9d+0x15],0x1234
+    7267:	67 66 41 f7 42 15 34 12 	test   WORD PTR [r10d+0x15],0x1234
+    726f:	67 66 41 f7 43 15 34 12 	test   WORD PTR [r11d+0x15],0x1234
+    7277:	67 66 41 f7 44 24 15 34 12 	test   WORD PTR [r12d+0x15],0x1234
+    7280:	67 66 41 f7 45 15 34 12 	test   WORD PTR [r13d+0x15],0x1234
+    7288:	67 66 41 f7 46 15 34 12 	test   WORD PTR [r14d+0x15],0x1234
+    7290:	67 66 41 f7 47 15 34 12 	test   WORD PTR [r15d+0x15],0x1234
+    7298:	48 f7 40 15 78 56 34 12 	test   QWORD PTR [rax+0x15],0x12345678
+    72a0:	f7 40 15 78 56 34 12 	test   DWORD PTR [rax+0x15],0x12345678
+    72a7:	48 f7 41 15 78 56 34 12 	test   QWORD PTR [rcx+0x15],0x12345678
+    72af:	f7 41 15 78 56 34 12 	test   DWORD PTR [rcx+0x15],0x12345678
+    72b6:	48 f7 42 15 78 56 34 12 	test   QWORD PTR [rdx+0x15],0x12345678
+    72be:	f7 42 15 78 56 34 12 	test   DWORD PTR [rdx+0x15],0x12345678
+    72c5:	48 f7 43 15 78 56 34 12 	test   QWORD PTR [rbx+0x15],0x12345678
+    72cd:	f7 43 15 78 56 34 12 	test   DWORD PTR [rbx+0x15],0x12345678
+    72d4:	48 f7 44 24 15 78 56 34 12 	test   QWORD PTR [rsp+0x15],0x12345678
+    72dd:	f7 44 24 15 78 56 34 12 	test   DWORD PTR [rsp+0x15],0x12345678
+    72e5:	48 f7 45 15 78 56 34 12 	test   QWORD PTR [rbp+0x15],0x12345678
+    72ed:	f7 45 15 78 56 34 12 	test   DWORD PTR [rbp+0x15],0x12345678
+    72f4:	48 f7 46 15 78 56 34 12 	test   QWORD PTR [rsi+0x15],0x12345678
+    72fc:	f7 46 15 78 56 34 12 	test   DWORD PTR [rsi+0x15],0x12345678
+    7303:	48 f7 47 15 78 56 34 12 	test   QWORD PTR [rdi+0x15],0x12345678
+    730b:	f7 47 15 78 56 34 12 	test   DWORD PTR [rdi+0x15],0x12345678
+    7312:	49 f7 40 15 78 56 34 12 	test   QWORD PTR [r8+0x15],0x12345678
+    731a:	41 f7 40 15 78 56 34 12 	test   DWORD PTR [r8+0x15],0x12345678
+    7322:	49 f7 41 15 78 56 34 12 	test   QWORD PTR [r9+0x15],0x12345678
+    732a:	41 f7 41 15 78 56 34 12 	test   DWORD PTR [r9+0x15],0x12345678
+    7332:	49 f7 42 15 78 56 34 12 	test   QWORD PTR [r10+0x15],0x12345678
+    733a:	41 f7 42 15 78 56 34 12 	test   DWORD PTR [r10+0x15],0x12345678
+    7342:	49 f7 43 15 78 56 34 12 	test   QWORD PTR [r11+0x15],0x12345678
+    734a:	41 f7 43 15 78 56 34 12 	test   DWORD PTR [r11+0x15],0x12345678
+    7352:	49 f7 44 24 15 78 56 34 12 	test   QWORD PTR [r12+0x15],0x12345678
+    735b:	41 f7 44 24 15 78 56 34 12 	test   DWORD PTR [r12+0x15],0x12345678
+    7364:	49 f7 45 15 78 56 34 12 	test   QWORD PTR [r13+0x15],0x12345678
+    736c:	41 f7 45 15 78 56 34 12 	test   DWORD PTR [r13+0x15],0x12345678
+    7374:	49 f7 46 15 78 56 34 12 	test   QWORD PTR [r14+0x15],0x12345678
+    737c:	41 f7 46 15 78 56 34 12 	test   DWORD PTR [r14+0x15],0x12345678
+    7384:	49 f7 47 15 78 56 34 12 	test   QWORD PTR [r15+0x15],0x12345678
+    738c:	41 f7 47 15 78 56 34 12 	test   DWORD PTR [r15+0x15],0x12345678
+    7394:	67 48 f7 40 15 78 56 34 12 	test   QWORD PTR [eax+0x15],0x12345678
+    739d:	67 f7 40 15 78 56 34 12 	test   DWORD PTR [eax+0x15],0x12345678
+    73a5:	67 48 f7 41 15 78 56 34 12 	test   QWORD PTR [ecx+0x15],0x12345678
+    73ae:	67 f7 41 15 78 56 34 12 	test   DWORD PTR [ecx+0x15],0x12345678
+    73b6:	67 48 f7 42 15 78 56 34 12 	test   QWORD PTR [edx+0x15],0x12345678
+    73bf:	67 f7 42 15 78 56 34 12 	test   DWORD PTR [edx+0x15],0x12345678
+    73c7:	67 48 f7 43 15 78 56 34 12 	test   QWORD PTR [ebx+0x15],0x12345678
+    73d0:	67 f7 43 15 78 56 34 12 	test   DWORD PTR [ebx+0x15],0x12345678
+    73d8:	67 48 f7 44 24 15 78 56 34 12 	test   QWORD PTR [esp+0x15],0x12345678
+    73e2:	67 f7 44 24 15 78 56 34 12 	test   DWORD PTR [esp+0x15],0x12345678
+    73eb:	67 48 f7 45 15 78 56 34 12 	test   QWORD PTR [ebp+0x15],0x12345678
+    73f4:	67 f7 45 15 78 56 34 12 	test   DWORD PTR [ebp+0x15],0x12345678
+    73fc:	67 48 f7 46 15 78 56 34 12 	test   QWORD PTR [esi+0x15],0x12345678
+    7405:	67 f7 46 15 78 56 34 12 	test   DWORD PTR [esi+0x15],0x12345678
+    740d:	67 48 f7 47 15 78 56 34 12 	test   QWORD PTR [edi+0x15],0x12345678
+    7416:	67 f7 47 15 78 56 34 12 	test   DWORD PTR [edi+0x15],0x12345678
+    741e:	67 49 f7 40 15 78 56 34 12 	test   QWORD PTR [r8d+0x15],0x12345678
+    7427:	67 41 f7 40 15 78 56 34 12 	test   DWORD PTR [r8d+0x15],0x12345678
+    7430:	67 49 f7 41 15 78 56 34 12 	test   QWORD PTR [r9d+0x15],0x12345678
+    7439:	67 41 f7 41 15 78 56 34 12 	test   DWORD PTR [r9d+0x15],0x12345678
+    7442:	67 49 f7 42 15 78 56 34 12 	test   QWORD PTR [r10d+0x15],0x12345678
+    744b:	67 41 f7 42 15 78 56 34 12 	test   DWORD PTR [r10d+0x15],0x12345678
+    7454:	67 49 f7 43 15 78 56 34 12 	test   QWORD PTR [r11d+0x15],0x12345678
+    745d:	67 41 f7 43 15 78 56 34 12 	test   DWORD PTR [r11d+0x15],0x12345678
+    7466:	67 49 f7 44 24 15 78 56 34 12 	test   QWORD PTR [r12d+0x15],0x12345678
+    7470:	67 41 f7 44 24 15 78 56 34 12 	test   DWORD PTR [r12d+0x15],0x12345678
+    747a:	67 49 f7 45 15 78 56 34 12 	test   QWORD PTR [r13d+0x15],0x12345678
+    7483:	67 41 f7 45 15 78 56 34 12 	test   DWORD PTR [r13d+0x15],0x12345678
+    748c:	67 49 f7 46 15 78 56 34 12 	test   QWORD PTR [r14d+0x15],0x12345678
+    7495:	67 41 f7 46 15 78 56 34 12 	test   DWORD PTR [r14d+0x15],0x12345678
+    749e:	67 49 f7 47 15 78 56 34 12 	test   QWORD PTR [r15d+0x15],0x12345678
+    74a7:	67 41 f7 47 15 78 56 34 12 	test   DWORD PTR [r15d+0x15],0x12345678
+    74b0:	f6 80 18 17 16 15 12 	test   BYTE PTR [rax+0x15161718],0x12
+    74b7:	f6 81 18 17 16 15 12 	test   BYTE PTR [rcx+0x15161718],0x12
+    74be:	f6 82 18 17 16 15 12 	test   BYTE PTR [rdx+0x15161718],0x12
+    74c5:	f6 83 18 17 16 15 12 	test   BYTE PTR [rbx+0x15161718],0x12
+    74cc:	f6 84 24 18 17 16 15 12 	test   BYTE PTR [rsp+0x15161718],0x12
+    74d4:	f6 85 18 17 16 15 12 	test   BYTE PTR [rbp+0x15161718],0x12
+    74db:	f6 86 18 17 16 15 12 	test   BYTE PTR [rsi+0x15161718],0x12
+    74e2:	f6 87 18 17 16 15 12 	test   BYTE PTR [rdi+0x15161718],0x12
+    74e9:	41 f6 80 18 17 16 15 12 	test   BYTE PTR [r8+0x15161718],0x12
+    74f1:	41 f6 81 18 17 16 15 12 	test   BYTE PTR [r9+0x15161718],0x12
+    74f9:	41 f6 82 18 17 16 15 12 	test   BYTE PTR [r10+0x15161718],0x12
+    7501:	41 f6 83 18 17 16 15 12 	test   BYTE PTR [r11+0x15161718],0x12
+    7509:	41 f6 84 24 18 17 16 15 12 	test   BYTE PTR [r12+0x15161718],0x12
+    7512:	41 f6 85 18 17 16 15 12 	test   BYTE PTR [r13+0x15161718],0x12
+    751a:	41 f6 86 18 17 16 15 12 	test   BYTE PTR [r14+0x15161718],0x12
+    7522:	41 f6 87 18 17 16 15 12 	test   BYTE PTR [r15+0x15161718],0x12
+    752a:	67 f6 80 18 17 16 15 12 	test   BYTE PTR [eax+0x15161718],0x12
+    7532:	67 f6 81 18 17 16 15 12 	test   BYTE PTR [ecx+0x15161718],0x12
+    753a:	67 f6 82 18 17 16 15 12 	test   BYTE PTR [edx+0x15161718],0x12
+    7542:	67 f6 83 18 17 16 15 12 	test   BYTE PTR [ebx+0x15161718],0x12
+    754a:	67 f6 84 24 18 17 16 15 12 	test   BYTE PTR [esp+0x15161718],0x12
+    7553:	67 f6 85 18 17 16 15 12 	test   BYTE PTR [ebp+0x15161718],0x12
+    755b:	67 f6 86 18 17 16 15 12 	test   BYTE PTR [esi+0x15161718],0x12
+    7563:	67 f6 87 18 17 16 15 12 	test   BYTE PTR [edi+0x15161718],0x12
+    756b:	67 41 f6 80 18 17 16 15 12 	test   BYTE PTR [r8d+0x15161718],0x12
+    7574:	67 41 f6 81 18 17 16 15 12 	test   BYTE PTR [r9d+0x15161718],0x12
+    757d:	67 41 f6 82 18 17 16 15 12 	test   BYTE PTR [r10d+0x15161718],0x12
+    7586:	67 41 f6 83 18 17 16 15 12 	test   BYTE PTR [r11d+0x15161718],0x12
+    758f:	67 41 f6 84 24 18 17 16 15 12 	test   BYTE PTR [r12d+0x15161718],0x12
+    7599:	67 41 f6 85 18 17 16 15 12 	test   BYTE PTR [r13d+0x15161718],0x12
+    75a2:	67 41 f6 86 18 17 16 15 12 	test   BYTE PTR [r14d+0x15161718],0x12
+    75ab:	67 41 f6 87 18 17 16 15 12 	test   BYTE PTR [r15d+0x15161718],0x12
+    75b4:	66 f7 80 18 17 16 15 34 12 	test   WORD PTR [rax+0x15161718],0x1234
+    75bd:	66 f7 81 18 17 16 15 34 12 	test   WORD PTR [rcx+0x15161718],0x1234
+    75c6:	66 f7 82 18 17 16 15 34 12 	test   WORD PTR [rdx+0x15161718],0x1234
+    75cf:	66 f7 83 18 17 16 15 34 12 	test   WORD PTR [rbx+0x15161718],0x1234
+    75d8:	66 f7 84 24 18 17 16 15 34 12 	test   WORD PTR [rsp+0x15161718],0x1234
+    75e2:	66 f7 85 18 17 16 15 34 12 	test   WORD PTR [rbp+0x15161718],0x1234
+    75eb:	66 f7 86 18 17 16 15 34 12 	test   WORD PTR [rsi+0x15161718],0x1234
+    75f4:	66 f7 87 18 17 16 15 34 12 	test   WORD PTR [rdi+0x15161718],0x1234
+    75fd:	66 41 f7 80 18 17 16 15 34 12 	test   WORD PTR [r8+0x15161718],0x1234
+    7607:	66 41 f7 81 18 17 16 15 34 12 	test   WORD PTR [r9+0x15161718],0x1234
+    7611:	66 41 f7 82 18 17 16 15 34 12 	test   WORD PTR [r10+0x15161718],0x1234
+    761b:	66 41 f7 83 18 17 16 15 34 12 	test   WORD PTR [r11+0x15161718],0x1234
+    7625:	66 41 f7 84 24 18 17 16 15 34 12 	test   WORD PTR [r12+0x15161718],0x1234
+    7630:	66 41 f7 85 18 17 16 15 34 12 	test   WORD PTR [r13+0x15161718],0x1234
+    763a:	66 41 f7 86 18 17 16 15 34 12 	test   WORD PTR [r14+0x15161718],0x1234
+    7644:	66 41 f7 87 18 17 16 15 34 12 	test   WORD PTR [r15+0x15161718],0x1234
+    764e:	67 66 f7 80 18 17 16 15 34 12 	test   WORD PTR [eax+0x15161718],0x1234
+    7658:	67 66 f7 81 18 17 16 15 34 12 	test   WORD PTR [ecx+0x15161718],0x1234
+    7662:	67 66 f7 82 18 17 16 15 34 12 	test   WORD PTR [edx+0x15161718],0x1234
+    766c:	67 66 f7 83 18 17 16 15 34 12 	test   WORD PTR [ebx+0x15161718],0x1234
+    7676:	67 66 f7 84 24 18 17 16 15 34 12 	test   WORD PTR [esp+0x15161718],0x1234
+    7681:	67 66 f7 85 18 17 16 15 34 12 	test   WORD PTR [ebp+0x15161718],0x1234
+    768b:	67 66 f7 86 18 17 16 15 34 12 	test   WORD PTR [esi+0x15161718],0x1234
+    7695:	67 66 f7 87 18 17 16 15 34 12 	test   WORD PTR [edi+0x15161718],0x1234
+    769f:	67 66 41 f7 80 18 17 16 15 34 12 	test   WORD PTR [r8d+0x15161718],0x1234
+    76aa:	67 66 41 f7 81 18 17 16 15 34 12 	test   WORD PTR [r9d+0x15161718],0x1234
+    76b5:	67 66 41 f7 82 18 17 16 15 34 12 	test   WORD PTR [r10d+0x15161718],0x1234
+    76c0:	67 66 41 f7 83 18 17 16 15 34 12 	test   WORD PTR [r11d+0x15161718],0x1234
+    76cb:	67 66 41 f7 84 24 18 17 16 15 34 12 	test   WORD PTR [r12d+0x15161718],0x1234
+    76d7:	67 66 41 f7 85 18 17 16 15 34 12 	test   WORD PTR [r13d+0x15161718],0x1234
+    76e2:	67 66 41 f7 86 18 17 16 15 34 12 	test   WORD PTR [r14d+0x15161718],0x1234
+    76ed:	67 66 41 f7 87 18 17 16 15 34 12 	test   WORD PTR [r15d+0x15161718],0x1234
+    76f8:	48 f7 80 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+0x15161718],0x12345678
+    7703:	f7 80 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+0x15161718],0x12345678
+    770d:	48 f7 81 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+0x15161718],0x12345678
+    7718:	f7 81 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+0x15161718],0x12345678
+    7722:	48 f7 82 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+0x15161718],0x12345678
+    772d:	f7 82 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+0x15161718],0x12345678
+    7737:	48 f7 83 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+0x15161718],0x12345678
+    7742:	f7 83 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+0x15161718],0x12345678
+    774c:	48 f7 84 24 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+0x15161718],0x12345678
+    7758:	f7 84 24 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+0x15161718],0x12345678
+    7763:	48 f7 85 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+0x15161718],0x12345678
+    776e:	f7 85 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+0x15161718],0x12345678
+    7778:	48 f7 86 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+0x15161718],0x12345678
+    7783:	f7 86 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+0x15161718],0x12345678
+    778d:	48 f7 87 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+0x15161718],0x12345678
+    7798:	f7 87 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+0x15161718],0x12345678
+    77a2:	49 f7 80 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+0x15161718],0x12345678
+    77ad:	41 f7 80 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+0x15161718],0x12345678
+    77b8:	49 f7 81 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+0x15161718],0x12345678
+    77c3:	41 f7 81 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+0x15161718],0x12345678
+    77ce:	49 f7 82 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+0x15161718],0x12345678
+    77d9:	41 f7 82 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+0x15161718],0x12345678
+    77e4:	49 f7 83 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+0x15161718],0x12345678
+    77ef:	41 f7 83 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+0x15161718],0x12345678
+    77fa:	49 f7 84 24 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+0x15161718],0x12345678
+    7806:	41 f7 84 24 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+0x15161718],0x12345678
+    7812:	49 f7 85 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+0x15161718],0x12345678
+    781d:	41 f7 85 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+0x15161718],0x12345678
+    7828:	49 f7 86 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+0x15161718],0x12345678
+    7833:	41 f7 86 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+0x15161718],0x12345678
+    783e:	49 f7 87 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+0x15161718],0x12345678
+    7849:	41 f7 87 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+0x15161718],0x12345678
+    7854:	67 48 f7 80 18 17 16 15 78 56 34 12 	test   QWORD PTR [eax+0x15161718],0x12345678
+    7860:	67 f7 80 18 17 16 15 78 56 34 12 	test   DWORD PTR [eax+0x15161718],0x12345678
+    786b:	67 48 f7 81 18 17 16 15 78 56 34 12 	test   QWORD PTR [ecx+0x15161718],0x12345678
+    7877:	67 f7 81 18 17 16 15 78 56 34 12 	test   DWORD PTR [ecx+0x15161718],0x12345678
+    7882:	67 48 f7 82 18 17 16 15 78 56 34 12 	test   QWORD PTR [edx+0x15161718],0x12345678
+    788e:	67 f7 82 18 17 16 15 78 56 34 12 	test   DWORD PTR [edx+0x15161718],0x12345678
+    7899:	67 48 f7 83 18 17 16 15 78 56 34 12 	test   QWORD PTR [ebx+0x15161718],0x12345678
+    78a5:	67 f7 83 18 17 16 15 78 56 34 12 	test   DWORD PTR [ebx+0x15161718],0x12345678
+    78b0:	67 48 f7 84 24 18 17 16 15 78 56 34 12 	test   QWORD PTR [esp+0x15161718],0x12345678
+    78bd:	67 f7 84 24 18 17 16 15 78 56 34 12 	test   DWORD PTR [esp+0x15161718],0x12345678
+    78c9:	67 48 f7 85 18 17 16 15 78 56 34 12 	test   QWORD PTR [ebp+0x15161718],0x12345678
+    78d5:	67 f7 85 18 17 16 15 78 56 34 12 	test   DWORD PTR [ebp+0x15161718],0x12345678
+    78e0:	67 48 f7 86 18 17 16 15 78 56 34 12 	test   QWORD PTR [esi+0x15161718],0x12345678
+    78ec:	67 f7 86 18 17 16 15 78 56 34 12 	test   DWORD PTR [esi+0x15161718],0x12345678
+    78f7:	67 48 f7 87 18 17 16 15 78 56 34 12 	test   QWORD PTR [edi+0x15161718],0x12345678
+    7903:	67 f7 87 18 17 16 15 78 56 34 12 	test   DWORD PTR [edi+0x15161718],0x12345678
+    790e:	67 49 f7 80 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8d+0x15161718],0x12345678
+    791a:	67 41 f7 80 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8d+0x15161718],0x12345678
+    7926:	67 49 f7 81 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9d+0x15161718],0x12345678
+    7932:	67 41 f7 81 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9d+0x15161718],0x12345678
+    793e:	67 49 f7 82 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10d+0x15161718],0x12345678
+    794a:	67 41 f7 82 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10d+0x15161718],0x12345678
+    7956:	67 49 f7 83 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11d+0x15161718],0x12345678
+    7962:	67 41 f7 83 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11d+0x15161718],0x12345678
+    796e:	67 49 f7 84 24 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12d+0x15161718],0x12345678
+    797b:	67 41 f7 84 24 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12d+0x15161718],0x12345678
+    7988:	67 49 f7 85 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13d+0x15161718],0x12345678
+    7994:	67 41 f7 85 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13d+0x15161718],0x12345678
+    79a0:	67 49 f7 86 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14d+0x15161718],0x12345678
+    79ac:	67 41 f7 86 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14d+0x15161718],0x12345678
+    79b8:	67 49 f7 87 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15d+0x15161718],0x12345678
+    79c4:	67 41 f7 87 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15d+0x15161718],0x12345678
+    79d0:	f6 04 20 12          	test   BYTE PTR [rax+riz*1],0x12
+    79d4:	f6 04 00 12          	test   BYTE PTR [rax+rax*1],0x12
+    79d8:	f6 04 08 12          	test   BYTE PTR [rax+rcx*1],0x12
+    79dc:	f6 04 10 12          	test   BYTE PTR [rax+rdx*1],0x12
+    79e0:	f6 04 18 12          	test   BYTE PTR [rax+rbx*1],0x12
+    79e4:	f6 04 28 12          	test   BYTE PTR [rax+rbp*1],0x12
+    79e8:	f6 04 30 12          	test   BYTE PTR [rax+rsi*1],0x12
+    79ec:	f6 04 38 12          	test   BYTE PTR [rax+rdi*1],0x12
+    79f0:	42 f6 04 00 12       	test   BYTE PTR [rax+r8*1],0x12
+    79f5:	42 f6 04 08 12       	test   BYTE PTR [rax+r9*1],0x12
+    79fa:	42 f6 04 10 12       	test   BYTE PTR [rax+r10*1],0x12
+    79ff:	42 f6 04 18 12       	test   BYTE PTR [rax+r11*1],0x12
+    7a04:	42 f6 04 20 12       	test   BYTE PTR [rax+r12*1],0x12
+    7a09:	42 f6 04 28 12       	test   BYTE PTR [rax+r13*1],0x12
+    7a0e:	42 f6 04 30 12       	test   BYTE PTR [rax+r14*1],0x12
+    7a13:	42 f6 04 38 12       	test   BYTE PTR [rax+r15*1],0x12
+    7a18:	f6 04 21 12          	test   BYTE PTR [rcx+riz*1],0x12
+    7a1c:	f6 04 01 12          	test   BYTE PTR [rcx+rax*1],0x12
+    7a20:	f6 04 09 12          	test   BYTE PTR [rcx+rcx*1],0x12
+    7a24:	f6 04 11 12          	test   BYTE PTR [rcx+rdx*1],0x12
+    7a28:	f6 04 19 12          	test   BYTE PTR [rcx+rbx*1],0x12
+    7a2c:	f6 04 29 12          	test   BYTE PTR [rcx+rbp*1],0x12
+    7a30:	f6 04 31 12          	test   BYTE PTR [rcx+rsi*1],0x12
+    7a34:	f6 04 39 12          	test   BYTE PTR [rcx+rdi*1],0x12
+    7a38:	42 f6 04 01 12       	test   BYTE PTR [rcx+r8*1],0x12
+    7a3d:	42 f6 04 09 12       	test   BYTE PTR [rcx+r9*1],0x12
+    7a42:	42 f6 04 11 12       	test   BYTE PTR [rcx+r10*1],0x12
+    7a47:	42 f6 04 19 12       	test   BYTE PTR [rcx+r11*1],0x12
+    7a4c:	42 f6 04 21 12       	test   BYTE PTR [rcx+r12*1],0x12
+    7a51:	42 f6 04 29 12       	test   BYTE PTR [rcx+r13*1],0x12
+    7a56:	42 f6 04 31 12       	test   BYTE PTR [rcx+r14*1],0x12
+    7a5b:	42 f6 04 39 12       	test   BYTE PTR [rcx+r15*1],0x12
+    7a60:	f6 04 22 12          	test   BYTE PTR [rdx+riz*1],0x12
+    7a64:	f6 04 02 12          	test   BYTE PTR [rdx+rax*1],0x12
+    7a68:	f6 04 0a 12          	test   BYTE PTR [rdx+rcx*1],0x12
+    7a6c:	f6 04 12 12          	test   BYTE PTR [rdx+rdx*1],0x12
+    7a70:	f6 04 1a 12          	test   BYTE PTR [rdx+rbx*1],0x12
+    7a74:	f6 04 2a 12          	test   BYTE PTR [rdx+rbp*1],0x12
+    7a78:	f6 04 32 12          	test   BYTE PTR [rdx+rsi*1],0x12
+    7a7c:	f6 04 3a 12          	test   BYTE PTR [rdx+rdi*1],0x12
+    7a80:	42 f6 04 02 12       	test   BYTE PTR [rdx+r8*1],0x12
+    7a85:	42 f6 04 0a 12       	test   BYTE PTR [rdx+r9*1],0x12
+    7a8a:	42 f6 04 12 12       	test   BYTE PTR [rdx+r10*1],0x12
+    7a8f:	42 f6 04 1a 12       	test   BYTE PTR [rdx+r11*1],0x12
+    7a94:	42 f6 04 22 12       	test   BYTE PTR [rdx+r12*1],0x12
+    7a99:	42 f6 04 2a 12       	test   BYTE PTR [rdx+r13*1],0x12
+    7a9e:	42 f6 04 32 12       	test   BYTE PTR [rdx+r14*1],0x12
+    7aa3:	42 f6 04 3a 12       	test   BYTE PTR [rdx+r15*1],0x12
+    7aa8:	f6 04 23 12          	test   BYTE PTR [rbx+riz*1],0x12
+    7aac:	f6 04 03 12          	test   BYTE PTR [rbx+rax*1],0x12
+    7ab0:	f6 04 0b 12          	test   BYTE PTR [rbx+rcx*1],0x12
+    7ab4:	f6 04 13 12          	test   BYTE PTR [rbx+rdx*1],0x12
+    7ab8:	f6 04 1b 12          	test   BYTE PTR [rbx+rbx*1],0x12
+    7abc:	f6 04 2b 12          	test   BYTE PTR [rbx+rbp*1],0x12
+    7ac0:	f6 04 33 12          	test   BYTE PTR [rbx+rsi*1],0x12
+    7ac4:	f6 04 3b 12          	test   BYTE PTR [rbx+rdi*1],0x12
+    7ac8:	42 f6 04 03 12       	test   BYTE PTR [rbx+r8*1],0x12
+    7acd:	42 f6 04 0b 12       	test   BYTE PTR [rbx+r9*1],0x12
+    7ad2:	42 f6 04 13 12       	test   BYTE PTR [rbx+r10*1],0x12
+    7ad7:	42 f6 04 1b 12       	test   BYTE PTR [rbx+r11*1],0x12
+    7adc:	42 f6 04 23 12       	test   BYTE PTR [rbx+r12*1],0x12
+    7ae1:	42 f6 04 2b 12       	test   BYTE PTR [rbx+r13*1],0x12
+    7ae6:	42 f6 04 33 12       	test   BYTE PTR [rbx+r14*1],0x12
+    7aeb:	42 f6 04 3b 12       	test   BYTE PTR [rbx+r15*1],0x12
+    7af0:	f6 04 24 12          	test   BYTE PTR [rsp],0x12
+    7af4:	f6 04 04 12          	test   BYTE PTR [rsp+rax*1],0x12
+    7af8:	f6 04 0c 12          	test   BYTE PTR [rsp+rcx*1],0x12
+    7afc:	f6 04 14 12          	test   BYTE PTR [rsp+rdx*1],0x12
+    7b00:	f6 04 1c 12          	test   BYTE PTR [rsp+rbx*1],0x12
+    7b04:	f6 04 2c 12          	test   BYTE PTR [rsp+rbp*1],0x12
+    7b08:	f6 04 34 12          	test   BYTE PTR [rsp+rsi*1],0x12
+    7b0c:	f6 04 3c 12          	test   BYTE PTR [rsp+rdi*1],0x12
+    7b10:	42 f6 04 04 12       	test   BYTE PTR [rsp+r8*1],0x12
+    7b15:	42 f6 04 0c 12       	test   BYTE PTR [rsp+r9*1],0x12
+    7b1a:	42 f6 04 14 12       	test   BYTE PTR [rsp+r10*1],0x12
+    7b1f:	42 f6 04 1c 12       	test   BYTE PTR [rsp+r11*1],0x12
+    7b24:	42 f6 04 24 12       	test   BYTE PTR [rsp+r12*1],0x12
+    7b29:	42 f6 04 2c 12       	test   BYTE PTR [rsp+r13*1],0x12
+    7b2e:	42 f6 04 34 12       	test   BYTE PTR [rsp+r14*1],0x12
+    7b33:	42 f6 04 3c 12       	test   BYTE PTR [rsp+r15*1],0x12
+    7b38:	f6 04 2c 12          	test   BYTE PTR [rsp+rbp*1],0x12
+    7b3c:	f6 04 28 12          	test   BYTE PTR [rax+rbp*1],0x12
+    7b40:	f6 04 29 12          	test   BYTE PTR [rcx+rbp*1],0x12
+    7b44:	f6 04 2a 12          	test   BYTE PTR [rdx+rbp*1],0x12
+    7b48:	f6 04 2b 12          	test   BYTE PTR [rbx+rbp*1],0x12
+    7b4c:	f6 44 2d 00 12       	test   BYTE PTR [rbp+rbp*1+0x0],0x12
+    7b51:	f6 04 2e 12          	test   BYTE PTR [rsi+rbp*1],0x12
+    7b55:	f6 04 2f 12          	test   BYTE PTR [rdi+rbp*1],0x12
+    7b59:	41 f6 04 28 12       	test   BYTE PTR [r8+rbp*1],0x12
+    7b5e:	41 f6 04 29 12       	test   BYTE PTR [r9+rbp*1],0x12
+    7b63:	41 f6 04 2a 12       	test   BYTE PTR [r10+rbp*1],0x12
+    7b68:	41 f6 04 2b 12       	test   BYTE PTR [r11+rbp*1],0x12
+    7b6d:	41 f6 04 2c 12       	test   BYTE PTR [r12+rbp*1],0x12
+    7b72:	41 f6 44 2d 00 12    	test   BYTE PTR [r13+rbp*1+0x0],0x12
+    7b78:	41 f6 04 2e 12       	test   BYTE PTR [r14+rbp*1],0x12
+    7b7d:	41 f6 04 2f 12       	test   BYTE PTR [r15+rbp*1],0x12
+    7b82:	f6 04 26 12          	test   BYTE PTR [rsi+riz*1],0x12
+    7b86:	f6 04 06 12          	test   BYTE PTR [rsi+rax*1],0x12
+    7b8a:	f6 04 0e 12          	test   BYTE PTR [rsi+rcx*1],0x12
+    7b8e:	f6 04 16 12          	test   BYTE PTR [rsi+rdx*1],0x12
+    7b92:	f6 04 1e 12          	test   BYTE PTR [rsi+rbx*1],0x12
+    7b96:	f6 04 2e 12          	test   BYTE PTR [rsi+rbp*1],0x12
+    7b9a:	f6 04 36 12          	test   BYTE PTR [rsi+rsi*1],0x12
+    7b9e:	f6 04 3e 12          	test   BYTE PTR [rsi+rdi*1],0x12
+    7ba2:	42 f6 04 06 12       	test   BYTE PTR [rsi+r8*1],0x12
+    7ba7:	42 f6 04 0e 12       	test   BYTE PTR [rsi+r9*1],0x12
+    7bac:	42 f6 04 16 12       	test   BYTE PTR [rsi+r10*1],0x12
+    7bb1:	42 f6 04 1e 12       	test   BYTE PTR [rsi+r11*1],0x12
+    7bb6:	42 f6 04 26 12       	test   BYTE PTR [rsi+r12*1],0x12
+    7bbb:	42 f6 04 2e 12       	test   BYTE PTR [rsi+r13*1],0x12
+    7bc0:	42 f6 04 36 12       	test   BYTE PTR [rsi+r14*1],0x12
+    7bc5:	42 f6 04 3e 12       	test   BYTE PTR [rsi+r15*1],0x12
+    7bca:	f6 04 27 12          	test   BYTE PTR [rdi+riz*1],0x12
+    7bce:	f6 04 07 12          	test   BYTE PTR [rdi+rax*1],0x12
+    7bd2:	f6 04 0f 12          	test   BYTE PTR [rdi+rcx*1],0x12
+    7bd6:	f6 04 17 12          	test   BYTE PTR [rdi+rdx*1],0x12
+    7bda:	f6 04 1f 12          	test   BYTE PTR [rdi+rbx*1],0x12
+    7bde:	f6 04 2f 12          	test   BYTE PTR [rdi+rbp*1],0x12
+    7be2:	f6 04 37 12          	test   BYTE PTR [rdi+rsi*1],0x12
+    7be6:	f6 04 3f 12          	test   BYTE PTR [rdi+rdi*1],0x12
+    7bea:	42 f6 04 07 12       	test   BYTE PTR [rdi+r8*1],0x12
+    7bef:	42 f6 04 0f 12       	test   BYTE PTR [rdi+r9*1],0x12
+    7bf4:	42 f6 04 17 12       	test   BYTE PTR [rdi+r10*1],0x12
+    7bf9:	42 f6 04 1f 12       	test   BYTE PTR [rdi+r11*1],0x12
+    7bfe:	42 f6 04 27 12       	test   BYTE PTR [rdi+r12*1],0x12
+    7c03:	42 f6 04 2f 12       	test   BYTE PTR [rdi+r13*1],0x12
+    7c08:	42 f6 04 37 12       	test   BYTE PTR [rdi+r14*1],0x12
+    7c0d:	42 f6 04 3f 12       	test   BYTE PTR [rdi+r15*1],0x12
+    7c12:	41 f6 04 20 12       	test   BYTE PTR [r8+riz*1],0x12
+    7c17:	41 f6 04 00 12       	test   BYTE PTR [r8+rax*1],0x12
+    7c1c:	41 f6 04 08 12       	test   BYTE PTR [r8+rcx*1],0x12
+    7c21:	41 f6 04 10 12       	test   BYTE PTR [r8+rdx*1],0x12
+    7c26:	41 f6 04 18 12       	test   BYTE PTR [r8+rbx*1],0x12
+    7c2b:	41 f6 04 28 12       	test   BYTE PTR [r8+rbp*1],0x12
+    7c30:	41 f6 04 30 12       	test   BYTE PTR [r8+rsi*1],0x12
+    7c35:	41 f6 04 38 12       	test   BYTE PTR [r8+rdi*1],0x12
+    7c3a:	43 f6 04 00 12       	test   BYTE PTR [r8+r8*1],0x12
+    7c3f:	43 f6 04 08 12       	test   BYTE PTR [r8+r9*1],0x12
+    7c44:	43 f6 04 10 12       	test   BYTE PTR [r8+r10*1],0x12
+    7c49:	43 f6 04 18 12       	test   BYTE PTR [r8+r11*1],0x12
+    7c4e:	43 f6 04 20 12       	test   BYTE PTR [r8+r12*1],0x12
+    7c53:	43 f6 04 28 12       	test   BYTE PTR [r8+r13*1],0x12
+    7c58:	43 f6 04 30 12       	test   BYTE PTR [r8+r14*1],0x12
+    7c5d:	43 f6 04 38 12       	test   BYTE PTR [r8+r15*1],0x12
+    7c62:	41 f6 04 21 12       	test   BYTE PTR [r9+riz*1],0x12
+    7c67:	41 f6 04 01 12       	test   BYTE PTR [r9+rax*1],0x12
+    7c6c:	41 f6 04 09 12       	test   BYTE PTR [r9+rcx*1],0x12
+    7c71:	41 f6 04 11 12       	test   BYTE PTR [r9+rdx*1],0x12
+    7c76:	41 f6 04 19 12       	test   BYTE PTR [r9+rbx*1],0x12
+    7c7b:	41 f6 04 29 12       	test   BYTE PTR [r9+rbp*1],0x12
+    7c80:	41 f6 04 31 12       	test   BYTE PTR [r9+rsi*1],0x12
+    7c85:	41 f6 04 39 12       	test   BYTE PTR [r9+rdi*1],0x12
+    7c8a:	43 f6 04 01 12       	test   BYTE PTR [r9+r8*1],0x12
+    7c8f:	43 f6 04 09 12       	test   BYTE PTR [r9+r9*1],0x12
+    7c94:	43 f6 04 11 12       	test   BYTE PTR [r9+r10*1],0x12
+    7c99:	43 f6 04 19 12       	test   BYTE PTR [r9+r11*1],0x12
+    7c9e:	43 f6 04 21 12       	test   BYTE PTR [r9+r12*1],0x12
+    7ca3:	43 f6 04 29 12       	test   BYTE PTR [r9+r13*1],0x12
+    7ca8:	43 f6 04 31 12       	test   BYTE PTR [r9+r14*1],0x12
+    7cad:	43 f6 04 39 12       	test   BYTE PTR [r9+r15*1],0x12
+    7cb2:	41 f6 04 22 12       	test   BYTE PTR [r10+riz*1],0x12
+    7cb7:	41 f6 04 02 12       	test   BYTE PTR [r10+rax*1],0x12
+    7cbc:	41 f6 04 0a 12       	test   BYTE PTR [r10+rcx*1],0x12
+    7cc1:	41 f6 04 12 12       	test   BYTE PTR [r10+rdx*1],0x12
+    7cc6:	41 f6 04 1a 12       	test   BYTE PTR [r10+rbx*1],0x12
+    7ccb:	41 f6 04 2a 12       	test   BYTE PTR [r10+rbp*1],0x12
+    7cd0:	41 f6 04 32 12       	test   BYTE PTR [r10+rsi*1],0x12
+    7cd5:	41 f6 04 3a 12       	test   BYTE PTR [r10+rdi*1],0x12
+    7cda:	43 f6 04 02 12       	test   BYTE PTR [r10+r8*1],0x12
+    7cdf:	43 f6 04 0a 12       	test   BYTE PTR [r10+r9*1],0x12
+    7ce4:	43 f6 04 12 12       	test   BYTE PTR [r10+r10*1],0x12
+    7ce9:	43 f6 04 1a 12       	test   BYTE PTR [r10+r11*1],0x12
+    7cee:	43 f6 04 22 12       	test   BYTE PTR [r10+r12*1],0x12
+    7cf3:	43 f6 04 2a 12       	test   BYTE PTR [r10+r13*1],0x12
+    7cf8:	43 f6 04 32 12       	test   BYTE PTR [r10+r14*1],0x12
+    7cfd:	43 f6 04 3a 12       	test   BYTE PTR [r10+r15*1],0x12
+    7d02:	41 f6 04 23 12       	test   BYTE PTR [r11+riz*1],0x12
+    7d07:	41 f6 04 03 12       	test   BYTE PTR [r11+rax*1],0x12
+    7d0c:	41 f6 04 0b 12       	test   BYTE PTR [r11+rcx*1],0x12
+    7d11:	41 f6 04 13 12       	test   BYTE PTR [r11+rdx*1],0x12
+    7d16:	41 f6 04 1b 12       	test   BYTE PTR [r11+rbx*1],0x12
+    7d1b:	41 f6 04 2b 12       	test   BYTE PTR [r11+rbp*1],0x12
+    7d20:	41 f6 04 33 12       	test   BYTE PTR [r11+rsi*1],0x12
+    7d25:	41 f6 04 3b 12       	test   BYTE PTR [r11+rdi*1],0x12
+    7d2a:	43 f6 04 03 12       	test   BYTE PTR [r11+r8*1],0x12
+    7d2f:	43 f6 04 0b 12       	test   BYTE PTR [r11+r9*1],0x12
+    7d34:	43 f6 04 13 12       	test   BYTE PTR [r11+r10*1],0x12
+    7d39:	43 f6 04 1b 12       	test   BYTE PTR [r11+r11*1],0x12
+    7d3e:	43 f6 04 23 12       	test   BYTE PTR [r11+r12*1],0x12
+    7d43:	43 f6 04 2b 12       	test   BYTE PTR [r11+r13*1],0x12
+    7d48:	43 f6 04 33 12       	test   BYTE PTR [r11+r14*1],0x12
+    7d4d:	43 f6 04 3b 12       	test   BYTE PTR [r11+r15*1],0x12
+    7d52:	41 f6 04 24 12       	test   BYTE PTR [r12],0x12
+    7d57:	41 f6 04 04 12       	test   BYTE PTR [r12+rax*1],0x12
+    7d5c:	41 f6 04 0c 12       	test   BYTE PTR [r12+rcx*1],0x12
+    7d61:	41 f6 04 14 12       	test   BYTE PTR [r12+rdx*1],0x12
+    7d66:	41 f6 04 1c 12       	test   BYTE PTR [r12+rbx*1],0x12
+    7d6b:	41 f6 04 2c 12       	test   BYTE PTR [r12+rbp*1],0x12
+    7d70:	41 f6 04 34 12       	test   BYTE PTR [r12+rsi*1],0x12
+    7d75:	41 f6 04 3c 12       	test   BYTE PTR [r12+rdi*1],0x12
+    7d7a:	43 f6 04 04 12       	test   BYTE PTR [r12+r8*1],0x12
+    7d7f:	43 f6 04 0c 12       	test   BYTE PTR [r12+r9*1],0x12
+    7d84:	43 f6 04 14 12       	test   BYTE PTR [r12+r10*1],0x12
+    7d89:	43 f6 04 1c 12       	test   BYTE PTR [r12+r11*1],0x12
+    7d8e:	43 f6 04 24 12       	test   BYTE PTR [r12+r12*1],0x12
+    7d93:	43 f6 04 2c 12       	test   BYTE PTR [r12+r13*1],0x12
+    7d98:	43 f6 04 34 12       	test   BYTE PTR [r12+r14*1],0x12
+    7d9d:	43 f6 04 3c 12       	test   BYTE PTR [r12+r15*1],0x12
+    7da2:	42 f6 04 2c 12       	test   BYTE PTR [rsp+r13*1],0x12
+    7da7:	42 f6 04 28 12       	test   BYTE PTR [rax+r13*1],0x12
+    7dac:	42 f6 04 29 12       	test   BYTE PTR [rcx+r13*1],0x12
+    7db1:	42 f6 04 2a 12       	test   BYTE PTR [rdx+r13*1],0x12
+    7db6:	42 f6 04 2b 12       	test   BYTE PTR [rbx+r13*1],0x12
+    7dbb:	42 f6 44 2d 00 12    	test   BYTE PTR [rbp+r13*1+0x0],0x12
+    7dc1:	42 f6 04 2e 12       	test   BYTE PTR [rsi+r13*1],0x12
+    7dc6:	42 f6 04 2f 12       	test   BYTE PTR [rdi+r13*1],0x12
+    7dcb:	43 f6 04 28 12       	test   BYTE PTR [r8+r13*1],0x12
+    7dd0:	43 f6 04 29 12       	test   BYTE PTR [r9+r13*1],0x12
+    7dd5:	43 f6 04 2a 12       	test   BYTE PTR [r10+r13*1],0x12
+    7dda:	43 f6 04 2b 12       	test   BYTE PTR [r11+r13*1],0x12
+    7ddf:	43 f6 04 2c 12       	test   BYTE PTR [r12+r13*1],0x12
+    7de4:	43 f6 44 2d 00 12    	test   BYTE PTR [r13+r13*1+0x0],0x12
+    7dea:	43 f6 04 2e 12       	test   BYTE PTR [r14+r13*1],0x12
+    7def:	43 f6 04 2f 12       	test   BYTE PTR [r15+r13*1],0x12
+    7df4:	41 f6 04 26 12       	test   BYTE PTR [r14+riz*1],0x12
+    7df9:	41 f6 04 06 12       	test   BYTE PTR [r14+rax*1],0x12
+    7dfe:	41 f6 04 0e 12       	test   BYTE PTR [r14+rcx*1],0x12
+    7e03:	41 f6 04 16 12       	test   BYTE PTR [r14+rdx*1],0x12
+    7e08:	41 f6 04 1e 12       	test   BYTE PTR [r14+rbx*1],0x12
+    7e0d:	41 f6 04 2e 12       	test   BYTE PTR [r14+rbp*1],0x12
+    7e12:	41 f6 04 36 12       	test   BYTE PTR [r14+rsi*1],0x12
+    7e17:	41 f6 04 3e 12       	test   BYTE PTR [r14+rdi*1],0x12
+    7e1c:	43 f6 04 06 12       	test   BYTE PTR [r14+r8*1],0x12
+    7e21:	43 f6 04 0e 12       	test   BYTE PTR [r14+r9*1],0x12
+    7e26:	43 f6 04 16 12       	test   BYTE PTR [r14+r10*1],0x12
+    7e2b:	43 f6 04 1e 12       	test   BYTE PTR [r14+r11*1],0x12
+    7e30:	43 f6 04 26 12       	test   BYTE PTR [r14+r12*1],0x12
+    7e35:	43 f6 04 2e 12       	test   BYTE PTR [r14+r13*1],0x12
+    7e3a:	43 f6 04 36 12       	test   BYTE PTR [r14+r14*1],0x12
+    7e3f:	43 f6 04 3e 12       	test   BYTE PTR [r14+r15*1],0x12
+    7e44:	41 f6 04 27 12       	test   BYTE PTR [r15+riz*1],0x12
+    7e49:	41 f6 04 07 12       	test   BYTE PTR [r15+rax*1],0x12
+    7e4e:	41 f6 04 0f 12       	test   BYTE PTR [r15+rcx*1],0x12
+    7e53:	41 f6 04 17 12       	test   BYTE PTR [r15+rdx*1],0x12
+    7e58:	41 f6 04 1f 12       	test   BYTE PTR [r15+rbx*1],0x12
+    7e5d:	41 f6 04 2f 12       	test   BYTE PTR [r15+rbp*1],0x12
+    7e62:	41 f6 04 37 12       	test   BYTE PTR [r15+rsi*1],0x12
+    7e67:	41 f6 04 3f 12       	test   BYTE PTR [r15+rdi*1],0x12
+    7e6c:	43 f6 04 07 12       	test   BYTE PTR [r15+r8*1],0x12
+    7e71:	43 f6 04 0f 12       	test   BYTE PTR [r15+r9*1],0x12
+    7e76:	43 f6 04 17 12       	test   BYTE PTR [r15+r10*1],0x12
+    7e7b:	43 f6 04 1f 12       	test   BYTE PTR [r15+r11*1],0x12
+    7e80:	43 f6 04 27 12       	test   BYTE PTR [r15+r12*1],0x12
+    7e85:	43 f6 04 2f 12       	test   BYTE PTR [r15+r13*1],0x12
+    7e8a:	43 f6 04 37 12       	test   BYTE PTR [r15+r14*1],0x12
+    7e8f:	43 f6 04 3f 12       	test   BYTE PTR [r15+r15*1],0x12
+    7e94:	66 f7 04 20 34 12    	test   WORD PTR [rax+riz*1],0x1234
+    7e9a:	66 f7 04 00 34 12    	test   WORD PTR [rax+rax*1],0x1234
+    7ea0:	66 f7 04 08 34 12    	test   WORD PTR [rax+rcx*1],0x1234
+    7ea6:	66 f7 04 10 34 12    	test   WORD PTR [rax+rdx*1],0x1234
+    7eac:	66 f7 04 18 34 12    	test   WORD PTR [rax+rbx*1],0x1234
+    7eb2:	66 f7 04 28 34 12    	test   WORD PTR [rax+rbp*1],0x1234
+    7eb8:	66 f7 04 30 34 12    	test   WORD PTR [rax+rsi*1],0x1234
+    7ebe:	66 f7 04 38 34 12    	test   WORD PTR [rax+rdi*1],0x1234
+    7ec4:	66 42 f7 04 00 34 12 	test   WORD PTR [rax+r8*1],0x1234
+    7ecb:	66 42 f7 04 08 34 12 	test   WORD PTR [rax+r9*1],0x1234
+    7ed2:	66 42 f7 04 10 34 12 	test   WORD PTR [rax+r10*1],0x1234
+    7ed9:	66 42 f7 04 18 34 12 	test   WORD PTR [rax+r11*1],0x1234
+    7ee0:	66 42 f7 04 20 34 12 	test   WORD PTR [rax+r12*1],0x1234
+    7ee7:	66 42 f7 04 28 34 12 	test   WORD PTR [rax+r13*1],0x1234
+    7eee:	66 42 f7 04 30 34 12 	test   WORD PTR [rax+r14*1],0x1234
+    7ef5:	66 42 f7 04 38 34 12 	test   WORD PTR [rax+r15*1],0x1234
+    7efc:	66 f7 04 21 34 12    	test   WORD PTR [rcx+riz*1],0x1234
+    7f02:	66 f7 04 01 34 12    	test   WORD PTR [rcx+rax*1],0x1234
+    7f08:	66 f7 04 09 34 12    	test   WORD PTR [rcx+rcx*1],0x1234
+    7f0e:	66 f7 04 11 34 12    	test   WORD PTR [rcx+rdx*1],0x1234
+    7f14:	66 f7 04 19 34 12    	test   WORD PTR [rcx+rbx*1],0x1234
+    7f1a:	66 f7 04 29 34 12    	test   WORD PTR [rcx+rbp*1],0x1234
+    7f20:	66 f7 04 31 34 12    	test   WORD PTR [rcx+rsi*1],0x1234
+    7f26:	66 f7 04 39 34 12    	test   WORD PTR [rcx+rdi*1],0x1234
+    7f2c:	66 42 f7 04 01 34 12 	test   WORD PTR [rcx+r8*1],0x1234
+    7f33:	66 42 f7 04 09 34 12 	test   WORD PTR [rcx+r9*1],0x1234
+    7f3a:	66 42 f7 04 11 34 12 	test   WORD PTR [rcx+r10*1],0x1234
+    7f41:	66 42 f7 04 19 34 12 	test   WORD PTR [rcx+r11*1],0x1234
+    7f48:	66 42 f7 04 21 34 12 	test   WORD PTR [rcx+r12*1],0x1234
+    7f4f:	66 42 f7 04 29 34 12 	test   WORD PTR [rcx+r13*1],0x1234
+    7f56:	66 42 f7 04 31 34 12 	test   WORD PTR [rcx+r14*1],0x1234
+    7f5d:	66 42 f7 04 39 34 12 	test   WORD PTR [rcx+r15*1],0x1234
+    7f64:	66 f7 04 22 34 12    	test   WORD PTR [rdx+riz*1],0x1234
+    7f6a:	66 f7 04 02 34 12    	test   WORD PTR [rdx+rax*1],0x1234
+    7f70:	66 f7 04 0a 34 12    	test   WORD PTR [rdx+rcx*1],0x1234
+    7f76:	66 f7 04 12 34 12    	test   WORD PTR [rdx+rdx*1],0x1234
+    7f7c:	66 f7 04 1a 34 12    	test   WORD PTR [rdx+rbx*1],0x1234
+    7f82:	66 f7 04 2a 34 12    	test   WORD PTR [rdx+rbp*1],0x1234
+    7f88:	66 f7 04 32 34 12    	test   WORD PTR [rdx+rsi*1],0x1234
+    7f8e:	66 f7 04 3a 34 12    	test   WORD PTR [rdx+rdi*1],0x1234
+    7f94:	66 42 f7 04 02 34 12 	test   WORD PTR [rdx+r8*1],0x1234
+    7f9b:	66 42 f7 04 0a 34 12 	test   WORD PTR [rdx+r9*1],0x1234
+    7fa2:	66 42 f7 04 12 34 12 	test   WORD PTR [rdx+r10*1],0x1234
+    7fa9:	66 42 f7 04 1a 34 12 	test   WORD PTR [rdx+r11*1],0x1234
+    7fb0:	66 42 f7 04 22 34 12 	test   WORD PTR [rdx+r12*1],0x1234
+    7fb7:	66 42 f7 04 2a 34 12 	test   WORD PTR [rdx+r13*1],0x1234
+    7fbe:	66 42 f7 04 32 34 12 	test   WORD PTR [rdx+r14*1],0x1234
+    7fc5:	66 42 f7 04 3a 34 12 	test   WORD PTR [rdx+r15*1],0x1234
+    7fcc:	66 f7 04 23 34 12    	test   WORD PTR [rbx+riz*1],0x1234
+    7fd2:	66 f7 04 03 34 12    	test   WORD PTR [rbx+rax*1],0x1234
+    7fd8:	66 f7 04 0b 34 12    	test   WORD PTR [rbx+rcx*1],0x1234
+    7fde:	66 f7 04 13 34 12    	test   WORD PTR [rbx+rdx*1],0x1234
+    7fe4:	66 f7 04 1b 34 12    	test   WORD PTR [rbx+rbx*1],0x1234
+    7fea:	66 f7 04 2b 34 12    	test   WORD PTR [rbx+rbp*1],0x1234
+    7ff0:	66 f7 04 33 34 12    	test   WORD PTR [rbx+rsi*1],0x1234
+    7ff6:	66 f7 04 3b 34 12    	test   WORD PTR [rbx+rdi*1],0x1234
+    7ffc:	66 42 f7 04 03 34 12 	test   WORD PTR [rbx+r8*1],0x1234
+    8003:	66 42 f7 04 0b 34 12 	test   WORD PTR [rbx+r9*1],0x1234
+    800a:	66 42 f7 04 13 34 12 	test   WORD PTR [rbx+r10*1],0x1234
+    8011:	66 42 f7 04 1b 34 12 	test   WORD PTR [rbx+r11*1],0x1234
+    8018:	66 42 f7 04 23 34 12 	test   WORD PTR [rbx+r12*1],0x1234
+    801f:	66 42 f7 04 2b 34 12 	test   WORD PTR [rbx+r13*1],0x1234
+    8026:	66 42 f7 04 33 34 12 	test   WORD PTR [rbx+r14*1],0x1234
+    802d:	66 42 f7 04 3b 34 12 	test   WORD PTR [rbx+r15*1],0x1234
+    8034:	66 f7 04 24 34 12    	test   WORD PTR [rsp],0x1234
+    803a:	66 f7 04 04 34 12    	test   WORD PTR [rsp+rax*1],0x1234
+    8040:	66 f7 04 0c 34 12    	test   WORD PTR [rsp+rcx*1],0x1234
+    8046:	66 f7 04 14 34 12    	test   WORD PTR [rsp+rdx*1],0x1234
+    804c:	66 f7 04 1c 34 12    	test   WORD PTR [rsp+rbx*1],0x1234
+    8052:	66 f7 04 2c 34 12    	test   WORD PTR [rsp+rbp*1],0x1234
+    8058:	66 f7 04 34 34 12    	test   WORD PTR [rsp+rsi*1],0x1234
+    805e:	66 f7 04 3c 34 12    	test   WORD PTR [rsp+rdi*1],0x1234
+    8064:	66 42 f7 04 04 34 12 	test   WORD PTR [rsp+r8*1],0x1234
+    806b:	66 42 f7 04 0c 34 12 	test   WORD PTR [rsp+r9*1],0x1234
+    8072:	66 42 f7 04 14 34 12 	test   WORD PTR [rsp+r10*1],0x1234
+    8079:	66 42 f7 04 1c 34 12 	test   WORD PTR [rsp+r11*1],0x1234
+    8080:	66 42 f7 04 24 34 12 	test   WORD PTR [rsp+r12*1],0x1234
+    8087:	66 42 f7 04 2c 34 12 	test   WORD PTR [rsp+r13*1],0x1234
+    808e:	66 42 f7 04 34 34 12 	test   WORD PTR [rsp+r14*1],0x1234
+    8095:	66 42 f7 04 3c 34 12 	test   WORD PTR [rsp+r15*1],0x1234
+    809c:	66 f7 04 2c 34 12    	test   WORD PTR [rsp+rbp*1],0x1234
+    80a2:	66 f7 04 28 34 12    	test   WORD PTR [rax+rbp*1],0x1234
+    80a8:	66 f7 04 29 34 12    	test   WORD PTR [rcx+rbp*1],0x1234
+    80ae:	66 f7 04 2a 34 12    	test   WORD PTR [rdx+rbp*1],0x1234
+    80b4:	66 f7 04 2b 34 12    	test   WORD PTR [rbx+rbp*1],0x1234
+    80ba:	66 f7 44 2d 00 34 12 	test   WORD PTR [rbp+rbp*1+0x0],0x1234
+    80c1:	66 f7 04 2e 34 12    	test   WORD PTR [rsi+rbp*1],0x1234
+    80c7:	66 f7 04 2f 34 12    	test   WORD PTR [rdi+rbp*1],0x1234
+    80cd:	66 41 f7 04 28 34 12 	test   WORD PTR [r8+rbp*1],0x1234
+    80d4:	66 41 f7 04 29 34 12 	test   WORD PTR [r9+rbp*1],0x1234
+    80db:	66 41 f7 04 2a 34 12 	test   WORD PTR [r10+rbp*1],0x1234
+    80e2:	66 41 f7 04 2b 34 12 	test   WORD PTR [r11+rbp*1],0x1234
+    80e9:	66 41 f7 04 2c 34 12 	test   WORD PTR [r12+rbp*1],0x1234
+    80f0:	66 41 f7 44 2d 00 34 12 	test   WORD PTR [r13+rbp*1+0x0],0x1234
+    80f8:	66 41 f7 04 2e 34 12 	test   WORD PTR [r14+rbp*1],0x1234
+    80ff:	66 41 f7 04 2f 34 12 	test   WORD PTR [r15+rbp*1],0x1234
+    8106:	66 f7 04 26 34 12    	test   WORD PTR [rsi+riz*1],0x1234
+    810c:	66 f7 04 06 34 12    	test   WORD PTR [rsi+rax*1],0x1234
+    8112:	66 f7 04 0e 34 12    	test   WORD PTR [rsi+rcx*1],0x1234
+    8118:	66 f7 04 16 34 12    	test   WORD PTR [rsi+rdx*1],0x1234
+    811e:	66 f7 04 1e 34 12    	test   WORD PTR [rsi+rbx*1],0x1234
+    8124:	66 f7 04 2e 34 12    	test   WORD PTR [rsi+rbp*1],0x1234
+    812a:	66 f7 04 36 34 12    	test   WORD PTR [rsi+rsi*1],0x1234
+    8130:	66 f7 04 3e 34 12    	test   WORD PTR [rsi+rdi*1],0x1234
+    8136:	66 42 f7 04 06 34 12 	test   WORD PTR [rsi+r8*1],0x1234
+    813d:	66 42 f7 04 0e 34 12 	test   WORD PTR [rsi+r9*1],0x1234
+    8144:	66 42 f7 04 16 34 12 	test   WORD PTR [rsi+r10*1],0x1234
+    814b:	66 42 f7 04 1e 34 12 	test   WORD PTR [rsi+r11*1],0x1234
+    8152:	66 42 f7 04 26 34 12 	test   WORD PTR [rsi+r12*1],0x1234
+    8159:	66 42 f7 04 2e 34 12 	test   WORD PTR [rsi+r13*1],0x1234
+    8160:	66 42 f7 04 36 34 12 	test   WORD PTR [rsi+r14*1],0x1234
+    8167:	66 42 f7 04 3e 34 12 	test   WORD PTR [rsi+r15*1],0x1234
+    816e:	66 f7 04 27 34 12    	test   WORD PTR [rdi+riz*1],0x1234
+    8174:	66 f7 04 07 34 12    	test   WORD PTR [rdi+rax*1],0x1234
+    817a:	66 f7 04 0f 34 12    	test   WORD PTR [rdi+rcx*1],0x1234
+    8180:	66 f7 04 17 34 12    	test   WORD PTR [rdi+rdx*1],0x1234
+    8186:	66 f7 04 1f 34 12    	test   WORD PTR [rdi+rbx*1],0x1234
+    818c:	66 f7 04 2f 34 12    	test   WORD PTR [rdi+rbp*1],0x1234
+    8192:	66 f7 04 37 34 12    	test   WORD PTR [rdi+rsi*1],0x1234
+    8198:	66 f7 04 3f 34 12    	test   WORD PTR [rdi+rdi*1],0x1234
+    819e:	66 42 f7 04 07 34 12 	test   WORD PTR [rdi+r8*1],0x1234
+    81a5:	66 42 f7 04 0f 34 12 	test   WORD PTR [rdi+r9*1],0x1234
+    81ac:	66 42 f7 04 17 34 12 	test   WORD PTR [rdi+r10*1],0x1234
+    81b3:	66 42 f7 04 1f 34 12 	test   WORD PTR [rdi+r11*1],0x1234
+    81ba:	66 42 f7 04 27 34 12 	test   WORD PTR [rdi+r12*1],0x1234
+    81c1:	66 42 f7 04 2f 34 12 	test   WORD PTR [rdi+r13*1],0x1234
+    81c8:	66 42 f7 04 37 34 12 	test   WORD PTR [rdi+r14*1],0x1234
+    81cf:	66 42 f7 04 3f 34 12 	test   WORD PTR [rdi+r15*1],0x1234
+    81d6:	66 41 f7 04 20 34 12 	test   WORD PTR [r8+riz*1],0x1234
+    81dd:	66 41 f7 04 00 34 12 	test   WORD PTR [r8+rax*1],0x1234
+    81e4:	66 41 f7 04 08 34 12 	test   WORD PTR [r8+rcx*1],0x1234
+    81eb:	66 41 f7 04 10 34 12 	test   WORD PTR [r8+rdx*1],0x1234
+    81f2:	66 41 f7 04 18 34 12 	test   WORD PTR [r8+rbx*1],0x1234
+    81f9:	66 41 f7 04 28 34 12 	test   WORD PTR [r8+rbp*1],0x1234
+    8200:	66 41 f7 04 30 34 12 	test   WORD PTR [r8+rsi*1],0x1234
+    8207:	66 41 f7 04 38 34 12 	test   WORD PTR [r8+rdi*1],0x1234
+    820e:	66 43 f7 04 00 34 12 	test   WORD PTR [r8+r8*1],0x1234
+    8215:	66 43 f7 04 08 34 12 	test   WORD PTR [r8+r9*1],0x1234
+    821c:	66 43 f7 04 10 34 12 	test   WORD PTR [r8+r10*1],0x1234
+    8223:	66 43 f7 04 18 34 12 	test   WORD PTR [r8+r11*1],0x1234
+    822a:	66 43 f7 04 20 34 12 	test   WORD PTR [r8+r12*1],0x1234
+    8231:	66 43 f7 04 28 34 12 	test   WORD PTR [r8+r13*1],0x1234
+    8238:	66 43 f7 04 30 34 12 	test   WORD PTR [r8+r14*1],0x1234
+    823f:	66 43 f7 04 38 34 12 	test   WORD PTR [r8+r15*1],0x1234
+    8246:	66 41 f7 04 21 34 12 	test   WORD PTR [r9+riz*1],0x1234
+    824d:	66 41 f7 04 01 34 12 	test   WORD PTR [r9+rax*1],0x1234
+    8254:	66 41 f7 04 09 34 12 	test   WORD PTR [r9+rcx*1],0x1234
+    825b:	66 41 f7 04 11 34 12 	test   WORD PTR [r9+rdx*1],0x1234
+    8262:	66 41 f7 04 19 34 12 	test   WORD PTR [r9+rbx*1],0x1234
+    8269:	66 41 f7 04 29 34 12 	test   WORD PTR [r9+rbp*1],0x1234
+    8270:	66 41 f7 04 31 34 12 	test   WORD PTR [r9+rsi*1],0x1234
+    8277:	66 41 f7 04 39 34 12 	test   WORD PTR [r9+rdi*1],0x1234
+    827e:	66 43 f7 04 01 34 12 	test   WORD PTR [r9+r8*1],0x1234
+    8285:	66 43 f7 04 09 34 12 	test   WORD PTR [r9+r9*1],0x1234
+    828c:	66 43 f7 04 11 34 12 	test   WORD PTR [r9+r10*1],0x1234
+    8293:	66 43 f7 04 19 34 12 	test   WORD PTR [r9+r11*1],0x1234
+    829a:	66 43 f7 04 21 34 12 	test   WORD PTR [r9+r12*1],0x1234
+    82a1:	66 43 f7 04 29 34 12 	test   WORD PTR [r9+r13*1],0x1234
+    82a8:	66 43 f7 04 31 34 12 	test   WORD PTR [r9+r14*1],0x1234
+    82af:	66 43 f7 04 39 34 12 	test   WORD PTR [r9+r15*1],0x1234
+    82b6:	66 41 f7 04 22 34 12 	test   WORD PTR [r10+riz*1],0x1234
+    82bd:	66 41 f7 04 02 34 12 	test   WORD PTR [r10+rax*1],0x1234
+    82c4:	66 41 f7 04 0a 34 12 	test   WORD PTR [r10+rcx*1],0x1234
+    82cb:	66 41 f7 04 12 34 12 	test   WORD PTR [r10+rdx*1],0x1234
+    82d2:	66 41 f7 04 1a 34 12 	test   WORD PTR [r10+rbx*1],0x1234
+    82d9:	66 41 f7 04 2a 34 12 	test   WORD PTR [r10+rbp*1],0x1234
+    82e0:	66 41 f7 04 32 34 12 	test   WORD PTR [r10+rsi*1],0x1234
+    82e7:	66 41 f7 04 3a 34 12 	test   WORD PTR [r10+rdi*1],0x1234
+    82ee:	66 43 f7 04 02 34 12 	test   WORD PTR [r10+r8*1],0x1234
+    82f5:	66 43 f7 04 0a 34 12 	test   WORD PTR [r10+r9*1],0x1234
+    82fc:	66 43 f7 04 12 34 12 	test   WORD PTR [r10+r10*1],0x1234
+    8303:	66 43 f7 04 1a 34 12 	test   WORD PTR [r10+r11*1],0x1234
+    830a:	66 43 f7 04 22 34 12 	test   WORD PTR [r10+r12*1],0x1234
+    8311:	66 43 f7 04 2a 34 12 	test   WORD PTR [r10+r13*1],0x1234
+    8318:	66 43 f7 04 32 34 12 	test   WORD PTR [r10+r14*1],0x1234
+    831f:	66 43 f7 04 3a 34 12 	test   WORD PTR [r10+r15*1],0x1234
+    8326:	66 41 f7 04 23 34 12 	test   WORD PTR [r11+riz*1],0x1234
+    832d:	66 41 f7 04 03 34 12 	test   WORD PTR [r11+rax*1],0x1234
+    8334:	66 41 f7 04 0b 34 12 	test   WORD PTR [r11+rcx*1],0x1234
+    833b:	66 41 f7 04 13 34 12 	test   WORD PTR [r11+rdx*1],0x1234
+    8342:	66 41 f7 04 1b 34 12 	test   WORD PTR [r11+rbx*1],0x1234
+    8349:	66 41 f7 04 2b 34 12 	test   WORD PTR [r11+rbp*1],0x1234
+    8350:	66 41 f7 04 33 34 12 	test   WORD PTR [r11+rsi*1],0x1234
+    8357:	66 41 f7 04 3b 34 12 	test   WORD PTR [r11+rdi*1],0x1234
+    835e:	66 43 f7 04 03 34 12 	test   WORD PTR [r11+r8*1],0x1234
+    8365:	66 43 f7 04 0b 34 12 	test   WORD PTR [r11+r9*1],0x1234
+    836c:	66 43 f7 04 13 34 12 	test   WORD PTR [r11+r10*1],0x1234
+    8373:	66 43 f7 04 1b 34 12 	test   WORD PTR [r11+r11*1],0x1234
+    837a:	66 43 f7 04 23 34 12 	test   WORD PTR [r11+r12*1],0x1234
+    8381:	66 43 f7 04 2b 34 12 	test   WORD PTR [r11+r13*1],0x1234
+    8388:	66 43 f7 04 33 34 12 	test   WORD PTR [r11+r14*1],0x1234
+    838f:	66 43 f7 04 3b 34 12 	test   WORD PTR [r11+r15*1],0x1234
+    8396:	66 41 f7 04 24 34 12 	test   WORD PTR [r12],0x1234
+    839d:	66 41 f7 04 04 34 12 	test   WORD PTR [r12+rax*1],0x1234
+    83a4:	66 41 f7 04 0c 34 12 	test   WORD PTR [r12+rcx*1],0x1234
+    83ab:	66 41 f7 04 14 34 12 	test   WORD PTR [r12+rdx*1],0x1234
+    83b2:	66 41 f7 04 1c 34 12 	test   WORD PTR [r12+rbx*1],0x1234
+    83b9:	66 41 f7 04 2c 34 12 	test   WORD PTR [r12+rbp*1],0x1234
+    83c0:	66 41 f7 04 34 34 12 	test   WORD PTR [r12+rsi*1],0x1234
+    83c7:	66 41 f7 04 3c 34 12 	test   WORD PTR [r12+rdi*1],0x1234
+    83ce:	66 43 f7 04 04 34 12 	test   WORD PTR [r12+r8*1],0x1234
+    83d5:	66 43 f7 04 0c 34 12 	test   WORD PTR [r12+r9*1],0x1234
+    83dc:	66 43 f7 04 14 34 12 	test   WORD PTR [r12+r10*1],0x1234
+    83e3:	66 43 f7 04 1c 34 12 	test   WORD PTR [r12+r11*1],0x1234
+    83ea:	66 43 f7 04 24 34 12 	test   WORD PTR [r12+r12*1],0x1234
+    83f1:	66 43 f7 04 2c 34 12 	test   WORD PTR [r12+r13*1],0x1234
+    83f8:	66 43 f7 04 34 34 12 	test   WORD PTR [r12+r14*1],0x1234
+    83ff:	66 43 f7 04 3c 34 12 	test   WORD PTR [r12+r15*1],0x1234
+    8406:	66 42 f7 04 2c 34 12 	test   WORD PTR [rsp+r13*1],0x1234
+    840d:	66 42 f7 04 28 34 12 	test   WORD PTR [rax+r13*1],0x1234
+    8414:	66 42 f7 04 29 34 12 	test   WORD PTR [rcx+r13*1],0x1234
+    841b:	66 42 f7 04 2a 34 12 	test   WORD PTR [rdx+r13*1],0x1234
+    8422:	66 42 f7 04 2b 34 12 	test   WORD PTR [rbx+r13*1],0x1234
+    8429:	66 42 f7 44 2d 00 34 12 	test   WORD PTR [rbp+r13*1+0x0],0x1234
+    8431:	66 42 f7 04 2e 34 12 	test   WORD PTR [rsi+r13*1],0x1234
+    8438:	66 42 f7 04 2f 34 12 	test   WORD PTR [rdi+r13*1],0x1234
+    843f:	66 43 f7 04 28 34 12 	test   WORD PTR [r8+r13*1],0x1234
+    8446:	66 43 f7 04 29 34 12 	test   WORD PTR [r9+r13*1],0x1234
+    844d:	66 43 f7 04 2a 34 12 	test   WORD PTR [r10+r13*1],0x1234
+    8454:	66 43 f7 04 2b 34 12 	test   WORD PTR [r11+r13*1],0x1234
+    845b:	66 43 f7 04 2c 34 12 	test   WORD PTR [r12+r13*1],0x1234
+    8462:	66 43 f7 44 2d 00 34 12 	test   WORD PTR [r13+r13*1+0x0],0x1234
+    846a:	66 43 f7 04 2e 34 12 	test   WORD PTR [r14+r13*1],0x1234
+    8471:	66 43 f7 04 2f 34 12 	test   WORD PTR [r15+r13*1],0x1234
+    8478:	66 41 f7 04 26 34 12 	test   WORD PTR [r14+riz*1],0x1234
+    847f:	66 41 f7 04 06 34 12 	test   WORD PTR [r14+rax*1],0x1234
+    8486:	66 41 f7 04 0e 34 12 	test   WORD PTR [r14+rcx*1],0x1234
+    848d:	66 41 f7 04 16 34 12 	test   WORD PTR [r14+rdx*1],0x1234
+    8494:	66 41 f7 04 1e 34 12 	test   WORD PTR [r14+rbx*1],0x1234
+    849b:	66 41 f7 04 2e 34 12 	test   WORD PTR [r14+rbp*1],0x1234
+    84a2:	66 41 f7 04 36 34 12 	test   WORD PTR [r14+rsi*1],0x1234
+    84a9:	66 41 f7 04 3e 34 12 	test   WORD PTR [r14+rdi*1],0x1234
+    84b0:	66 43 f7 04 06 34 12 	test   WORD PTR [r14+r8*1],0x1234
+    84b7:	66 43 f7 04 0e 34 12 	test   WORD PTR [r14+r9*1],0x1234
+    84be:	66 43 f7 04 16 34 12 	test   WORD PTR [r14+r10*1],0x1234
+    84c5:	66 43 f7 04 1e 34 12 	test   WORD PTR [r14+r11*1],0x1234
+    84cc:	66 43 f7 04 26 34 12 	test   WORD PTR [r14+r12*1],0x1234
+    84d3:	66 43 f7 04 2e 34 12 	test   WORD PTR [r14+r13*1],0x1234
+    84da:	66 43 f7 04 36 34 12 	test   WORD PTR [r14+r14*1],0x1234
+    84e1:	66 43 f7 04 3e 34 12 	test   WORD PTR [r14+r15*1],0x1234
+    84e8:	66 41 f7 04 27 34 12 	test   WORD PTR [r15+riz*1],0x1234
+    84ef:	66 41 f7 04 07 34 12 	test   WORD PTR [r15+rax*1],0x1234
+    84f6:	66 41 f7 04 0f 34 12 	test   WORD PTR [r15+rcx*1],0x1234
+    84fd:	66 41 f7 04 17 34 12 	test   WORD PTR [r15+rdx*1],0x1234
+    8504:	66 41 f7 04 1f 34 12 	test   WORD PTR [r15+rbx*1],0x1234
+    850b:	66 41 f7 04 2f 34 12 	test   WORD PTR [r15+rbp*1],0x1234
+    8512:	66 41 f7 04 37 34 12 	test   WORD PTR [r15+rsi*1],0x1234
+    8519:	66 41 f7 04 3f 34 12 	test   WORD PTR [r15+rdi*1],0x1234
+    8520:	66 43 f7 04 07 34 12 	test   WORD PTR [r15+r8*1],0x1234
+    8527:	66 43 f7 04 0f 34 12 	test   WORD PTR [r15+r9*1],0x1234
+    852e:	66 43 f7 04 17 34 12 	test   WORD PTR [r15+r10*1],0x1234
+    8535:	66 43 f7 04 1f 34 12 	test   WORD PTR [r15+r11*1],0x1234
+    853c:	66 43 f7 04 27 34 12 	test   WORD PTR [r15+r12*1],0x1234
+    8543:	66 43 f7 04 2f 34 12 	test   WORD PTR [r15+r13*1],0x1234
+    854a:	66 43 f7 04 37 34 12 	test   WORD PTR [r15+r14*1],0x1234
+    8551:	66 43 f7 04 3f 34 12 	test   WORD PTR [r15+r15*1],0x1234
+    8558:	48 f7 04 20 78 56 34 12 	test   QWORD PTR [rax+riz*1],0x12345678
+    8560:	f7 04 20 78 56 34 12 	test   DWORD PTR [rax+riz*1],0x12345678
+    8567:	48 f7 04 00 78 56 34 12 	test   QWORD PTR [rax+rax*1],0x12345678
+    856f:	f7 04 00 78 56 34 12 	test   DWORD PTR [rax+rax*1],0x12345678
+    8576:	48 f7 04 08 78 56 34 12 	test   QWORD PTR [rax+rcx*1],0x12345678
+    857e:	f7 04 08 78 56 34 12 	test   DWORD PTR [rax+rcx*1],0x12345678
+    8585:	48 f7 04 10 78 56 34 12 	test   QWORD PTR [rax+rdx*1],0x12345678
+    858d:	f7 04 10 78 56 34 12 	test   DWORD PTR [rax+rdx*1],0x12345678
+    8594:	48 f7 04 18 78 56 34 12 	test   QWORD PTR [rax+rbx*1],0x12345678
+    859c:	f7 04 18 78 56 34 12 	test   DWORD PTR [rax+rbx*1],0x12345678
+    85a3:	48 f7 04 28 78 56 34 12 	test   QWORD PTR [rax+rbp*1],0x12345678
+    85ab:	f7 04 28 78 56 34 12 	test   DWORD PTR [rax+rbp*1],0x12345678
+    85b2:	48 f7 04 30 78 56 34 12 	test   QWORD PTR [rax+rsi*1],0x12345678
+    85ba:	f7 04 30 78 56 34 12 	test   DWORD PTR [rax+rsi*1],0x12345678
+    85c1:	48 f7 04 38 78 56 34 12 	test   QWORD PTR [rax+rdi*1],0x12345678
+    85c9:	f7 04 38 78 56 34 12 	test   DWORD PTR [rax+rdi*1],0x12345678
+    85d0:	4a f7 04 00 78 56 34 12 	test   QWORD PTR [rax+r8*1],0x12345678
+    85d8:	42 f7 04 00 78 56 34 12 	test   DWORD PTR [rax+r8*1],0x12345678
+    85e0:	4a f7 04 08 78 56 34 12 	test   QWORD PTR [rax+r9*1],0x12345678
+    85e8:	42 f7 04 08 78 56 34 12 	test   DWORD PTR [rax+r9*1],0x12345678
+    85f0:	4a f7 04 10 78 56 34 12 	test   QWORD PTR [rax+r10*1],0x12345678
+    85f8:	42 f7 04 10 78 56 34 12 	test   DWORD PTR [rax+r10*1],0x12345678
+    8600:	4a f7 04 18 78 56 34 12 	test   QWORD PTR [rax+r11*1],0x12345678
+    8608:	42 f7 04 18 78 56 34 12 	test   DWORD PTR [rax+r11*1],0x12345678
+    8610:	4a f7 04 20 78 56 34 12 	test   QWORD PTR [rax+r12*1],0x12345678
+    8618:	42 f7 04 20 78 56 34 12 	test   DWORD PTR [rax+r12*1],0x12345678
+    8620:	4a f7 04 28 78 56 34 12 	test   QWORD PTR [rax+r13*1],0x12345678
+    8628:	42 f7 04 28 78 56 34 12 	test   DWORD PTR [rax+r13*1],0x12345678
+    8630:	4a f7 04 30 78 56 34 12 	test   QWORD PTR [rax+r14*1],0x12345678
+    8638:	42 f7 04 30 78 56 34 12 	test   DWORD PTR [rax+r14*1],0x12345678
+    8640:	4a f7 04 38 78 56 34 12 	test   QWORD PTR [rax+r15*1],0x12345678
+    8648:	42 f7 04 38 78 56 34 12 	test   DWORD PTR [rax+r15*1],0x12345678
+    8650:	48 f7 04 21 78 56 34 12 	test   QWORD PTR [rcx+riz*1],0x12345678
+    8658:	f7 04 21 78 56 34 12 	test   DWORD PTR [rcx+riz*1],0x12345678
+    865f:	48 f7 04 01 78 56 34 12 	test   QWORD PTR [rcx+rax*1],0x12345678
+    8667:	f7 04 01 78 56 34 12 	test   DWORD PTR [rcx+rax*1],0x12345678
+    866e:	48 f7 04 09 78 56 34 12 	test   QWORD PTR [rcx+rcx*1],0x12345678
+    8676:	f7 04 09 78 56 34 12 	test   DWORD PTR [rcx+rcx*1],0x12345678
+    867d:	48 f7 04 11 78 56 34 12 	test   QWORD PTR [rcx+rdx*1],0x12345678
+    8685:	f7 04 11 78 56 34 12 	test   DWORD PTR [rcx+rdx*1],0x12345678
+    868c:	48 f7 04 19 78 56 34 12 	test   QWORD PTR [rcx+rbx*1],0x12345678
+    8694:	f7 04 19 78 56 34 12 	test   DWORD PTR [rcx+rbx*1],0x12345678
+    869b:	48 f7 04 29 78 56 34 12 	test   QWORD PTR [rcx+rbp*1],0x12345678
+    86a3:	f7 04 29 78 56 34 12 	test   DWORD PTR [rcx+rbp*1],0x12345678
+    86aa:	48 f7 04 31 78 56 34 12 	test   QWORD PTR [rcx+rsi*1],0x12345678
+    86b2:	f7 04 31 78 56 34 12 	test   DWORD PTR [rcx+rsi*1],0x12345678
+    86b9:	48 f7 04 39 78 56 34 12 	test   QWORD PTR [rcx+rdi*1],0x12345678
+    86c1:	f7 04 39 78 56 34 12 	test   DWORD PTR [rcx+rdi*1],0x12345678
+    86c8:	4a f7 04 01 78 56 34 12 	test   QWORD PTR [rcx+r8*1],0x12345678
+    86d0:	42 f7 04 01 78 56 34 12 	test   DWORD PTR [rcx+r8*1],0x12345678
+    86d8:	4a f7 04 09 78 56 34 12 	test   QWORD PTR [rcx+r9*1],0x12345678
+    86e0:	42 f7 04 09 78 56 34 12 	test   DWORD PTR [rcx+r9*1],0x12345678
+    86e8:	4a f7 04 11 78 56 34 12 	test   QWORD PTR [rcx+r10*1],0x12345678
+    86f0:	42 f7 04 11 78 56 34 12 	test   DWORD PTR [rcx+r10*1],0x12345678
+    86f8:	4a f7 04 19 78 56 34 12 	test   QWORD PTR [rcx+r11*1],0x12345678
+    8700:	42 f7 04 19 78 56 34 12 	test   DWORD PTR [rcx+r11*1],0x12345678
+    8708:	4a f7 04 21 78 56 34 12 	test   QWORD PTR [rcx+r12*1],0x12345678
+    8710:	42 f7 04 21 78 56 34 12 	test   DWORD PTR [rcx+r12*1],0x12345678
+    8718:	4a f7 04 29 78 56 34 12 	test   QWORD PTR [rcx+r13*1],0x12345678
+    8720:	42 f7 04 29 78 56 34 12 	test   DWORD PTR [rcx+r13*1],0x12345678
+    8728:	4a f7 04 31 78 56 34 12 	test   QWORD PTR [rcx+r14*1],0x12345678
+    8730:	42 f7 04 31 78 56 34 12 	test   DWORD PTR [rcx+r14*1],0x12345678
+    8738:	4a f7 04 39 78 56 34 12 	test   QWORD PTR [rcx+r15*1],0x12345678
+    8740:	42 f7 04 39 78 56 34 12 	test   DWORD PTR [rcx+r15*1],0x12345678
+    8748:	48 f7 04 22 78 56 34 12 	test   QWORD PTR [rdx+riz*1],0x12345678
+    8750:	f7 04 22 78 56 34 12 	test   DWORD PTR [rdx+riz*1],0x12345678
+    8757:	48 f7 04 02 78 56 34 12 	test   QWORD PTR [rdx+rax*1],0x12345678
+    875f:	f7 04 02 78 56 34 12 	test   DWORD PTR [rdx+rax*1],0x12345678
+    8766:	48 f7 04 0a 78 56 34 12 	test   QWORD PTR [rdx+rcx*1],0x12345678
+    876e:	f7 04 0a 78 56 34 12 	test   DWORD PTR [rdx+rcx*1],0x12345678
+    8775:	48 f7 04 12 78 56 34 12 	test   QWORD PTR [rdx+rdx*1],0x12345678
+    877d:	f7 04 12 78 56 34 12 	test   DWORD PTR [rdx+rdx*1],0x12345678
+    8784:	48 f7 04 1a 78 56 34 12 	test   QWORD PTR [rdx+rbx*1],0x12345678
+    878c:	f7 04 1a 78 56 34 12 	test   DWORD PTR [rdx+rbx*1],0x12345678
+    8793:	48 f7 04 2a 78 56 34 12 	test   QWORD PTR [rdx+rbp*1],0x12345678
+    879b:	f7 04 2a 78 56 34 12 	test   DWORD PTR [rdx+rbp*1],0x12345678
+    87a2:	48 f7 04 32 78 56 34 12 	test   QWORD PTR [rdx+rsi*1],0x12345678
+    87aa:	f7 04 32 78 56 34 12 	test   DWORD PTR [rdx+rsi*1],0x12345678
+    87b1:	48 f7 04 3a 78 56 34 12 	test   QWORD PTR [rdx+rdi*1],0x12345678
+    87b9:	f7 04 3a 78 56 34 12 	test   DWORD PTR [rdx+rdi*1],0x12345678
+    87c0:	4a f7 04 02 78 56 34 12 	test   QWORD PTR [rdx+r8*1],0x12345678
+    87c8:	42 f7 04 02 78 56 34 12 	test   DWORD PTR [rdx+r8*1],0x12345678
+    87d0:	4a f7 04 0a 78 56 34 12 	test   QWORD PTR [rdx+r9*1],0x12345678
+    87d8:	42 f7 04 0a 78 56 34 12 	test   DWORD PTR [rdx+r9*1],0x12345678
+    87e0:	4a f7 04 12 78 56 34 12 	test   QWORD PTR [rdx+r10*1],0x12345678
+    87e8:	42 f7 04 12 78 56 34 12 	test   DWORD PTR [rdx+r10*1],0x12345678
+    87f0:	4a f7 04 1a 78 56 34 12 	test   QWORD PTR [rdx+r11*1],0x12345678
+    87f8:	42 f7 04 1a 78 56 34 12 	test   DWORD PTR [rdx+r11*1],0x12345678
+    8800:	4a f7 04 22 78 56 34 12 	test   QWORD PTR [rdx+r12*1],0x12345678
+    8808:	42 f7 04 22 78 56 34 12 	test   DWORD PTR [rdx+r12*1],0x12345678
+    8810:	4a f7 04 2a 78 56 34 12 	test   QWORD PTR [rdx+r13*1],0x12345678
+    8818:	42 f7 04 2a 78 56 34 12 	test   DWORD PTR [rdx+r13*1],0x12345678
+    8820:	4a f7 04 32 78 56 34 12 	test   QWORD PTR [rdx+r14*1],0x12345678
+    8828:	42 f7 04 32 78 56 34 12 	test   DWORD PTR [rdx+r14*1],0x12345678
+    8830:	4a f7 04 3a 78 56 34 12 	test   QWORD PTR [rdx+r15*1],0x12345678
+    8838:	42 f7 04 3a 78 56 34 12 	test   DWORD PTR [rdx+r15*1],0x12345678
+    8840:	48 f7 04 23 78 56 34 12 	test   QWORD PTR [rbx+riz*1],0x12345678
+    8848:	f7 04 23 78 56 34 12 	test   DWORD PTR [rbx+riz*1],0x12345678
+    884f:	48 f7 04 03 78 56 34 12 	test   QWORD PTR [rbx+rax*1],0x12345678
+    8857:	f7 04 03 78 56 34 12 	test   DWORD PTR [rbx+rax*1],0x12345678
+    885e:	48 f7 04 0b 78 56 34 12 	test   QWORD PTR [rbx+rcx*1],0x12345678
+    8866:	f7 04 0b 78 56 34 12 	test   DWORD PTR [rbx+rcx*1],0x12345678
+    886d:	48 f7 04 13 78 56 34 12 	test   QWORD PTR [rbx+rdx*1],0x12345678
+    8875:	f7 04 13 78 56 34 12 	test   DWORD PTR [rbx+rdx*1],0x12345678
+    887c:	48 f7 04 1b 78 56 34 12 	test   QWORD PTR [rbx+rbx*1],0x12345678
+    8884:	f7 04 1b 78 56 34 12 	test   DWORD PTR [rbx+rbx*1],0x12345678
+    888b:	48 f7 04 2b 78 56 34 12 	test   QWORD PTR [rbx+rbp*1],0x12345678
+    8893:	f7 04 2b 78 56 34 12 	test   DWORD PTR [rbx+rbp*1],0x12345678
+    889a:	48 f7 04 33 78 56 34 12 	test   QWORD PTR [rbx+rsi*1],0x12345678
+    88a2:	f7 04 33 78 56 34 12 	test   DWORD PTR [rbx+rsi*1],0x12345678
+    88a9:	48 f7 04 3b 78 56 34 12 	test   QWORD PTR [rbx+rdi*1],0x12345678
+    88b1:	f7 04 3b 78 56 34 12 	test   DWORD PTR [rbx+rdi*1],0x12345678
+    88b8:	4a f7 04 03 78 56 34 12 	test   QWORD PTR [rbx+r8*1],0x12345678
+    88c0:	42 f7 04 03 78 56 34 12 	test   DWORD PTR [rbx+r8*1],0x12345678
+    88c8:	4a f7 04 0b 78 56 34 12 	test   QWORD PTR [rbx+r9*1],0x12345678
+    88d0:	42 f7 04 0b 78 56 34 12 	test   DWORD PTR [rbx+r9*1],0x12345678
+    88d8:	4a f7 04 13 78 56 34 12 	test   QWORD PTR [rbx+r10*1],0x12345678
+    88e0:	42 f7 04 13 78 56 34 12 	test   DWORD PTR [rbx+r10*1],0x12345678
+    88e8:	4a f7 04 1b 78 56 34 12 	test   QWORD PTR [rbx+r11*1],0x12345678
+    88f0:	42 f7 04 1b 78 56 34 12 	test   DWORD PTR [rbx+r11*1],0x12345678
+    88f8:	4a f7 04 23 78 56 34 12 	test   QWORD PTR [rbx+r12*1],0x12345678
+    8900:	42 f7 04 23 78 56 34 12 	test   DWORD PTR [rbx+r12*1],0x12345678
+    8908:	4a f7 04 2b 78 56 34 12 	test   QWORD PTR [rbx+r13*1],0x12345678
+    8910:	42 f7 04 2b 78 56 34 12 	test   DWORD PTR [rbx+r13*1],0x12345678
+    8918:	4a f7 04 33 78 56 34 12 	test   QWORD PTR [rbx+r14*1],0x12345678
+    8920:	42 f7 04 33 78 56 34 12 	test   DWORD PTR [rbx+r14*1],0x12345678
+    8928:	4a f7 04 3b 78 56 34 12 	test   QWORD PTR [rbx+r15*1],0x12345678
+    8930:	42 f7 04 3b 78 56 34 12 	test   DWORD PTR [rbx+r15*1],0x12345678
+    8938:	48 f7 04 24 78 56 34 12 	test   QWORD PTR [rsp],0x12345678
+    8940:	f7 04 24 78 56 34 12 	test   DWORD PTR [rsp],0x12345678
+    8947:	48 f7 04 04 78 56 34 12 	test   QWORD PTR [rsp+rax*1],0x12345678
+    894f:	f7 04 04 78 56 34 12 	test   DWORD PTR [rsp+rax*1],0x12345678
+    8956:	48 f7 04 0c 78 56 34 12 	test   QWORD PTR [rsp+rcx*1],0x12345678
+    895e:	f7 04 0c 78 56 34 12 	test   DWORD PTR [rsp+rcx*1],0x12345678
+    8965:	48 f7 04 14 78 56 34 12 	test   QWORD PTR [rsp+rdx*1],0x12345678
+    896d:	f7 04 14 78 56 34 12 	test   DWORD PTR [rsp+rdx*1],0x12345678
+    8974:	48 f7 04 1c 78 56 34 12 	test   QWORD PTR [rsp+rbx*1],0x12345678
+    897c:	f7 04 1c 78 56 34 12 	test   DWORD PTR [rsp+rbx*1],0x12345678
+    8983:	48 f7 04 2c 78 56 34 12 	test   QWORD PTR [rsp+rbp*1],0x12345678
+    898b:	f7 04 2c 78 56 34 12 	test   DWORD PTR [rsp+rbp*1],0x12345678
+    8992:	48 f7 04 34 78 56 34 12 	test   QWORD PTR [rsp+rsi*1],0x12345678
+    899a:	f7 04 34 78 56 34 12 	test   DWORD PTR [rsp+rsi*1],0x12345678
+    89a1:	48 f7 04 3c 78 56 34 12 	test   QWORD PTR [rsp+rdi*1],0x12345678
+    89a9:	f7 04 3c 78 56 34 12 	test   DWORD PTR [rsp+rdi*1],0x12345678
+    89b0:	4a f7 04 04 78 56 34 12 	test   QWORD PTR [rsp+r8*1],0x12345678
+    89b8:	42 f7 04 04 78 56 34 12 	test   DWORD PTR [rsp+r8*1],0x12345678
+    89c0:	4a f7 04 0c 78 56 34 12 	test   QWORD PTR [rsp+r9*1],0x12345678
+    89c8:	42 f7 04 0c 78 56 34 12 	test   DWORD PTR [rsp+r9*1],0x12345678
+    89d0:	4a f7 04 14 78 56 34 12 	test   QWORD PTR [rsp+r10*1],0x12345678
+    89d8:	42 f7 04 14 78 56 34 12 	test   DWORD PTR [rsp+r10*1],0x12345678
+    89e0:	4a f7 04 1c 78 56 34 12 	test   QWORD PTR [rsp+r11*1],0x12345678
+    89e8:	42 f7 04 1c 78 56 34 12 	test   DWORD PTR [rsp+r11*1],0x12345678
+    89f0:	4a f7 04 24 78 56 34 12 	test   QWORD PTR [rsp+r12*1],0x12345678
+    89f8:	42 f7 04 24 78 56 34 12 	test   DWORD PTR [rsp+r12*1],0x12345678
+    8a00:	4a f7 04 2c 78 56 34 12 	test   QWORD PTR [rsp+r13*1],0x12345678
+    8a08:	42 f7 04 2c 78 56 34 12 	test   DWORD PTR [rsp+r13*1],0x12345678
+    8a10:	4a f7 04 34 78 56 34 12 	test   QWORD PTR [rsp+r14*1],0x12345678
+    8a18:	42 f7 04 34 78 56 34 12 	test   DWORD PTR [rsp+r14*1],0x12345678
+    8a20:	4a f7 04 3c 78 56 34 12 	test   QWORD PTR [rsp+r15*1],0x12345678
+    8a28:	42 f7 04 3c 78 56 34 12 	test   DWORD PTR [rsp+r15*1],0x12345678
+    8a30:	48 f7 04 2c 78 56 34 12 	test   QWORD PTR [rsp+rbp*1],0x12345678
+    8a38:	f7 04 2c 78 56 34 12 	test   DWORD PTR [rsp+rbp*1],0x12345678
+    8a3f:	48 f7 04 28 78 56 34 12 	test   QWORD PTR [rax+rbp*1],0x12345678
+    8a47:	f7 04 28 78 56 34 12 	test   DWORD PTR [rax+rbp*1],0x12345678
+    8a4e:	48 f7 04 29 78 56 34 12 	test   QWORD PTR [rcx+rbp*1],0x12345678
+    8a56:	f7 04 29 78 56 34 12 	test   DWORD PTR [rcx+rbp*1],0x12345678
+    8a5d:	48 f7 04 2a 78 56 34 12 	test   QWORD PTR [rdx+rbp*1],0x12345678
+    8a65:	f7 04 2a 78 56 34 12 	test   DWORD PTR [rdx+rbp*1],0x12345678
+    8a6c:	48 f7 04 2b 78 56 34 12 	test   QWORD PTR [rbx+rbp*1],0x12345678
+    8a74:	f7 04 2b 78 56 34 12 	test   DWORD PTR [rbx+rbp*1],0x12345678
+    8a7b:	48 f7 44 2d 00 78 56 34 12 	test   QWORD PTR [rbp+rbp*1+0x0],0x12345678
+    8a84:	f7 44 2d 00 78 56 34 12 	test   DWORD PTR [rbp+rbp*1+0x0],0x12345678
+    8a8c:	48 f7 04 2e 78 56 34 12 	test   QWORD PTR [rsi+rbp*1],0x12345678
+    8a94:	f7 04 2e 78 56 34 12 	test   DWORD PTR [rsi+rbp*1],0x12345678
+    8a9b:	48 f7 04 2f 78 56 34 12 	test   QWORD PTR [rdi+rbp*1],0x12345678
+    8aa3:	f7 04 2f 78 56 34 12 	test   DWORD PTR [rdi+rbp*1],0x12345678
+    8aaa:	49 f7 04 28 78 56 34 12 	test   QWORD PTR [r8+rbp*1],0x12345678
+    8ab2:	41 f7 04 28 78 56 34 12 	test   DWORD PTR [r8+rbp*1],0x12345678
+    8aba:	49 f7 04 29 78 56 34 12 	test   QWORD PTR [r9+rbp*1],0x12345678
+    8ac2:	41 f7 04 29 78 56 34 12 	test   DWORD PTR [r9+rbp*1],0x12345678
+    8aca:	49 f7 04 2a 78 56 34 12 	test   QWORD PTR [r10+rbp*1],0x12345678
+    8ad2:	41 f7 04 2a 78 56 34 12 	test   DWORD PTR [r10+rbp*1],0x12345678
+    8ada:	49 f7 04 2b 78 56 34 12 	test   QWORD PTR [r11+rbp*1],0x12345678
+    8ae2:	41 f7 04 2b 78 56 34 12 	test   DWORD PTR [r11+rbp*1],0x12345678
+    8aea:	49 f7 04 2c 78 56 34 12 	test   QWORD PTR [r12+rbp*1],0x12345678
+    8af2:	41 f7 04 2c 78 56 34 12 	test   DWORD PTR [r12+rbp*1],0x12345678
+    8afa:	49 f7 44 2d 00 78 56 34 12 	test   QWORD PTR [r13+rbp*1+0x0],0x12345678
+    8b03:	41 f7 44 2d 00 78 56 34 12 	test   DWORD PTR [r13+rbp*1+0x0],0x12345678
+    8b0c:	49 f7 04 2e 78 56 34 12 	test   QWORD PTR [r14+rbp*1],0x12345678
+    8b14:	41 f7 04 2e 78 56 34 12 	test   DWORD PTR [r14+rbp*1],0x12345678
+    8b1c:	49 f7 04 2f 78 56 34 12 	test   QWORD PTR [r15+rbp*1],0x12345678
+    8b24:	41 f7 04 2f 78 56 34 12 	test   DWORD PTR [r15+rbp*1],0x12345678
+    8b2c:	48 f7 04 26 78 56 34 12 	test   QWORD PTR [rsi+riz*1],0x12345678
+    8b34:	f7 04 26 78 56 34 12 	test   DWORD PTR [rsi+riz*1],0x12345678
+    8b3b:	48 f7 04 06 78 56 34 12 	test   QWORD PTR [rsi+rax*1],0x12345678
+    8b43:	f7 04 06 78 56 34 12 	test   DWORD PTR [rsi+rax*1],0x12345678
+    8b4a:	48 f7 04 0e 78 56 34 12 	test   QWORD PTR [rsi+rcx*1],0x12345678
+    8b52:	f7 04 0e 78 56 34 12 	test   DWORD PTR [rsi+rcx*1],0x12345678
+    8b59:	48 f7 04 16 78 56 34 12 	test   QWORD PTR [rsi+rdx*1],0x12345678
+    8b61:	f7 04 16 78 56 34 12 	test   DWORD PTR [rsi+rdx*1],0x12345678
+    8b68:	48 f7 04 1e 78 56 34 12 	test   QWORD PTR [rsi+rbx*1],0x12345678
+    8b70:	f7 04 1e 78 56 34 12 	test   DWORD PTR [rsi+rbx*1],0x12345678
+    8b77:	48 f7 04 2e 78 56 34 12 	test   QWORD PTR [rsi+rbp*1],0x12345678
+    8b7f:	f7 04 2e 78 56 34 12 	test   DWORD PTR [rsi+rbp*1],0x12345678
+    8b86:	48 f7 04 36 78 56 34 12 	test   QWORD PTR [rsi+rsi*1],0x12345678
+    8b8e:	f7 04 36 78 56 34 12 	test   DWORD PTR [rsi+rsi*1],0x12345678
+    8b95:	48 f7 04 3e 78 56 34 12 	test   QWORD PTR [rsi+rdi*1],0x12345678
+    8b9d:	f7 04 3e 78 56 34 12 	test   DWORD PTR [rsi+rdi*1],0x12345678
+    8ba4:	4a f7 04 06 78 56 34 12 	test   QWORD PTR [rsi+r8*1],0x12345678
+    8bac:	42 f7 04 06 78 56 34 12 	test   DWORD PTR [rsi+r8*1],0x12345678
+    8bb4:	4a f7 04 0e 78 56 34 12 	test   QWORD PTR [rsi+r9*1],0x12345678
+    8bbc:	42 f7 04 0e 78 56 34 12 	test   DWORD PTR [rsi+r9*1],0x12345678
+    8bc4:	4a f7 04 16 78 56 34 12 	test   QWORD PTR [rsi+r10*1],0x12345678
+    8bcc:	42 f7 04 16 78 56 34 12 	test   DWORD PTR [rsi+r10*1],0x12345678
+    8bd4:	4a f7 04 1e 78 56 34 12 	test   QWORD PTR [rsi+r11*1],0x12345678
+    8bdc:	42 f7 04 1e 78 56 34 12 	test   DWORD PTR [rsi+r11*1],0x12345678
+    8be4:	4a f7 04 26 78 56 34 12 	test   QWORD PTR [rsi+r12*1],0x12345678
+    8bec:	42 f7 04 26 78 56 34 12 	test   DWORD PTR [rsi+r12*1],0x12345678
+    8bf4:	4a f7 04 2e 78 56 34 12 	test   QWORD PTR [rsi+r13*1],0x12345678
+    8bfc:	42 f7 04 2e 78 56 34 12 	test   DWORD PTR [rsi+r13*1],0x12345678
+    8c04:	4a f7 04 36 78 56 34 12 	test   QWORD PTR [rsi+r14*1],0x12345678
+    8c0c:	42 f7 04 36 78 56 34 12 	test   DWORD PTR [rsi+r14*1],0x12345678
+    8c14:	4a f7 04 3e 78 56 34 12 	test   QWORD PTR [rsi+r15*1],0x12345678
+    8c1c:	42 f7 04 3e 78 56 34 12 	test   DWORD PTR [rsi+r15*1],0x12345678
+    8c24:	48 f7 04 27 78 56 34 12 	test   QWORD PTR [rdi+riz*1],0x12345678
+    8c2c:	f7 04 27 78 56 34 12 	test   DWORD PTR [rdi+riz*1],0x12345678
+    8c33:	48 f7 04 07 78 56 34 12 	test   QWORD PTR [rdi+rax*1],0x12345678
+    8c3b:	f7 04 07 78 56 34 12 	test   DWORD PTR [rdi+rax*1],0x12345678
+    8c42:	48 f7 04 0f 78 56 34 12 	test   QWORD PTR [rdi+rcx*1],0x12345678
+    8c4a:	f7 04 0f 78 56 34 12 	test   DWORD PTR [rdi+rcx*1],0x12345678
+    8c51:	48 f7 04 17 78 56 34 12 	test   QWORD PTR [rdi+rdx*1],0x12345678
+    8c59:	f7 04 17 78 56 34 12 	test   DWORD PTR [rdi+rdx*1],0x12345678
+    8c60:	48 f7 04 1f 78 56 34 12 	test   QWORD PTR [rdi+rbx*1],0x12345678
+    8c68:	f7 04 1f 78 56 34 12 	test   DWORD PTR [rdi+rbx*1],0x12345678
+    8c6f:	48 f7 04 2f 78 56 34 12 	test   QWORD PTR [rdi+rbp*1],0x12345678
+    8c77:	f7 04 2f 78 56 34 12 	test   DWORD PTR [rdi+rbp*1],0x12345678
+    8c7e:	48 f7 04 37 78 56 34 12 	test   QWORD PTR [rdi+rsi*1],0x12345678
+    8c86:	f7 04 37 78 56 34 12 	test   DWORD PTR [rdi+rsi*1],0x12345678
+    8c8d:	48 f7 04 3f 78 56 34 12 	test   QWORD PTR [rdi+rdi*1],0x12345678
+    8c95:	f7 04 3f 78 56 34 12 	test   DWORD PTR [rdi+rdi*1],0x12345678
+    8c9c:	4a f7 04 07 78 56 34 12 	test   QWORD PTR [rdi+r8*1],0x12345678
+    8ca4:	42 f7 04 07 78 56 34 12 	test   DWORD PTR [rdi+r8*1],0x12345678
+    8cac:	4a f7 04 0f 78 56 34 12 	test   QWORD PTR [rdi+r9*1],0x12345678
+    8cb4:	42 f7 04 0f 78 56 34 12 	test   DWORD PTR [rdi+r9*1],0x12345678
+    8cbc:	4a f7 04 17 78 56 34 12 	test   QWORD PTR [rdi+r10*1],0x12345678
+    8cc4:	42 f7 04 17 78 56 34 12 	test   DWORD PTR [rdi+r10*1],0x12345678
+    8ccc:	4a f7 04 1f 78 56 34 12 	test   QWORD PTR [rdi+r11*1],0x12345678
+    8cd4:	42 f7 04 1f 78 56 34 12 	test   DWORD PTR [rdi+r11*1],0x12345678
+    8cdc:	4a f7 04 27 78 56 34 12 	test   QWORD PTR [rdi+r12*1],0x12345678
+    8ce4:	42 f7 04 27 78 56 34 12 	test   DWORD PTR [rdi+r12*1],0x12345678
+    8cec:	4a f7 04 2f 78 56 34 12 	test   QWORD PTR [rdi+r13*1],0x12345678
+    8cf4:	42 f7 04 2f 78 56 34 12 	test   DWORD PTR [rdi+r13*1],0x12345678
+    8cfc:	4a f7 04 37 78 56 34 12 	test   QWORD PTR [rdi+r14*1],0x12345678
+    8d04:	42 f7 04 37 78 56 34 12 	test   DWORD PTR [rdi+r14*1],0x12345678
+    8d0c:	4a f7 04 3f 78 56 34 12 	test   QWORD PTR [rdi+r15*1],0x12345678
+    8d14:	42 f7 04 3f 78 56 34 12 	test   DWORD PTR [rdi+r15*1],0x12345678
+    8d1c:	49 f7 04 20 78 56 34 12 	test   QWORD PTR [r8+riz*1],0x12345678
+    8d24:	41 f7 04 20 78 56 34 12 	test   DWORD PTR [r8+riz*1],0x12345678
+    8d2c:	49 f7 04 00 78 56 34 12 	test   QWORD PTR [r8+rax*1],0x12345678
+    8d34:	41 f7 04 00 78 56 34 12 	test   DWORD PTR [r8+rax*1],0x12345678
+    8d3c:	49 f7 04 08 78 56 34 12 	test   QWORD PTR [r8+rcx*1],0x12345678
+    8d44:	41 f7 04 08 78 56 34 12 	test   DWORD PTR [r8+rcx*1],0x12345678
+    8d4c:	49 f7 04 10 78 56 34 12 	test   QWORD PTR [r8+rdx*1],0x12345678
+    8d54:	41 f7 04 10 78 56 34 12 	test   DWORD PTR [r8+rdx*1],0x12345678
+    8d5c:	49 f7 04 18 78 56 34 12 	test   QWORD PTR [r8+rbx*1],0x12345678
+    8d64:	41 f7 04 18 78 56 34 12 	test   DWORD PTR [r8+rbx*1],0x12345678
+    8d6c:	49 f7 04 28 78 56 34 12 	test   QWORD PTR [r8+rbp*1],0x12345678
+    8d74:	41 f7 04 28 78 56 34 12 	test   DWORD PTR [r8+rbp*1],0x12345678
+    8d7c:	49 f7 04 30 78 56 34 12 	test   QWORD PTR [r8+rsi*1],0x12345678
+    8d84:	41 f7 04 30 78 56 34 12 	test   DWORD PTR [r8+rsi*1],0x12345678
+    8d8c:	49 f7 04 38 78 56 34 12 	test   QWORD PTR [r8+rdi*1],0x12345678
+    8d94:	41 f7 04 38 78 56 34 12 	test   DWORD PTR [r8+rdi*1],0x12345678
+    8d9c:	4b f7 04 00 78 56 34 12 	test   QWORD PTR [r8+r8*1],0x12345678
+    8da4:	43 f7 04 00 78 56 34 12 	test   DWORD PTR [r8+r8*1],0x12345678
+    8dac:	4b f7 04 08 78 56 34 12 	test   QWORD PTR [r8+r9*1],0x12345678
+    8db4:	43 f7 04 08 78 56 34 12 	test   DWORD PTR [r8+r9*1],0x12345678
+    8dbc:	4b f7 04 10 78 56 34 12 	test   QWORD PTR [r8+r10*1],0x12345678
+    8dc4:	43 f7 04 10 78 56 34 12 	test   DWORD PTR [r8+r10*1],0x12345678
+    8dcc:	4b f7 04 18 78 56 34 12 	test   QWORD PTR [r8+r11*1],0x12345678
+    8dd4:	43 f7 04 18 78 56 34 12 	test   DWORD PTR [r8+r11*1],0x12345678
+    8ddc:	4b f7 04 20 78 56 34 12 	test   QWORD PTR [r8+r12*1],0x12345678
+    8de4:	43 f7 04 20 78 56 34 12 	test   DWORD PTR [r8+r12*1],0x12345678
+    8dec:	4b f7 04 28 78 56 34 12 	test   QWORD PTR [r8+r13*1],0x12345678
+    8df4:	43 f7 04 28 78 56 34 12 	test   DWORD PTR [r8+r13*1],0x12345678
+    8dfc:	4b f7 04 30 78 56 34 12 	test   QWORD PTR [r8+r14*1],0x12345678
+    8e04:	43 f7 04 30 78 56 34 12 	test   DWORD PTR [r8+r14*1],0x12345678
+    8e0c:	4b f7 04 38 78 56 34 12 	test   QWORD PTR [r8+r15*1],0x12345678
+    8e14:	43 f7 04 38 78 56 34 12 	test   DWORD PTR [r8+r15*1],0x12345678
+    8e1c:	49 f7 04 21 78 56 34 12 	test   QWORD PTR [r9+riz*1],0x12345678
+    8e24:	41 f7 04 21 78 56 34 12 	test   DWORD PTR [r9+riz*1],0x12345678
+    8e2c:	49 f7 04 01 78 56 34 12 	test   QWORD PTR [r9+rax*1],0x12345678
+    8e34:	41 f7 04 01 78 56 34 12 	test   DWORD PTR [r9+rax*1],0x12345678
+    8e3c:	49 f7 04 09 78 56 34 12 	test   QWORD PTR [r9+rcx*1],0x12345678
+    8e44:	41 f7 04 09 78 56 34 12 	test   DWORD PTR [r9+rcx*1],0x12345678
+    8e4c:	49 f7 04 11 78 56 34 12 	test   QWORD PTR [r9+rdx*1],0x12345678
+    8e54:	41 f7 04 11 78 56 34 12 	test   DWORD PTR [r9+rdx*1],0x12345678
+    8e5c:	49 f7 04 19 78 56 34 12 	test   QWORD PTR [r9+rbx*1],0x12345678
+    8e64:	41 f7 04 19 78 56 34 12 	test   DWORD PTR [r9+rbx*1],0x12345678
+    8e6c:	49 f7 04 29 78 56 34 12 	test   QWORD PTR [r9+rbp*1],0x12345678
+    8e74:	41 f7 04 29 78 56 34 12 	test   DWORD PTR [r9+rbp*1],0x12345678
+    8e7c:	49 f7 04 31 78 56 34 12 	test   QWORD PTR [r9+rsi*1],0x12345678
+    8e84:	41 f7 04 31 78 56 34 12 	test   DWORD PTR [r9+rsi*1],0x12345678
+    8e8c:	49 f7 04 39 78 56 34 12 	test   QWORD PTR [r9+rdi*1],0x12345678
+    8e94:	41 f7 04 39 78 56 34 12 	test   DWORD PTR [r9+rdi*1],0x12345678
+    8e9c:	4b f7 04 01 78 56 34 12 	test   QWORD PTR [r9+r8*1],0x12345678
+    8ea4:	43 f7 04 01 78 56 34 12 	test   DWORD PTR [r9+r8*1],0x12345678
+    8eac:	4b f7 04 09 78 56 34 12 	test   QWORD PTR [r9+r9*1],0x12345678
+    8eb4:	43 f7 04 09 78 56 34 12 	test   DWORD PTR [r9+r9*1],0x12345678
+    8ebc:	4b f7 04 11 78 56 34 12 	test   QWORD PTR [r9+r10*1],0x12345678
+    8ec4:	43 f7 04 11 78 56 34 12 	test   DWORD PTR [r9+r10*1],0x12345678
+    8ecc:	4b f7 04 19 78 56 34 12 	test   QWORD PTR [r9+r11*1],0x12345678
+    8ed4:	43 f7 04 19 78 56 34 12 	test   DWORD PTR [r9+r11*1],0x12345678
+    8edc:	4b f7 04 21 78 56 34 12 	test   QWORD PTR [r9+r12*1],0x12345678
+    8ee4:	43 f7 04 21 78 56 34 12 	test   DWORD PTR [r9+r12*1],0x12345678
+    8eec:	4b f7 04 29 78 56 34 12 	test   QWORD PTR [r9+r13*1],0x12345678
+    8ef4:	43 f7 04 29 78 56 34 12 	test   DWORD PTR [r9+r13*1],0x12345678
+    8efc:	4b f7 04 31 78 56 34 12 	test   QWORD PTR [r9+r14*1],0x12345678
+    8f04:	43 f7 04 31 78 56 34 12 	test   DWORD PTR [r9+r14*1],0x12345678
+    8f0c:	4b f7 04 39 78 56 34 12 	test   QWORD PTR [r9+r15*1],0x12345678
+    8f14:	43 f7 04 39 78 56 34 12 	test   DWORD PTR [r9+r15*1],0x12345678
+    8f1c:	49 f7 04 22 78 56 34 12 	test   QWORD PTR [r10+riz*1],0x12345678
+    8f24:	41 f7 04 22 78 56 34 12 	test   DWORD PTR [r10+riz*1],0x12345678
+    8f2c:	49 f7 04 02 78 56 34 12 	test   QWORD PTR [r10+rax*1],0x12345678
+    8f34:	41 f7 04 02 78 56 34 12 	test   DWORD PTR [r10+rax*1],0x12345678
+    8f3c:	49 f7 04 0a 78 56 34 12 	test   QWORD PTR [r10+rcx*1],0x12345678
+    8f44:	41 f7 04 0a 78 56 34 12 	test   DWORD PTR [r10+rcx*1],0x12345678
+    8f4c:	49 f7 04 12 78 56 34 12 	test   QWORD PTR [r10+rdx*1],0x12345678
+    8f54:	41 f7 04 12 78 56 34 12 	test   DWORD PTR [r10+rdx*1],0x12345678
+    8f5c:	49 f7 04 1a 78 56 34 12 	test   QWORD PTR [r10+rbx*1],0x12345678
+    8f64:	41 f7 04 1a 78 56 34 12 	test   DWORD PTR [r10+rbx*1],0x12345678
+    8f6c:	49 f7 04 2a 78 56 34 12 	test   QWORD PTR [r10+rbp*1],0x12345678
+    8f74:	41 f7 04 2a 78 56 34 12 	test   DWORD PTR [r10+rbp*1],0x12345678
+    8f7c:	49 f7 04 32 78 56 34 12 	test   QWORD PTR [r10+rsi*1],0x12345678
+    8f84:	41 f7 04 32 78 56 34 12 	test   DWORD PTR [r10+rsi*1],0x12345678
+    8f8c:	49 f7 04 3a 78 56 34 12 	test   QWORD PTR [r10+rdi*1],0x12345678
+    8f94:	41 f7 04 3a 78 56 34 12 	test   DWORD PTR [r10+rdi*1],0x12345678
+    8f9c:	4b f7 04 02 78 56 34 12 	test   QWORD PTR [r10+r8*1],0x12345678
+    8fa4:	43 f7 04 02 78 56 34 12 	test   DWORD PTR [r10+r8*1],0x12345678
+    8fac:	4b f7 04 0a 78 56 34 12 	test   QWORD PTR [r10+r9*1],0x12345678
+    8fb4:	43 f7 04 0a 78 56 34 12 	test   DWORD PTR [r10+r9*1],0x12345678
+    8fbc:	4b f7 04 12 78 56 34 12 	test   QWORD PTR [r10+r10*1],0x12345678
+    8fc4:	43 f7 04 12 78 56 34 12 	test   DWORD PTR [r10+r10*1],0x12345678
+    8fcc:	4b f7 04 1a 78 56 34 12 	test   QWORD PTR [r10+r11*1],0x12345678
+    8fd4:	43 f7 04 1a 78 56 34 12 	test   DWORD PTR [r10+r11*1],0x12345678
+    8fdc:	4b f7 04 22 78 56 34 12 	test   QWORD PTR [r10+r12*1],0x12345678
+    8fe4:	43 f7 04 22 78 56 34 12 	test   DWORD PTR [r10+r12*1],0x12345678
+    8fec:	4b f7 04 2a 78 56 34 12 	test   QWORD PTR [r10+r13*1],0x12345678
+    8ff4:	43 f7 04 2a 78 56 34 12 	test   DWORD PTR [r10+r13*1],0x12345678
+    8ffc:	4b f7 04 32 78 56 34 12 	test   QWORD PTR [r10+r14*1],0x12345678
+    9004:	43 f7 04 32 78 56 34 12 	test   DWORD PTR [r10+r14*1],0x12345678
+    900c:	4b f7 04 3a 78 56 34 12 	test   QWORD PTR [r10+r15*1],0x12345678
+    9014:	43 f7 04 3a 78 56 34 12 	test   DWORD PTR [r10+r15*1],0x12345678
+    901c:	49 f7 04 23 78 56 34 12 	test   QWORD PTR [r11+riz*1],0x12345678
+    9024:	41 f7 04 23 78 56 34 12 	test   DWORD PTR [r11+riz*1],0x12345678
+    902c:	49 f7 04 03 78 56 34 12 	test   QWORD PTR [r11+rax*1],0x12345678
+    9034:	41 f7 04 03 78 56 34 12 	test   DWORD PTR [r11+rax*1],0x12345678
+    903c:	49 f7 04 0b 78 56 34 12 	test   QWORD PTR [r11+rcx*1],0x12345678
+    9044:	41 f7 04 0b 78 56 34 12 	test   DWORD PTR [r11+rcx*1],0x12345678
+    904c:	49 f7 04 13 78 56 34 12 	test   QWORD PTR [r11+rdx*1],0x12345678
+    9054:	41 f7 04 13 78 56 34 12 	test   DWORD PTR [r11+rdx*1],0x12345678
+    905c:	49 f7 04 1b 78 56 34 12 	test   QWORD PTR [r11+rbx*1],0x12345678
+    9064:	41 f7 04 1b 78 56 34 12 	test   DWORD PTR [r11+rbx*1],0x12345678
+    906c:	49 f7 04 2b 78 56 34 12 	test   QWORD PTR [r11+rbp*1],0x12345678
+    9074:	41 f7 04 2b 78 56 34 12 	test   DWORD PTR [r11+rbp*1],0x12345678
+    907c:	49 f7 04 33 78 56 34 12 	test   QWORD PTR [r11+rsi*1],0x12345678
+    9084:	41 f7 04 33 78 56 34 12 	test   DWORD PTR [r11+rsi*1],0x12345678
+    908c:	49 f7 04 3b 78 56 34 12 	test   QWORD PTR [r11+rdi*1],0x12345678
+    9094:	41 f7 04 3b 78 56 34 12 	test   DWORD PTR [r11+rdi*1],0x12345678
+    909c:	4b f7 04 03 78 56 34 12 	test   QWORD PTR [r11+r8*1],0x12345678
+    90a4:	43 f7 04 03 78 56 34 12 	test   DWORD PTR [r11+r8*1],0x12345678
+    90ac:	4b f7 04 0b 78 56 34 12 	test   QWORD PTR [r11+r9*1],0x12345678
+    90b4:	43 f7 04 0b 78 56 34 12 	test   DWORD PTR [r11+r9*1],0x12345678
+    90bc:	4b f7 04 13 78 56 34 12 	test   QWORD PTR [r11+r10*1],0x12345678
+    90c4:	43 f7 04 13 78 56 34 12 	test   DWORD PTR [r11+r10*1],0x12345678
+    90cc:	4b f7 04 1b 78 56 34 12 	test   QWORD PTR [r11+r11*1],0x12345678
+    90d4:	43 f7 04 1b 78 56 34 12 	test   DWORD PTR [r11+r11*1],0x12345678
+    90dc:	4b f7 04 23 78 56 34 12 	test   QWORD PTR [r11+r12*1],0x12345678
+    90e4:	43 f7 04 23 78 56 34 12 	test   DWORD PTR [r11+r12*1],0x12345678
+    90ec:	4b f7 04 2b 78 56 34 12 	test   QWORD PTR [r11+r13*1],0x12345678
+    90f4:	43 f7 04 2b 78 56 34 12 	test   DWORD PTR [r11+r13*1],0x12345678
+    90fc:	4b f7 04 33 78 56 34 12 	test   QWORD PTR [r11+r14*1],0x12345678
+    9104:	43 f7 04 33 78 56 34 12 	test   DWORD PTR [r11+r14*1],0x12345678
+    910c:	4b f7 04 3b 78 56 34 12 	test   QWORD PTR [r11+r15*1],0x12345678
+    9114:	43 f7 04 3b 78 56 34 12 	test   DWORD PTR [r11+r15*1],0x12345678
+    911c:	49 f7 04 24 78 56 34 12 	test   QWORD PTR [r12],0x12345678
+    9124:	41 f7 04 24 78 56 34 12 	test   DWORD PTR [r12],0x12345678
+    912c:	49 f7 04 04 78 56 34 12 	test   QWORD PTR [r12+rax*1],0x12345678
+    9134:	41 f7 04 04 78 56 34 12 	test   DWORD PTR [r12+rax*1],0x12345678
+    913c:	49 f7 04 0c 78 56 34 12 	test   QWORD PTR [r12+rcx*1],0x12345678
+    9144:	41 f7 04 0c 78 56 34 12 	test   DWORD PTR [r12+rcx*1],0x12345678
+    914c:	49 f7 04 14 78 56 34 12 	test   QWORD PTR [r12+rdx*1],0x12345678
+    9154:	41 f7 04 14 78 56 34 12 	test   DWORD PTR [r12+rdx*1],0x12345678
+    915c:	49 f7 04 1c 78 56 34 12 	test   QWORD PTR [r12+rbx*1],0x12345678
+    9164:	41 f7 04 1c 78 56 34 12 	test   DWORD PTR [r12+rbx*1],0x12345678
+    916c:	49 f7 04 2c 78 56 34 12 	test   QWORD PTR [r12+rbp*1],0x12345678
+    9174:	41 f7 04 2c 78 56 34 12 	test   DWORD PTR [r12+rbp*1],0x12345678
+    917c:	49 f7 04 34 78 56 34 12 	test   QWORD PTR [r12+rsi*1],0x12345678
+    9184:	41 f7 04 34 78 56 34 12 	test   DWORD PTR [r12+rsi*1],0x12345678
+    918c:	49 f7 04 3c 78 56 34 12 	test   QWORD PTR [r12+rdi*1],0x12345678
+    9194:	41 f7 04 3c 78 56 34 12 	test   DWORD PTR [r12+rdi*1],0x12345678
+    919c:	4b f7 04 04 78 56 34 12 	test   QWORD PTR [r12+r8*1],0x12345678
+    91a4:	43 f7 04 04 78 56 34 12 	test   DWORD PTR [r12+r8*1],0x12345678
+    91ac:	4b f7 04 0c 78 56 34 12 	test   QWORD PTR [r12+r9*1],0x12345678
+    91b4:	43 f7 04 0c 78 56 34 12 	test   DWORD PTR [r12+r9*1],0x12345678
+    91bc:	4b f7 04 14 78 56 34 12 	test   QWORD PTR [r12+r10*1],0x12345678
+    91c4:	43 f7 04 14 78 56 34 12 	test   DWORD PTR [r12+r10*1],0x12345678
+    91cc:	4b f7 04 1c 78 56 34 12 	test   QWORD PTR [r12+r11*1],0x12345678
+    91d4:	43 f7 04 1c 78 56 34 12 	test   DWORD PTR [r12+r11*1],0x12345678
+    91dc:	4b f7 04 24 78 56 34 12 	test   QWORD PTR [r12+r12*1],0x12345678
+    91e4:	43 f7 04 24 78 56 34 12 	test   DWORD PTR [r12+r12*1],0x12345678
+    91ec:	4b f7 04 2c 78 56 34 12 	test   QWORD PTR [r12+r13*1],0x12345678
+    91f4:	43 f7 04 2c 78 56 34 12 	test   DWORD PTR [r12+r13*1],0x12345678
+    91fc:	4b f7 04 34 78 56 34 12 	test   QWORD PTR [r12+r14*1],0x12345678
+    9204:	43 f7 04 34 78 56 34 12 	test   DWORD PTR [r12+r14*1],0x12345678
+    920c:	4b f7 04 3c 78 56 34 12 	test   QWORD PTR [r12+r15*1],0x12345678
+    9214:	43 f7 04 3c 78 56 34 12 	test   DWORD PTR [r12+r15*1],0x12345678
+    921c:	4a f7 04 2c 78 56 34 12 	test   QWORD PTR [rsp+r13*1],0x12345678
+    9224:	42 f7 04 2c 78 56 34 12 	test   DWORD PTR [rsp+r13*1],0x12345678
+    922c:	4a f7 04 28 78 56 34 12 	test   QWORD PTR [rax+r13*1],0x12345678
+    9234:	42 f7 04 28 78 56 34 12 	test   DWORD PTR [rax+r13*1],0x12345678
+    923c:	4a f7 04 29 78 56 34 12 	test   QWORD PTR [rcx+r13*1],0x12345678
+    9244:	42 f7 04 29 78 56 34 12 	test   DWORD PTR [rcx+r13*1],0x12345678
+    924c:	4a f7 04 2a 78 56 34 12 	test   QWORD PTR [rdx+r13*1],0x12345678
+    9254:	42 f7 04 2a 78 56 34 12 	test   DWORD PTR [rdx+r13*1],0x12345678
+    925c:	4a f7 04 2b 78 56 34 12 	test   QWORD PTR [rbx+r13*1],0x12345678
+    9264:	42 f7 04 2b 78 56 34 12 	test   DWORD PTR [rbx+r13*1],0x12345678
+    926c:	4a f7 44 2d 00 78 56 34 12 	test   QWORD PTR [rbp+r13*1+0x0],0x12345678
+    9275:	42 f7 44 2d 00 78 56 34 12 	test   DWORD PTR [rbp+r13*1+0x0],0x12345678
+    927e:	4a f7 04 2e 78 56 34 12 	test   QWORD PTR [rsi+r13*1],0x12345678
+    9286:	42 f7 04 2e 78 56 34 12 	test   DWORD PTR [rsi+r13*1],0x12345678
+    928e:	4a f7 04 2f 78 56 34 12 	test   QWORD PTR [rdi+r13*1],0x12345678
+    9296:	42 f7 04 2f 78 56 34 12 	test   DWORD PTR [rdi+r13*1],0x12345678
+    929e:	4b f7 04 28 78 56 34 12 	test   QWORD PTR [r8+r13*1],0x12345678
+    92a6:	43 f7 04 28 78 56 34 12 	test   DWORD PTR [r8+r13*1],0x12345678
+    92ae:	4b f7 04 29 78 56 34 12 	test   QWORD PTR [r9+r13*1],0x12345678
+    92b6:	43 f7 04 29 78 56 34 12 	test   DWORD PTR [r9+r13*1],0x12345678
+    92be:	4b f7 04 2a 78 56 34 12 	test   QWORD PTR [r10+r13*1],0x12345678
+    92c6:	43 f7 04 2a 78 56 34 12 	test   DWORD PTR [r10+r13*1],0x12345678
+    92ce:	4b f7 04 2b 78 56 34 12 	test   QWORD PTR [r11+r13*1],0x12345678
+    92d6:	43 f7 04 2b 78 56 34 12 	test   DWORD PTR [r11+r13*1],0x12345678
+    92de:	4b f7 04 2c 78 56 34 12 	test   QWORD PTR [r12+r13*1],0x12345678
+    92e6:	43 f7 04 2c 78 56 34 12 	test   DWORD PTR [r12+r13*1],0x12345678
+    92ee:	4b f7 44 2d 00 78 56 34 12 	test   QWORD PTR [r13+r13*1+0x0],0x12345678
+    92f7:	43 f7 44 2d 00 78 56 34 12 	test   DWORD PTR [r13+r13*1+0x0],0x12345678
+    9300:	4b f7 04 2e 78 56 34 12 	test   QWORD PTR [r14+r13*1],0x12345678
+    9308:	43 f7 04 2e 78 56 34 12 	test   DWORD PTR [r14+r13*1],0x12345678
+    9310:	4b f7 04 2f 78 56 34 12 	test   QWORD PTR [r15+r13*1],0x12345678
+    9318:	43 f7 04 2f 78 56 34 12 	test   DWORD PTR [r15+r13*1],0x12345678
+    9320:	49 f7 04 26 78 56 34 12 	test   QWORD PTR [r14+riz*1],0x12345678
+    9328:	41 f7 04 26 78 56 34 12 	test   DWORD PTR [r14+riz*1],0x12345678
+    9330:	49 f7 04 06 78 56 34 12 	test   QWORD PTR [r14+rax*1],0x12345678
+    9338:	41 f7 04 06 78 56 34 12 	test   DWORD PTR [r14+rax*1],0x12345678
+    9340:	49 f7 04 0e 78 56 34 12 	test   QWORD PTR [r14+rcx*1],0x12345678
+    9348:	41 f7 04 0e 78 56 34 12 	test   DWORD PTR [r14+rcx*1],0x12345678
+    9350:	49 f7 04 16 78 56 34 12 	test   QWORD PTR [r14+rdx*1],0x12345678
+    9358:	41 f7 04 16 78 56 34 12 	test   DWORD PTR [r14+rdx*1],0x12345678
+    9360:	49 f7 04 1e 78 56 34 12 	test   QWORD PTR [r14+rbx*1],0x12345678
+    9368:	41 f7 04 1e 78 56 34 12 	test   DWORD PTR [r14+rbx*1],0x12345678
+    9370:	49 f7 04 2e 78 56 34 12 	test   QWORD PTR [r14+rbp*1],0x12345678
+    9378:	41 f7 04 2e 78 56 34 12 	test   DWORD PTR [r14+rbp*1],0x12345678
+    9380:	49 f7 04 36 78 56 34 12 	test   QWORD PTR [r14+rsi*1],0x12345678
+    9388:	41 f7 04 36 78 56 34 12 	test   DWORD PTR [r14+rsi*1],0x12345678
+    9390:	49 f7 04 3e 78 56 34 12 	test   QWORD PTR [r14+rdi*1],0x12345678
+    9398:	41 f7 04 3e 78 56 34 12 	test   DWORD PTR [r14+rdi*1],0x12345678
+    93a0:	4b f7 04 06 78 56 34 12 	test   QWORD PTR [r14+r8*1],0x12345678
+    93a8:	43 f7 04 06 78 56 34 12 	test   DWORD PTR [r14+r8*1],0x12345678
+    93b0:	4b f7 04 0e 78 56 34 12 	test   QWORD PTR [r14+r9*1],0x12345678
+    93b8:	43 f7 04 0e 78 56 34 12 	test   DWORD PTR [r14+r9*1],0x12345678
+    93c0:	4b f7 04 16 78 56 34 12 	test   QWORD PTR [r14+r10*1],0x12345678
+    93c8:	43 f7 04 16 78 56 34 12 	test   DWORD PTR [r14+r10*1],0x12345678
+    93d0:	4b f7 04 1e 78 56 34 12 	test   QWORD PTR [r14+r11*1],0x12345678
+    93d8:	43 f7 04 1e 78 56 34 12 	test   DWORD PTR [r14+r11*1],0x12345678
+    93e0:	4b f7 04 26 78 56 34 12 	test   QWORD PTR [r14+r12*1],0x12345678
+    93e8:	43 f7 04 26 78 56 34 12 	test   DWORD PTR [r14+r12*1],0x12345678
+    93f0:	4b f7 04 2e 78 56 34 12 	test   QWORD PTR [r14+r13*1],0x12345678
+    93f8:	43 f7 04 2e 78 56 34 12 	test   DWORD PTR [r14+r13*1],0x12345678
+    9400:	4b f7 04 36 78 56 34 12 	test   QWORD PTR [r14+r14*1],0x12345678
+    9408:	43 f7 04 36 78 56 34 12 	test   DWORD PTR [r14+r14*1],0x12345678
+    9410:	4b f7 04 3e 78 56 34 12 	test   QWORD PTR [r14+r15*1],0x12345678
+    9418:	43 f7 04 3e 78 56 34 12 	test   DWORD PTR [r14+r15*1],0x12345678
+    9420:	49 f7 04 27 78 56 34 12 	test   QWORD PTR [r15+riz*1],0x12345678
+    9428:	41 f7 04 27 78 56 34 12 	test   DWORD PTR [r15+riz*1],0x12345678
+    9430:	49 f7 04 07 78 56 34 12 	test   QWORD PTR [r15+rax*1],0x12345678
+    9438:	41 f7 04 07 78 56 34 12 	test   DWORD PTR [r15+rax*1],0x12345678
+    9440:	49 f7 04 0f 78 56 34 12 	test   QWORD PTR [r15+rcx*1],0x12345678
+    9448:	41 f7 04 0f 78 56 34 12 	test   DWORD PTR [r15+rcx*1],0x12345678
+    9450:	49 f7 04 17 78 56 34 12 	test   QWORD PTR [r15+rdx*1],0x12345678
+    9458:	41 f7 04 17 78 56 34 12 	test   DWORD PTR [r15+rdx*1],0x12345678
+    9460:	49 f7 04 1f 78 56 34 12 	test   QWORD PTR [r15+rbx*1],0x12345678
+    9468:	41 f7 04 1f 78 56 34 12 	test   DWORD PTR [r15+rbx*1],0x12345678
+    9470:	49 f7 04 2f 78 56 34 12 	test   QWORD PTR [r15+rbp*1],0x12345678
+    9478:	41 f7 04 2f 78 56 34 12 	test   DWORD PTR [r15+rbp*1],0x12345678
+    9480:	49 f7 04 37 78 56 34 12 	test   QWORD PTR [r15+rsi*1],0x12345678
+    9488:	41 f7 04 37 78 56 34 12 	test   DWORD PTR [r15+rsi*1],0x12345678
+    9490:	49 f7 04 3f 78 56 34 12 	test   QWORD PTR [r15+rdi*1],0x12345678
+    9498:	41 f7 04 3f 78 56 34 12 	test   DWORD PTR [r15+rdi*1],0x12345678
+    94a0:	4b f7 04 07 78 56 34 12 	test   QWORD PTR [r15+r8*1],0x12345678
+    94a8:	43 f7 04 07 78 56 34 12 	test   DWORD PTR [r15+r8*1],0x12345678
+    94b0:	4b f7 04 0f 78 56 34 12 	test   QWORD PTR [r15+r9*1],0x12345678
+    94b8:	43 f7 04 0f 78 56 34 12 	test   DWORD PTR [r15+r9*1],0x12345678
+    94c0:	4b f7 04 17 78 56 34 12 	test   QWORD PTR [r15+r10*1],0x12345678
+    94c8:	43 f7 04 17 78 56 34 12 	test   DWORD PTR [r15+r10*1],0x12345678
+    94d0:	4b f7 04 1f 78 56 34 12 	test   QWORD PTR [r15+r11*1],0x12345678
+    94d8:	43 f7 04 1f 78 56 34 12 	test   DWORD PTR [r15+r11*1],0x12345678
+    94e0:	4b f7 04 27 78 56 34 12 	test   QWORD PTR [r15+r12*1],0x12345678
+    94e8:	43 f7 04 27 78 56 34 12 	test   DWORD PTR [r15+r12*1],0x12345678
+    94f0:	4b f7 04 2f 78 56 34 12 	test   QWORD PTR [r15+r13*1],0x12345678
+    94f8:	43 f7 04 2f 78 56 34 12 	test   DWORD PTR [r15+r13*1],0x12345678
+    9500:	4b f7 04 37 78 56 34 12 	test   QWORD PTR [r15+r14*1],0x12345678
+    9508:	43 f7 04 37 78 56 34 12 	test   DWORD PTR [r15+r14*1],0x12345678
+    9510:	4b f7 04 3f 78 56 34 12 	test   QWORD PTR [r15+r15*1],0x12345678
+    9518:	43 f7 04 3f 78 56 34 12 	test   DWORD PTR [r15+r15*1],0x12345678
+    9520:	f6 04 60 12          	test   BYTE PTR [rax+riz*2],0x12
+    9524:	f6 04 40 12          	test   BYTE PTR [rax+rax*2],0x12
+    9528:	f6 04 48 12          	test   BYTE PTR [rax+rcx*2],0x12
+    952c:	f6 04 50 12          	test   BYTE PTR [rax+rdx*2],0x12
+    9530:	f6 04 58 12          	test   BYTE PTR [rax+rbx*2],0x12
+    9534:	f6 04 68 12          	test   BYTE PTR [rax+rbp*2],0x12
+    9538:	f6 04 70 12          	test   BYTE PTR [rax+rsi*2],0x12
+    953c:	f6 04 78 12          	test   BYTE PTR [rax+rdi*2],0x12
+    9540:	42 f6 04 40 12       	test   BYTE PTR [rax+r8*2],0x12
+    9545:	42 f6 04 48 12       	test   BYTE PTR [rax+r9*2],0x12
+    954a:	42 f6 04 50 12       	test   BYTE PTR [rax+r10*2],0x12
+    954f:	42 f6 04 58 12       	test   BYTE PTR [rax+r11*2],0x12
+    9554:	42 f6 04 60 12       	test   BYTE PTR [rax+r12*2],0x12
+    9559:	42 f6 04 68 12       	test   BYTE PTR [rax+r13*2],0x12
+    955e:	42 f6 04 70 12       	test   BYTE PTR [rax+r14*2],0x12
+    9563:	42 f6 04 78 12       	test   BYTE PTR [rax+r15*2],0x12
+    9568:	f6 04 61 12          	test   BYTE PTR [rcx+riz*2],0x12
+    956c:	f6 04 41 12          	test   BYTE PTR [rcx+rax*2],0x12
+    9570:	f6 04 49 12          	test   BYTE PTR [rcx+rcx*2],0x12
+    9574:	f6 04 51 12          	test   BYTE PTR [rcx+rdx*2],0x12
+    9578:	f6 04 59 12          	test   BYTE PTR [rcx+rbx*2],0x12
+    957c:	f6 04 69 12          	test   BYTE PTR [rcx+rbp*2],0x12
+    9580:	f6 04 71 12          	test   BYTE PTR [rcx+rsi*2],0x12
+    9584:	f6 04 79 12          	test   BYTE PTR [rcx+rdi*2],0x12
+    9588:	42 f6 04 41 12       	test   BYTE PTR [rcx+r8*2],0x12
+    958d:	42 f6 04 49 12       	test   BYTE PTR [rcx+r9*2],0x12
+    9592:	42 f6 04 51 12       	test   BYTE PTR [rcx+r10*2],0x12
+    9597:	42 f6 04 59 12       	test   BYTE PTR [rcx+r11*2],0x12
+    959c:	42 f6 04 61 12       	test   BYTE PTR [rcx+r12*2],0x12
+    95a1:	42 f6 04 69 12       	test   BYTE PTR [rcx+r13*2],0x12
+    95a6:	42 f6 04 71 12       	test   BYTE PTR [rcx+r14*2],0x12
+    95ab:	42 f6 04 79 12       	test   BYTE PTR [rcx+r15*2],0x12
+    95b0:	f6 04 62 12          	test   BYTE PTR [rdx+riz*2],0x12
+    95b4:	f6 04 42 12          	test   BYTE PTR [rdx+rax*2],0x12
+    95b8:	f6 04 4a 12          	test   BYTE PTR [rdx+rcx*2],0x12
+    95bc:	f6 04 52 12          	test   BYTE PTR [rdx+rdx*2],0x12
+    95c0:	f6 04 5a 12          	test   BYTE PTR [rdx+rbx*2],0x12
+    95c4:	f6 04 6a 12          	test   BYTE PTR [rdx+rbp*2],0x12
+    95c8:	f6 04 72 12          	test   BYTE PTR [rdx+rsi*2],0x12
+    95cc:	f6 04 7a 12          	test   BYTE PTR [rdx+rdi*2],0x12
+    95d0:	42 f6 04 42 12       	test   BYTE PTR [rdx+r8*2],0x12
+    95d5:	42 f6 04 4a 12       	test   BYTE PTR [rdx+r9*2],0x12
+    95da:	42 f6 04 52 12       	test   BYTE PTR [rdx+r10*2],0x12
+    95df:	42 f6 04 5a 12       	test   BYTE PTR [rdx+r11*2],0x12
+    95e4:	42 f6 04 62 12       	test   BYTE PTR [rdx+r12*2],0x12
+    95e9:	42 f6 04 6a 12       	test   BYTE PTR [rdx+r13*2],0x12
+    95ee:	42 f6 04 72 12       	test   BYTE PTR [rdx+r14*2],0x12
+    95f3:	42 f6 04 7a 12       	test   BYTE PTR [rdx+r15*2],0x12
+    95f8:	f6 04 63 12          	test   BYTE PTR [rbx+riz*2],0x12
+    95fc:	f6 04 43 12          	test   BYTE PTR [rbx+rax*2],0x12
+    9600:	f6 04 4b 12          	test   BYTE PTR [rbx+rcx*2],0x12
+    9604:	f6 04 53 12          	test   BYTE PTR [rbx+rdx*2],0x12
+    9608:	f6 04 5b 12          	test   BYTE PTR [rbx+rbx*2],0x12
+    960c:	f6 04 6b 12          	test   BYTE PTR [rbx+rbp*2],0x12
+    9610:	f6 04 73 12          	test   BYTE PTR [rbx+rsi*2],0x12
+    9614:	f6 04 7b 12          	test   BYTE PTR [rbx+rdi*2],0x12
+    9618:	42 f6 04 43 12       	test   BYTE PTR [rbx+r8*2],0x12
+    961d:	42 f6 04 4b 12       	test   BYTE PTR [rbx+r9*2],0x12
+    9622:	42 f6 04 53 12       	test   BYTE PTR [rbx+r10*2],0x12
+    9627:	42 f6 04 5b 12       	test   BYTE PTR [rbx+r11*2],0x12
+    962c:	42 f6 04 63 12       	test   BYTE PTR [rbx+r12*2],0x12
+    9631:	42 f6 04 6b 12       	test   BYTE PTR [rbx+r13*2],0x12
+    9636:	42 f6 04 73 12       	test   BYTE PTR [rbx+r14*2],0x12
+    963b:	42 f6 04 7b 12       	test   BYTE PTR [rbx+r15*2],0x12
+    9640:	f6 04 64 12          	test   BYTE PTR [rsp+riz*2],0x12
+    9644:	f6 04 44 12          	test   BYTE PTR [rsp+rax*2],0x12
+    9648:	f6 04 4c 12          	test   BYTE PTR [rsp+rcx*2],0x12
+    964c:	f6 04 54 12          	test   BYTE PTR [rsp+rdx*2],0x12
+    9650:	f6 04 5c 12          	test   BYTE PTR [rsp+rbx*2],0x12
+    9654:	f6 04 6c 12          	test   BYTE PTR [rsp+rbp*2],0x12
+    9658:	f6 04 74 12          	test   BYTE PTR [rsp+rsi*2],0x12
+    965c:	f6 04 7c 12          	test   BYTE PTR [rsp+rdi*2],0x12
+    9660:	42 f6 04 44 12       	test   BYTE PTR [rsp+r8*2],0x12
+    9665:	42 f6 04 4c 12       	test   BYTE PTR [rsp+r9*2],0x12
+    966a:	42 f6 04 54 12       	test   BYTE PTR [rsp+r10*2],0x12
+    966f:	42 f6 04 5c 12       	test   BYTE PTR [rsp+r11*2],0x12
+    9674:	42 f6 04 64 12       	test   BYTE PTR [rsp+r12*2],0x12
+    9679:	42 f6 04 6c 12       	test   BYTE PTR [rsp+r13*2],0x12
+    967e:	42 f6 04 74 12       	test   BYTE PTR [rsp+r14*2],0x12
+    9683:	42 f6 04 7c 12       	test   BYTE PTR [rsp+r15*2],0x12
+    9688:	f6 44 65 00 12       	test   BYTE PTR [rbp+riz*2+0x0],0x12
+    968d:	f6 44 45 00 12       	test   BYTE PTR [rbp+rax*2+0x0],0x12
+    9692:	f6 44 4d 00 12       	test   BYTE PTR [rbp+rcx*2+0x0],0x12
+    9697:	f6 44 55 00 12       	test   BYTE PTR [rbp+rdx*2+0x0],0x12
+    969c:	f6 44 5d 00 12       	test   BYTE PTR [rbp+rbx*2+0x0],0x12
+    96a1:	f6 44 6d 00 12       	test   BYTE PTR [rbp+rbp*2+0x0],0x12
+    96a6:	f6 44 75 00 12       	test   BYTE PTR [rbp+rsi*2+0x0],0x12
+    96ab:	f6 44 7d 00 12       	test   BYTE PTR [rbp+rdi*2+0x0],0x12
+    96b0:	42 f6 44 45 00 12    	test   BYTE PTR [rbp+r8*2+0x0],0x12
+    96b6:	42 f6 44 4d 00 12    	test   BYTE PTR [rbp+r9*2+0x0],0x12
+    96bc:	42 f6 44 55 00 12    	test   BYTE PTR [rbp+r10*2+0x0],0x12
+    96c2:	42 f6 44 5d 00 12    	test   BYTE PTR [rbp+r11*2+0x0],0x12
+    96c8:	42 f6 44 65 00 12    	test   BYTE PTR [rbp+r12*2+0x0],0x12
+    96ce:	42 f6 44 6d 00 12    	test   BYTE PTR [rbp+r13*2+0x0],0x12
+    96d4:	42 f6 44 75 00 12    	test   BYTE PTR [rbp+r14*2+0x0],0x12
+    96da:	42 f6 44 7d 00 12    	test   BYTE PTR [rbp+r15*2+0x0],0x12
+    96e0:	f6 04 66 12          	test   BYTE PTR [rsi+riz*2],0x12
+    96e4:	f6 04 46 12          	test   BYTE PTR [rsi+rax*2],0x12
+    96e8:	f6 04 4e 12          	test   BYTE PTR [rsi+rcx*2],0x12
+    96ec:	f6 04 56 12          	test   BYTE PTR [rsi+rdx*2],0x12
+    96f0:	f6 04 5e 12          	test   BYTE PTR [rsi+rbx*2],0x12
+    96f4:	f6 04 6e 12          	test   BYTE PTR [rsi+rbp*2],0x12
+    96f8:	f6 04 76 12          	test   BYTE PTR [rsi+rsi*2],0x12
+    96fc:	f6 04 7e 12          	test   BYTE PTR [rsi+rdi*2],0x12
+    9700:	42 f6 04 46 12       	test   BYTE PTR [rsi+r8*2],0x12
+    9705:	42 f6 04 4e 12       	test   BYTE PTR [rsi+r9*2],0x12
+    970a:	42 f6 04 56 12       	test   BYTE PTR [rsi+r10*2],0x12
+    970f:	42 f6 04 5e 12       	test   BYTE PTR [rsi+r11*2],0x12
+    9714:	42 f6 04 66 12       	test   BYTE PTR [rsi+r12*2],0x12
+    9719:	42 f6 04 6e 12       	test   BYTE PTR [rsi+r13*2],0x12
+    971e:	42 f6 04 76 12       	test   BYTE PTR [rsi+r14*2],0x12
+    9723:	42 f6 04 7e 12       	test   BYTE PTR [rsi+r15*2],0x12
+    9728:	f6 04 67 12          	test   BYTE PTR [rdi+riz*2],0x12
+    972c:	f6 04 47 12          	test   BYTE PTR [rdi+rax*2],0x12
+    9730:	f6 04 4f 12          	test   BYTE PTR [rdi+rcx*2],0x12
+    9734:	f6 04 57 12          	test   BYTE PTR [rdi+rdx*2],0x12
+    9738:	f6 04 5f 12          	test   BYTE PTR [rdi+rbx*2],0x12
+    973c:	f6 04 6f 12          	test   BYTE PTR [rdi+rbp*2],0x12
+    9740:	f6 04 77 12          	test   BYTE PTR [rdi+rsi*2],0x12
+    9744:	f6 04 7f 12          	test   BYTE PTR [rdi+rdi*2],0x12
+    9748:	42 f6 04 47 12       	test   BYTE PTR [rdi+r8*2],0x12
+    974d:	42 f6 04 4f 12       	test   BYTE PTR [rdi+r9*2],0x12
+    9752:	42 f6 04 57 12       	test   BYTE PTR [rdi+r10*2],0x12
+    9757:	42 f6 04 5f 12       	test   BYTE PTR [rdi+r11*2],0x12
+    975c:	42 f6 04 67 12       	test   BYTE PTR [rdi+r12*2],0x12
+    9761:	42 f6 04 6f 12       	test   BYTE PTR [rdi+r13*2],0x12
+    9766:	42 f6 04 77 12       	test   BYTE PTR [rdi+r14*2],0x12
+    976b:	42 f6 04 7f 12       	test   BYTE PTR [rdi+r15*2],0x12
+    9770:	41 f6 04 60 12       	test   BYTE PTR [r8+riz*2],0x12
+    9775:	41 f6 04 40 12       	test   BYTE PTR [r8+rax*2],0x12
+    977a:	41 f6 04 48 12       	test   BYTE PTR [r8+rcx*2],0x12
+    977f:	41 f6 04 50 12       	test   BYTE PTR [r8+rdx*2],0x12
+    9784:	41 f6 04 58 12       	test   BYTE PTR [r8+rbx*2],0x12
+    9789:	41 f6 04 68 12       	test   BYTE PTR [r8+rbp*2],0x12
+    978e:	41 f6 04 70 12       	test   BYTE PTR [r8+rsi*2],0x12
+    9793:	41 f6 04 78 12       	test   BYTE PTR [r8+rdi*2],0x12
+    9798:	43 f6 04 40 12       	test   BYTE PTR [r8+r8*2],0x12
+    979d:	43 f6 04 48 12       	test   BYTE PTR [r8+r9*2],0x12
+    97a2:	43 f6 04 50 12       	test   BYTE PTR [r8+r10*2],0x12
+    97a7:	43 f6 04 58 12       	test   BYTE PTR [r8+r11*2],0x12
+    97ac:	43 f6 04 60 12       	test   BYTE PTR [r8+r12*2],0x12
+    97b1:	43 f6 04 68 12       	test   BYTE PTR [r8+r13*2],0x12
+    97b6:	43 f6 04 70 12       	test   BYTE PTR [r8+r14*2],0x12
+    97bb:	43 f6 04 78 12       	test   BYTE PTR [r8+r15*2],0x12
+    97c0:	41 f6 04 61 12       	test   BYTE PTR [r9+riz*2],0x12
+    97c5:	41 f6 04 41 12       	test   BYTE PTR [r9+rax*2],0x12
+    97ca:	41 f6 04 49 12       	test   BYTE PTR [r9+rcx*2],0x12
+    97cf:	41 f6 04 51 12       	test   BYTE PTR [r9+rdx*2],0x12
+    97d4:	41 f6 04 59 12       	test   BYTE PTR [r9+rbx*2],0x12
+    97d9:	41 f6 04 69 12       	test   BYTE PTR [r9+rbp*2],0x12
+    97de:	41 f6 04 71 12       	test   BYTE PTR [r9+rsi*2],0x12
+    97e3:	41 f6 04 79 12       	test   BYTE PTR [r9+rdi*2],0x12
+    97e8:	43 f6 04 41 12       	test   BYTE PTR [r9+r8*2],0x12
+    97ed:	43 f6 04 49 12       	test   BYTE PTR [r9+r9*2],0x12
+    97f2:	43 f6 04 51 12       	test   BYTE PTR [r9+r10*2],0x12
+    97f7:	43 f6 04 59 12       	test   BYTE PTR [r9+r11*2],0x12
+    97fc:	43 f6 04 61 12       	test   BYTE PTR [r9+r12*2],0x12
+    9801:	43 f6 04 69 12       	test   BYTE PTR [r9+r13*2],0x12
+    9806:	43 f6 04 71 12       	test   BYTE PTR [r9+r14*2],0x12
+    980b:	43 f6 04 79 12       	test   BYTE PTR [r9+r15*2],0x12
+    9810:	41 f6 04 62 12       	test   BYTE PTR [r10+riz*2],0x12
+    9815:	41 f6 04 42 12       	test   BYTE PTR [r10+rax*2],0x12
+    981a:	41 f6 04 4a 12       	test   BYTE PTR [r10+rcx*2],0x12
+    981f:	41 f6 04 52 12       	test   BYTE PTR [r10+rdx*2],0x12
+    9824:	41 f6 04 5a 12       	test   BYTE PTR [r10+rbx*2],0x12
+    9829:	41 f6 04 6a 12       	test   BYTE PTR [r10+rbp*2],0x12
+    982e:	41 f6 04 72 12       	test   BYTE PTR [r10+rsi*2],0x12
+    9833:	41 f6 04 7a 12       	test   BYTE PTR [r10+rdi*2],0x12
+    9838:	43 f6 04 42 12       	test   BYTE PTR [r10+r8*2],0x12
+    983d:	43 f6 04 4a 12       	test   BYTE PTR [r10+r9*2],0x12
+    9842:	43 f6 04 52 12       	test   BYTE PTR [r10+r10*2],0x12
+    9847:	43 f6 04 5a 12       	test   BYTE PTR [r10+r11*2],0x12
+    984c:	43 f6 04 62 12       	test   BYTE PTR [r10+r12*2],0x12
+    9851:	43 f6 04 6a 12       	test   BYTE PTR [r10+r13*2],0x12
+    9856:	43 f6 04 72 12       	test   BYTE PTR [r10+r14*2],0x12
+    985b:	43 f6 04 7a 12       	test   BYTE PTR [r10+r15*2],0x12
+    9860:	41 f6 04 63 12       	test   BYTE PTR [r11+riz*2],0x12
+    9865:	41 f6 04 43 12       	test   BYTE PTR [r11+rax*2],0x12
+    986a:	41 f6 04 4b 12       	test   BYTE PTR [r11+rcx*2],0x12
+    986f:	41 f6 04 53 12       	test   BYTE PTR [r11+rdx*2],0x12
+    9874:	41 f6 04 5b 12       	test   BYTE PTR [r11+rbx*2],0x12
+    9879:	41 f6 04 6b 12       	test   BYTE PTR [r11+rbp*2],0x12
+    987e:	41 f6 04 73 12       	test   BYTE PTR [r11+rsi*2],0x12
+    9883:	41 f6 04 7b 12       	test   BYTE PTR [r11+rdi*2],0x12
+    9888:	43 f6 04 43 12       	test   BYTE PTR [r11+r8*2],0x12
+    988d:	43 f6 04 4b 12       	test   BYTE PTR [r11+r9*2],0x12
+    9892:	43 f6 04 53 12       	test   BYTE PTR [r11+r10*2],0x12
+    9897:	43 f6 04 5b 12       	test   BYTE PTR [r11+r11*2],0x12
+    989c:	43 f6 04 63 12       	test   BYTE PTR [r11+r12*2],0x12
+    98a1:	43 f6 04 6b 12       	test   BYTE PTR [r11+r13*2],0x12
+    98a6:	43 f6 04 73 12       	test   BYTE PTR [r11+r14*2],0x12
+    98ab:	43 f6 04 7b 12       	test   BYTE PTR [r11+r15*2],0x12
+    98b0:	41 f6 04 64 12       	test   BYTE PTR [r12+riz*2],0x12
+    98b5:	41 f6 04 44 12       	test   BYTE PTR [r12+rax*2],0x12
+    98ba:	41 f6 04 4c 12       	test   BYTE PTR [r12+rcx*2],0x12
+    98bf:	41 f6 04 54 12       	test   BYTE PTR [r12+rdx*2],0x12
+    98c4:	41 f6 04 5c 12       	test   BYTE PTR [r12+rbx*2],0x12
+    98c9:	41 f6 04 6c 12       	test   BYTE PTR [r12+rbp*2],0x12
+    98ce:	41 f6 04 74 12       	test   BYTE PTR [r12+rsi*2],0x12
+    98d3:	41 f6 04 7c 12       	test   BYTE PTR [r12+rdi*2],0x12
+    98d8:	43 f6 04 44 12       	test   BYTE PTR [r12+r8*2],0x12
+    98dd:	43 f6 04 4c 12       	test   BYTE PTR [r12+r9*2],0x12
+    98e2:	43 f6 04 54 12       	test   BYTE PTR [r12+r10*2],0x12
+    98e7:	43 f6 04 5c 12       	test   BYTE PTR [r12+r11*2],0x12
+    98ec:	43 f6 04 64 12       	test   BYTE PTR [r12+r12*2],0x12
+    98f1:	43 f6 04 6c 12       	test   BYTE PTR [r12+r13*2],0x12
+    98f6:	43 f6 04 74 12       	test   BYTE PTR [r12+r14*2],0x12
+    98fb:	43 f6 04 7c 12       	test   BYTE PTR [r12+r15*2],0x12
+    9900:	41 f6 44 65 00 12    	test   BYTE PTR [r13+riz*2+0x0],0x12
+    9906:	41 f6 44 45 00 12    	test   BYTE PTR [r13+rax*2+0x0],0x12
+    990c:	41 f6 44 4d 00 12    	test   BYTE PTR [r13+rcx*2+0x0],0x12
+    9912:	41 f6 44 55 00 12    	test   BYTE PTR [r13+rdx*2+0x0],0x12
+    9918:	41 f6 44 5d 00 12    	test   BYTE PTR [r13+rbx*2+0x0],0x12
+    991e:	41 f6 44 6d 00 12    	test   BYTE PTR [r13+rbp*2+0x0],0x12
+    9924:	41 f6 44 75 00 12    	test   BYTE PTR [r13+rsi*2+0x0],0x12
+    992a:	41 f6 44 7d 00 12    	test   BYTE PTR [r13+rdi*2+0x0],0x12
+    9930:	43 f6 44 45 00 12    	test   BYTE PTR [r13+r8*2+0x0],0x12
+    9936:	43 f6 44 4d 00 12    	test   BYTE PTR [r13+r9*2+0x0],0x12
+    993c:	43 f6 44 55 00 12    	test   BYTE PTR [r13+r10*2+0x0],0x12
+    9942:	43 f6 44 5d 00 12    	test   BYTE PTR [r13+r11*2+0x0],0x12
+    9948:	43 f6 44 65 00 12    	test   BYTE PTR [r13+r12*2+0x0],0x12
+    994e:	43 f6 44 6d 00 12    	test   BYTE PTR [r13+r13*2+0x0],0x12
+    9954:	43 f6 44 75 00 12    	test   BYTE PTR [r13+r14*2+0x0],0x12
+    995a:	43 f6 44 7d 00 12    	test   BYTE PTR [r13+r15*2+0x0],0x12
+    9960:	41 f6 04 66 12       	test   BYTE PTR [r14+riz*2],0x12
+    9965:	41 f6 04 46 12       	test   BYTE PTR [r14+rax*2],0x12
+    996a:	41 f6 04 4e 12       	test   BYTE PTR [r14+rcx*2],0x12
+    996f:	41 f6 04 56 12       	test   BYTE PTR [r14+rdx*2],0x12
+    9974:	41 f6 04 5e 12       	test   BYTE PTR [r14+rbx*2],0x12
+    9979:	41 f6 04 6e 12       	test   BYTE PTR [r14+rbp*2],0x12
+    997e:	41 f6 04 76 12       	test   BYTE PTR [r14+rsi*2],0x12
+    9983:	41 f6 04 7e 12       	test   BYTE PTR [r14+rdi*2],0x12
+    9988:	43 f6 04 46 12       	test   BYTE PTR [r14+r8*2],0x12
+    998d:	43 f6 04 4e 12       	test   BYTE PTR [r14+r9*2],0x12
+    9992:	43 f6 04 56 12       	test   BYTE PTR [r14+r10*2],0x12
+    9997:	43 f6 04 5e 12       	test   BYTE PTR [r14+r11*2],0x12
+    999c:	43 f6 04 66 12       	test   BYTE PTR [r14+r12*2],0x12
+    99a1:	43 f6 04 6e 12       	test   BYTE PTR [r14+r13*2],0x12
+    99a6:	43 f6 04 76 12       	test   BYTE PTR [r14+r14*2],0x12
+    99ab:	43 f6 04 7e 12       	test   BYTE PTR [r14+r15*2],0x12
+    99b0:	41 f6 04 67 12       	test   BYTE PTR [r15+riz*2],0x12
+    99b5:	41 f6 04 47 12       	test   BYTE PTR [r15+rax*2],0x12
+    99ba:	41 f6 04 4f 12       	test   BYTE PTR [r15+rcx*2],0x12
+    99bf:	41 f6 04 57 12       	test   BYTE PTR [r15+rdx*2],0x12
+    99c4:	41 f6 04 5f 12       	test   BYTE PTR [r15+rbx*2],0x12
+    99c9:	41 f6 04 6f 12       	test   BYTE PTR [r15+rbp*2],0x12
+    99ce:	41 f6 04 77 12       	test   BYTE PTR [r15+rsi*2],0x12
+    99d3:	41 f6 04 7f 12       	test   BYTE PTR [r15+rdi*2],0x12
+    99d8:	43 f6 04 47 12       	test   BYTE PTR [r15+r8*2],0x12
+    99dd:	43 f6 04 4f 12       	test   BYTE PTR [r15+r9*2],0x12
+    99e2:	43 f6 04 57 12       	test   BYTE PTR [r15+r10*2],0x12
+    99e7:	43 f6 04 5f 12       	test   BYTE PTR [r15+r11*2],0x12
+    99ec:	43 f6 04 67 12       	test   BYTE PTR [r15+r12*2],0x12
+    99f1:	43 f6 04 6f 12       	test   BYTE PTR [r15+r13*2],0x12
+    99f6:	43 f6 04 77 12       	test   BYTE PTR [r15+r14*2],0x12
+    99fb:	43 f6 04 7f 12       	test   BYTE PTR [r15+r15*2],0x12
+    9a00:	66 f7 04 60 34 12    	test   WORD PTR [rax+riz*2],0x1234
+    9a06:	66 f7 04 40 34 12    	test   WORD PTR [rax+rax*2],0x1234
+    9a0c:	66 f7 04 48 34 12    	test   WORD PTR [rax+rcx*2],0x1234
+    9a12:	66 f7 04 50 34 12    	test   WORD PTR [rax+rdx*2],0x1234
+    9a18:	66 f7 04 58 34 12    	test   WORD PTR [rax+rbx*2],0x1234
+    9a1e:	66 f7 04 68 34 12    	test   WORD PTR [rax+rbp*2],0x1234
+    9a24:	66 f7 04 70 34 12    	test   WORD PTR [rax+rsi*2],0x1234
+    9a2a:	66 f7 04 78 34 12    	test   WORD PTR [rax+rdi*2],0x1234
+    9a30:	66 42 f7 04 40 34 12 	test   WORD PTR [rax+r8*2],0x1234
+    9a37:	66 42 f7 04 48 34 12 	test   WORD PTR [rax+r9*2],0x1234
+    9a3e:	66 42 f7 04 50 34 12 	test   WORD PTR [rax+r10*2],0x1234
+    9a45:	66 42 f7 04 58 34 12 	test   WORD PTR [rax+r11*2],0x1234
+    9a4c:	66 42 f7 04 60 34 12 	test   WORD PTR [rax+r12*2],0x1234
+    9a53:	66 42 f7 04 68 34 12 	test   WORD PTR [rax+r13*2],0x1234
+    9a5a:	66 42 f7 04 70 34 12 	test   WORD PTR [rax+r14*2],0x1234
+    9a61:	66 42 f7 04 78 34 12 	test   WORD PTR [rax+r15*2],0x1234
+    9a68:	66 f7 04 61 34 12    	test   WORD PTR [rcx+riz*2],0x1234
+    9a6e:	66 f7 04 41 34 12    	test   WORD PTR [rcx+rax*2],0x1234
+    9a74:	66 f7 04 49 34 12    	test   WORD PTR [rcx+rcx*2],0x1234
+    9a7a:	66 f7 04 51 34 12    	test   WORD PTR [rcx+rdx*2],0x1234
+    9a80:	66 f7 04 59 34 12    	test   WORD PTR [rcx+rbx*2],0x1234
+    9a86:	66 f7 04 69 34 12    	test   WORD PTR [rcx+rbp*2],0x1234
+    9a8c:	66 f7 04 71 34 12    	test   WORD PTR [rcx+rsi*2],0x1234
+    9a92:	66 f7 04 79 34 12    	test   WORD PTR [rcx+rdi*2],0x1234
+    9a98:	66 42 f7 04 41 34 12 	test   WORD PTR [rcx+r8*2],0x1234
+    9a9f:	66 42 f7 04 49 34 12 	test   WORD PTR [rcx+r9*2],0x1234
+    9aa6:	66 42 f7 04 51 34 12 	test   WORD PTR [rcx+r10*2],0x1234
+    9aad:	66 42 f7 04 59 34 12 	test   WORD PTR [rcx+r11*2],0x1234
+    9ab4:	66 42 f7 04 61 34 12 	test   WORD PTR [rcx+r12*2],0x1234
+    9abb:	66 42 f7 04 69 34 12 	test   WORD PTR [rcx+r13*2],0x1234
+    9ac2:	66 42 f7 04 71 34 12 	test   WORD PTR [rcx+r14*2],0x1234
+    9ac9:	66 42 f7 04 79 34 12 	test   WORD PTR [rcx+r15*2],0x1234
+    9ad0:	66 f7 04 62 34 12    	test   WORD PTR [rdx+riz*2],0x1234
+    9ad6:	66 f7 04 42 34 12    	test   WORD PTR [rdx+rax*2],0x1234
+    9adc:	66 f7 04 4a 34 12    	test   WORD PTR [rdx+rcx*2],0x1234
+    9ae2:	66 f7 04 52 34 12    	test   WORD PTR [rdx+rdx*2],0x1234
+    9ae8:	66 f7 04 5a 34 12    	test   WORD PTR [rdx+rbx*2],0x1234
+    9aee:	66 f7 04 6a 34 12    	test   WORD PTR [rdx+rbp*2],0x1234
+    9af4:	66 f7 04 72 34 12    	test   WORD PTR [rdx+rsi*2],0x1234
+    9afa:	66 f7 04 7a 34 12    	test   WORD PTR [rdx+rdi*2],0x1234
+    9b00:	66 42 f7 04 42 34 12 	test   WORD PTR [rdx+r8*2],0x1234
+    9b07:	66 42 f7 04 4a 34 12 	test   WORD PTR [rdx+r9*2],0x1234
+    9b0e:	66 42 f7 04 52 34 12 	test   WORD PTR [rdx+r10*2],0x1234
+    9b15:	66 42 f7 04 5a 34 12 	test   WORD PTR [rdx+r11*2],0x1234
+    9b1c:	66 42 f7 04 62 34 12 	test   WORD PTR [rdx+r12*2],0x1234
+    9b23:	66 42 f7 04 6a 34 12 	test   WORD PTR [rdx+r13*2],0x1234
+    9b2a:	66 42 f7 04 72 34 12 	test   WORD PTR [rdx+r14*2],0x1234
+    9b31:	66 42 f7 04 7a 34 12 	test   WORD PTR [rdx+r15*2],0x1234
+    9b38:	66 f7 04 63 34 12    	test   WORD PTR [rbx+riz*2],0x1234
+    9b3e:	66 f7 04 43 34 12    	test   WORD PTR [rbx+rax*2],0x1234
+    9b44:	66 f7 04 4b 34 12    	test   WORD PTR [rbx+rcx*2],0x1234
+    9b4a:	66 f7 04 53 34 12    	test   WORD PTR [rbx+rdx*2],0x1234
+    9b50:	66 f7 04 5b 34 12    	test   WORD PTR [rbx+rbx*2],0x1234
+    9b56:	66 f7 04 6b 34 12    	test   WORD PTR [rbx+rbp*2],0x1234
+    9b5c:	66 f7 04 73 34 12    	test   WORD PTR [rbx+rsi*2],0x1234
+    9b62:	66 f7 04 7b 34 12    	test   WORD PTR [rbx+rdi*2],0x1234
+    9b68:	66 42 f7 04 43 34 12 	test   WORD PTR [rbx+r8*2],0x1234
+    9b6f:	66 42 f7 04 4b 34 12 	test   WORD PTR [rbx+r9*2],0x1234
+    9b76:	66 42 f7 04 53 34 12 	test   WORD PTR [rbx+r10*2],0x1234
+    9b7d:	66 42 f7 04 5b 34 12 	test   WORD PTR [rbx+r11*2],0x1234
+    9b84:	66 42 f7 04 63 34 12 	test   WORD PTR [rbx+r12*2],0x1234
+    9b8b:	66 42 f7 04 6b 34 12 	test   WORD PTR [rbx+r13*2],0x1234
+    9b92:	66 42 f7 04 73 34 12 	test   WORD PTR [rbx+r14*2],0x1234
+    9b99:	66 42 f7 04 7b 34 12 	test   WORD PTR [rbx+r15*2],0x1234
+    9ba0:	66 f7 04 64 34 12    	test   WORD PTR [rsp+riz*2],0x1234
+    9ba6:	66 f7 04 44 34 12    	test   WORD PTR [rsp+rax*2],0x1234
+    9bac:	66 f7 04 4c 34 12    	test   WORD PTR [rsp+rcx*2],0x1234
+    9bb2:	66 f7 04 54 34 12    	test   WORD PTR [rsp+rdx*2],0x1234
+    9bb8:	66 f7 04 5c 34 12    	test   WORD PTR [rsp+rbx*2],0x1234
+    9bbe:	66 f7 04 6c 34 12    	test   WORD PTR [rsp+rbp*2],0x1234
+    9bc4:	66 f7 04 74 34 12    	test   WORD PTR [rsp+rsi*2],0x1234
+    9bca:	66 f7 04 7c 34 12    	test   WORD PTR [rsp+rdi*2],0x1234
+    9bd0:	66 42 f7 04 44 34 12 	test   WORD PTR [rsp+r8*2],0x1234
+    9bd7:	66 42 f7 04 4c 34 12 	test   WORD PTR [rsp+r9*2],0x1234
+    9bde:	66 42 f7 04 54 34 12 	test   WORD PTR [rsp+r10*2],0x1234
+    9be5:	66 42 f7 04 5c 34 12 	test   WORD PTR [rsp+r11*2],0x1234
+    9bec:	66 42 f7 04 64 34 12 	test   WORD PTR [rsp+r12*2],0x1234
+    9bf3:	66 42 f7 04 6c 34 12 	test   WORD PTR [rsp+r13*2],0x1234
+    9bfa:	66 42 f7 04 74 34 12 	test   WORD PTR [rsp+r14*2],0x1234
+    9c01:	66 42 f7 04 7c 34 12 	test   WORD PTR [rsp+r15*2],0x1234
+    9c08:	66 f7 44 65 00 34 12 	test   WORD PTR [rbp+riz*2+0x0],0x1234
+    9c0f:	66 f7 44 45 00 34 12 	test   WORD PTR [rbp+rax*2+0x0],0x1234
+    9c16:	66 f7 44 4d 00 34 12 	test   WORD PTR [rbp+rcx*2+0x0],0x1234
+    9c1d:	66 f7 44 55 00 34 12 	test   WORD PTR [rbp+rdx*2+0x0],0x1234
+    9c24:	66 f7 44 5d 00 34 12 	test   WORD PTR [rbp+rbx*2+0x0],0x1234
+    9c2b:	66 f7 44 6d 00 34 12 	test   WORD PTR [rbp+rbp*2+0x0],0x1234
+    9c32:	66 f7 44 75 00 34 12 	test   WORD PTR [rbp+rsi*2+0x0],0x1234
+    9c39:	66 f7 44 7d 00 34 12 	test   WORD PTR [rbp+rdi*2+0x0],0x1234
+    9c40:	66 42 f7 44 45 00 34 12 	test   WORD PTR [rbp+r8*2+0x0],0x1234
+    9c48:	66 42 f7 44 4d 00 34 12 	test   WORD PTR [rbp+r9*2+0x0],0x1234
+    9c50:	66 42 f7 44 55 00 34 12 	test   WORD PTR [rbp+r10*2+0x0],0x1234
+    9c58:	66 42 f7 44 5d 00 34 12 	test   WORD PTR [rbp+r11*2+0x0],0x1234
+    9c60:	66 42 f7 44 65 00 34 12 	test   WORD PTR [rbp+r12*2+0x0],0x1234
+    9c68:	66 42 f7 44 6d 00 34 12 	test   WORD PTR [rbp+r13*2+0x0],0x1234
+    9c70:	66 42 f7 44 75 00 34 12 	test   WORD PTR [rbp+r14*2+0x0],0x1234
+    9c78:	66 42 f7 44 7d 00 34 12 	test   WORD PTR [rbp+r15*2+0x0],0x1234
+    9c80:	66 f7 04 66 34 12    	test   WORD PTR [rsi+riz*2],0x1234
+    9c86:	66 f7 04 46 34 12    	test   WORD PTR [rsi+rax*2],0x1234
+    9c8c:	66 f7 04 4e 34 12    	test   WORD PTR [rsi+rcx*2],0x1234
+    9c92:	66 f7 04 56 34 12    	test   WORD PTR [rsi+rdx*2],0x1234
+    9c98:	66 f7 04 5e 34 12    	test   WORD PTR [rsi+rbx*2],0x1234
+    9c9e:	66 f7 04 6e 34 12    	test   WORD PTR [rsi+rbp*2],0x1234
+    9ca4:	66 f7 04 76 34 12    	test   WORD PTR [rsi+rsi*2],0x1234
+    9caa:	66 f7 04 7e 34 12    	test   WORD PTR [rsi+rdi*2],0x1234
+    9cb0:	66 42 f7 04 46 34 12 	test   WORD PTR [rsi+r8*2],0x1234
+    9cb7:	66 42 f7 04 4e 34 12 	test   WORD PTR [rsi+r9*2],0x1234
+    9cbe:	66 42 f7 04 56 34 12 	test   WORD PTR [rsi+r10*2],0x1234
+    9cc5:	66 42 f7 04 5e 34 12 	test   WORD PTR [rsi+r11*2],0x1234
+    9ccc:	66 42 f7 04 66 34 12 	test   WORD PTR [rsi+r12*2],0x1234
+    9cd3:	66 42 f7 04 6e 34 12 	test   WORD PTR [rsi+r13*2],0x1234
+    9cda:	66 42 f7 04 76 34 12 	test   WORD PTR [rsi+r14*2],0x1234
+    9ce1:	66 42 f7 04 7e 34 12 	test   WORD PTR [rsi+r15*2],0x1234
+    9ce8:	66 f7 04 67 34 12    	test   WORD PTR [rdi+riz*2],0x1234
+    9cee:	66 f7 04 47 34 12    	test   WORD PTR [rdi+rax*2],0x1234
+    9cf4:	66 f7 04 4f 34 12    	test   WORD PTR [rdi+rcx*2],0x1234
+    9cfa:	66 f7 04 57 34 12    	test   WORD PTR [rdi+rdx*2],0x1234
+    9d00:	66 f7 04 5f 34 12    	test   WORD PTR [rdi+rbx*2],0x1234
+    9d06:	66 f7 04 6f 34 12    	test   WORD PTR [rdi+rbp*2],0x1234
+    9d0c:	66 f7 04 77 34 12    	test   WORD PTR [rdi+rsi*2],0x1234
+    9d12:	66 f7 04 7f 34 12    	test   WORD PTR [rdi+rdi*2],0x1234
+    9d18:	66 42 f7 04 47 34 12 	test   WORD PTR [rdi+r8*2],0x1234
+    9d1f:	66 42 f7 04 4f 34 12 	test   WORD PTR [rdi+r9*2],0x1234
+    9d26:	66 42 f7 04 57 34 12 	test   WORD PTR [rdi+r10*2],0x1234
+    9d2d:	66 42 f7 04 5f 34 12 	test   WORD PTR [rdi+r11*2],0x1234
+    9d34:	66 42 f7 04 67 34 12 	test   WORD PTR [rdi+r12*2],0x1234
+    9d3b:	66 42 f7 04 6f 34 12 	test   WORD PTR [rdi+r13*2],0x1234
+    9d42:	66 42 f7 04 77 34 12 	test   WORD PTR [rdi+r14*2],0x1234
+    9d49:	66 42 f7 04 7f 34 12 	test   WORD PTR [rdi+r15*2],0x1234
+    9d50:	66 41 f7 04 60 34 12 	test   WORD PTR [r8+riz*2],0x1234
+    9d57:	66 41 f7 04 40 34 12 	test   WORD PTR [r8+rax*2],0x1234
+    9d5e:	66 41 f7 04 48 34 12 	test   WORD PTR [r8+rcx*2],0x1234
+    9d65:	66 41 f7 04 50 34 12 	test   WORD PTR [r8+rdx*2],0x1234
+    9d6c:	66 41 f7 04 58 34 12 	test   WORD PTR [r8+rbx*2],0x1234
+    9d73:	66 41 f7 04 68 34 12 	test   WORD PTR [r8+rbp*2],0x1234
+    9d7a:	66 41 f7 04 70 34 12 	test   WORD PTR [r8+rsi*2],0x1234
+    9d81:	66 41 f7 04 78 34 12 	test   WORD PTR [r8+rdi*2],0x1234
+    9d88:	66 43 f7 04 40 34 12 	test   WORD PTR [r8+r8*2],0x1234
+    9d8f:	66 43 f7 04 48 34 12 	test   WORD PTR [r8+r9*2],0x1234
+    9d96:	66 43 f7 04 50 34 12 	test   WORD PTR [r8+r10*2],0x1234
+    9d9d:	66 43 f7 04 58 34 12 	test   WORD PTR [r8+r11*2],0x1234
+    9da4:	66 43 f7 04 60 34 12 	test   WORD PTR [r8+r12*2],0x1234
+    9dab:	66 43 f7 04 68 34 12 	test   WORD PTR [r8+r13*2],0x1234
+    9db2:	66 43 f7 04 70 34 12 	test   WORD PTR [r8+r14*2],0x1234
+    9db9:	66 43 f7 04 78 34 12 	test   WORD PTR [r8+r15*2],0x1234
+    9dc0:	66 41 f7 04 61 34 12 	test   WORD PTR [r9+riz*2],0x1234
+    9dc7:	66 41 f7 04 41 34 12 	test   WORD PTR [r9+rax*2],0x1234
+    9dce:	66 41 f7 04 49 34 12 	test   WORD PTR [r9+rcx*2],0x1234
+    9dd5:	66 41 f7 04 51 34 12 	test   WORD PTR [r9+rdx*2],0x1234
+    9ddc:	66 41 f7 04 59 34 12 	test   WORD PTR [r9+rbx*2],0x1234
+    9de3:	66 41 f7 04 69 34 12 	test   WORD PTR [r9+rbp*2],0x1234
+    9dea:	66 41 f7 04 71 34 12 	test   WORD PTR [r9+rsi*2],0x1234
+    9df1:	66 41 f7 04 79 34 12 	test   WORD PTR [r9+rdi*2],0x1234
+    9df8:	66 43 f7 04 41 34 12 	test   WORD PTR [r9+r8*2],0x1234
+    9dff:	66 43 f7 04 49 34 12 	test   WORD PTR [r9+r9*2],0x1234
+    9e06:	66 43 f7 04 51 34 12 	test   WORD PTR [r9+r10*2],0x1234
+    9e0d:	66 43 f7 04 59 34 12 	test   WORD PTR [r9+r11*2],0x1234
+    9e14:	66 43 f7 04 61 34 12 	test   WORD PTR [r9+r12*2],0x1234
+    9e1b:	66 43 f7 04 69 34 12 	test   WORD PTR [r9+r13*2],0x1234
+    9e22:	66 43 f7 04 71 34 12 	test   WORD PTR [r9+r14*2],0x1234
+    9e29:	66 43 f7 04 79 34 12 	test   WORD PTR [r9+r15*2],0x1234
+    9e30:	66 41 f7 04 62 34 12 	test   WORD PTR [r10+riz*2],0x1234
+    9e37:	66 41 f7 04 42 34 12 	test   WORD PTR [r10+rax*2],0x1234
+    9e3e:	66 41 f7 04 4a 34 12 	test   WORD PTR [r10+rcx*2],0x1234
+    9e45:	66 41 f7 04 52 34 12 	test   WORD PTR [r10+rdx*2],0x1234
+    9e4c:	66 41 f7 04 5a 34 12 	test   WORD PTR [r10+rbx*2],0x1234
+    9e53:	66 41 f7 04 6a 34 12 	test   WORD PTR [r10+rbp*2],0x1234
+    9e5a:	66 41 f7 04 72 34 12 	test   WORD PTR [r10+rsi*2],0x1234
+    9e61:	66 41 f7 04 7a 34 12 	test   WORD PTR [r10+rdi*2],0x1234
+    9e68:	66 43 f7 04 42 34 12 	test   WORD PTR [r10+r8*2],0x1234
+    9e6f:	66 43 f7 04 4a 34 12 	test   WORD PTR [r10+r9*2],0x1234
+    9e76:	66 43 f7 04 52 34 12 	test   WORD PTR [r10+r10*2],0x1234
+    9e7d:	66 43 f7 04 5a 34 12 	test   WORD PTR [r10+r11*2],0x1234
+    9e84:	66 43 f7 04 62 34 12 	test   WORD PTR [r10+r12*2],0x1234
+    9e8b:	66 43 f7 04 6a 34 12 	test   WORD PTR [r10+r13*2],0x1234
+    9e92:	66 43 f7 04 72 34 12 	test   WORD PTR [r10+r14*2],0x1234
+    9e99:	66 43 f7 04 7a 34 12 	test   WORD PTR [r10+r15*2],0x1234
+    9ea0:	66 41 f7 04 63 34 12 	test   WORD PTR [r11+riz*2],0x1234
+    9ea7:	66 41 f7 04 43 34 12 	test   WORD PTR [r11+rax*2],0x1234
+    9eae:	66 41 f7 04 4b 34 12 	test   WORD PTR [r11+rcx*2],0x1234
+    9eb5:	66 41 f7 04 53 34 12 	test   WORD PTR [r11+rdx*2],0x1234
+    9ebc:	66 41 f7 04 5b 34 12 	test   WORD PTR [r11+rbx*2],0x1234
+    9ec3:	66 41 f7 04 6b 34 12 	test   WORD PTR [r11+rbp*2],0x1234
+    9eca:	66 41 f7 04 73 34 12 	test   WORD PTR [r11+rsi*2],0x1234
+    9ed1:	66 41 f7 04 7b 34 12 	test   WORD PTR [r11+rdi*2],0x1234
+    9ed8:	66 43 f7 04 43 34 12 	test   WORD PTR [r11+r8*2],0x1234
+    9edf:	66 43 f7 04 4b 34 12 	test   WORD PTR [r11+r9*2],0x1234
+    9ee6:	66 43 f7 04 53 34 12 	test   WORD PTR [r11+r10*2],0x1234
+    9eed:	66 43 f7 04 5b 34 12 	test   WORD PTR [r11+r11*2],0x1234
+    9ef4:	66 43 f7 04 63 34 12 	test   WORD PTR [r11+r12*2],0x1234
+    9efb:	66 43 f7 04 6b 34 12 	test   WORD PTR [r11+r13*2],0x1234
+    9f02:	66 43 f7 04 73 34 12 	test   WORD PTR [r11+r14*2],0x1234
+    9f09:	66 43 f7 04 7b 34 12 	test   WORD PTR [r11+r15*2],0x1234
+    9f10:	66 41 f7 04 64 34 12 	test   WORD PTR [r12+riz*2],0x1234
+    9f17:	66 41 f7 04 44 34 12 	test   WORD PTR [r12+rax*2],0x1234
+    9f1e:	66 41 f7 04 4c 34 12 	test   WORD PTR [r12+rcx*2],0x1234
+    9f25:	66 41 f7 04 54 34 12 	test   WORD PTR [r12+rdx*2],0x1234
+    9f2c:	66 41 f7 04 5c 34 12 	test   WORD PTR [r12+rbx*2],0x1234
+    9f33:	66 41 f7 04 6c 34 12 	test   WORD PTR [r12+rbp*2],0x1234
+    9f3a:	66 41 f7 04 74 34 12 	test   WORD PTR [r12+rsi*2],0x1234
+    9f41:	66 41 f7 04 7c 34 12 	test   WORD PTR [r12+rdi*2],0x1234
+    9f48:	66 43 f7 04 44 34 12 	test   WORD PTR [r12+r8*2],0x1234
+    9f4f:	66 43 f7 04 4c 34 12 	test   WORD PTR [r12+r9*2],0x1234
+    9f56:	66 43 f7 04 54 34 12 	test   WORD PTR [r12+r10*2],0x1234
+    9f5d:	66 43 f7 04 5c 34 12 	test   WORD PTR [r12+r11*2],0x1234
+    9f64:	66 43 f7 04 64 34 12 	test   WORD PTR [r12+r12*2],0x1234
+    9f6b:	66 43 f7 04 6c 34 12 	test   WORD PTR [r12+r13*2],0x1234
+    9f72:	66 43 f7 04 74 34 12 	test   WORD PTR [r12+r14*2],0x1234
+    9f79:	66 43 f7 04 7c 34 12 	test   WORD PTR [r12+r15*2],0x1234
+    9f80:	66 41 f7 44 65 00 34 12 	test   WORD PTR [r13+riz*2+0x0],0x1234
+    9f88:	66 41 f7 44 45 00 34 12 	test   WORD PTR [r13+rax*2+0x0],0x1234
+    9f90:	66 41 f7 44 4d 00 34 12 	test   WORD PTR [r13+rcx*2+0x0],0x1234
+    9f98:	66 41 f7 44 55 00 34 12 	test   WORD PTR [r13+rdx*2+0x0],0x1234
+    9fa0:	66 41 f7 44 5d 00 34 12 	test   WORD PTR [r13+rbx*2+0x0],0x1234
+    9fa8:	66 41 f7 44 6d 00 34 12 	test   WORD PTR [r13+rbp*2+0x0],0x1234
+    9fb0:	66 41 f7 44 75 00 34 12 	test   WORD PTR [r13+rsi*2+0x0],0x1234
+    9fb8:	66 41 f7 44 7d 00 34 12 	test   WORD PTR [r13+rdi*2+0x0],0x1234
+    9fc0:	66 43 f7 44 45 00 34 12 	test   WORD PTR [r13+r8*2+0x0],0x1234
+    9fc8:	66 43 f7 44 4d 00 34 12 	test   WORD PTR [r13+r9*2+0x0],0x1234
+    9fd0:	66 43 f7 44 55 00 34 12 	test   WORD PTR [r13+r10*2+0x0],0x1234
+    9fd8:	66 43 f7 44 5d 00 34 12 	test   WORD PTR [r13+r11*2+0x0],0x1234
+    9fe0:	66 43 f7 44 65 00 34 12 	test   WORD PTR [r13+r12*2+0x0],0x1234
+    9fe8:	66 43 f7 44 6d 00 34 12 	test   WORD PTR [r13+r13*2+0x0],0x1234
+    9ff0:	66 43 f7 44 75 00 34 12 	test   WORD PTR [r13+r14*2+0x0],0x1234
+    9ff8:	66 43 f7 44 7d 00 34 12 	test   WORD PTR [r13+r15*2+0x0],0x1234
+    a000:	66 41 f7 04 66 34 12 	test   WORD PTR [r14+riz*2],0x1234
+    a007:	66 41 f7 04 46 34 12 	test   WORD PTR [r14+rax*2],0x1234
+    a00e:	66 41 f7 04 4e 34 12 	test   WORD PTR [r14+rcx*2],0x1234
+    a015:	66 41 f7 04 56 34 12 	test   WORD PTR [r14+rdx*2],0x1234
+    a01c:	66 41 f7 04 5e 34 12 	test   WORD PTR [r14+rbx*2],0x1234
+    a023:	66 41 f7 04 6e 34 12 	test   WORD PTR [r14+rbp*2],0x1234
+    a02a:	66 41 f7 04 76 34 12 	test   WORD PTR [r14+rsi*2],0x1234
+    a031:	66 41 f7 04 7e 34 12 	test   WORD PTR [r14+rdi*2],0x1234
+    a038:	66 43 f7 04 46 34 12 	test   WORD PTR [r14+r8*2],0x1234
+    a03f:	66 43 f7 04 4e 34 12 	test   WORD PTR [r14+r9*2],0x1234
+    a046:	66 43 f7 04 56 34 12 	test   WORD PTR [r14+r10*2],0x1234
+    a04d:	66 43 f7 04 5e 34 12 	test   WORD PTR [r14+r11*2],0x1234
+    a054:	66 43 f7 04 66 34 12 	test   WORD PTR [r14+r12*2],0x1234
+    a05b:	66 43 f7 04 6e 34 12 	test   WORD PTR [r14+r13*2],0x1234
+    a062:	66 43 f7 04 76 34 12 	test   WORD PTR [r14+r14*2],0x1234
+    a069:	66 43 f7 04 7e 34 12 	test   WORD PTR [r14+r15*2],0x1234
+    a070:	66 41 f7 04 67 34 12 	test   WORD PTR [r15+riz*2],0x1234
+    a077:	66 41 f7 04 47 34 12 	test   WORD PTR [r15+rax*2],0x1234
+    a07e:	66 41 f7 04 4f 34 12 	test   WORD PTR [r15+rcx*2],0x1234
+    a085:	66 41 f7 04 57 34 12 	test   WORD PTR [r15+rdx*2],0x1234
+    a08c:	66 41 f7 04 5f 34 12 	test   WORD PTR [r15+rbx*2],0x1234
+    a093:	66 41 f7 04 6f 34 12 	test   WORD PTR [r15+rbp*2],0x1234
+    a09a:	66 41 f7 04 77 34 12 	test   WORD PTR [r15+rsi*2],0x1234
+    a0a1:	66 41 f7 04 7f 34 12 	test   WORD PTR [r15+rdi*2],0x1234
+    a0a8:	66 43 f7 04 47 34 12 	test   WORD PTR [r15+r8*2],0x1234
+    a0af:	66 43 f7 04 4f 34 12 	test   WORD PTR [r15+r9*2],0x1234
+    a0b6:	66 43 f7 04 57 34 12 	test   WORD PTR [r15+r10*2],0x1234
+    a0bd:	66 43 f7 04 5f 34 12 	test   WORD PTR [r15+r11*2],0x1234
+    a0c4:	66 43 f7 04 67 34 12 	test   WORD PTR [r15+r12*2],0x1234
+    a0cb:	66 43 f7 04 6f 34 12 	test   WORD PTR [r15+r13*2],0x1234
+    a0d2:	66 43 f7 04 77 34 12 	test   WORD PTR [r15+r14*2],0x1234
+    a0d9:	66 43 f7 04 7f 34 12 	test   WORD PTR [r15+r15*2],0x1234
+    a0e0:	48 f7 04 60 78 56 34 12 	test   QWORD PTR [rax+riz*2],0x12345678
+    a0e8:	f7 04 60 78 56 34 12 	test   DWORD PTR [rax+riz*2],0x12345678
+    a0ef:	48 f7 04 40 78 56 34 12 	test   QWORD PTR [rax+rax*2],0x12345678
+    a0f7:	f7 04 40 78 56 34 12 	test   DWORD PTR [rax+rax*2],0x12345678
+    a0fe:	48 f7 04 48 78 56 34 12 	test   QWORD PTR [rax+rcx*2],0x12345678
+    a106:	f7 04 48 78 56 34 12 	test   DWORD PTR [rax+rcx*2],0x12345678
+    a10d:	48 f7 04 50 78 56 34 12 	test   QWORD PTR [rax+rdx*2],0x12345678
+    a115:	f7 04 50 78 56 34 12 	test   DWORD PTR [rax+rdx*2],0x12345678
+    a11c:	48 f7 04 58 78 56 34 12 	test   QWORD PTR [rax+rbx*2],0x12345678
+    a124:	f7 04 58 78 56 34 12 	test   DWORD PTR [rax+rbx*2],0x12345678
+    a12b:	48 f7 04 68 78 56 34 12 	test   QWORD PTR [rax+rbp*2],0x12345678
+    a133:	f7 04 68 78 56 34 12 	test   DWORD PTR [rax+rbp*2],0x12345678
+    a13a:	48 f7 04 70 78 56 34 12 	test   QWORD PTR [rax+rsi*2],0x12345678
+    a142:	f7 04 70 78 56 34 12 	test   DWORD PTR [rax+rsi*2],0x12345678
+    a149:	48 f7 04 78 78 56 34 12 	test   QWORD PTR [rax+rdi*2],0x12345678
+    a151:	f7 04 78 78 56 34 12 	test   DWORD PTR [rax+rdi*2],0x12345678
+    a158:	4a f7 04 40 78 56 34 12 	test   QWORD PTR [rax+r8*2],0x12345678
+    a160:	42 f7 04 40 78 56 34 12 	test   DWORD PTR [rax+r8*2],0x12345678
+    a168:	4a f7 04 48 78 56 34 12 	test   QWORD PTR [rax+r9*2],0x12345678
+    a170:	42 f7 04 48 78 56 34 12 	test   DWORD PTR [rax+r9*2],0x12345678
+    a178:	4a f7 04 50 78 56 34 12 	test   QWORD PTR [rax+r10*2],0x12345678
+    a180:	42 f7 04 50 78 56 34 12 	test   DWORD PTR [rax+r10*2],0x12345678
+    a188:	4a f7 04 58 78 56 34 12 	test   QWORD PTR [rax+r11*2],0x12345678
+    a190:	42 f7 04 58 78 56 34 12 	test   DWORD PTR [rax+r11*2],0x12345678
+    a198:	4a f7 04 60 78 56 34 12 	test   QWORD PTR [rax+r12*2],0x12345678
+    a1a0:	42 f7 04 60 78 56 34 12 	test   DWORD PTR [rax+r12*2],0x12345678
+    a1a8:	4a f7 04 68 78 56 34 12 	test   QWORD PTR [rax+r13*2],0x12345678
+    a1b0:	42 f7 04 68 78 56 34 12 	test   DWORD PTR [rax+r13*2],0x12345678
+    a1b8:	4a f7 04 70 78 56 34 12 	test   QWORD PTR [rax+r14*2],0x12345678
+    a1c0:	42 f7 04 70 78 56 34 12 	test   DWORD PTR [rax+r14*2],0x12345678
+    a1c8:	4a f7 04 78 78 56 34 12 	test   QWORD PTR [rax+r15*2],0x12345678
+    a1d0:	42 f7 04 78 78 56 34 12 	test   DWORD PTR [rax+r15*2],0x12345678
+    a1d8:	48 f7 04 61 78 56 34 12 	test   QWORD PTR [rcx+riz*2],0x12345678
+    a1e0:	f7 04 61 78 56 34 12 	test   DWORD PTR [rcx+riz*2],0x12345678
+    a1e7:	48 f7 04 41 78 56 34 12 	test   QWORD PTR [rcx+rax*2],0x12345678
+    a1ef:	f7 04 41 78 56 34 12 	test   DWORD PTR [rcx+rax*2],0x12345678
+    a1f6:	48 f7 04 49 78 56 34 12 	test   QWORD PTR [rcx+rcx*2],0x12345678
+    a1fe:	f7 04 49 78 56 34 12 	test   DWORD PTR [rcx+rcx*2],0x12345678
+    a205:	48 f7 04 51 78 56 34 12 	test   QWORD PTR [rcx+rdx*2],0x12345678
+    a20d:	f7 04 51 78 56 34 12 	test   DWORD PTR [rcx+rdx*2],0x12345678
+    a214:	48 f7 04 59 78 56 34 12 	test   QWORD PTR [rcx+rbx*2],0x12345678
+    a21c:	f7 04 59 78 56 34 12 	test   DWORD PTR [rcx+rbx*2],0x12345678
+    a223:	48 f7 04 69 78 56 34 12 	test   QWORD PTR [rcx+rbp*2],0x12345678
+    a22b:	f7 04 69 78 56 34 12 	test   DWORD PTR [rcx+rbp*2],0x12345678
+    a232:	48 f7 04 71 78 56 34 12 	test   QWORD PTR [rcx+rsi*2],0x12345678
+    a23a:	f7 04 71 78 56 34 12 	test   DWORD PTR [rcx+rsi*2],0x12345678
+    a241:	48 f7 04 79 78 56 34 12 	test   QWORD PTR [rcx+rdi*2],0x12345678
+    a249:	f7 04 79 78 56 34 12 	test   DWORD PTR [rcx+rdi*2],0x12345678
+    a250:	4a f7 04 41 78 56 34 12 	test   QWORD PTR [rcx+r8*2],0x12345678
+    a258:	42 f7 04 41 78 56 34 12 	test   DWORD PTR [rcx+r8*2],0x12345678
+    a260:	4a f7 04 49 78 56 34 12 	test   QWORD PTR [rcx+r9*2],0x12345678
+    a268:	42 f7 04 49 78 56 34 12 	test   DWORD PTR [rcx+r9*2],0x12345678
+    a270:	4a f7 04 51 78 56 34 12 	test   QWORD PTR [rcx+r10*2],0x12345678
+    a278:	42 f7 04 51 78 56 34 12 	test   DWORD PTR [rcx+r10*2],0x12345678
+    a280:	4a f7 04 59 78 56 34 12 	test   QWORD PTR [rcx+r11*2],0x12345678
+    a288:	42 f7 04 59 78 56 34 12 	test   DWORD PTR [rcx+r11*2],0x12345678
+    a290:	4a f7 04 61 78 56 34 12 	test   QWORD PTR [rcx+r12*2],0x12345678
+    a298:	42 f7 04 61 78 56 34 12 	test   DWORD PTR [rcx+r12*2],0x12345678
+    a2a0:	4a f7 04 69 78 56 34 12 	test   QWORD PTR [rcx+r13*2],0x12345678
+    a2a8:	42 f7 04 69 78 56 34 12 	test   DWORD PTR [rcx+r13*2],0x12345678
+    a2b0:	4a f7 04 71 78 56 34 12 	test   QWORD PTR [rcx+r14*2],0x12345678
+    a2b8:	42 f7 04 71 78 56 34 12 	test   DWORD PTR [rcx+r14*2],0x12345678
+    a2c0:	4a f7 04 79 78 56 34 12 	test   QWORD PTR [rcx+r15*2],0x12345678
+    a2c8:	42 f7 04 79 78 56 34 12 	test   DWORD PTR [rcx+r15*2],0x12345678
+    a2d0:	48 f7 04 62 78 56 34 12 	test   QWORD PTR [rdx+riz*2],0x12345678
+    a2d8:	f7 04 62 78 56 34 12 	test   DWORD PTR [rdx+riz*2],0x12345678
+    a2df:	48 f7 04 42 78 56 34 12 	test   QWORD PTR [rdx+rax*2],0x12345678
+    a2e7:	f7 04 42 78 56 34 12 	test   DWORD PTR [rdx+rax*2],0x12345678
+    a2ee:	48 f7 04 4a 78 56 34 12 	test   QWORD PTR [rdx+rcx*2],0x12345678
+    a2f6:	f7 04 4a 78 56 34 12 	test   DWORD PTR [rdx+rcx*2],0x12345678
+    a2fd:	48 f7 04 52 78 56 34 12 	test   QWORD PTR [rdx+rdx*2],0x12345678
+    a305:	f7 04 52 78 56 34 12 	test   DWORD PTR [rdx+rdx*2],0x12345678
+    a30c:	48 f7 04 5a 78 56 34 12 	test   QWORD PTR [rdx+rbx*2],0x12345678
+    a314:	f7 04 5a 78 56 34 12 	test   DWORD PTR [rdx+rbx*2],0x12345678
+    a31b:	48 f7 04 6a 78 56 34 12 	test   QWORD PTR [rdx+rbp*2],0x12345678
+    a323:	f7 04 6a 78 56 34 12 	test   DWORD PTR [rdx+rbp*2],0x12345678
+    a32a:	48 f7 04 72 78 56 34 12 	test   QWORD PTR [rdx+rsi*2],0x12345678
+    a332:	f7 04 72 78 56 34 12 	test   DWORD PTR [rdx+rsi*2],0x12345678
+    a339:	48 f7 04 7a 78 56 34 12 	test   QWORD PTR [rdx+rdi*2],0x12345678
+    a341:	f7 04 7a 78 56 34 12 	test   DWORD PTR [rdx+rdi*2],0x12345678
+    a348:	4a f7 04 42 78 56 34 12 	test   QWORD PTR [rdx+r8*2],0x12345678
+    a350:	42 f7 04 42 78 56 34 12 	test   DWORD PTR [rdx+r8*2],0x12345678
+    a358:	4a f7 04 4a 78 56 34 12 	test   QWORD PTR [rdx+r9*2],0x12345678
+    a360:	42 f7 04 4a 78 56 34 12 	test   DWORD PTR [rdx+r9*2],0x12345678
+    a368:	4a f7 04 52 78 56 34 12 	test   QWORD PTR [rdx+r10*2],0x12345678
+    a370:	42 f7 04 52 78 56 34 12 	test   DWORD PTR [rdx+r10*2],0x12345678
+    a378:	4a f7 04 5a 78 56 34 12 	test   QWORD PTR [rdx+r11*2],0x12345678
+    a380:	42 f7 04 5a 78 56 34 12 	test   DWORD PTR [rdx+r11*2],0x12345678
+    a388:	4a f7 04 62 78 56 34 12 	test   QWORD PTR [rdx+r12*2],0x12345678
+    a390:	42 f7 04 62 78 56 34 12 	test   DWORD PTR [rdx+r12*2],0x12345678
+    a398:	4a f7 04 6a 78 56 34 12 	test   QWORD PTR [rdx+r13*2],0x12345678
+    a3a0:	42 f7 04 6a 78 56 34 12 	test   DWORD PTR [rdx+r13*2],0x12345678
+    a3a8:	4a f7 04 72 78 56 34 12 	test   QWORD PTR [rdx+r14*2],0x12345678
+    a3b0:	42 f7 04 72 78 56 34 12 	test   DWORD PTR [rdx+r14*2],0x12345678
+    a3b8:	4a f7 04 7a 78 56 34 12 	test   QWORD PTR [rdx+r15*2],0x12345678
+    a3c0:	42 f7 04 7a 78 56 34 12 	test   DWORD PTR [rdx+r15*2],0x12345678
+    a3c8:	48 f7 04 63 78 56 34 12 	test   QWORD PTR [rbx+riz*2],0x12345678
+    a3d0:	f7 04 63 78 56 34 12 	test   DWORD PTR [rbx+riz*2],0x12345678
+    a3d7:	48 f7 04 43 78 56 34 12 	test   QWORD PTR [rbx+rax*2],0x12345678
+    a3df:	f7 04 43 78 56 34 12 	test   DWORD PTR [rbx+rax*2],0x12345678
+    a3e6:	48 f7 04 4b 78 56 34 12 	test   QWORD PTR [rbx+rcx*2],0x12345678
+    a3ee:	f7 04 4b 78 56 34 12 	test   DWORD PTR [rbx+rcx*2],0x12345678
+    a3f5:	48 f7 04 53 78 56 34 12 	test   QWORD PTR [rbx+rdx*2],0x12345678
+    a3fd:	f7 04 53 78 56 34 12 	test   DWORD PTR [rbx+rdx*2],0x12345678
+    a404:	48 f7 04 5b 78 56 34 12 	test   QWORD PTR [rbx+rbx*2],0x12345678
+    a40c:	f7 04 5b 78 56 34 12 	test   DWORD PTR [rbx+rbx*2],0x12345678
+    a413:	48 f7 04 6b 78 56 34 12 	test   QWORD PTR [rbx+rbp*2],0x12345678
+    a41b:	f7 04 6b 78 56 34 12 	test   DWORD PTR [rbx+rbp*2],0x12345678
+    a422:	48 f7 04 73 78 56 34 12 	test   QWORD PTR [rbx+rsi*2],0x12345678
+    a42a:	f7 04 73 78 56 34 12 	test   DWORD PTR [rbx+rsi*2],0x12345678
+    a431:	48 f7 04 7b 78 56 34 12 	test   QWORD PTR [rbx+rdi*2],0x12345678
+    a439:	f7 04 7b 78 56 34 12 	test   DWORD PTR [rbx+rdi*2],0x12345678
+    a440:	4a f7 04 43 78 56 34 12 	test   QWORD PTR [rbx+r8*2],0x12345678
+    a448:	42 f7 04 43 78 56 34 12 	test   DWORD PTR [rbx+r8*2],0x12345678
+    a450:	4a f7 04 4b 78 56 34 12 	test   QWORD PTR [rbx+r9*2],0x12345678
+    a458:	42 f7 04 4b 78 56 34 12 	test   DWORD PTR [rbx+r9*2],0x12345678
+    a460:	4a f7 04 53 78 56 34 12 	test   QWORD PTR [rbx+r10*2],0x12345678
+    a468:	42 f7 04 53 78 56 34 12 	test   DWORD PTR [rbx+r10*2],0x12345678
+    a470:	4a f7 04 5b 78 56 34 12 	test   QWORD PTR [rbx+r11*2],0x12345678
+    a478:	42 f7 04 5b 78 56 34 12 	test   DWORD PTR [rbx+r11*2],0x12345678
+    a480:	4a f7 04 63 78 56 34 12 	test   QWORD PTR [rbx+r12*2],0x12345678
+    a488:	42 f7 04 63 78 56 34 12 	test   DWORD PTR [rbx+r12*2],0x12345678
+    a490:	4a f7 04 6b 78 56 34 12 	test   QWORD PTR [rbx+r13*2],0x12345678
+    a498:	42 f7 04 6b 78 56 34 12 	test   DWORD PTR [rbx+r13*2],0x12345678
+    a4a0:	4a f7 04 73 78 56 34 12 	test   QWORD PTR [rbx+r14*2],0x12345678
+    a4a8:	42 f7 04 73 78 56 34 12 	test   DWORD PTR [rbx+r14*2],0x12345678
+    a4b0:	4a f7 04 7b 78 56 34 12 	test   QWORD PTR [rbx+r15*2],0x12345678
+    a4b8:	42 f7 04 7b 78 56 34 12 	test   DWORD PTR [rbx+r15*2],0x12345678
+    a4c0:	48 f7 04 64 78 56 34 12 	test   QWORD PTR [rsp+riz*2],0x12345678
+    a4c8:	f7 04 64 78 56 34 12 	test   DWORD PTR [rsp+riz*2],0x12345678
+    a4cf:	48 f7 04 44 78 56 34 12 	test   QWORD PTR [rsp+rax*2],0x12345678
+    a4d7:	f7 04 44 78 56 34 12 	test   DWORD PTR [rsp+rax*2],0x12345678
+    a4de:	48 f7 04 4c 78 56 34 12 	test   QWORD PTR [rsp+rcx*2],0x12345678
+    a4e6:	f7 04 4c 78 56 34 12 	test   DWORD PTR [rsp+rcx*2],0x12345678
+    a4ed:	48 f7 04 54 78 56 34 12 	test   QWORD PTR [rsp+rdx*2],0x12345678
+    a4f5:	f7 04 54 78 56 34 12 	test   DWORD PTR [rsp+rdx*2],0x12345678
+    a4fc:	48 f7 04 5c 78 56 34 12 	test   QWORD PTR [rsp+rbx*2],0x12345678
+    a504:	f7 04 5c 78 56 34 12 	test   DWORD PTR [rsp+rbx*2],0x12345678
+    a50b:	48 f7 04 6c 78 56 34 12 	test   QWORD PTR [rsp+rbp*2],0x12345678
+    a513:	f7 04 6c 78 56 34 12 	test   DWORD PTR [rsp+rbp*2],0x12345678
+    a51a:	48 f7 04 74 78 56 34 12 	test   QWORD PTR [rsp+rsi*2],0x12345678
+    a522:	f7 04 74 78 56 34 12 	test   DWORD PTR [rsp+rsi*2],0x12345678
+    a529:	48 f7 04 7c 78 56 34 12 	test   QWORD PTR [rsp+rdi*2],0x12345678
+    a531:	f7 04 7c 78 56 34 12 	test   DWORD PTR [rsp+rdi*2],0x12345678
+    a538:	4a f7 04 44 78 56 34 12 	test   QWORD PTR [rsp+r8*2],0x12345678
+    a540:	42 f7 04 44 78 56 34 12 	test   DWORD PTR [rsp+r8*2],0x12345678
+    a548:	4a f7 04 4c 78 56 34 12 	test   QWORD PTR [rsp+r9*2],0x12345678
+    a550:	42 f7 04 4c 78 56 34 12 	test   DWORD PTR [rsp+r9*2],0x12345678
+    a558:	4a f7 04 54 78 56 34 12 	test   QWORD PTR [rsp+r10*2],0x12345678
+    a560:	42 f7 04 54 78 56 34 12 	test   DWORD PTR [rsp+r10*2],0x12345678
+    a568:	4a f7 04 5c 78 56 34 12 	test   QWORD PTR [rsp+r11*2],0x12345678
+    a570:	42 f7 04 5c 78 56 34 12 	test   DWORD PTR [rsp+r11*2],0x12345678
+    a578:	4a f7 04 64 78 56 34 12 	test   QWORD PTR [rsp+r12*2],0x12345678
+    a580:	42 f7 04 64 78 56 34 12 	test   DWORD PTR [rsp+r12*2],0x12345678
+    a588:	4a f7 04 6c 78 56 34 12 	test   QWORD PTR [rsp+r13*2],0x12345678
+    a590:	42 f7 04 6c 78 56 34 12 	test   DWORD PTR [rsp+r13*2],0x12345678
+    a598:	4a f7 04 74 78 56 34 12 	test   QWORD PTR [rsp+r14*2],0x12345678
+    a5a0:	42 f7 04 74 78 56 34 12 	test   DWORD PTR [rsp+r14*2],0x12345678
+    a5a8:	4a f7 04 7c 78 56 34 12 	test   QWORD PTR [rsp+r15*2],0x12345678
+    a5b0:	42 f7 04 7c 78 56 34 12 	test   DWORD PTR [rsp+r15*2],0x12345678
+    a5b8:	48 f7 44 65 00 78 56 34 12 	test   QWORD PTR [rbp+riz*2+0x0],0x12345678
+    a5c1:	f7 44 65 00 78 56 34 12 	test   DWORD PTR [rbp+riz*2+0x0],0x12345678
+    a5c9:	48 f7 44 45 00 78 56 34 12 	test   QWORD PTR [rbp+rax*2+0x0],0x12345678
+    a5d2:	f7 44 45 00 78 56 34 12 	test   DWORD PTR [rbp+rax*2+0x0],0x12345678
+    a5da:	48 f7 44 4d 00 78 56 34 12 	test   QWORD PTR [rbp+rcx*2+0x0],0x12345678
+    a5e3:	f7 44 4d 00 78 56 34 12 	test   DWORD PTR [rbp+rcx*2+0x0],0x12345678
+    a5eb:	48 f7 44 55 00 78 56 34 12 	test   QWORD PTR [rbp+rdx*2+0x0],0x12345678
+    a5f4:	f7 44 55 00 78 56 34 12 	test   DWORD PTR [rbp+rdx*2+0x0],0x12345678
+    a5fc:	48 f7 44 5d 00 78 56 34 12 	test   QWORD PTR [rbp+rbx*2+0x0],0x12345678
+    a605:	f7 44 5d 00 78 56 34 12 	test   DWORD PTR [rbp+rbx*2+0x0],0x12345678
+    a60d:	48 f7 44 6d 00 78 56 34 12 	test   QWORD PTR [rbp+rbp*2+0x0],0x12345678
+    a616:	f7 44 6d 00 78 56 34 12 	test   DWORD PTR [rbp+rbp*2+0x0],0x12345678
+    a61e:	48 f7 44 75 00 78 56 34 12 	test   QWORD PTR [rbp+rsi*2+0x0],0x12345678
+    a627:	f7 44 75 00 78 56 34 12 	test   DWORD PTR [rbp+rsi*2+0x0],0x12345678
+    a62f:	48 f7 44 7d 00 78 56 34 12 	test   QWORD PTR [rbp+rdi*2+0x0],0x12345678
+    a638:	f7 44 7d 00 78 56 34 12 	test   DWORD PTR [rbp+rdi*2+0x0],0x12345678
+    a640:	4a f7 44 45 00 78 56 34 12 	test   QWORD PTR [rbp+r8*2+0x0],0x12345678
+    a649:	42 f7 44 45 00 78 56 34 12 	test   DWORD PTR [rbp+r8*2+0x0],0x12345678
+    a652:	4a f7 44 4d 00 78 56 34 12 	test   QWORD PTR [rbp+r9*2+0x0],0x12345678
+    a65b:	42 f7 44 4d 00 78 56 34 12 	test   DWORD PTR [rbp+r9*2+0x0],0x12345678
+    a664:	4a f7 44 55 00 78 56 34 12 	test   QWORD PTR [rbp+r10*2+0x0],0x12345678
+    a66d:	42 f7 44 55 00 78 56 34 12 	test   DWORD PTR [rbp+r10*2+0x0],0x12345678
+    a676:	4a f7 44 5d 00 78 56 34 12 	test   QWORD PTR [rbp+r11*2+0x0],0x12345678
+    a67f:	42 f7 44 5d 00 78 56 34 12 	test   DWORD PTR [rbp+r11*2+0x0],0x12345678
+    a688:	4a f7 44 65 00 78 56 34 12 	test   QWORD PTR [rbp+r12*2+0x0],0x12345678
+    a691:	42 f7 44 65 00 78 56 34 12 	test   DWORD PTR [rbp+r12*2+0x0],0x12345678
+    a69a:	4a f7 44 6d 00 78 56 34 12 	test   QWORD PTR [rbp+r13*2+0x0],0x12345678
+    a6a3:	42 f7 44 6d 00 78 56 34 12 	test   DWORD PTR [rbp+r13*2+0x0],0x12345678
+    a6ac:	4a f7 44 75 00 78 56 34 12 	test   QWORD PTR [rbp+r14*2+0x0],0x12345678
+    a6b5:	42 f7 44 75 00 78 56 34 12 	test   DWORD PTR [rbp+r14*2+0x0],0x12345678
+    a6be:	4a f7 44 7d 00 78 56 34 12 	test   QWORD PTR [rbp+r15*2+0x0],0x12345678
+    a6c7:	42 f7 44 7d 00 78 56 34 12 	test   DWORD PTR [rbp+r15*2+0x0],0x12345678
+    a6d0:	48 f7 04 66 78 56 34 12 	test   QWORD PTR [rsi+riz*2],0x12345678
+    a6d8:	f7 04 66 78 56 34 12 	test   DWORD PTR [rsi+riz*2],0x12345678
+    a6df:	48 f7 04 46 78 56 34 12 	test   QWORD PTR [rsi+rax*2],0x12345678
+    a6e7:	f7 04 46 78 56 34 12 	test   DWORD PTR [rsi+rax*2],0x12345678
+    a6ee:	48 f7 04 4e 78 56 34 12 	test   QWORD PTR [rsi+rcx*2],0x12345678
+    a6f6:	f7 04 4e 78 56 34 12 	test   DWORD PTR [rsi+rcx*2],0x12345678
+    a6fd:	48 f7 04 56 78 56 34 12 	test   QWORD PTR [rsi+rdx*2],0x12345678
+    a705:	f7 04 56 78 56 34 12 	test   DWORD PTR [rsi+rdx*2],0x12345678
+    a70c:	48 f7 04 5e 78 56 34 12 	test   QWORD PTR [rsi+rbx*2],0x12345678
+    a714:	f7 04 5e 78 56 34 12 	test   DWORD PTR [rsi+rbx*2],0x12345678
+    a71b:	48 f7 04 6e 78 56 34 12 	test   QWORD PTR [rsi+rbp*2],0x12345678
+    a723:	f7 04 6e 78 56 34 12 	test   DWORD PTR [rsi+rbp*2],0x12345678
+    a72a:	48 f7 04 76 78 56 34 12 	test   QWORD PTR [rsi+rsi*2],0x12345678
+    a732:	f7 04 76 78 56 34 12 	test   DWORD PTR [rsi+rsi*2],0x12345678
+    a739:	48 f7 04 7e 78 56 34 12 	test   QWORD PTR [rsi+rdi*2],0x12345678
+    a741:	f7 04 7e 78 56 34 12 	test   DWORD PTR [rsi+rdi*2],0x12345678
+    a748:	4a f7 04 46 78 56 34 12 	test   QWORD PTR [rsi+r8*2],0x12345678
+    a750:	42 f7 04 46 78 56 34 12 	test   DWORD PTR [rsi+r8*2],0x12345678
+    a758:	4a f7 04 4e 78 56 34 12 	test   QWORD PTR [rsi+r9*2],0x12345678
+    a760:	42 f7 04 4e 78 56 34 12 	test   DWORD PTR [rsi+r9*2],0x12345678
+    a768:	4a f7 04 56 78 56 34 12 	test   QWORD PTR [rsi+r10*2],0x12345678
+    a770:	42 f7 04 56 78 56 34 12 	test   DWORD PTR [rsi+r10*2],0x12345678
+    a778:	4a f7 04 5e 78 56 34 12 	test   QWORD PTR [rsi+r11*2],0x12345678
+    a780:	42 f7 04 5e 78 56 34 12 	test   DWORD PTR [rsi+r11*2],0x12345678
+    a788:	4a f7 04 66 78 56 34 12 	test   QWORD PTR [rsi+r12*2],0x12345678
+    a790:	42 f7 04 66 78 56 34 12 	test   DWORD PTR [rsi+r12*2],0x12345678
+    a798:	4a f7 04 6e 78 56 34 12 	test   QWORD PTR [rsi+r13*2],0x12345678
+    a7a0:	42 f7 04 6e 78 56 34 12 	test   DWORD PTR [rsi+r13*2],0x12345678
+    a7a8:	4a f7 04 76 78 56 34 12 	test   QWORD PTR [rsi+r14*2],0x12345678
+    a7b0:	42 f7 04 76 78 56 34 12 	test   DWORD PTR [rsi+r14*2],0x12345678
+    a7b8:	4a f7 04 7e 78 56 34 12 	test   QWORD PTR [rsi+r15*2],0x12345678
+    a7c0:	42 f7 04 7e 78 56 34 12 	test   DWORD PTR [rsi+r15*2],0x12345678
+    a7c8:	48 f7 04 67 78 56 34 12 	test   QWORD PTR [rdi+riz*2],0x12345678
+    a7d0:	f7 04 67 78 56 34 12 	test   DWORD PTR [rdi+riz*2],0x12345678
+    a7d7:	48 f7 04 47 78 56 34 12 	test   QWORD PTR [rdi+rax*2],0x12345678
+    a7df:	f7 04 47 78 56 34 12 	test   DWORD PTR [rdi+rax*2],0x12345678
+    a7e6:	48 f7 04 4f 78 56 34 12 	test   QWORD PTR [rdi+rcx*2],0x12345678
+    a7ee:	f7 04 4f 78 56 34 12 	test   DWORD PTR [rdi+rcx*2],0x12345678
+    a7f5:	48 f7 04 57 78 56 34 12 	test   QWORD PTR [rdi+rdx*2],0x12345678
+    a7fd:	f7 04 57 78 56 34 12 	test   DWORD PTR [rdi+rdx*2],0x12345678
+    a804:	48 f7 04 5f 78 56 34 12 	test   QWORD PTR [rdi+rbx*2],0x12345678
+    a80c:	f7 04 5f 78 56 34 12 	test   DWORD PTR [rdi+rbx*2],0x12345678
+    a813:	48 f7 04 6f 78 56 34 12 	test   QWORD PTR [rdi+rbp*2],0x12345678
+    a81b:	f7 04 6f 78 56 34 12 	test   DWORD PTR [rdi+rbp*2],0x12345678
+    a822:	48 f7 04 77 78 56 34 12 	test   QWORD PTR [rdi+rsi*2],0x12345678
+    a82a:	f7 04 77 78 56 34 12 	test   DWORD PTR [rdi+rsi*2],0x12345678
+    a831:	48 f7 04 7f 78 56 34 12 	test   QWORD PTR [rdi+rdi*2],0x12345678
+    a839:	f7 04 7f 78 56 34 12 	test   DWORD PTR [rdi+rdi*2],0x12345678
+    a840:	4a f7 04 47 78 56 34 12 	test   QWORD PTR [rdi+r8*2],0x12345678
+    a848:	42 f7 04 47 78 56 34 12 	test   DWORD PTR [rdi+r8*2],0x12345678
+    a850:	4a f7 04 4f 78 56 34 12 	test   QWORD PTR [rdi+r9*2],0x12345678
+    a858:	42 f7 04 4f 78 56 34 12 	test   DWORD PTR [rdi+r9*2],0x12345678
+    a860:	4a f7 04 57 78 56 34 12 	test   QWORD PTR [rdi+r10*2],0x12345678
+    a868:	42 f7 04 57 78 56 34 12 	test   DWORD PTR [rdi+r10*2],0x12345678
+    a870:	4a f7 04 5f 78 56 34 12 	test   QWORD PTR [rdi+r11*2],0x12345678
+    a878:	42 f7 04 5f 78 56 34 12 	test   DWORD PTR [rdi+r11*2],0x12345678
+    a880:	4a f7 04 67 78 56 34 12 	test   QWORD PTR [rdi+r12*2],0x12345678
+    a888:	42 f7 04 67 78 56 34 12 	test   DWORD PTR [rdi+r12*2],0x12345678
+    a890:	4a f7 04 6f 78 56 34 12 	test   QWORD PTR [rdi+r13*2],0x12345678
+    a898:	42 f7 04 6f 78 56 34 12 	test   DWORD PTR [rdi+r13*2],0x12345678
+    a8a0:	4a f7 04 77 78 56 34 12 	test   QWORD PTR [rdi+r14*2],0x12345678
+    a8a8:	42 f7 04 77 78 56 34 12 	test   DWORD PTR [rdi+r14*2],0x12345678
+    a8b0:	4a f7 04 7f 78 56 34 12 	test   QWORD PTR [rdi+r15*2],0x12345678
+    a8b8:	42 f7 04 7f 78 56 34 12 	test   DWORD PTR [rdi+r15*2],0x12345678
+    a8c0:	49 f7 04 60 78 56 34 12 	test   QWORD PTR [r8+riz*2],0x12345678
+    a8c8:	41 f7 04 60 78 56 34 12 	test   DWORD PTR [r8+riz*2],0x12345678
+    a8d0:	49 f7 04 40 78 56 34 12 	test   QWORD PTR [r8+rax*2],0x12345678
+    a8d8:	41 f7 04 40 78 56 34 12 	test   DWORD PTR [r8+rax*2],0x12345678
+    a8e0:	49 f7 04 48 78 56 34 12 	test   QWORD PTR [r8+rcx*2],0x12345678
+    a8e8:	41 f7 04 48 78 56 34 12 	test   DWORD PTR [r8+rcx*2],0x12345678
+    a8f0:	49 f7 04 50 78 56 34 12 	test   QWORD PTR [r8+rdx*2],0x12345678
+    a8f8:	41 f7 04 50 78 56 34 12 	test   DWORD PTR [r8+rdx*2],0x12345678
+    a900:	49 f7 04 58 78 56 34 12 	test   QWORD PTR [r8+rbx*2],0x12345678
+    a908:	41 f7 04 58 78 56 34 12 	test   DWORD PTR [r8+rbx*2],0x12345678
+    a910:	49 f7 04 68 78 56 34 12 	test   QWORD PTR [r8+rbp*2],0x12345678
+    a918:	41 f7 04 68 78 56 34 12 	test   DWORD PTR [r8+rbp*2],0x12345678
+    a920:	49 f7 04 70 78 56 34 12 	test   QWORD PTR [r8+rsi*2],0x12345678
+    a928:	41 f7 04 70 78 56 34 12 	test   DWORD PTR [r8+rsi*2],0x12345678
+    a930:	49 f7 04 78 78 56 34 12 	test   QWORD PTR [r8+rdi*2],0x12345678
+    a938:	41 f7 04 78 78 56 34 12 	test   DWORD PTR [r8+rdi*2],0x12345678
+    a940:	4b f7 04 40 78 56 34 12 	test   QWORD PTR [r8+r8*2],0x12345678
+    a948:	43 f7 04 40 78 56 34 12 	test   DWORD PTR [r8+r8*2],0x12345678
+    a950:	4b f7 04 48 78 56 34 12 	test   QWORD PTR [r8+r9*2],0x12345678
+    a958:	43 f7 04 48 78 56 34 12 	test   DWORD PTR [r8+r9*2],0x12345678
+    a960:	4b f7 04 50 78 56 34 12 	test   QWORD PTR [r8+r10*2],0x12345678
+    a968:	43 f7 04 50 78 56 34 12 	test   DWORD PTR [r8+r10*2],0x12345678
+    a970:	4b f7 04 58 78 56 34 12 	test   QWORD PTR [r8+r11*2],0x12345678
+    a978:	43 f7 04 58 78 56 34 12 	test   DWORD PTR [r8+r11*2],0x12345678
+    a980:	4b f7 04 60 78 56 34 12 	test   QWORD PTR [r8+r12*2],0x12345678
+    a988:	43 f7 04 60 78 56 34 12 	test   DWORD PTR [r8+r12*2],0x12345678
+    a990:	4b f7 04 68 78 56 34 12 	test   QWORD PTR [r8+r13*2],0x12345678
+    a998:	43 f7 04 68 78 56 34 12 	test   DWORD PTR [r8+r13*2],0x12345678
+    a9a0:	4b f7 04 70 78 56 34 12 	test   QWORD PTR [r8+r14*2],0x12345678
+    a9a8:	43 f7 04 70 78 56 34 12 	test   DWORD PTR [r8+r14*2],0x12345678
+    a9b0:	4b f7 04 78 78 56 34 12 	test   QWORD PTR [r8+r15*2],0x12345678
+    a9b8:	43 f7 04 78 78 56 34 12 	test   DWORD PTR [r8+r15*2],0x12345678
+    a9c0:	49 f7 04 61 78 56 34 12 	test   QWORD PTR [r9+riz*2],0x12345678
+    a9c8:	41 f7 04 61 78 56 34 12 	test   DWORD PTR [r9+riz*2],0x12345678
+    a9d0:	49 f7 04 41 78 56 34 12 	test   QWORD PTR [r9+rax*2],0x12345678
+    a9d8:	41 f7 04 41 78 56 34 12 	test   DWORD PTR [r9+rax*2],0x12345678
+    a9e0:	49 f7 04 49 78 56 34 12 	test   QWORD PTR [r9+rcx*2],0x12345678
+    a9e8:	41 f7 04 49 78 56 34 12 	test   DWORD PTR [r9+rcx*2],0x12345678
+    a9f0:	49 f7 04 51 78 56 34 12 	test   QWORD PTR [r9+rdx*2],0x12345678
+    a9f8:	41 f7 04 51 78 56 34 12 	test   DWORD PTR [r9+rdx*2],0x12345678
+    aa00:	49 f7 04 59 78 56 34 12 	test   QWORD PTR [r9+rbx*2],0x12345678
+    aa08:	41 f7 04 59 78 56 34 12 	test   DWORD PTR [r9+rbx*2],0x12345678
+    aa10:	49 f7 04 69 78 56 34 12 	test   QWORD PTR [r9+rbp*2],0x12345678
+    aa18:	41 f7 04 69 78 56 34 12 	test   DWORD PTR [r9+rbp*2],0x12345678
+    aa20:	49 f7 04 71 78 56 34 12 	test   QWORD PTR [r9+rsi*2],0x12345678
+    aa28:	41 f7 04 71 78 56 34 12 	test   DWORD PTR [r9+rsi*2],0x12345678
+    aa30:	49 f7 04 79 78 56 34 12 	test   QWORD PTR [r9+rdi*2],0x12345678
+    aa38:	41 f7 04 79 78 56 34 12 	test   DWORD PTR [r9+rdi*2],0x12345678
+    aa40:	4b f7 04 41 78 56 34 12 	test   QWORD PTR [r9+r8*2],0x12345678
+    aa48:	43 f7 04 41 78 56 34 12 	test   DWORD PTR [r9+r8*2],0x12345678
+    aa50:	4b f7 04 49 78 56 34 12 	test   QWORD PTR [r9+r9*2],0x12345678
+    aa58:	43 f7 04 49 78 56 34 12 	test   DWORD PTR [r9+r9*2],0x12345678
+    aa60:	4b f7 04 51 78 56 34 12 	test   QWORD PTR [r9+r10*2],0x12345678
+    aa68:	43 f7 04 51 78 56 34 12 	test   DWORD PTR [r9+r10*2],0x12345678
+    aa70:	4b f7 04 59 78 56 34 12 	test   QWORD PTR [r9+r11*2],0x12345678
+    aa78:	43 f7 04 59 78 56 34 12 	test   DWORD PTR [r9+r11*2],0x12345678
+    aa80:	4b f7 04 61 78 56 34 12 	test   QWORD PTR [r9+r12*2],0x12345678
+    aa88:	43 f7 04 61 78 56 34 12 	test   DWORD PTR [r9+r12*2],0x12345678
+    aa90:	4b f7 04 69 78 56 34 12 	test   QWORD PTR [r9+r13*2],0x12345678
+    aa98:	43 f7 04 69 78 56 34 12 	test   DWORD PTR [r9+r13*2],0x12345678
+    aaa0:	4b f7 04 71 78 56 34 12 	test   QWORD PTR [r9+r14*2],0x12345678
+    aaa8:	43 f7 04 71 78 56 34 12 	test   DWORD PTR [r9+r14*2],0x12345678
+    aab0:	4b f7 04 79 78 56 34 12 	test   QWORD PTR [r9+r15*2],0x12345678
+    aab8:	43 f7 04 79 78 56 34 12 	test   DWORD PTR [r9+r15*2],0x12345678
+    aac0:	49 f7 04 62 78 56 34 12 	test   QWORD PTR [r10+riz*2],0x12345678
+    aac8:	41 f7 04 62 78 56 34 12 	test   DWORD PTR [r10+riz*2],0x12345678
+    aad0:	49 f7 04 42 78 56 34 12 	test   QWORD PTR [r10+rax*2],0x12345678
+    aad8:	41 f7 04 42 78 56 34 12 	test   DWORD PTR [r10+rax*2],0x12345678
+    aae0:	49 f7 04 4a 78 56 34 12 	test   QWORD PTR [r10+rcx*2],0x12345678
+    aae8:	41 f7 04 4a 78 56 34 12 	test   DWORD PTR [r10+rcx*2],0x12345678
+    aaf0:	49 f7 04 52 78 56 34 12 	test   QWORD PTR [r10+rdx*2],0x12345678
+    aaf8:	41 f7 04 52 78 56 34 12 	test   DWORD PTR [r10+rdx*2],0x12345678
+    ab00:	49 f7 04 5a 78 56 34 12 	test   QWORD PTR [r10+rbx*2],0x12345678
+    ab08:	41 f7 04 5a 78 56 34 12 	test   DWORD PTR [r10+rbx*2],0x12345678
+    ab10:	49 f7 04 6a 78 56 34 12 	test   QWORD PTR [r10+rbp*2],0x12345678
+    ab18:	41 f7 04 6a 78 56 34 12 	test   DWORD PTR [r10+rbp*2],0x12345678
+    ab20:	49 f7 04 72 78 56 34 12 	test   QWORD PTR [r10+rsi*2],0x12345678
+    ab28:	41 f7 04 72 78 56 34 12 	test   DWORD PTR [r10+rsi*2],0x12345678
+    ab30:	49 f7 04 7a 78 56 34 12 	test   QWORD PTR [r10+rdi*2],0x12345678
+    ab38:	41 f7 04 7a 78 56 34 12 	test   DWORD PTR [r10+rdi*2],0x12345678
+    ab40:	4b f7 04 42 78 56 34 12 	test   QWORD PTR [r10+r8*2],0x12345678
+    ab48:	43 f7 04 42 78 56 34 12 	test   DWORD PTR [r10+r8*2],0x12345678
+    ab50:	4b f7 04 4a 78 56 34 12 	test   QWORD PTR [r10+r9*2],0x12345678
+    ab58:	43 f7 04 4a 78 56 34 12 	test   DWORD PTR [r10+r9*2],0x12345678
+    ab60:	4b f7 04 52 78 56 34 12 	test   QWORD PTR [r10+r10*2],0x12345678
+    ab68:	43 f7 04 52 78 56 34 12 	test   DWORD PTR [r10+r10*2],0x12345678
+    ab70:	4b f7 04 5a 78 56 34 12 	test   QWORD PTR [r10+r11*2],0x12345678
+    ab78:	43 f7 04 5a 78 56 34 12 	test   DWORD PTR [r10+r11*2],0x12345678
+    ab80:	4b f7 04 62 78 56 34 12 	test   QWORD PTR [r10+r12*2],0x12345678
+    ab88:	43 f7 04 62 78 56 34 12 	test   DWORD PTR [r10+r12*2],0x12345678
+    ab90:	4b f7 04 6a 78 56 34 12 	test   QWORD PTR [r10+r13*2],0x12345678
+    ab98:	43 f7 04 6a 78 56 34 12 	test   DWORD PTR [r10+r13*2],0x12345678
+    aba0:	4b f7 04 72 78 56 34 12 	test   QWORD PTR [r10+r14*2],0x12345678
+    aba8:	43 f7 04 72 78 56 34 12 	test   DWORD PTR [r10+r14*2],0x12345678
+    abb0:	4b f7 04 7a 78 56 34 12 	test   QWORD PTR [r10+r15*2],0x12345678
+    abb8:	43 f7 04 7a 78 56 34 12 	test   DWORD PTR [r10+r15*2],0x12345678
+    abc0:	49 f7 04 63 78 56 34 12 	test   QWORD PTR [r11+riz*2],0x12345678
+    abc8:	41 f7 04 63 78 56 34 12 	test   DWORD PTR [r11+riz*2],0x12345678
+    abd0:	49 f7 04 43 78 56 34 12 	test   QWORD PTR [r11+rax*2],0x12345678
+    abd8:	41 f7 04 43 78 56 34 12 	test   DWORD PTR [r11+rax*2],0x12345678
+    abe0:	49 f7 04 4b 78 56 34 12 	test   QWORD PTR [r11+rcx*2],0x12345678
+    abe8:	41 f7 04 4b 78 56 34 12 	test   DWORD PTR [r11+rcx*2],0x12345678
+    abf0:	49 f7 04 53 78 56 34 12 	test   QWORD PTR [r11+rdx*2],0x12345678
+    abf8:	41 f7 04 53 78 56 34 12 	test   DWORD PTR [r11+rdx*2],0x12345678
+    ac00:	49 f7 04 5b 78 56 34 12 	test   QWORD PTR [r11+rbx*2],0x12345678
+    ac08:	41 f7 04 5b 78 56 34 12 	test   DWORD PTR [r11+rbx*2],0x12345678
+    ac10:	49 f7 04 6b 78 56 34 12 	test   QWORD PTR [r11+rbp*2],0x12345678
+    ac18:	41 f7 04 6b 78 56 34 12 	test   DWORD PTR [r11+rbp*2],0x12345678
+    ac20:	49 f7 04 73 78 56 34 12 	test   QWORD PTR [r11+rsi*2],0x12345678
+    ac28:	41 f7 04 73 78 56 34 12 	test   DWORD PTR [r11+rsi*2],0x12345678
+    ac30:	49 f7 04 7b 78 56 34 12 	test   QWORD PTR [r11+rdi*2],0x12345678
+    ac38:	41 f7 04 7b 78 56 34 12 	test   DWORD PTR [r11+rdi*2],0x12345678
+    ac40:	4b f7 04 43 78 56 34 12 	test   QWORD PTR [r11+r8*2],0x12345678
+    ac48:	43 f7 04 43 78 56 34 12 	test   DWORD PTR [r11+r8*2],0x12345678
+    ac50:	4b f7 04 4b 78 56 34 12 	test   QWORD PTR [r11+r9*2],0x12345678
+    ac58:	43 f7 04 4b 78 56 34 12 	test   DWORD PTR [r11+r9*2],0x12345678
+    ac60:	4b f7 04 53 78 56 34 12 	test   QWORD PTR [r11+r10*2],0x12345678
+    ac68:	43 f7 04 53 78 56 34 12 	test   DWORD PTR [r11+r10*2],0x12345678
+    ac70:	4b f7 04 5b 78 56 34 12 	test   QWORD PTR [r11+r11*2],0x12345678
+    ac78:	43 f7 04 5b 78 56 34 12 	test   DWORD PTR [r11+r11*2],0x12345678
+    ac80:	4b f7 04 63 78 56 34 12 	test   QWORD PTR [r11+r12*2],0x12345678
+    ac88:	43 f7 04 63 78 56 34 12 	test   DWORD PTR [r11+r12*2],0x12345678
+    ac90:	4b f7 04 6b 78 56 34 12 	test   QWORD PTR [r11+r13*2],0x12345678
+    ac98:	43 f7 04 6b 78 56 34 12 	test   DWORD PTR [r11+r13*2],0x12345678
+    aca0:	4b f7 04 73 78 56 34 12 	test   QWORD PTR [r11+r14*2],0x12345678
+    aca8:	43 f7 04 73 78 56 34 12 	test   DWORD PTR [r11+r14*2],0x12345678
+    acb0:	4b f7 04 7b 78 56 34 12 	test   QWORD PTR [r11+r15*2],0x12345678
+    acb8:	43 f7 04 7b 78 56 34 12 	test   DWORD PTR [r11+r15*2],0x12345678
+    acc0:	49 f7 04 64 78 56 34 12 	test   QWORD PTR [r12+riz*2],0x12345678
+    acc8:	41 f7 04 64 78 56 34 12 	test   DWORD PTR [r12+riz*2],0x12345678
+    acd0:	49 f7 04 44 78 56 34 12 	test   QWORD PTR [r12+rax*2],0x12345678
+    acd8:	41 f7 04 44 78 56 34 12 	test   DWORD PTR [r12+rax*2],0x12345678
+    ace0:	49 f7 04 4c 78 56 34 12 	test   QWORD PTR [r12+rcx*2],0x12345678
+    ace8:	41 f7 04 4c 78 56 34 12 	test   DWORD PTR [r12+rcx*2],0x12345678
+    acf0:	49 f7 04 54 78 56 34 12 	test   QWORD PTR [r12+rdx*2],0x12345678
+    acf8:	41 f7 04 54 78 56 34 12 	test   DWORD PTR [r12+rdx*2],0x12345678
+    ad00:	49 f7 04 5c 78 56 34 12 	test   QWORD PTR [r12+rbx*2],0x12345678
+    ad08:	41 f7 04 5c 78 56 34 12 	test   DWORD PTR [r12+rbx*2],0x12345678
+    ad10:	49 f7 04 6c 78 56 34 12 	test   QWORD PTR [r12+rbp*2],0x12345678
+    ad18:	41 f7 04 6c 78 56 34 12 	test   DWORD PTR [r12+rbp*2],0x12345678
+    ad20:	49 f7 04 74 78 56 34 12 	test   QWORD PTR [r12+rsi*2],0x12345678
+    ad28:	41 f7 04 74 78 56 34 12 	test   DWORD PTR [r12+rsi*2],0x12345678
+    ad30:	49 f7 04 7c 78 56 34 12 	test   QWORD PTR [r12+rdi*2],0x12345678
+    ad38:	41 f7 04 7c 78 56 34 12 	test   DWORD PTR [r12+rdi*2],0x12345678
+    ad40:	4b f7 04 44 78 56 34 12 	test   QWORD PTR [r12+r8*2],0x12345678
+    ad48:	43 f7 04 44 78 56 34 12 	test   DWORD PTR [r12+r8*2],0x12345678
+    ad50:	4b f7 04 4c 78 56 34 12 	test   QWORD PTR [r12+r9*2],0x12345678
+    ad58:	43 f7 04 4c 78 56 34 12 	test   DWORD PTR [r12+r9*2],0x12345678
+    ad60:	4b f7 04 54 78 56 34 12 	test   QWORD PTR [r12+r10*2],0x12345678
+    ad68:	43 f7 04 54 78 56 34 12 	test   DWORD PTR [r12+r10*2],0x12345678
+    ad70:	4b f7 04 5c 78 56 34 12 	test   QWORD PTR [r12+r11*2],0x12345678
+    ad78:	43 f7 04 5c 78 56 34 12 	test   DWORD PTR [r12+r11*2],0x12345678
+    ad80:	4b f7 04 64 78 56 34 12 	test   QWORD PTR [r12+r12*2],0x12345678
+    ad88:	43 f7 04 64 78 56 34 12 	test   DWORD PTR [r12+r12*2],0x12345678
+    ad90:	4b f7 04 6c 78 56 34 12 	test   QWORD PTR [r12+r13*2],0x12345678
+    ad98:	43 f7 04 6c 78 56 34 12 	test   DWORD PTR [r12+r13*2],0x12345678
+    ada0:	4b f7 04 74 78 56 34 12 	test   QWORD PTR [r12+r14*2],0x12345678
+    ada8:	43 f7 04 74 78 56 34 12 	test   DWORD PTR [r12+r14*2],0x12345678
+    adb0:	4b f7 04 7c 78 56 34 12 	test   QWORD PTR [r12+r15*2],0x12345678
+    adb8:	43 f7 04 7c 78 56 34 12 	test   DWORD PTR [r12+r15*2],0x12345678
+    adc0:	49 f7 44 65 00 78 56 34 12 	test   QWORD PTR [r13+riz*2+0x0],0x12345678
+    adc9:	41 f7 44 65 00 78 56 34 12 	test   DWORD PTR [r13+riz*2+0x0],0x12345678
+    add2:	49 f7 44 45 00 78 56 34 12 	test   QWORD PTR [r13+rax*2+0x0],0x12345678
+    addb:	41 f7 44 45 00 78 56 34 12 	test   DWORD PTR [r13+rax*2+0x0],0x12345678
+    ade4:	49 f7 44 4d 00 78 56 34 12 	test   QWORD PTR [r13+rcx*2+0x0],0x12345678
+    aded:	41 f7 44 4d 00 78 56 34 12 	test   DWORD PTR [r13+rcx*2+0x0],0x12345678
+    adf6:	49 f7 44 55 00 78 56 34 12 	test   QWORD PTR [r13+rdx*2+0x0],0x12345678
+    adff:	41 f7 44 55 00 78 56 34 12 	test   DWORD PTR [r13+rdx*2+0x0],0x12345678
+    ae08:	49 f7 44 5d 00 78 56 34 12 	test   QWORD PTR [r13+rbx*2+0x0],0x12345678
+    ae11:	41 f7 44 5d 00 78 56 34 12 	test   DWORD PTR [r13+rbx*2+0x0],0x12345678
+    ae1a:	49 f7 44 6d 00 78 56 34 12 	test   QWORD PTR [r13+rbp*2+0x0],0x12345678
+    ae23:	41 f7 44 6d 00 78 56 34 12 	test   DWORD PTR [r13+rbp*2+0x0],0x12345678
+    ae2c:	49 f7 44 75 00 78 56 34 12 	test   QWORD PTR [r13+rsi*2+0x0],0x12345678
+    ae35:	41 f7 44 75 00 78 56 34 12 	test   DWORD PTR [r13+rsi*2+0x0],0x12345678
+    ae3e:	49 f7 44 7d 00 78 56 34 12 	test   QWORD PTR [r13+rdi*2+0x0],0x12345678
+    ae47:	41 f7 44 7d 00 78 56 34 12 	test   DWORD PTR [r13+rdi*2+0x0],0x12345678
+    ae50:	4b f7 44 45 00 78 56 34 12 	test   QWORD PTR [r13+r8*2+0x0],0x12345678
+    ae59:	43 f7 44 45 00 78 56 34 12 	test   DWORD PTR [r13+r8*2+0x0],0x12345678
+    ae62:	4b f7 44 4d 00 78 56 34 12 	test   QWORD PTR [r13+r9*2+0x0],0x12345678
+    ae6b:	43 f7 44 4d 00 78 56 34 12 	test   DWORD PTR [r13+r9*2+0x0],0x12345678
+    ae74:	4b f7 44 55 00 78 56 34 12 	test   QWORD PTR [r13+r10*2+0x0],0x12345678
+    ae7d:	43 f7 44 55 00 78 56 34 12 	test   DWORD PTR [r13+r10*2+0x0],0x12345678
+    ae86:	4b f7 44 5d 00 78 56 34 12 	test   QWORD PTR [r13+r11*2+0x0],0x12345678
+    ae8f:	43 f7 44 5d 00 78 56 34 12 	test   DWORD PTR [r13+r11*2+0x0],0x12345678
+    ae98:	4b f7 44 65 00 78 56 34 12 	test   QWORD PTR [r13+r12*2+0x0],0x12345678
+    aea1:	43 f7 44 65 00 78 56 34 12 	test   DWORD PTR [r13+r12*2+0x0],0x12345678
+    aeaa:	4b f7 44 6d 00 78 56 34 12 	test   QWORD PTR [r13+r13*2+0x0],0x12345678
+    aeb3:	43 f7 44 6d 00 78 56 34 12 	test   DWORD PTR [r13+r13*2+0x0],0x12345678
+    aebc:	4b f7 44 75 00 78 56 34 12 	test   QWORD PTR [r13+r14*2+0x0],0x12345678
+    aec5:	43 f7 44 75 00 78 56 34 12 	test   DWORD PTR [r13+r14*2+0x0],0x12345678
+    aece:	4b f7 44 7d 00 78 56 34 12 	test   QWORD PTR [r13+r15*2+0x0],0x12345678
+    aed7:	43 f7 44 7d 00 78 56 34 12 	test   DWORD PTR [r13+r15*2+0x0],0x12345678
+    aee0:	49 f7 04 66 78 56 34 12 	test   QWORD PTR [r14+riz*2],0x12345678
+    aee8:	41 f7 04 66 78 56 34 12 	test   DWORD PTR [r14+riz*2],0x12345678
+    aef0:	49 f7 04 46 78 56 34 12 	test   QWORD PTR [r14+rax*2],0x12345678
+    aef8:	41 f7 04 46 78 56 34 12 	test   DWORD PTR [r14+rax*2],0x12345678
+    af00:	49 f7 04 4e 78 56 34 12 	test   QWORD PTR [r14+rcx*2],0x12345678
+    af08:	41 f7 04 4e 78 56 34 12 	test   DWORD PTR [r14+rcx*2],0x12345678
+    af10:	49 f7 04 56 78 56 34 12 	test   QWORD PTR [r14+rdx*2],0x12345678
+    af18:	41 f7 04 56 78 56 34 12 	test   DWORD PTR [r14+rdx*2],0x12345678
+    af20:	49 f7 04 5e 78 56 34 12 	test   QWORD PTR [r14+rbx*2],0x12345678
+    af28:	41 f7 04 5e 78 56 34 12 	test   DWORD PTR [r14+rbx*2],0x12345678
+    af30:	49 f7 04 6e 78 56 34 12 	test   QWORD PTR [r14+rbp*2],0x12345678
+    af38:	41 f7 04 6e 78 56 34 12 	test   DWORD PTR [r14+rbp*2],0x12345678
+    af40:	49 f7 04 76 78 56 34 12 	test   QWORD PTR [r14+rsi*2],0x12345678
+    af48:	41 f7 04 76 78 56 34 12 	test   DWORD PTR [r14+rsi*2],0x12345678
+    af50:	49 f7 04 7e 78 56 34 12 	test   QWORD PTR [r14+rdi*2],0x12345678
+    af58:	41 f7 04 7e 78 56 34 12 	test   DWORD PTR [r14+rdi*2],0x12345678
+    af60:	4b f7 04 46 78 56 34 12 	test   QWORD PTR [r14+r8*2],0x12345678
+    af68:	43 f7 04 46 78 56 34 12 	test   DWORD PTR [r14+r8*2],0x12345678
+    af70:	4b f7 04 4e 78 56 34 12 	test   QWORD PTR [r14+r9*2],0x12345678
+    af78:	43 f7 04 4e 78 56 34 12 	test   DWORD PTR [r14+r9*2],0x12345678
+    af80:	4b f7 04 56 78 56 34 12 	test   QWORD PTR [r14+r10*2],0x12345678
+    af88:	43 f7 04 56 78 56 34 12 	test   DWORD PTR [r14+r10*2],0x12345678
+    af90:	4b f7 04 5e 78 56 34 12 	test   QWORD PTR [r14+r11*2],0x12345678
+    af98:	43 f7 04 5e 78 56 34 12 	test   DWORD PTR [r14+r11*2],0x12345678
+    afa0:	4b f7 04 66 78 56 34 12 	test   QWORD PTR [r14+r12*2],0x12345678
+    afa8:	43 f7 04 66 78 56 34 12 	test   DWORD PTR [r14+r12*2],0x12345678
+    afb0:	4b f7 04 6e 78 56 34 12 	test   QWORD PTR [r14+r13*2],0x12345678
+    afb8:	43 f7 04 6e 78 56 34 12 	test   DWORD PTR [r14+r13*2],0x12345678
+    afc0:	4b f7 04 76 78 56 34 12 	test   QWORD PTR [r14+r14*2],0x12345678
+    afc8:	43 f7 04 76 78 56 34 12 	test   DWORD PTR [r14+r14*2],0x12345678
+    afd0:	4b f7 04 7e 78 56 34 12 	test   QWORD PTR [r14+r15*2],0x12345678
+    afd8:	43 f7 04 7e 78 56 34 12 	test   DWORD PTR [r14+r15*2],0x12345678
+    afe0:	49 f7 04 67 78 56 34 12 	test   QWORD PTR [r15+riz*2],0x12345678
+    afe8:	41 f7 04 67 78 56 34 12 	test   DWORD PTR [r15+riz*2],0x12345678
+    aff0:	49 f7 04 47 78 56 34 12 	test   QWORD PTR [r15+rax*2],0x12345678
+    aff8:	41 f7 04 47 78 56 34 12 	test   DWORD PTR [r15+rax*2],0x12345678
+    b000:	49 f7 04 4f 78 56 34 12 	test   QWORD PTR [r15+rcx*2],0x12345678
+    b008:	41 f7 04 4f 78 56 34 12 	test   DWORD PTR [r15+rcx*2],0x12345678
+    b010:	49 f7 04 57 78 56 34 12 	test   QWORD PTR [r15+rdx*2],0x12345678
+    b018:	41 f7 04 57 78 56 34 12 	test   DWORD PTR [r15+rdx*2],0x12345678
+    b020:	49 f7 04 5f 78 56 34 12 	test   QWORD PTR [r15+rbx*2],0x12345678
+    b028:	41 f7 04 5f 78 56 34 12 	test   DWORD PTR [r15+rbx*2],0x12345678
+    b030:	49 f7 04 6f 78 56 34 12 	test   QWORD PTR [r15+rbp*2],0x12345678
+    b038:	41 f7 04 6f 78 56 34 12 	test   DWORD PTR [r15+rbp*2],0x12345678
+    b040:	49 f7 04 77 78 56 34 12 	test   QWORD PTR [r15+rsi*2],0x12345678
+    b048:	41 f7 04 77 78 56 34 12 	test   DWORD PTR [r15+rsi*2],0x12345678
+    b050:	49 f7 04 7f 78 56 34 12 	test   QWORD PTR [r15+rdi*2],0x12345678
+    b058:	41 f7 04 7f 78 56 34 12 	test   DWORD PTR [r15+rdi*2],0x12345678
+    b060:	4b f7 04 47 78 56 34 12 	test   QWORD PTR [r15+r8*2],0x12345678
+    b068:	43 f7 04 47 78 56 34 12 	test   DWORD PTR [r15+r8*2],0x12345678
+    b070:	4b f7 04 4f 78 56 34 12 	test   QWORD PTR [r15+r9*2],0x12345678
+    b078:	43 f7 04 4f 78 56 34 12 	test   DWORD PTR [r15+r9*2],0x12345678
+    b080:	4b f7 04 57 78 56 34 12 	test   QWORD PTR [r15+r10*2],0x12345678
+    b088:	43 f7 04 57 78 56 34 12 	test   DWORD PTR [r15+r10*2],0x12345678
+    b090:	4b f7 04 5f 78 56 34 12 	test   QWORD PTR [r15+r11*2],0x12345678
+    b098:	43 f7 04 5f 78 56 34 12 	test   DWORD PTR [r15+r11*2],0x12345678
+    b0a0:	4b f7 04 67 78 56 34 12 	test   QWORD PTR [r15+r12*2],0x12345678
+    b0a8:	43 f7 04 67 78 56 34 12 	test   DWORD PTR [r15+r12*2],0x12345678
+    b0b0:	4b f7 04 6f 78 56 34 12 	test   QWORD PTR [r15+r13*2],0x12345678
+    b0b8:	43 f7 04 6f 78 56 34 12 	test   DWORD PTR [r15+r13*2],0x12345678
+    b0c0:	4b f7 04 77 78 56 34 12 	test   QWORD PTR [r15+r14*2],0x12345678
+    b0c8:	43 f7 04 77 78 56 34 12 	test   DWORD PTR [r15+r14*2],0x12345678
+    b0d0:	4b f7 04 7f 78 56 34 12 	test   QWORD PTR [r15+r15*2],0x12345678
+    b0d8:	43 f7 04 7f 78 56 34 12 	test   DWORD PTR [r15+r15*2],0x12345678
+    b0e0:	f6 44 a0 15 12       	test   BYTE PTR [rax+riz*4+0x15],0x12
+    b0e5:	f6 44 80 15 12       	test   BYTE PTR [rax+rax*4+0x15],0x12
+    b0ea:	f6 44 88 15 12       	test   BYTE PTR [rax+rcx*4+0x15],0x12
+    b0ef:	f6 44 90 15 12       	test   BYTE PTR [rax+rdx*4+0x15],0x12
+    b0f4:	f6 44 98 15 12       	test   BYTE PTR [rax+rbx*4+0x15],0x12
+    b0f9:	f6 44 a8 15 12       	test   BYTE PTR [rax+rbp*4+0x15],0x12
+    b0fe:	f6 44 b0 15 12       	test   BYTE PTR [rax+rsi*4+0x15],0x12
+    b103:	f6 44 b8 15 12       	test   BYTE PTR [rax+rdi*4+0x15],0x12
+    b108:	42 f6 44 80 15 12    	test   BYTE PTR [rax+r8*4+0x15],0x12
+    b10e:	42 f6 44 88 15 12    	test   BYTE PTR [rax+r9*4+0x15],0x12
+    b114:	42 f6 44 90 15 12    	test   BYTE PTR [rax+r10*4+0x15],0x12
+    b11a:	42 f6 44 98 15 12    	test   BYTE PTR [rax+r11*4+0x15],0x12
+    b120:	42 f6 44 a0 15 12    	test   BYTE PTR [rax+r12*4+0x15],0x12
+    b126:	42 f6 44 a8 15 12    	test   BYTE PTR [rax+r13*4+0x15],0x12
+    b12c:	42 f6 44 b0 15 12    	test   BYTE PTR [rax+r14*4+0x15],0x12
+    b132:	42 f6 44 b8 15 12    	test   BYTE PTR [rax+r15*4+0x15],0x12
+    b138:	f6 44 a1 15 12       	test   BYTE PTR [rcx+riz*4+0x15],0x12
+    b13d:	f6 44 81 15 12       	test   BYTE PTR [rcx+rax*4+0x15],0x12
+    b142:	f6 44 89 15 12       	test   BYTE PTR [rcx+rcx*4+0x15],0x12
+    b147:	f6 44 91 15 12       	test   BYTE PTR [rcx+rdx*4+0x15],0x12
+    b14c:	f6 44 99 15 12       	test   BYTE PTR [rcx+rbx*4+0x15],0x12
+    b151:	f6 44 a9 15 12       	test   BYTE PTR [rcx+rbp*4+0x15],0x12
+    b156:	f6 44 b1 15 12       	test   BYTE PTR [rcx+rsi*4+0x15],0x12
+    b15b:	f6 44 b9 15 12       	test   BYTE PTR [rcx+rdi*4+0x15],0x12
+    b160:	42 f6 44 81 15 12    	test   BYTE PTR [rcx+r8*4+0x15],0x12
+    b166:	42 f6 44 89 15 12    	test   BYTE PTR [rcx+r9*4+0x15],0x12
+    b16c:	42 f6 44 91 15 12    	test   BYTE PTR [rcx+r10*4+0x15],0x12
+    b172:	42 f6 44 99 15 12    	test   BYTE PTR [rcx+r11*4+0x15],0x12
+    b178:	42 f6 44 a1 15 12    	test   BYTE PTR [rcx+r12*4+0x15],0x12
+    b17e:	42 f6 44 a9 15 12    	test   BYTE PTR [rcx+r13*4+0x15],0x12
+    b184:	42 f6 44 b1 15 12    	test   BYTE PTR [rcx+r14*4+0x15],0x12
+    b18a:	42 f6 44 b9 15 12    	test   BYTE PTR [rcx+r15*4+0x15],0x12
+    b190:	f6 44 a2 15 12       	test   BYTE PTR [rdx+riz*4+0x15],0x12
+    b195:	f6 44 82 15 12       	test   BYTE PTR [rdx+rax*4+0x15],0x12
+    b19a:	f6 44 8a 15 12       	test   BYTE PTR [rdx+rcx*4+0x15],0x12
+    b19f:	f6 44 92 15 12       	test   BYTE PTR [rdx+rdx*4+0x15],0x12
+    b1a4:	f6 44 9a 15 12       	test   BYTE PTR [rdx+rbx*4+0x15],0x12
+    b1a9:	f6 44 aa 15 12       	test   BYTE PTR [rdx+rbp*4+0x15],0x12
+    b1ae:	f6 44 b2 15 12       	test   BYTE PTR [rdx+rsi*4+0x15],0x12
+    b1b3:	f6 44 ba 15 12       	test   BYTE PTR [rdx+rdi*4+0x15],0x12
+    b1b8:	42 f6 44 82 15 12    	test   BYTE PTR [rdx+r8*4+0x15],0x12
+    b1be:	42 f6 44 8a 15 12    	test   BYTE PTR [rdx+r9*4+0x15],0x12
+    b1c4:	42 f6 44 92 15 12    	test   BYTE PTR [rdx+r10*4+0x15],0x12
+    b1ca:	42 f6 44 9a 15 12    	test   BYTE PTR [rdx+r11*4+0x15],0x12
+    b1d0:	42 f6 44 a2 15 12    	test   BYTE PTR [rdx+r12*4+0x15],0x12
+    b1d6:	42 f6 44 aa 15 12    	test   BYTE PTR [rdx+r13*4+0x15],0x12
+    b1dc:	42 f6 44 b2 15 12    	test   BYTE PTR [rdx+r14*4+0x15],0x12
+    b1e2:	42 f6 44 ba 15 12    	test   BYTE PTR [rdx+r15*4+0x15],0x12
+    b1e8:	f6 44 a3 15 12       	test   BYTE PTR [rbx+riz*4+0x15],0x12
+    b1ed:	f6 44 83 15 12       	test   BYTE PTR [rbx+rax*4+0x15],0x12
+    b1f2:	f6 44 8b 15 12       	test   BYTE PTR [rbx+rcx*4+0x15],0x12
+    b1f7:	f6 44 93 15 12       	test   BYTE PTR [rbx+rdx*4+0x15],0x12
+    b1fc:	f6 44 9b 15 12       	test   BYTE PTR [rbx+rbx*4+0x15],0x12
+    b201:	f6 44 ab 15 12       	test   BYTE PTR [rbx+rbp*4+0x15],0x12
+    b206:	f6 44 b3 15 12       	test   BYTE PTR [rbx+rsi*4+0x15],0x12
+    b20b:	f6 44 bb 15 12       	test   BYTE PTR [rbx+rdi*4+0x15],0x12
+    b210:	42 f6 44 83 15 12    	test   BYTE PTR [rbx+r8*4+0x15],0x12
+    b216:	42 f6 44 8b 15 12    	test   BYTE PTR [rbx+r9*4+0x15],0x12
+    b21c:	42 f6 44 93 15 12    	test   BYTE PTR [rbx+r10*4+0x15],0x12
+    b222:	42 f6 44 9b 15 12    	test   BYTE PTR [rbx+r11*4+0x15],0x12
+    b228:	42 f6 44 a3 15 12    	test   BYTE PTR [rbx+r12*4+0x15],0x12
+    b22e:	42 f6 44 ab 15 12    	test   BYTE PTR [rbx+r13*4+0x15],0x12
+    b234:	42 f6 44 b3 15 12    	test   BYTE PTR [rbx+r14*4+0x15],0x12
+    b23a:	42 f6 44 bb 15 12    	test   BYTE PTR [rbx+r15*4+0x15],0x12
+    b240:	f6 44 a4 15 12       	test   BYTE PTR [rsp+riz*4+0x15],0x12
+    b245:	f6 44 84 15 12       	test   BYTE PTR [rsp+rax*4+0x15],0x12
+    b24a:	f6 44 8c 15 12       	test   BYTE PTR [rsp+rcx*4+0x15],0x12
+    b24f:	f6 44 94 15 12       	test   BYTE PTR [rsp+rdx*4+0x15],0x12
+    b254:	f6 44 9c 15 12       	test   BYTE PTR [rsp+rbx*4+0x15],0x12
+    b259:	f6 44 ac 15 12       	test   BYTE PTR [rsp+rbp*4+0x15],0x12
+    b25e:	f6 44 b4 15 12       	test   BYTE PTR [rsp+rsi*4+0x15],0x12
+    b263:	f6 44 bc 15 12       	test   BYTE PTR [rsp+rdi*4+0x15],0x12
+    b268:	42 f6 44 84 15 12    	test   BYTE PTR [rsp+r8*4+0x15],0x12
+    b26e:	42 f6 44 8c 15 12    	test   BYTE PTR [rsp+r9*4+0x15],0x12
+    b274:	42 f6 44 94 15 12    	test   BYTE PTR [rsp+r10*4+0x15],0x12
+    b27a:	42 f6 44 9c 15 12    	test   BYTE PTR [rsp+r11*4+0x15],0x12
+    b280:	42 f6 44 a4 15 12    	test   BYTE PTR [rsp+r12*4+0x15],0x12
+    b286:	42 f6 44 ac 15 12    	test   BYTE PTR [rsp+r13*4+0x15],0x12
+    b28c:	42 f6 44 b4 15 12    	test   BYTE PTR [rsp+r14*4+0x15],0x12
+    b292:	42 f6 44 bc 15 12    	test   BYTE PTR [rsp+r15*4+0x15],0x12
+    b298:	f6 44 a5 15 12       	test   BYTE PTR [rbp+riz*4+0x15],0x12
+    b29d:	f6 44 85 15 12       	test   BYTE PTR [rbp+rax*4+0x15],0x12
+    b2a2:	f6 44 8d 15 12       	test   BYTE PTR [rbp+rcx*4+0x15],0x12
+    b2a7:	f6 44 95 15 12       	test   BYTE PTR [rbp+rdx*4+0x15],0x12
+    b2ac:	f6 44 9d 15 12       	test   BYTE PTR [rbp+rbx*4+0x15],0x12
+    b2b1:	f6 44 ad 15 12       	test   BYTE PTR [rbp+rbp*4+0x15],0x12
+    b2b6:	f6 44 b5 15 12       	test   BYTE PTR [rbp+rsi*4+0x15],0x12
+    b2bb:	f6 44 bd 15 12       	test   BYTE PTR [rbp+rdi*4+0x15],0x12
+    b2c0:	42 f6 44 85 15 12    	test   BYTE PTR [rbp+r8*4+0x15],0x12
+    b2c6:	42 f6 44 8d 15 12    	test   BYTE PTR [rbp+r9*4+0x15],0x12
+    b2cc:	42 f6 44 95 15 12    	test   BYTE PTR [rbp+r10*4+0x15],0x12
+    b2d2:	42 f6 44 9d 15 12    	test   BYTE PTR [rbp+r11*4+0x15],0x12
+    b2d8:	42 f6 44 a5 15 12    	test   BYTE PTR [rbp+r12*4+0x15],0x12
+    b2de:	42 f6 44 ad 15 12    	test   BYTE PTR [rbp+r13*4+0x15],0x12
+    b2e4:	42 f6 44 b5 15 12    	test   BYTE PTR [rbp+r14*4+0x15],0x12
+    b2ea:	42 f6 44 bd 15 12    	test   BYTE PTR [rbp+r15*4+0x15],0x12
+    b2f0:	f6 44 a6 15 12       	test   BYTE PTR [rsi+riz*4+0x15],0x12
+    b2f5:	f6 44 86 15 12       	test   BYTE PTR [rsi+rax*4+0x15],0x12
+    b2fa:	f6 44 8e 15 12       	test   BYTE PTR [rsi+rcx*4+0x15],0x12
+    b2ff:	f6 44 96 15 12       	test   BYTE PTR [rsi+rdx*4+0x15],0x12
+    b304:	f6 44 9e 15 12       	test   BYTE PTR [rsi+rbx*4+0x15],0x12
+    b309:	f6 44 ae 15 12       	test   BYTE PTR [rsi+rbp*4+0x15],0x12
+    b30e:	f6 44 b6 15 12       	test   BYTE PTR [rsi+rsi*4+0x15],0x12
+    b313:	f6 44 be 15 12       	test   BYTE PTR [rsi+rdi*4+0x15],0x12
+    b318:	42 f6 44 86 15 12    	test   BYTE PTR [rsi+r8*4+0x15],0x12
+    b31e:	42 f6 44 8e 15 12    	test   BYTE PTR [rsi+r9*4+0x15],0x12
+    b324:	42 f6 44 96 15 12    	test   BYTE PTR [rsi+r10*4+0x15],0x12
+    b32a:	42 f6 44 9e 15 12    	test   BYTE PTR [rsi+r11*4+0x15],0x12
+    b330:	42 f6 44 a6 15 12    	test   BYTE PTR [rsi+r12*4+0x15],0x12
+    b336:	42 f6 44 ae 15 12    	test   BYTE PTR [rsi+r13*4+0x15],0x12
+    b33c:	42 f6 44 b6 15 12    	test   BYTE PTR [rsi+r14*4+0x15],0x12
+    b342:	42 f6 44 be 15 12    	test   BYTE PTR [rsi+r15*4+0x15],0x12
+    b348:	f6 44 a7 15 12       	test   BYTE PTR [rdi+riz*4+0x15],0x12
+    b34d:	f6 44 87 15 12       	test   BYTE PTR [rdi+rax*4+0x15],0x12
+    b352:	f6 44 8f 15 12       	test   BYTE PTR [rdi+rcx*4+0x15],0x12
+    b357:	f6 44 97 15 12       	test   BYTE PTR [rdi+rdx*4+0x15],0x12
+    b35c:	f6 44 9f 15 12       	test   BYTE PTR [rdi+rbx*4+0x15],0x12
+    b361:	f6 44 af 15 12       	test   BYTE PTR [rdi+rbp*4+0x15],0x12
+    b366:	f6 44 b7 15 12       	test   BYTE PTR [rdi+rsi*4+0x15],0x12
+    b36b:	f6 44 bf 15 12       	test   BYTE PTR [rdi+rdi*4+0x15],0x12
+    b370:	42 f6 44 87 15 12    	test   BYTE PTR [rdi+r8*4+0x15],0x12
+    b376:	42 f6 44 8f 15 12    	test   BYTE PTR [rdi+r9*4+0x15],0x12
+    b37c:	42 f6 44 97 15 12    	test   BYTE PTR [rdi+r10*4+0x15],0x12
+    b382:	42 f6 44 9f 15 12    	test   BYTE PTR [rdi+r11*4+0x15],0x12
+    b388:	42 f6 44 a7 15 12    	test   BYTE PTR [rdi+r12*4+0x15],0x12
+    b38e:	42 f6 44 af 15 12    	test   BYTE PTR [rdi+r13*4+0x15],0x12
+    b394:	42 f6 44 b7 15 12    	test   BYTE PTR [rdi+r14*4+0x15],0x12
+    b39a:	42 f6 44 bf 15 12    	test   BYTE PTR [rdi+r15*4+0x15],0x12
+    b3a0:	41 f6 44 a0 15 12    	test   BYTE PTR [r8+riz*4+0x15],0x12
+    b3a6:	41 f6 44 80 15 12    	test   BYTE PTR [r8+rax*4+0x15],0x12
+    b3ac:	41 f6 44 88 15 12    	test   BYTE PTR [r8+rcx*4+0x15],0x12
+    b3b2:	41 f6 44 90 15 12    	test   BYTE PTR [r8+rdx*4+0x15],0x12
+    b3b8:	41 f6 44 98 15 12    	test   BYTE PTR [r8+rbx*4+0x15],0x12
+    b3be:	41 f6 44 a8 15 12    	test   BYTE PTR [r8+rbp*4+0x15],0x12
+    b3c4:	41 f6 44 b0 15 12    	test   BYTE PTR [r8+rsi*4+0x15],0x12
+    b3ca:	41 f6 44 b8 15 12    	test   BYTE PTR [r8+rdi*4+0x15],0x12
+    b3d0:	43 f6 44 80 15 12    	test   BYTE PTR [r8+r8*4+0x15],0x12
+    b3d6:	43 f6 44 88 15 12    	test   BYTE PTR [r8+r9*4+0x15],0x12
+    b3dc:	43 f6 44 90 15 12    	test   BYTE PTR [r8+r10*4+0x15],0x12
+    b3e2:	43 f6 44 98 15 12    	test   BYTE PTR [r8+r11*4+0x15],0x12
+    b3e8:	43 f6 44 a0 15 12    	test   BYTE PTR [r8+r12*4+0x15],0x12
+    b3ee:	43 f6 44 a8 15 12    	test   BYTE PTR [r8+r13*4+0x15],0x12
+    b3f4:	43 f6 44 b0 15 12    	test   BYTE PTR [r8+r14*4+0x15],0x12
+    b3fa:	43 f6 44 b8 15 12    	test   BYTE PTR [r8+r15*4+0x15],0x12
+    b400:	41 f6 44 a1 15 12    	test   BYTE PTR [r9+riz*4+0x15],0x12
+    b406:	41 f6 44 81 15 12    	test   BYTE PTR [r9+rax*4+0x15],0x12
+    b40c:	41 f6 44 89 15 12    	test   BYTE PTR [r9+rcx*4+0x15],0x12
+    b412:	41 f6 44 91 15 12    	test   BYTE PTR [r9+rdx*4+0x15],0x12
+    b418:	41 f6 44 99 15 12    	test   BYTE PTR [r9+rbx*4+0x15],0x12
+    b41e:	41 f6 44 a9 15 12    	test   BYTE PTR [r9+rbp*4+0x15],0x12
+    b424:	41 f6 44 b1 15 12    	test   BYTE PTR [r9+rsi*4+0x15],0x12
+    b42a:	41 f6 44 b9 15 12    	test   BYTE PTR [r9+rdi*4+0x15],0x12
+    b430:	43 f6 44 81 15 12    	test   BYTE PTR [r9+r8*4+0x15],0x12
+    b436:	43 f6 44 89 15 12    	test   BYTE PTR [r9+r9*4+0x15],0x12
+    b43c:	43 f6 44 91 15 12    	test   BYTE PTR [r9+r10*4+0x15],0x12
+    b442:	43 f6 44 99 15 12    	test   BYTE PTR [r9+r11*4+0x15],0x12
+    b448:	43 f6 44 a1 15 12    	test   BYTE PTR [r9+r12*4+0x15],0x12
+    b44e:	43 f6 44 a9 15 12    	test   BYTE PTR [r9+r13*4+0x15],0x12
+    b454:	43 f6 44 b1 15 12    	test   BYTE PTR [r9+r14*4+0x15],0x12
+    b45a:	43 f6 44 b9 15 12    	test   BYTE PTR [r9+r15*4+0x15],0x12
+    b460:	41 f6 44 a2 15 12    	test   BYTE PTR [r10+riz*4+0x15],0x12
+    b466:	41 f6 44 82 15 12    	test   BYTE PTR [r10+rax*4+0x15],0x12
+    b46c:	41 f6 44 8a 15 12    	test   BYTE PTR [r10+rcx*4+0x15],0x12
+    b472:	41 f6 44 92 15 12    	test   BYTE PTR [r10+rdx*4+0x15],0x12
+    b478:	41 f6 44 9a 15 12    	test   BYTE PTR [r10+rbx*4+0x15],0x12
+    b47e:	41 f6 44 aa 15 12    	test   BYTE PTR [r10+rbp*4+0x15],0x12
+    b484:	41 f6 44 b2 15 12    	test   BYTE PTR [r10+rsi*4+0x15],0x12
+    b48a:	41 f6 44 ba 15 12    	test   BYTE PTR [r10+rdi*4+0x15],0x12
+    b490:	43 f6 44 82 15 12    	test   BYTE PTR [r10+r8*4+0x15],0x12
+    b496:	43 f6 44 8a 15 12    	test   BYTE PTR [r10+r9*4+0x15],0x12
+    b49c:	43 f6 44 92 15 12    	test   BYTE PTR [r10+r10*4+0x15],0x12
+    b4a2:	43 f6 44 9a 15 12    	test   BYTE PTR [r10+r11*4+0x15],0x12
+    b4a8:	43 f6 44 a2 15 12    	test   BYTE PTR [r10+r12*4+0x15],0x12
+    b4ae:	43 f6 44 aa 15 12    	test   BYTE PTR [r10+r13*4+0x15],0x12
+    b4b4:	43 f6 44 b2 15 12    	test   BYTE PTR [r10+r14*4+0x15],0x12
+    b4ba:	43 f6 44 ba 15 12    	test   BYTE PTR [r10+r15*4+0x15],0x12
+    b4c0:	41 f6 44 a3 15 12    	test   BYTE PTR [r11+riz*4+0x15],0x12
+    b4c6:	41 f6 44 83 15 12    	test   BYTE PTR [r11+rax*4+0x15],0x12
+    b4cc:	41 f6 44 8b 15 12    	test   BYTE PTR [r11+rcx*4+0x15],0x12
+    b4d2:	41 f6 44 93 15 12    	test   BYTE PTR [r11+rdx*4+0x15],0x12
+    b4d8:	41 f6 44 9b 15 12    	test   BYTE PTR [r11+rbx*4+0x15],0x12
+    b4de:	41 f6 44 ab 15 12    	test   BYTE PTR [r11+rbp*4+0x15],0x12
+    b4e4:	41 f6 44 b3 15 12    	test   BYTE PTR [r11+rsi*4+0x15],0x12
+    b4ea:	41 f6 44 bb 15 12    	test   BYTE PTR [r11+rdi*4+0x15],0x12
+    b4f0:	43 f6 44 83 15 12    	test   BYTE PTR [r11+r8*4+0x15],0x12
+    b4f6:	43 f6 44 8b 15 12    	test   BYTE PTR [r11+r9*4+0x15],0x12
+    b4fc:	43 f6 44 93 15 12    	test   BYTE PTR [r11+r10*4+0x15],0x12
+    b502:	43 f6 44 9b 15 12    	test   BYTE PTR [r11+r11*4+0x15],0x12
+    b508:	43 f6 44 a3 15 12    	test   BYTE PTR [r11+r12*4+0x15],0x12
+    b50e:	43 f6 44 ab 15 12    	test   BYTE PTR [r11+r13*4+0x15],0x12
+    b514:	43 f6 44 b3 15 12    	test   BYTE PTR [r11+r14*4+0x15],0x12
+    b51a:	43 f6 44 bb 15 12    	test   BYTE PTR [r11+r15*4+0x15],0x12
+    b520:	41 f6 44 a4 15 12    	test   BYTE PTR [r12+riz*4+0x15],0x12
+    b526:	41 f6 44 84 15 12    	test   BYTE PTR [r12+rax*4+0x15],0x12
+    b52c:	41 f6 44 8c 15 12    	test   BYTE PTR [r12+rcx*4+0x15],0x12
+    b532:	41 f6 44 94 15 12    	test   BYTE PTR [r12+rdx*4+0x15],0x12
+    b538:	41 f6 44 9c 15 12    	test   BYTE PTR [r12+rbx*4+0x15],0x12
+    b53e:	41 f6 44 ac 15 12    	test   BYTE PTR [r12+rbp*4+0x15],0x12
+    b544:	41 f6 44 b4 15 12    	test   BYTE PTR [r12+rsi*4+0x15],0x12
+    b54a:	41 f6 44 bc 15 12    	test   BYTE PTR [r12+rdi*4+0x15],0x12
+    b550:	43 f6 44 84 15 12    	test   BYTE PTR [r12+r8*4+0x15],0x12
+    b556:	43 f6 44 8c 15 12    	test   BYTE PTR [r12+r9*4+0x15],0x12
+    b55c:	43 f6 44 94 15 12    	test   BYTE PTR [r12+r10*4+0x15],0x12
+    b562:	43 f6 44 9c 15 12    	test   BYTE PTR [r12+r11*4+0x15],0x12
+    b568:	43 f6 44 a4 15 12    	test   BYTE PTR [r12+r12*4+0x15],0x12
+    b56e:	43 f6 44 ac 15 12    	test   BYTE PTR [r12+r13*4+0x15],0x12
+    b574:	43 f6 44 b4 15 12    	test   BYTE PTR [r12+r14*4+0x15],0x12
+    b57a:	43 f6 44 bc 15 12    	test   BYTE PTR [r12+r15*4+0x15],0x12
+    b580:	41 f6 44 a5 15 12    	test   BYTE PTR [r13+riz*4+0x15],0x12
+    b586:	41 f6 44 85 15 12    	test   BYTE PTR [r13+rax*4+0x15],0x12
+    b58c:	41 f6 44 8d 15 12    	test   BYTE PTR [r13+rcx*4+0x15],0x12
+    b592:	41 f6 44 95 15 12    	test   BYTE PTR [r13+rdx*4+0x15],0x12
+    b598:	41 f6 44 9d 15 12    	test   BYTE PTR [r13+rbx*4+0x15],0x12
+    b59e:	41 f6 44 ad 15 12    	test   BYTE PTR [r13+rbp*4+0x15],0x12
+    b5a4:	41 f6 44 b5 15 12    	test   BYTE PTR [r13+rsi*4+0x15],0x12
+    b5aa:	41 f6 44 bd 15 12    	test   BYTE PTR [r13+rdi*4+0x15],0x12
+    b5b0:	43 f6 44 85 15 12    	test   BYTE PTR [r13+r8*4+0x15],0x12
+    b5b6:	43 f6 44 8d 15 12    	test   BYTE PTR [r13+r9*4+0x15],0x12
+    b5bc:	43 f6 44 95 15 12    	test   BYTE PTR [r13+r10*4+0x15],0x12
+    b5c2:	43 f6 44 9d 15 12    	test   BYTE PTR [r13+r11*4+0x15],0x12
+    b5c8:	43 f6 44 a5 15 12    	test   BYTE PTR [r13+r12*4+0x15],0x12
+    b5ce:	43 f6 44 ad 15 12    	test   BYTE PTR [r13+r13*4+0x15],0x12
+    b5d4:	43 f6 44 b5 15 12    	test   BYTE PTR [r13+r14*4+0x15],0x12
+    b5da:	43 f6 44 bd 15 12    	test   BYTE PTR [r13+r15*4+0x15],0x12
+    b5e0:	41 f6 44 a6 15 12    	test   BYTE PTR [r14+riz*4+0x15],0x12
+    b5e6:	41 f6 44 86 15 12    	test   BYTE PTR [r14+rax*4+0x15],0x12
+    b5ec:	41 f6 44 8e 15 12    	test   BYTE PTR [r14+rcx*4+0x15],0x12
+    b5f2:	41 f6 44 96 15 12    	test   BYTE PTR [r14+rdx*4+0x15],0x12
+    b5f8:	41 f6 44 9e 15 12    	test   BYTE PTR [r14+rbx*4+0x15],0x12
+    b5fe:	41 f6 44 ae 15 12    	test   BYTE PTR [r14+rbp*4+0x15],0x12
+    b604:	41 f6 44 b6 15 12    	test   BYTE PTR [r14+rsi*4+0x15],0x12
+    b60a:	41 f6 44 be 15 12    	test   BYTE PTR [r14+rdi*4+0x15],0x12
+    b610:	43 f6 44 86 15 12    	test   BYTE PTR [r14+r8*4+0x15],0x12
+    b616:	43 f6 44 8e 15 12    	test   BYTE PTR [r14+r9*4+0x15],0x12
+    b61c:	43 f6 44 96 15 12    	test   BYTE PTR [r14+r10*4+0x15],0x12
+    b622:	43 f6 44 9e 15 12    	test   BYTE PTR [r14+r11*4+0x15],0x12
+    b628:	43 f6 44 a6 15 12    	test   BYTE PTR [r14+r12*4+0x15],0x12
+    b62e:	43 f6 44 ae 15 12    	test   BYTE PTR [r14+r13*4+0x15],0x12
+    b634:	43 f6 44 b6 15 12    	test   BYTE PTR [r14+r14*4+0x15],0x12
+    b63a:	43 f6 44 be 15 12    	test   BYTE PTR [r14+r15*4+0x15],0x12
+    b640:	41 f6 44 a7 15 12    	test   BYTE PTR [r15+riz*4+0x15],0x12
+    b646:	41 f6 44 87 15 12    	test   BYTE PTR [r15+rax*4+0x15],0x12
+    b64c:	41 f6 44 8f 15 12    	test   BYTE PTR [r15+rcx*4+0x15],0x12
+    b652:	41 f6 44 97 15 12    	test   BYTE PTR [r15+rdx*4+0x15],0x12
+    b658:	41 f6 44 9f 15 12    	test   BYTE PTR [r15+rbx*4+0x15],0x12
+    b65e:	41 f6 44 af 15 12    	test   BYTE PTR [r15+rbp*4+0x15],0x12
+    b664:	41 f6 44 b7 15 12    	test   BYTE PTR [r15+rsi*4+0x15],0x12
+    b66a:	41 f6 44 bf 15 12    	test   BYTE PTR [r15+rdi*4+0x15],0x12
+    b670:	43 f6 44 87 15 12    	test   BYTE PTR [r15+r8*4+0x15],0x12
+    b676:	43 f6 44 8f 15 12    	test   BYTE PTR [r15+r9*4+0x15],0x12
+    b67c:	43 f6 44 97 15 12    	test   BYTE PTR [r15+r10*4+0x15],0x12
+    b682:	43 f6 44 9f 15 12    	test   BYTE PTR [r15+r11*4+0x15],0x12
+    b688:	43 f6 44 a7 15 12    	test   BYTE PTR [r15+r12*4+0x15],0x12
+    b68e:	43 f6 44 af 15 12    	test   BYTE PTR [r15+r13*4+0x15],0x12
+    b694:	43 f6 44 b7 15 12    	test   BYTE PTR [r15+r14*4+0x15],0x12
+    b69a:	43 f6 44 bf 15 12    	test   BYTE PTR [r15+r15*4+0x15],0x12
+    b6a0:	66 f7 44 a0 15 34 12 	test   WORD PTR [rax+riz*4+0x15],0x1234
+    b6a7:	66 f7 44 80 15 34 12 	test   WORD PTR [rax+rax*4+0x15],0x1234
+    b6ae:	66 f7 44 88 15 34 12 	test   WORD PTR [rax+rcx*4+0x15],0x1234
+    b6b5:	66 f7 44 90 15 34 12 	test   WORD PTR [rax+rdx*4+0x15],0x1234
+    b6bc:	66 f7 44 98 15 34 12 	test   WORD PTR [rax+rbx*4+0x15],0x1234
+    b6c3:	66 f7 44 a8 15 34 12 	test   WORD PTR [rax+rbp*4+0x15],0x1234
+    b6ca:	66 f7 44 b0 15 34 12 	test   WORD PTR [rax+rsi*4+0x15],0x1234
+    b6d1:	66 f7 44 b8 15 34 12 	test   WORD PTR [rax+rdi*4+0x15],0x1234
+    b6d8:	66 42 f7 44 80 15 34 12 	test   WORD PTR [rax+r8*4+0x15],0x1234
+    b6e0:	66 42 f7 44 88 15 34 12 	test   WORD PTR [rax+r9*4+0x15],0x1234
+    b6e8:	66 42 f7 44 90 15 34 12 	test   WORD PTR [rax+r10*4+0x15],0x1234
+    b6f0:	66 42 f7 44 98 15 34 12 	test   WORD PTR [rax+r11*4+0x15],0x1234
+    b6f8:	66 42 f7 44 a0 15 34 12 	test   WORD PTR [rax+r12*4+0x15],0x1234
+    b700:	66 42 f7 44 a8 15 34 12 	test   WORD PTR [rax+r13*4+0x15],0x1234
+    b708:	66 42 f7 44 b0 15 34 12 	test   WORD PTR [rax+r14*4+0x15],0x1234
+    b710:	66 42 f7 44 b8 15 34 12 	test   WORD PTR [rax+r15*4+0x15],0x1234
+    b718:	66 f7 44 a1 15 34 12 	test   WORD PTR [rcx+riz*4+0x15],0x1234
+    b71f:	66 f7 44 81 15 34 12 	test   WORD PTR [rcx+rax*4+0x15],0x1234
+    b726:	66 f7 44 89 15 34 12 	test   WORD PTR [rcx+rcx*4+0x15],0x1234
+    b72d:	66 f7 44 91 15 34 12 	test   WORD PTR [rcx+rdx*4+0x15],0x1234
+    b734:	66 f7 44 99 15 34 12 	test   WORD PTR [rcx+rbx*4+0x15],0x1234
+    b73b:	66 f7 44 a9 15 34 12 	test   WORD PTR [rcx+rbp*4+0x15],0x1234
+    b742:	66 f7 44 b1 15 34 12 	test   WORD PTR [rcx+rsi*4+0x15],0x1234
+    b749:	66 f7 44 b9 15 34 12 	test   WORD PTR [rcx+rdi*4+0x15],0x1234
+    b750:	66 42 f7 44 81 15 34 12 	test   WORD PTR [rcx+r8*4+0x15],0x1234
+    b758:	66 42 f7 44 89 15 34 12 	test   WORD PTR [rcx+r9*4+0x15],0x1234
+    b760:	66 42 f7 44 91 15 34 12 	test   WORD PTR [rcx+r10*4+0x15],0x1234
+    b768:	66 42 f7 44 99 15 34 12 	test   WORD PTR [rcx+r11*4+0x15],0x1234
+    b770:	66 42 f7 44 a1 15 34 12 	test   WORD PTR [rcx+r12*4+0x15],0x1234
+    b778:	66 42 f7 44 a9 15 34 12 	test   WORD PTR [rcx+r13*4+0x15],0x1234
+    b780:	66 42 f7 44 b1 15 34 12 	test   WORD PTR [rcx+r14*4+0x15],0x1234
+    b788:	66 42 f7 44 b9 15 34 12 	test   WORD PTR [rcx+r15*4+0x15],0x1234
+    b790:	66 f7 44 a2 15 34 12 	test   WORD PTR [rdx+riz*4+0x15],0x1234
+    b797:	66 f7 44 82 15 34 12 	test   WORD PTR [rdx+rax*4+0x15],0x1234
+    b79e:	66 f7 44 8a 15 34 12 	test   WORD PTR [rdx+rcx*4+0x15],0x1234
+    b7a5:	66 f7 44 92 15 34 12 	test   WORD PTR [rdx+rdx*4+0x15],0x1234
+    b7ac:	66 f7 44 9a 15 34 12 	test   WORD PTR [rdx+rbx*4+0x15],0x1234
+    b7b3:	66 f7 44 aa 15 34 12 	test   WORD PTR [rdx+rbp*4+0x15],0x1234
+    b7ba:	66 f7 44 b2 15 34 12 	test   WORD PTR [rdx+rsi*4+0x15],0x1234
+    b7c1:	66 f7 44 ba 15 34 12 	test   WORD PTR [rdx+rdi*4+0x15],0x1234
+    b7c8:	66 42 f7 44 82 15 34 12 	test   WORD PTR [rdx+r8*4+0x15],0x1234
+    b7d0:	66 42 f7 44 8a 15 34 12 	test   WORD PTR [rdx+r9*4+0x15],0x1234
+    b7d8:	66 42 f7 44 92 15 34 12 	test   WORD PTR [rdx+r10*4+0x15],0x1234
+    b7e0:	66 42 f7 44 9a 15 34 12 	test   WORD PTR [rdx+r11*4+0x15],0x1234
+    b7e8:	66 42 f7 44 a2 15 34 12 	test   WORD PTR [rdx+r12*4+0x15],0x1234
+    b7f0:	66 42 f7 44 aa 15 34 12 	test   WORD PTR [rdx+r13*4+0x15],0x1234
+    b7f8:	66 42 f7 44 b2 15 34 12 	test   WORD PTR [rdx+r14*4+0x15],0x1234
+    b800:	66 42 f7 44 ba 15 34 12 	test   WORD PTR [rdx+r15*4+0x15],0x1234
+    b808:	66 f7 44 a3 15 34 12 	test   WORD PTR [rbx+riz*4+0x15],0x1234
+    b80f:	66 f7 44 83 15 34 12 	test   WORD PTR [rbx+rax*4+0x15],0x1234
+    b816:	66 f7 44 8b 15 34 12 	test   WORD PTR [rbx+rcx*4+0x15],0x1234
+    b81d:	66 f7 44 93 15 34 12 	test   WORD PTR [rbx+rdx*4+0x15],0x1234
+    b824:	66 f7 44 9b 15 34 12 	test   WORD PTR [rbx+rbx*4+0x15],0x1234
+    b82b:	66 f7 44 ab 15 34 12 	test   WORD PTR [rbx+rbp*4+0x15],0x1234
+    b832:	66 f7 44 b3 15 34 12 	test   WORD PTR [rbx+rsi*4+0x15],0x1234
+    b839:	66 f7 44 bb 15 34 12 	test   WORD PTR [rbx+rdi*4+0x15],0x1234
+    b840:	66 42 f7 44 83 15 34 12 	test   WORD PTR [rbx+r8*4+0x15],0x1234
+    b848:	66 42 f7 44 8b 15 34 12 	test   WORD PTR [rbx+r9*4+0x15],0x1234
+    b850:	66 42 f7 44 93 15 34 12 	test   WORD PTR [rbx+r10*4+0x15],0x1234
+    b858:	66 42 f7 44 9b 15 34 12 	test   WORD PTR [rbx+r11*4+0x15],0x1234
+    b860:	66 42 f7 44 a3 15 34 12 	test   WORD PTR [rbx+r12*4+0x15],0x1234
+    b868:	66 42 f7 44 ab 15 34 12 	test   WORD PTR [rbx+r13*4+0x15],0x1234
+    b870:	66 42 f7 44 b3 15 34 12 	test   WORD PTR [rbx+r14*4+0x15],0x1234
+    b878:	66 42 f7 44 bb 15 34 12 	test   WORD PTR [rbx+r15*4+0x15],0x1234
+    b880:	66 f7 44 a4 15 34 12 	test   WORD PTR [rsp+riz*4+0x15],0x1234
+    b887:	66 f7 44 84 15 34 12 	test   WORD PTR [rsp+rax*4+0x15],0x1234
+    b88e:	66 f7 44 8c 15 34 12 	test   WORD PTR [rsp+rcx*4+0x15],0x1234
+    b895:	66 f7 44 94 15 34 12 	test   WORD PTR [rsp+rdx*4+0x15],0x1234
+    b89c:	66 f7 44 9c 15 34 12 	test   WORD PTR [rsp+rbx*4+0x15],0x1234
+    b8a3:	66 f7 44 ac 15 34 12 	test   WORD PTR [rsp+rbp*4+0x15],0x1234
+    b8aa:	66 f7 44 b4 15 34 12 	test   WORD PTR [rsp+rsi*4+0x15],0x1234
+    b8b1:	66 f7 44 bc 15 34 12 	test   WORD PTR [rsp+rdi*4+0x15],0x1234
+    b8b8:	66 42 f7 44 84 15 34 12 	test   WORD PTR [rsp+r8*4+0x15],0x1234
+    b8c0:	66 42 f7 44 8c 15 34 12 	test   WORD PTR [rsp+r9*4+0x15],0x1234
+    b8c8:	66 42 f7 44 94 15 34 12 	test   WORD PTR [rsp+r10*4+0x15],0x1234
+    b8d0:	66 42 f7 44 9c 15 34 12 	test   WORD PTR [rsp+r11*4+0x15],0x1234
+    b8d8:	66 42 f7 44 a4 15 34 12 	test   WORD PTR [rsp+r12*4+0x15],0x1234
+    b8e0:	66 42 f7 44 ac 15 34 12 	test   WORD PTR [rsp+r13*4+0x15],0x1234
+    b8e8:	66 42 f7 44 b4 15 34 12 	test   WORD PTR [rsp+r14*4+0x15],0x1234
+    b8f0:	66 42 f7 44 bc 15 34 12 	test   WORD PTR [rsp+r15*4+0x15],0x1234
+    b8f8:	66 f7 44 a5 15 34 12 	test   WORD PTR [rbp+riz*4+0x15],0x1234
+    b8ff:	66 f7 44 85 15 34 12 	test   WORD PTR [rbp+rax*4+0x15],0x1234
+    b906:	66 f7 44 8d 15 34 12 	test   WORD PTR [rbp+rcx*4+0x15],0x1234
+    b90d:	66 f7 44 95 15 34 12 	test   WORD PTR [rbp+rdx*4+0x15],0x1234
+    b914:	66 f7 44 9d 15 34 12 	test   WORD PTR [rbp+rbx*4+0x15],0x1234
+    b91b:	66 f7 44 ad 15 34 12 	test   WORD PTR [rbp+rbp*4+0x15],0x1234
+    b922:	66 f7 44 b5 15 34 12 	test   WORD PTR [rbp+rsi*4+0x15],0x1234
+    b929:	66 f7 44 bd 15 34 12 	test   WORD PTR [rbp+rdi*4+0x15],0x1234
+    b930:	66 42 f7 44 85 15 34 12 	test   WORD PTR [rbp+r8*4+0x15],0x1234
+    b938:	66 42 f7 44 8d 15 34 12 	test   WORD PTR [rbp+r9*4+0x15],0x1234
+    b940:	66 42 f7 44 95 15 34 12 	test   WORD PTR [rbp+r10*4+0x15],0x1234
+    b948:	66 42 f7 44 9d 15 34 12 	test   WORD PTR [rbp+r11*4+0x15],0x1234
+    b950:	66 42 f7 44 a5 15 34 12 	test   WORD PTR [rbp+r12*4+0x15],0x1234
+    b958:	66 42 f7 44 ad 15 34 12 	test   WORD PTR [rbp+r13*4+0x15],0x1234
+    b960:	66 42 f7 44 b5 15 34 12 	test   WORD PTR [rbp+r14*4+0x15],0x1234
+    b968:	66 42 f7 44 bd 15 34 12 	test   WORD PTR [rbp+r15*4+0x15],0x1234
+    b970:	66 f7 44 a6 15 34 12 	test   WORD PTR [rsi+riz*4+0x15],0x1234
+    b977:	66 f7 44 86 15 34 12 	test   WORD PTR [rsi+rax*4+0x15],0x1234
+    b97e:	66 f7 44 8e 15 34 12 	test   WORD PTR [rsi+rcx*4+0x15],0x1234
+    b985:	66 f7 44 96 15 34 12 	test   WORD PTR [rsi+rdx*4+0x15],0x1234
+    b98c:	66 f7 44 9e 15 34 12 	test   WORD PTR [rsi+rbx*4+0x15],0x1234
+    b993:	66 f7 44 ae 15 34 12 	test   WORD PTR [rsi+rbp*4+0x15],0x1234
+    b99a:	66 f7 44 b6 15 34 12 	test   WORD PTR [rsi+rsi*4+0x15],0x1234
+    b9a1:	66 f7 44 be 15 34 12 	test   WORD PTR [rsi+rdi*4+0x15],0x1234
+    b9a8:	66 42 f7 44 86 15 34 12 	test   WORD PTR [rsi+r8*4+0x15],0x1234
+    b9b0:	66 42 f7 44 8e 15 34 12 	test   WORD PTR [rsi+r9*4+0x15],0x1234
+    b9b8:	66 42 f7 44 96 15 34 12 	test   WORD PTR [rsi+r10*4+0x15],0x1234
+    b9c0:	66 42 f7 44 9e 15 34 12 	test   WORD PTR [rsi+r11*4+0x15],0x1234
+    b9c8:	66 42 f7 44 a6 15 34 12 	test   WORD PTR [rsi+r12*4+0x15],0x1234
+    b9d0:	66 42 f7 44 ae 15 34 12 	test   WORD PTR [rsi+r13*4+0x15],0x1234
+    b9d8:	66 42 f7 44 b6 15 34 12 	test   WORD PTR [rsi+r14*4+0x15],0x1234
+    b9e0:	66 42 f7 44 be 15 34 12 	test   WORD PTR [rsi+r15*4+0x15],0x1234
+    b9e8:	66 f7 44 a7 15 34 12 	test   WORD PTR [rdi+riz*4+0x15],0x1234
+    b9ef:	66 f7 44 87 15 34 12 	test   WORD PTR [rdi+rax*4+0x15],0x1234
+    b9f6:	66 f7 44 8f 15 34 12 	test   WORD PTR [rdi+rcx*4+0x15],0x1234
+    b9fd:	66 f7 44 97 15 34 12 	test   WORD PTR [rdi+rdx*4+0x15],0x1234
+    ba04:	66 f7 44 9f 15 34 12 	test   WORD PTR [rdi+rbx*4+0x15],0x1234
+    ba0b:	66 f7 44 af 15 34 12 	test   WORD PTR [rdi+rbp*4+0x15],0x1234
+    ba12:	66 f7 44 b7 15 34 12 	test   WORD PTR [rdi+rsi*4+0x15],0x1234
+    ba19:	66 f7 44 bf 15 34 12 	test   WORD PTR [rdi+rdi*4+0x15],0x1234
+    ba20:	66 42 f7 44 87 15 34 12 	test   WORD PTR [rdi+r8*4+0x15],0x1234
+    ba28:	66 42 f7 44 8f 15 34 12 	test   WORD PTR [rdi+r9*4+0x15],0x1234
+    ba30:	66 42 f7 44 97 15 34 12 	test   WORD PTR [rdi+r10*4+0x15],0x1234
+    ba38:	66 42 f7 44 9f 15 34 12 	test   WORD PTR [rdi+r11*4+0x15],0x1234
+    ba40:	66 42 f7 44 a7 15 34 12 	test   WORD PTR [rdi+r12*4+0x15],0x1234
+    ba48:	66 42 f7 44 af 15 34 12 	test   WORD PTR [rdi+r13*4+0x15],0x1234
+    ba50:	66 42 f7 44 b7 15 34 12 	test   WORD PTR [rdi+r14*4+0x15],0x1234
+    ba58:	66 42 f7 44 bf 15 34 12 	test   WORD PTR [rdi+r15*4+0x15],0x1234
+    ba60:	66 41 f7 44 a0 15 34 12 	test   WORD PTR [r8+riz*4+0x15],0x1234
+    ba68:	66 41 f7 44 80 15 34 12 	test   WORD PTR [r8+rax*4+0x15],0x1234
+    ba70:	66 41 f7 44 88 15 34 12 	test   WORD PTR [r8+rcx*4+0x15],0x1234
+    ba78:	66 41 f7 44 90 15 34 12 	test   WORD PTR [r8+rdx*4+0x15],0x1234
+    ba80:	66 41 f7 44 98 15 34 12 	test   WORD PTR [r8+rbx*4+0x15],0x1234
+    ba88:	66 41 f7 44 a8 15 34 12 	test   WORD PTR [r8+rbp*4+0x15],0x1234
+    ba90:	66 41 f7 44 b0 15 34 12 	test   WORD PTR [r8+rsi*4+0x15],0x1234
+    ba98:	66 41 f7 44 b8 15 34 12 	test   WORD PTR [r8+rdi*4+0x15],0x1234
+    baa0:	66 43 f7 44 80 15 34 12 	test   WORD PTR [r8+r8*4+0x15],0x1234
+    baa8:	66 43 f7 44 88 15 34 12 	test   WORD PTR [r8+r9*4+0x15],0x1234
+    bab0:	66 43 f7 44 90 15 34 12 	test   WORD PTR [r8+r10*4+0x15],0x1234
+    bab8:	66 43 f7 44 98 15 34 12 	test   WORD PTR [r8+r11*4+0x15],0x1234
+    bac0:	66 43 f7 44 a0 15 34 12 	test   WORD PTR [r8+r12*4+0x15],0x1234
+    bac8:	66 43 f7 44 a8 15 34 12 	test   WORD PTR [r8+r13*4+0x15],0x1234
+    bad0:	66 43 f7 44 b0 15 34 12 	test   WORD PTR [r8+r14*4+0x15],0x1234
+    bad8:	66 43 f7 44 b8 15 34 12 	test   WORD PTR [r8+r15*4+0x15],0x1234
+    bae0:	66 41 f7 44 a1 15 34 12 	test   WORD PTR [r9+riz*4+0x15],0x1234
+    bae8:	66 41 f7 44 81 15 34 12 	test   WORD PTR [r9+rax*4+0x15],0x1234
+    baf0:	66 41 f7 44 89 15 34 12 	test   WORD PTR [r9+rcx*4+0x15],0x1234
+    baf8:	66 41 f7 44 91 15 34 12 	test   WORD PTR [r9+rdx*4+0x15],0x1234
+    bb00:	66 41 f7 44 99 15 34 12 	test   WORD PTR [r9+rbx*4+0x15],0x1234
+    bb08:	66 41 f7 44 a9 15 34 12 	test   WORD PTR [r9+rbp*4+0x15],0x1234
+    bb10:	66 41 f7 44 b1 15 34 12 	test   WORD PTR [r9+rsi*4+0x15],0x1234
+    bb18:	66 41 f7 44 b9 15 34 12 	test   WORD PTR [r9+rdi*4+0x15],0x1234
+    bb20:	66 43 f7 44 81 15 34 12 	test   WORD PTR [r9+r8*4+0x15],0x1234
+    bb28:	66 43 f7 44 89 15 34 12 	test   WORD PTR [r9+r9*4+0x15],0x1234
+    bb30:	66 43 f7 44 91 15 34 12 	test   WORD PTR [r9+r10*4+0x15],0x1234
+    bb38:	66 43 f7 44 99 15 34 12 	test   WORD PTR [r9+r11*4+0x15],0x1234
+    bb40:	66 43 f7 44 a1 15 34 12 	test   WORD PTR [r9+r12*4+0x15],0x1234
+    bb48:	66 43 f7 44 a9 15 34 12 	test   WORD PTR [r9+r13*4+0x15],0x1234
+    bb50:	66 43 f7 44 b1 15 34 12 	test   WORD PTR [r9+r14*4+0x15],0x1234
+    bb58:	66 43 f7 44 b9 15 34 12 	test   WORD PTR [r9+r15*4+0x15],0x1234
+    bb60:	66 41 f7 44 a2 15 34 12 	test   WORD PTR [r10+riz*4+0x15],0x1234
+    bb68:	66 41 f7 44 82 15 34 12 	test   WORD PTR [r10+rax*4+0x15],0x1234
+    bb70:	66 41 f7 44 8a 15 34 12 	test   WORD PTR [r10+rcx*4+0x15],0x1234
+    bb78:	66 41 f7 44 92 15 34 12 	test   WORD PTR [r10+rdx*4+0x15],0x1234
+    bb80:	66 41 f7 44 9a 15 34 12 	test   WORD PTR [r10+rbx*4+0x15],0x1234
+    bb88:	66 41 f7 44 aa 15 34 12 	test   WORD PTR [r10+rbp*4+0x15],0x1234
+    bb90:	66 41 f7 44 b2 15 34 12 	test   WORD PTR [r10+rsi*4+0x15],0x1234
+    bb98:	66 41 f7 44 ba 15 34 12 	test   WORD PTR [r10+rdi*4+0x15],0x1234
+    bba0:	66 43 f7 44 82 15 34 12 	test   WORD PTR [r10+r8*4+0x15],0x1234
+    bba8:	66 43 f7 44 8a 15 34 12 	test   WORD PTR [r10+r9*4+0x15],0x1234
+    bbb0:	66 43 f7 44 92 15 34 12 	test   WORD PTR [r10+r10*4+0x15],0x1234
+    bbb8:	66 43 f7 44 9a 15 34 12 	test   WORD PTR [r10+r11*4+0x15],0x1234
+    bbc0:	66 43 f7 44 a2 15 34 12 	test   WORD PTR [r10+r12*4+0x15],0x1234
+    bbc8:	66 43 f7 44 aa 15 34 12 	test   WORD PTR [r10+r13*4+0x15],0x1234
+    bbd0:	66 43 f7 44 b2 15 34 12 	test   WORD PTR [r10+r14*4+0x15],0x1234
+    bbd8:	66 43 f7 44 ba 15 34 12 	test   WORD PTR [r10+r15*4+0x15],0x1234
+    bbe0:	66 41 f7 44 a3 15 34 12 	test   WORD PTR [r11+riz*4+0x15],0x1234
+    bbe8:	66 41 f7 44 83 15 34 12 	test   WORD PTR [r11+rax*4+0x15],0x1234
+    bbf0:	66 41 f7 44 8b 15 34 12 	test   WORD PTR [r11+rcx*4+0x15],0x1234
+    bbf8:	66 41 f7 44 93 15 34 12 	test   WORD PTR [r11+rdx*4+0x15],0x1234
+    bc00:	66 41 f7 44 9b 15 34 12 	test   WORD PTR [r11+rbx*4+0x15],0x1234
+    bc08:	66 41 f7 44 ab 15 34 12 	test   WORD PTR [r11+rbp*4+0x15],0x1234
+    bc10:	66 41 f7 44 b3 15 34 12 	test   WORD PTR [r11+rsi*4+0x15],0x1234
+    bc18:	66 41 f7 44 bb 15 34 12 	test   WORD PTR [r11+rdi*4+0x15],0x1234
+    bc20:	66 43 f7 44 83 15 34 12 	test   WORD PTR [r11+r8*4+0x15],0x1234
+    bc28:	66 43 f7 44 8b 15 34 12 	test   WORD PTR [r11+r9*4+0x15],0x1234
+    bc30:	66 43 f7 44 93 15 34 12 	test   WORD PTR [r11+r10*4+0x15],0x1234
+    bc38:	66 43 f7 44 9b 15 34 12 	test   WORD PTR [r11+r11*4+0x15],0x1234
+    bc40:	66 43 f7 44 a3 15 34 12 	test   WORD PTR [r11+r12*4+0x15],0x1234
+    bc48:	66 43 f7 44 ab 15 34 12 	test   WORD PTR [r11+r13*4+0x15],0x1234
+    bc50:	66 43 f7 44 b3 15 34 12 	test   WORD PTR [r11+r14*4+0x15],0x1234
+    bc58:	66 43 f7 44 bb 15 34 12 	test   WORD PTR [r11+r15*4+0x15],0x1234
+    bc60:	66 41 f7 44 a4 15 34 12 	test   WORD PTR [r12+riz*4+0x15],0x1234
+    bc68:	66 41 f7 44 84 15 34 12 	test   WORD PTR [r12+rax*4+0x15],0x1234
+    bc70:	66 41 f7 44 8c 15 34 12 	test   WORD PTR [r12+rcx*4+0x15],0x1234
+    bc78:	66 41 f7 44 94 15 34 12 	test   WORD PTR [r12+rdx*4+0x15],0x1234
+    bc80:	66 41 f7 44 9c 15 34 12 	test   WORD PTR [r12+rbx*4+0x15],0x1234
+    bc88:	66 41 f7 44 ac 15 34 12 	test   WORD PTR [r12+rbp*4+0x15],0x1234
+    bc90:	66 41 f7 44 b4 15 34 12 	test   WORD PTR [r12+rsi*4+0x15],0x1234
+    bc98:	66 41 f7 44 bc 15 34 12 	test   WORD PTR [r12+rdi*4+0x15],0x1234
+    bca0:	66 43 f7 44 84 15 34 12 	test   WORD PTR [r12+r8*4+0x15],0x1234
+    bca8:	66 43 f7 44 8c 15 34 12 	test   WORD PTR [r12+r9*4+0x15],0x1234
+    bcb0:	66 43 f7 44 94 15 34 12 	test   WORD PTR [r12+r10*4+0x15],0x1234
+    bcb8:	66 43 f7 44 9c 15 34 12 	test   WORD PTR [r12+r11*4+0x15],0x1234
+    bcc0:	66 43 f7 44 a4 15 34 12 	test   WORD PTR [r12+r12*4+0x15],0x1234
+    bcc8:	66 43 f7 44 ac 15 34 12 	test   WORD PTR [r12+r13*4+0x15],0x1234
+    bcd0:	66 43 f7 44 b4 15 34 12 	test   WORD PTR [r12+r14*4+0x15],0x1234
+    bcd8:	66 43 f7 44 bc 15 34 12 	test   WORD PTR [r12+r15*4+0x15],0x1234
+    bce0:	66 41 f7 44 a5 15 34 12 	test   WORD PTR [r13+riz*4+0x15],0x1234
+    bce8:	66 41 f7 44 85 15 34 12 	test   WORD PTR [r13+rax*4+0x15],0x1234
+    bcf0:	66 41 f7 44 8d 15 34 12 	test   WORD PTR [r13+rcx*4+0x15],0x1234
+    bcf8:	66 41 f7 44 95 15 34 12 	test   WORD PTR [r13+rdx*4+0x15],0x1234
+    bd00:	66 41 f7 44 9d 15 34 12 	test   WORD PTR [r13+rbx*4+0x15],0x1234
+    bd08:	66 41 f7 44 ad 15 34 12 	test   WORD PTR [r13+rbp*4+0x15],0x1234
+    bd10:	66 41 f7 44 b5 15 34 12 	test   WORD PTR [r13+rsi*4+0x15],0x1234
+    bd18:	66 41 f7 44 bd 15 34 12 	test   WORD PTR [r13+rdi*4+0x15],0x1234
+    bd20:	66 43 f7 44 85 15 34 12 	test   WORD PTR [r13+r8*4+0x15],0x1234
+    bd28:	66 43 f7 44 8d 15 34 12 	test   WORD PTR [r13+r9*4+0x15],0x1234
+    bd30:	66 43 f7 44 95 15 34 12 	test   WORD PTR [r13+r10*4+0x15],0x1234
+    bd38:	66 43 f7 44 9d 15 34 12 	test   WORD PTR [r13+r11*4+0x15],0x1234
+    bd40:	66 43 f7 44 a5 15 34 12 	test   WORD PTR [r13+r12*4+0x15],0x1234
+    bd48:	66 43 f7 44 ad 15 34 12 	test   WORD PTR [r13+r13*4+0x15],0x1234
+    bd50:	66 43 f7 44 b5 15 34 12 	test   WORD PTR [r13+r14*4+0x15],0x1234
+    bd58:	66 43 f7 44 bd 15 34 12 	test   WORD PTR [r13+r15*4+0x15],0x1234
+    bd60:	66 41 f7 44 a6 15 34 12 	test   WORD PTR [r14+riz*4+0x15],0x1234
+    bd68:	66 41 f7 44 86 15 34 12 	test   WORD PTR [r14+rax*4+0x15],0x1234
+    bd70:	66 41 f7 44 8e 15 34 12 	test   WORD PTR [r14+rcx*4+0x15],0x1234
+    bd78:	66 41 f7 44 96 15 34 12 	test   WORD PTR [r14+rdx*4+0x15],0x1234
+    bd80:	66 41 f7 44 9e 15 34 12 	test   WORD PTR [r14+rbx*4+0x15],0x1234
+    bd88:	66 41 f7 44 ae 15 34 12 	test   WORD PTR [r14+rbp*4+0x15],0x1234
+    bd90:	66 41 f7 44 b6 15 34 12 	test   WORD PTR [r14+rsi*4+0x15],0x1234
+    bd98:	66 41 f7 44 be 15 34 12 	test   WORD PTR [r14+rdi*4+0x15],0x1234
+    bda0:	66 43 f7 44 86 15 34 12 	test   WORD PTR [r14+r8*4+0x15],0x1234
+    bda8:	66 43 f7 44 8e 15 34 12 	test   WORD PTR [r14+r9*4+0x15],0x1234
+    bdb0:	66 43 f7 44 96 15 34 12 	test   WORD PTR [r14+r10*4+0x15],0x1234
+    bdb8:	66 43 f7 44 9e 15 34 12 	test   WORD PTR [r14+r11*4+0x15],0x1234
+    bdc0:	66 43 f7 44 a6 15 34 12 	test   WORD PTR [r14+r12*4+0x15],0x1234
+    bdc8:	66 43 f7 44 ae 15 34 12 	test   WORD PTR [r14+r13*4+0x15],0x1234
+    bdd0:	66 43 f7 44 b6 15 34 12 	test   WORD PTR [r14+r14*4+0x15],0x1234
+    bdd8:	66 43 f7 44 be 15 34 12 	test   WORD PTR [r14+r15*4+0x15],0x1234
+    bde0:	66 41 f7 44 a7 15 34 12 	test   WORD PTR [r15+riz*4+0x15],0x1234
+    bde8:	66 41 f7 44 87 15 34 12 	test   WORD PTR [r15+rax*4+0x15],0x1234
+    bdf0:	66 41 f7 44 8f 15 34 12 	test   WORD PTR [r15+rcx*4+0x15],0x1234
+    bdf8:	66 41 f7 44 97 15 34 12 	test   WORD PTR [r15+rdx*4+0x15],0x1234
+    be00:	66 41 f7 44 9f 15 34 12 	test   WORD PTR [r15+rbx*4+0x15],0x1234
+    be08:	66 41 f7 44 af 15 34 12 	test   WORD PTR [r15+rbp*4+0x15],0x1234
+    be10:	66 41 f7 44 b7 15 34 12 	test   WORD PTR [r15+rsi*4+0x15],0x1234
+    be18:	66 41 f7 44 bf 15 34 12 	test   WORD PTR [r15+rdi*4+0x15],0x1234
+    be20:	66 43 f7 44 87 15 34 12 	test   WORD PTR [r15+r8*4+0x15],0x1234
+    be28:	66 43 f7 44 8f 15 34 12 	test   WORD PTR [r15+r9*4+0x15],0x1234
+    be30:	66 43 f7 44 97 15 34 12 	test   WORD PTR [r15+r10*4+0x15],0x1234
+    be38:	66 43 f7 44 9f 15 34 12 	test   WORD PTR [r15+r11*4+0x15],0x1234
+    be40:	66 43 f7 44 a7 15 34 12 	test   WORD PTR [r15+r12*4+0x15],0x1234
+    be48:	66 43 f7 44 af 15 34 12 	test   WORD PTR [r15+r13*4+0x15],0x1234
+    be50:	66 43 f7 44 b7 15 34 12 	test   WORD PTR [r15+r14*4+0x15],0x1234
+    be58:	66 43 f7 44 bf 15 34 12 	test   WORD PTR [r15+r15*4+0x15],0x1234
+    be60:	48 f7 44 a0 15 78 56 34 12 	test   QWORD PTR [rax+riz*4+0x15],0x12345678
+    be69:	f7 44 a0 15 78 56 34 12 	test   DWORD PTR [rax+riz*4+0x15],0x12345678
+    be71:	48 f7 44 80 15 78 56 34 12 	test   QWORD PTR [rax+rax*4+0x15],0x12345678
+    be7a:	f7 44 80 15 78 56 34 12 	test   DWORD PTR [rax+rax*4+0x15],0x12345678
+    be82:	48 f7 44 88 15 78 56 34 12 	test   QWORD PTR [rax+rcx*4+0x15],0x12345678
+    be8b:	f7 44 88 15 78 56 34 12 	test   DWORD PTR [rax+rcx*4+0x15],0x12345678
+    be93:	48 f7 44 90 15 78 56 34 12 	test   QWORD PTR [rax+rdx*4+0x15],0x12345678
+    be9c:	f7 44 90 15 78 56 34 12 	test   DWORD PTR [rax+rdx*4+0x15],0x12345678
+    bea4:	48 f7 44 98 15 78 56 34 12 	test   QWORD PTR [rax+rbx*4+0x15],0x12345678
+    bead:	f7 44 98 15 78 56 34 12 	test   DWORD PTR [rax+rbx*4+0x15],0x12345678
+    beb5:	48 f7 44 a8 15 78 56 34 12 	test   QWORD PTR [rax+rbp*4+0x15],0x12345678
+    bebe:	f7 44 a8 15 78 56 34 12 	test   DWORD PTR [rax+rbp*4+0x15],0x12345678
+    bec6:	48 f7 44 b0 15 78 56 34 12 	test   QWORD PTR [rax+rsi*4+0x15],0x12345678
+    becf:	f7 44 b0 15 78 56 34 12 	test   DWORD PTR [rax+rsi*4+0x15],0x12345678
+    bed7:	48 f7 44 b8 15 78 56 34 12 	test   QWORD PTR [rax+rdi*4+0x15],0x12345678
+    bee0:	f7 44 b8 15 78 56 34 12 	test   DWORD PTR [rax+rdi*4+0x15],0x12345678
+    bee8:	4a f7 44 80 15 78 56 34 12 	test   QWORD PTR [rax+r8*4+0x15],0x12345678
+    bef1:	42 f7 44 80 15 78 56 34 12 	test   DWORD PTR [rax+r8*4+0x15],0x12345678
+    befa:	4a f7 44 88 15 78 56 34 12 	test   QWORD PTR [rax+r9*4+0x15],0x12345678
+    bf03:	42 f7 44 88 15 78 56 34 12 	test   DWORD PTR [rax+r9*4+0x15],0x12345678
+    bf0c:	4a f7 44 90 15 78 56 34 12 	test   QWORD PTR [rax+r10*4+0x15],0x12345678
+    bf15:	42 f7 44 90 15 78 56 34 12 	test   DWORD PTR [rax+r10*4+0x15],0x12345678
+    bf1e:	4a f7 44 98 15 78 56 34 12 	test   QWORD PTR [rax+r11*4+0x15],0x12345678
+    bf27:	42 f7 44 98 15 78 56 34 12 	test   DWORD PTR [rax+r11*4+0x15],0x12345678
+    bf30:	4a f7 44 a0 15 78 56 34 12 	test   QWORD PTR [rax+r12*4+0x15],0x12345678
+    bf39:	42 f7 44 a0 15 78 56 34 12 	test   DWORD PTR [rax+r12*4+0x15],0x12345678
+    bf42:	4a f7 44 a8 15 78 56 34 12 	test   QWORD PTR [rax+r13*4+0x15],0x12345678
+    bf4b:	42 f7 44 a8 15 78 56 34 12 	test   DWORD PTR [rax+r13*4+0x15],0x12345678
+    bf54:	4a f7 44 b0 15 78 56 34 12 	test   QWORD PTR [rax+r14*4+0x15],0x12345678
+    bf5d:	42 f7 44 b0 15 78 56 34 12 	test   DWORD PTR [rax+r14*4+0x15],0x12345678
+    bf66:	4a f7 44 b8 15 78 56 34 12 	test   QWORD PTR [rax+r15*4+0x15],0x12345678
+    bf6f:	42 f7 44 b8 15 78 56 34 12 	test   DWORD PTR [rax+r15*4+0x15],0x12345678
+    bf78:	48 f7 44 a1 15 78 56 34 12 	test   QWORD PTR [rcx+riz*4+0x15],0x12345678
+    bf81:	f7 44 a1 15 78 56 34 12 	test   DWORD PTR [rcx+riz*4+0x15],0x12345678
+    bf89:	48 f7 44 81 15 78 56 34 12 	test   QWORD PTR [rcx+rax*4+0x15],0x12345678
+    bf92:	f7 44 81 15 78 56 34 12 	test   DWORD PTR [rcx+rax*4+0x15],0x12345678
+    bf9a:	48 f7 44 89 15 78 56 34 12 	test   QWORD PTR [rcx+rcx*4+0x15],0x12345678
+    bfa3:	f7 44 89 15 78 56 34 12 	test   DWORD PTR [rcx+rcx*4+0x15],0x12345678
+    bfab:	48 f7 44 91 15 78 56 34 12 	test   QWORD PTR [rcx+rdx*4+0x15],0x12345678
+    bfb4:	f7 44 91 15 78 56 34 12 	test   DWORD PTR [rcx+rdx*4+0x15],0x12345678
+    bfbc:	48 f7 44 99 15 78 56 34 12 	test   QWORD PTR [rcx+rbx*4+0x15],0x12345678
+    bfc5:	f7 44 99 15 78 56 34 12 	test   DWORD PTR [rcx+rbx*4+0x15],0x12345678
+    bfcd:	48 f7 44 a9 15 78 56 34 12 	test   QWORD PTR [rcx+rbp*4+0x15],0x12345678
+    bfd6:	f7 44 a9 15 78 56 34 12 	test   DWORD PTR [rcx+rbp*4+0x15],0x12345678
+    bfde:	48 f7 44 b1 15 78 56 34 12 	test   QWORD PTR [rcx+rsi*4+0x15],0x12345678
+    bfe7:	f7 44 b1 15 78 56 34 12 	test   DWORD PTR [rcx+rsi*4+0x15],0x12345678
+    bfef:	48 f7 44 b9 15 78 56 34 12 	test   QWORD PTR [rcx+rdi*4+0x15],0x12345678
+    bff8:	f7 44 b9 15 78 56 34 12 	test   DWORD PTR [rcx+rdi*4+0x15],0x12345678
+    c000:	4a f7 44 81 15 78 56 34 12 	test   QWORD PTR [rcx+r8*4+0x15],0x12345678
+    c009:	42 f7 44 81 15 78 56 34 12 	test   DWORD PTR [rcx+r8*4+0x15],0x12345678
+    c012:	4a f7 44 89 15 78 56 34 12 	test   QWORD PTR [rcx+r9*4+0x15],0x12345678
+    c01b:	42 f7 44 89 15 78 56 34 12 	test   DWORD PTR [rcx+r9*4+0x15],0x12345678
+    c024:	4a f7 44 91 15 78 56 34 12 	test   QWORD PTR [rcx+r10*4+0x15],0x12345678
+    c02d:	42 f7 44 91 15 78 56 34 12 	test   DWORD PTR [rcx+r10*4+0x15],0x12345678
+    c036:	4a f7 44 99 15 78 56 34 12 	test   QWORD PTR [rcx+r11*4+0x15],0x12345678
+    c03f:	42 f7 44 99 15 78 56 34 12 	test   DWORD PTR [rcx+r11*4+0x15],0x12345678
+    c048:	4a f7 44 a1 15 78 56 34 12 	test   QWORD PTR [rcx+r12*4+0x15],0x12345678
+    c051:	42 f7 44 a1 15 78 56 34 12 	test   DWORD PTR [rcx+r12*4+0x15],0x12345678
+    c05a:	4a f7 44 a9 15 78 56 34 12 	test   QWORD PTR [rcx+r13*4+0x15],0x12345678
+    c063:	42 f7 44 a9 15 78 56 34 12 	test   DWORD PTR [rcx+r13*4+0x15],0x12345678
+    c06c:	4a f7 44 b1 15 78 56 34 12 	test   QWORD PTR [rcx+r14*4+0x15],0x12345678
+    c075:	42 f7 44 b1 15 78 56 34 12 	test   DWORD PTR [rcx+r14*4+0x15],0x12345678
+    c07e:	4a f7 44 b9 15 78 56 34 12 	test   QWORD PTR [rcx+r15*4+0x15],0x12345678
+    c087:	42 f7 44 b9 15 78 56 34 12 	test   DWORD PTR [rcx+r15*4+0x15],0x12345678
+    c090:	48 f7 44 a2 15 78 56 34 12 	test   QWORD PTR [rdx+riz*4+0x15],0x12345678
+    c099:	f7 44 a2 15 78 56 34 12 	test   DWORD PTR [rdx+riz*4+0x15],0x12345678
+    c0a1:	48 f7 44 82 15 78 56 34 12 	test   QWORD PTR [rdx+rax*4+0x15],0x12345678
+    c0aa:	f7 44 82 15 78 56 34 12 	test   DWORD PTR [rdx+rax*4+0x15],0x12345678
+    c0b2:	48 f7 44 8a 15 78 56 34 12 	test   QWORD PTR [rdx+rcx*4+0x15],0x12345678
+    c0bb:	f7 44 8a 15 78 56 34 12 	test   DWORD PTR [rdx+rcx*4+0x15],0x12345678
+    c0c3:	48 f7 44 92 15 78 56 34 12 	test   QWORD PTR [rdx+rdx*4+0x15],0x12345678
+    c0cc:	f7 44 92 15 78 56 34 12 	test   DWORD PTR [rdx+rdx*4+0x15],0x12345678
+    c0d4:	48 f7 44 9a 15 78 56 34 12 	test   QWORD PTR [rdx+rbx*4+0x15],0x12345678
+    c0dd:	f7 44 9a 15 78 56 34 12 	test   DWORD PTR [rdx+rbx*4+0x15],0x12345678
+    c0e5:	48 f7 44 aa 15 78 56 34 12 	test   QWORD PTR [rdx+rbp*4+0x15],0x12345678
+    c0ee:	f7 44 aa 15 78 56 34 12 	test   DWORD PTR [rdx+rbp*4+0x15],0x12345678
+    c0f6:	48 f7 44 b2 15 78 56 34 12 	test   QWORD PTR [rdx+rsi*4+0x15],0x12345678
+    c0ff:	f7 44 b2 15 78 56 34 12 	test   DWORD PTR [rdx+rsi*4+0x15],0x12345678
+    c107:	48 f7 44 ba 15 78 56 34 12 	test   QWORD PTR [rdx+rdi*4+0x15],0x12345678
+    c110:	f7 44 ba 15 78 56 34 12 	test   DWORD PTR [rdx+rdi*4+0x15],0x12345678
+    c118:	4a f7 44 82 15 78 56 34 12 	test   QWORD PTR [rdx+r8*4+0x15],0x12345678
+    c121:	42 f7 44 82 15 78 56 34 12 	test   DWORD PTR [rdx+r8*4+0x15],0x12345678
+    c12a:	4a f7 44 8a 15 78 56 34 12 	test   QWORD PTR [rdx+r9*4+0x15],0x12345678
+    c133:	42 f7 44 8a 15 78 56 34 12 	test   DWORD PTR [rdx+r9*4+0x15],0x12345678
+    c13c:	4a f7 44 92 15 78 56 34 12 	test   QWORD PTR [rdx+r10*4+0x15],0x12345678
+    c145:	42 f7 44 92 15 78 56 34 12 	test   DWORD PTR [rdx+r10*4+0x15],0x12345678
+    c14e:	4a f7 44 9a 15 78 56 34 12 	test   QWORD PTR [rdx+r11*4+0x15],0x12345678
+    c157:	42 f7 44 9a 15 78 56 34 12 	test   DWORD PTR [rdx+r11*4+0x15],0x12345678
+    c160:	4a f7 44 a2 15 78 56 34 12 	test   QWORD PTR [rdx+r12*4+0x15],0x12345678
+    c169:	42 f7 44 a2 15 78 56 34 12 	test   DWORD PTR [rdx+r12*4+0x15],0x12345678
+    c172:	4a f7 44 aa 15 78 56 34 12 	test   QWORD PTR [rdx+r13*4+0x15],0x12345678
+    c17b:	42 f7 44 aa 15 78 56 34 12 	test   DWORD PTR [rdx+r13*4+0x15],0x12345678
+    c184:	4a f7 44 b2 15 78 56 34 12 	test   QWORD PTR [rdx+r14*4+0x15],0x12345678
+    c18d:	42 f7 44 b2 15 78 56 34 12 	test   DWORD PTR [rdx+r14*4+0x15],0x12345678
+    c196:	4a f7 44 ba 15 78 56 34 12 	test   QWORD PTR [rdx+r15*4+0x15],0x12345678
+    c19f:	42 f7 44 ba 15 78 56 34 12 	test   DWORD PTR [rdx+r15*4+0x15],0x12345678
+    c1a8:	48 f7 44 a3 15 78 56 34 12 	test   QWORD PTR [rbx+riz*4+0x15],0x12345678
+    c1b1:	f7 44 a3 15 78 56 34 12 	test   DWORD PTR [rbx+riz*4+0x15],0x12345678
+    c1b9:	48 f7 44 83 15 78 56 34 12 	test   QWORD PTR [rbx+rax*4+0x15],0x12345678
+    c1c2:	f7 44 83 15 78 56 34 12 	test   DWORD PTR [rbx+rax*4+0x15],0x12345678
+    c1ca:	48 f7 44 8b 15 78 56 34 12 	test   QWORD PTR [rbx+rcx*4+0x15],0x12345678
+    c1d3:	f7 44 8b 15 78 56 34 12 	test   DWORD PTR [rbx+rcx*4+0x15],0x12345678
+    c1db:	48 f7 44 93 15 78 56 34 12 	test   QWORD PTR [rbx+rdx*4+0x15],0x12345678
+    c1e4:	f7 44 93 15 78 56 34 12 	test   DWORD PTR [rbx+rdx*4+0x15],0x12345678
+    c1ec:	48 f7 44 9b 15 78 56 34 12 	test   QWORD PTR [rbx+rbx*4+0x15],0x12345678
+    c1f5:	f7 44 9b 15 78 56 34 12 	test   DWORD PTR [rbx+rbx*4+0x15],0x12345678
+    c1fd:	48 f7 44 ab 15 78 56 34 12 	test   QWORD PTR [rbx+rbp*4+0x15],0x12345678
+    c206:	f7 44 ab 15 78 56 34 12 	test   DWORD PTR [rbx+rbp*4+0x15],0x12345678
+    c20e:	48 f7 44 b3 15 78 56 34 12 	test   QWORD PTR [rbx+rsi*4+0x15],0x12345678
+    c217:	f7 44 b3 15 78 56 34 12 	test   DWORD PTR [rbx+rsi*4+0x15],0x12345678
+    c21f:	48 f7 44 bb 15 78 56 34 12 	test   QWORD PTR [rbx+rdi*4+0x15],0x12345678
+    c228:	f7 44 bb 15 78 56 34 12 	test   DWORD PTR [rbx+rdi*4+0x15],0x12345678
+    c230:	4a f7 44 83 15 78 56 34 12 	test   QWORD PTR [rbx+r8*4+0x15],0x12345678
+    c239:	42 f7 44 83 15 78 56 34 12 	test   DWORD PTR [rbx+r8*4+0x15],0x12345678
+    c242:	4a f7 44 8b 15 78 56 34 12 	test   QWORD PTR [rbx+r9*4+0x15],0x12345678
+    c24b:	42 f7 44 8b 15 78 56 34 12 	test   DWORD PTR [rbx+r9*4+0x15],0x12345678
+    c254:	4a f7 44 93 15 78 56 34 12 	test   QWORD PTR [rbx+r10*4+0x15],0x12345678
+    c25d:	42 f7 44 93 15 78 56 34 12 	test   DWORD PTR [rbx+r10*4+0x15],0x12345678
+    c266:	4a f7 44 9b 15 78 56 34 12 	test   QWORD PTR [rbx+r11*4+0x15],0x12345678
+    c26f:	42 f7 44 9b 15 78 56 34 12 	test   DWORD PTR [rbx+r11*4+0x15],0x12345678
+    c278:	4a f7 44 a3 15 78 56 34 12 	test   QWORD PTR [rbx+r12*4+0x15],0x12345678
+    c281:	42 f7 44 a3 15 78 56 34 12 	test   DWORD PTR [rbx+r12*4+0x15],0x12345678
+    c28a:	4a f7 44 ab 15 78 56 34 12 	test   QWORD PTR [rbx+r13*4+0x15],0x12345678
+    c293:	42 f7 44 ab 15 78 56 34 12 	test   DWORD PTR [rbx+r13*4+0x15],0x12345678
+    c29c:	4a f7 44 b3 15 78 56 34 12 	test   QWORD PTR [rbx+r14*4+0x15],0x12345678
+    c2a5:	42 f7 44 b3 15 78 56 34 12 	test   DWORD PTR [rbx+r14*4+0x15],0x12345678
+    c2ae:	4a f7 44 bb 15 78 56 34 12 	test   QWORD PTR [rbx+r15*4+0x15],0x12345678
+    c2b7:	42 f7 44 bb 15 78 56 34 12 	test   DWORD PTR [rbx+r15*4+0x15],0x12345678
+    c2c0:	48 f7 44 a4 15 78 56 34 12 	test   QWORD PTR [rsp+riz*4+0x15],0x12345678
+    c2c9:	f7 44 a4 15 78 56 34 12 	test   DWORD PTR [rsp+riz*4+0x15],0x12345678
+    c2d1:	48 f7 44 84 15 78 56 34 12 	test   QWORD PTR [rsp+rax*4+0x15],0x12345678
+    c2da:	f7 44 84 15 78 56 34 12 	test   DWORD PTR [rsp+rax*4+0x15],0x12345678
+    c2e2:	48 f7 44 8c 15 78 56 34 12 	test   QWORD PTR [rsp+rcx*4+0x15],0x12345678
+    c2eb:	f7 44 8c 15 78 56 34 12 	test   DWORD PTR [rsp+rcx*4+0x15],0x12345678
+    c2f3:	48 f7 44 94 15 78 56 34 12 	test   QWORD PTR [rsp+rdx*4+0x15],0x12345678
+    c2fc:	f7 44 94 15 78 56 34 12 	test   DWORD PTR [rsp+rdx*4+0x15],0x12345678
+    c304:	48 f7 44 9c 15 78 56 34 12 	test   QWORD PTR [rsp+rbx*4+0x15],0x12345678
+    c30d:	f7 44 9c 15 78 56 34 12 	test   DWORD PTR [rsp+rbx*4+0x15],0x12345678
+    c315:	48 f7 44 ac 15 78 56 34 12 	test   QWORD PTR [rsp+rbp*4+0x15],0x12345678
+    c31e:	f7 44 ac 15 78 56 34 12 	test   DWORD PTR [rsp+rbp*4+0x15],0x12345678
+    c326:	48 f7 44 b4 15 78 56 34 12 	test   QWORD PTR [rsp+rsi*4+0x15],0x12345678
+    c32f:	f7 44 b4 15 78 56 34 12 	test   DWORD PTR [rsp+rsi*4+0x15],0x12345678
+    c337:	48 f7 44 bc 15 78 56 34 12 	test   QWORD PTR [rsp+rdi*4+0x15],0x12345678
+    c340:	f7 44 bc 15 78 56 34 12 	test   DWORD PTR [rsp+rdi*4+0x15],0x12345678
+    c348:	4a f7 44 84 15 78 56 34 12 	test   QWORD PTR [rsp+r8*4+0x15],0x12345678
+    c351:	42 f7 44 84 15 78 56 34 12 	test   DWORD PTR [rsp+r8*4+0x15],0x12345678
+    c35a:	4a f7 44 8c 15 78 56 34 12 	test   QWORD PTR [rsp+r9*4+0x15],0x12345678
+    c363:	42 f7 44 8c 15 78 56 34 12 	test   DWORD PTR [rsp+r9*4+0x15],0x12345678
+    c36c:	4a f7 44 94 15 78 56 34 12 	test   QWORD PTR [rsp+r10*4+0x15],0x12345678
+    c375:	42 f7 44 94 15 78 56 34 12 	test   DWORD PTR [rsp+r10*4+0x15],0x12345678
+    c37e:	4a f7 44 9c 15 78 56 34 12 	test   QWORD PTR [rsp+r11*4+0x15],0x12345678
+    c387:	42 f7 44 9c 15 78 56 34 12 	test   DWORD PTR [rsp+r11*4+0x15],0x12345678
+    c390:	4a f7 44 a4 15 78 56 34 12 	test   QWORD PTR [rsp+r12*4+0x15],0x12345678
+    c399:	42 f7 44 a4 15 78 56 34 12 	test   DWORD PTR [rsp+r12*4+0x15],0x12345678
+    c3a2:	4a f7 44 ac 15 78 56 34 12 	test   QWORD PTR [rsp+r13*4+0x15],0x12345678
+    c3ab:	42 f7 44 ac 15 78 56 34 12 	test   DWORD PTR [rsp+r13*4+0x15],0x12345678
+    c3b4:	4a f7 44 b4 15 78 56 34 12 	test   QWORD PTR [rsp+r14*4+0x15],0x12345678
+    c3bd:	42 f7 44 b4 15 78 56 34 12 	test   DWORD PTR [rsp+r14*4+0x15],0x12345678
+    c3c6:	4a f7 44 bc 15 78 56 34 12 	test   QWORD PTR [rsp+r15*4+0x15],0x12345678
+    c3cf:	42 f7 44 bc 15 78 56 34 12 	test   DWORD PTR [rsp+r15*4+0x15],0x12345678
+    c3d8:	48 f7 44 a5 15 78 56 34 12 	test   QWORD PTR [rbp+riz*4+0x15],0x12345678
+    c3e1:	f7 44 a5 15 78 56 34 12 	test   DWORD PTR [rbp+riz*4+0x15],0x12345678
+    c3e9:	48 f7 44 85 15 78 56 34 12 	test   QWORD PTR [rbp+rax*4+0x15],0x12345678
+    c3f2:	f7 44 85 15 78 56 34 12 	test   DWORD PTR [rbp+rax*4+0x15],0x12345678
+    c3fa:	48 f7 44 8d 15 78 56 34 12 	test   QWORD PTR [rbp+rcx*4+0x15],0x12345678
+    c403:	f7 44 8d 15 78 56 34 12 	test   DWORD PTR [rbp+rcx*4+0x15],0x12345678
+    c40b:	48 f7 44 95 15 78 56 34 12 	test   QWORD PTR [rbp+rdx*4+0x15],0x12345678
+    c414:	f7 44 95 15 78 56 34 12 	test   DWORD PTR [rbp+rdx*4+0x15],0x12345678
+    c41c:	48 f7 44 9d 15 78 56 34 12 	test   QWORD PTR [rbp+rbx*4+0x15],0x12345678
+    c425:	f7 44 9d 15 78 56 34 12 	test   DWORD PTR [rbp+rbx*4+0x15],0x12345678
+    c42d:	48 f7 44 ad 15 78 56 34 12 	test   QWORD PTR [rbp+rbp*4+0x15],0x12345678
+    c436:	f7 44 ad 15 78 56 34 12 	test   DWORD PTR [rbp+rbp*4+0x15],0x12345678
+    c43e:	48 f7 44 b5 15 78 56 34 12 	test   QWORD PTR [rbp+rsi*4+0x15],0x12345678
+    c447:	f7 44 b5 15 78 56 34 12 	test   DWORD PTR [rbp+rsi*4+0x15],0x12345678
+    c44f:	48 f7 44 bd 15 78 56 34 12 	test   QWORD PTR [rbp+rdi*4+0x15],0x12345678
+    c458:	f7 44 bd 15 78 56 34 12 	test   DWORD PTR [rbp+rdi*4+0x15],0x12345678
+    c460:	4a f7 44 85 15 78 56 34 12 	test   QWORD PTR [rbp+r8*4+0x15],0x12345678
+    c469:	42 f7 44 85 15 78 56 34 12 	test   DWORD PTR [rbp+r8*4+0x15],0x12345678
+    c472:	4a f7 44 8d 15 78 56 34 12 	test   QWORD PTR [rbp+r9*4+0x15],0x12345678
+    c47b:	42 f7 44 8d 15 78 56 34 12 	test   DWORD PTR [rbp+r9*4+0x15],0x12345678
+    c484:	4a f7 44 95 15 78 56 34 12 	test   QWORD PTR [rbp+r10*4+0x15],0x12345678
+    c48d:	42 f7 44 95 15 78 56 34 12 	test   DWORD PTR [rbp+r10*4+0x15],0x12345678
+    c496:	4a f7 44 9d 15 78 56 34 12 	test   QWORD PTR [rbp+r11*4+0x15],0x12345678
+    c49f:	42 f7 44 9d 15 78 56 34 12 	test   DWORD PTR [rbp+r11*4+0x15],0x12345678
+    c4a8:	4a f7 44 a5 15 78 56 34 12 	test   QWORD PTR [rbp+r12*4+0x15],0x12345678
+    c4b1:	42 f7 44 a5 15 78 56 34 12 	test   DWORD PTR [rbp+r12*4+0x15],0x12345678
+    c4ba:	4a f7 44 ad 15 78 56 34 12 	test   QWORD PTR [rbp+r13*4+0x15],0x12345678
+    c4c3:	42 f7 44 ad 15 78 56 34 12 	test   DWORD PTR [rbp+r13*4+0x15],0x12345678
+    c4cc:	4a f7 44 b5 15 78 56 34 12 	test   QWORD PTR [rbp+r14*4+0x15],0x12345678
+    c4d5:	42 f7 44 b5 15 78 56 34 12 	test   DWORD PTR [rbp+r14*4+0x15],0x12345678
+    c4de:	4a f7 44 bd 15 78 56 34 12 	test   QWORD PTR [rbp+r15*4+0x15],0x12345678
+    c4e7:	42 f7 44 bd 15 78 56 34 12 	test   DWORD PTR [rbp+r15*4+0x15],0x12345678
+    c4f0:	48 f7 44 a6 15 78 56 34 12 	test   QWORD PTR [rsi+riz*4+0x15],0x12345678
+    c4f9:	f7 44 a6 15 78 56 34 12 	test   DWORD PTR [rsi+riz*4+0x15],0x12345678
+    c501:	48 f7 44 86 15 78 56 34 12 	test   QWORD PTR [rsi+rax*4+0x15],0x12345678
+    c50a:	f7 44 86 15 78 56 34 12 	test   DWORD PTR [rsi+rax*4+0x15],0x12345678
+    c512:	48 f7 44 8e 15 78 56 34 12 	test   QWORD PTR [rsi+rcx*4+0x15],0x12345678
+    c51b:	f7 44 8e 15 78 56 34 12 	test   DWORD PTR [rsi+rcx*4+0x15],0x12345678
+    c523:	48 f7 44 96 15 78 56 34 12 	test   QWORD PTR [rsi+rdx*4+0x15],0x12345678
+    c52c:	f7 44 96 15 78 56 34 12 	test   DWORD PTR [rsi+rdx*4+0x15],0x12345678
+    c534:	48 f7 44 9e 15 78 56 34 12 	test   QWORD PTR [rsi+rbx*4+0x15],0x12345678
+    c53d:	f7 44 9e 15 78 56 34 12 	test   DWORD PTR [rsi+rbx*4+0x15],0x12345678
+    c545:	48 f7 44 ae 15 78 56 34 12 	test   QWORD PTR [rsi+rbp*4+0x15],0x12345678
+    c54e:	f7 44 ae 15 78 56 34 12 	test   DWORD PTR [rsi+rbp*4+0x15],0x12345678
+    c556:	48 f7 44 b6 15 78 56 34 12 	test   QWORD PTR [rsi+rsi*4+0x15],0x12345678
+    c55f:	f7 44 b6 15 78 56 34 12 	test   DWORD PTR [rsi+rsi*4+0x15],0x12345678
+    c567:	48 f7 44 be 15 78 56 34 12 	test   QWORD PTR [rsi+rdi*4+0x15],0x12345678
+    c570:	f7 44 be 15 78 56 34 12 	test   DWORD PTR [rsi+rdi*4+0x15],0x12345678
+    c578:	4a f7 44 86 15 78 56 34 12 	test   QWORD PTR [rsi+r8*4+0x15],0x12345678
+    c581:	42 f7 44 86 15 78 56 34 12 	test   DWORD PTR [rsi+r8*4+0x15],0x12345678
+    c58a:	4a f7 44 8e 15 78 56 34 12 	test   QWORD PTR [rsi+r9*4+0x15],0x12345678
+    c593:	42 f7 44 8e 15 78 56 34 12 	test   DWORD PTR [rsi+r9*4+0x15],0x12345678
+    c59c:	4a f7 44 96 15 78 56 34 12 	test   QWORD PTR [rsi+r10*4+0x15],0x12345678
+    c5a5:	42 f7 44 96 15 78 56 34 12 	test   DWORD PTR [rsi+r10*4+0x15],0x12345678
+    c5ae:	4a f7 44 9e 15 78 56 34 12 	test   QWORD PTR [rsi+r11*4+0x15],0x12345678
+    c5b7:	42 f7 44 9e 15 78 56 34 12 	test   DWORD PTR [rsi+r11*4+0x15],0x12345678
+    c5c0:	4a f7 44 a6 15 78 56 34 12 	test   QWORD PTR [rsi+r12*4+0x15],0x12345678
+    c5c9:	42 f7 44 a6 15 78 56 34 12 	test   DWORD PTR [rsi+r12*4+0x15],0x12345678
+    c5d2:	4a f7 44 ae 15 78 56 34 12 	test   QWORD PTR [rsi+r13*4+0x15],0x12345678
+    c5db:	42 f7 44 ae 15 78 56 34 12 	test   DWORD PTR [rsi+r13*4+0x15],0x12345678
+    c5e4:	4a f7 44 b6 15 78 56 34 12 	test   QWORD PTR [rsi+r14*4+0x15],0x12345678
+    c5ed:	42 f7 44 b6 15 78 56 34 12 	test   DWORD PTR [rsi+r14*4+0x15],0x12345678
+    c5f6:	4a f7 44 be 15 78 56 34 12 	test   QWORD PTR [rsi+r15*4+0x15],0x12345678
+    c5ff:	42 f7 44 be 15 78 56 34 12 	test   DWORD PTR [rsi+r15*4+0x15],0x12345678
+    c608:	48 f7 44 a7 15 78 56 34 12 	test   QWORD PTR [rdi+riz*4+0x15],0x12345678
+    c611:	f7 44 a7 15 78 56 34 12 	test   DWORD PTR [rdi+riz*4+0x15],0x12345678
+    c619:	48 f7 44 87 15 78 56 34 12 	test   QWORD PTR [rdi+rax*4+0x15],0x12345678
+    c622:	f7 44 87 15 78 56 34 12 	test   DWORD PTR [rdi+rax*4+0x15],0x12345678
+    c62a:	48 f7 44 8f 15 78 56 34 12 	test   QWORD PTR [rdi+rcx*4+0x15],0x12345678
+    c633:	f7 44 8f 15 78 56 34 12 	test   DWORD PTR [rdi+rcx*4+0x15],0x12345678
+    c63b:	48 f7 44 97 15 78 56 34 12 	test   QWORD PTR [rdi+rdx*4+0x15],0x12345678
+    c644:	f7 44 97 15 78 56 34 12 	test   DWORD PTR [rdi+rdx*4+0x15],0x12345678
+    c64c:	48 f7 44 9f 15 78 56 34 12 	test   QWORD PTR [rdi+rbx*4+0x15],0x12345678
+    c655:	f7 44 9f 15 78 56 34 12 	test   DWORD PTR [rdi+rbx*4+0x15],0x12345678
+    c65d:	48 f7 44 af 15 78 56 34 12 	test   QWORD PTR [rdi+rbp*4+0x15],0x12345678
+    c666:	f7 44 af 15 78 56 34 12 	test   DWORD PTR [rdi+rbp*4+0x15],0x12345678
+    c66e:	48 f7 44 b7 15 78 56 34 12 	test   QWORD PTR [rdi+rsi*4+0x15],0x12345678
+    c677:	f7 44 b7 15 78 56 34 12 	test   DWORD PTR [rdi+rsi*4+0x15],0x12345678
+    c67f:	48 f7 44 bf 15 78 56 34 12 	test   QWORD PTR [rdi+rdi*4+0x15],0x12345678
+    c688:	f7 44 bf 15 78 56 34 12 	test   DWORD PTR [rdi+rdi*4+0x15],0x12345678
+    c690:	4a f7 44 87 15 78 56 34 12 	test   QWORD PTR [rdi+r8*4+0x15],0x12345678
+    c699:	42 f7 44 87 15 78 56 34 12 	test   DWORD PTR [rdi+r8*4+0x15],0x12345678
+    c6a2:	4a f7 44 8f 15 78 56 34 12 	test   QWORD PTR [rdi+r9*4+0x15],0x12345678
+    c6ab:	42 f7 44 8f 15 78 56 34 12 	test   DWORD PTR [rdi+r9*4+0x15],0x12345678
+    c6b4:	4a f7 44 97 15 78 56 34 12 	test   QWORD PTR [rdi+r10*4+0x15],0x12345678
+    c6bd:	42 f7 44 97 15 78 56 34 12 	test   DWORD PTR [rdi+r10*4+0x15],0x12345678
+    c6c6:	4a f7 44 9f 15 78 56 34 12 	test   QWORD PTR [rdi+r11*4+0x15],0x12345678
+    c6cf:	42 f7 44 9f 15 78 56 34 12 	test   DWORD PTR [rdi+r11*4+0x15],0x12345678
+    c6d8:	4a f7 44 a7 15 78 56 34 12 	test   QWORD PTR [rdi+r12*4+0x15],0x12345678
+    c6e1:	42 f7 44 a7 15 78 56 34 12 	test   DWORD PTR [rdi+r12*4+0x15],0x12345678
+    c6ea:	4a f7 44 af 15 78 56 34 12 	test   QWORD PTR [rdi+r13*4+0x15],0x12345678
+    c6f3:	42 f7 44 af 15 78 56 34 12 	test   DWORD PTR [rdi+r13*4+0x15],0x12345678
+    c6fc:	4a f7 44 b7 15 78 56 34 12 	test   QWORD PTR [rdi+r14*4+0x15],0x12345678
+    c705:	42 f7 44 b7 15 78 56 34 12 	test   DWORD PTR [rdi+r14*4+0x15],0x12345678
+    c70e:	4a f7 44 bf 15 78 56 34 12 	test   QWORD PTR [rdi+r15*4+0x15],0x12345678
+    c717:	42 f7 44 bf 15 78 56 34 12 	test   DWORD PTR [rdi+r15*4+0x15],0x12345678
+    c720:	49 f7 44 a0 15 78 56 34 12 	test   QWORD PTR [r8+riz*4+0x15],0x12345678
+    c729:	41 f7 44 a0 15 78 56 34 12 	test   DWORD PTR [r8+riz*4+0x15],0x12345678
+    c732:	49 f7 44 80 15 78 56 34 12 	test   QWORD PTR [r8+rax*4+0x15],0x12345678
+    c73b:	41 f7 44 80 15 78 56 34 12 	test   DWORD PTR [r8+rax*4+0x15],0x12345678
+    c744:	49 f7 44 88 15 78 56 34 12 	test   QWORD PTR [r8+rcx*4+0x15],0x12345678
+    c74d:	41 f7 44 88 15 78 56 34 12 	test   DWORD PTR [r8+rcx*4+0x15],0x12345678
+    c756:	49 f7 44 90 15 78 56 34 12 	test   QWORD PTR [r8+rdx*4+0x15],0x12345678
+    c75f:	41 f7 44 90 15 78 56 34 12 	test   DWORD PTR [r8+rdx*4+0x15],0x12345678
+    c768:	49 f7 44 98 15 78 56 34 12 	test   QWORD PTR [r8+rbx*4+0x15],0x12345678
+    c771:	41 f7 44 98 15 78 56 34 12 	test   DWORD PTR [r8+rbx*4+0x15],0x12345678
+    c77a:	49 f7 44 a8 15 78 56 34 12 	test   QWORD PTR [r8+rbp*4+0x15],0x12345678
+    c783:	41 f7 44 a8 15 78 56 34 12 	test   DWORD PTR [r8+rbp*4+0x15],0x12345678
+    c78c:	49 f7 44 b0 15 78 56 34 12 	test   QWORD PTR [r8+rsi*4+0x15],0x12345678
+    c795:	41 f7 44 b0 15 78 56 34 12 	test   DWORD PTR [r8+rsi*4+0x15],0x12345678
+    c79e:	49 f7 44 b8 15 78 56 34 12 	test   QWORD PTR [r8+rdi*4+0x15],0x12345678
+    c7a7:	41 f7 44 b8 15 78 56 34 12 	test   DWORD PTR [r8+rdi*4+0x15],0x12345678
+    c7b0:	4b f7 44 80 15 78 56 34 12 	test   QWORD PTR [r8+r8*4+0x15],0x12345678
+    c7b9:	43 f7 44 80 15 78 56 34 12 	test   DWORD PTR [r8+r8*4+0x15],0x12345678
+    c7c2:	4b f7 44 88 15 78 56 34 12 	test   QWORD PTR [r8+r9*4+0x15],0x12345678
+    c7cb:	43 f7 44 88 15 78 56 34 12 	test   DWORD PTR [r8+r9*4+0x15],0x12345678
+    c7d4:	4b f7 44 90 15 78 56 34 12 	test   QWORD PTR [r8+r10*4+0x15],0x12345678
+    c7dd:	43 f7 44 90 15 78 56 34 12 	test   DWORD PTR [r8+r10*4+0x15],0x12345678
+    c7e6:	4b f7 44 98 15 78 56 34 12 	test   QWORD PTR [r8+r11*4+0x15],0x12345678
+    c7ef:	43 f7 44 98 15 78 56 34 12 	test   DWORD PTR [r8+r11*4+0x15],0x12345678
+    c7f8:	4b f7 44 a0 15 78 56 34 12 	test   QWORD PTR [r8+r12*4+0x15],0x12345678
+    c801:	43 f7 44 a0 15 78 56 34 12 	test   DWORD PTR [r8+r12*4+0x15],0x12345678
+    c80a:	4b f7 44 a8 15 78 56 34 12 	test   QWORD PTR [r8+r13*4+0x15],0x12345678
+    c813:	43 f7 44 a8 15 78 56 34 12 	test   DWORD PTR [r8+r13*4+0x15],0x12345678
+    c81c:	4b f7 44 b0 15 78 56 34 12 	test   QWORD PTR [r8+r14*4+0x15],0x12345678
+    c825:	43 f7 44 b0 15 78 56 34 12 	test   DWORD PTR [r8+r14*4+0x15],0x12345678
+    c82e:	4b f7 44 b8 15 78 56 34 12 	test   QWORD PTR [r8+r15*4+0x15],0x12345678
+    c837:	43 f7 44 b8 15 78 56 34 12 	test   DWORD PTR [r8+r15*4+0x15],0x12345678
+    c840:	49 f7 44 a1 15 78 56 34 12 	test   QWORD PTR [r9+riz*4+0x15],0x12345678
+    c849:	41 f7 44 a1 15 78 56 34 12 	test   DWORD PTR [r9+riz*4+0x15],0x12345678
+    c852:	49 f7 44 81 15 78 56 34 12 	test   QWORD PTR [r9+rax*4+0x15],0x12345678
+    c85b:	41 f7 44 81 15 78 56 34 12 	test   DWORD PTR [r9+rax*4+0x15],0x12345678
+    c864:	49 f7 44 89 15 78 56 34 12 	test   QWORD PTR [r9+rcx*4+0x15],0x12345678
+    c86d:	41 f7 44 89 15 78 56 34 12 	test   DWORD PTR [r9+rcx*4+0x15],0x12345678
+    c876:	49 f7 44 91 15 78 56 34 12 	test   QWORD PTR [r9+rdx*4+0x15],0x12345678
+    c87f:	41 f7 44 91 15 78 56 34 12 	test   DWORD PTR [r9+rdx*4+0x15],0x12345678
+    c888:	49 f7 44 99 15 78 56 34 12 	test   QWORD PTR [r9+rbx*4+0x15],0x12345678
+    c891:	41 f7 44 99 15 78 56 34 12 	test   DWORD PTR [r9+rbx*4+0x15],0x12345678
+    c89a:	49 f7 44 a9 15 78 56 34 12 	test   QWORD PTR [r9+rbp*4+0x15],0x12345678
+    c8a3:	41 f7 44 a9 15 78 56 34 12 	test   DWORD PTR [r9+rbp*4+0x15],0x12345678
+    c8ac:	49 f7 44 b1 15 78 56 34 12 	test   QWORD PTR [r9+rsi*4+0x15],0x12345678
+    c8b5:	41 f7 44 b1 15 78 56 34 12 	test   DWORD PTR [r9+rsi*4+0x15],0x12345678
+    c8be:	49 f7 44 b9 15 78 56 34 12 	test   QWORD PTR [r9+rdi*4+0x15],0x12345678
+    c8c7:	41 f7 44 b9 15 78 56 34 12 	test   DWORD PTR [r9+rdi*4+0x15],0x12345678
+    c8d0:	4b f7 44 81 15 78 56 34 12 	test   QWORD PTR [r9+r8*4+0x15],0x12345678
+    c8d9:	43 f7 44 81 15 78 56 34 12 	test   DWORD PTR [r9+r8*4+0x15],0x12345678
+    c8e2:	4b f7 44 89 15 78 56 34 12 	test   QWORD PTR [r9+r9*4+0x15],0x12345678
+    c8eb:	43 f7 44 89 15 78 56 34 12 	test   DWORD PTR [r9+r9*4+0x15],0x12345678
+    c8f4:	4b f7 44 91 15 78 56 34 12 	test   QWORD PTR [r9+r10*4+0x15],0x12345678
+    c8fd:	43 f7 44 91 15 78 56 34 12 	test   DWORD PTR [r9+r10*4+0x15],0x12345678
+    c906:	4b f7 44 99 15 78 56 34 12 	test   QWORD PTR [r9+r11*4+0x15],0x12345678
+    c90f:	43 f7 44 99 15 78 56 34 12 	test   DWORD PTR [r9+r11*4+0x15],0x12345678
+    c918:	4b f7 44 a1 15 78 56 34 12 	test   QWORD PTR [r9+r12*4+0x15],0x12345678
+    c921:	43 f7 44 a1 15 78 56 34 12 	test   DWORD PTR [r9+r12*4+0x15],0x12345678
+    c92a:	4b f7 44 a9 15 78 56 34 12 	test   QWORD PTR [r9+r13*4+0x15],0x12345678
+    c933:	43 f7 44 a9 15 78 56 34 12 	test   DWORD PTR [r9+r13*4+0x15],0x12345678
+    c93c:	4b f7 44 b1 15 78 56 34 12 	test   QWORD PTR [r9+r14*4+0x15],0x12345678
+    c945:	43 f7 44 b1 15 78 56 34 12 	test   DWORD PTR [r9+r14*4+0x15],0x12345678
+    c94e:	4b f7 44 b9 15 78 56 34 12 	test   QWORD PTR [r9+r15*4+0x15],0x12345678
+    c957:	43 f7 44 b9 15 78 56 34 12 	test   DWORD PTR [r9+r15*4+0x15],0x12345678
+    c960:	49 f7 44 a2 15 78 56 34 12 	test   QWORD PTR [r10+riz*4+0x15],0x12345678
+    c969:	41 f7 44 a2 15 78 56 34 12 	test   DWORD PTR [r10+riz*4+0x15],0x12345678
+    c972:	49 f7 44 82 15 78 56 34 12 	test   QWORD PTR [r10+rax*4+0x15],0x12345678
+    c97b:	41 f7 44 82 15 78 56 34 12 	test   DWORD PTR [r10+rax*4+0x15],0x12345678
+    c984:	49 f7 44 8a 15 78 56 34 12 	test   QWORD PTR [r10+rcx*4+0x15],0x12345678
+    c98d:	41 f7 44 8a 15 78 56 34 12 	test   DWORD PTR [r10+rcx*4+0x15],0x12345678
+    c996:	49 f7 44 92 15 78 56 34 12 	test   QWORD PTR [r10+rdx*4+0x15],0x12345678
+    c99f:	41 f7 44 92 15 78 56 34 12 	test   DWORD PTR [r10+rdx*4+0x15],0x12345678
+    c9a8:	49 f7 44 9a 15 78 56 34 12 	test   QWORD PTR [r10+rbx*4+0x15],0x12345678
+    c9b1:	41 f7 44 9a 15 78 56 34 12 	test   DWORD PTR [r10+rbx*4+0x15],0x12345678
+    c9ba:	49 f7 44 aa 15 78 56 34 12 	test   QWORD PTR [r10+rbp*4+0x15],0x12345678
+    c9c3:	41 f7 44 aa 15 78 56 34 12 	test   DWORD PTR [r10+rbp*4+0x15],0x12345678
+    c9cc:	49 f7 44 b2 15 78 56 34 12 	test   QWORD PTR [r10+rsi*4+0x15],0x12345678
+    c9d5:	41 f7 44 b2 15 78 56 34 12 	test   DWORD PTR [r10+rsi*4+0x15],0x12345678
+    c9de:	49 f7 44 ba 15 78 56 34 12 	test   QWORD PTR [r10+rdi*4+0x15],0x12345678
+    c9e7:	41 f7 44 ba 15 78 56 34 12 	test   DWORD PTR [r10+rdi*4+0x15],0x12345678
+    c9f0:	4b f7 44 82 15 78 56 34 12 	test   QWORD PTR [r10+r8*4+0x15],0x12345678
+    c9f9:	43 f7 44 82 15 78 56 34 12 	test   DWORD PTR [r10+r8*4+0x15],0x12345678
+    ca02:	4b f7 44 8a 15 78 56 34 12 	test   QWORD PTR [r10+r9*4+0x15],0x12345678
+    ca0b:	43 f7 44 8a 15 78 56 34 12 	test   DWORD PTR [r10+r9*4+0x15],0x12345678
+    ca14:	4b f7 44 92 15 78 56 34 12 	test   QWORD PTR [r10+r10*4+0x15],0x12345678
+    ca1d:	43 f7 44 92 15 78 56 34 12 	test   DWORD PTR [r10+r10*4+0x15],0x12345678
+    ca26:	4b f7 44 9a 15 78 56 34 12 	test   QWORD PTR [r10+r11*4+0x15],0x12345678
+    ca2f:	43 f7 44 9a 15 78 56 34 12 	test   DWORD PTR [r10+r11*4+0x15],0x12345678
+    ca38:	4b f7 44 a2 15 78 56 34 12 	test   QWORD PTR [r10+r12*4+0x15],0x12345678
+    ca41:	43 f7 44 a2 15 78 56 34 12 	test   DWORD PTR [r10+r12*4+0x15],0x12345678
+    ca4a:	4b f7 44 aa 15 78 56 34 12 	test   QWORD PTR [r10+r13*4+0x15],0x12345678
+    ca53:	43 f7 44 aa 15 78 56 34 12 	test   DWORD PTR [r10+r13*4+0x15],0x12345678
+    ca5c:	4b f7 44 b2 15 78 56 34 12 	test   QWORD PTR [r10+r14*4+0x15],0x12345678
+    ca65:	43 f7 44 b2 15 78 56 34 12 	test   DWORD PTR [r10+r14*4+0x15],0x12345678
+    ca6e:	4b f7 44 ba 15 78 56 34 12 	test   QWORD PTR [r10+r15*4+0x15],0x12345678
+    ca77:	43 f7 44 ba 15 78 56 34 12 	test   DWORD PTR [r10+r15*4+0x15],0x12345678
+    ca80:	49 f7 44 a3 15 78 56 34 12 	test   QWORD PTR [r11+riz*4+0x15],0x12345678
+    ca89:	41 f7 44 a3 15 78 56 34 12 	test   DWORD PTR [r11+riz*4+0x15],0x12345678
+    ca92:	49 f7 44 83 15 78 56 34 12 	test   QWORD PTR [r11+rax*4+0x15],0x12345678
+    ca9b:	41 f7 44 83 15 78 56 34 12 	test   DWORD PTR [r11+rax*4+0x15],0x12345678
+    caa4:	49 f7 44 8b 15 78 56 34 12 	test   QWORD PTR [r11+rcx*4+0x15],0x12345678
+    caad:	41 f7 44 8b 15 78 56 34 12 	test   DWORD PTR [r11+rcx*4+0x15],0x12345678
+    cab6:	49 f7 44 93 15 78 56 34 12 	test   QWORD PTR [r11+rdx*4+0x15],0x12345678
+    cabf:	41 f7 44 93 15 78 56 34 12 	test   DWORD PTR [r11+rdx*4+0x15],0x12345678
+    cac8:	49 f7 44 9b 15 78 56 34 12 	test   QWORD PTR [r11+rbx*4+0x15],0x12345678
+    cad1:	41 f7 44 9b 15 78 56 34 12 	test   DWORD PTR [r11+rbx*4+0x15],0x12345678
+    cada:	49 f7 44 ab 15 78 56 34 12 	test   QWORD PTR [r11+rbp*4+0x15],0x12345678
+    cae3:	41 f7 44 ab 15 78 56 34 12 	test   DWORD PTR [r11+rbp*4+0x15],0x12345678
+    caec:	49 f7 44 b3 15 78 56 34 12 	test   QWORD PTR [r11+rsi*4+0x15],0x12345678
+    caf5:	41 f7 44 b3 15 78 56 34 12 	test   DWORD PTR [r11+rsi*4+0x15],0x12345678
+    cafe:	49 f7 44 bb 15 78 56 34 12 	test   QWORD PTR [r11+rdi*4+0x15],0x12345678
+    cb07:	41 f7 44 bb 15 78 56 34 12 	test   DWORD PTR [r11+rdi*4+0x15],0x12345678
+    cb10:	4b f7 44 83 15 78 56 34 12 	test   QWORD PTR [r11+r8*4+0x15],0x12345678
+    cb19:	43 f7 44 83 15 78 56 34 12 	test   DWORD PTR [r11+r8*4+0x15],0x12345678
+    cb22:	4b f7 44 8b 15 78 56 34 12 	test   QWORD PTR [r11+r9*4+0x15],0x12345678
+    cb2b:	43 f7 44 8b 15 78 56 34 12 	test   DWORD PTR [r11+r9*4+0x15],0x12345678
+    cb34:	4b f7 44 93 15 78 56 34 12 	test   QWORD PTR [r11+r10*4+0x15],0x12345678
+    cb3d:	43 f7 44 93 15 78 56 34 12 	test   DWORD PTR [r11+r10*4+0x15],0x12345678
+    cb46:	4b f7 44 9b 15 78 56 34 12 	test   QWORD PTR [r11+r11*4+0x15],0x12345678
+    cb4f:	43 f7 44 9b 15 78 56 34 12 	test   DWORD PTR [r11+r11*4+0x15],0x12345678
+    cb58:	4b f7 44 a3 15 78 56 34 12 	test   QWORD PTR [r11+r12*4+0x15],0x12345678
+    cb61:	43 f7 44 a3 15 78 56 34 12 	test   DWORD PTR [r11+r12*4+0x15],0x12345678
+    cb6a:	4b f7 44 ab 15 78 56 34 12 	test   QWORD PTR [r11+r13*4+0x15],0x12345678
+    cb73:	43 f7 44 ab 15 78 56 34 12 	test   DWORD PTR [r11+r13*4+0x15],0x12345678
+    cb7c:	4b f7 44 b3 15 78 56 34 12 	test   QWORD PTR [r11+r14*4+0x15],0x12345678
+    cb85:	43 f7 44 b3 15 78 56 34 12 	test   DWORD PTR [r11+r14*4+0x15],0x12345678
+    cb8e:	4b f7 44 bb 15 78 56 34 12 	test   QWORD PTR [r11+r15*4+0x15],0x12345678
+    cb97:	43 f7 44 bb 15 78 56 34 12 	test   DWORD PTR [r11+r15*4+0x15],0x12345678
+    cba0:	49 f7 44 a4 15 78 56 34 12 	test   QWORD PTR [r12+riz*4+0x15],0x12345678
+    cba9:	41 f7 44 a4 15 78 56 34 12 	test   DWORD PTR [r12+riz*4+0x15],0x12345678
+    cbb2:	49 f7 44 84 15 78 56 34 12 	test   QWORD PTR [r12+rax*4+0x15],0x12345678
+    cbbb:	41 f7 44 84 15 78 56 34 12 	test   DWORD PTR [r12+rax*4+0x15],0x12345678
+    cbc4:	49 f7 44 8c 15 78 56 34 12 	test   QWORD PTR [r12+rcx*4+0x15],0x12345678
+    cbcd:	41 f7 44 8c 15 78 56 34 12 	test   DWORD PTR [r12+rcx*4+0x15],0x12345678
+    cbd6:	49 f7 44 94 15 78 56 34 12 	test   QWORD PTR [r12+rdx*4+0x15],0x12345678
+    cbdf:	41 f7 44 94 15 78 56 34 12 	test   DWORD PTR [r12+rdx*4+0x15],0x12345678
+    cbe8:	49 f7 44 9c 15 78 56 34 12 	test   QWORD PTR [r12+rbx*4+0x15],0x12345678
+    cbf1:	41 f7 44 9c 15 78 56 34 12 	test   DWORD PTR [r12+rbx*4+0x15],0x12345678
+    cbfa:	49 f7 44 ac 15 78 56 34 12 	test   QWORD PTR [r12+rbp*4+0x15],0x12345678
+    cc03:	41 f7 44 ac 15 78 56 34 12 	test   DWORD PTR [r12+rbp*4+0x15],0x12345678
+    cc0c:	49 f7 44 b4 15 78 56 34 12 	test   QWORD PTR [r12+rsi*4+0x15],0x12345678
+    cc15:	41 f7 44 b4 15 78 56 34 12 	test   DWORD PTR [r12+rsi*4+0x15],0x12345678
+    cc1e:	49 f7 44 bc 15 78 56 34 12 	test   QWORD PTR [r12+rdi*4+0x15],0x12345678
+    cc27:	41 f7 44 bc 15 78 56 34 12 	test   DWORD PTR [r12+rdi*4+0x15],0x12345678
+    cc30:	4b f7 44 84 15 78 56 34 12 	test   QWORD PTR [r12+r8*4+0x15],0x12345678
+    cc39:	43 f7 44 84 15 78 56 34 12 	test   DWORD PTR [r12+r8*4+0x15],0x12345678
+    cc42:	4b f7 44 8c 15 78 56 34 12 	test   QWORD PTR [r12+r9*4+0x15],0x12345678
+    cc4b:	43 f7 44 8c 15 78 56 34 12 	test   DWORD PTR [r12+r9*4+0x15],0x12345678
+    cc54:	4b f7 44 94 15 78 56 34 12 	test   QWORD PTR [r12+r10*4+0x15],0x12345678
+    cc5d:	43 f7 44 94 15 78 56 34 12 	test   DWORD PTR [r12+r10*4+0x15],0x12345678
+    cc66:	4b f7 44 9c 15 78 56 34 12 	test   QWORD PTR [r12+r11*4+0x15],0x12345678
+    cc6f:	43 f7 44 9c 15 78 56 34 12 	test   DWORD PTR [r12+r11*4+0x15],0x12345678
+    cc78:	4b f7 44 a4 15 78 56 34 12 	test   QWORD PTR [r12+r12*4+0x15],0x12345678
+    cc81:	43 f7 44 a4 15 78 56 34 12 	test   DWORD PTR [r12+r12*4+0x15],0x12345678
+    cc8a:	4b f7 44 ac 15 78 56 34 12 	test   QWORD PTR [r12+r13*4+0x15],0x12345678
+    cc93:	43 f7 44 ac 15 78 56 34 12 	test   DWORD PTR [r12+r13*4+0x15],0x12345678
+    cc9c:	4b f7 44 b4 15 78 56 34 12 	test   QWORD PTR [r12+r14*4+0x15],0x12345678
+    cca5:	43 f7 44 b4 15 78 56 34 12 	test   DWORD PTR [r12+r14*4+0x15],0x12345678
+    ccae:	4b f7 44 bc 15 78 56 34 12 	test   QWORD PTR [r12+r15*4+0x15],0x12345678
+    ccb7:	43 f7 44 bc 15 78 56 34 12 	test   DWORD PTR [r12+r15*4+0x15],0x12345678
+    ccc0:	49 f7 44 a5 15 78 56 34 12 	test   QWORD PTR [r13+riz*4+0x15],0x12345678
+    ccc9:	41 f7 44 a5 15 78 56 34 12 	test   DWORD PTR [r13+riz*4+0x15],0x12345678
+    ccd2:	49 f7 44 85 15 78 56 34 12 	test   QWORD PTR [r13+rax*4+0x15],0x12345678
+    ccdb:	41 f7 44 85 15 78 56 34 12 	test   DWORD PTR [r13+rax*4+0x15],0x12345678
+    cce4:	49 f7 44 8d 15 78 56 34 12 	test   QWORD PTR [r13+rcx*4+0x15],0x12345678
+    cced:	41 f7 44 8d 15 78 56 34 12 	test   DWORD PTR [r13+rcx*4+0x15],0x12345678
+    ccf6:	49 f7 44 95 15 78 56 34 12 	test   QWORD PTR [r13+rdx*4+0x15],0x12345678
+    ccff:	41 f7 44 95 15 78 56 34 12 	test   DWORD PTR [r13+rdx*4+0x15],0x12345678
+    cd08:	49 f7 44 9d 15 78 56 34 12 	test   QWORD PTR [r13+rbx*4+0x15],0x12345678
+    cd11:	41 f7 44 9d 15 78 56 34 12 	test   DWORD PTR [r13+rbx*4+0x15],0x12345678
+    cd1a:	49 f7 44 ad 15 78 56 34 12 	test   QWORD PTR [r13+rbp*4+0x15],0x12345678
+    cd23:	41 f7 44 ad 15 78 56 34 12 	test   DWORD PTR [r13+rbp*4+0x15],0x12345678
+    cd2c:	49 f7 44 b5 15 78 56 34 12 	test   QWORD PTR [r13+rsi*4+0x15],0x12345678
+    cd35:	41 f7 44 b5 15 78 56 34 12 	test   DWORD PTR [r13+rsi*4+0x15],0x12345678
+    cd3e:	49 f7 44 bd 15 78 56 34 12 	test   QWORD PTR [r13+rdi*4+0x15],0x12345678
+    cd47:	41 f7 44 bd 15 78 56 34 12 	test   DWORD PTR [r13+rdi*4+0x15],0x12345678
+    cd50:	4b f7 44 85 15 78 56 34 12 	test   QWORD PTR [r13+r8*4+0x15],0x12345678
+    cd59:	43 f7 44 85 15 78 56 34 12 	test   DWORD PTR [r13+r8*4+0x15],0x12345678
+    cd62:	4b f7 44 8d 15 78 56 34 12 	test   QWORD PTR [r13+r9*4+0x15],0x12345678
+    cd6b:	43 f7 44 8d 15 78 56 34 12 	test   DWORD PTR [r13+r9*4+0x15],0x12345678
+    cd74:	4b f7 44 95 15 78 56 34 12 	test   QWORD PTR [r13+r10*4+0x15],0x12345678
+    cd7d:	43 f7 44 95 15 78 56 34 12 	test   DWORD PTR [r13+r10*4+0x15],0x12345678
+    cd86:	4b f7 44 9d 15 78 56 34 12 	test   QWORD PTR [r13+r11*4+0x15],0x12345678
+    cd8f:	43 f7 44 9d 15 78 56 34 12 	test   DWORD PTR [r13+r11*4+0x15],0x12345678
+    cd98:	4b f7 44 a5 15 78 56 34 12 	test   QWORD PTR [r13+r12*4+0x15],0x12345678
+    cda1:	43 f7 44 a5 15 78 56 34 12 	test   DWORD PTR [r13+r12*4+0x15],0x12345678
+    cdaa:	4b f7 44 ad 15 78 56 34 12 	test   QWORD PTR [r13+r13*4+0x15],0x12345678
+    cdb3:	43 f7 44 ad 15 78 56 34 12 	test   DWORD PTR [r13+r13*4+0x15],0x12345678
+    cdbc:	4b f7 44 b5 15 78 56 34 12 	test   QWORD PTR [r13+r14*4+0x15],0x12345678
+    cdc5:	43 f7 44 b5 15 78 56 34 12 	test   DWORD PTR [r13+r14*4+0x15],0x12345678
+    cdce:	4b f7 44 bd 15 78 56 34 12 	test   QWORD PTR [r13+r15*4+0x15],0x12345678
+    cdd7:	43 f7 44 bd 15 78 56 34 12 	test   DWORD PTR [r13+r15*4+0x15],0x12345678
+    cde0:	49 f7 44 a6 15 78 56 34 12 	test   QWORD PTR [r14+riz*4+0x15],0x12345678
+    cde9:	41 f7 44 a6 15 78 56 34 12 	test   DWORD PTR [r14+riz*4+0x15],0x12345678
+    cdf2:	49 f7 44 86 15 78 56 34 12 	test   QWORD PTR [r14+rax*4+0x15],0x12345678
+    cdfb:	41 f7 44 86 15 78 56 34 12 	test   DWORD PTR [r14+rax*4+0x15],0x12345678
+    ce04:	49 f7 44 8e 15 78 56 34 12 	test   QWORD PTR [r14+rcx*4+0x15],0x12345678
+    ce0d:	41 f7 44 8e 15 78 56 34 12 	test   DWORD PTR [r14+rcx*4+0x15],0x12345678
+    ce16:	49 f7 44 96 15 78 56 34 12 	test   QWORD PTR [r14+rdx*4+0x15],0x12345678
+    ce1f:	41 f7 44 96 15 78 56 34 12 	test   DWORD PTR [r14+rdx*4+0x15],0x12345678
+    ce28:	49 f7 44 9e 15 78 56 34 12 	test   QWORD PTR [r14+rbx*4+0x15],0x12345678
+    ce31:	41 f7 44 9e 15 78 56 34 12 	test   DWORD PTR [r14+rbx*4+0x15],0x12345678
+    ce3a:	49 f7 44 ae 15 78 56 34 12 	test   QWORD PTR [r14+rbp*4+0x15],0x12345678
+    ce43:	41 f7 44 ae 15 78 56 34 12 	test   DWORD PTR [r14+rbp*4+0x15],0x12345678
+    ce4c:	49 f7 44 b6 15 78 56 34 12 	test   QWORD PTR [r14+rsi*4+0x15],0x12345678
+    ce55:	41 f7 44 b6 15 78 56 34 12 	test   DWORD PTR [r14+rsi*4+0x15],0x12345678
+    ce5e:	49 f7 44 be 15 78 56 34 12 	test   QWORD PTR [r14+rdi*4+0x15],0x12345678
+    ce67:	41 f7 44 be 15 78 56 34 12 	test   DWORD PTR [r14+rdi*4+0x15],0x12345678
+    ce70:	4b f7 44 86 15 78 56 34 12 	test   QWORD PTR [r14+r8*4+0x15],0x12345678
+    ce79:	43 f7 44 86 15 78 56 34 12 	test   DWORD PTR [r14+r8*4+0x15],0x12345678
+    ce82:	4b f7 44 8e 15 78 56 34 12 	test   QWORD PTR [r14+r9*4+0x15],0x12345678
+    ce8b:	43 f7 44 8e 15 78 56 34 12 	test   DWORD PTR [r14+r9*4+0x15],0x12345678
+    ce94:	4b f7 44 96 15 78 56 34 12 	test   QWORD PTR [r14+r10*4+0x15],0x12345678
+    ce9d:	43 f7 44 96 15 78 56 34 12 	test   DWORD PTR [r14+r10*4+0x15],0x12345678
+    cea6:	4b f7 44 9e 15 78 56 34 12 	test   QWORD PTR [r14+r11*4+0x15],0x12345678
+    ceaf:	43 f7 44 9e 15 78 56 34 12 	test   DWORD PTR [r14+r11*4+0x15],0x12345678
+    ceb8:	4b f7 44 a6 15 78 56 34 12 	test   QWORD PTR [r14+r12*4+0x15],0x12345678
+    cec1:	43 f7 44 a6 15 78 56 34 12 	test   DWORD PTR [r14+r12*4+0x15],0x12345678
+    ceca:	4b f7 44 ae 15 78 56 34 12 	test   QWORD PTR [r14+r13*4+0x15],0x12345678
+    ced3:	43 f7 44 ae 15 78 56 34 12 	test   DWORD PTR [r14+r13*4+0x15],0x12345678
+    cedc:	4b f7 44 b6 15 78 56 34 12 	test   QWORD PTR [r14+r14*4+0x15],0x12345678
+    cee5:	43 f7 44 b6 15 78 56 34 12 	test   DWORD PTR [r14+r14*4+0x15],0x12345678
+    ceee:	4b f7 44 be 15 78 56 34 12 	test   QWORD PTR [r14+r15*4+0x15],0x12345678
+    cef7:	43 f7 44 be 15 78 56 34 12 	test   DWORD PTR [r14+r15*4+0x15],0x12345678
+    cf00:	49 f7 44 a7 15 78 56 34 12 	test   QWORD PTR [r15+riz*4+0x15],0x12345678
+    cf09:	41 f7 44 a7 15 78 56 34 12 	test   DWORD PTR [r15+riz*4+0x15],0x12345678
+    cf12:	49 f7 44 87 15 78 56 34 12 	test   QWORD PTR [r15+rax*4+0x15],0x12345678
+    cf1b:	41 f7 44 87 15 78 56 34 12 	test   DWORD PTR [r15+rax*4+0x15],0x12345678
+    cf24:	49 f7 44 8f 15 78 56 34 12 	test   QWORD PTR [r15+rcx*4+0x15],0x12345678
+    cf2d:	41 f7 44 8f 15 78 56 34 12 	test   DWORD PTR [r15+rcx*4+0x15],0x12345678
+    cf36:	49 f7 44 97 15 78 56 34 12 	test   QWORD PTR [r15+rdx*4+0x15],0x12345678
+    cf3f:	41 f7 44 97 15 78 56 34 12 	test   DWORD PTR [r15+rdx*4+0x15],0x12345678
+    cf48:	49 f7 44 9f 15 78 56 34 12 	test   QWORD PTR [r15+rbx*4+0x15],0x12345678
+    cf51:	41 f7 44 9f 15 78 56 34 12 	test   DWORD PTR [r15+rbx*4+0x15],0x12345678
+    cf5a:	49 f7 44 af 15 78 56 34 12 	test   QWORD PTR [r15+rbp*4+0x15],0x12345678
+    cf63:	41 f7 44 af 15 78 56 34 12 	test   DWORD PTR [r15+rbp*4+0x15],0x12345678
+    cf6c:	49 f7 44 b7 15 78 56 34 12 	test   QWORD PTR [r15+rsi*4+0x15],0x12345678
+    cf75:	41 f7 44 b7 15 78 56 34 12 	test   DWORD PTR [r15+rsi*4+0x15],0x12345678
+    cf7e:	49 f7 44 bf 15 78 56 34 12 	test   QWORD PTR [r15+rdi*4+0x15],0x12345678
+    cf87:	41 f7 44 bf 15 78 56 34 12 	test   DWORD PTR [r15+rdi*4+0x15],0x12345678
+    cf90:	4b f7 44 87 15 78 56 34 12 	test   QWORD PTR [r15+r8*4+0x15],0x12345678
+    cf99:	43 f7 44 87 15 78 56 34 12 	test   DWORD PTR [r15+r8*4+0x15],0x12345678
+    cfa2:	4b f7 44 8f 15 78 56 34 12 	test   QWORD PTR [r15+r9*4+0x15],0x12345678
+    cfab:	43 f7 44 8f 15 78 56 34 12 	test   DWORD PTR [r15+r9*4+0x15],0x12345678
+    cfb4:	4b f7 44 97 15 78 56 34 12 	test   QWORD PTR [r15+r10*4+0x15],0x12345678
+    cfbd:	43 f7 44 97 15 78 56 34 12 	test   DWORD PTR [r15+r10*4+0x15],0x12345678
+    cfc6:	4b f7 44 9f 15 78 56 34 12 	test   QWORD PTR [r15+r11*4+0x15],0x12345678
+    cfcf:	43 f7 44 9f 15 78 56 34 12 	test   DWORD PTR [r15+r11*4+0x15],0x12345678
+    cfd8:	4b f7 44 a7 15 78 56 34 12 	test   QWORD PTR [r15+r12*4+0x15],0x12345678
+    cfe1:	43 f7 44 a7 15 78 56 34 12 	test   DWORD PTR [r15+r12*4+0x15],0x12345678
+    cfea:	4b f7 44 af 15 78 56 34 12 	test   QWORD PTR [r15+r13*4+0x15],0x12345678
+    cff3:	43 f7 44 af 15 78 56 34 12 	test   DWORD PTR [r15+r13*4+0x15],0x12345678
+    cffc:	4b f7 44 b7 15 78 56 34 12 	test   QWORD PTR [r15+r14*4+0x15],0x12345678
+    d005:	43 f7 44 b7 15 78 56 34 12 	test   DWORD PTR [r15+r14*4+0x15],0x12345678
+    d00e:	4b f7 44 bf 15 78 56 34 12 	test   QWORD PTR [r15+r15*4+0x15],0x12345678
+    d017:	43 f7 44 bf 15 78 56 34 12 	test   DWORD PTR [r15+r15*4+0x15],0x12345678
+    d020:	f6 84 e0 18 17 16 15 12 	test   BYTE PTR [rax+riz*8+0x15161718],0x12
+    d028:	f6 84 c0 18 17 16 15 12 	test   BYTE PTR [rax+rax*8+0x15161718],0x12
+    d030:	f6 84 c8 18 17 16 15 12 	test   BYTE PTR [rax+rcx*8+0x15161718],0x12
+    d038:	f6 84 d0 18 17 16 15 12 	test   BYTE PTR [rax+rdx*8+0x15161718],0x12
+    d040:	f6 84 d8 18 17 16 15 12 	test   BYTE PTR [rax+rbx*8+0x15161718],0x12
+    d048:	f6 84 e8 18 17 16 15 12 	test   BYTE PTR [rax+rbp*8+0x15161718],0x12
+    d050:	f6 84 f0 18 17 16 15 12 	test   BYTE PTR [rax+rsi*8+0x15161718],0x12
+    d058:	f6 84 f8 18 17 16 15 12 	test   BYTE PTR [rax+rdi*8+0x15161718],0x12
+    d060:	42 f6 84 c0 18 17 16 15 12 	test   BYTE PTR [rax+r8*8+0x15161718],0x12
+    d069:	42 f6 84 c8 18 17 16 15 12 	test   BYTE PTR [rax+r9*8+0x15161718],0x12
+    d072:	42 f6 84 d0 18 17 16 15 12 	test   BYTE PTR [rax+r10*8+0x15161718],0x12
+    d07b:	42 f6 84 d8 18 17 16 15 12 	test   BYTE PTR [rax+r11*8+0x15161718],0x12
+    d084:	42 f6 84 e0 18 17 16 15 12 	test   BYTE PTR [rax+r12*8+0x15161718],0x12
+    d08d:	42 f6 84 e8 18 17 16 15 12 	test   BYTE PTR [rax+r13*8+0x15161718],0x12
+    d096:	42 f6 84 f0 18 17 16 15 12 	test   BYTE PTR [rax+r14*8+0x15161718],0x12
+    d09f:	42 f6 84 f8 18 17 16 15 12 	test   BYTE PTR [rax+r15*8+0x15161718],0x12
+    d0a8:	f6 84 e1 18 17 16 15 12 	test   BYTE PTR [rcx+riz*8+0x15161718],0x12
+    d0b0:	f6 84 c1 18 17 16 15 12 	test   BYTE PTR [rcx+rax*8+0x15161718],0x12
+    d0b8:	f6 84 c9 18 17 16 15 12 	test   BYTE PTR [rcx+rcx*8+0x15161718],0x12
+    d0c0:	f6 84 d1 18 17 16 15 12 	test   BYTE PTR [rcx+rdx*8+0x15161718],0x12
+    d0c8:	f6 84 d9 18 17 16 15 12 	test   BYTE PTR [rcx+rbx*8+0x15161718],0x12
+    d0d0:	f6 84 e9 18 17 16 15 12 	test   BYTE PTR [rcx+rbp*8+0x15161718],0x12
+    d0d8:	f6 84 f1 18 17 16 15 12 	test   BYTE PTR [rcx+rsi*8+0x15161718],0x12
+    d0e0:	f6 84 f9 18 17 16 15 12 	test   BYTE PTR [rcx+rdi*8+0x15161718],0x12
+    d0e8:	42 f6 84 c1 18 17 16 15 12 	test   BYTE PTR [rcx+r8*8+0x15161718],0x12
+    d0f1:	42 f6 84 c9 18 17 16 15 12 	test   BYTE PTR [rcx+r9*8+0x15161718],0x12
+    d0fa:	42 f6 84 d1 18 17 16 15 12 	test   BYTE PTR [rcx+r10*8+0x15161718],0x12
+    d103:	42 f6 84 d9 18 17 16 15 12 	test   BYTE PTR [rcx+r11*8+0x15161718],0x12
+    d10c:	42 f6 84 e1 18 17 16 15 12 	test   BYTE PTR [rcx+r12*8+0x15161718],0x12
+    d115:	42 f6 84 e9 18 17 16 15 12 	test   BYTE PTR [rcx+r13*8+0x15161718],0x12
+    d11e:	42 f6 84 f1 18 17 16 15 12 	test   BYTE PTR [rcx+r14*8+0x15161718],0x12
+    d127:	42 f6 84 f9 18 17 16 15 12 	test   BYTE PTR [rcx+r15*8+0x15161718],0x12
+    d130:	f6 84 e2 18 17 16 15 12 	test   BYTE PTR [rdx+riz*8+0x15161718],0x12
+    d138:	f6 84 c2 18 17 16 15 12 	test   BYTE PTR [rdx+rax*8+0x15161718],0x12
+    d140:	f6 84 ca 18 17 16 15 12 	test   BYTE PTR [rdx+rcx*8+0x15161718],0x12
+    d148:	f6 84 d2 18 17 16 15 12 	test   BYTE PTR [rdx+rdx*8+0x15161718],0x12
+    d150:	f6 84 da 18 17 16 15 12 	test   BYTE PTR [rdx+rbx*8+0x15161718],0x12
+    d158:	f6 84 ea 18 17 16 15 12 	test   BYTE PTR [rdx+rbp*8+0x15161718],0x12
+    d160:	f6 84 f2 18 17 16 15 12 	test   BYTE PTR [rdx+rsi*8+0x15161718],0x12
+    d168:	f6 84 fa 18 17 16 15 12 	test   BYTE PTR [rdx+rdi*8+0x15161718],0x12
+    d170:	42 f6 84 c2 18 17 16 15 12 	test   BYTE PTR [rdx+r8*8+0x15161718],0x12
+    d179:	42 f6 84 ca 18 17 16 15 12 	test   BYTE PTR [rdx+r9*8+0x15161718],0x12
+    d182:	42 f6 84 d2 18 17 16 15 12 	test   BYTE PTR [rdx+r10*8+0x15161718],0x12
+    d18b:	42 f6 84 da 18 17 16 15 12 	test   BYTE PTR [rdx+r11*8+0x15161718],0x12
+    d194:	42 f6 84 e2 18 17 16 15 12 	test   BYTE PTR [rdx+r12*8+0x15161718],0x12
+    d19d:	42 f6 84 ea 18 17 16 15 12 	test   BYTE PTR [rdx+r13*8+0x15161718],0x12
+    d1a6:	42 f6 84 f2 18 17 16 15 12 	test   BYTE PTR [rdx+r14*8+0x15161718],0x12
+    d1af:	42 f6 84 fa 18 17 16 15 12 	test   BYTE PTR [rdx+r15*8+0x15161718],0x12
+    d1b8:	f6 84 e3 18 17 16 15 12 	test   BYTE PTR [rbx+riz*8+0x15161718],0x12
+    d1c0:	f6 84 c3 18 17 16 15 12 	test   BYTE PTR [rbx+rax*8+0x15161718],0x12
+    d1c8:	f6 84 cb 18 17 16 15 12 	test   BYTE PTR [rbx+rcx*8+0x15161718],0x12
+    d1d0:	f6 84 d3 18 17 16 15 12 	test   BYTE PTR [rbx+rdx*8+0x15161718],0x12
+    d1d8:	f6 84 db 18 17 16 15 12 	test   BYTE PTR [rbx+rbx*8+0x15161718],0x12
+    d1e0:	f6 84 eb 18 17 16 15 12 	test   BYTE PTR [rbx+rbp*8+0x15161718],0x12
+    d1e8:	f6 84 f3 18 17 16 15 12 	test   BYTE PTR [rbx+rsi*8+0x15161718],0x12
+    d1f0:	f6 84 fb 18 17 16 15 12 	test   BYTE PTR [rbx+rdi*8+0x15161718],0x12
+    d1f8:	42 f6 84 c3 18 17 16 15 12 	test   BYTE PTR [rbx+r8*8+0x15161718],0x12
+    d201:	42 f6 84 cb 18 17 16 15 12 	test   BYTE PTR [rbx+r9*8+0x15161718],0x12
+    d20a:	42 f6 84 d3 18 17 16 15 12 	test   BYTE PTR [rbx+r10*8+0x15161718],0x12
+    d213:	42 f6 84 db 18 17 16 15 12 	test   BYTE PTR [rbx+r11*8+0x15161718],0x12
+    d21c:	42 f6 84 e3 18 17 16 15 12 	test   BYTE PTR [rbx+r12*8+0x15161718],0x12
+    d225:	42 f6 84 eb 18 17 16 15 12 	test   BYTE PTR [rbx+r13*8+0x15161718],0x12
+    d22e:	42 f6 84 f3 18 17 16 15 12 	test   BYTE PTR [rbx+r14*8+0x15161718],0x12
+    d237:	42 f6 84 fb 18 17 16 15 12 	test   BYTE PTR [rbx+r15*8+0x15161718],0x12
+    d240:	f6 84 e4 18 17 16 15 12 	test   BYTE PTR [rsp+riz*8+0x15161718],0x12
+    d248:	f6 84 c4 18 17 16 15 12 	test   BYTE PTR [rsp+rax*8+0x15161718],0x12
+    d250:	f6 84 cc 18 17 16 15 12 	test   BYTE PTR [rsp+rcx*8+0x15161718],0x12
+    d258:	f6 84 d4 18 17 16 15 12 	test   BYTE PTR [rsp+rdx*8+0x15161718],0x12
+    d260:	f6 84 dc 18 17 16 15 12 	test   BYTE PTR [rsp+rbx*8+0x15161718],0x12
+    d268:	f6 84 ec 18 17 16 15 12 	test   BYTE PTR [rsp+rbp*8+0x15161718],0x12
+    d270:	f6 84 f4 18 17 16 15 12 	test   BYTE PTR [rsp+rsi*8+0x15161718],0x12
+    d278:	f6 84 fc 18 17 16 15 12 	test   BYTE PTR [rsp+rdi*8+0x15161718],0x12
+    d280:	42 f6 84 c4 18 17 16 15 12 	test   BYTE PTR [rsp+r8*8+0x15161718],0x12
+    d289:	42 f6 84 cc 18 17 16 15 12 	test   BYTE PTR [rsp+r9*8+0x15161718],0x12
+    d292:	42 f6 84 d4 18 17 16 15 12 	test   BYTE PTR [rsp+r10*8+0x15161718],0x12
+    d29b:	42 f6 84 dc 18 17 16 15 12 	test   BYTE PTR [rsp+r11*8+0x15161718],0x12
+    d2a4:	42 f6 84 e4 18 17 16 15 12 	test   BYTE PTR [rsp+r12*8+0x15161718],0x12
+    d2ad:	42 f6 84 ec 18 17 16 15 12 	test   BYTE PTR [rsp+r13*8+0x15161718],0x12
+    d2b6:	42 f6 84 f4 18 17 16 15 12 	test   BYTE PTR [rsp+r14*8+0x15161718],0x12
+    d2bf:	42 f6 84 fc 18 17 16 15 12 	test   BYTE PTR [rsp+r15*8+0x15161718],0x12
+    d2c8:	f6 84 e5 18 17 16 15 12 	test   BYTE PTR [rbp+riz*8+0x15161718],0x12
+    d2d0:	f6 84 c5 18 17 16 15 12 	test   BYTE PTR [rbp+rax*8+0x15161718],0x12
+    d2d8:	f6 84 cd 18 17 16 15 12 	test   BYTE PTR [rbp+rcx*8+0x15161718],0x12
+    d2e0:	f6 84 d5 18 17 16 15 12 	test   BYTE PTR [rbp+rdx*8+0x15161718],0x12
+    d2e8:	f6 84 dd 18 17 16 15 12 	test   BYTE PTR [rbp+rbx*8+0x15161718],0x12
+    d2f0:	f6 84 ed 18 17 16 15 12 	test   BYTE PTR [rbp+rbp*8+0x15161718],0x12
+    d2f8:	f6 84 f5 18 17 16 15 12 	test   BYTE PTR [rbp+rsi*8+0x15161718],0x12
+    d300:	f6 84 fd 18 17 16 15 12 	test   BYTE PTR [rbp+rdi*8+0x15161718],0x12
+    d308:	42 f6 84 c5 18 17 16 15 12 	test   BYTE PTR [rbp+r8*8+0x15161718],0x12
+    d311:	42 f6 84 cd 18 17 16 15 12 	test   BYTE PTR [rbp+r9*8+0x15161718],0x12
+    d31a:	42 f6 84 d5 18 17 16 15 12 	test   BYTE PTR [rbp+r10*8+0x15161718],0x12
+    d323:	42 f6 84 dd 18 17 16 15 12 	test   BYTE PTR [rbp+r11*8+0x15161718],0x12
+    d32c:	42 f6 84 e5 18 17 16 15 12 	test   BYTE PTR [rbp+r12*8+0x15161718],0x12
+    d335:	42 f6 84 ed 18 17 16 15 12 	test   BYTE PTR [rbp+r13*8+0x15161718],0x12
+    d33e:	42 f6 84 f5 18 17 16 15 12 	test   BYTE PTR [rbp+r14*8+0x15161718],0x12
+    d347:	42 f6 84 fd 18 17 16 15 12 	test   BYTE PTR [rbp+r15*8+0x15161718],0x12
+    d350:	f6 84 e6 18 17 16 15 12 	test   BYTE PTR [rsi+riz*8+0x15161718],0x12
+    d358:	f6 84 c6 18 17 16 15 12 	test   BYTE PTR [rsi+rax*8+0x15161718],0x12
+    d360:	f6 84 ce 18 17 16 15 12 	test   BYTE PTR [rsi+rcx*8+0x15161718],0x12
+    d368:	f6 84 d6 18 17 16 15 12 	test   BYTE PTR [rsi+rdx*8+0x15161718],0x12
+    d370:	f6 84 de 18 17 16 15 12 	test   BYTE PTR [rsi+rbx*8+0x15161718],0x12
+    d378:	f6 84 ee 18 17 16 15 12 	test   BYTE PTR [rsi+rbp*8+0x15161718],0x12
+    d380:	f6 84 f6 18 17 16 15 12 	test   BYTE PTR [rsi+rsi*8+0x15161718],0x12
+    d388:	f6 84 fe 18 17 16 15 12 	test   BYTE PTR [rsi+rdi*8+0x15161718],0x12
+    d390:	42 f6 84 c6 18 17 16 15 12 	test   BYTE PTR [rsi+r8*8+0x15161718],0x12
+    d399:	42 f6 84 ce 18 17 16 15 12 	test   BYTE PTR [rsi+r9*8+0x15161718],0x12
+    d3a2:	42 f6 84 d6 18 17 16 15 12 	test   BYTE PTR [rsi+r10*8+0x15161718],0x12
+    d3ab:	42 f6 84 de 18 17 16 15 12 	test   BYTE PTR [rsi+r11*8+0x15161718],0x12
+    d3b4:	42 f6 84 e6 18 17 16 15 12 	test   BYTE PTR [rsi+r12*8+0x15161718],0x12
+    d3bd:	42 f6 84 ee 18 17 16 15 12 	test   BYTE PTR [rsi+r13*8+0x15161718],0x12
+    d3c6:	42 f6 84 f6 18 17 16 15 12 	test   BYTE PTR [rsi+r14*8+0x15161718],0x12
+    d3cf:	42 f6 84 fe 18 17 16 15 12 	test   BYTE PTR [rsi+r15*8+0x15161718],0x12
+    d3d8:	f6 84 e7 18 17 16 15 12 	test   BYTE PTR [rdi+riz*8+0x15161718],0x12
+    d3e0:	f6 84 c7 18 17 16 15 12 	test   BYTE PTR [rdi+rax*8+0x15161718],0x12
+    d3e8:	f6 84 cf 18 17 16 15 12 	test   BYTE PTR [rdi+rcx*8+0x15161718],0x12
+    d3f0:	f6 84 d7 18 17 16 15 12 	test   BYTE PTR [rdi+rdx*8+0x15161718],0x12
+    d3f8:	f6 84 df 18 17 16 15 12 	test   BYTE PTR [rdi+rbx*8+0x15161718],0x12
+    d400:	f6 84 ef 18 17 16 15 12 	test   BYTE PTR [rdi+rbp*8+0x15161718],0x12
+    d408:	f6 84 f7 18 17 16 15 12 	test   BYTE PTR [rdi+rsi*8+0x15161718],0x12
+    d410:	f6 84 ff 18 17 16 15 12 	test   BYTE PTR [rdi+rdi*8+0x15161718],0x12
+    d418:	42 f6 84 c7 18 17 16 15 12 	test   BYTE PTR [rdi+r8*8+0x15161718],0x12
+    d421:	42 f6 84 cf 18 17 16 15 12 	test   BYTE PTR [rdi+r9*8+0x15161718],0x12
+    d42a:	42 f6 84 d7 18 17 16 15 12 	test   BYTE PTR [rdi+r10*8+0x15161718],0x12
+    d433:	42 f6 84 df 18 17 16 15 12 	test   BYTE PTR [rdi+r11*8+0x15161718],0x12
+    d43c:	42 f6 84 e7 18 17 16 15 12 	test   BYTE PTR [rdi+r12*8+0x15161718],0x12
+    d445:	42 f6 84 ef 18 17 16 15 12 	test   BYTE PTR [rdi+r13*8+0x15161718],0x12
+    d44e:	42 f6 84 f7 18 17 16 15 12 	test   BYTE PTR [rdi+r14*8+0x15161718],0x12
+    d457:	42 f6 84 ff 18 17 16 15 12 	test   BYTE PTR [rdi+r15*8+0x15161718],0x12
+    d460:	41 f6 84 e0 18 17 16 15 12 	test   BYTE PTR [r8+riz*8+0x15161718],0x12
+    d469:	41 f6 84 c0 18 17 16 15 12 	test   BYTE PTR [r8+rax*8+0x15161718],0x12
+    d472:	41 f6 84 c8 18 17 16 15 12 	test   BYTE PTR [r8+rcx*8+0x15161718],0x12
+    d47b:	41 f6 84 d0 18 17 16 15 12 	test   BYTE PTR [r8+rdx*8+0x15161718],0x12
+    d484:	41 f6 84 d8 18 17 16 15 12 	test   BYTE PTR [r8+rbx*8+0x15161718],0x12
+    d48d:	41 f6 84 e8 18 17 16 15 12 	test   BYTE PTR [r8+rbp*8+0x15161718],0x12
+    d496:	41 f6 84 f0 18 17 16 15 12 	test   BYTE PTR [r8+rsi*8+0x15161718],0x12
+    d49f:	41 f6 84 f8 18 17 16 15 12 	test   BYTE PTR [r8+rdi*8+0x15161718],0x12
+    d4a8:	43 f6 84 c0 18 17 16 15 12 	test   BYTE PTR [r8+r8*8+0x15161718],0x12
+    d4b1:	43 f6 84 c8 18 17 16 15 12 	test   BYTE PTR [r8+r9*8+0x15161718],0x12
+    d4ba:	43 f6 84 d0 18 17 16 15 12 	test   BYTE PTR [r8+r10*8+0x15161718],0x12
+    d4c3:	43 f6 84 d8 18 17 16 15 12 	test   BYTE PTR [r8+r11*8+0x15161718],0x12
+    d4cc:	43 f6 84 e0 18 17 16 15 12 	test   BYTE PTR [r8+r12*8+0x15161718],0x12
+    d4d5:	43 f6 84 e8 18 17 16 15 12 	test   BYTE PTR [r8+r13*8+0x15161718],0x12
+    d4de:	43 f6 84 f0 18 17 16 15 12 	test   BYTE PTR [r8+r14*8+0x15161718],0x12
+    d4e7:	43 f6 84 f8 18 17 16 15 12 	test   BYTE PTR [r8+r15*8+0x15161718],0x12
+    d4f0:	41 f6 84 e1 18 17 16 15 12 	test   BYTE PTR [r9+riz*8+0x15161718],0x12
+    d4f9:	41 f6 84 c1 18 17 16 15 12 	test   BYTE PTR [r9+rax*8+0x15161718],0x12
+    d502:	41 f6 84 c9 18 17 16 15 12 	test   BYTE PTR [r9+rcx*8+0x15161718],0x12
+    d50b:	41 f6 84 d1 18 17 16 15 12 	test   BYTE PTR [r9+rdx*8+0x15161718],0x12
+    d514:	41 f6 84 d9 18 17 16 15 12 	test   BYTE PTR [r9+rbx*8+0x15161718],0x12
+    d51d:	41 f6 84 e9 18 17 16 15 12 	test   BYTE PTR [r9+rbp*8+0x15161718],0x12
+    d526:	41 f6 84 f1 18 17 16 15 12 	test   BYTE PTR [r9+rsi*8+0x15161718],0x12
+    d52f:	41 f6 84 f9 18 17 16 15 12 	test   BYTE PTR [r9+rdi*8+0x15161718],0x12
+    d538:	43 f6 84 c1 18 17 16 15 12 	test   BYTE PTR [r9+r8*8+0x15161718],0x12
+    d541:	43 f6 84 c9 18 17 16 15 12 	test   BYTE PTR [r9+r9*8+0x15161718],0x12
+    d54a:	43 f6 84 d1 18 17 16 15 12 	test   BYTE PTR [r9+r10*8+0x15161718],0x12
+    d553:	43 f6 84 d9 18 17 16 15 12 	test   BYTE PTR [r9+r11*8+0x15161718],0x12
+    d55c:	43 f6 84 e1 18 17 16 15 12 	test   BYTE PTR [r9+r12*8+0x15161718],0x12
+    d565:	43 f6 84 e9 18 17 16 15 12 	test   BYTE PTR [r9+r13*8+0x15161718],0x12
+    d56e:	43 f6 84 f1 18 17 16 15 12 	test   BYTE PTR [r9+r14*8+0x15161718],0x12
+    d577:	43 f6 84 f9 18 17 16 15 12 	test   BYTE PTR [r9+r15*8+0x15161718],0x12
+    d580:	41 f6 84 e2 18 17 16 15 12 	test   BYTE PTR [r10+riz*8+0x15161718],0x12
+    d589:	41 f6 84 c2 18 17 16 15 12 	test   BYTE PTR [r10+rax*8+0x15161718],0x12
+    d592:	41 f6 84 ca 18 17 16 15 12 	test   BYTE PTR [r10+rcx*8+0x15161718],0x12
+    d59b:	41 f6 84 d2 18 17 16 15 12 	test   BYTE PTR [r10+rdx*8+0x15161718],0x12
+    d5a4:	41 f6 84 da 18 17 16 15 12 	test   BYTE PTR [r10+rbx*8+0x15161718],0x12
+    d5ad:	41 f6 84 ea 18 17 16 15 12 	test   BYTE PTR [r10+rbp*8+0x15161718],0x12
+    d5b6:	41 f6 84 f2 18 17 16 15 12 	test   BYTE PTR [r10+rsi*8+0x15161718],0x12
+    d5bf:	41 f6 84 fa 18 17 16 15 12 	test   BYTE PTR [r10+rdi*8+0x15161718],0x12
+    d5c8:	43 f6 84 c2 18 17 16 15 12 	test   BYTE PTR [r10+r8*8+0x15161718],0x12
+    d5d1:	43 f6 84 ca 18 17 16 15 12 	test   BYTE PTR [r10+r9*8+0x15161718],0x12
+    d5da:	43 f6 84 d2 18 17 16 15 12 	test   BYTE PTR [r10+r10*8+0x15161718],0x12
+    d5e3:	43 f6 84 da 18 17 16 15 12 	test   BYTE PTR [r10+r11*8+0x15161718],0x12
+    d5ec:	43 f6 84 e2 18 17 16 15 12 	test   BYTE PTR [r10+r12*8+0x15161718],0x12
+    d5f5:	43 f6 84 ea 18 17 16 15 12 	test   BYTE PTR [r10+r13*8+0x15161718],0x12
+    d5fe:	43 f6 84 f2 18 17 16 15 12 	test   BYTE PTR [r10+r14*8+0x15161718],0x12
+    d607:	43 f6 84 fa 18 17 16 15 12 	test   BYTE PTR [r10+r15*8+0x15161718],0x12
+    d610:	41 f6 84 e3 18 17 16 15 12 	test   BYTE PTR [r11+riz*8+0x15161718],0x12
+    d619:	41 f6 84 c3 18 17 16 15 12 	test   BYTE PTR [r11+rax*8+0x15161718],0x12
+    d622:	41 f6 84 cb 18 17 16 15 12 	test   BYTE PTR [r11+rcx*8+0x15161718],0x12
+    d62b:	41 f6 84 d3 18 17 16 15 12 	test   BYTE PTR [r11+rdx*8+0x15161718],0x12
+    d634:	41 f6 84 db 18 17 16 15 12 	test   BYTE PTR [r11+rbx*8+0x15161718],0x12
+    d63d:	41 f6 84 eb 18 17 16 15 12 	test   BYTE PTR [r11+rbp*8+0x15161718],0x12
+    d646:	41 f6 84 f3 18 17 16 15 12 	test   BYTE PTR [r11+rsi*8+0x15161718],0x12
+    d64f:	41 f6 84 fb 18 17 16 15 12 	test   BYTE PTR [r11+rdi*8+0x15161718],0x12
+    d658:	43 f6 84 c3 18 17 16 15 12 	test   BYTE PTR [r11+r8*8+0x15161718],0x12
+    d661:	43 f6 84 cb 18 17 16 15 12 	test   BYTE PTR [r11+r9*8+0x15161718],0x12
+    d66a:	43 f6 84 d3 18 17 16 15 12 	test   BYTE PTR [r11+r10*8+0x15161718],0x12
+    d673:	43 f6 84 db 18 17 16 15 12 	test   BYTE PTR [r11+r11*8+0x15161718],0x12
+    d67c:	43 f6 84 e3 18 17 16 15 12 	test   BYTE PTR [r11+r12*8+0x15161718],0x12
+    d685:	43 f6 84 eb 18 17 16 15 12 	test   BYTE PTR [r11+r13*8+0x15161718],0x12
+    d68e:	43 f6 84 f3 18 17 16 15 12 	test   BYTE PTR [r11+r14*8+0x15161718],0x12
+    d697:	43 f6 84 fb 18 17 16 15 12 	test   BYTE PTR [r11+r15*8+0x15161718],0x12
+    d6a0:	41 f6 84 e4 18 17 16 15 12 	test   BYTE PTR [r12+riz*8+0x15161718],0x12
+    d6a9:	41 f6 84 c4 18 17 16 15 12 	test   BYTE PTR [r12+rax*8+0x15161718],0x12
+    d6b2:	41 f6 84 cc 18 17 16 15 12 	test   BYTE PTR [r12+rcx*8+0x15161718],0x12
+    d6bb:	41 f6 84 d4 18 17 16 15 12 	test   BYTE PTR [r12+rdx*8+0x15161718],0x12
+    d6c4:	41 f6 84 dc 18 17 16 15 12 	test   BYTE PTR [r12+rbx*8+0x15161718],0x12
+    d6cd:	41 f6 84 ec 18 17 16 15 12 	test   BYTE PTR [r12+rbp*8+0x15161718],0x12
+    d6d6:	41 f6 84 f4 18 17 16 15 12 	test   BYTE PTR [r12+rsi*8+0x15161718],0x12
+    d6df:	41 f6 84 fc 18 17 16 15 12 	test   BYTE PTR [r12+rdi*8+0x15161718],0x12
+    d6e8:	43 f6 84 c4 18 17 16 15 12 	test   BYTE PTR [r12+r8*8+0x15161718],0x12
+    d6f1:	43 f6 84 cc 18 17 16 15 12 	test   BYTE PTR [r12+r9*8+0x15161718],0x12
+    d6fa:	43 f6 84 d4 18 17 16 15 12 	test   BYTE PTR [r12+r10*8+0x15161718],0x12
+    d703:	43 f6 84 dc 18 17 16 15 12 	test   BYTE PTR [r12+r11*8+0x15161718],0x12
+    d70c:	43 f6 84 e4 18 17 16 15 12 	test   BYTE PTR [r12+r12*8+0x15161718],0x12
+    d715:	43 f6 84 ec 18 17 16 15 12 	test   BYTE PTR [r12+r13*8+0x15161718],0x12
+    d71e:	43 f6 84 f4 18 17 16 15 12 	test   BYTE PTR [r12+r14*8+0x15161718],0x12
+    d727:	43 f6 84 fc 18 17 16 15 12 	test   BYTE PTR [r12+r15*8+0x15161718],0x12
+    d730:	41 f6 84 e5 18 17 16 15 12 	test   BYTE PTR [r13+riz*8+0x15161718],0x12
+    d739:	41 f6 84 c5 18 17 16 15 12 	test   BYTE PTR [r13+rax*8+0x15161718],0x12
+    d742:	41 f6 84 cd 18 17 16 15 12 	test   BYTE PTR [r13+rcx*8+0x15161718],0x12
+    d74b:	41 f6 84 d5 18 17 16 15 12 	test   BYTE PTR [r13+rdx*8+0x15161718],0x12
+    d754:	41 f6 84 dd 18 17 16 15 12 	test   BYTE PTR [r13+rbx*8+0x15161718],0x12
+    d75d:	41 f6 84 ed 18 17 16 15 12 	test   BYTE PTR [r13+rbp*8+0x15161718],0x12
+    d766:	41 f6 84 f5 18 17 16 15 12 	test   BYTE PTR [r13+rsi*8+0x15161718],0x12
+    d76f:	41 f6 84 fd 18 17 16 15 12 	test   BYTE PTR [r13+rdi*8+0x15161718],0x12
+    d778:	43 f6 84 c5 18 17 16 15 12 	test   BYTE PTR [r13+r8*8+0x15161718],0x12
+    d781:	43 f6 84 cd 18 17 16 15 12 	test   BYTE PTR [r13+r9*8+0x15161718],0x12
+    d78a:	43 f6 84 d5 18 17 16 15 12 	test   BYTE PTR [r13+r10*8+0x15161718],0x12
+    d793:	43 f6 84 dd 18 17 16 15 12 	test   BYTE PTR [r13+r11*8+0x15161718],0x12
+    d79c:	43 f6 84 e5 18 17 16 15 12 	test   BYTE PTR [r13+r12*8+0x15161718],0x12
+    d7a5:	43 f6 84 ed 18 17 16 15 12 	test   BYTE PTR [r13+r13*8+0x15161718],0x12
+    d7ae:	43 f6 84 f5 18 17 16 15 12 	test   BYTE PTR [r13+r14*8+0x15161718],0x12
+    d7b7:	43 f6 84 fd 18 17 16 15 12 	test   BYTE PTR [r13+r15*8+0x15161718],0x12
+    d7c0:	41 f6 84 e6 18 17 16 15 12 	test   BYTE PTR [r14+riz*8+0x15161718],0x12
+    d7c9:	41 f6 84 c6 18 17 16 15 12 	test   BYTE PTR [r14+rax*8+0x15161718],0x12
+    d7d2:	41 f6 84 ce 18 17 16 15 12 	test   BYTE PTR [r14+rcx*8+0x15161718],0x12
+    d7db:	41 f6 84 d6 18 17 16 15 12 	test   BYTE PTR [r14+rdx*8+0x15161718],0x12
+    d7e4:	41 f6 84 de 18 17 16 15 12 	test   BYTE PTR [r14+rbx*8+0x15161718],0x12
+    d7ed:	41 f6 84 ee 18 17 16 15 12 	test   BYTE PTR [r14+rbp*8+0x15161718],0x12
+    d7f6:	41 f6 84 f6 18 17 16 15 12 	test   BYTE PTR [r14+rsi*8+0x15161718],0x12
+    d7ff:	41 f6 84 fe 18 17 16 15 12 	test   BYTE PTR [r14+rdi*8+0x15161718],0x12
+    d808:	43 f6 84 c6 18 17 16 15 12 	test   BYTE PTR [r14+r8*8+0x15161718],0x12
+    d811:	43 f6 84 ce 18 17 16 15 12 	test   BYTE PTR [r14+r9*8+0x15161718],0x12
+    d81a:	43 f6 84 d6 18 17 16 15 12 	test   BYTE PTR [r14+r10*8+0x15161718],0x12
+    d823:	43 f6 84 de 18 17 16 15 12 	test   BYTE PTR [r14+r11*8+0x15161718],0x12
+    d82c:	43 f6 84 e6 18 17 16 15 12 	test   BYTE PTR [r14+r12*8+0x15161718],0x12
+    d835:	43 f6 84 ee 18 17 16 15 12 	test   BYTE PTR [r14+r13*8+0x15161718],0x12
+    d83e:	43 f6 84 f6 18 17 16 15 12 	test   BYTE PTR [r14+r14*8+0x15161718],0x12
+    d847:	43 f6 84 fe 18 17 16 15 12 	test   BYTE PTR [r14+r15*8+0x15161718],0x12
+    d850:	41 f6 84 e7 18 17 16 15 12 	test   BYTE PTR [r15+riz*8+0x15161718],0x12
+    d859:	41 f6 84 c7 18 17 16 15 12 	test   BYTE PTR [r15+rax*8+0x15161718],0x12
+    d862:	41 f6 84 cf 18 17 16 15 12 	test   BYTE PTR [r15+rcx*8+0x15161718],0x12
+    d86b:	41 f6 84 d7 18 17 16 15 12 	test   BYTE PTR [r15+rdx*8+0x15161718],0x12
+    d874:	41 f6 84 df 18 17 16 15 12 	test   BYTE PTR [r15+rbx*8+0x15161718],0x12
+    d87d:	41 f6 84 ef 18 17 16 15 12 	test   BYTE PTR [r15+rbp*8+0x15161718],0x12
+    d886:	41 f6 84 f7 18 17 16 15 12 	test   BYTE PTR [r15+rsi*8+0x15161718],0x12
+    d88f:	41 f6 84 ff 18 17 16 15 12 	test   BYTE PTR [r15+rdi*8+0x15161718],0x12
+    d898:	43 f6 84 c7 18 17 16 15 12 	test   BYTE PTR [r15+r8*8+0x15161718],0x12
+    d8a1:	43 f6 84 cf 18 17 16 15 12 	test   BYTE PTR [r15+r9*8+0x15161718],0x12
+    d8aa:	43 f6 84 d7 18 17 16 15 12 	test   BYTE PTR [r15+r10*8+0x15161718],0x12
+    d8b3:	43 f6 84 df 18 17 16 15 12 	test   BYTE PTR [r15+r11*8+0x15161718],0x12
+    d8bc:	43 f6 84 e7 18 17 16 15 12 	test   BYTE PTR [r15+r12*8+0x15161718],0x12
+    d8c5:	43 f6 84 ef 18 17 16 15 12 	test   BYTE PTR [r15+r13*8+0x15161718],0x12
+    d8ce:	43 f6 84 f7 18 17 16 15 12 	test   BYTE PTR [r15+r14*8+0x15161718],0x12
+    d8d7:	43 f6 84 ff 18 17 16 15 12 	test   BYTE PTR [r15+r15*8+0x15161718],0x12
+    d8e0:	66 f7 84 e0 18 17 16 15 34 12 	test   WORD PTR [rax+riz*8+0x15161718],0x1234
+    d8ea:	66 f7 84 c0 18 17 16 15 34 12 	test   WORD PTR [rax+rax*8+0x15161718],0x1234
+    d8f4:	66 f7 84 c8 18 17 16 15 34 12 	test   WORD PTR [rax+rcx*8+0x15161718],0x1234
+    d8fe:	66 f7 84 d0 18 17 16 15 34 12 	test   WORD PTR [rax+rdx*8+0x15161718],0x1234
+    d908:	66 f7 84 d8 18 17 16 15 34 12 	test   WORD PTR [rax+rbx*8+0x15161718],0x1234
+    d912:	66 f7 84 e8 18 17 16 15 34 12 	test   WORD PTR [rax+rbp*8+0x15161718],0x1234
+    d91c:	66 f7 84 f0 18 17 16 15 34 12 	test   WORD PTR [rax+rsi*8+0x15161718],0x1234
+    d926:	66 f7 84 f8 18 17 16 15 34 12 	test   WORD PTR [rax+rdi*8+0x15161718],0x1234
+    d930:	66 42 f7 84 c0 18 17 16 15 34 12 	test   WORD PTR [rax+r8*8+0x15161718],0x1234
+    d93b:	66 42 f7 84 c8 18 17 16 15 34 12 	test   WORD PTR [rax+r9*8+0x15161718],0x1234
+    d946:	66 42 f7 84 d0 18 17 16 15 34 12 	test   WORD PTR [rax+r10*8+0x15161718],0x1234
+    d951:	66 42 f7 84 d8 18 17 16 15 34 12 	test   WORD PTR [rax+r11*8+0x15161718],0x1234
+    d95c:	66 42 f7 84 e0 18 17 16 15 34 12 	test   WORD PTR [rax+r12*8+0x15161718],0x1234
+    d967:	66 42 f7 84 e8 18 17 16 15 34 12 	test   WORD PTR [rax+r13*8+0x15161718],0x1234
+    d972:	66 42 f7 84 f0 18 17 16 15 34 12 	test   WORD PTR [rax+r14*8+0x15161718],0x1234
+    d97d:	66 42 f7 84 f8 18 17 16 15 34 12 	test   WORD PTR [rax+r15*8+0x15161718],0x1234
+    d988:	66 f7 84 e1 18 17 16 15 34 12 	test   WORD PTR [rcx+riz*8+0x15161718],0x1234
+    d992:	66 f7 84 c1 18 17 16 15 34 12 	test   WORD PTR [rcx+rax*8+0x15161718],0x1234
+    d99c:	66 f7 84 c9 18 17 16 15 34 12 	test   WORD PTR [rcx+rcx*8+0x15161718],0x1234
+    d9a6:	66 f7 84 d1 18 17 16 15 34 12 	test   WORD PTR [rcx+rdx*8+0x15161718],0x1234
+    d9b0:	66 f7 84 d9 18 17 16 15 34 12 	test   WORD PTR [rcx+rbx*8+0x15161718],0x1234
+    d9ba:	66 f7 84 e9 18 17 16 15 34 12 	test   WORD PTR [rcx+rbp*8+0x15161718],0x1234
+    d9c4:	66 f7 84 f1 18 17 16 15 34 12 	test   WORD PTR [rcx+rsi*8+0x15161718],0x1234
+    d9ce:	66 f7 84 f9 18 17 16 15 34 12 	test   WORD PTR [rcx+rdi*8+0x15161718],0x1234
+    d9d8:	66 42 f7 84 c1 18 17 16 15 34 12 	test   WORD PTR [rcx+r8*8+0x15161718],0x1234
+    d9e3:	66 42 f7 84 c9 18 17 16 15 34 12 	test   WORD PTR [rcx+r9*8+0x15161718],0x1234
+    d9ee:	66 42 f7 84 d1 18 17 16 15 34 12 	test   WORD PTR [rcx+r10*8+0x15161718],0x1234
+    d9f9:	66 42 f7 84 d9 18 17 16 15 34 12 	test   WORD PTR [rcx+r11*8+0x15161718],0x1234
+    da04:	66 42 f7 84 e1 18 17 16 15 34 12 	test   WORD PTR [rcx+r12*8+0x15161718],0x1234
+    da0f:	66 42 f7 84 e9 18 17 16 15 34 12 	test   WORD PTR [rcx+r13*8+0x15161718],0x1234
+    da1a:	66 42 f7 84 f1 18 17 16 15 34 12 	test   WORD PTR [rcx+r14*8+0x15161718],0x1234
+    da25:	66 42 f7 84 f9 18 17 16 15 34 12 	test   WORD PTR [rcx+r15*8+0x15161718],0x1234
+    da30:	66 f7 84 e2 18 17 16 15 34 12 	test   WORD PTR [rdx+riz*8+0x15161718],0x1234
+    da3a:	66 f7 84 c2 18 17 16 15 34 12 	test   WORD PTR [rdx+rax*8+0x15161718],0x1234
+    da44:	66 f7 84 ca 18 17 16 15 34 12 	test   WORD PTR [rdx+rcx*8+0x15161718],0x1234
+    da4e:	66 f7 84 d2 18 17 16 15 34 12 	test   WORD PTR [rdx+rdx*8+0x15161718],0x1234
+    da58:	66 f7 84 da 18 17 16 15 34 12 	test   WORD PTR [rdx+rbx*8+0x15161718],0x1234
+    da62:	66 f7 84 ea 18 17 16 15 34 12 	test   WORD PTR [rdx+rbp*8+0x15161718],0x1234
+    da6c:	66 f7 84 f2 18 17 16 15 34 12 	test   WORD PTR [rdx+rsi*8+0x15161718],0x1234
+    da76:	66 f7 84 fa 18 17 16 15 34 12 	test   WORD PTR [rdx+rdi*8+0x15161718],0x1234
+    da80:	66 42 f7 84 c2 18 17 16 15 34 12 	test   WORD PTR [rdx+r8*8+0x15161718],0x1234
+    da8b:	66 42 f7 84 ca 18 17 16 15 34 12 	test   WORD PTR [rdx+r9*8+0x15161718],0x1234
+    da96:	66 42 f7 84 d2 18 17 16 15 34 12 	test   WORD PTR [rdx+r10*8+0x15161718],0x1234
+    daa1:	66 42 f7 84 da 18 17 16 15 34 12 	test   WORD PTR [rdx+r11*8+0x15161718],0x1234
+    daac:	66 42 f7 84 e2 18 17 16 15 34 12 	test   WORD PTR [rdx+r12*8+0x15161718],0x1234
+    dab7:	66 42 f7 84 ea 18 17 16 15 34 12 	test   WORD PTR [rdx+r13*8+0x15161718],0x1234
+    dac2:	66 42 f7 84 f2 18 17 16 15 34 12 	test   WORD PTR [rdx+r14*8+0x15161718],0x1234
+    dacd:	66 42 f7 84 fa 18 17 16 15 34 12 	test   WORD PTR [rdx+r15*8+0x15161718],0x1234
+    dad8:	66 f7 84 e3 18 17 16 15 34 12 	test   WORD PTR [rbx+riz*8+0x15161718],0x1234
+    dae2:	66 f7 84 c3 18 17 16 15 34 12 	test   WORD PTR [rbx+rax*8+0x15161718],0x1234
+    daec:	66 f7 84 cb 18 17 16 15 34 12 	test   WORD PTR [rbx+rcx*8+0x15161718],0x1234
+    daf6:	66 f7 84 d3 18 17 16 15 34 12 	test   WORD PTR [rbx+rdx*8+0x15161718],0x1234
+    db00:	66 f7 84 db 18 17 16 15 34 12 	test   WORD PTR [rbx+rbx*8+0x15161718],0x1234
+    db0a:	66 f7 84 eb 18 17 16 15 34 12 	test   WORD PTR [rbx+rbp*8+0x15161718],0x1234
+    db14:	66 f7 84 f3 18 17 16 15 34 12 	test   WORD PTR [rbx+rsi*8+0x15161718],0x1234
+    db1e:	66 f7 84 fb 18 17 16 15 34 12 	test   WORD PTR [rbx+rdi*8+0x15161718],0x1234
+    db28:	66 42 f7 84 c3 18 17 16 15 34 12 	test   WORD PTR [rbx+r8*8+0x15161718],0x1234
+    db33:	66 42 f7 84 cb 18 17 16 15 34 12 	test   WORD PTR [rbx+r9*8+0x15161718],0x1234
+    db3e:	66 42 f7 84 d3 18 17 16 15 34 12 	test   WORD PTR [rbx+r10*8+0x15161718],0x1234
+    db49:	66 42 f7 84 db 18 17 16 15 34 12 	test   WORD PTR [rbx+r11*8+0x15161718],0x1234
+    db54:	66 42 f7 84 e3 18 17 16 15 34 12 	test   WORD PTR [rbx+r12*8+0x15161718],0x1234
+    db5f:	66 42 f7 84 eb 18 17 16 15 34 12 	test   WORD PTR [rbx+r13*8+0x15161718],0x1234
+    db6a:	66 42 f7 84 f3 18 17 16 15 34 12 	test   WORD PTR [rbx+r14*8+0x15161718],0x1234
+    db75:	66 42 f7 84 fb 18 17 16 15 34 12 	test   WORD PTR [rbx+r15*8+0x15161718],0x1234
+    db80:	66 f7 84 e4 18 17 16 15 34 12 	test   WORD PTR [rsp+riz*8+0x15161718],0x1234
+    db8a:	66 f7 84 c4 18 17 16 15 34 12 	test   WORD PTR [rsp+rax*8+0x15161718],0x1234
+    db94:	66 f7 84 cc 18 17 16 15 34 12 	test   WORD PTR [rsp+rcx*8+0x15161718],0x1234
+    db9e:	66 f7 84 d4 18 17 16 15 34 12 	test   WORD PTR [rsp+rdx*8+0x15161718],0x1234
+    dba8:	66 f7 84 dc 18 17 16 15 34 12 	test   WORD PTR [rsp+rbx*8+0x15161718],0x1234
+    dbb2:	66 f7 84 ec 18 17 16 15 34 12 	test   WORD PTR [rsp+rbp*8+0x15161718],0x1234
+    dbbc:	66 f7 84 f4 18 17 16 15 34 12 	test   WORD PTR [rsp+rsi*8+0x15161718],0x1234
+    dbc6:	66 f7 84 fc 18 17 16 15 34 12 	test   WORD PTR [rsp+rdi*8+0x15161718],0x1234
+    dbd0:	66 42 f7 84 c4 18 17 16 15 34 12 	test   WORD PTR [rsp+r8*8+0x15161718],0x1234
+    dbdb:	66 42 f7 84 cc 18 17 16 15 34 12 	test   WORD PTR [rsp+r9*8+0x15161718],0x1234
+    dbe6:	66 42 f7 84 d4 18 17 16 15 34 12 	test   WORD PTR [rsp+r10*8+0x15161718],0x1234
+    dbf1:	66 42 f7 84 dc 18 17 16 15 34 12 	test   WORD PTR [rsp+r11*8+0x15161718],0x1234
+    dbfc:	66 42 f7 84 e4 18 17 16 15 34 12 	test   WORD PTR [rsp+r12*8+0x15161718],0x1234
+    dc07:	66 42 f7 84 ec 18 17 16 15 34 12 	test   WORD PTR [rsp+r13*8+0x15161718],0x1234
+    dc12:	66 42 f7 84 f4 18 17 16 15 34 12 	test   WORD PTR [rsp+r14*8+0x15161718],0x1234
+    dc1d:	66 42 f7 84 fc 18 17 16 15 34 12 	test   WORD PTR [rsp+r15*8+0x15161718],0x1234
+    dc28:	66 f7 84 e5 18 17 16 15 34 12 	test   WORD PTR [rbp+riz*8+0x15161718],0x1234
+    dc32:	66 f7 84 c5 18 17 16 15 34 12 	test   WORD PTR [rbp+rax*8+0x15161718],0x1234
+    dc3c:	66 f7 84 cd 18 17 16 15 34 12 	test   WORD PTR [rbp+rcx*8+0x15161718],0x1234
+    dc46:	66 f7 84 d5 18 17 16 15 34 12 	test   WORD PTR [rbp+rdx*8+0x15161718],0x1234
+    dc50:	66 f7 84 dd 18 17 16 15 34 12 	test   WORD PTR [rbp+rbx*8+0x15161718],0x1234
+    dc5a:	66 f7 84 ed 18 17 16 15 34 12 	test   WORD PTR [rbp+rbp*8+0x15161718],0x1234
+    dc64:	66 f7 84 f5 18 17 16 15 34 12 	test   WORD PTR [rbp+rsi*8+0x15161718],0x1234
+    dc6e:	66 f7 84 fd 18 17 16 15 34 12 	test   WORD PTR [rbp+rdi*8+0x15161718],0x1234
+    dc78:	66 42 f7 84 c5 18 17 16 15 34 12 	test   WORD PTR [rbp+r8*8+0x15161718],0x1234
+    dc83:	66 42 f7 84 cd 18 17 16 15 34 12 	test   WORD PTR [rbp+r9*8+0x15161718],0x1234
+    dc8e:	66 42 f7 84 d5 18 17 16 15 34 12 	test   WORD PTR [rbp+r10*8+0x15161718],0x1234
+    dc99:	66 42 f7 84 dd 18 17 16 15 34 12 	test   WORD PTR [rbp+r11*8+0x15161718],0x1234
+    dca4:	66 42 f7 84 e5 18 17 16 15 34 12 	test   WORD PTR [rbp+r12*8+0x15161718],0x1234
+    dcaf:	66 42 f7 84 ed 18 17 16 15 34 12 	test   WORD PTR [rbp+r13*8+0x15161718],0x1234
+    dcba:	66 42 f7 84 f5 18 17 16 15 34 12 	test   WORD PTR [rbp+r14*8+0x15161718],0x1234
+    dcc5:	66 42 f7 84 fd 18 17 16 15 34 12 	test   WORD PTR [rbp+r15*8+0x15161718],0x1234
+    dcd0:	66 f7 84 e6 18 17 16 15 34 12 	test   WORD PTR [rsi+riz*8+0x15161718],0x1234
+    dcda:	66 f7 84 c6 18 17 16 15 34 12 	test   WORD PTR [rsi+rax*8+0x15161718],0x1234
+    dce4:	66 f7 84 ce 18 17 16 15 34 12 	test   WORD PTR [rsi+rcx*8+0x15161718],0x1234
+    dcee:	66 f7 84 d6 18 17 16 15 34 12 	test   WORD PTR [rsi+rdx*8+0x15161718],0x1234
+    dcf8:	66 f7 84 de 18 17 16 15 34 12 	test   WORD PTR [rsi+rbx*8+0x15161718],0x1234
+    dd02:	66 f7 84 ee 18 17 16 15 34 12 	test   WORD PTR [rsi+rbp*8+0x15161718],0x1234
+    dd0c:	66 f7 84 f6 18 17 16 15 34 12 	test   WORD PTR [rsi+rsi*8+0x15161718],0x1234
+    dd16:	66 f7 84 fe 18 17 16 15 34 12 	test   WORD PTR [rsi+rdi*8+0x15161718],0x1234
+    dd20:	66 42 f7 84 c6 18 17 16 15 34 12 	test   WORD PTR [rsi+r8*8+0x15161718],0x1234
+    dd2b:	66 42 f7 84 ce 18 17 16 15 34 12 	test   WORD PTR [rsi+r9*8+0x15161718],0x1234
+    dd36:	66 42 f7 84 d6 18 17 16 15 34 12 	test   WORD PTR [rsi+r10*8+0x15161718],0x1234
+    dd41:	66 42 f7 84 de 18 17 16 15 34 12 	test   WORD PTR [rsi+r11*8+0x15161718],0x1234
+    dd4c:	66 42 f7 84 e6 18 17 16 15 34 12 	test   WORD PTR [rsi+r12*8+0x15161718],0x1234
+    dd57:	66 42 f7 84 ee 18 17 16 15 34 12 	test   WORD PTR [rsi+r13*8+0x15161718],0x1234
+    dd62:	66 42 f7 84 f6 18 17 16 15 34 12 	test   WORD PTR [rsi+r14*8+0x15161718],0x1234
+    dd6d:	66 42 f7 84 fe 18 17 16 15 34 12 	test   WORD PTR [rsi+r15*8+0x15161718],0x1234
+    dd78:	66 f7 84 e7 18 17 16 15 34 12 	test   WORD PTR [rdi+riz*8+0x15161718],0x1234
+    dd82:	66 f7 84 c7 18 17 16 15 34 12 	test   WORD PTR [rdi+rax*8+0x15161718],0x1234
+    dd8c:	66 f7 84 cf 18 17 16 15 34 12 	test   WORD PTR [rdi+rcx*8+0x15161718],0x1234
+    dd96:	66 f7 84 d7 18 17 16 15 34 12 	test   WORD PTR [rdi+rdx*8+0x15161718],0x1234
+    dda0:	66 f7 84 df 18 17 16 15 34 12 	test   WORD PTR [rdi+rbx*8+0x15161718],0x1234
+    ddaa:	66 f7 84 ef 18 17 16 15 34 12 	test   WORD PTR [rdi+rbp*8+0x15161718],0x1234
+    ddb4:	66 f7 84 f7 18 17 16 15 34 12 	test   WORD PTR [rdi+rsi*8+0x15161718],0x1234
+    ddbe:	66 f7 84 ff 18 17 16 15 34 12 	test   WORD PTR [rdi+rdi*8+0x15161718],0x1234
+    ddc8:	66 42 f7 84 c7 18 17 16 15 34 12 	test   WORD PTR [rdi+r8*8+0x15161718],0x1234
+    ddd3:	66 42 f7 84 cf 18 17 16 15 34 12 	test   WORD PTR [rdi+r9*8+0x15161718],0x1234
+    ddde:	66 42 f7 84 d7 18 17 16 15 34 12 	test   WORD PTR [rdi+r10*8+0x15161718],0x1234
+    dde9:	66 42 f7 84 df 18 17 16 15 34 12 	test   WORD PTR [rdi+r11*8+0x15161718],0x1234
+    ddf4:	66 42 f7 84 e7 18 17 16 15 34 12 	test   WORD PTR [rdi+r12*8+0x15161718],0x1234
+    ddff:	66 42 f7 84 ef 18 17 16 15 34 12 	test   WORD PTR [rdi+r13*8+0x15161718],0x1234
+    de0a:	66 42 f7 84 f7 18 17 16 15 34 12 	test   WORD PTR [rdi+r14*8+0x15161718],0x1234
+    de15:	66 42 f7 84 ff 18 17 16 15 34 12 	test   WORD PTR [rdi+r15*8+0x15161718],0x1234
+    de20:	66 41 f7 84 e0 18 17 16 15 34 12 	test   WORD PTR [r8+riz*8+0x15161718],0x1234
+    de2b:	66 41 f7 84 c0 18 17 16 15 34 12 	test   WORD PTR [r8+rax*8+0x15161718],0x1234
+    de36:	66 41 f7 84 c8 18 17 16 15 34 12 	test   WORD PTR [r8+rcx*8+0x15161718],0x1234
+    de41:	66 41 f7 84 d0 18 17 16 15 34 12 	test   WORD PTR [r8+rdx*8+0x15161718],0x1234
+    de4c:	66 41 f7 84 d8 18 17 16 15 34 12 	test   WORD PTR [r8+rbx*8+0x15161718],0x1234
+    de57:	66 41 f7 84 e8 18 17 16 15 34 12 	test   WORD PTR [r8+rbp*8+0x15161718],0x1234
+    de62:	66 41 f7 84 f0 18 17 16 15 34 12 	test   WORD PTR [r8+rsi*8+0x15161718],0x1234
+    de6d:	66 41 f7 84 f8 18 17 16 15 34 12 	test   WORD PTR [r8+rdi*8+0x15161718],0x1234
+    de78:	66 43 f7 84 c0 18 17 16 15 34 12 	test   WORD PTR [r8+r8*8+0x15161718],0x1234
+    de83:	66 43 f7 84 c8 18 17 16 15 34 12 	test   WORD PTR [r8+r9*8+0x15161718],0x1234
+    de8e:	66 43 f7 84 d0 18 17 16 15 34 12 	test   WORD PTR [r8+r10*8+0x15161718],0x1234
+    de99:	66 43 f7 84 d8 18 17 16 15 34 12 	test   WORD PTR [r8+r11*8+0x15161718],0x1234
+    dea4:	66 43 f7 84 e0 18 17 16 15 34 12 	test   WORD PTR [r8+r12*8+0x15161718],0x1234
+    deaf:	66 43 f7 84 e8 18 17 16 15 34 12 	test   WORD PTR [r8+r13*8+0x15161718],0x1234
+    deba:	66 43 f7 84 f0 18 17 16 15 34 12 	test   WORD PTR [r8+r14*8+0x15161718],0x1234
+    dec5:	66 43 f7 84 f8 18 17 16 15 34 12 	test   WORD PTR [r8+r15*8+0x15161718],0x1234
+    ded0:	66 41 f7 84 e1 18 17 16 15 34 12 	test   WORD PTR [r9+riz*8+0x15161718],0x1234
+    dedb:	66 41 f7 84 c1 18 17 16 15 34 12 	test   WORD PTR [r9+rax*8+0x15161718],0x1234
+    dee6:	66 41 f7 84 c9 18 17 16 15 34 12 	test   WORD PTR [r9+rcx*8+0x15161718],0x1234
+    def1:	66 41 f7 84 d1 18 17 16 15 34 12 	test   WORD PTR [r9+rdx*8+0x15161718],0x1234
+    defc:	66 41 f7 84 d9 18 17 16 15 34 12 	test   WORD PTR [r9+rbx*8+0x15161718],0x1234
+    df07:	66 41 f7 84 e9 18 17 16 15 34 12 	test   WORD PTR [r9+rbp*8+0x15161718],0x1234
+    df12:	66 41 f7 84 f1 18 17 16 15 34 12 	test   WORD PTR [r9+rsi*8+0x15161718],0x1234
+    df1d:	66 41 f7 84 f9 18 17 16 15 34 12 	test   WORD PTR [r9+rdi*8+0x15161718],0x1234
+    df28:	66 43 f7 84 c1 18 17 16 15 34 12 	test   WORD PTR [r9+r8*8+0x15161718],0x1234
+    df33:	66 43 f7 84 c9 18 17 16 15 34 12 	test   WORD PTR [r9+r9*8+0x15161718],0x1234
+    df3e:	66 43 f7 84 d1 18 17 16 15 34 12 	test   WORD PTR [r9+r10*8+0x15161718],0x1234
+    df49:	66 43 f7 84 d9 18 17 16 15 34 12 	test   WORD PTR [r9+r11*8+0x15161718],0x1234
+    df54:	66 43 f7 84 e1 18 17 16 15 34 12 	test   WORD PTR [r9+r12*8+0x15161718],0x1234
+    df5f:	66 43 f7 84 e9 18 17 16 15 34 12 	test   WORD PTR [r9+r13*8+0x15161718],0x1234
+    df6a:	66 43 f7 84 f1 18 17 16 15 34 12 	test   WORD PTR [r9+r14*8+0x15161718],0x1234
+    df75:	66 43 f7 84 f9 18 17 16 15 34 12 	test   WORD PTR [r9+r15*8+0x15161718],0x1234
+    df80:	66 41 f7 84 e2 18 17 16 15 34 12 	test   WORD PTR [r10+riz*8+0x15161718],0x1234
+    df8b:	66 41 f7 84 c2 18 17 16 15 34 12 	test   WORD PTR [r10+rax*8+0x15161718],0x1234
+    df96:	66 41 f7 84 ca 18 17 16 15 34 12 	test   WORD PTR [r10+rcx*8+0x15161718],0x1234
+    dfa1:	66 41 f7 84 d2 18 17 16 15 34 12 	test   WORD PTR [r10+rdx*8+0x15161718],0x1234
+    dfac:	66 41 f7 84 da 18 17 16 15 34 12 	test   WORD PTR [r10+rbx*8+0x15161718],0x1234
+    dfb7:	66 41 f7 84 ea 18 17 16 15 34 12 	test   WORD PTR [r10+rbp*8+0x15161718],0x1234
+    dfc2:	66 41 f7 84 f2 18 17 16 15 34 12 	test   WORD PTR [r10+rsi*8+0x15161718],0x1234
+    dfcd:	66 41 f7 84 fa 18 17 16 15 34 12 	test   WORD PTR [r10+rdi*8+0x15161718],0x1234
+    dfd8:	66 43 f7 84 c2 18 17 16 15 34 12 	test   WORD PTR [r10+r8*8+0x15161718],0x1234
+    dfe3:	66 43 f7 84 ca 18 17 16 15 34 12 	test   WORD PTR [r10+r9*8+0x15161718],0x1234
+    dfee:	66 43 f7 84 d2 18 17 16 15 34 12 	test   WORD PTR [r10+r10*8+0x15161718],0x1234
+    dff9:	66 43 f7 84 da 18 17 16 15 34 12 	test   WORD PTR [r10+r11*8+0x15161718],0x1234
+    e004:	66 43 f7 84 e2 18 17 16 15 34 12 	test   WORD PTR [r10+r12*8+0x15161718],0x1234
+    e00f:	66 43 f7 84 ea 18 17 16 15 34 12 	test   WORD PTR [r10+r13*8+0x15161718],0x1234
+    e01a:	66 43 f7 84 f2 18 17 16 15 34 12 	test   WORD PTR [r10+r14*8+0x15161718],0x1234
+    e025:	66 43 f7 84 fa 18 17 16 15 34 12 	test   WORD PTR [r10+r15*8+0x15161718],0x1234
+    e030:	66 41 f7 84 e3 18 17 16 15 34 12 	test   WORD PTR [r11+riz*8+0x15161718],0x1234
+    e03b:	66 41 f7 84 c3 18 17 16 15 34 12 	test   WORD PTR [r11+rax*8+0x15161718],0x1234
+    e046:	66 41 f7 84 cb 18 17 16 15 34 12 	test   WORD PTR [r11+rcx*8+0x15161718],0x1234
+    e051:	66 41 f7 84 d3 18 17 16 15 34 12 	test   WORD PTR [r11+rdx*8+0x15161718],0x1234
+    e05c:	66 41 f7 84 db 18 17 16 15 34 12 	test   WORD PTR [r11+rbx*8+0x15161718],0x1234
+    e067:	66 41 f7 84 eb 18 17 16 15 34 12 	test   WORD PTR [r11+rbp*8+0x15161718],0x1234
+    e072:	66 41 f7 84 f3 18 17 16 15 34 12 	test   WORD PTR [r11+rsi*8+0x15161718],0x1234
+    e07d:	66 41 f7 84 fb 18 17 16 15 34 12 	test   WORD PTR [r11+rdi*8+0x15161718],0x1234
+    e088:	66 43 f7 84 c3 18 17 16 15 34 12 	test   WORD PTR [r11+r8*8+0x15161718],0x1234
+    e093:	66 43 f7 84 cb 18 17 16 15 34 12 	test   WORD PTR [r11+r9*8+0x15161718],0x1234
+    e09e:	66 43 f7 84 d3 18 17 16 15 34 12 	test   WORD PTR [r11+r10*8+0x15161718],0x1234
+    e0a9:	66 43 f7 84 db 18 17 16 15 34 12 	test   WORD PTR [r11+r11*8+0x15161718],0x1234
+    e0b4:	66 43 f7 84 e3 18 17 16 15 34 12 	test   WORD PTR [r11+r12*8+0x15161718],0x1234
+    e0bf:	66 43 f7 84 eb 18 17 16 15 34 12 	test   WORD PTR [r11+r13*8+0x15161718],0x1234
+    e0ca:	66 43 f7 84 f3 18 17 16 15 34 12 	test   WORD PTR [r11+r14*8+0x15161718],0x1234
+    e0d5:	66 43 f7 84 fb 18 17 16 15 34 12 	test   WORD PTR [r11+r15*8+0x15161718],0x1234
+    e0e0:	66 41 f7 84 e4 18 17 16 15 34 12 	test   WORD PTR [r12+riz*8+0x15161718],0x1234
+    e0eb:	66 41 f7 84 c4 18 17 16 15 34 12 	test   WORD PTR [r12+rax*8+0x15161718],0x1234
+    e0f6:	66 41 f7 84 cc 18 17 16 15 34 12 	test   WORD PTR [r12+rcx*8+0x15161718],0x1234
+    e101:	66 41 f7 84 d4 18 17 16 15 34 12 	test   WORD PTR [r12+rdx*8+0x15161718],0x1234
+    e10c:	66 41 f7 84 dc 18 17 16 15 34 12 	test   WORD PTR [r12+rbx*8+0x15161718],0x1234
+    e117:	66 41 f7 84 ec 18 17 16 15 34 12 	test   WORD PTR [r12+rbp*8+0x15161718],0x1234
+    e122:	66 41 f7 84 f4 18 17 16 15 34 12 	test   WORD PTR [r12+rsi*8+0x15161718],0x1234
+    e12d:	66 41 f7 84 fc 18 17 16 15 34 12 	test   WORD PTR [r12+rdi*8+0x15161718],0x1234
+    e138:	66 43 f7 84 c4 18 17 16 15 34 12 	test   WORD PTR [r12+r8*8+0x15161718],0x1234
+    e143:	66 43 f7 84 cc 18 17 16 15 34 12 	test   WORD PTR [r12+r9*8+0x15161718],0x1234
+    e14e:	66 43 f7 84 d4 18 17 16 15 34 12 	test   WORD PTR [r12+r10*8+0x15161718],0x1234
+    e159:	66 43 f7 84 dc 18 17 16 15 34 12 	test   WORD PTR [r12+r11*8+0x15161718],0x1234
+    e164:	66 43 f7 84 e4 18 17 16 15 34 12 	test   WORD PTR [r12+r12*8+0x15161718],0x1234
+    e16f:	66 43 f7 84 ec 18 17 16 15 34 12 	test   WORD PTR [r12+r13*8+0x15161718],0x1234
+    e17a:	66 43 f7 84 f4 18 17 16 15 34 12 	test   WORD PTR [r12+r14*8+0x15161718],0x1234
+    e185:	66 43 f7 84 fc 18 17 16 15 34 12 	test   WORD PTR [r12+r15*8+0x15161718],0x1234
+    e190:	66 41 f7 84 e5 18 17 16 15 34 12 	test   WORD PTR [r13+riz*8+0x15161718],0x1234
+    e19b:	66 41 f7 84 c5 18 17 16 15 34 12 	test   WORD PTR [r13+rax*8+0x15161718],0x1234
+    e1a6:	66 41 f7 84 cd 18 17 16 15 34 12 	test   WORD PTR [r13+rcx*8+0x15161718],0x1234
+    e1b1:	66 41 f7 84 d5 18 17 16 15 34 12 	test   WORD PTR [r13+rdx*8+0x15161718],0x1234
+    e1bc:	66 41 f7 84 dd 18 17 16 15 34 12 	test   WORD PTR [r13+rbx*8+0x15161718],0x1234
+    e1c7:	66 41 f7 84 ed 18 17 16 15 34 12 	test   WORD PTR [r13+rbp*8+0x15161718],0x1234
+    e1d2:	66 41 f7 84 f5 18 17 16 15 34 12 	test   WORD PTR [r13+rsi*8+0x15161718],0x1234
+    e1dd:	66 41 f7 84 fd 18 17 16 15 34 12 	test   WORD PTR [r13+rdi*8+0x15161718],0x1234
+    e1e8:	66 43 f7 84 c5 18 17 16 15 34 12 	test   WORD PTR [r13+r8*8+0x15161718],0x1234
+    e1f3:	66 43 f7 84 cd 18 17 16 15 34 12 	test   WORD PTR [r13+r9*8+0x15161718],0x1234
+    e1fe:	66 43 f7 84 d5 18 17 16 15 34 12 	test   WORD PTR [r13+r10*8+0x15161718],0x1234
+    e209:	66 43 f7 84 dd 18 17 16 15 34 12 	test   WORD PTR [r13+r11*8+0x15161718],0x1234
+    e214:	66 43 f7 84 e5 18 17 16 15 34 12 	test   WORD PTR [r13+r12*8+0x15161718],0x1234
+    e21f:	66 43 f7 84 ed 18 17 16 15 34 12 	test   WORD PTR [r13+r13*8+0x15161718],0x1234
+    e22a:	66 43 f7 84 f5 18 17 16 15 34 12 	test   WORD PTR [r13+r14*8+0x15161718],0x1234
+    e235:	66 43 f7 84 fd 18 17 16 15 34 12 	test   WORD PTR [r13+r15*8+0x15161718],0x1234
+    e240:	66 41 f7 84 e6 18 17 16 15 34 12 	test   WORD PTR [r14+riz*8+0x15161718],0x1234
+    e24b:	66 41 f7 84 c6 18 17 16 15 34 12 	test   WORD PTR [r14+rax*8+0x15161718],0x1234
+    e256:	66 41 f7 84 ce 18 17 16 15 34 12 	test   WORD PTR [r14+rcx*8+0x15161718],0x1234
+    e261:	66 41 f7 84 d6 18 17 16 15 34 12 	test   WORD PTR [r14+rdx*8+0x15161718],0x1234
+    e26c:	66 41 f7 84 de 18 17 16 15 34 12 	test   WORD PTR [r14+rbx*8+0x15161718],0x1234
+    e277:	66 41 f7 84 ee 18 17 16 15 34 12 	test   WORD PTR [r14+rbp*8+0x15161718],0x1234
+    e282:	66 41 f7 84 f6 18 17 16 15 34 12 	test   WORD PTR [r14+rsi*8+0x15161718],0x1234
+    e28d:	66 41 f7 84 fe 18 17 16 15 34 12 	test   WORD PTR [r14+rdi*8+0x15161718],0x1234
+    e298:	66 43 f7 84 c6 18 17 16 15 34 12 	test   WORD PTR [r14+r8*8+0x15161718],0x1234
+    e2a3:	66 43 f7 84 ce 18 17 16 15 34 12 	test   WORD PTR [r14+r9*8+0x15161718],0x1234
+    e2ae:	66 43 f7 84 d6 18 17 16 15 34 12 	test   WORD PTR [r14+r10*8+0x15161718],0x1234
+    e2b9:	66 43 f7 84 de 18 17 16 15 34 12 	test   WORD PTR [r14+r11*8+0x15161718],0x1234
+    e2c4:	66 43 f7 84 e6 18 17 16 15 34 12 	test   WORD PTR [r14+r12*8+0x15161718],0x1234
+    e2cf:	66 43 f7 84 ee 18 17 16 15 34 12 	test   WORD PTR [r14+r13*8+0x15161718],0x1234
+    e2da:	66 43 f7 84 f6 18 17 16 15 34 12 	test   WORD PTR [r14+r14*8+0x15161718],0x1234
+    e2e5:	66 43 f7 84 fe 18 17 16 15 34 12 	test   WORD PTR [r14+r15*8+0x15161718],0x1234
+    e2f0:	66 41 f7 84 e7 18 17 16 15 34 12 	test   WORD PTR [r15+riz*8+0x15161718],0x1234
+    e2fb:	66 41 f7 84 c7 18 17 16 15 34 12 	test   WORD PTR [r15+rax*8+0x15161718],0x1234
+    e306:	66 41 f7 84 cf 18 17 16 15 34 12 	test   WORD PTR [r15+rcx*8+0x15161718],0x1234
+    e311:	66 41 f7 84 d7 18 17 16 15 34 12 	test   WORD PTR [r15+rdx*8+0x15161718],0x1234
+    e31c:	66 41 f7 84 df 18 17 16 15 34 12 	test   WORD PTR [r15+rbx*8+0x15161718],0x1234
+    e327:	66 41 f7 84 ef 18 17 16 15 34 12 	test   WORD PTR [r15+rbp*8+0x15161718],0x1234
+    e332:	66 41 f7 84 f7 18 17 16 15 34 12 	test   WORD PTR [r15+rsi*8+0x15161718],0x1234
+    e33d:	66 41 f7 84 ff 18 17 16 15 34 12 	test   WORD PTR [r15+rdi*8+0x15161718],0x1234
+    e348:	66 43 f7 84 c7 18 17 16 15 34 12 	test   WORD PTR [r15+r8*8+0x15161718],0x1234
+    e353:	66 43 f7 84 cf 18 17 16 15 34 12 	test   WORD PTR [r15+r9*8+0x15161718],0x1234
+    e35e:	66 43 f7 84 d7 18 17 16 15 34 12 	test   WORD PTR [r15+r10*8+0x15161718],0x1234
+    e369:	66 43 f7 84 df 18 17 16 15 34 12 	test   WORD PTR [r15+r11*8+0x15161718],0x1234
+    e374:	66 43 f7 84 e7 18 17 16 15 34 12 	test   WORD PTR [r15+r12*8+0x15161718],0x1234
+    e37f:	66 43 f7 84 ef 18 17 16 15 34 12 	test   WORD PTR [r15+r13*8+0x15161718],0x1234
+    e38a:	66 43 f7 84 f7 18 17 16 15 34 12 	test   WORD PTR [r15+r14*8+0x15161718],0x1234
+    e395:	66 43 f7 84 ff 18 17 16 15 34 12 	test   WORD PTR [r15+r15*8+0x15161718],0x1234
+    e3a0:	48 f7 84 e0 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+riz*8+0x15161718],0x12345678
+    e3ac:	f7 84 e0 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+riz*8+0x15161718],0x12345678
+    e3b7:	48 f7 84 c0 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+rax*8+0x15161718],0x12345678
+    e3c3:	f7 84 c0 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+rax*8+0x15161718],0x12345678
+    e3ce:	48 f7 84 c8 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+rcx*8+0x15161718],0x12345678
+    e3da:	f7 84 c8 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+rcx*8+0x15161718],0x12345678
+    e3e5:	48 f7 84 d0 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+rdx*8+0x15161718],0x12345678
+    e3f1:	f7 84 d0 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+rdx*8+0x15161718],0x12345678
+    e3fc:	48 f7 84 d8 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+rbx*8+0x15161718],0x12345678
+    e408:	f7 84 d8 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+rbx*8+0x15161718],0x12345678
+    e413:	48 f7 84 e8 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+rbp*8+0x15161718],0x12345678
+    e41f:	f7 84 e8 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+rbp*8+0x15161718],0x12345678
+    e42a:	48 f7 84 f0 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+rsi*8+0x15161718],0x12345678
+    e436:	f7 84 f0 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+rsi*8+0x15161718],0x12345678
+    e441:	48 f7 84 f8 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+rdi*8+0x15161718],0x12345678
+    e44d:	f7 84 f8 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+rdi*8+0x15161718],0x12345678
+    e458:	4a f7 84 c0 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+r8*8+0x15161718],0x12345678
+    e464:	42 f7 84 c0 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+r8*8+0x15161718],0x12345678
+    e470:	4a f7 84 c8 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+r9*8+0x15161718],0x12345678
+    e47c:	42 f7 84 c8 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+r9*8+0x15161718],0x12345678
+    e488:	4a f7 84 d0 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+r10*8+0x15161718],0x12345678
+    e494:	42 f7 84 d0 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+r10*8+0x15161718],0x12345678
+    e4a0:	4a f7 84 d8 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+r11*8+0x15161718],0x12345678
+    e4ac:	42 f7 84 d8 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+r11*8+0x15161718],0x12345678
+    e4b8:	4a f7 84 e0 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+r12*8+0x15161718],0x12345678
+    e4c4:	42 f7 84 e0 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+r12*8+0x15161718],0x12345678
+    e4d0:	4a f7 84 e8 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+r13*8+0x15161718],0x12345678
+    e4dc:	42 f7 84 e8 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+r13*8+0x15161718],0x12345678
+    e4e8:	4a f7 84 f0 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+r14*8+0x15161718],0x12345678
+    e4f4:	42 f7 84 f0 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+r14*8+0x15161718],0x12345678
+    e500:	4a f7 84 f8 18 17 16 15 78 56 34 12 	test   QWORD PTR [rax+r15*8+0x15161718],0x12345678
+    e50c:	42 f7 84 f8 18 17 16 15 78 56 34 12 	test   DWORD PTR [rax+r15*8+0x15161718],0x12345678
+    e518:	48 f7 84 e1 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+riz*8+0x15161718],0x12345678
+    e524:	f7 84 e1 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+riz*8+0x15161718],0x12345678
+    e52f:	48 f7 84 c1 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+rax*8+0x15161718],0x12345678
+    e53b:	f7 84 c1 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+rax*8+0x15161718],0x12345678
+    e546:	48 f7 84 c9 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+rcx*8+0x15161718],0x12345678
+    e552:	f7 84 c9 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+rcx*8+0x15161718],0x12345678
+    e55d:	48 f7 84 d1 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+rdx*8+0x15161718],0x12345678
+    e569:	f7 84 d1 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+rdx*8+0x15161718],0x12345678
+    e574:	48 f7 84 d9 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+rbx*8+0x15161718],0x12345678
+    e580:	f7 84 d9 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+rbx*8+0x15161718],0x12345678
+    e58b:	48 f7 84 e9 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+rbp*8+0x15161718],0x12345678
+    e597:	f7 84 e9 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+rbp*8+0x15161718],0x12345678
+    e5a2:	48 f7 84 f1 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+rsi*8+0x15161718],0x12345678
+    e5ae:	f7 84 f1 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+rsi*8+0x15161718],0x12345678
+    e5b9:	48 f7 84 f9 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+rdi*8+0x15161718],0x12345678
+    e5c5:	f7 84 f9 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+rdi*8+0x15161718],0x12345678
+    e5d0:	4a f7 84 c1 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+r8*8+0x15161718],0x12345678
+    e5dc:	42 f7 84 c1 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+r8*8+0x15161718],0x12345678
+    e5e8:	4a f7 84 c9 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+r9*8+0x15161718],0x12345678
+    e5f4:	42 f7 84 c9 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+r9*8+0x15161718],0x12345678
+    e600:	4a f7 84 d1 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+r10*8+0x15161718],0x12345678
+    e60c:	42 f7 84 d1 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+r10*8+0x15161718],0x12345678
+    e618:	4a f7 84 d9 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+r11*8+0x15161718],0x12345678
+    e624:	42 f7 84 d9 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+r11*8+0x15161718],0x12345678
+    e630:	4a f7 84 e1 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+r12*8+0x15161718],0x12345678
+    e63c:	42 f7 84 e1 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+r12*8+0x15161718],0x12345678
+    e648:	4a f7 84 e9 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+r13*8+0x15161718],0x12345678
+    e654:	42 f7 84 e9 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+r13*8+0x15161718],0x12345678
+    e660:	4a f7 84 f1 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+r14*8+0x15161718],0x12345678
+    e66c:	42 f7 84 f1 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+r14*8+0x15161718],0x12345678
+    e678:	4a f7 84 f9 18 17 16 15 78 56 34 12 	test   QWORD PTR [rcx+r15*8+0x15161718],0x12345678
+    e684:	42 f7 84 f9 18 17 16 15 78 56 34 12 	test   DWORD PTR [rcx+r15*8+0x15161718],0x12345678
+    e690:	48 f7 84 e2 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+riz*8+0x15161718],0x12345678
+    e69c:	f7 84 e2 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+riz*8+0x15161718],0x12345678
+    e6a7:	48 f7 84 c2 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+rax*8+0x15161718],0x12345678
+    e6b3:	f7 84 c2 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+rax*8+0x15161718],0x12345678
+    e6be:	48 f7 84 ca 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+rcx*8+0x15161718],0x12345678
+    e6ca:	f7 84 ca 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+rcx*8+0x15161718],0x12345678
+    e6d5:	48 f7 84 d2 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+rdx*8+0x15161718],0x12345678
+    e6e1:	f7 84 d2 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+rdx*8+0x15161718],0x12345678
+    e6ec:	48 f7 84 da 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+rbx*8+0x15161718],0x12345678
+    e6f8:	f7 84 da 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+rbx*8+0x15161718],0x12345678
+    e703:	48 f7 84 ea 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+rbp*8+0x15161718],0x12345678
+    e70f:	f7 84 ea 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+rbp*8+0x15161718],0x12345678
+    e71a:	48 f7 84 f2 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+rsi*8+0x15161718],0x12345678
+    e726:	f7 84 f2 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+rsi*8+0x15161718],0x12345678
+    e731:	48 f7 84 fa 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+rdi*8+0x15161718],0x12345678
+    e73d:	f7 84 fa 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+rdi*8+0x15161718],0x12345678
+    e748:	4a f7 84 c2 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+r8*8+0x15161718],0x12345678
+    e754:	42 f7 84 c2 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+r8*8+0x15161718],0x12345678
+    e760:	4a f7 84 ca 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+r9*8+0x15161718],0x12345678
+    e76c:	42 f7 84 ca 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+r9*8+0x15161718],0x12345678
+    e778:	4a f7 84 d2 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+r10*8+0x15161718],0x12345678
+    e784:	42 f7 84 d2 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+r10*8+0x15161718],0x12345678
+    e790:	4a f7 84 da 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+r11*8+0x15161718],0x12345678
+    e79c:	42 f7 84 da 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+r11*8+0x15161718],0x12345678
+    e7a8:	4a f7 84 e2 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+r12*8+0x15161718],0x12345678
+    e7b4:	42 f7 84 e2 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+r12*8+0x15161718],0x12345678
+    e7c0:	4a f7 84 ea 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+r13*8+0x15161718],0x12345678
+    e7cc:	42 f7 84 ea 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+r13*8+0x15161718],0x12345678
+    e7d8:	4a f7 84 f2 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+r14*8+0x15161718],0x12345678
+    e7e4:	42 f7 84 f2 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+r14*8+0x15161718],0x12345678
+    e7f0:	4a f7 84 fa 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdx+r15*8+0x15161718],0x12345678
+    e7fc:	42 f7 84 fa 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdx+r15*8+0x15161718],0x12345678
+    e808:	48 f7 84 e3 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+riz*8+0x15161718],0x12345678
+    e814:	f7 84 e3 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+riz*8+0x15161718],0x12345678
+    e81f:	48 f7 84 c3 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+rax*8+0x15161718],0x12345678
+    e82b:	f7 84 c3 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+rax*8+0x15161718],0x12345678
+    e836:	48 f7 84 cb 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+rcx*8+0x15161718],0x12345678
+    e842:	f7 84 cb 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+rcx*8+0x15161718],0x12345678
+    e84d:	48 f7 84 d3 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+rdx*8+0x15161718],0x12345678
+    e859:	f7 84 d3 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+rdx*8+0x15161718],0x12345678
+    e864:	48 f7 84 db 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+rbx*8+0x15161718],0x12345678
+    e870:	f7 84 db 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+rbx*8+0x15161718],0x12345678
+    e87b:	48 f7 84 eb 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+rbp*8+0x15161718],0x12345678
+    e887:	f7 84 eb 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+rbp*8+0x15161718],0x12345678
+    e892:	48 f7 84 f3 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+rsi*8+0x15161718],0x12345678
+    e89e:	f7 84 f3 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+rsi*8+0x15161718],0x12345678
+    e8a9:	48 f7 84 fb 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+rdi*8+0x15161718],0x12345678
+    e8b5:	f7 84 fb 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+rdi*8+0x15161718],0x12345678
+    e8c0:	4a f7 84 c3 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+r8*8+0x15161718],0x12345678
+    e8cc:	42 f7 84 c3 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+r8*8+0x15161718],0x12345678
+    e8d8:	4a f7 84 cb 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+r9*8+0x15161718],0x12345678
+    e8e4:	42 f7 84 cb 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+r9*8+0x15161718],0x12345678
+    e8f0:	4a f7 84 d3 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+r10*8+0x15161718],0x12345678
+    e8fc:	42 f7 84 d3 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+r10*8+0x15161718],0x12345678
+    e908:	4a f7 84 db 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+r11*8+0x15161718],0x12345678
+    e914:	42 f7 84 db 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+r11*8+0x15161718],0x12345678
+    e920:	4a f7 84 e3 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+r12*8+0x15161718],0x12345678
+    e92c:	42 f7 84 e3 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+r12*8+0x15161718],0x12345678
+    e938:	4a f7 84 eb 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+r13*8+0x15161718],0x12345678
+    e944:	42 f7 84 eb 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+r13*8+0x15161718],0x12345678
+    e950:	4a f7 84 f3 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+r14*8+0x15161718],0x12345678
+    e95c:	42 f7 84 f3 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+r14*8+0x15161718],0x12345678
+    e968:	4a f7 84 fb 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbx+r15*8+0x15161718],0x12345678
+    e974:	42 f7 84 fb 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbx+r15*8+0x15161718],0x12345678
+    e980:	48 f7 84 e4 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+riz*8+0x15161718],0x12345678
+    e98c:	f7 84 e4 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+riz*8+0x15161718],0x12345678
+    e997:	48 f7 84 c4 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+rax*8+0x15161718],0x12345678
+    e9a3:	f7 84 c4 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+rax*8+0x15161718],0x12345678
+    e9ae:	48 f7 84 cc 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+rcx*8+0x15161718],0x12345678
+    e9ba:	f7 84 cc 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+rcx*8+0x15161718],0x12345678
+    e9c5:	48 f7 84 d4 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+rdx*8+0x15161718],0x12345678
+    e9d1:	f7 84 d4 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+rdx*8+0x15161718],0x12345678
+    e9dc:	48 f7 84 dc 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+rbx*8+0x15161718],0x12345678
+    e9e8:	f7 84 dc 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+rbx*8+0x15161718],0x12345678
+    e9f3:	48 f7 84 ec 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+rbp*8+0x15161718],0x12345678
+    e9ff:	f7 84 ec 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+rbp*8+0x15161718],0x12345678
+    ea0a:	48 f7 84 f4 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+rsi*8+0x15161718],0x12345678
+    ea16:	f7 84 f4 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+rsi*8+0x15161718],0x12345678
+    ea21:	48 f7 84 fc 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+rdi*8+0x15161718],0x12345678
+    ea2d:	f7 84 fc 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+rdi*8+0x15161718],0x12345678
+    ea38:	4a f7 84 c4 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+r8*8+0x15161718],0x12345678
+    ea44:	42 f7 84 c4 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+r8*8+0x15161718],0x12345678
+    ea50:	4a f7 84 cc 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+r9*8+0x15161718],0x12345678
+    ea5c:	42 f7 84 cc 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+r9*8+0x15161718],0x12345678
+    ea68:	4a f7 84 d4 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+r10*8+0x15161718],0x12345678
+    ea74:	42 f7 84 d4 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+r10*8+0x15161718],0x12345678
+    ea80:	4a f7 84 dc 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+r11*8+0x15161718],0x12345678
+    ea8c:	42 f7 84 dc 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+r11*8+0x15161718],0x12345678
+    ea98:	4a f7 84 e4 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+r12*8+0x15161718],0x12345678
+    eaa4:	42 f7 84 e4 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+r12*8+0x15161718],0x12345678
+    eab0:	4a f7 84 ec 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+r13*8+0x15161718],0x12345678
+    eabc:	42 f7 84 ec 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+r13*8+0x15161718],0x12345678
+    eac8:	4a f7 84 f4 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+r14*8+0x15161718],0x12345678
+    ead4:	42 f7 84 f4 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+r14*8+0x15161718],0x12345678
+    eae0:	4a f7 84 fc 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsp+r15*8+0x15161718],0x12345678
+    eaec:	42 f7 84 fc 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsp+r15*8+0x15161718],0x12345678
+    eaf8:	48 f7 84 e5 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+riz*8+0x15161718],0x12345678
+    eb04:	f7 84 e5 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+riz*8+0x15161718],0x12345678
+    eb0f:	48 f7 84 c5 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+rax*8+0x15161718],0x12345678
+    eb1b:	f7 84 c5 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+rax*8+0x15161718],0x12345678
+    eb26:	48 f7 84 cd 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+rcx*8+0x15161718],0x12345678
+    eb32:	f7 84 cd 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+rcx*8+0x15161718],0x12345678
+    eb3d:	48 f7 84 d5 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+rdx*8+0x15161718],0x12345678
+    eb49:	f7 84 d5 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+rdx*8+0x15161718],0x12345678
+    eb54:	48 f7 84 dd 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+rbx*8+0x15161718],0x12345678
+    eb60:	f7 84 dd 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+rbx*8+0x15161718],0x12345678
+    eb6b:	48 f7 84 ed 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+rbp*8+0x15161718],0x12345678
+    eb77:	f7 84 ed 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+rbp*8+0x15161718],0x12345678
+    eb82:	48 f7 84 f5 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+rsi*8+0x15161718],0x12345678
+    eb8e:	f7 84 f5 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+rsi*8+0x15161718],0x12345678
+    eb99:	48 f7 84 fd 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+rdi*8+0x15161718],0x12345678
+    eba5:	f7 84 fd 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+rdi*8+0x15161718],0x12345678
+    ebb0:	4a f7 84 c5 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+r8*8+0x15161718],0x12345678
+    ebbc:	42 f7 84 c5 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+r8*8+0x15161718],0x12345678
+    ebc8:	4a f7 84 cd 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+r9*8+0x15161718],0x12345678
+    ebd4:	42 f7 84 cd 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+r9*8+0x15161718],0x12345678
+    ebe0:	4a f7 84 d5 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+r10*8+0x15161718],0x12345678
+    ebec:	42 f7 84 d5 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+r10*8+0x15161718],0x12345678
+    ebf8:	4a f7 84 dd 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+r11*8+0x15161718],0x12345678
+    ec04:	42 f7 84 dd 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+r11*8+0x15161718],0x12345678
+    ec10:	4a f7 84 e5 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+r12*8+0x15161718],0x12345678
+    ec1c:	42 f7 84 e5 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+r12*8+0x15161718],0x12345678
+    ec28:	4a f7 84 ed 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+r13*8+0x15161718],0x12345678
+    ec34:	42 f7 84 ed 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+r13*8+0x15161718],0x12345678
+    ec40:	4a f7 84 f5 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+r14*8+0x15161718],0x12345678
+    ec4c:	42 f7 84 f5 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+r14*8+0x15161718],0x12345678
+    ec58:	4a f7 84 fd 18 17 16 15 78 56 34 12 	test   QWORD PTR [rbp+r15*8+0x15161718],0x12345678
+    ec64:	42 f7 84 fd 18 17 16 15 78 56 34 12 	test   DWORD PTR [rbp+r15*8+0x15161718],0x12345678
+    ec70:	48 f7 84 e6 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+riz*8+0x15161718],0x12345678
+    ec7c:	f7 84 e6 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+riz*8+0x15161718],0x12345678
+    ec87:	48 f7 84 c6 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+rax*8+0x15161718],0x12345678
+    ec93:	f7 84 c6 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+rax*8+0x15161718],0x12345678
+    ec9e:	48 f7 84 ce 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+rcx*8+0x15161718],0x12345678
+    ecaa:	f7 84 ce 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+rcx*8+0x15161718],0x12345678
+    ecb5:	48 f7 84 d6 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+rdx*8+0x15161718],0x12345678
+    ecc1:	f7 84 d6 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+rdx*8+0x15161718],0x12345678
+    eccc:	48 f7 84 de 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+rbx*8+0x15161718],0x12345678
+    ecd8:	f7 84 de 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+rbx*8+0x15161718],0x12345678
+    ece3:	48 f7 84 ee 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+rbp*8+0x15161718],0x12345678
+    ecef:	f7 84 ee 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+rbp*8+0x15161718],0x12345678
+    ecfa:	48 f7 84 f6 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+rsi*8+0x15161718],0x12345678
+    ed06:	f7 84 f6 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+rsi*8+0x15161718],0x12345678
+    ed11:	48 f7 84 fe 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+rdi*8+0x15161718],0x12345678
+    ed1d:	f7 84 fe 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+rdi*8+0x15161718],0x12345678
+    ed28:	4a f7 84 c6 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+r8*8+0x15161718],0x12345678
+    ed34:	42 f7 84 c6 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+r8*8+0x15161718],0x12345678
+    ed40:	4a f7 84 ce 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+r9*8+0x15161718],0x12345678
+    ed4c:	42 f7 84 ce 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+r9*8+0x15161718],0x12345678
+    ed58:	4a f7 84 d6 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+r10*8+0x15161718],0x12345678
+    ed64:	42 f7 84 d6 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+r10*8+0x15161718],0x12345678
+    ed70:	4a f7 84 de 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+r11*8+0x15161718],0x12345678
+    ed7c:	42 f7 84 de 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+r11*8+0x15161718],0x12345678
+    ed88:	4a f7 84 e6 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+r12*8+0x15161718],0x12345678
+    ed94:	42 f7 84 e6 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+r12*8+0x15161718],0x12345678
+    eda0:	4a f7 84 ee 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+r13*8+0x15161718],0x12345678
+    edac:	42 f7 84 ee 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+r13*8+0x15161718],0x12345678
+    edb8:	4a f7 84 f6 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+r14*8+0x15161718],0x12345678
+    edc4:	42 f7 84 f6 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+r14*8+0x15161718],0x12345678
+    edd0:	4a f7 84 fe 18 17 16 15 78 56 34 12 	test   QWORD PTR [rsi+r15*8+0x15161718],0x12345678
+    eddc:	42 f7 84 fe 18 17 16 15 78 56 34 12 	test   DWORD PTR [rsi+r15*8+0x15161718],0x12345678
+    ede8:	48 f7 84 e7 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+riz*8+0x15161718],0x12345678
+    edf4:	f7 84 e7 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+riz*8+0x15161718],0x12345678
+    edff:	48 f7 84 c7 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+rax*8+0x15161718],0x12345678
+    ee0b:	f7 84 c7 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+rax*8+0x15161718],0x12345678
+    ee16:	48 f7 84 cf 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+rcx*8+0x15161718],0x12345678
+    ee22:	f7 84 cf 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+rcx*8+0x15161718],0x12345678
+    ee2d:	48 f7 84 d7 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+rdx*8+0x15161718],0x12345678
+    ee39:	f7 84 d7 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+rdx*8+0x15161718],0x12345678
+    ee44:	48 f7 84 df 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+rbx*8+0x15161718],0x12345678
+    ee50:	f7 84 df 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+rbx*8+0x15161718],0x12345678
+    ee5b:	48 f7 84 ef 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+rbp*8+0x15161718],0x12345678
+    ee67:	f7 84 ef 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+rbp*8+0x15161718],0x12345678
+    ee72:	48 f7 84 f7 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+rsi*8+0x15161718],0x12345678
+    ee7e:	f7 84 f7 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+rsi*8+0x15161718],0x12345678
+    ee89:	48 f7 84 ff 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+rdi*8+0x15161718],0x12345678
+    ee95:	f7 84 ff 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+rdi*8+0x15161718],0x12345678
+    eea0:	4a f7 84 c7 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+r8*8+0x15161718],0x12345678
+    eeac:	42 f7 84 c7 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+r8*8+0x15161718],0x12345678
+    eeb8:	4a f7 84 cf 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+r9*8+0x15161718],0x12345678
+    eec4:	42 f7 84 cf 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+r9*8+0x15161718],0x12345678
+    eed0:	4a f7 84 d7 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+r10*8+0x15161718],0x12345678
+    eedc:	42 f7 84 d7 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+r10*8+0x15161718],0x12345678
+    eee8:	4a f7 84 df 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+r11*8+0x15161718],0x12345678
+    eef4:	42 f7 84 df 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+r11*8+0x15161718],0x12345678
+    ef00:	4a f7 84 e7 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+r12*8+0x15161718],0x12345678
+    ef0c:	42 f7 84 e7 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+r12*8+0x15161718],0x12345678
+    ef18:	4a f7 84 ef 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+r13*8+0x15161718],0x12345678
+    ef24:	42 f7 84 ef 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+r13*8+0x15161718],0x12345678
+    ef30:	4a f7 84 f7 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+r14*8+0x15161718],0x12345678
+    ef3c:	42 f7 84 f7 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+r14*8+0x15161718],0x12345678
+    ef48:	4a f7 84 ff 18 17 16 15 78 56 34 12 	test   QWORD PTR [rdi+r15*8+0x15161718],0x12345678
+    ef54:	42 f7 84 ff 18 17 16 15 78 56 34 12 	test   DWORD PTR [rdi+r15*8+0x15161718],0x12345678
+    ef60:	49 f7 84 e0 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+riz*8+0x15161718],0x12345678
+    ef6c:	41 f7 84 e0 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+riz*8+0x15161718],0x12345678
+    ef78:	49 f7 84 c0 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+rax*8+0x15161718],0x12345678
+    ef84:	41 f7 84 c0 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+rax*8+0x15161718],0x12345678
+    ef90:	49 f7 84 c8 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+rcx*8+0x15161718],0x12345678
+    ef9c:	41 f7 84 c8 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+rcx*8+0x15161718],0x12345678
+    efa8:	49 f7 84 d0 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+rdx*8+0x15161718],0x12345678
+    efb4:	41 f7 84 d0 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+rdx*8+0x15161718],0x12345678
+    efc0:	49 f7 84 d8 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+rbx*8+0x15161718],0x12345678
+    efcc:	41 f7 84 d8 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+rbx*8+0x15161718],0x12345678
+    efd8:	49 f7 84 e8 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+rbp*8+0x15161718],0x12345678
+    efe4:	41 f7 84 e8 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+rbp*8+0x15161718],0x12345678
+    eff0:	49 f7 84 f0 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+rsi*8+0x15161718],0x12345678
+    effc:	41 f7 84 f0 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+rsi*8+0x15161718],0x12345678
+    f008:	49 f7 84 f8 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+rdi*8+0x15161718],0x12345678
+    f014:	41 f7 84 f8 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+rdi*8+0x15161718],0x12345678
+    f020:	4b f7 84 c0 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+r8*8+0x15161718],0x12345678
+    f02c:	43 f7 84 c0 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+r8*8+0x15161718],0x12345678
+    f038:	4b f7 84 c8 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+r9*8+0x15161718],0x12345678
+    f044:	43 f7 84 c8 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+r9*8+0x15161718],0x12345678
+    f050:	4b f7 84 d0 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+r10*8+0x15161718],0x12345678
+    f05c:	43 f7 84 d0 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+r10*8+0x15161718],0x12345678
+    f068:	4b f7 84 d8 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+r11*8+0x15161718],0x12345678
+    f074:	43 f7 84 d8 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+r11*8+0x15161718],0x12345678
+    f080:	4b f7 84 e0 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+r12*8+0x15161718],0x12345678
+    f08c:	43 f7 84 e0 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+r12*8+0x15161718],0x12345678
+    f098:	4b f7 84 e8 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+r13*8+0x15161718],0x12345678
+    f0a4:	43 f7 84 e8 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+r13*8+0x15161718],0x12345678
+    f0b0:	4b f7 84 f0 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+r14*8+0x15161718],0x12345678
+    f0bc:	43 f7 84 f0 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+r14*8+0x15161718],0x12345678
+    f0c8:	4b f7 84 f8 18 17 16 15 78 56 34 12 	test   QWORD PTR [r8+r15*8+0x15161718],0x12345678
+    f0d4:	43 f7 84 f8 18 17 16 15 78 56 34 12 	test   DWORD PTR [r8+r15*8+0x15161718],0x12345678
+    f0e0:	49 f7 84 e1 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+riz*8+0x15161718],0x12345678
+    f0ec:	41 f7 84 e1 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+riz*8+0x15161718],0x12345678
+    f0f8:	49 f7 84 c1 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+rax*8+0x15161718],0x12345678
+    f104:	41 f7 84 c1 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+rax*8+0x15161718],0x12345678
+    f110:	49 f7 84 c9 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+rcx*8+0x15161718],0x12345678
+    f11c:	41 f7 84 c9 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+rcx*8+0x15161718],0x12345678
+    f128:	49 f7 84 d1 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+rdx*8+0x15161718],0x12345678
+    f134:	41 f7 84 d1 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+rdx*8+0x15161718],0x12345678
+    f140:	49 f7 84 d9 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+rbx*8+0x15161718],0x12345678
+    f14c:	41 f7 84 d9 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+rbx*8+0x15161718],0x12345678
+    f158:	49 f7 84 e9 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+rbp*8+0x15161718],0x12345678
+    f164:	41 f7 84 e9 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+rbp*8+0x15161718],0x12345678
+    f170:	49 f7 84 f1 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+rsi*8+0x15161718],0x12345678
+    f17c:	41 f7 84 f1 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+rsi*8+0x15161718],0x12345678
+    f188:	49 f7 84 f9 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+rdi*8+0x15161718],0x12345678
+    f194:	41 f7 84 f9 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+rdi*8+0x15161718],0x12345678
+    f1a0:	4b f7 84 c1 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+r8*8+0x15161718],0x12345678
+    f1ac:	43 f7 84 c1 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+r8*8+0x15161718],0x12345678
+    f1b8:	4b f7 84 c9 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+r9*8+0x15161718],0x12345678
+    f1c4:	43 f7 84 c9 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+r9*8+0x15161718],0x12345678
+    f1d0:	4b f7 84 d1 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+r10*8+0x15161718],0x12345678
+    f1dc:	43 f7 84 d1 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+r10*8+0x15161718],0x12345678
+    f1e8:	4b f7 84 d9 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+r11*8+0x15161718],0x12345678
+    f1f4:	43 f7 84 d9 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+r11*8+0x15161718],0x12345678
+    f200:	4b f7 84 e1 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+r12*8+0x15161718],0x12345678
+    f20c:	43 f7 84 e1 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+r12*8+0x15161718],0x12345678
+    f218:	4b f7 84 e9 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+r13*8+0x15161718],0x12345678
+    f224:	43 f7 84 e9 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+r13*8+0x15161718],0x12345678
+    f230:	4b f7 84 f1 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+r14*8+0x15161718],0x12345678
+    f23c:	43 f7 84 f1 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+r14*8+0x15161718],0x12345678
+    f248:	4b f7 84 f9 18 17 16 15 78 56 34 12 	test   QWORD PTR [r9+r15*8+0x15161718],0x12345678
+    f254:	43 f7 84 f9 18 17 16 15 78 56 34 12 	test   DWORD PTR [r9+r15*8+0x15161718],0x12345678
+    f260:	49 f7 84 e2 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+riz*8+0x15161718],0x12345678
+    f26c:	41 f7 84 e2 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+riz*8+0x15161718],0x12345678
+    f278:	49 f7 84 c2 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+rax*8+0x15161718],0x12345678
+    f284:	41 f7 84 c2 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+rax*8+0x15161718],0x12345678
+    f290:	49 f7 84 ca 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+rcx*8+0x15161718],0x12345678
+    f29c:	41 f7 84 ca 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+rcx*8+0x15161718],0x12345678
+    f2a8:	49 f7 84 d2 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+rdx*8+0x15161718],0x12345678
+    f2b4:	41 f7 84 d2 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+rdx*8+0x15161718],0x12345678
+    f2c0:	49 f7 84 da 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+rbx*8+0x15161718],0x12345678
+    f2cc:	41 f7 84 da 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+rbx*8+0x15161718],0x12345678
+    f2d8:	49 f7 84 ea 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+rbp*8+0x15161718],0x12345678
+    f2e4:	41 f7 84 ea 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+rbp*8+0x15161718],0x12345678
+    f2f0:	49 f7 84 f2 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+rsi*8+0x15161718],0x12345678
+    f2fc:	41 f7 84 f2 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+rsi*8+0x15161718],0x12345678
+    f308:	49 f7 84 fa 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+rdi*8+0x15161718],0x12345678
+    f314:	41 f7 84 fa 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+rdi*8+0x15161718],0x12345678
+    f320:	4b f7 84 c2 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+r8*8+0x15161718],0x12345678
+    f32c:	43 f7 84 c2 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+r8*8+0x15161718],0x12345678
+    f338:	4b f7 84 ca 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+r9*8+0x15161718],0x12345678
+    f344:	43 f7 84 ca 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+r9*8+0x15161718],0x12345678
+    f350:	4b f7 84 d2 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+r10*8+0x15161718],0x12345678
+    f35c:	43 f7 84 d2 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+r10*8+0x15161718],0x12345678
+    f368:	4b f7 84 da 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+r11*8+0x15161718],0x12345678
+    f374:	43 f7 84 da 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+r11*8+0x15161718],0x12345678
+    f380:	4b f7 84 e2 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+r12*8+0x15161718],0x12345678
+    f38c:	43 f7 84 e2 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+r12*8+0x15161718],0x12345678
+    f398:	4b f7 84 ea 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+r13*8+0x15161718],0x12345678
+    f3a4:	43 f7 84 ea 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+r13*8+0x15161718],0x12345678
+    f3b0:	4b f7 84 f2 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+r14*8+0x15161718],0x12345678
+    f3bc:	43 f7 84 f2 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+r14*8+0x15161718],0x12345678
+    f3c8:	4b f7 84 fa 18 17 16 15 78 56 34 12 	test   QWORD PTR [r10+r15*8+0x15161718],0x12345678
+    f3d4:	43 f7 84 fa 18 17 16 15 78 56 34 12 	test   DWORD PTR [r10+r15*8+0x15161718],0x12345678
+    f3e0:	49 f7 84 e3 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+riz*8+0x15161718],0x12345678
+    f3ec:	41 f7 84 e3 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+riz*8+0x15161718],0x12345678
+    f3f8:	49 f7 84 c3 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+rax*8+0x15161718],0x12345678
+    f404:	41 f7 84 c3 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+rax*8+0x15161718],0x12345678
+    f410:	49 f7 84 cb 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+rcx*8+0x15161718],0x12345678
+    f41c:	41 f7 84 cb 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+rcx*8+0x15161718],0x12345678
+    f428:	49 f7 84 d3 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+rdx*8+0x15161718],0x12345678
+    f434:	41 f7 84 d3 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+rdx*8+0x15161718],0x12345678
+    f440:	49 f7 84 db 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+rbx*8+0x15161718],0x12345678
+    f44c:	41 f7 84 db 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+rbx*8+0x15161718],0x12345678
+    f458:	49 f7 84 eb 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+rbp*8+0x15161718],0x12345678
+    f464:	41 f7 84 eb 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+rbp*8+0x15161718],0x12345678
+    f470:	49 f7 84 f3 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+rsi*8+0x15161718],0x12345678
+    f47c:	41 f7 84 f3 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+rsi*8+0x15161718],0x12345678
+    f488:	49 f7 84 fb 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+rdi*8+0x15161718],0x12345678
+    f494:	41 f7 84 fb 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+rdi*8+0x15161718],0x12345678
+    f4a0:	4b f7 84 c3 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+r8*8+0x15161718],0x12345678
+    f4ac:	43 f7 84 c3 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+r8*8+0x15161718],0x12345678
+    f4b8:	4b f7 84 cb 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+r9*8+0x15161718],0x12345678
+    f4c4:	43 f7 84 cb 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+r9*8+0x15161718],0x12345678
+    f4d0:	4b f7 84 d3 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+r10*8+0x15161718],0x12345678
+    f4dc:	43 f7 84 d3 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+r10*8+0x15161718],0x12345678
+    f4e8:	4b f7 84 db 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+r11*8+0x15161718],0x12345678
+    f4f4:	43 f7 84 db 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+r11*8+0x15161718],0x12345678
+    f500:	4b f7 84 e3 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+r12*8+0x15161718],0x12345678
+    f50c:	43 f7 84 e3 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+r12*8+0x15161718],0x12345678
+    f518:	4b f7 84 eb 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+r13*8+0x15161718],0x12345678
+    f524:	43 f7 84 eb 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+r13*8+0x15161718],0x12345678
+    f530:	4b f7 84 f3 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+r14*8+0x15161718],0x12345678
+    f53c:	43 f7 84 f3 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+r14*8+0x15161718],0x12345678
+    f548:	4b f7 84 fb 18 17 16 15 78 56 34 12 	test   QWORD PTR [r11+r15*8+0x15161718],0x12345678
+    f554:	43 f7 84 fb 18 17 16 15 78 56 34 12 	test   DWORD PTR [r11+r15*8+0x15161718],0x12345678
+    f560:	49 f7 84 e4 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+riz*8+0x15161718],0x12345678
+    f56c:	41 f7 84 e4 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+riz*8+0x15161718],0x12345678
+    f578:	49 f7 84 c4 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+rax*8+0x15161718],0x12345678
+    f584:	41 f7 84 c4 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+rax*8+0x15161718],0x12345678
+    f590:	49 f7 84 cc 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+rcx*8+0x15161718],0x12345678
+    f59c:	41 f7 84 cc 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+rcx*8+0x15161718],0x12345678
+    f5a8:	49 f7 84 d4 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+rdx*8+0x15161718],0x12345678
+    f5b4:	41 f7 84 d4 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+rdx*8+0x15161718],0x12345678
+    f5c0:	49 f7 84 dc 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+rbx*8+0x15161718],0x12345678
+    f5cc:	41 f7 84 dc 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+rbx*8+0x15161718],0x12345678
+    f5d8:	49 f7 84 ec 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+rbp*8+0x15161718],0x12345678
+    f5e4:	41 f7 84 ec 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+rbp*8+0x15161718],0x12345678
+    f5f0:	49 f7 84 f4 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+rsi*8+0x15161718],0x12345678
+    f5fc:	41 f7 84 f4 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+rsi*8+0x15161718],0x12345678
+    f608:	49 f7 84 fc 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+rdi*8+0x15161718],0x12345678
+    f614:	41 f7 84 fc 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+rdi*8+0x15161718],0x12345678
+    f620:	4b f7 84 c4 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+r8*8+0x15161718],0x12345678
+    f62c:	43 f7 84 c4 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+r8*8+0x15161718],0x12345678
+    f638:	4b f7 84 cc 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+r9*8+0x15161718],0x12345678
+    f644:	43 f7 84 cc 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+r9*8+0x15161718],0x12345678
+    f650:	4b f7 84 d4 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+r10*8+0x15161718],0x12345678
+    f65c:	43 f7 84 d4 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+r10*8+0x15161718],0x12345678
+    f668:	4b f7 84 dc 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+r11*8+0x15161718],0x12345678
+    f674:	43 f7 84 dc 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+r11*8+0x15161718],0x12345678
+    f680:	4b f7 84 e4 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+r12*8+0x15161718],0x12345678
+    f68c:	43 f7 84 e4 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+r12*8+0x15161718],0x12345678
+    f698:	4b f7 84 ec 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+r13*8+0x15161718],0x12345678
+    f6a4:	43 f7 84 ec 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+r13*8+0x15161718],0x12345678
+    f6b0:	4b f7 84 f4 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+r14*8+0x15161718],0x12345678
+    f6bc:	43 f7 84 f4 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+r14*8+0x15161718],0x12345678
+    f6c8:	4b f7 84 fc 18 17 16 15 78 56 34 12 	test   QWORD PTR [r12+r15*8+0x15161718],0x12345678
+    f6d4:	43 f7 84 fc 18 17 16 15 78 56 34 12 	test   DWORD PTR [r12+r15*8+0x15161718],0x12345678
+    f6e0:	49 f7 84 e5 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+riz*8+0x15161718],0x12345678
+    f6ec:	41 f7 84 e5 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+riz*8+0x15161718],0x12345678
+    f6f8:	49 f7 84 c5 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+rax*8+0x15161718],0x12345678
+    f704:	41 f7 84 c5 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+rax*8+0x15161718],0x12345678
+    f710:	49 f7 84 cd 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+rcx*8+0x15161718],0x12345678
+    f71c:	41 f7 84 cd 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+rcx*8+0x15161718],0x12345678
+    f728:	49 f7 84 d5 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+rdx*8+0x15161718],0x12345678
+    f734:	41 f7 84 d5 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+rdx*8+0x15161718],0x12345678
+    f740:	49 f7 84 dd 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+rbx*8+0x15161718],0x12345678
+    f74c:	41 f7 84 dd 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+rbx*8+0x15161718],0x12345678
+    f758:	49 f7 84 ed 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+rbp*8+0x15161718],0x12345678
+    f764:	41 f7 84 ed 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+rbp*8+0x15161718],0x12345678
+    f770:	49 f7 84 f5 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+rsi*8+0x15161718],0x12345678
+    f77c:	41 f7 84 f5 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+rsi*8+0x15161718],0x12345678
+    f788:	49 f7 84 fd 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+rdi*8+0x15161718],0x12345678
+    f794:	41 f7 84 fd 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+rdi*8+0x15161718],0x12345678
+    f7a0:	4b f7 84 c5 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+r8*8+0x15161718],0x12345678
+    f7ac:	43 f7 84 c5 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+r8*8+0x15161718],0x12345678
+    f7b8:	4b f7 84 cd 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+r9*8+0x15161718],0x12345678
+    f7c4:	43 f7 84 cd 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+r9*8+0x15161718],0x12345678
+    f7d0:	4b f7 84 d5 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+r10*8+0x15161718],0x12345678
+    f7dc:	43 f7 84 d5 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+r10*8+0x15161718],0x12345678
+    f7e8:	4b f7 84 dd 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+r11*8+0x15161718],0x12345678
+    f7f4:	43 f7 84 dd 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+r11*8+0x15161718],0x12345678
+    f800:	4b f7 84 e5 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+r12*8+0x15161718],0x12345678
+    f80c:	43 f7 84 e5 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+r12*8+0x15161718],0x12345678
+    f818:	4b f7 84 ed 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+r13*8+0x15161718],0x12345678
+    f824:	43 f7 84 ed 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+r13*8+0x15161718],0x12345678
+    f830:	4b f7 84 f5 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+r14*8+0x15161718],0x12345678
+    f83c:	43 f7 84 f5 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+r14*8+0x15161718],0x12345678
+    f848:	4b f7 84 fd 18 17 16 15 78 56 34 12 	test   QWORD PTR [r13+r15*8+0x15161718],0x12345678
+    f854:	43 f7 84 fd 18 17 16 15 78 56 34 12 	test   DWORD PTR [r13+r15*8+0x15161718],0x12345678
+    f860:	49 f7 84 e6 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+riz*8+0x15161718],0x12345678
+    f86c:	41 f7 84 e6 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+riz*8+0x15161718],0x12345678
+    f878:	49 f7 84 c6 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+rax*8+0x15161718],0x12345678
+    f884:	41 f7 84 c6 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+rax*8+0x15161718],0x12345678
+    f890:	49 f7 84 ce 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+rcx*8+0x15161718],0x12345678
+    f89c:	41 f7 84 ce 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+rcx*8+0x15161718],0x12345678
+    f8a8:	49 f7 84 d6 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+rdx*8+0x15161718],0x12345678
+    f8b4:	41 f7 84 d6 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+rdx*8+0x15161718],0x12345678
+    f8c0:	49 f7 84 de 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+rbx*8+0x15161718],0x12345678
+    f8cc:	41 f7 84 de 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+rbx*8+0x15161718],0x12345678
+    f8d8:	49 f7 84 ee 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+rbp*8+0x15161718],0x12345678
+    f8e4:	41 f7 84 ee 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+rbp*8+0x15161718],0x12345678
+    f8f0:	49 f7 84 f6 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+rsi*8+0x15161718],0x12345678
+    f8fc:	41 f7 84 f6 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+rsi*8+0x15161718],0x12345678
+    f908:	49 f7 84 fe 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+rdi*8+0x15161718],0x12345678
+    f914:	41 f7 84 fe 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+rdi*8+0x15161718],0x12345678
+    f920:	4b f7 84 c6 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+r8*8+0x15161718],0x12345678
+    f92c:	43 f7 84 c6 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+r8*8+0x15161718],0x12345678
+    f938:	4b f7 84 ce 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+r9*8+0x15161718],0x12345678
+    f944:	43 f7 84 ce 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+r9*8+0x15161718],0x12345678
+    f950:	4b f7 84 d6 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+r10*8+0x15161718],0x12345678
+    f95c:	43 f7 84 d6 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+r10*8+0x15161718],0x12345678
+    f968:	4b f7 84 de 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+r11*8+0x15161718],0x12345678
+    f974:	43 f7 84 de 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+r11*8+0x15161718],0x12345678
+    f980:	4b f7 84 e6 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+r12*8+0x15161718],0x12345678
+    f98c:	43 f7 84 e6 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+r12*8+0x15161718],0x12345678
+    f998:	4b f7 84 ee 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+r13*8+0x15161718],0x12345678
+    f9a4:	43 f7 84 ee 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+r13*8+0x15161718],0x12345678
+    f9b0:	4b f7 84 f6 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+r14*8+0x15161718],0x12345678
+    f9bc:	43 f7 84 f6 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+r14*8+0x15161718],0x12345678
+    f9c8:	4b f7 84 fe 18 17 16 15 78 56 34 12 	test   QWORD PTR [r14+r15*8+0x15161718],0x12345678
+    f9d4:	43 f7 84 fe 18 17 16 15 78 56 34 12 	test   DWORD PTR [r14+r15*8+0x15161718],0x12345678
+    f9e0:	49 f7 84 e7 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+riz*8+0x15161718],0x12345678
+    f9ec:	41 f7 84 e7 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+riz*8+0x15161718],0x12345678
+    f9f8:	49 f7 84 c7 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+rax*8+0x15161718],0x12345678
+    fa04:	41 f7 84 c7 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+rax*8+0x15161718],0x12345678
+    fa10:	49 f7 84 cf 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+rcx*8+0x15161718],0x12345678
+    fa1c:	41 f7 84 cf 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+rcx*8+0x15161718],0x12345678
+    fa28:	49 f7 84 d7 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+rdx*8+0x15161718],0x12345678
+    fa34:	41 f7 84 d7 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+rdx*8+0x15161718],0x12345678
+    fa40:	49 f7 84 df 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+rbx*8+0x15161718],0x12345678
+    fa4c:	41 f7 84 df 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+rbx*8+0x15161718],0x12345678
+    fa58:	49 f7 84 ef 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+rbp*8+0x15161718],0x12345678
+    fa64:	41 f7 84 ef 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+rbp*8+0x15161718],0x12345678
+    fa70:	49 f7 84 f7 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+rsi*8+0x15161718],0x12345678
+    fa7c:	41 f7 84 f7 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+rsi*8+0x15161718],0x12345678
+    fa88:	49 f7 84 ff 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+rdi*8+0x15161718],0x12345678
+    fa94:	41 f7 84 ff 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+rdi*8+0x15161718],0x12345678
+    faa0:	4b f7 84 c7 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+r8*8+0x15161718],0x12345678
+    faac:	43 f7 84 c7 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+r8*8+0x15161718],0x12345678
+    fab8:	4b f7 84 cf 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+r9*8+0x15161718],0x12345678
+    fac4:	43 f7 84 cf 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+r9*8+0x15161718],0x12345678
+    fad0:	4b f7 84 d7 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+r10*8+0x15161718],0x12345678
+    fadc:	43 f7 84 d7 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+r10*8+0x15161718],0x12345678
+    fae8:	4b f7 84 df 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+r11*8+0x15161718],0x12345678
+    faf4:	43 f7 84 df 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+r11*8+0x15161718],0x12345678
+    fb00:	4b f7 84 e7 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+r12*8+0x15161718],0x12345678
+    fb0c:	43 f7 84 e7 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+r12*8+0x15161718],0x12345678
+    fb18:	4b f7 84 ef 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+r13*8+0x15161718],0x12345678
+    fb24:	43 f7 84 ef 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+r13*8+0x15161718],0x12345678
+    fb30:	4b f7 84 f7 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+r14*8+0x15161718],0x12345678
+    fb3c:	43 f7 84 f7 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+r14*8+0x15161718],0x12345678
+    fb48:	4b f7 84 ff 18 17 16 15 78 56 34 12 	test   QWORD PTR [r15+r15*8+0x15161718],0x12345678
+    fb54:	43 f7 84 ff 18 17 16 15 78 56 34 12 	test   DWORD PTR [r15+r15*8+0x15161718],0x12345678
+    fb60:	48 85 c0             	test   rax,rax
+    fb63:	48 85 c8             	test   rax,rcx
+    fb66:	48 85 d0             	test   rax,rdx
+    fb69:	48 85 d8             	test   rax,rbx
+    fb6c:	48 85 e0             	test   rax,rsp
+    fb6f:	48 85 e8             	test   rax,rbp
+    fb72:	48 85 f0             	test   rax,rsi
+    fb75:	48 85 f8             	test   rax,rdi
+    fb78:	4c 85 c0             	test   rax,r8
+    fb7b:	4c 85 c8             	test   rax,r9
+    fb7e:	4c 85 d0             	test   rax,r10
+    fb81:	4c 85 d8             	test   rax,r11
+    fb84:	4c 85 e0             	test   rax,r12
+    fb87:	4c 85 e8             	test   rax,r13
+    fb8a:	4c 85 f0             	test   rax,r14
+    fb8d:	4c 85 f8             	test   rax,r15
+    fb90:	48 85 c1             	test   rcx,rax
+    fb93:	48 85 c9             	test   rcx,rcx
+    fb96:	48 85 d1             	test   rcx,rdx
+    fb99:	48 85 d9             	test   rcx,rbx
+    fb9c:	48 85 e1             	test   rcx,rsp
+    fb9f:	48 85 e9             	test   rcx,rbp
+    fba2:	48 85 f1             	test   rcx,rsi
+    fba5:	48 85 f9             	test   rcx,rdi
+    fba8:	4c 85 c1             	test   rcx,r8
+    fbab:	4c 85 c9             	test   rcx,r9
+    fbae:	4c 85 d1             	test   rcx,r10
+    fbb1:	4c 85 d9             	test   rcx,r11
+    fbb4:	4c 85 e1             	test   rcx,r12
+    fbb7:	4c 85 e9             	test   rcx,r13
+    fbba:	4c 85 f1             	test   rcx,r14
+    fbbd:	4c 85 f9             	test   rcx,r15
+    fbc0:	48 85 c2             	test   rdx,rax
+    fbc3:	48 85 ca             	test   rdx,rcx
+    fbc6:	48 85 d2             	test   rdx,rdx
+    fbc9:	48 85 da             	test   rdx,rbx
+    fbcc:	48 85 e2             	test   rdx,rsp
+    fbcf:	48 85 ea             	test   rdx,rbp
+    fbd2:	48 85 f2             	test   rdx,rsi
+    fbd5:	48 85 fa             	test   rdx,rdi
+    fbd8:	4c 85 c2             	test   rdx,r8
+    fbdb:	4c 85 ca             	test   rdx,r9
+    fbde:	4c 85 d2             	test   rdx,r10
+    fbe1:	4c 85 da             	test   rdx,r11
+    fbe4:	4c 85 e2             	test   rdx,r12
+    fbe7:	4c 85 ea             	test   rdx,r13
+    fbea:	4c 85 f2             	test   rdx,r14
+    fbed:	4c 85 fa             	test   rdx,r15
+    fbf0:	48 85 c3             	test   rbx,rax
+    fbf3:	48 85 cb             	test   rbx,rcx
+    fbf6:	48 85 d3             	test   rbx,rdx
+    fbf9:	48 85 db             	test   rbx,rbx
+    fbfc:	48 85 e3             	test   rbx,rsp
+    fbff:	48 85 eb             	test   rbx,rbp
+    fc02:	48 85 f3             	test   rbx,rsi
+    fc05:	48 85 fb             	test   rbx,rdi
+    fc08:	4c 85 c3             	test   rbx,r8
+    fc0b:	4c 85 cb             	test   rbx,r9
+    fc0e:	4c 85 d3             	test   rbx,r10
+    fc11:	4c 85 db             	test   rbx,r11
+    fc14:	4c 85 e3             	test   rbx,r12
+    fc17:	4c 85 eb             	test   rbx,r13
+    fc1a:	4c 85 f3             	test   rbx,r14
+    fc1d:	4c 85 fb             	test   rbx,r15
+    fc20:	48 85 c4             	test   rsp,rax
+    fc23:	48 85 cc             	test   rsp,rcx
+    fc26:	48 85 d4             	test   rsp,rdx
+    fc29:	48 85 dc             	test   rsp,rbx
+    fc2c:	48 85 e4             	test   rsp,rsp
+    fc2f:	48 85 ec             	test   rsp,rbp
+    fc32:	48 85 f4             	test   rsp,rsi
+    fc35:	48 85 fc             	test   rsp,rdi
+    fc38:	4c 85 c4             	test   rsp,r8
+    fc3b:	4c 85 cc             	test   rsp,r9
+    fc3e:	4c 85 d4             	test   rsp,r10
+    fc41:	4c 85 dc             	test   rsp,r11
+    fc44:	4c 85 e4             	test   rsp,r12
+    fc47:	4c 85 ec             	test   rsp,r13
+    fc4a:	4c 85 f4             	test   rsp,r14
+    fc4d:	4c 85 fc             	test   rsp,r15
+    fc50:	48 85 c5             	test   rbp,rax
+    fc53:	48 85 cd             	test   rbp,rcx
+    fc56:	48 85 d5             	test   rbp,rdx
+    fc59:	48 85 dd             	test   rbp,rbx
+    fc5c:	48 85 e5             	test   rbp,rsp
+    fc5f:	48 85 ed             	test   rbp,rbp
+    fc62:	48 85 f5             	test   rbp,rsi
+    fc65:	48 85 fd             	test   rbp,rdi
+    fc68:	4c 85 c5             	test   rbp,r8
+    fc6b:	4c 85 cd             	test   rbp,r9
+    fc6e:	4c 85 d5             	test   rbp,r10
+    fc71:	4c 85 dd             	test   rbp,r11
+    fc74:	4c 85 e5             	test   rbp,r12
+    fc77:	4c 85 ed             	test   rbp,r13
+    fc7a:	4c 85 f5             	test   rbp,r14
+    fc7d:	4c 85 fd             	test   rbp,r15
+    fc80:	48 85 c6             	test   rsi,rax
+    fc83:	48 85 ce             	test   rsi,rcx
+    fc86:	48 85 d6             	test   rsi,rdx
+    fc89:	48 85 de             	test   rsi,rbx
+    fc8c:	48 85 e6             	test   rsi,rsp
+    fc8f:	48 85 ee             	test   rsi,rbp
+    fc92:	48 85 f6             	test   rsi,rsi
+    fc95:	48 85 fe             	test   rsi,rdi
+    fc98:	4c 85 c6             	test   rsi,r8
+    fc9b:	4c 85 ce             	test   rsi,r9
+    fc9e:	4c 85 d6             	test   rsi,r10
+    fca1:	4c 85 de             	test   rsi,r11
+    fca4:	4c 85 e6             	test   rsi,r12
+    fca7:	4c 85 ee             	test   rsi,r13
+    fcaa:	4c 85 f6             	test   rsi,r14
+    fcad:	4c 85 fe             	test   rsi,r15
+    fcb0:	48 85 c7             	test   rdi,rax
+    fcb3:	48 85 cf             	test   rdi,rcx
+    fcb6:	48 85 d7             	test   rdi,rdx
+    fcb9:	48 85 df             	test   rdi,rbx
+    fcbc:	48 85 e7             	test   rdi,rsp
+    fcbf:	48 85 ef             	test   rdi,rbp
+    fcc2:	48 85 f7             	test   rdi,rsi
+    fcc5:	48 85 ff             	test   rdi,rdi
+    fcc8:	4c 85 c7             	test   rdi,r8
+    fccb:	4c 85 cf             	test   rdi,r9
+    fcce:	4c 85 d7             	test   rdi,r10
+    fcd1:	4c 85 df             	test   rdi,r11
+    fcd4:	4c 85 e7             	test   rdi,r12
+    fcd7:	4c 85 ef             	test   rdi,r13
+    fcda:	4c 85 f7             	test   rdi,r14
+    fcdd:	4c 85 ff             	test   rdi,r15
+    fce0:	49 85 c0             	test   r8,rax
+    fce3:	49 85 c8             	test   r8,rcx
+    fce6:	49 85 d0             	test   r8,rdx
+    fce9:	49 85 d8             	test   r8,rbx
+    fcec:	49 85 e0             	test   r8,rsp
+    fcef:	49 85 e8             	test   r8,rbp
+    fcf2:	49 85 f0             	test   r8,rsi
+    fcf5:	49 85 f8             	test   r8,rdi
+    fcf8:	4d 85 c0             	test   r8,r8
+    fcfb:	4d 85 c8             	test   r8,r9
+    fcfe:	4d 85 d0             	test   r8,r10
+    fd01:	4d 85 d8             	test   r8,r11
+    fd04:	4d 85 e0             	test   r8,r12
+    fd07:	4d 85 e8             	test   r8,r13
+    fd0a:	4d 85 f0             	test   r8,r14
+    fd0d:	4d 85 f8             	test   r8,r15
+    fd10:	49 85 c1             	test   r9,rax
+    fd13:	49 85 c9             	test   r9,rcx
+    fd16:	49 85 d1             	test   r9,rdx
+    fd19:	49 85 d9             	test   r9,rbx
+    fd1c:	49 85 e1             	test   r9,rsp
+    fd1f:	49 85 e9             	test   r9,rbp
+    fd22:	49 85 f1             	test   r9,rsi
+    fd25:	49 85 f9             	test   r9,rdi
+    fd28:	4d 85 c1             	test   r9,r8
+    fd2b:	4d 85 c9             	test   r9,r9
+    fd2e:	4d 85 d1             	test   r9,r10
+    fd31:	4d 85 d9             	test   r9,r11
+    fd34:	4d 85 e1             	test   r9,r12
+    fd37:	4d 85 e9             	test   r9,r13
+    fd3a:	4d 85 f1             	test   r9,r14
+    fd3d:	4d 85 f9             	test   r9,r15
+    fd40:	49 85 c2             	test   r10,rax
+    fd43:	49 85 ca             	test   r10,rcx
+    fd46:	49 85 d2             	test   r10,rdx
+    fd49:	49 85 da             	test   r10,rbx
+    fd4c:	49 85 e2             	test   r10,rsp
+    fd4f:	49 85 ea             	test   r10,rbp
+    fd52:	49 85 f2             	test   r10,rsi
+    fd55:	49 85 fa             	test   r10,rdi
+    fd58:	4d 85 c2             	test   r10,r8
+    fd5b:	4d 85 ca             	test   r10,r9
+    fd5e:	4d 85 d2             	test   r10,r10
+    fd61:	4d 85 da             	test   r10,r11
+    fd64:	4d 85 e2             	test   r10,r12
+    fd67:	4d 85 ea             	test   r10,r13
+    fd6a:	4d 85 f2             	test   r10,r14
+    fd6d:	4d 85 fa             	test   r10,r15
+    fd70:	49 85 c3             	test   r11,rax
+    fd73:	49 85 cb             	test   r11,rcx
+    fd76:	49 85 d3             	test   r11,rdx
+    fd79:	49 85 db             	test   r11,rbx
+    fd7c:	49 85 e3             	test   r11,rsp
+    fd7f:	49 85 eb             	test   r11,rbp
+    fd82:	49 85 f3             	test   r11,rsi
+    fd85:	49 85 fb             	test   r11,rdi
+    fd88:	4d 85 c3             	test   r11,r8
+    fd8b:	4d 85 cb             	test   r11,r9
+    fd8e:	4d 85 d3             	test   r11,r10
+    fd91:	4d 85 db             	test   r11,r11
+    fd94:	4d 85 e3             	test   r11,r12
+    fd97:	4d 85 eb             	test   r11,r13
+    fd9a:	4d 85 f3             	test   r11,r14
+    fd9d:	4d 85 fb             	test   r11,r15
+    fda0:	49 85 c4             	test   r12,rax
+    fda3:	49 85 cc             	test   r12,rcx
+    fda6:	49 85 d4             	test   r12,rdx
+    fda9:	49 85 dc             	test   r12,rbx
+    fdac:	49 85 e4             	test   r12,rsp
+    fdaf:	49 85 ec             	test   r12,rbp
+    fdb2:	49 85 f4             	test   r12,rsi
+    fdb5:	49 85 fc             	test   r12,rdi
+    fdb8:	4d 85 c4             	test   r12,r8
+    fdbb:	4d 85 cc             	test   r12,r9
+    fdbe:	4d 85 d4             	test   r12,r10
+    fdc1:	4d 85 dc             	test   r12,r11
+    fdc4:	4d 85 e4             	test   r12,r12
+    fdc7:	4d 85 ec             	test   r12,r13
+    fdca:	4d 85 f4             	test   r12,r14
+    fdcd:	4d 85 fc             	test   r12,r15
+    fdd0:	49 85 c5             	test   r13,rax
+    fdd3:	49 85 cd             	test   r13,rcx
+    fdd6:	49 85 d5             	test   r13,rdx
+    fdd9:	49 85 dd             	test   r13,rbx
+    fddc:	49 85 e5             	test   r13,rsp
+    fddf:	49 85 ed             	test   r13,rbp
+    fde2:	49 85 f5             	test   r13,rsi
+    fde5:	49 85 fd             	test   r13,rdi
+    fde8:	4d 85 c5             	test   r13,r8
+    fdeb:	4d 85 cd             	test   r13,r9
+    fdee:	4d 85 d5             	test   r13,r10
+    fdf1:	4d 85 dd             	test   r13,r11
+    fdf4:	4d 85 e5             	test   r13,r12
+    fdf7:	4d 85 ed             	test   r13,r13
+    fdfa:	4d 85 f5             	test   r13,r14
+    fdfd:	4d 85 fd             	test   r13,r15
+    fe00:	49 85 c6             	test   r14,rax
+    fe03:	49 85 ce             	test   r14,rcx
+    fe06:	49 85 d6             	test   r14,rdx
+    fe09:	49 85 de             	test   r14,rbx
+    fe0c:	49 85 e6             	test   r14,rsp
+    fe0f:	49 85 ee             	test   r14,rbp
+    fe12:	49 85 f6             	test   r14,rsi
+    fe15:	49 85 fe             	test   r14,rdi
+    fe18:	4d 85 c6             	test   r14,r8
+    fe1b:	4d 85 ce             	test   r14,r9
+    fe1e:	4d 85 d6             	test   r14,r10
+    fe21:	4d 85 de             	test   r14,r11
+    fe24:	4d 85 e6             	test   r14,r12
+    fe27:	4d 85 ee             	test   r14,r13
+    fe2a:	4d 85 f6             	test   r14,r14
+    fe2d:	4d 85 fe             	test   r14,r15
+    fe30:	49 85 c7             	test   r15,rax
+    fe33:	49 85 cf             	test   r15,rcx
+    fe36:	49 85 d7             	test   r15,rdx
+    fe39:	49 85 df             	test   r15,rbx
+    fe3c:	49 85 e7             	test   r15,rsp
+    fe3f:	49 85 ef             	test   r15,rbp
+    fe42:	49 85 f7             	test   r15,rsi
+    fe45:	49 85 ff             	test   r15,rdi
+    fe48:	4d 85 c7             	test   r15,r8
+    fe4b:	4d 85 cf             	test   r15,r9
+    fe4e:	4d 85 d7             	test   r15,r10
+    fe51:	4d 85 df             	test   r15,r11
+    fe54:	4d 85 e7             	test   r15,r12
+    fe57:	4d 85 ef             	test   r15,r13
+    fe5a:	4d 85 f7             	test   r15,r14
+    fe5d:	4d 85 ff             	test   r15,r15
+    fe60:	85 c0                	test   eax,eax
+    fe62:	85 c8                	test   eax,ecx
+    fe64:	85 d0                	test   eax,edx
+    fe66:	85 d8                	test   eax,ebx
+    fe68:	85 e0                	test   eax,esp
+    fe6a:	85 e8                	test   eax,ebp
+    fe6c:	85 f0                	test   eax,esi
+    fe6e:	85 f8                	test   eax,edi
+    fe70:	44 85 c0             	test   eax,r8d
+    fe73:	44 85 c8             	test   eax,r9d
+    fe76:	44 85 d0             	test   eax,r10d
+    fe79:	44 85 d8             	test   eax,r11d
+    fe7c:	44 85 e0             	test   eax,r12d
+    fe7f:	44 85 e8             	test   eax,r13d
+    fe82:	44 85 f0             	test   eax,r14d
+    fe85:	44 85 f8             	test   eax,r15d
+    fe88:	85 c1                	test   ecx,eax
+    fe8a:	85 c9                	test   ecx,ecx
+    fe8c:	85 d1                	test   ecx,edx
+    fe8e:	85 d9                	test   ecx,ebx
+    fe90:	85 e1                	test   ecx,esp
+    fe92:	85 e9                	test   ecx,ebp
+    fe94:	85 f1                	test   ecx,esi
+    fe96:	85 f9                	test   ecx,edi
+    fe98:	44 85 c1             	test   ecx,r8d
+    fe9b:	44 85 c9             	test   ecx,r9d
+    fe9e:	44 85 d1             	test   ecx,r10d
+    fea1:	44 85 d9             	test   ecx,r11d
+    fea4:	44 85 e1             	test   ecx,r12d
+    fea7:	44 85 e9             	test   ecx,r13d
+    feaa:	44 85 f1             	test   ecx,r14d
+    fead:	44 85 f9             	test   ecx,r15d
+    feb0:	85 c2                	test   edx,eax
+    feb2:	85 ca                	test   edx,ecx
+    feb4:	85 d2                	test   edx,edx
+    feb6:	85 da                	test   edx,ebx
+    feb8:	85 e2                	test   edx,esp
+    feba:	85 ea                	test   edx,ebp
+    febc:	85 f2                	test   edx,esi
+    febe:	85 fa                	test   edx,edi
+    fec0:	44 85 c2             	test   edx,r8d
+    fec3:	44 85 ca             	test   edx,r9d
+    fec6:	44 85 d2             	test   edx,r10d
+    fec9:	44 85 da             	test   edx,r11d
+    fecc:	44 85 e2             	test   edx,r12d
+    fecf:	44 85 ea             	test   edx,r13d
+    fed2:	44 85 f2             	test   edx,r14d
+    fed5:	44 85 fa             	test   edx,r15d
+    fed8:	85 c3                	test   ebx,eax
+    feda:	85 cb                	test   ebx,ecx
+    fedc:	85 d3                	test   ebx,edx
+    fede:	85 db                	test   ebx,ebx
+    fee0:	85 e3                	test   ebx,esp
+    fee2:	85 eb                	test   ebx,ebp
+    fee4:	85 f3                	test   ebx,esi
+    fee6:	85 fb                	test   ebx,edi
+    fee8:	44 85 c3             	test   ebx,r8d
+    feeb:	44 85 cb             	test   ebx,r9d
+    feee:	44 85 d3             	test   ebx,r10d
+    fef1:	44 85 db             	test   ebx,r11d
+    fef4:	44 85 e3             	test   ebx,r12d
+    fef7:	44 85 eb             	test   ebx,r13d
+    fefa:	44 85 f3             	test   ebx,r14d
+    fefd:	44 85 fb             	test   ebx,r15d
+    ff00:	85 c4                	test   esp,eax
+    ff02:	85 cc                	test   esp,ecx
+    ff04:	85 d4                	test   esp,edx
+    ff06:	85 dc                	test   esp,ebx
+    ff08:	85 e4                	test   esp,esp
+    ff0a:	85 ec                	test   esp,ebp
+    ff0c:	85 f4                	test   esp,esi
+    ff0e:	85 fc                	test   esp,edi
+    ff10:	44 85 c4             	test   esp,r8d
+    ff13:	44 85 cc             	test   esp,r9d
+    ff16:	44 85 d4             	test   esp,r10d
+    ff19:	44 85 dc             	test   esp,r11d
+    ff1c:	44 85 e4             	test   esp,r12d
+    ff1f:	44 85 ec             	test   esp,r13d
+    ff22:	44 85 f4             	test   esp,r14d
+    ff25:	44 85 fc             	test   esp,r15d
+    ff28:	85 c5                	test   ebp,eax
+    ff2a:	85 cd                	test   ebp,ecx
+    ff2c:	85 d5                	test   ebp,edx
+    ff2e:	85 dd                	test   ebp,ebx
+    ff30:	85 e5                	test   ebp,esp
+    ff32:	85 ed                	test   ebp,ebp
+    ff34:	85 f5                	test   ebp,esi
+    ff36:	85 fd                	test   ebp,edi
+    ff38:	44 85 c5             	test   ebp,r8d
+    ff3b:	44 85 cd             	test   ebp,r9d
+    ff3e:	44 85 d5             	test   ebp,r10d
+    ff41:	44 85 dd             	test   ebp,r11d
+    ff44:	44 85 e5             	test   ebp,r12d
+    ff47:	44 85 ed             	test   ebp,r13d
+    ff4a:	44 85 f5             	test   ebp,r14d
+    ff4d:	44 85 fd             	test   ebp,r15d
+    ff50:	85 c6                	test   esi,eax
+    ff52:	85 ce                	test   esi,ecx
+    ff54:	85 d6                	test   esi,edx
+    ff56:	85 de                	test   esi,ebx
+    ff58:	85 e6                	test   esi,esp
+    ff5a:	85 ee                	test   esi,ebp
+    ff5c:	85 f6                	test   esi,esi
+    ff5e:	85 fe                	test   esi,edi
+    ff60:	44 85 c6             	test   esi,r8d
+    ff63:	44 85 ce             	test   esi,r9d
+    ff66:	44 85 d6             	test   esi,r10d
+    ff69:	44 85 de             	test   esi,r11d
+    ff6c:	44 85 e6             	test   esi,r12d
+    ff6f:	44 85 ee             	test   esi,r13d
+    ff72:	44 85 f6             	test   esi,r14d
+    ff75:	44 85 fe             	test   esi,r15d
+    ff78:	85 c7                	test   edi,eax
+    ff7a:	85 cf                	test   edi,ecx
+    ff7c:	85 d7                	test   edi,edx
+    ff7e:	85 df                	test   edi,ebx
+    ff80:	85 e7                	test   edi,esp
+    ff82:	85 ef                	test   edi,ebp
+    ff84:	85 f7                	test   edi,esi
+    ff86:	85 ff                	test   edi,edi
+    ff88:	44 85 c7             	test   edi,r8d
+    ff8b:	44 85 cf             	test   edi,r9d
+    ff8e:	44 85 d7             	test   edi,r10d
+    ff91:	44 85 df             	test   edi,r11d
+    ff94:	44 85 e7             	test   edi,r12d
+    ff97:	44 85 ef             	test   edi,r13d
+    ff9a:	44 85 f7             	test   edi,r14d
+    ff9d:	44 85 ff             	test   edi,r15d
+    ffa0:	41 85 c0             	test   r8d,eax
+    ffa3:	41 85 c8             	test   r8d,ecx
+    ffa6:	41 85 d0             	test   r8d,edx
+    ffa9:	41 85 d8             	test   r8d,ebx
+    ffac:	41 85 e0             	test   r8d,esp
+    ffaf:	41 85 e8             	test   r8d,ebp
+    ffb2:	41 85 f0             	test   r8d,esi
+    ffb5:	41 85 f8             	test   r8d,edi
+    ffb8:	45 85 c0             	test   r8d,r8d
+    ffbb:	45 85 c8             	test   r8d,r9d
+    ffbe:	45 85 d0             	test   r8d,r10d
+    ffc1:	45 85 d8             	test   r8d,r11d
+    ffc4:	45 85 e0             	test   r8d,r12d
+    ffc7:	45 85 e8             	test   r8d,r13d
+    ffca:	45 85 f0             	test   r8d,r14d
+    ffcd:	45 85 f8             	test   r8d,r15d
+    ffd0:	41 85 c1             	test   r9d,eax
+    ffd3:	41 85 c9             	test   r9d,ecx
+    ffd6:	41 85 d1             	test   r9d,edx
+    ffd9:	41 85 d9             	test   r9d,ebx
+    ffdc:	41 85 e1             	test   r9d,esp
+    ffdf:	41 85 e9             	test   r9d,ebp
+    ffe2:	41 85 f1             	test   r9d,esi
+    ffe5:	41 85 f9             	test   r9d,edi
+    ffe8:	45 85 c1             	test   r9d,r8d
+    ffeb:	45 85 c9             	test   r9d,r9d
+    ffee:	45 85 d1             	test   r9d,r10d
+    fff1:	45 85 d9             	test   r9d,r11d
+    fff4:	45 85 e1             	test   r9d,r12d
+    fff7:	45 85 e9             	test   r9d,r13d
+    fffa:	45 85 f1             	test   r9d,r14d
+    fffd:	45 85 f9             	test   r9d,r15d
+   10000:	41 85 c2             	test   r10d,eax
+   10003:	41 85 ca             	test   r10d,ecx
+   10006:	41 85 d2             	test   r10d,edx
+   10009:	41 85 da             	test   r10d,ebx
+   1000c:	41 85 e2             	test   r10d,esp
+   1000f:	41 85 ea             	test   r10d,ebp
+   10012:	41 85 f2             	test   r10d,esi
+   10015:	41 85 fa             	test   r10d,edi
+   10018:	45 85 c2             	test   r10d,r8d
+   1001b:	45 85 ca             	test   r10d,r9d
+   1001e:	45 85 d2             	test   r10d,r10d
+   10021:	45 85 da             	test   r10d,r11d
+   10024:	45 85 e2             	test   r10d,r12d
+   10027:	45 85 ea             	test   r10d,r13d
+   1002a:	45 85 f2             	test   r10d,r14d
+   1002d:	45 85 fa             	test   r10d,r15d
+   10030:	41 85 c3             	test   r11d,eax
+   10033:	41 85 cb             	test   r11d,ecx
+   10036:	41 85 d3             	test   r11d,edx
+   10039:	41 85 db             	test   r11d,ebx
+   1003c:	41 85 e3             	test   r11d,esp
+   1003f:	41 85 eb             	test   r11d,ebp
+   10042:	41 85 f3             	test   r11d,esi
+   10045:	41 85 fb             	test   r11d,edi
+   10048:	45 85 c3             	test   r11d,r8d
+   1004b:	45 85 cb             	test   r11d,r9d
+   1004e:	45 85 d3             	test   r11d,r10d
+   10051:	45 85 db             	test   r11d,r11d
+   10054:	45 85 e3             	test   r11d,r12d
+   10057:	45 85 eb             	test   r11d,r13d
+   1005a:	45 85 f3             	test   r11d,r14d
+   1005d:	45 85 fb             	test   r11d,r15d
+   10060:	41 85 c4             	test   r12d,eax
+   10063:	41 85 cc             	test   r12d,ecx
+   10066:	41 85 d4             	test   r12d,edx
+   10069:	41 85 dc             	test   r12d,ebx
+   1006c:	41 85 e4             	test   r12d,esp
+   1006f:	41 85 ec             	test   r12d,ebp
+   10072:	41 85 f4             	test   r12d,esi
+   10075:	41 85 fc             	test   r12d,edi
+   10078:	45 85 c4             	test   r12d,r8d
+   1007b:	45 85 cc             	test   r12d,r9d
+   1007e:	45 85 d4             	test   r12d,r10d
+   10081:	45 85 dc             	test   r12d,r11d
+   10084:	45 85 e4             	test   r12d,r12d
+   10087:	45 85 ec             	test   r12d,r13d
+   1008a:	45 85 f4             	test   r12d,r14d
+   1008d:	45 85 fc             	test   r12d,r15d
+   10090:	41 85 c5             	test   r13d,eax
+   10093:	41 85 cd             	test   r13d,ecx
+   10096:	41 85 d5             	test   r13d,edx
+   10099:	41 85 dd             	test   r13d,ebx
+   1009c:	41 85 e5             	test   r13d,esp
+   1009f:	41 85 ed             	test   r13d,ebp
+   100a2:	41 85 f5             	test   r13d,esi
+   100a5:	41 85 fd             	test   r13d,edi
+   100a8:	45 85 c5             	test   r13d,r8d
+   100ab:	45 85 cd             	test   r13d,r9d
+   100ae:	45 85 d5             	test   r13d,r10d
+   100b1:	45 85 dd             	test   r13d,r11d
+   100b4:	45 85 e5             	test   r13d,r12d
+   100b7:	45 85 ed             	test   r13d,r13d
+   100ba:	45 85 f5             	test   r13d,r14d
+   100bd:	45 85 fd             	test   r13d,r15d
+   100c0:	41 85 c6             	test   r14d,eax
+   100c3:	41 85 ce             	test   r14d,ecx
+   100c6:	41 85 d6             	test   r14d,edx
+   100c9:	41 85 de             	test   r14d,ebx
+   100cc:	41 85 e6             	test   r14d,esp
+   100cf:	41 85 ee             	test   r14d,ebp
+   100d2:	41 85 f6             	test   r14d,esi
+   100d5:	41 85 fe             	test   r14d,edi
+   100d8:	45 85 c6             	test   r14d,r8d
+   100db:	45 85 ce             	test   r14d,r9d
+   100de:	45 85 d6             	test   r14d,r10d
+   100e1:	45 85 de             	test   r14d,r11d
+   100e4:	45 85 e6             	test   r14d,r12d
+   100e7:	45 85 ee             	test   r14d,r13d
+   100ea:	45 85 f6             	test   r14d,r14d
+   100ed:	45 85 fe             	test   r14d,r15d
+   100f0:	41 85 c7             	test   r15d,eax
+   100f3:	41 85 cf             	test   r15d,ecx
+   100f6:	41 85 d7             	test   r15d,edx
+   100f9:	41 85 df             	test   r15d,ebx
+   100fc:	41 85 e7             	test   r15d,esp
+   100ff:	41 85 ef             	test   r15d,ebp
+   10102:	41 85 f7             	test   r15d,esi
+   10105:	41 85 ff             	test   r15d,edi
+   10108:	45 85 c7             	test   r15d,r8d
+   1010b:	45 85 cf             	test   r15d,r9d
+   1010e:	45 85 d7             	test   r15d,r10d
+   10111:	45 85 df             	test   r15d,r11d
+   10114:	45 85 e7             	test   r15d,r12d
+   10117:	45 85 ef             	test   r15d,r13d
+   1011a:	45 85 f7             	test   r15d,r14d
+   1011d:	45 85 ff             	test   r15d,r15d
+   10120:	66 85 c0             	test   ax,ax
+   10123:	66 85 c8             	test   ax,cx
+   10126:	66 85 d0             	test   ax,dx
+   10129:	66 85 d8             	test   ax,bx
+   1012c:	66 85 e0             	test   ax,sp
+   1012f:	66 85 e8             	test   ax,bp
+   10132:	66 85 f0             	test   ax,si
+   10135:	66 85 f8             	test   ax,di
+   10138:	66 44 85 c0          	test   ax,r8w
+   1013c:	66 44 85 c8          	test   ax,r9w
+   10140:	66 44 85 d0          	test   ax,r10w
+   10144:	66 44 85 d8          	test   ax,r11w
+   10148:	66 44 85 e0          	test   ax,r12w
+   1014c:	66 44 85 e8          	test   ax,r13w
+   10150:	66 44 85 f0          	test   ax,r14w
+   10154:	66 44 85 f8          	test   ax,r15w
+   10158:	66 85 c1             	test   cx,ax
+   1015b:	66 85 c9             	test   cx,cx
+   1015e:	66 85 d1             	test   cx,dx
+   10161:	66 85 d9             	test   cx,bx
+   10164:	66 85 e1             	test   cx,sp
+   10167:	66 85 e9             	test   cx,bp
+   1016a:	66 85 f1             	test   cx,si
+   1016d:	66 85 f9             	test   cx,di
+   10170:	66 44 85 c1          	test   cx,r8w
+   10174:	66 44 85 c9          	test   cx,r9w
+   10178:	66 44 85 d1          	test   cx,r10w
+   1017c:	66 44 85 d9          	test   cx,r11w
+   10180:	66 44 85 e1          	test   cx,r12w
+   10184:	66 44 85 e9          	test   cx,r13w
+   10188:	66 44 85 f1          	test   cx,r14w
+   1018c:	66 44 85 f9          	test   cx,r15w
+   10190:	66 85 c2             	test   dx,ax
+   10193:	66 85 ca             	test   dx,cx
+   10196:	66 85 d2             	test   dx,dx
+   10199:	66 85 da             	test   dx,bx
+   1019c:	66 85 e2             	test   dx,sp
+   1019f:	66 85 ea             	test   dx,bp
+   101a2:	66 85 f2             	test   dx,si
+   101a5:	66 85 fa             	test   dx,di
+   101a8:	66 44 85 c2          	test   dx,r8w
+   101ac:	66 44 85 ca          	test   dx,r9w
+   101b0:	66 44 85 d2          	test   dx,r10w
+   101b4:	66 44 85 da          	test   dx,r11w
+   101b8:	66 44 85 e2          	test   dx,r12w
+   101bc:	66 44 85 ea          	test   dx,r13w
+   101c0:	66 44 85 f2          	test   dx,r14w
+   101c4:	66 44 85 fa          	test   dx,r15w
+   101c8:	66 85 c3             	test   bx,ax
+   101cb:	66 85 cb             	test   bx,cx
+   101ce:	66 85 d3             	test   bx,dx
+   101d1:	66 85 db             	test   bx,bx
+   101d4:	66 85 e3             	test   bx,sp
+   101d7:	66 85 eb             	test   bx,bp
+   101da:	66 85 f3             	test   bx,si
+   101dd:	66 85 fb             	test   bx,di
+   101e0:	66 44 85 c3          	test   bx,r8w
+   101e4:	66 44 85 cb          	test   bx,r9w
+   101e8:	66 44 85 d3          	test   bx,r10w
+   101ec:	66 44 85 db          	test   bx,r11w
+   101f0:	66 44 85 e3          	test   bx,r12w
+   101f4:	66 44 85 eb          	test   bx,r13w
+   101f8:	66 44 85 f3          	test   bx,r14w
+   101fc:	66 44 85 fb          	test   bx,r15w
+   10200:	66 85 c4             	test   sp,ax
+   10203:	66 85 cc             	test   sp,cx
+   10206:	66 85 d4             	test   sp,dx
+   10209:	66 85 dc             	test   sp,bx
+   1020c:	66 85 e4             	test   sp,sp
+   1020f:	66 85 ec             	test   sp,bp
+   10212:	66 85 f4             	test   sp,si
+   10215:	66 85 fc             	test   sp,di
+   10218:	66 44 85 c4          	test   sp,r8w
+   1021c:	66 44 85 cc          	test   sp,r9w
+   10220:	66 44 85 d4          	test   sp,r10w
+   10224:	66 44 85 dc          	test   sp,r11w
+   10228:	66 44 85 e4          	test   sp,r12w
+   1022c:	66 44 85 ec          	test   sp,r13w
+   10230:	66 44 85 f4          	test   sp,r14w
+   10234:	66 44 85 fc          	test   sp,r15w
+   10238:	66 85 c5             	test   bp,ax
+   1023b:	66 85 cd             	test   bp,cx
+   1023e:	66 85 d5             	test   bp,dx
+   10241:	66 85 dd             	test   bp,bx
+   10244:	66 85 e5             	test   bp,sp
+   10247:	66 85 ed             	test   bp,bp
+   1024a:	66 85 f5             	test   bp,si
+   1024d:	66 85 fd             	test   bp,di
+   10250:	66 44 85 c5          	test   bp,r8w
+   10254:	66 44 85 cd          	test   bp,r9w
+   10258:	66 44 85 d5          	test   bp,r10w
+   1025c:	66 44 85 dd          	test   bp,r11w
+   10260:	66 44 85 e5          	test   bp,r12w
+   10264:	66 44 85 ed          	test   bp,r13w
+   10268:	66 44 85 f5          	test   bp,r14w
+   1026c:	66 44 85 fd          	test   bp,r15w
+   10270:	66 85 c6             	test   si,ax
+   10273:	66 85 ce             	test   si,cx
+   10276:	66 85 d6             	test   si,dx
+   10279:	66 85 de             	test   si,bx
+   1027c:	66 85 e6             	test   si,sp
+   1027f:	66 85 ee             	test   si,bp
+   10282:	66 85 f6             	test   si,si
+   10285:	66 85 fe             	test   si,di
+   10288:	66 44 85 c6          	test   si,r8w
+   1028c:	66 44 85 ce          	test   si,r9w
+   10290:	66 44 85 d6          	test   si,r10w
+   10294:	66 44 85 de          	test   si,r11w
+   10298:	66 44 85 e6          	test   si,r12w
+   1029c:	66 44 85 ee          	test   si,r13w
+   102a0:	66 44 85 f6          	test   si,r14w
+   102a4:	66 44 85 fe          	test   si,r15w
+   102a8:	66 85 c7             	test   di,ax
+   102ab:	66 85 cf             	test   di,cx
+   102ae:	66 85 d7             	test   di,dx
+   102b1:	66 85 df             	test   di,bx
+   102b4:	66 85 e7             	test   di,sp
+   102b7:	66 85 ef             	test   di,bp
+   102ba:	66 85 f7             	test   di,si
+   102bd:	66 85 ff             	test   di,di
+   102c0:	66 44 85 c7          	test   di,r8w
+   102c4:	66 44 85 cf          	test   di,r9w
+   102c8:	66 44 85 d7          	test   di,r10w
+   102cc:	66 44 85 df          	test   di,r11w
+   102d0:	66 44 85 e7          	test   di,r12w
+   102d4:	66 44 85 ef          	test   di,r13w
+   102d8:	66 44 85 f7          	test   di,r14w
+   102dc:	66 44 85 ff          	test   di,r15w
+   102e0:	66 41 85 c0          	test   r8w,ax
+   102e4:	66 41 85 c8          	test   r8w,cx
+   102e8:	66 41 85 d0          	test   r8w,dx
+   102ec:	66 41 85 d8          	test   r8w,bx
+   102f0:	66 41 85 e0          	test   r8w,sp
+   102f4:	66 41 85 e8          	test   r8w,bp
+   102f8:	66 41 85 f0          	test   r8w,si
+   102fc:	66 41 85 f8          	test   r8w,di
+   10300:	66 45 85 c0          	test   r8w,r8w
+   10304:	66 45 85 c8          	test   r8w,r9w
+   10308:	66 45 85 d0          	test   r8w,r10w
+   1030c:	66 45 85 d8          	test   r8w,r11w
+   10310:	66 45 85 e0          	test   r8w,r12w
+   10314:	66 45 85 e8          	test   r8w,r13w
+   10318:	66 45 85 f0          	test   r8w,r14w
+   1031c:	66 45 85 f8          	test   r8w,r15w
+   10320:	66 41 85 c1          	test   r9w,ax
+   10324:	66 41 85 c9          	test   r9w,cx
+   10328:	66 41 85 d1          	test   r9w,dx
+   1032c:	66 41 85 d9          	test   r9w,bx
+   10330:	66 41 85 e1          	test   r9w,sp
+   10334:	66 41 85 e9          	test   r9w,bp
+   10338:	66 41 85 f1          	test   r9w,si
+   1033c:	66 41 85 f9          	test   r9w,di
+   10340:	66 45 85 c1          	test   r9w,r8w
+   10344:	66 45 85 c9          	test   r9w,r9w
+   10348:	66 45 85 d1          	test   r9w,r10w
+   1034c:	66 45 85 d9          	test   r9w,r11w
+   10350:	66 45 85 e1          	test   r9w,r12w
+   10354:	66 45 85 e9          	test   r9w,r13w
+   10358:	66 45 85 f1          	test   r9w,r14w
+   1035c:	66 45 85 f9          	test   r9w,r15w
+   10360:	66 41 85 c2          	test   r10w,ax
+   10364:	66 41 85 ca          	test   r10w,cx
+   10368:	66 41 85 d2          	test   r10w,dx
+   1036c:	66 41 85 da          	test   r10w,bx
+   10370:	66 41 85 e2          	test   r10w,sp
+   10374:	66 41 85 ea          	test   r10w,bp
+   10378:	66 41 85 f2          	test   r10w,si
+   1037c:	66 41 85 fa          	test   r10w,di
+   10380:	66 45 85 c2          	test   r10w,r8w
+   10384:	66 45 85 ca          	test   r10w,r9w
+   10388:	66 45 85 d2          	test   r10w,r10w
+   1038c:	66 45 85 da          	test   r10w,r11w
+   10390:	66 45 85 e2          	test   r10w,r12w
+   10394:	66 45 85 ea          	test   r10w,r13w
+   10398:	66 45 85 f2          	test   r10w,r14w
+   1039c:	66 45 85 fa          	test   r10w,r15w
+   103a0:	66 41 85 c3          	test   r11w,ax
+   103a4:	66 41 85 cb          	test   r11w,cx
+   103a8:	66 41 85 d3          	test   r11w,dx
+   103ac:	66 41 85 db          	test   r11w,bx
+   103b0:	66 41 85 e3          	test   r11w,sp
+   103b4:	66 41 85 eb          	test   r11w,bp
+   103b8:	66 41 85 f3          	test   r11w,si
+   103bc:	66 41 85 fb          	test   r11w,di
+   103c0:	66 45 85 c3          	test   r11w,r8w
+   103c4:	66 45 85 cb          	test   r11w,r9w
+   103c8:	66 45 85 d3          	test   r11w,r10w
+   103cc:	66 45 85 db          	test   r11w,r11w
+   103d0:	66 45 85 e3          	test   r11w,r12w
+   103d4:	66 45 85 eb          	test   r11w,r13w
+   103d8:	66 45 85 f3          	test   r11w,r14w
+   103dc:	66 45 85 fb          	test   r11w,r15w
+   103e0:	66 41 85 c4          	test   r12w,ax
+   103e4:	66 41 85 cc          	test   r12w,cx
+   103e8:	66 41 85 d4          	test   r12w,dx
+   103ec:	66 41 85 dc          	test   r12w,bx
+   103f0:	66 41 85 e4          	test   r12w,sp
+   103f4:	66 41 85 ec          	test   r12w,bp
+   103f8:	66 41 85 f4          	test   r12w,si
+   103fc:	66 41 85 fc          	test   r12w,di
+   10400:	66 45 85 c4          	test   r12w,r8w
+   10404:	66 45 85 cc          	test   r12w,r9w
+   10408:	66 45 85 d4          	test   r12w,r10w
+   1040c:	66 45 85 dc          	test   r12w,r11w
+   10410:	66 45 85 e4          	test   r12w,r12w
+   10414:	66 45 85 ec          	test   r12w,r13w
+   10418:	66 45 85 f4          	test   r12w,r14w
+   1041c:	66 45 85 fc          	test   r12w,r15w
+   10420:	66 41 85 c5          	test   r13w,ax
+   10424:	66 41 85 cd          	test   r13w,cx
+   10428:	66 41 85 d5          	test   r13w,dx
+   1042c:	66 41 85 dd          	test   r13w,bx
+   10430:	66 41 85 e5          	test   r13w,sp
+   10434:	66 41 85 ed          	test   r13w,bp
+   10438:	66 41 85 f5          	test   r13w,si
+   1043c:	66 41 85 fd          	test   r13w,di
+   10440:	66 45 85 c5          	test   r13w,r8w
+   10444:	66 45 85 cd          	test   r13w,r9w
+   10448:	66 45 85 d5          	test   r13w,r10w
+   1044c:	66 45 85 dd          	test   r13w,r11w
+   10450:	66 45 85 e5          	test   r13w,r12w
+   10454:	66 45 85 ed          	test   r13w,r13w
+   10458:	66 45 85 f5          	test   r13w,r14w
+   1045c:	66 45 85 fd          	test   r13w,r15w
+   10460:	66 41 85 c6          	test   r14w,ax
+   10464:	66 41 85 ce          	test   r14w,cx
+   10468:	66 41 85 d6          	test   r14w,dx
+   1046c:	66 41 85 de          	test   r14w,bx
+   10470:	66 41 85 e6          	test   r14w,sp
+   10474:	66 41 85 ee          	test   r14w,bp
+   10478:	66 41 85 f6          	test   r14w,si
+   1047c:	66 41 85 fe          	test   r14w,di
+   10480:	66 45 85 c6          	test   r14w,r8w
+   10484:	66 45 85 ce          	test   r14w,r9w
+   10488:	66 45 85 d6          	test   r14w,r10w
+   1048c:	66 45 85 de          	test   r14w,r11w
+   10490:	66 45 85 e6          	test   r14w,r12w
+   10494:	66 45 85 ee          	test   r14w,r13w
+   10498:	66 45 85 f6          	test   r14w,r14w
+   1049c:	66 45 85 fe          	test   r14w,r15w
+   104a0:	66 41 85 c7          	test   r15w,ax
+   104a4:	66 41 85 cf          	test   r15w,cx
+   104a8:	66 41 85 d7          	test   r15w,dx
+   104ac:	66 41 85 df          	test   r15w,bx
+   104b0:	66 41 85 e7          	test   r15w,sp
+   104b4:	66 41 85 ef          	test   r15w,bp
+   104b8:	66 41 85 f7          	test   r15w,si
+   104bc:	66 41 85 ff          	test   r15w,di
+   104c0:	66 45 85 c7          	test   r15w,r8w
+   104c4:	66 45 85 cf          	test   r15w,r9w
+   104c8:	66 45 85 d7          	test   r15w,r10w
+   104cc:	66 45 85 df          	test   r15w,r11w
+   104d0:	66 45 85 e7          	test   r15w,r12w
+   104d4:	66 45 85 ef          	test   r15w,r13w
+   104d8:	66 45 85 f7          	test   r15w,r14w
+   104dc:	66 45 85 ff          	test   r15w,r15w
+   104e0:	84 c0                	test   al,al
+   104e2:	84 c8                	test   al,cl
+   104e4:	84 d0                	test   al,dl
+   104e6:	84 d8                	test   al,bl
+   104e8:	84 e0                	test   al,ah
+   104ea:	84 e8                	test   al,ch
+   104ec:	84 f0                	test   al,dh
+   104ee:	84 f8                	test   al,bh
+   104f0:	44 84 c0             	test   al,r8b
+   104f3:	44 84 c8             	test   al,r9b
+   104f6:	44 84 d0             	test   al,r10b
+   104f9:	44 84 d8             	test   al,r11b
+   104fc:	44 84 e0             	test   al,r12b
+   104ff:	44 84 e8             	test   al,r13b
+   10502:	44 84 f0             	test   al,r14b
+   10505:	44 84 f8             	test   al,r15b
+   10508:	40 84 e0             	test   al,spl
+   1050b:	40 84 e8             	test   al,bpl
+   1050e:	40 84 f0             	test   al,sil
+   10511:	40 84 f8             	test   al,dil
+   10514:	84 c1                	test   cl,al
+   10516:	84 c9                	test   cl,cl
+   10518:	84 d1                	test   cl,dl
+   1051a:	84 d9                	test   cl,bl
+   1051c:	84 e1                	test   cl,ah
+   1051e:	84 e9                	test   cl,ch
+   10520:	84 f1                	test   cl,dh
+   10522:	84 f9                	test   cl,bh
+   10524:	44 84 c1             	test   cl,r8b
+   10527:	44 84 c9             	test   cl,r9b
+   1052a:	44 84 d1             	test   cl,r10b
+   1052d:	44 84 d9             	test   cl,r11b
+   10530:	44 84 e1             	test   cl,r12b
+   10533:	44 84 e9             	test   cl,r13b
+   10536:	44 84 f1             	test   cl,r14b
+   10539:	44 84 f9             	test   cl,r15b
+   1053c:	40 84 e1             	test   cl,spl
+   1053f:	40 84 e9             	test   cl,bpl
+   10542:	40 84 f1             	test   cl,sil
+   10545:	40 84 f9             	test   cl,dil
+   10548:	84 c2                	test   dl,al
+   1054a:	84 ca                	test   dl,cl
+   1054c:	84 d2                	test   dl,dl
+   1054e:	84 da                	test   dl,bl
+   10550:	84 e2                	test   dl,ah
+   10552:	84 ea                	test   dl,ch
+   10554:	84 f2                	test   dl,dh
+   10556:	84 fa                	test   dl,bh
+   10558:	44 84 c2             	test   dl,r8b
+   1055b:	44 84 ca             	test   dl,r9b
+   1055e:	44 84 d2             	test   dl,r10b
+   10561:	44 84 da             	test   dl,r11b
+   10564:	44 84 e2             	test   dl,r12b
+   10567:	44 84 ea             	test   dl,r13b
+   1056a:	44 84 f2             	test   dl,r14b
+   1056d:	44 84 fa             	test   dl,r15b
+   10570:	40 84 e2             	test   dl,spl
+   10573:	40 84 ea             	test   dl,bpl
+   10576:	40 84 f2             	test   dl,sil
+   10579:	40 84 fa             	test   dl,dil
+   1057c:	84 c3                	test   bl,al
+   1057e:	84 cb                	test   bl,cl
+   10580:	84 d3                	test   bl,dl
+   10582:	84 db                	test   bl,bl
+   10584:	84 e3                	test   bl,ah
+   10586:	84 eb                	test   bl,ch
+   10588:	84 f3                	test   bl,dh
+   1058a:	84 fb                	test   bl,bh
+   1058c:	44 84 c3             	test   bl,r8b
+   1058f:	44 84 cb             	test   bl,r9b
+   10592:	44 84 d3             	test   bl,r10b
+   10595:	44 84 db             	test   bl,r11b
+   10598:	44 84 e3             	test   bl,r12b
+   1059b:	44 84 eb             	test   bl,r13b
+   1059e:	44 84 f3             	test   bl,r14b
+   105a1:	44 84 fb             	test   bl,r15b
+   105a4:	40 84 e3             	test   bl,spl
+   105a7:	40 84 eb             	test   bl,bpl
+   105aa:	40 84 f3             	test   bl,sil
+   105ad:	40 84 fb             	test   bl,dil
+   105b0:	84 c4                	test   ah,al
+   105b2:	84 cc                	test   ah,cl
+   105b4:	84 d4                	test   ah,dl
+   105b6:	84 dc                	test   ah,bl
+   105b8:	84 e4                	test   ah,ah
+   105ba:	84 ec                	test   ah,ch
+   105bc:	84 f4                	test   ah,dh
+   105be:	84 fc                	test   ah,bh
+   105c0:	44 84 c4             	test   spl,r8b
+   105c3:	44 84 cc             	test   spl,r9b
+   105c6:	44 84 d4             	test   spl,r10b
+   105c9:	44 84 dc             	test   spl,r11b
+   105cc:	44 84 e4             	test   spl,r12b
+   105cf:	44 84 ec             	test   spl,r13b
+   105d2:	44 84 f4             	test   spl,r14b
+   105d5:	44 84 fc             	test   spl,r15b
+   105d8:	40 84 e4             	test   spl,spl
+   105db:	40 84 ec             	test   spl,bpl
+   105de:	40 84 f4             	test   spl,sil
+   105e1:	40 84 fc             	test   spl,dil
+   105e4:	84 c5                	test   ch,al
+   105e6:	84 cd                	test   ch,cl
+   105e8:	84 d5                	test   ch,dl
+   105ea:	84 dd                	test   ch,bl
+   105ec:	84 e5                	test   ch,ah
+   105ee:	84 ed                	test   ch,ch
+   105f0:	84 f5                	test   ch,dh
+   105f2:	84 fd                	test   ch,bh
+   105f4:	44 84 c5             	test   bpl,r8b
+   105f7:	44 84 cd             	test   bpl,r9b
+   105fa:	44 84 d5             	test   bpl,r10b
+   105fd:	44 84 dd             	test   bpl,r11b
+   10600:	44 84 e5             	test   bpl,r12b
+   10603:	44 84 ed             	test   bpl,r13b
+   10606:	44 84 f5             	test   bpl,r14b
+   10609:	44 84 fd             	test   bpl,r15b
+   1060c:	40 84 e5             	test   bpl,spl
+   1060f:	40 84 ed             	test   bpl,bpl
+   10612:	40 84 f5             	test   bpl,sil
+   10615:	40 84 fd             	test   bpl,dil
+   10618:	84 c6                	test   dh,al
+   1061a:	84 ce                	test   dh,cl
+   1061c:	84 d6                	test   dh,dl
+   1061e:	84 de                	test   dh,bl
+   10620:	84 e6                	test   dh,ah
+   10622:	84 ee                	test   dh,ch
+   10624:	84 f6                	test   dh,dh
+   10626:	84 fe                	test   dh,bh
+   10628:	44 84 c6             	test   sil,r8b
+   1062b:	44 84 ce             	test   sil,r9b
+   1062e:	44 84 d6             	test   sil,r10b
+   10631:	44 84 de             	test   sil,r11b
+   10634:	44 84 e6             	test   sil,r12b
+   10637:	44 84 ee             	test   sil,r13b
+   1063a:	44 84 f6             	test   sil,r14b
+   1063d:	44 84 fe             	test   sil,r15b
+   10640:	40 84 e6             	test   sil,spl
+   10643:	40 84 ee             	test   sil,bpl
+   10646:	40 84 f6             	test   sil,sil
+   10649:	40 84 fe             	test   sil,dil
+   1064c:	84 c7                	test   bh,al
+   1064e:	84 cf                	test   bh,cl
+   10650:	84 d7                	test   bh,dl
+   10652:	84 df                	test   bh,bl
+   10654:	84 e7                	test   bh,ah
+   10656:	84 ef                	test   bh,ch
+   10658:	84 f7                	test   bh,dh
+   1065a:	84 ff                	test   bh,bh
+   1065c:	44 84 c7             	test   dil,r8b
+   1065f:	44 84 cf             	test   dil,r9b
+   10662:	44 84 d7             	test   dil,r10b
+   10665:	44 84 df             	test   dil,r11b
+   10668:	44 84 e7             	test   dil,r12b
+   1066b:	44 84 ef             	test   dil,r13b
+   1066e:	44 84 f7             	test   dil,r14b
+   10671:	44 84 ff             	test   dil,r15b
+   10674:	40 84 e7             	test   dil,spl
+   10677:	40 84 ef             	test   dil,bpl
+   1067a:	40 84 f7             	test   dil,sil
+   1067d:	40 84 ff             	test   dil,dil
+   10680:	41 84 c0             	test   r8b,al
+   10683:	41 84 c8             	test   r8b,cl
+   10686:	41 84 d0             	test   r8b,dl
+   10689:	41 84 d8             	test   r8b,bl
+   1068c:	41 84 e0             	test   r8b,spl
+   1068f:	41 84 e8             	test   r8b,bpl
+   10692:	41 84 f0             	test   r8b,sil
+   10695:	41 84 f8             	test   r8b,dil
+   10698:	45 84 c0             	test   r8b,r8b
+   1069b:	45 84 c8             	test   r8b,r9b
+   1069e:	45 84 d0             	test   r8b,r10b
+   106a1:	45 84 d8             	test   r8b,r11b
+   106a4:	45 84 e0             	test   r8b,r12b
+   106a7:	45 84 e8             	test   r8b,r13b
+   106aa:	45 84 f0             	test   r8b,r14b
+   106ad:	45 84 f8             	test   r8b,r15b
+   106b0:	41 84 e0             	test   r8b,spl
+   106b3:	41 84 e8             	test   r8b,bpl
+   106b6:	41 84 f0             	test   r8b,sil
+   106b9:	41 84 f8             	test   r8b,dil
+   106bc:	41 84 c1             	test   r9b,al
+   106bf:	41 84 c9             	test   r9b,cl
+   106c2:	41 84 d1             	test   r9b,dl
+   106c5:	41 84 d9             	test   r9b,bl
+   106c8:	41 84 e1             	test   r9b,spl
+   106cb:	41 84 e9             	test   r9b,bpl
+   106ce:	41 84 f1             	test   r9b,sil
+   106d1:	41 84 f9             	test   r9b,dil
+   106d4:	45 84 c1             	test   r9b,r8b
+   106d7:	45 84 c9             	test   r9b,r9b
+   106da:	45 84 d1             	test   r9b,r10b
+   106dd:	45 84 d9             	test   r9b,r11b
+   106e0:	45 84 e1             	test   r9b,r12b
+   106e3:	45 84 e9             	test   r9b,r13b
+   106e6:	45 84 f1             	test   r9b,r14b
+   106e9:	45 84 f9             	test   r9b,r15b
+   106ec:	41 84 e1             	test   r9b,spl
+   106ef:	41 84 e9             	test   r9b,bpl
+   106f2:	41 84 f1             	test   r9b,sil
+   106f5:	41 84 f9             	test   r9b,dil
+   106f8:	41 84 c2             	test   r10b,al
+   106fb:	41 84 ca             	test   r10b,cl
+   106fe:	41 84 d2             	test   r10b,dl
+   10701:	41 84 da             	test   r10b,bl
+   10704:	41 84 e2             	test   r10b,spl
+   10707:	41 84 ea             	test   r10b,bpl
+   1070a:	41 84 f2             	test   r10b,sil
+   1070d:	41 84 fa             	test   r10b,dil
+   10710:	45 84 c2             	test   r10b,r8b
+   10713:	45 84 ca             	test   r10b,r9b
+   10716:	45 84 d2             	test   r10b,r10b
+   10719:	45 84 da             	test   r10b,r11b
+   1071c:	45 84 e2             	test   r10b,r12b
+   1071f:	45 84 ea             	test   r10b,r13b
+   10722:	45 84 f2             	test   r10b,r14b
+   10725:	45 84 fa             	test   r10b,r15b
+   10728:	41 84 e2             	test   r10b,spl
+   1072b:	41 84 ea             	test   r10b,bpl
+   1072e:	41 84 f2             	test   r10b,sil
+   10731:	41 84 fa             	test   r10b,dil
+   10734:	41 84 c3             	test   r11b,al
+   10737:	41 84 cb             	test   r11b,cl
+   1073a:	41 84 d3             	test   r11b,dl
+   1073d:	41 84 db             	test   r11b,bl
+   10740:	41 84 e3             	test   r11b,spl
+   10743:	41 84 eb             	test   r11b,bpl
+   10746:	41 84 f3             	test   r11b,sil
+   10749:	41 84 fb             	test   r11b,dil
+   1074c:	45 84 c3             	test   r11b,r8b
+   1074f:	45 84 cb             	test   r11b,r9b
+   10752:	45 84 d3             	test   r11b,r10b
+   10755:	45 84 db             	test   r11b,r11b
+   10758:	45 84 e3             	test   r11b,r12b
+   1075b:	45 84 eb             	test   r11b,r13b
+   1075e:	45 84 f3             	test   r11b,r14b
+   10761:	45 84 fb             	test   r11b,r15b
+   10764:	41 84 e3             	test   r11b,spl
+   10767:	41 84 eb             	test   r11b,bpl
+   1076a:	41 84 f3             	test   r11b,sil
+   1076d:	41 84 fb             	test   r11b,dil
+   10770:	41 84 c4             	test   r12b,al
+   10773:	41 84 cc             	test   r12b,cl
+   10776:	41 84 d4             	test   r12b,dl
+   10779:	41 84 dc             	test   r12b,bl
+   1077c:	41 84 e4             	test   r12b,spl
+   1077f:	41 84 ec             	test   r12b,bpl
+   10782:	41 84 f4             	test   r12b,sil
+   10785:	41 84 fc             	test   r12b,dil
+   10788:	45 84 c4             	test   r12b,r8b
+   1078b:	45 84 cc             	test   r12b,r9b
+   1078e:	45 84 d4             	test   r12b,r10b
+   10791:	45 84 dc             	test   r12b,r11b
+   10794:	45 84 e4             	test   r12b,r12b
+   10797:	45 84 ec             	test   r12b,r13b
+   1079a:	45 84 f4             	test   r12b,r14b
+   1079d:	45 84 fc             	test   r12b,r15b
+   107a0:	41 84 e4             	test   r12b,spl
+   107a3:	41 84 ec             	test   r12b,bpl
+   107a6:	41 84 f4             	test   r12b,sil
+   107a9:	41 84 fc             	test   r12b,dil
+   107ac:	41 84 c5             	test   r13b,al
+   107af:	41 84 cd             	test   r13b,cl
+   107b2:	41 84 d5             	test   r13b,dl
+   107b5:	41 84 dd             	test   r13b,bl
+   107b8:	41 84 e5             	test   r13b,spl
+   107bb:	41 84 ed             	test   r13b,bpl
+   107be:	41 84 f5             	test   r13b,sil
+   107c1:	41 84 fd             	test   r13b,dil
+   107c4:	45 84 c5             	test   r13b,r8b
+   107c7:	45 84 cd             	test   r13b,r9b
+   107ca:	45 84 d5             	test   r13b,r10b
+   107cd:	45 84 dd             	test   r13b,r11b
+   107d0:	45 84 e5             	test   r13b,r12b
+   107d3:	45 84 ed             	test   r13b,r13b
+   107d6:	45 84 f5             	test   r13b,r14b
+   107d9:	45 84 fd             	test   r13b,r15b
+   107dc:	41 84 e5             	test   r13b,spl
+   107df:	41 84 ed             	test   r13b,bpl
+   107e2:	41 84 f5             	test   r13b,sil
+   107e5:	41 84 fd             	test   r13b,dil
+   107e8:	41 84 c6             	test   r14b,al
+   107eb:	41 84 ce             	test   r14b,cl
+   107ee:	41 84 d6             	test   r14b,dl
+   107f1:	41 84 de             	test   r14b,bl
+   107f4:	41 84 e6             	test   r14b,spl
+   107f7:	41 84 ee             	test   r14b,bpl
+   107fa:	41 84 f6             	test   r14b,sil
+   107fd:	41 84 fe             	test   r14b,dil
+   10800:	45 84 c6             	test   r14b,r8b
+   10803:	45 84 ce             	test   r14b,r9b
+   10806:	45 84 d6             	test   r14b,r10b
+   10809:	45 84 de             	test   r14b,r11b
+   1080c:	45 84 e6             	test   r14b,r12b
+   1080f:	45 84 ee             	test   r14b,r13b
+   10812:	45 84 f6             	test   r14b,r14b
+   10815:	45 84 fe             	test   r14b,r15b
+   10818:	41 84 e6             	test   r14b,spl
+   1081b:	41 84 ee             	test   r14b,bpl
+   1081e:	41 84 f6             	test   r14b,sil
+   10821:	41 84 fe             	test   r14b,dil
+   10824:	41 84 c7             	test   r15b,al
+   10827:	41 84 cf             	test   r15b,cl
+   1082a:	41 84 d7             	test   r15b,dl
+   1082d:	41 84 df             	test   r15b,bl
+   10830:	41 84 e7             	test   r15b,spl
+   10833:	41 84 ef             	test   r15b,bpl
+   10836:	41 84 f7             	test   r15b,sil
+   10839:	41 84 ff             	test   r15b,dil
+   1083c:	45 84 c7             	test   r15b,r8b
+   1083f:	45 84 cf             	test   r15b,r9b
+   10842:	45 84 d7             	test   r15b,r10b
+   10845:	45 84 df             	test   r15b,r11b
+   10848:	45 84 e7             	test   r15b,r12b
+   1084b:	45 84 ef             	test   r15b,r13b
+   1084e:	45 84 f7             	test   r15b,r14b
+   10851:	45 84 ff             	test   r15b,r15b
+   10854:	41 84 e7             	test   r15b,spl
+   10857:	41 84 ef             	test   r15b,bpl
+   1085a:	41 84 f7             	test   r15b,sil
+   1085d:	41 84 ff             	test   r15b,dil
+   10860:	40 84 c4             	test   spl,al
+   10863:	40 84 cc             	test   spl,cl
+   10866:	40 84 d4             	test   spl,dl
+   10869:	40 84 dc             	test   spl,bl
+   1086c:	40 84 e4             	test   spl,spl
+   1086f:	40 84 ec             	test   spl,bpl
+   10872:	40 84 f4             	test   spl,sil
+   10875:	40 84 fc             	test   spl,dil
+   10878:	44 84 c4             	test   spl,r8b
+   1087b:	44 84 cc             	test   spl,r9b
+   1087e:	44 84 d4             	test   spl,r10b
+   10881:	44 84 dc             	test   spl,r11b
+   10884:	44 84 e4             	test   spl,r12b
+   10887:	44 84 ec             	test   spl,r13b
+   1088a:	44 84 f4             	test   spl,r14b
+   1088d:	44 84 fc             	test   spl,r15b
+   10890:	40 84 e4             	test   spl,spl
+   10893:	40 84 ec             	test   spl,bpl
+   10896:	40 84 f4             	test   spl,sil
+   10899:	40 84 fc             	test   spl,dil
+   1089c:	40 84 c5             	test   bpl,al
+   1089f:	40 84 cd             	test   bpl,cl
+   108a2:	40 84 d5             	test   bpl,dl
+   108a5:	40 84 dd             	test   bpl,bl
+   108a8:	40 84 e5             	test   bpl,spl
+   108ab:	40 84 ed             	test   bpl,bpl
+   108ae:	40 84 f5             	test   bpl,sil
+   108b1:	40 84 fd             	test   bpl,dil
+   108b4:	44 84 c5             	test   bpl,r8b
+   108b7:	44 84 cd             	test   bpl,r9b
+   108ba:	44 84 d5             	test   bpl,r10b
+   108bd:	44 84 dd             	test   bpl,r11b
+   108c0:	44 84 e5             	test   bpl,r12b
+   108c3:	44 84 ed             	test   bpl,r13b
+   108c6:	44 84 f5             	test   bpl,r14b
+   108c9:	44 84 fd             	test   bpl,r15b
+   108cc:	40 84 e5             	test   bpl,spl
+   108cf:	40 84 ed             	test   bpl,bpl
+   108d2:	40 84 f5             	test   bpl,sil
+   108d5:	40 84 fd             	test   bpl,dil
+   108d8:	40 84 c6             	test   sil,al
+   108db:	40 84 ce             	test   sil,cl
+   108de:	40 84 d6             	test   sil,dl
+   108e1:	40 84 de             	test   sil,bl
+   108e4:	40 84 e6             	test   sil,spl
+   108e7:	40 84 ee             	test   sil,bpl
+   108ea:	40 84 f6             	test   sil,sil
+   108ed:	40 84 fe             	test   sil,dil
+   108f0:	44 84 c6             	test   sil,r8b
+   108f3:	44 84 ce             	test   sil,r9b
+   108f6:	44 84 d6             	test   sil,r10b
+   108f9:	44 84 de             	test   sil,r11b
+   108fc:	44 84 e6             	test   sil,r12b
+   108ff:	44 84 ee             	test   sil,r13b
+   10902:	44 84 f6             	test   sil,r14b
+   10905:	44 84 fe             	test   sil,r15b
+   10908:	40 84 e6             	test   sil,spl
+   1090b:	40 84 ee             	test   sil,bpl
+   1090e:	40 84 f6             	test   sil,sil
+   10911:	40 84 fe             	test   sil,dil
+   10914:	40 84 c7             	test   dil,al
+   10917:	40 84 cf             	test   dil,cl
+   1091a:	40 84 d7             	test   dil,dl
+   1091d:	40 84 df             	test   dil,bl
+   10920:	40 84 e7             	test   dil,spl
+   10923:	40 84 ef             	test   dil,bpl
+   10926:	40 84 f7             	test   dil,sil
+   10929:	40 84 ff             	test   dil,dil
+   1092c:	44 84 c7             	test   dil,r8b
+   1092f:	44 84 cf             	test   dil,r9b
+   10932:	44 84 d7             	test   dil,r10b
+   10935:	44 84 df             	test   dil,r11b
+   10938:	44 84 e7             	test   dil,r12b
+   1093b:	44 84 ef             	test   dil,r13b
+   1093e:	44 84 f7             	test   dil,r14b
+   10941:	44 84 ff             	test   dil,r15b
+   10944:	40 84 e7             	test   dil,spl
+   10947:	40 84 ef             	test   dil,bpl
+   1094a:	40 84 f7             	test   dil,sil
+   1094d:	40 84 ff             	test   dil,dil
+   10950:	48 85 00             	test   QWORD PTR [rax],rax
+   10953:	48 85 08             	test   QWORD PTR [rax],rcx
+   10956:	48 85 10             	test   QWORD PTR [rax],rdx
+   10959:	48 85 18             	test   QWORD PTR [rax],rbx
+   1095c:	48 85 20             	test   QWORD PTR [rax],rsp
+   1095f:	48 85 28             	test   QWORD PTR [rax],rbp
+   10962:	48 85 30             	test   QWORD PTR [rax],rsi
+   10965:	48 85 38             	test   QWORD PTR [rax],rdi
+   10968:	4c 85 00             	test   QWORD PTR [rax],r8
+   1096b:	4c 85 08             	test   QWORD PTR [rax],r9
+   1096e:	4c 85 10             	test   QWORD PTR [rax],r10
+   10971:	4c 85 18             	test   QWORD PTR [rax],r11
+   10974:	4c 85 20             	test   QWORD PTR [rax],r12
+   10977:	4c 85 28             	test   QWORD PTR [rax],r13
+   1097a:	4c 85 30             	test   QWORD PTR [rax],r14
+   1097d:	4c 85 38             	test   QWORD PTR [rax],r15
+   10980:	48 85 01             	test   QWORD PTR [rcx],rax
+   10983:	48 85 09             	test   QWORD PTR [rcx],rcx
+   10986:	48 85 11             	test   QWORD PTR [rcx],rdx
+   10989:	48 85 19             	test   QWORD PTR [rcx],rbx
+   1098c:	48 85 21             	test   QWORD PTR [rcx],rsp
+   1098f:	48 85 29             	test   QWORD PTR [rcx],rbp
+   10992:	48 85 31             	test   QWORD PTR [rcx],rsi
+   10995:	48 85 39             	test   QWORD PTR [rcx],rdi
+   10998:	4c 85 01             	test   QWORD PTR [rcx],r8
+   1099b:	4c 85 09             	test   QWORD PTR [rcx],r9
+   1099e:	4c 85 11             	test   QWORD PTR [rcx],r10
+   109a1:	4c 85 19             	test   QWORD PTR [rcx],r11
+   109a4:	4c 85 21             	test   QWORD PTR [rcx],r12
+   109a7:	4c 85 29             	test   QWORD PTR [rcx],r13
+   109aa:	4c 85 31             	test   QWORD PTR [rcx],r14
+   109ad:	4c 85 39             	test   QWORD PTR [rcx],r15
+   109b0:	48 85 02             	test   QWORD PTR [rdx],rax
+   109b3:	48 85 0a             	test   QWORD PTR [rdx],rcx
+   109b6:	48 85 12             	test   QWORD PTR [rdx],rdx
+   109b9:	48 85 1a             	test   QWORD PTR [rdx],rbx
+   109bc:	48 85 22             	test   QWORD PTR [rdx],rsp
+   109bf:	48 85 2a             	test   QWORD PTR [rdx],rbp
+   109c2:	48 85 32             	test   QWORD PTR [rdx],rsi
+   109c5:	48 85 3a             	test   QWORD PTR [rdx],rdi
+   109c8:	4c 85 02             	test   QWORD PTR [rdx],r8
+   109cb:	4c 85 0a             	test   QWORD PTR [rdx],r9
+   109ce:	4c 85 12             	test   QWORD PTR [rdx],r10
+   109d1:	4c 85 1a             	test   QWORD PTR [rdx],r11
+   109d4:	4c 85 22             	test   QWORD PTR [rdx],r12
+   109d7:	4c 85 2a             	test   QWORD PTR [rdx],r13
+   109da:	4c 85 32             	test   QWORD PTR [rdx],r14
+   109dd:	4c 85 3a             	test   QWORD PTR [rdx],r15
+   109e0:	48 85 03             	test   QWORD PTR [rbx],rax
+   109e3:	48 85 0b             	test   QWORD PTR [rbx],rcx
+   109e6:	48 85 13             	test   QWORD PTR [rbx],rdx
+   109e9:	48 85 1b             	test   QWORD PTR [rbx],rbx
+   109ec:	48 85 23             	test   QWORD PTR [rbx],rsp
+   109ef:	48 85 2b             	test   QWORD PTR [rbx],rbp
+   109f2:	48 85 33             	test   QWORD PTR [rbx],rsi
+   109f5:	48 85 3b             	test   QWORD PTR [rbx],rdi
+   109f8:	4c 85 03             	test   QWORD PTR [rbx],r8
+   109fb:	4c 85 0b             	test   QWORD PTR [rbx],r9
+   109fe:	4c 85 13             	test   QWORD PTR [rbx],r10
+   10a01:	4c 85 1b             	test   QWORD PTR [rbx],r11
+   10a04:	4c 85 23             	test   QWORD PTR [rbx],r12
+   10a07:	4c 85 2b             	test   QWORD PTR [rbx],r13
+   10a0a:	4c 85 33             	test   QWORD PTR [rbx],r14
+   10a0d:	4c 85 3b             	test   QWORD PTR [rbx],r15
+   10a10:	48 85 04 24          	test   QWORD PTR [rsp],rax
+   10a14:	48 85 0c 24          	test   QWORD PTR [rsp],rcx
+   10a18:	48 85 14 24          	test   QWORD PTR [rsp],rdx
+   10a1c:	48 85 1c 24          	test   QWORD PTR [rsp],rbx
+   10a20:	48 85 24 24          	test   QWORD PTR [rsp],rsp
+   10a24:	48 85 2c 24          	test   QWORD PTR [rsp],rbp
+   10a28:	48 85 34 24          	test   QWORD PTR [rsp],rsi
+   10a2c:	48 85 3c 24          	test   QWORD PTR [rsp],rdi
+   10a30:	4c 85 04 24          	test   QWORD PTR [rsp],r8
+   10a34:	4c 85 0c 24          	test   QWORD PTR [rsp],r9
+   10a38:	4c 85 14 24          	test   QWORD PTR [rsp],r10
+   10a3c:	4c 85 1c 24          	test   QWORD PTR [rsp],r11
+   10a40:	4c 85 24 24          	test   QWORD PTR [rsp],r12
+   10a44:	4c 85 2c 24          	test   QWORD PTR [rsp],r13
+   10a48:	4c 85 34 24          	test   QWORD PTR [rsp],r14
+   10a4c:	4c 85 3c 24          	test   QWORD PTR [rsp],r15
+   10a50:	48 85 45 00          	test   QWORD PTR [rbp+0x0],rax
+   10a54:	48 85 4d 00          	test   QWORD PTR [rbp+0x0],rcx
+   10a58:	48 85 55 00          	test   QWORD PTR [rbp+0x0],rdx
+   10a5c:	48 85 5d 00          	test   QWORD PTR [rbp+0x0],rbx
+   10a60:	48 85 65 00          	test   QWORD PTR [rbp+0x0],rsp
+   10a64:	48 85 6d 00          	test   QWORD PTR [rbp+0x0],rbp
+   10a68:	48 85 75 00          	test   QWORD PTR [rbp+0x0],rsi
+   10a6c:	48 85 7d 00          	test   QWORD PTR [rbp+0x0],rdi
+   10a70:	4c 85 45 00          	test   QWORD PTR [rbp+0x0],r8
+   10a74:	4c 85 4d 00          	test   QWORD PTR [rbp+0x0],r9
+   10a78:	4c 85 55 00          	test   QWORD PTR [rbp+0x0],r10
+   10a7c:	4c 85 5d 00          	test   QWORD PTR [rbp+0x0],r11
+   10a80:	4c 85 65 00          	test   QWORD PTR [rbp+0x0],r12
+   10a84:	4c 85 6d 00          	test   QWORD PTR [rbp+0x0],r13
+   10a88:	4c 85 75 00          	test   QWORD PTR [rbp+0x0],r14
+   10a8c:	4c 85 7d 00          	test   QWORD PTR [rbp+0x0],r15
+   10a90:	48 85 06             	test   QWORD PTR [rsi],rax
+   10a93:	48 85 0e             	test   QWORD PTR [rsi],rcx
+   10a96:	48 85 16             	test   QWORD PTR [rsi],rdx
+   10a99:	48 85 1e             	test   QWORD PTR [rsi],rbx
+   10a9c:	48 85 26             	test   QWORD PTR [rsi],rsp
+   10a9f:	48 85 2e             	test   QWORD PTR [rsi],rbp
+   10aa2:	48 85 36             	test   QWORD PTR [rsi],rsi
+   10aa5:	48 85 3e             	test   QWORD PTR [rsi],rdi
+   10aa8:	4c 85 06             	test   QWORD PTR [rsi],r8
+   10aab:	4c 85 0e             	test   QWORD PTR [rsi],r9
+   10aae:	4c 85 16             	test   QWORD PTR [rsi],r10
+   10ab1:	4c 85 1e             	test   QWORD PTR [rsi],r11
+   10ab4:	4c 85 26             	test   QWORD PTR [rsi],r12
+   10ab7:	4c 85 2e             	test   QWORD PTR [rsi],r13
+   10aba:	4c 85 36             	test   QWORD PTR [rsi],r14
+   10abd:	4c 85 3e             	test   QWORD PTR [rsi],r15
+   10ac0:	48 85 07             	test   QWORD PTR [rdi],rax
+   10ac3:	48 85 0f             	test   QWORD PTR [rdi],rcx
+   10ac6:	48 85 17             	test   QWORD PTR [rdi],rdx
+   10ac9:	48 85 1f             	test   QWORD PTR [rdi],rbx
+   10acc:	48 85 27             	test   QWORD PTR [rdi],rsp
+   10acf:	48 85 2f             	test   QWORD PTR [rdi],rbp
+   10ad2:	48 85 37             	test   QWORD PTR [rdi],rsi
+   10ad5:	48 85 3f             	test   QWORD PTR [rdi],rdi
+   10ad8:	4c 85 07             	test   QWORD PTR [rdi],r8
+   10adb:	4c 85 0f             	test   QWORD PTR [rdi],r9
+   10ade:	4c 85 17             	test   QWORD PTR [rdi],r10
+   10ae1:	4c 85 1f             	test   QWORD PTR [rdi],r11
+   10ae4:	4c 85 27             	test   QWORD PTR [rdi],r12
+   10ae7:	4c 85 2f             	test   QWORD PTR [rdi],r13
+   10aea:	4c 85 37             	test   QWORD PTR [rdi],r14
+   10aed:	4c 85 3f             	test   QWORD PTR [rdi],r15
+   10af0:	49 85 00             	test   QWORD PTR [r8],rax
+   10af3:	49 85 08             	test   QWORD PTR [r8],rcx
+   10af6:	49 85 10             	test   QWORD PTR [r8],rdx
+   10af9:	49 85 18             	test   QWORD PTR [r8],rbx
+   10afc:	49 85 20             	test   QWORD PTR [r8],rsp
+   10aff:	49 85 28             	test   QWORD PTR [r8],rbp
+   10b02:	49 85 30             	test   QWORD PTR [r8],rsi
+   10b05:	49 85 38             	test   QWORD PTR [r8],rdi
+   10b08:	4d 85 00             	test   QWORD PTR [r8],r8
+   10b0b:	4d 85 08             	test   QWORD PTR [r8],r9
+   10b0e:	4d 85 10             	test   QWORD PTR [r8],r10
+   10b11:	4d 85 18             	test   QWORD PTR [r8],r11
+   10b14:	4d 85 20             	test   QWORD PTR [r8],r12
+   10b17:	4d 85 28             	test   QWORD PTR [r8],r13
+   10b1a:	4d 85 30             	test   QWORD PTR [r8],r14
+   10b1d:	4d 85 38             	test   QWORD PTR [r8],r15
+   10b20:	49 85 01             	test   QWORD PTR [r9],rax
+   10b23:	49 85 09             	test   QWORD PTR [r9],rcx
+   10b26:	49 85 11             	test   QWORD PTR [r9],rdx
+   10b29:	49 85 19             	test   QWORD PTR [r9],rbx
+   10b2c:	49 85 21             	test   QWORD PTR [r9],rsp
+   10b2f:	49 85 29             	test   QWORD PTR [r9],rbp
+   10b32:	49 85 31             	test   QWORD PTR [r9],rsi
+   10b35:	49 85 39             	test   QWORD PTR [r9],rdi
+   10b38:	4d 85 01             	test   QWORD PTR [r9],r8
+   10b3b:	4d 85 09             	test   QWORD PTR [r9],r9
+   10b3e:	4d 85 11             	test   QWORD PTR [r9],r10
+   10b41:	4d 85 19             	test   QWORD PTR [r9],r11
+   10b44:	4d 85 21             	test   QWORD PTR [r9],r12
+   10b47:	4d 85 29             	test   QWORD PTR [r9],r13
+   10b4a:	4d 85 31             	test   QWORD PTR [r9],r14
+   10b4d:	4d 85 39             	test   QWORD PTR [r9],r15
+   10b50:	49 85 02             	test   QWORD PTR [r10],rax
+   10b53:	49 85 0a             	test   QWORD PTR [r10],rcx
+   10b56:	49 85 12             	test   QWORD PTR [r10],rdx
+   10b59:	49 85 1a             	test   QWORD PTR [r10],rbx
+   10b5c:	49 85 22             	test   QWORD PTR [r10],rsp
+   10b5f:	49 85 2a             	test   QWORD PTR [r10],rbp
+   10b62:	49 85 32             	test   QWORD PTR [r10],rsi
+   10b65:	49 85 3a             	test   QWORD PTR [r10],rdi
+   10b68:	4d 85 02             	test   QWORD PTR [r10],r8
+   10b6b:	4d 85 0a             	test   QWORD PTR [r10],r9
+   10b6e:	4d 85 12             	test   QWORD PTR [r10],r10
+   10b71:	4d 85 1a             	test   QWORD PTR [r10],r11
+   10b74:	4d 85 22             	test   QWORD PTR [r10],r12
+   10b77:	4d 85 2a             	test   QWORD PTR [r10],r13
+   10b7a:	4d 85 32             	test   QWORD PTR [r10],r14
+   10b7d:	4d 85 3a             	test   QWORD PTR [r10],r15
+   10b80:	49 85 03             	test   QWORD PTR [r11],rax
+   10b83:	49 85 0b             	test   QWORD PTR [r11],rcx
+   10b86:	49 85 13             	test   QWORD PTR [r11],rdx
+   10b89:	49 85 1b             	test   QWORD PTR [r11],rbx
+   10b8c:	49 85 23             	test   QWORD PTR [r11],rsp
+   10b8f:	49 85 2b             	test   QWORD PTR [r11],rbp
+   10b92:	49 85 33             	test   QWORD PTR [r11],rsi
+   10b95:	49 85 3b             	test   QWORD PTR [r11],rdi
+   10b98:	4d 85 03             	test   QWORD PTR [r11],r8
+   10b9b:	4d 85 0b             	test   QWORD PTR [r11],r9
+   10b9e:	4d 85 13             	test   QWORD PTR [r11],r10
+   10ba1:	4d 85 1b             	test   QWORD PTR [r11],r11
+   10ba4:	4d 85 23             	test   QWORD PTR [r11],r12
+   10ba7:	4d 85 2b             	test   QWORD PTR [r11],r13
+   10baa:	4d 85 33             	test   QWORD PTR [r11],r14
+   10bad:	4d 85 3b             	test   QWORD PTR [r11],r15
+   10bb0:	49 85 04 24          	test   QWORD PTR [r12],rax
+   10bb4:	49 85 0c 24          	test   QWORD PTR [r12],rcx
+   10bb8:	49 85 14 24          	test   QWORD PTR [r12],rdx
+   10bbc:	49 85 1c 24          	test   QWORD PTR [r12],rbx
+   10bc0:	49 85 24 24          	test   QWORD PTR [r12],rsp
+   10bc4:	49 85 2c 24          	test   QWORD PTR [r12],rbp
+   10bc8:	49 85 34 24          	test   QWORD PTR [r12],rsi
+   10bcc:	49 85 3c 24          	test   QWORD PTR [r12],rdi
+   10bd0:	4d 85 04 24          	test   QWORD PTR [r12],r8
+   10bd4:	4d 85 0c 24          	test   QWORD PTR [r12],r9
+   10bd8:	4d 85 14 24          	test   QWORD PTR [r12],r10
+   10bdc:	4d 85 1c 24          	test   QWORD PTR [r12],r11
+   10be0:	4d 85 24 24          	test   QWORD PTR [r12],r12
+   10be4:	4d 85 2c 24          	test   QWORD PTR [r12],r13
+   10be8:	4d 85 34 24          	test   QWORD PTR [r12],r14
+   10bec:	4d 85 3c 24          	test   QWORD PTR [r12],r15
+   10bf0:	49 85 45 00          	test   QWORD PTR [r13+0x0],rax
+   10bf4:	49 85 4d 00          	test   QWORD PTR [r13+0x0],rcx
+   10bf8:	49 85 55 00          	test   QWORD PTR [r13+0x0],rdx
+   10bfc:	49 85 5d 00          	test   QWORD PTR [r13+0x0],rbx
+   10c00:	49 85 65 00          	test   QWORD PTR [r13+0x0],rsp
+   10c04:	49 85 6d 00          	test   QWORD PTR [r13+0x0],rbp
+   10c08:	49 85 75 00          	test   QWORD PTR [r13+0x0],rsi
+   10c0c:	49 85 7d 00          	test   QWORD PTR [r13+0x0],rdi
+   10c10:	4d 85 45 00          	test   QWORD PTR [r13+0x0],r8
+   10c14:	4d 85 4d 00          	test   QWORD PTR [r13+0x0],r9
+   10c18:	4d 85 55 00          	test   QWORD PTR [r13+0x0],r10
+   10c1c:	4d 85 5d 00          	test   QWORD PTR [r13+0x0],r11
+   10c20:	4d 85 65 00          	test   QWORD PTR [r13+0x0],r12
+   10c24:	4d 85 6d 00          	test   QWORD PTR [r13+0x0],r13
+   10c28:	4d 85 75 00          	test   QWORD PTR [r13+0x0],r14
+   10c2c:	4d 85 7d 00          	test   QWORD PTR [r13+0x0],r15
+   10c30:	49 85 06             	test   QWORD PTR [r14],rax
+   10c33:	49 85 0e             	test   QWORD PTR [r14],rcx
+   10c36:	49 85 16             	test   QWORD PTR [r14],rdx
+   10c39:	49 85 1e             	test   QWORD PTR [r14],rbx
+   10c3c:	49 85 26             	test   QWORD PTR [r14],rsp
+   10c3f:	49 85 2e             	test   QWORD PTR [r14],rbp
+   10c42:	49 85 36             	test   QWORD PTR [r14],rsi
+   10c45:	49 85 3e             	test   QWORD PTR [r14],rdi
+   10c48:	4d 85 06             	test   QWORD PTR [r14],r8
+   10c4b:	4d 85 0e             	test   QWORD PTR [r14],r9
+   10c4e:	4d 85 16             	test   QWORD PTR [r14],r10
+   10c51:	4d 85 1e             	test   QWORD PTR [r14],r11
+   10c54:	4d 85 26             	test   QWORD PTR [r14],r12
+   10c57:	4d 85 2e             	test   QWORD PTR [r14],r13
+   10c5a:	4d 85 36             	test   QWORD PTR [r14],r14
+   10c5d:	4d 85 3e             	test   QWORD PTR [r14],r15
+   10c60:	49 85 07             	test   QWORD PTR [r15],rax
+   10c63:	49 85 0f             	test   QWORD PTR [r15],rcx
+   10c66:	49 85 17             	test   QWORD PTR [r15],rdx
+   10c69:	49 85 1f             	test   QWORD PTR [r15],rbx
+   10c6c:	49 85 27             	test   QWORD PTR [r15],rsp
+   10c6f:	49 85 2f             	test   QWORD PTR [r15],rbp
+   10c72:	49 85 37             	test   QWORD PTR [r15],rsi
+   10c75:	49 85 3f             	test   QWORD PTR [r15],rdi
+   10c78:	4d 85 07             	test   QWORD PTR [r15],r8
+   10c7b:	4d 85 0f             	test   QWORD PTR [r15],r9
+   10c7e:	4d 85 17             	test   QWORD PTR [r15],r10
+   10c81:	4d 85 1f             	test   QWORD PTR [r15],r11
+   10c84:	4d 85 27             	test   QWORD PTR [r15],r12
+   10c87:	4d 85 2f             	test   QWORD PTR [r15],r13
+   10c8a:	4d 85 37             	test   QWORD PTR [r15],r14
+   10c8d:	4d 85 3f             	test   QWORD PTR [r15],r15
+   10c90:	85 00                	test   DWORD PTR [rax],eax
+   10c92:	85 08                	test   DWORD PTR [rax],ecx
+   10c94:	85 10                	test   DWORD PTR [rax],edx
+   10c96:	85 18                	test   DWORD PTR [rax],ebx
+   10c98:	85 20                	test   DWORD PTR [rax],esp
+   10c9a:	85 28                	test   DWORD PTR [rax],ebp
+   10c9c:	85 30                	test   DWORD PTR [rax],esi
+   10c9e:	85 38                	test   DWORD PTR [rax],edi
+   10ca0:	44 85 00             	test   DWORD PTR [rax],r8d
+   10ca3:	44 85 08             	test   DWORD PTR [rax],r9d
+   10ca6:	44 85 10             	test   DWORD PTR [rax],r10d
+   10ca9:	44 85 18             	test   DWORD PTR [rax],r11d
+   10cac:	44 85 20             	test   DWORD PTR [rax],r12d
+   10caf:	44 85 28             	test   DWORD PTR [rax],r13d
+   10cb2:	44 85 30             	test   DWORD PTR [rax],r14d
+   10cb5:	44 85 38             	test   DWORD PTR [rax],r15d
+   10cb8:	85 01                	test   DWORD PTR [rcx],eax
+   10cba:	85 09                	test   DWORD PTR [rcx],ecx
+   10cbc:	85 11                	test   DWORD PTR [rcx],edx
+   10cbe:	85 19                	test   DWORD PTR [rcx],ebx
+   10cc0:	85 21                	test   DWORD PTR [rcx],esp
+   10cc2:	85 29                	test   DWORD PTR [rcx],ebp
+   10cc4:	85 31                	test   DWORD PTR [rcx],esi
+   10cc6:	85 39                	test   DWORD PTR [rcx],edi
+   10cc8:	44 85 01             	test   DWORD PTR [rcx],r8d
+   10ccb:	44 85 09             	test   DWORD PTR [rcx],r9d
+   10cce:	44 85 11             	test   DWORD PTR [rcx],r10d
+   10cd1:	44 85 19             	test   DWORD PTR [rcx],r11d
+   10cd4:	44 85 21             	test   DWORD PTR [rcx],r12d
+   10cd7:	44 85 29             	test   DWORD PTR [rcx],r13d
+   10cda:	44 85 31             	test   DWORD PTR [rcx],r14d
+   10cdd:	44 85 39             	test   DWORD PTR [rcx],r15d
+   10ce0:	85 02                	test   DWORD PTR [rdx],eax
+   10ce2:	85 0a                	test   DWORD PTR [rdx],ecx
+   10ce4:	85 12                	test   DWORD PTR [rdx],edx
+   10ce6:	85 1a                	test   DWORD PTR [rdx],ebx
+   10ce8:	85 22                	test   DWORD PTR [rdx],esp
+   10cea:	85 2a                	test   DWORD PTR [rdx],ebp
+   10cec:	85 32                	test   DWORD PTR [rdx],esi
+   10cee:	85 3a                	test   DWORD PTR [rdx],edi
+   10cf0:	44 85 02             	test   DWORD PTR [rdx],r8d
+   10cf3:	44 85 0a             	test   DWORD PTR [rdx],r9d
+   10cf6:	44 85 12             	test   DWORD PTR [rdx],r10d
+   10cf9:	44 85 1a             	test   DWORD PTR [rdx],r11d
+   10cfc:	44 85 22             	test   DWORD PTR [rdx],r12d
+   10cff:	44 85 2a             	test   DWORD PTR [rdx],r13d
+   10d02:	44 85 32             	test   DWORD PTR [rdx],r14d
+   10d05:	44 85 3a             	test   DWORD PTR [rdx],r15d
+   10d08:	85 03                	test   DWORD PTR [rbx],eax
+   10d0a:	85 0b                	test   DWORD PTR [rbx],ecx
+   10d0c:	85 13                	test   DWORD PTR [rbx],edx
+   10d0e:	85 1b                	test   DWORD PTR [rbx],ebx
+   10d10:	85 23                	test   DWORD PTR [rbx],esp
+   10d12:	85 2b                	test   DWORD PTR [rbx],ebp
+   10d14:	85 33                	test   DWORD PTR [rbx],esi
+   10d16:	85 3b                	test   DWORD PTR [rbx],edi
+   10d18:	44 85 03             	test   DWORD PTR [rbx],r8d
+   10d1b:	44 85 0b             	test   DWORD PTR [rbx],r9d
+   10d1e:	44 85 13             	test   DWORD PTR [rbx],r10d
+   10d21:	44 85 1b             	test   DWORD PTR [rbx],r11d
+   10d24:	44 85 23             	test   DWORD PTR [rbx],r12d
+   10d27:	44 85 2b             	test   DWORD PTR [rbx],r13d
+   10d2a:	44 85 33             	test   DWORD PTR [rbx],r14d
+   10d2d:	44 85 3b             	test   DWORD PTR [rbx],r15d
+   10d30:	85 04 24             	test   DWORD PTR [rsp],eax
+   10d33:	85 0c 24             	test   DWORD PTR [rsp],ecx
+   10d36:	85 14 24             	test   DWORD PTR [rsp],edx
+   10d39:	85 1c 24             	test   DWORD PTR [rsp],ebx
+   10d3c:	85 24 24             	test   DWORD PTR [rsp],esp
+   10d3f:	85 2c 24             	test   DWORD PTR [rsp],ebp
+   10d42:	85 34 24             	test   DWORD PTR [rsp],esi
+   10d45:	85 3c 24             	test   DWORD PTR [rsp],edi
+   10d48:	44 85 04 24          	test   DWORD PTR [rsp],r8d
+   10d4c:	44 85 0c 24          	test   DWORD PTR [rsp],r9d
+   10d50:	44 85 14 24          	test   DWORD PTR [rsp],r10d
+   10d54:	44 85 1c 24          	test   DWORD PTR [rsp],r11d
+   10d58:	44 85 24 24          	test   DWORD PTR [rsp],r12d
+   10d5c:	44 85 2c 24          	test   DWORD PTR [rsp],r13d
+   10d60:	44 85 34 24          	test   DWORD PTR [rsp],r14d
+   10d64:	44 85 3c 24          	test   DWORD PTR [rsp],r15d
+   10d68:	85 45 00             	test   DWORD PTR [rbp+0x0],eax
+   10d6b:	85 4d 00             	test   DWORD PTR [rbp+0x0],ecx
+   10d6e:	85 55 00             	test   DWORD PTR [rbp+0x0],edx
+   10d71:	85 5d 00             	test   DWORD PTR [rbp+0x0],ebx
+   10d74:	85 65 00             	test   DWORD PTR [rbp+0x0],esp
+   10d77:	85 6d 00             	test   DWORD PTR [rbp+0x0],ebp
+   10d7a:	85 75 00             	test   DWORD PTR [rbp+0x0],esi
+   10d7d:	85 7d 00             	test   DWORD PTR [rbp+0x0],edi
+   10d80:	44 85 45 00          	test   DWORD PTR [rbp+0x0],r8d
+   10d84:	44 85 4d 00          	test   DWORD PTR [rbp+0x0],r9d
+   10d88:	44 85 55 00          	test   DWORD PTR [rbp+0x0],r10d
+   10d8c:	44 85 5d 00          	test   DWORD PTR [rbp+0x0],r11d
+   10d90:	44 85 65 00          	test   DWORD PTR [rbp+0x0],r12d
+   10d94:	44 85 6d 00          	test   DWORD PTR [rbp+0x0],r13d
+   10d98:	44 85 75 00          	test   DWORD PTR [rbp+0x0],r14d
+   10d9c:	44 85 7d 00          	test   DWORD PTR [rbp+0x0],r15d
+   10da0:	85 06                	test   DWORD PTR [rsi],eax
+   10da2:	85 0e                	test   DWORD PTR [rsi],ecx
+   10da4:	85 16                	test   DWORD PTR [rsi],edx
+   10da6:	85 1e                	test   DWORD PTR [rsi],ebx
+   10da8:	85 26                	test   DWORD PTR [rsi],esp
+   10daa:	85 2e                	test   DWORD PTR [rsi],ebp
+   10dac:	85 36                	test   DWORD PTR [rsi],esi
+   10dae:	85 3e                	test   DWORD PTR [rsi],edi
+   10db0:	44 85 06             	test   DWORD PTR [rsi],r8d
+   10db3:	44 85 0e             	test   DWORD PTR [rsi],r9d
+   10db6:	44 85 16             	test   DWORD PTR [rsi],r10d
+   10db9:	44 85 1e             	test   DWORD PTR [rsi],r11d
+   10dbc:	44 85 26             	test   DWORD PTR [rsi],r12d
+   10dbf:	44 85 2e             	test   DWORD PTR [rsi],r13d
+   10dc2:	44 85 36             	test   DWORD PTR [rsi],r14d
+   10dc5:	44 85 3e             	test   DWORD PTR [rsi],r15d
+   10dc8:	85 07                	test   DWORD PTR [rdi],eax
+   10dca:	85 0f                	test   DWORD PTR [rdi],ecx
+   10dcc:	85 17                	test   DWORD PTR [rdi],edx
+   10dce:	85 1f                	test   DWORD PTR [rdi],ebx
+   10dd0:	85 27                	test   DWORD PTR [rdi],esp
+   10dd2:	85 2f                	test   DWORD PTR [rdi],ebp
+   10dd4:	85 37                	test   DWORD PTR [rdi],esi
+   10dd6:	85 3f                	test   DWORD PTR [rdi],edi
+   10dd8:	44 85 07             	test   DWORD PTR [rdi],r8d
+   10ddb:	44 85 0f             	test   DWORD PTR [rdi],r9d
+   10dde:	44 85 17             	test   DWORD PTR [rdi],r10d
+   10de1:	44 85 1f             	test   DWORD PTR [rdi],r11d
+   10de4:	44 85 27             	test   DWORD PTR [rdi],r12d
+   10de7:	44 85 2f             	test   DWORD PTR [rdi],r13d
+   10dea:	44 85 37             	test   DWORD PTR [rdi],r14d
+   10ded:	44 85 3f             	test   DWORD PTR [rdi],r15d
+   10df0:	41 85 00             	test   DWORD PTR [r8],eax
+   10df3:	41 85 08             	test   DWORD PTR [r8],ecx
+   10df6:	41 85 10             	test   DWORD PTR [r8],edx
+   10df9:	41 85 18             	test   DWORD PTR [r8],ebx
+   10dfc:	41 85 20             	test   DWORD PTR [r8],esp
+   10dff:	41 85 28             	test   DWORD PTR [r8],ebp
+   10e02:	41 85 30             	test   DWORD PTR [r8],esi
+   10e05:	41 85 38             	test   DWORD PTR [r8],edi
+   10e08:	45 85 00             	test   DWORD PTR [r8],r8d
+   10e0b:	45 85 08             	test   DWORD PTR [r8],r9d
+   10e0e:	45 85 10             	test   DWORD PTR [r8],r10d
+   10e11:	45 85 18             	test   DWORD PTR [r8],r11d
+   10e14:	45 85 20             	test   DWORD PTR [r8],r12d
+   10e17:	45 85 28             	test   DWORD PTR [r8],r13d
+   10e1a:	45 85 30             	test   DWORD PTR [r8],r14d
+   10e1d:	45 85 38             	test   DWORD PTR [r8],r15d
+   10e20:	41 85 01             	test   DWORD PTR [r9],eax
+   10e23:	41 85 09             	test   DWORD PTR [r9],ecx
+   10e26:	41 85 11             	test   DWORD PTR [r9],edx
+   10e29:	41 85 19             	test   DWORD PTR [r9],ebx
+   10e2c:	41 85 21             	test   DWORD PTR [r9],esp
+   10e2f:	41 85 29             	test   DWORD PTR [r9],ebp
+   10e32:	41 85 31             	test   DWORD PTR [r9],esi
+   10e35:	41 85 39             	test   DWORD PTR [r9],edi
+   10e38:	45 85 01             	test   DWORD PTR [r9],r8d
+   10e3b:	45 85 09             	test   DWORD PTR [r9],r9d
+   10e3e:	45 85 11             	test   DWORD PTR [r9],r10d
+   10e41:	45 85 19             	test   DWORD PTR [r9],r11d
+   10e44:	45 85 21             	test   DWORD PTR [r9],r12d
+   10e47:	45 85 29             	test   DWORD PTR [r9],r13d
+   10e4a:	45 85 31             	test   DWORD PTR [r9],r14d
+   10e4d:	45 85 39             	test   DWORD PTR [r9],r15d
+   10e50:	41 85 02             	test   DWORD PTR [r10],eax
+   10e53:	41 85 0a             	test   DWORD PTR [r10],ecx
+   10e56:	41 85 12             	test   DWORD PTR [r10],edx
+   10e59:	41 85 1a             	test   DWORD PTR [r10],ebx
+   10e5c:	41 85 22             	test   DWORD PTR [r10],esp
+   10e5f:	41 85 2a             	test   DWORD PTR [r10],ebp
+   10e62:	41 85 32             	test   DWORD PTR [r10],esi
+   10e65:	41 85 3a             	test   DWORD PTR [r10],edi
+   10e68:	45 85 02             	test   DWORD PTR [r10],r8d
+   10e6b:	45 85 0a             	test   DWORD PTR [r10],r9d
+   10e6e:	45 85 12             	test   DWORD PTR [r10],r10d
+   10e71:	45 85 1a             	test   DWORD PTR [r10],r11d
+   10e74:	45 85 22             	test   DWORD PTR [r10],r12d
+   10e77:	45 85 2a             	test   DWORD PTR [r10],r13d
+   10e7a:	45 85 32             	test   DWORD PTR [r10],r14d
+   10e7d:	45 85 3a             	test   DWORD PTR [r10],r15d
+   10e80:	41 85 03             	test   DWORD PTR [r11],eax
+   10e83:	41 85 0b             	test   DWORD PTR [r11],ecx
+   10e86:	41 85 13             	test   DWORD PTR [r11],edx
+   10e89:	41 85 1b             	test   DWORD PTR [r11],ebx
+   10e8c:	41 85 23             	test   DWORD PTR [r11],esp
+   10e8f:	41 85 2b             	test   DWORD PTR [r11],ebp
+   10e92:	41 85 33             	test   DWORD PTR [r11],esi
+   10e95:	41 85 3b             	test   DWORD PTR [r11],edi
+   10e98:	45 85 03             	test   DWORD PTR [r11],r8d
+   10e9b:	45 85 0b             	test   DWORD PTR [r11],r9d
+   10e9e:	45 85 13             	test   DWORD PTR [r11],r10d
+   10ea1:	45 85 1b             	test   DWORD PTR [r11],r11d
+   10ea4:	45 85 23             	test   DWORD PTR [r11],r12d
+   10ea7:	45 85 2b             	test   DWORD PTR [r11],r13d
+   10eaa:	45 85 33             	test   DWORD PTR [r11],r14d
+   10ead:	45 85 3b             	test   DWORD PTR [r11],r15d
+   10eb0:	41 85 04 24          	test   DWORD PTR [r12],eax
+   10eb4:	41 85 0c 24          	test   DWORD PTR [r12],ecx
+   10eb8:	41 85 14 24          	test   DWORD PTR [r12],edx
+   10ebc:	41 85 1c 24          	test   DWORD PTR [r12],ebx
+   10ec0:	41 85 24 24          	test   DWORD PTR [r12],esp
+   10ec4:	41 85 2c 24          	test   DWORD PTR [r12],ebp
+   10ec8:	41 85 34 24          	test   DWORD PTR [r12],esi
+   10ecc:	41 85 3c 24          	test   DWORD PTR [r12],edi
+   10ed0:	45 85 04 24          	test   DWORD PTR [r12],r8d
+   10ed4:	45 85 0c 24          	test   DWORD PTR [r12],r9d
+   10ed8:	45 85 14 24          	test   DWORD PTR [r12],r10d
+   10edc:	45 85 1c 24          	test   DWORD PTR [r12],r11d
+   10ee0:	45 85 24 24          	test   DWORD PTR [r12],r12d
+   10ee4:	45 85 2c 24          	test   DWORD PTR [r12],r13d
+   10ee8:	45 85 34 24          	test   DWORD PTR [r12],r14d
+   10eec:	45 85 3c 24          	test   DWORD PTR [r12],r15d
+   10ef0:	41 85 45 00          	test   DWORD PTR [r13+0x0],eax
+   10ef4:	41 85 4d 00          	test   DWORD PTR [r13+0x0],ecx
+   10ef8:	41 85 55 00          	test   DWORD PTR [r13+0x0],edx
+   10efc:	41 85 5d 00          	test   DWORD PTR [r13+0x0],ebx
+   10f00:	41 85 65 00          	test   DWORD PTR [r13+0x0],esp
+   10f04:	41 85 6d 00          	test   DWORD PTR [r13+0x0],ebp
+   10f08:	41 85 75 00          	test   DWORD PTR [r13+0x0],esi
+   10f0c:	41 85 7d 00          	test   DWORD PTR [r13+0x0],edi
+   10f10:	45 85 45 00          	test   DWORD PTR [r13+0x0],r8d
+   10f14:	45 85 4d 00          	test   DWORD PTR [r13+0x0],r9d
+   10f18:	45 85 55 00          	test   DWORD PTR [r13+0x0],r10d
+   10f1c:	45 85 5d 00          	test   DWORD PTR [r13+0x0],r11d
+   10f20:	45 85 65 00          	test   DWORD PTR [r13+0x0],r12d
+   10f24:	45 85 6d 00          	test   DWORD PTR [r13+0x0],r13d
+   10f28:	45 85 75 00          	test   DWORD PTR [r13+0x0],r14d
+   10f2c:	45 85 7d 00          	test   DWORD PTR [r13+0x0],r15d
+   10f30:	41 85 06             	test   DWORD PTR [r14],eax
+   10f33:	41 85 0e             	test   DWORD PTR [r14],ecx
+   10f36:	41 85 16             	test   DWORD PTR [r14],edx
+   10f39:	41 85 1e             	test   DWORD PTR [r14],ebx
+   10f3c:	41 85 26             	test   DWORD PTR [r14],esp
+   10f3f:	41 85 2e             	test   DWORD PTR [r14],ebp
+   10f42:	41 85 36             	test   DWORD PTR [r14],esi
+   10f45:	41 85 3e             	test   DWORD PTR [r14],edi
+   10f48:	45 85 06             	test   DWORD PTR [r14],r8d
+   10f4b:	45 85 0e             	test   DWORD PTR [r14],r9d
+   10f4e:	45 85 16             	test   DWORD PTR [r14],r10d
+   10f51:	45 85 1e             	test   DWORD PTR [r14],r11d
+   10f54:	45 85 26             	test   DWORD PTR [r14],r12d
+   10f57:	45 85 2e             	test   DWORD PTR [r14],r13d
+   10f5a:	45 85 36             	test   DWORD PTR [r14],r14d
+   10f5d:	45 85 3e             	test   DWORD PTR [r14],r15d
+   10f60:	41 85 07             	test   DWORD PTR [r15],eax
+   10f63:	41 85 0f             	test   DWORD PTR [r15],ecx
+   10f66:	41 85 17             	test   DWORD PTR [r15],edx
+   10f69:	41 85 1f             	test   DWORD PTR [r15],ebx
+   10f6c:	41 85 27             	test   DWORD PTR [r15],esp
+   10f6f:	41 85 2f             	test   DWORD PTR [r15],ebp
+   10f72:	41 85 37             	test   DWORD PTR [r15],esi
+   10f75:	41 85 3f             	test   DWORD PTR [r15],edi
+   10f78:	45 85 07             	test   DWORD PTR [r15],r8d
+   10f7b:	45 85 0f             	test   DWORD PTR [r15],r9d
+   10f7e:	45 85 17             	test   DWORD PTR [r15],r10d
+   10f81:	45 85 1f             	test   DWORD PTR [r15],r11d
+   10f84:	45 85 27             	test   DWORD PTR [r15],r12d
+   10f87:	45 85 2f             	test   DWORD PTR [r15],r13d
+   10f8a:	45 85 37             	test   DWORD PTR [r15],r14d
+   10f8d:	45 85 3f             	test   DWORD PTR [r15],r15d
+   10f90:	66 85 00             	test   WORD PTR [rax],ax
+   10f93:	66 85 08             	test   WORD PTR [rax],cx
+   10f96:	66 85 10             	test   WORD PTR [rax],dx
+   10f99:	66 85 18             	test   WORD PTR [rax],bx
+   10f9c:	66 85 20             	test   WORD PTR [rax],sp
+   10f9f:	66 85 28             	test   WORD PTR [rax],bp
+   10fa2:	66 85 30             	test   WORD PTR [rax],si
+   10fa5:	66 85 38             	test   WORD PTR [rax],di
+   10fa8:	66 44 85 00          	test   WORD PTR [rax],r8w
+   10fac:	66 44 85 08          	test   WORD PTR [rax],r9w
+   10fb0:	66 44 85 10          	test   WORD PTR [rax],r10w
+   10fb4:	66 44 85 18          	test   WORD PTR [rax],r11w
+   10fb8:	66 44 85 20          	test   WORD PTR [rax],r12w
+   10fbc:	66 44 85 28          	test   WORD PTR [rax],r13w
+   10fc0:	66 44 85 30          	test   WORD PTR [rax],r14w
+   10fc4:	66 44 85 38          	test   WORD PTR [rax],r15w
+   10fc8:	66 85 01             	test   WORD PTR [rcx],ax
+   10fcb:	66 85 09             	test   WORD PTR [rcx],cx
+   10fce:	66 85 11             	test   WORD PTR [rcx],dx
+   10fd1:	66 85 19             	test   WORD PTR [rcx],bx
+   10fd4:	66 85 21             	test   WORD PTR [rcx],sp
+   10fd7:	66 85 29             	test   WORD PTR [rcx],bp
+   10fda:	66 85 31             	test   WORD PTR [rcx],si
+   10fdd:	66 85 39             	test   WORD PTR [rcx],di
+   10fe0:	66 44 85 01          	test   WORD PTR [rcx],r8w
+   10fe4:	66 44 85 09          	test   WORD PTR [rcx],r9w
+   10fe8:	66 44 85 11          	test   WORD PTR [rcx],r10w
+   10fec:	66 44 85 19          	test   WORD PTR [rcx],r11w
+   10ff0:	66 44 85 21          	test   WORD PTR [rcx],r12w
+   10ff4:	66 44 85 29          	test   WORD PTR [rcx],r13w
+   10ff8:	66 44 85 31          	test   WORD PTR [rcx],r14w
+   10ffc:	66 44 85 39          	test   WORD PTR [rcx],r15w
+   11000:	66 85 02             	test   WORD PTR [rdx],ax
+   11003:	66 85 0a             	test   WORD PTR [rdx],cx
+   11006:	66 85 12             	test   WORD PTR [rdx],dx
+   11009:	66 85 1a             	test   WORD PTR [rdx],bx
+   1100c:	66 85 22             	test   WORD PTR [rdx],sp
+   1100f:	66 85 2a             	test   WORD PTR [rdx],bp
+   11012:	66 85 32             	test   WORD PTR [rdx],si
+   11015:	66 85 3a             	test   WORD PTR [rdx],di
+   11018:	66 44 85 02          	test   WORD PTR [rdx],r8w
+   1101c:	66 44 85 0a          	test   WORD PTR [rdx],r9w
+   11020:	66 44 85 12          	test   WORD PTR [rdx],r10w
+   11024:	66 44 85 1a          	test   WORD PTR [rdx],r11w
+   11028:	66 44 85 22          	test   WORD PTR [rdx],r12w
+   1102c:	66 44 85 2a          	test   WORD PTR [rdx],r13w
+   11030:	66 44 85 32          	test   WORD PTR [rdx],r14w
+   11034:	66 44 85 3a          	test   WORD PTR [rdx],r15w
+   11038:	66 85 03             	test   WORD PTR [rbx],ax
+   1103b:	66 85 0b             	test   WORD PTR [rbx],cx
+   1103e:	66 85 13             	test   WORD PTR [rbx],dx
+   11041:	66 85 1b             	test   WORD PTR [rbx],bx
+   11044:	66 85 23             	test   WORD PTR [rbx],sp
+   11047:	66 85 2b             	test   WORD PTR [rbx],bp
+   1104a:	66 85 33             	test   WORD PTR [rbx],si
+   1104d:	66 85 3b             	test   WORD PTR [rbx],di
+   11050:	66 44 85 03          	test   WORD PTR [rbx],r8w
+   11054:	66 44 85 0b          	test   WORD PTR [rbx],r9w
+   11058:	66 44 85 13          	test   WORD PTR [rbx],r10w
+   1105c:	66 44 85 1b          	test   WORD PTR [rbx],r11w
+   11060:	66 44 85 23          	test   WORD PTR [rbx],r12w
+   11064:	66 44 85 2b          	test   WORD PTR [rbx],r13w
+   11068:	66 44 85 33          	test   WORD PTR [rbx],r14w
+   1106c:	66 44 85 3b          	test   WORD PTR [rbx],r15w
+   11070:	66 85 04 24          	test   WORD PTR [rsp],ax
+   11074:	66 85 0c 24          	test   WORD PTR [rsp],cx
+   11078:	66 85 14 24          	test   WORD PTR [rsp],dx
+   1107c:	66 85 1c 24          	test   WORD PTR [rsp],bx
+   11080:	66 85 24 24          	test   WORD PTR [rsp],sp
+   11084:	66 85 2c 24          	test   WORD PTR [rsp],bp
+   11088:	66 85 34 24          	test   WORD PTR [rsp],si
+   1108c:	66 85 3c 24          	test   WORD PTR [rsp],di
+   11090:	66 44 85 04 24       	test   WORD PTR [rsp],r8w
+   11095:	66 44 85 0c 24       	test   WORD PTR [rsp],r9w
+   1109a:	66 44 85 14 24       	test   WORD PTR [rsp],r10w
+   1109f:	66 44 85 1c 24       	test   WORD PTR [rsp],r11w
+   110a4:	66 44 85 24 24       	test   WORD PTR [rsp],r12w
+   110a9:	66 44 85 2c 24       	test   WORD PTR [rsp],r13w
+   110ae:	66 44 85 34 24       	test   WORD PTR [rsp],r14w
+   110b3:	66 44 85 3c 24       	test   WORD PTR [rsp],r15w
+   110b8:	66 85 45 00          	test   WORD PTR [rbp+0x0],ax
+   110bc:	66 85 4d 00          	test   WORD PTR [rbp+0x0],cx
+   110c0:	66 85 55 00          	test   WORD PTR [rbp+0x0],dx
+   110c4:	66 85 5d 00          	test   WORD PTR [rbp+0x0],bx
+   110c8:	66 85 65 00          	test   WORD PTR [rbp+0x0],sp
+   110cc:	66 85 6d 00          	test   WORD PTR [rbp+0x0],bp
+   110d0:	66 85 75 00          	test   WORD PTR [rbp+0x0],si
+   110d4:	66 85 7d 00          	test   WORD PTR [rbp+0x0],di
+   110d8:	66 44 85 45 00       	test   WORD PTR [rbp+0x0],r8w
+   110dd:	66 44 85 4d 00       	test   WORD PTR [rbp+0x0],r9w
+   110e2:	66 44 85 55 00       	test   WORD PTR [rbp+0x0],r10w
+   110e7:	66 44 85 5d 00       	test   WORD PTR [rbp+0x0],r11w
+   110ec:	66 44 85 65 00       	test   WORD PTR [rbp+0x0],r12w
+   110f1:	66 44 85 6d 00       	test   WORD PTR [rbp+0x0],r13w
+   110f6:	66 44 85 75 00       	test   WORD PTR [rbp+0x0],r14w
+   110fb:	66 44 85 7d 00       	test   WORD PTR [rbp+0x0],r15w
+   11100:	66 85 06             	test   WORD PTR [rsi],ax
+   11103:	66 85 0e             	test   WORD PTR [rsi],cx
+   11106:	66 85 16             	test   WORD PTR [rsi],dx
+   11109:	66 85 1e             	test   WORD PTR [rsi],bx
+   1110c:	66 85 26             	test   WORD PTR [rsi],sp
+   1110f:	66 85 2e             	test   WORD PTR [rsi],bp
+   11112:	66 85 36             	test   WORD PTR [rsi],si
+   11115:	66 85 3e             	test   WORD PTR [rsi],di
+   11118:	66 44 85 06          	test   WORD PTR [rsi],r8w
+   1111c:	66 44 85 0e          	test   WORD PTR [rsi],r9w
+   11120:	66 44 85 16          	test   WORD PTR [rsi],r10w
+   11124:	66 44 85 1e          	test   WORD PTR [rsi],r11w
+   11128:	66 44 85 26          	test   WORD PTR [rsi],r12w
+   1112c:	66 44 85 2e          	test   WORD PTR [rsi],r13w
+   11130:	66 44 85 36          	test   WORD PTR [rsi],r14w
+   11134:	66 44 85 3e          	test   WORD PTR [rsi],r15w
+   11138:	66 85 07             	test   WORD PTR [rdi],ax
+   1113b:	66 85 0f             	test   WORD PTR [rdi],cx
+   1113e:	66 85 17             	test   WORD PTR [rdi],dx
+   11141:	66 85 1f             	test   WORD PTR [rdi],bx
+   11144:	66 85 27             	test   WORD PTR [rdi],sp
+   11147:	66 85 2f             	test   WORD PTR [rdi],bp
+   1114a:	66 85 37             	test   WORD PTR [rdi],si
+   1114d:	66 85 3f             	test   WORD PTR [rdi],di
+   11150:	66 44 85 07          	test   WORD PTR [rdi],r8w
+   11154:	66 44 85 0f          	test   WORD PTR [rdi],r9w
+   11158:	66 44 85 17          	test   WORD PTR [rdi],r10w
+   1115c:	66 44 85 1f          	test   WORD PTR [rdi],r11w
+   11160:	66 44 85 27          	test   WORD PTR [rdi],r12w
+   11164:	66 44 85 2f          	test   WORD PTR [rdi],r13w
+   11168:	66 44 85 37          	test   WORD PTR [rdi],r14w
+   1116c:	66 44 85 3f          	test   WORD PTR [rdi],r15w
+   11170:	66 41 85 00          	test   WORD PTR [r8],ax
+   11174:	66 41 85 08          	test   WORD PTR [r8],cx
+   11178:	66 41 85 10          	test   WORD PTR [r8],dx
+   1117c:	66 41 85 18          	test   WORD PTR [r8],bx
+   11180:	66 41 85 20          	test   WORD PTR [r8],sp
+   11184:	66 41 85 28          	test   WORD PTR [r8],bp
+   11188:	66 41 85 30          	test   WORD PTR [r8],si
+   1118c:	66 41 85 38          	test   WORD PTR [r8],di
+   11190:	66 45 85 00          	test   WORD PTR [r8],r8w
+   11194:	66 45 85 08          	test   WORD PTR [r8],r9w
+   11198:	66 45 85 10          	test   WORD PTR [r8],r10w
+   1119c:	66 45 85 18          	test   WORD PTR [r8],r11w
+   111a0:	66 45 85 20          	test   WORD PTR [r8],r12w
+   111a4:	66 45 85 28          	test   WORD PTR [r8],r13w
+   111a8:	66 45 85 30          	test   WORD PTR [r8],r14w
+   111ac:	66 45 85 38          	test   WORD PTR [r8],r15w
+   111b0:	66 41 85 01          	test   WORD PTR [r9],ax
+   111b4:	66 41 85 09          	test   WORD PTR [r9],cx
+   111b8:	66 41 85 11          	test   WORD PTR [r9],dx
+   111bc:	66 41 85 19          	test   WORD PTR [r9],bx
+   111c0:	66 41 85 21          	test   WORD PTR [r9],sp
+   111c4:	66 41 85 29          	test   WORD PTR [r9],bp
+   111c8:	66 41 85 31          	test   WORD PTR [r9],si
+   111cc:	66 41 85 39          	test   WORD PTR [r9],di
+   111d0:	66 45 85 01          	test   WORD PTR [r9],r8w
+   111d4:	66 45 85 09          	test   WORD PTR [r9],r9w
+   111d8:	66 45 85 11          	test   WORD PTR [r9],r10w
+   111dc:	66 45 85 19          	test   WORD PTR [r9],r11w
+   111e0:	66 45 85 21          	test   WORD PTR [r9],r12w
+   111e4:	66 45 85 29          	test   WORD PTR [r9],r13w
+   111e8:	66 45 85 31          	test   WORD PTR [r9],r14w
+   111ec:	66 45 85 39          	test   WORD PTR [r9],r15w
+   111f0:	66 41 85 02          	test   WORD PTR [r10],ax
+   111f4:	66 41 85 0a          	test   WORD PTR [r10],cx
+   111f8:	66 41 85 12          	test   WORD PTR [r10],dx
+   111fc:	66 41 85 1a          	test   WORD PTR [r10],bx
+   11200:	66 41 85 22          	test   WORD PTR [r10],sp
+   11204:	66 41 85 2a          	test   WORD PTR [r10],bp
+   11208:	66 41 85 32          	test   WORD PTR [r10],si
+   1120c:	66 41 85 3a          	test   WORD PTR [r10],di
+   11210:	66 45 85 02          	test   WORD PTR [r10],r8w
+   11214:	66 45 85 0a          	test   WORD PTR [r10],r9w
+   11218:	66 45 85 12          	test   WORD PTR [r10],r10w
+   1121c:	66 45 85 1a          	test   WORD PTR [r10],r11w
+   11220:	66 45 85 22          	test   WORD PTR [r10],r12w
+   11224:	66 45 85 2a          	test   WORD PTR [r10],r13w
+   11228:	66 45 85 32          	test   WORD PTR [r10],r14w
+   1122c:	66 45 85 3a          	test   WORD PTR [r10],r15w
+   11230:	66 41 85 03          	test   WORD PTR [r11],ax
+   11234:	66 41 85 0b          	test   WORD PTR [r11],cx
+   11238:	66 41 85 13          	test   WORD PTR [r11],dx
+   1123c:	66 41 85 1b          	test   WORD PTR [r11],bx
+   11240:	66 41 85 23          	test   WORD PTR [r11],sp
+   11244:	66 41 85 2b          	test   WORD PTR [r11],bp
+   11248:	66 41 85 33          	test   WORD PTR [r11],si
+   1124c:	66 41 85 3b          	test   WORD PTR [r11],di
+   11250:	66 45 85 03          	test   WORD PTR [r11],r8w
+   11254:	66 45 85 0b          	test   WORD PTR [r11],r9w
+   11258:	66 45 85 13          	test   WORD PTR [r11],r10w
+   1125c:	66 45 85 1b          	test   WORD PTR [r11],r11w
+   11260:	66 45 85 23          	test   WORD PTR [r11],r12w
+   11264:	66 45 85 2b          	test   WORD PTR [r11],r13w
+   11268:	66 45 85 33          	test   WORD PTR [r11],r14w
+   1126c:	66 45 85 3b          	test   WORD PTR [r11],r15w
+   11270:	66 41 85 04 24       	test   WORD PTR [r12],ax
+   11275:	66 41 85 0c 24       	test   WORD PTR [r12],cx
+   1127a:	66 41 85 14 24       	test   WORD PTR [r12],dx
+   1127f:	66 41 85 1c 24       	test   WORD PTR [r12],bx
+   11284:	66 41 85 24 24       	test   WORD PTR [r12],sp
+   11289:	66 41 85 2c 24       	test   WORD PTR [r12],bp
+   1128e:	66 41 85 34 24       	test   WORD PTR [r12],si
+   11293:	66 41 85 3c 24       	test   WORD PTR [r12],di
+   11298:	66 45 85 04 24       	test   WORD PTR [r12],r8w
+   1129d:	66 45 85 0c 24       	test   WORD PTR [r12],r9w
+   112a2:	66 45 85 14 24       	test   WORD PTR [r12],r10w
+   112a7:	66 45 85 1c 24       	test   WORD PTR [r12],r11w
+   112ac:	66 45 85 24 24       	test   WORD PTR [r12],r12w
+   112b1:	66 45 85 2c 24       	test   WORD PTR [r12],r13w
+   112b6:	66 45 85 34 24       	test   WORD PTR [r12],r14w
+   112bb:	66 45 85 3c 24       	test   WORD PTR [r12],r15w
+   112c0:	66 41 85 45 00       	test   WORD PTR [r13+0x0],ax
+   112c5:	66 41 85 4d 00       	test   WORD PTR [r13+0x0],cx
+   112ca:	66 41 85 55 00       	test   WORD PTR [r13+0x0],dx
+   112cf:	66 41 85 5d 00       	test   WORD PTR [r13+0x0],bx
+   112d4:	66 41 85 65 00       	test   WORD PTR [r13+0x0],sp
+   112d9:	66 41 85 6d 00       	test   WORD PTR [r13+0x0],bp
+   112de:	66 41 85 75 00       	test   WORD PTR [r13+0x0],si
+   112e3:	66 41 85 7d 00       	test   WORD PTR [r13+0x0],di
+   112e8:	66 45 85 45 00       	test   WORD PTR [r13+0x0],r8w
+   112ed:	66 45 85 4d 00       	test   WORD PTR [r13+0x0],r9w
+   112f2:	66 45 85 55 00       	test   WORD PTR [r13+0x0],r10w
+   112f7:	66 45 85 5d 00       	test   WORD PTR [r13+0x0],r11w
+   112fc:	66 45 85 65 00       	test   WORD PTR [r13+0x0],r12w
+   11301:	66 45 85 6d 00       	test   WORD PTR [r13+0x0],r13w
+   11306:	66 45 85 75 00       	test   WORD PTR [r13+0x0],r14w
+   1130b:	66 45 85 7d 00       	test   WORD PTR [r13+0x0],r15w
+   11310:	66 41 85 06          	test   WORD PTR [r14],ax
+   11314:	66 41 85 0e          	test   WORD PTR [r14],cx
+   11318:	66 41 85 16          	test   WORD PTR [r14],dx
+   1131c:	66 41 85 1e          	test   WORD PTR [r14],bx
+   11320:	66 41 85 26          	test   WORD PTR [r14],sp
+   11324:	66 41 85 2e          	test   WORD PTR [r14],bp
+   11328:	66 41 85 36          	test   WORD PTR [r14],si
+   1132c:	66 41 85 3e          	test   WORD PTR [r14],di
+   11330:	66 45 85 06          	test   WORD PTR [r14],r8w
+   11334:	66 45 85 0e          	test   WORD PTR [r14],r9w
+   11338:	66 45 85 16          	test   WORD PTR [r14],r10w
+   1133c:	66 45 85 1e          	test   WORD PTR [r14],r11w
+   11340:	66 45 85 26          	test   WORD PTR [r14],r12w
+   11344:	66 45 85 2e          	test   WORD PTR [r14],r13w
+   11348:	66 45 85 36          	test   WORD PTR [r14],r14w
+   1134c:	66 45 85 3e          	test   WORD PTR [r14],r15w
+   11350:	66 41 85 07          	test   WORD PTR [r15],ax
+   11354:	66 41 85 0f          	test   WORD PTR [r15],cx
+   11358:	66 41 85 17          	test   WORD PTR [r15],dx
+   1135c:	66 41 85 1f          	test   WORD PTR [r15],bx
+   11360:	66 41 85 27          	test   WORD PTR [r15],sp
+   11364:	66 41 85 2f          	test   WORD PTR [r15],bp
+   11368:	66 41 85 37          	test   WORD PTR [r15],si
+   1136c:	66 41 85 3f          	test   WORD PTR [r15],di
+   11370:	66 45 85 07          	test   WORD PTR [r15],r8w
+   11374:	66 45 85 0f          	test   WORD PTR [r15],r9w
+   11378:	66 45 85 17          	test   WORD PTR [r15],r10w
+   1137c:	66 45 85 1f          	test   WORD PTR [r15],r11w
+   11380:	66 45 85 27          	test   WORD PTR [r15],r12w
+   11384:	66 45 85 2f          	test   WORD PTR [r15],r13w
+   11388:	66 45 85 37          	test   WORD PTR [r15],r14w
+   1138c:	66 45 85 3f          	test   WORD PTR [r15],r15w
+   11390:	84 00                	test   BYTE PTR [rax],al
+   11392:	84 08                	test   BYTE PTR [rax],cl
+   11394:	84 10                	test   BYTE PTR [rax],dl
+   11396:	84 18                	test   BYTE PTR [rax],bl
+   11398:	84 20                	test   BYTE PTR [rax],ah
+   1139a:	84 28                	test   BYTE PTR [rax],ch
+   1139c:	84 30                	test   BYTE PTR [rax],dh
+   1139e:	84 38                	test   BYTE PTR [rax],bh
+   113a0:	44 84 00             	test   BYTE PTR [rax],r8b
+   113a3:	44 84 08             	test   BYTE PTR [rax],r9b
+   113a6:	44 84 10             	test   BYTE PTR [rax],r10b
+   113a9:	44 84 18             	test   BYTE PTR [rax],r11b
+   113ac:	44 84 20             	test   BYTE PTR [rax],r12b
+   113af:	44 84 28             	test   BYTE PTR [rax],r13b
+   113b2:	44 84 30             	test   BYTE PTR [rax],r14b
+   113b5:	44 84 38             	test   BYTE PTR [rax],r15b
+   113b8:	40 84 20             	test   BYTE PTR [rax],spl
+   113bb:	40 84 28             	test   BYTE PTR [rax],bpl
+   113be:	40 84 30             	test   BYTE PTR [rax],sil
+   113c1:	40 84 38             	test   BYTE PTR [rax],dil
+   113c4:	84 01                	test   BYTE PTR [rcx],al
+   113c6:	84 09                	test   BYTE PTR [rcx],cl
+   113c8:	84 11                	test   BYTE PTR [rcx],dl
+   113ca:	84 19                	test   BYTE PTR [rcx],bl
+   113cc:	84 21                	test   BYTE PTR [rcx],ah
+   113ce:	84 29                	test   BYTE PTR [rcx],ch
+   113d0:	84 31                	test   BYTE PTR [rcx],dh
+   113d2:	84 39                	test   BYTE PTR [rcx],bh
+   113d4:	44 84 01             	test   BYTE PTR [rcx],r8b
+   113d7:	44 84 09             	test   BYTE PTR [rcx],r9b
+   113da:	44 84 11             	test   BYTE PTR [rcx],r10b
+   113dd:	44 84 19             	test   BYTE PTR [rcx],r11b
+   113e0:	44 84 21             	test   BYTE PTR [rcx],r12b
+   113e3:	44 84 29             	test   BYTE PTR [rcx],r13b
+   113e6:	44 84 31             	test   BYTE PTR [rcx],r14b
+   113e9:	44 84 39             	test   BYTE PTR [rcx],r15b
+   113ec:	40 84 21             	test   BYTE PTR [rcx],spl
+   113ef:	40 84 29             	test   BYTE PTR [rcx],bpl
+   113f2:	40 84 31             	test   BYTE PTR [rcx],sil
+   113f5:	40 84 39             	test   BYTE PTR [rcx],dil
+   113f8:	84 02                	test   BYTE PTR [rdx],al
+   113fa:	84 0a                	test   BYTE PTR [rdx],cl
+   113fc:	84 12                	test   BYTE PTR [rdx],dl
+   113fe:	84 1a                	test   BYTE PTR [rdx],bl
+   11400:	84 22                	test   BYTE PTR [rdx],ah
+   11402:	84 2a                	test   BYTE PTR [rdx],ch
+   11404:	84 32                	test   BYTE PTR [rdx],dh
+   11406:	84 3a                	test   BYTE PTR [rdx],bh
+   11408:	44 84 02             	test   BYTE PTR [rdx],r8b
+   1140b:	44 84 0a             	test   BYTE PTR [rdx],r9b
+   1140e:	44 84 12             	test   BYTE PTR [rdx],r10b
+   11411:	44 84 1a             	test   BYTE PTR [rdx],r11b
+   11414:	44 84 22             	test   BYTE PTR [rdx],r12b
+   11417:	44 84 2a             	test   BYTE PTR [rdx],r13b
+   1141a:	44 84 32             	test   BYTE PTR [rdx],r14b
+   1141d:	44 84 3a             	test   BYTE PTR [rdx],r15b
+   11420:	40 84 22             	test   BYTE PTR [rdx],spl
+   11423:	40 84 2a             	test   BYTE PTR [rdx],bpl
+   11426:	40 84 32             	test   BYTE PTR [rdx],sil
+   11429:	40 84 3a             	test   BYTE PTR [rdx],dil
+   1142c:	84 03                	test   BYTE PTR [rbx],al
+   1142e:	84 0b                	test   BYTE PTR [rbx],cl
+   11430:	84 13                	test   BYTE PTR [rbx],dl
+   11432:	84 1b                	test   BYTE PTR [rbx],bl
+   11434:	84 23                	test   BYTE PTR [rbx],ah
+   11436:	84 2b                	test   BYTE PTR [rbx],ch
+   11438:	84 33                	test   BYTE PTR [rbx],dh
+   1143a:	84 3b                	test   BYTE PTR [rbx],bh
+   1143c:	44 84 03             	test   BYTE PTR [rbx],r8b
+   1143f:	44 84 0b             	test   BYTE PTR [rbx],r9b
+   11442:	44 84 13             	test   BYTE PTR [rbx],r10b
+   11445:	44 84 1b             	test   BYTE PTR [rbx],r11b
+   11448:	44 84 23             	test   BYTE PTR [rbx],r12b
+   1144b:	44 84 2b             	test   BYTE PTR [rbx],r13b
+   1144e:	44 84 33             	test   BYTE PTR [rbx],r14b
+   11451:	44 84 3b             	test   BYTE PTR [rbx],r15b
+   11454:	40 84 23             	test   BYTE PTR [rbx],spl
+   11457:	40 84 2b             	test   BYTE PTR [rbx],bpl
+   1145a:	40 84 33             	test   BYTE PTR [rbx],sil
+   1145d:	40 84 3b             	test   BYTE PTR [rbx],dil
+   11460:	84 04 24             	test   BYTE PTR [rsp],al
+   11463:	84 0c 24             	test   BYTE PTR [rsp],cl
+   11466:	84 14 24             	test   BYTE PTR [rsp],dl
+   11469:	84 1c 24             	test   BYTE PTR [rsp],bl
+   1146c:	84 24 24             	test   BYTE PTR [rsp],ah
+   1146f:	84 2c 24             	test   BYTE PTR [rsp],ch
+   11472:	84 34 24             	test   BYTE PTR [rsp],dh
+   11475:	84 3c 24             	test   BYTE PTR [rsp],bh
+   11478:	44 84 04 24          	test   BYTE PTR [rsp],r8b
+   1147c:	44 84 0c 24          	test   BYTE PTR [rsp],r9b
+   11480:	44 84 14 24          	test   BYTE PTR [rsp],r10b
+   11484:	44 84 1c 24          	test   BYTE PTR [rsp],r11b
+   11488:	44 84 24 24          	test   BYTE PTR [rsp],r12b
+   1148c:	44 84 2c 24          	test   BYTE PTR [rsp],r13b
+   11490:	44 84 34 24          	test   BYTE PTR [rsp],r14b
+   11494:	44 84 3c 24          	test   BYTE PTR [rsp],r15b
+   11498:	40 84 24 24          	test   BYTE PTR [rsp],spl
+   1149c:	40 84 2c 24          	test   BYTE PTR [rsp],bpl
+   114a0:	40 84 34 24          	test   BYTE PTR [rsp],sil
+   114a4:	40 84 3c 24          	test   BYTE PTR [rsp],dil
+   114a8:	84 45 00             	test   BYTE PTR [rbp+0x0],al
+   114ab:	84 4d 00             	test   BYTE PTR [rbp+0x0],cl
+   114ae:	84 55 00             	test   BYTE PTR [rbp+0x0],dl
+   114b1:	84 5d 00             	test   BYTE PTR [rbp+0x0],bl
+   114b4:	84 65 00             	test   BYTE PTR [rbp+0x0],ah
+   114b7:	84 6d 00             	test   BYTE PTR [rbp+0x0],ch
+   114ba:	84 75 00             	test   BYTE PTR [rbp+0x0],dh
+   114bd:	84 7d 00             	test   BYTE PTR [rbp+0x0],bh
+   114c0:	44 84 45 00          	test   BYTE PTR [rbp+0x0],r8b
+   114c4:	44 84 4d 00          	test   BYTE PTR [rbp+0x0],r9b
+   114c8:	44 84 55 00          	test   BYTE PTR [rbp+0x0],r10b
+   114cc:	44 84 5d 00          	test   BYTE PTR [rbp+0x0],r11b
+   114d0:	44 84 65 00          	test   BYTE PTR [rbp+0x0],r12b
+   114d4:	44 84 6d 00          	test   BYTE PTR [rbp+0x0],r13b
+   114d8:	44 84 75 00          	test   BYTE PTR [rbp+0x0],r14b
+   114dc:	44 84 7d 00          	test   BYTE PTR [rbp+0x0],r15b
+   114e0:	40 84 65 00          	test   BYTE PTR [rbp+0x0],spl
+   114e4:	40 84 6d 00          	test   BYTE PTR [rbp+0x0],bpl
+   114e8:	40 84 75 00          	test   BYTE PTR [rbp+0x0],sil
+   114ec:	40 84 7d 00          	test   BYTE PTR [rbp+0x0],dil
+   114f0:	84 06                	test   BYTE PTR [rsi],al
+   114f2:	84 0e                	test   BYTE PTR [rsi],cl
+   114f4:	84 16                	test   BYTE PTR [rsi],dl
+   114f6:	84 1e                	test   BYTE PTR [rsi],bl
+   114f8:	84 26                	test   BYTE PTR [rsi],ah
+   114fa:	84 2e                	test   BYTE PTR [rsi],ch
+   114fc:	84 36                	test   BYTE PTR [rsi],dh
+   114fe:	84 3e                	test   BYTE PTR [rsi],bh
+   11500:	44 84 06             	test   BYTE PTR [rsi],r8b
+   11503:	44 84 0e             	test   BYTE PTR [rsi],r9b
+   11506:	44 84 16             	test   BYTE PTR [rsi],r10b
+   11509:	44 84 1e             	test   BYTE PTR [rsi],r11b
+   1150c:	44 84 26             	test   BYTE PTR [rsi],r12b
+   1150f:	44 84 2e             	test   BYTE PTR [rsi],r13b
+   11512:	44 84 36             	test   BYTE PTR [rsi],r14b
+   11515:	44 84 3e             	test   BYTE PTR [rsi],r15b
+   11518:	40 84 26             	test   BYTE PTR [rsi],spl
+   1151b:	40 84 2e             	test   BYTE PTR [rsi],bpl
+   1151e:	40 84 36             	test   BYTE PTR [rsi],sil
+   11521:	40 84 3e             	test   BYTE PTR [rsi],dil
+   11524:	84 07                	test   BYTE PTR [rdi],al
+   11526:	84 0f                	test   BYTE PTR [rdi],cl
+   11528:	84 17                	test   BYTE PTR [rdi],dl
+   1152a:	84 1f                	test   BYTE PTR [rdi],bl
+   1152c:	84 27                	test   BYTE PTR [rdi],ah
+   1152e:	84 2f                	test   BYTE PTR [rdi],ch
+   11530:	84 37                	test   BYTE PTR [rdi],dh
+   11532:	84 3f                	test   BYTE PTR [rdi],bh
+   11534:	44 84 07             	test   BYTE PTR [rdi],r8b
+   11537:	44 84 0f             	test   BYTE PTR [rdi],r9b
+   1153a:	44 84 17             	test   BYTE PTR [rdi],r10b
+   1153d:	44 84 1f             	test   BYTE PTR [rdi],r11b
+   11540:	44 84 27             	test   BYTE PTR [rdi],r12b
+   11543:	44 84 2f             	test   BYTE PTR [rdi],r13b
+   11546:	44 84 37             	test   BYTE PTR [rdi],r14b
+   11549:	44 84 3f             	test   BYTE PTR [rdi],r15b
+   1154c:	40 84 27             	test   BYTE PTR [rdi],spl
+   1154f:	40 84 2f             	test   BYTE PTR [rdi],bpl
+   11552:	40 84 37             	test   BYTE PTR [rdi],sil
+   11555:	40 84 3f             	test   BYTE PTR [rdi],dil
+   11558:	41 84 00             	test   BYTE PTR [r8],al
+   1155b:	41 84 08             	test   BYTE PTR [r8],cl
+   1155e:	41 84 10             	test   BYTE PTR [r8],dl
+   11561:	41 84 18             	test   BYTE PTR [r8],bl
+   11564:	41 84 20             	test   BYTE PTR [r8],spl
+   11567:	41 84 28             	test   BYTE PTR [r8],bpl
+   1156a:	41 84 30             	test   BYTE PTR [r8],sil
+   1156d:	41 84 38             	test   BYTE PTR [r8],dil
+   11570:	45 84 00             	test   BYTE PTR [r8],r8b
+   11573:	45 84 08             	test   BYTE PTR [r8],r9b
+   11576:	45 84 10             	test   BYTE PTR [r8],r10b
+   11579:	45 84 18             	test   BYTE PTR [r8],r11b
+   1157c:	45 84 20             	test   BYTE PTR [r8],r12b
+   1157f:	45 84 28             	test   BYTE PTR [r8],r13b
+   11582:	45 84 30             	test   BYTE PTR [r8],r14b
+   11585:	45 84 38             	test   BYTE PTR [r8],r15b
+   11588:	41 84 20             	test   BYTE PTR [r8],spl
+   1158b:	41 84 28             	test   BYTE PTR [r8],bpl
+   1158e:	41 84 30             	test   BYTE PTR [r8],sil
+   11591:	41 84 38             	test   BYTE PTR [r8],dil
+   11594:	41 84 01             	test   BYTE PTR [r9],al
+   11597:	41 84 09             	test   BYTE PTR [r9],cl
+   1159a:	41 84 11             	test   BYTE PTR [r9],dl
+   1159d:	41 84 19             	test   BYTE PTR [r9],bl
+   115a0:	41 84 21             	test   BYTE PTR [r9],spl
+   115a3:	41 84 29             	test   BYTE PTR [r9],bpl
+   115a6:	41 84 31             	test   BYTE PTR [r9],sil
+   115a9:	41 84 39             	test   BYTE PTR [r9],dil
+   115ac:	45 84 01             	test   BYTE PTR [r9],r8b
+   115af:	45 84 09             	test   BYTE PTR [r9],r9b
+   115b2:	45 84 11             	test   BYTE PTR [r9],r10b
+   115b5:	45 84 19             	test   BYTE PTR [r9],r11b
+   115b8:	45 84 21             	test   BYTE PTR [r9],r12b
+   115bb:	45 84 29             	test   BYTE PTR [r9],r13b
+   115be:	45 84 31             	test   BYTE PTR [r9],r14b
+   115c1:	45 84 39             	test   BYTE PTR [r9],r15b
+   115c4:	41 84 21             	test   BYTE PTR [r9],spl
+   115c7:	41 84 29             	test   BYTE PTR [r9],bpl
+   115ca:	41 84 31             	test   BYTE PTR [r9],sil
+   115cd:	41 84 39             	test   BYTE PTR [r9],dil
+   115d0:	41 84 02             	test   BYTE PTR [r10],al
+   115d3:	41 84 0a             	test   BYTE PTR [r10],cl
+   115d6:	41 84 12             	test   BYTE PTR [r10],dl
+   115d9:	41 84 1a             	test   BYTE PTR [r10],bl
+   115dc:	41 84 22             	test   BYTE PTR [r10],spl
+   115df:	41 84 2a             	test   BYTE PTR [r10],bpl
+   115e2:	41 84 32             	test   BYTE PTR [r10],sil
+   115e5:	41 84 3a             	test   BYTE PTR [r10],dil
+   115e8:	45 84 02             	test   BYTE PTR [r10],r8b
+   115eb:	45 84 0a             	test   BYTE PTR [r10],r9b
+   115ee:	45 84 12             	test   BYTE PTR [r10],r10b
+   115f1:	45 84 1a             	test   BYTE PTR [r10],r11b
+   115f4:	45 84 22             	test   BYTE PTR [r10],r12b
+   115f7:	45 84 2a             	test   BYTE PTR [r10],r13b
+   115fa:	45 84 32             	test   BYTE PTR [r10],r14b
+   115fd:	45 84 3a             	test   BYTE PTR [r10],r15b
+   11600:	41 84 22             	test   BYTE PTR [r10],spl
+   11603:	41 84 2a             	test   BYTE PTR [r10],bpl
+   11606:	41 84 32             	test   BYTE PTR [r10],sil
+   11609:	41 84 3a             	test   BYTE PTR [r10],dil
+   1160c:	41 84 03             	test   BYTE PTR [r11],al
+   1160f:	41 84 0b             	test   BYTE PTR [r11],cl
+   11612:	41 84 13             	test   BYTE PTR [r11],dl
+   11615:	41 84 1b             	test   BYTE PTR [r11],bl
+   11618:	41 84 23             	test   BYTE PTR [r11],spl
+   1161b:	41 84 2b             	test   BYTE PTR [r11],bpl
+   1161e:	41 84 33             	test   BYTE PTR [r11],sil
+   11621:	41 84 3b             	test   BYTE PTR [r11],dil
+   11624:	45 84 03             	test   BYTE PTR [r11],r8b
+   11627:	45 84 0b             	test   BYTE PTR [r11],r9b
+   1162a:	45 84 13             	test   BYTE PTR [r11],r10b
+   1162d:	45 84 1b             	test   BYTE PTR [r11],r11b
+   11630:	45 84 23             	test   BYTE PTR [r11],r12b
+   11633:	45 84 2b             	test   BYTE PTR [r11],r13b
+   11636:	45 84 33             	test   BYTE PTR [r11],r14b
+   11639:	45 84 3b             	test   BYTE PTR [r11],r15b
+   1163c:	41 84 23             	test   BYTE PTR [r11],spl
+   1163f:	41 84 2b             	test   BYTE PTR [r11],bpl
+   11642:	41 84 33             	test   BYTE PTR [r11],sil
+   11645:	41 84 3b             	test   BYTE PTR [r11],dil
+   11648:	41 84 04 24          	test   BYTE PTR [r12],al
+   1164c:	41 84 0c 24          	test   BYTE PTR [r12],cl
+   11650:	41 84 14 24          	test   BYTE PTR [r12],dl
+   11654:	41 84 1c 24          	test   BYTE PTR [r12],bl
+   11658:	41 84 24 24          	test   BYTE PTR [r12],spl
+   1165c:	41 84 2c 24          	test   BYTE PTR [r12],bpl
+   11660:	41 84 34 24          	test   BYTE PTR [r12],sil
+   11664:	41 84 3c 24          	test   BYTE PTR [r12],dil
+   11668:	45 84 04 24          	test   BYTE PTR [r12],r8b
+   1166c:	45 84 0c 24          	test   BYTE PTR [r12],r9b
+   11670:	45 84 14 24          	test   BYTE PTR [r12],r10b
+   11674:	45 84 1c 24          	test   BYTE PTR [r12],r11b
+   11678:	45 84 24 24          	test   BYTE PTR [r12],r12b
+   1167c:	45 84 2c 24          	test   BYTE PTR [r12],r13b
+   11680:	45 84 34 24          	test   BYTE PTR [r12],r14b
+   11684:	45 84 3c 24          	test   BYTE PTR [r12],r15b
+   11688:	41 84 24 24          	test   BYTE PTR [r12],spl
+   1168c:	41 84 2c 24          	test   BYTE PTR [r12],bpl
+   11690:	41 84 34 24          	test   BYTE PTR [r12],sil
+   11694:	41 84 3c 24          	test   BYTE PTR [r12],dil
+   11698:	41 84 45 00          	test   BYTE PTR [r13+0x0],al
+   1169c:	41 84 4d 00          	test   BYTE PTR [r13+0x0],cl
+   116a0:	41 84 55 00          	test   BYTE PTR [r13+0x0],dl
+   116a4:	41 84 5d 00          	test   BYTE PTR [r13+0x0],bl
+   116a8:	41 84 65 00          	test   BYTE PTR [r13+0x0],spl
+   116ac:	41 84 6d 00          	test   BYTE PTR [r13+0x0],bpl
+   116b0:	41 84 75 00          	test   BYTE PTR [r13+0x0],sil
+   116b4:	41 84 7d 00          	test   BYTE PTR [r13+0x0],dil
+   116b8:	45 84 45 00          	test   BYTE PTR [r13+0x0],r8b
+   116bc:	45 84 4d 00          	test   BYTE PTR [r13+0x0],r9b
+   116c0:	45 84 55 00          	test   BYTE PTR [r13+0x0],r10b
+   116c4:	45 84 5d 00          	test   BYTE PTR [r13+0x0],r11b
+   116c8:	45 84 65 00          	test   BYTE PTR [r13+0x0],r12b
+   116cc:	45 84 6d 00          	test   BYTE PTR [r13+0x0],r13b
+   116d0:	45 84 75 00          	test   BYTE PTR [r13+0x0],r14b
+   116d4:	45 84 7d 00          	test   BYTE PTR [r13+0x0],r15b
+   116d8:	41 84 65 00          	test   BYTE PTR [r13+0x0],spl
+   116dc:	41 84 6d 00          	test   BYTE PTR [r13+0x0],bpl
+   116e0:	41 84 75 00          	test   BYTE PTR [r13+0x0],sil
+   116e4:	41 84 7d 00          	test   BYTE PTR [r13+0x0],dil
+   116e8:	41 84 06             	test   BYTE PTR [r14],al
+   116eb:	41 84 0e             	test   BYTE PTR [r14],cl
+   116ee:	41 84 16             	test   BYTE PTR [r14],dl
+   116f1:	41 84 1e             	test   BYTE PTR [r14],bl
+   116f4:	41 84 26             	test   BYTE PTR [r14],spl
+   116f7:	41 84 2e             	test   BYTE PTR [r14],bpl
+   116fa:	41 84 36             	test   BYTE PTR [r14],sil
+   116fd:	41 84 3e             	test   BYTE PTR [r14],dil
+   11700:	45 84 06             	test   BYTE PTR [r14],r8b
+   11703:	45 84 0e             	test   BYTE PTR [r14],r9b
+   11706:	45 84 16             	test   BYTE PTR [r14],r10b
+   11709:	45 84 1e             	test   BYTE PTR [r14],r11b
+   1170c:	45 84 26             	test   BYTE PTR [r14],r12b
+   1170f:	45 84 2e             	test   BYTE PTR [r14],r13b
+   11712:	45 84 36             	test   BYTE PTR [r14],r14b
+   11715:	45 84 3e             	test   BYTE PTR [r14],r15b
+   11718:	41 84 26             	test   BYTE PTR [r14],spl
+   1171b:	41 84 2e             	test   BYTE PTR [r14],bpl
+   1171e:	41 84 36             	test   BYTE PTR [r14],sil
+   11721:	41 84 3e             	test   BYTE PTR [r14],dil
+   11724:	41 84 07             	test   BYTE PTR [r15],al
+   11727:	41 84 0f             	test   BYTE PTR [r15],cl
+   1172a:	41 84 17             	test   BYTE PTR [r15],dl
+   1172d:	41 84 1f             	test   BYTE PTR [r15],bl
+   11730:	41 84 27             	test   BYTE PTR [r15],spl
+   11733:	41 84 2f             	test   BYTE PTR [r15],bpl
+   11736:	41 84 37             	test   BYTE PTR [r15],sil
+   11739:	41 84 3f             	test   BYTE PTR [r15],dil
+   1173c:	45 84 07             	test   BYTE PTR [r15],r8b
+   1173f:	45 84 0f             	test   BYTE PTR [r15],r9b
+   11742:	45 84 17             	test   BYTE PTR [r15],r10b
+   11745:	45 84 1f             	test   BYTE PTR [r15],r11b
+   11748:	45 84 27             	test   BYTE PTR [r15],r12b
+   1174b:	45 84 2f             	test   BYTE PTR [r15],r13b
+   1174e:	45 84 37             	test   BYTE PTR [r15],r14b
+   11751:	45 84 3f             	test   BYTE PTR [r15],r15b
+   11754:	41 84 27             	test   BYTE PTR [r15],spl
+   11757:	41 84 2f             	test   BYTE PTR [r15],bpl
+   1175a:	41 84 37             	test   BYTE PTR [r15],sil
+   1175d:	41 84 3f             	test   BYTE PTR [r15],dil
+   11760:	48 85 40 15          	test   QWORD PTR [rax+0x15],rax
+   11764:	48 85 48 15          	test   QWORD PTR [rax+0x15],rcx
+   11768:	48 85 50 15          	test   QWORD PTR [rax+0x15],rdx
+   1176c:	48 85 58 15          	test   QWORD PTR [rax+0x15],rbx
+   11770:	48 85 60 15          	test   QWORD PTR [rax+0x15],rsp
+   11774:	48 85 68 15          	test   QWORD PTR [rax+0x15],rbp
+   11778:	48 85 70 15          	test   QWORD PTR [rax+0x15],rsi
+   1177c:	48 85 78 15          	test   QWORD PTR [rax+0x15],rdi
+   11780:	4c 85 40 15          	test   QWORD PTR [rax+0x15],r8
+   11784:	4c 85 48 15          	test   QWORD PTR [rax+0x15],r9
+   11788:	4c 85 50 15          	test   QWORD PTR [rax+0x15],r10
+   1178c:	4c 85 58 15          	test   QWORD PTR [rax+0x15],r11
+   11790:	4c 85 60 15          	test   QWORD PTR [rax+0x15],r12
+   11794:	4c 85 68 15          	test   QWORD PTR [rax+0x15],r13
+   11798:	4c 85 70 15          	test   QWORD PTR [rax+0x15],r14
+   1179c:	4c 85 78 15          	test   QWORD PTR [rax+0x15],r15
+   117a0:	48 85 41 15          	test   QWORD PTR [rcx+0x15],rax
+   117a4:	48 85 49 15          	test   QWORD PTR [rcx+0x15],rcx
+   117a8:	48 85 51 15          	test   QWORD PTR [rcx+0x15],rdx
+   117ac:	48 85 59 15          	test   QWORD PTR [rcx+0x15],rbx
+   117b0:	48 85 61 15          	test   QWORD PTR [rcx+0x15],rsp
+   117b4:	48 85 69 15          	test   QWORD PTR [rcx+0x15],rbp
+   117b8:	48 85 71 15          	test   QWORD PTR [rcx+0x15],rsi
+   117bc:	48 85 79 15          	test   QWORD PTR [rcx+0x15],rdi
+   117c0:	4c 85 41 15          	test   QWORD PTR [rcx+0x15],r8
+   117c4:	4c 85 49 15          	test   QWORD PTR [rcx+0x15],r9
+   117c8:	4c 85 51 15          	test   QWORD PTR [rcx+0x15],r10
+   117cc:	4c 85 59 15          	test   QWORD PTR [rcx+0x15],r11
+   117d0:	4c 85 61 15          	test   QWORD PTR [rcx+0x15],r12
+   117d4:	4c 85 69 15          	test   QWORD PTR [rcx+0x15],r13
+   117d8:	4c 85 71 15          	test   QWORD PTR [rcx+0x15],r14
+   117dc:	4c 85 79 15          	test   QWORD PTR [rcx+0x15],r15
+   117e0:	48 85 42 15          	test   QWORD PTR [rdx+0x15],rax
+   117e4:	48 85 4a 15          	test   QWORD PTR [rdx+0x15],rcx
+   117e8:	48 85 52 15          	test   QWORD PTR [rdx+0x15],rdx
+   117ec:	48 85 5a 15          	test   QWORD PTR [rdx+0x15],rbx
+   117f0:	48 85 62 15          	test   QWORD PTR [rdx+0x15],rsp
+   117f4:	48 85 6a 15          	test   QWORD PTR [rdx+0x15],rbp
+   117f8:	48 85 72 15          	test   QWORD PTR [rdx+0x15],rsi
+   117fc:	48 85 7a 15          	test   QWORD PTR [rdx+0x15],rdi
+   11800:	4c 85 42 15          	test   QWORD PTR [rdx+0x15],r8
+   11804:	4c 85 4a 15          	test   QWORD PTR [rdx+0x15],r9
+   11808:	4c 85 52 15          	test   QWORD PTR [rdx+0x15],r10
+   1180c:	4c 85 5a 15          	test   QWORD PTR [rdx+0x15],r11
+   11810:	4c 85 62 15          	test   QWORD PTR [rdx+0x15],r12
+   11814:	4c 85 6a 15          	test   QWORD PTR [rdx+0x15],r13
+   11818:	4c 85 72 15          	test   QWORD PTR [rdx+0x15],r14
+   1181c:	4c 85 7a 15          	test   QWORD PTR [rdx+0x15],r15
+   11820:	48 85 43 15          	test   QWORD PTR [rbx+0x15],rax
+   11824:	48 85 4b 15          	test   QWORD PTR [rbx+0x15],rcx
+   11828:	48 85 53 15          	test   QWORD PTR [rbx+0x15],rdx
+   1182c:	48 85 5b 15          	test   QWORD PTR [rbx+0x15],rbx
+   11830:	48 85 63 15          	test   QWORD PTR [rbx+0x15],rsp
+   11834:	48 85 6b 15          	test   QWORD PTR [rbx+0x15],rbp
+   11838:	48 85 73 15          	test   QWORD PTR [rbx+0x15],rsi
+   1183c:	48 85 7b 15          	test   QWORD PTR [rbx+0x15],rdi
+   11840:	4c 85 43 15          	test   QWORD PTR [rbx+0x15],r8
+   11844:	4c 85 4b 15          	test   QWORD PTR [rbx+0x15],r9
+   11848:	4c 85 53 15          	test   QWORD PTR [rbx+0x15],r10
+   1184c:	4c 85 5b 15          	test   QWORD PTR [rbx+0x15],r11
+   11850:	4c 85 63 15          	test   QWORD PTR [rbx+0x15],r12
+   11854:	4c 85 6b 15          	test   QWORD PTR [rbx+0x15],r13
+   11858:	4c 85 73 15          	test   QWORD PTR [rbx+0x15],r14
+   1185c:	4c 85 7b 15          	test   QWORD PTR [rbx+0x15],r15
+   11860:	48 85 44 24 15       	test   QWORD PTR [rsp+0x15],rax
+   11865:	48 85 4c 24 15       	test   QWORD PTR [rsp+0x15],rcx
+   1186a:	48 85 54 24 15       	test   QWORD PTR [rsp+0x15],rdx
+   1186f:	48 85 5c 24 15       	test   QWORD PTR [rsp+0x15],rbx
+   11874:	48 85 64 24 15       	test   QWORD PTR [rsp+0x15],rsp
+   11879:	48 85 6c 24 15       	test   QWORD PTR [rsp+0x15],rbp
+   1187e:	48 85 74 24 15       	test   QWORD PTR [rsp+0x15],rsi
+   11883:	48 85 7c 24 15       	test   QWORD PTR [rsp+0x15],rdi
+   11888:	4c 85 44 24 15       	test   QWORD PTR [rsp+0x15],r8
+   1188d:	4c 85 4c 24 15       	test   QWORD PTR [rsp+0x15],r9
+   11892:	4c 85 54 24 15       	test   QWORD PTR [rsp+0x15],r10
+   11897:	4c 85 5c 24 15       	test   QWORD PTR [rsp+0x15],r11
+   1189c:	4c 85 64 24 15       	test   QWORD PTR [rsp+0x15],r12
+   118a1:	4c 85 6c 24 15       	test   QWORD PTR [rsp+0x15],r13
+   118a6:	4c 85 74 24 15       	test   QWORD PTR [rsp+0x15],r14
+   118ab:	4c 85 7c 24 15       	test   QWORD PTR [rsp+0x15],r15
+   118b0:	48 85 45 15          	test   QWORD PTR [rbp+0x15],rax
+   118b4:	48 85 4d 15          	test   QWORD PTR [rbp+0x15],rcx
+   118b8:	48 85 55 15          	test   QWORD PTR [rbp+0x15],rdx
+   118bc:	48 85 5d 15          	test   QWORD PTR [rbp+0x15],rbx
+   118c0:	48 85 65 15          	test   QWORD PTR [rbp+0x15],rsp
+   118c4:	48 85 6d 15          	test   QWORD PTR [rbp+0x15],rbp
+   118c8:	48 85 75 15          	test   QWORD PTR [rbp+0x15],rsi
+   118cc:	48 85 7d 15          	test   QWORD PTR [rbp+0x15],rdi
+   118d0:	4c 85 45 15          	test   QWORD PTR [rbp+0x15],r8
+   118d4:	4c 85 4d 15          	test   QWORD PTR [rbp+0x15],r9
+   118d8:	4c 85 55 15          	test   QWORD PTR [rbp+0x15],r10
+   118dc:	4c 85 5d 15          	test   QWORD PTR [rbp+0x15],r11
+   118e0:	4c 85 65 15          	test   QWORD PTR [rbp+0x15],r12
+   118e4:	4c 85 6d 15          	test   QWORD PTR [rbp+0x15],r13
+   118e8:	4c 85 75 15          	test   QWORD PTR [rbp+0x15],r14
+   118ec:	4c 85 7d 15          	test   QWORD PTR [rbp+0x15],r15
+   118f0:	48 85 46 15          	test   QWORD PTR [rsi+0x15],rax
+   118f4:	48 85 4e 15          	test   QWORD PTR [rsi+0x15],rcx
+   118f8:	48 85 56 15          	test   QWORD PTR [rsi+0x15],rdx
+   118fc:	48 85 5e 15          	test   QWORD PTR [rsi+0x15],rbx
+   11900:	48 85 66 15          	test   QWORD PTR [rsi+0x15],rsp
+   11904:	48 85 6e 15          	test   QWORD PTR [rsi+0x15],rbp
+   11908:	48 85 76 15          	test   QWORD PTR [rsi+0x15],rsi
+   1190c:	48 85 7e 15          	test   QWORD PTR [rsi+0x15],rdi
+   11910:	4c 85 46 15          	test   QWORD PTR [rsi+0x15],r8
+   11914:	4c 85 4e 15          	test   QWORD PTR [rsi+0x15],r9
+   11918:	4c 85 56 15          	test   QWORD PTR [rsi+0x15],r10
+   1191c:	4c 85 5e 15          	test   QWORD PTR [rsi+0x15],r11
+   11920:	4c 85 66 15          	test   QWORD PTR [rsi+0x15],r12
+   11924:	4c 85 6e 15          	test   QWORD PTR [rsi+0x15],r13
+   11928:	4c 85 76 15          	test   QWORD PTR [rsi+0x15],r14
+   1192c:	4c 85 7e 15          	test   QWORD PTR [rsi+0x15],r15
+   11930:	48 85 47 15          	test   QWORD PTR [rdi+0x15],rax
+   11934:	48 85 4f 15          	test   QWORD PTR [rdi+0x15],rcx
+   11938:	48 85 57 15          	test   QWORD PTR [rdi+0x15],rdx
+   1193c:	48 85 5f 15          	test   QWORD PTR [rdi+0x15],rbx
+   11940:	48 85 67 15          	test   QWORD PTR [rdi+0x15],rsp
+   11944:	48 85 6f 15          	test   QWORD PTR [rdi+0x15],rbp
+   11948:	48 85 77 15          	test   QWORD PTR [rdi+0x15],rsi
+   1194c:	48 85 7f 15          	test   QWORD PTR [rdi+0x15],rdi
+   11950:	4c 85 47 15          	test   QWORD PTR [rdi+0x15],r8
+   11954:	4c 85 4f 15          	test   QWORD PTR [rdi+0x15],r9
+   11958:	4c 85 57 15          	test   QWORD PTR [rdi+0x15],r10
+   1195c:	4c 85 5f 15          	test   QWORD PTR [rdi+0x15],r11
+   11960:	4c 85 67 15          	test   QWORD PTR [rdi+0x15],r12
+   11964:	4c 85 6f 15          	test   QWORD PTR [rdi+0x15],r13
+   11968:	4c 85 77 15          	test   QWORD PTR [rdi+0x15],r14
+   1196c:	4c 85 7f 15          	test   QWORD PTR [rdi+0x15],r15
+   11970:	49 85 40 15          	test   QWORD PTR [r8+0x15],rax
+   11974:	49 85 48 15          	test   QWORD PTR [r8+0x15],rcx
+   11978:	49 85 50 15          	test   QWORD PTR [r8+0x15],rdx
+   1197c:	49 85 58 15          	test   QWORD PTR [r8+0x15],rbx
+   11980:	49 85 60 15          	test   QWORD PTR [r8+0x15],rsp
+   11984:	49 85 68 15          	test   QWORD PTR [r8+0x15],rbp
+   11988:	49 85 70 15          	test   QWORD PTR [r8+0x15],rsi
+   1198c:	49 85 78 15          	test   QWORD PTR [r8+0x15],rdi
+   11990:	4d 85 40 15          	test   QWORD PTR [r8+0x15],r8
+   11994:	4d 85 48 15          	test   QWORD PTR [r8+0x15],r9
+   11998:	4d 85 50 15          	test   QWORD PTR [r8+0x15],r10
+   1199c:	4d 85 58 15          	test   QWORD PTR [r8+0x15],r11
+   119a0:	4d 85 60 15          	test   QWORD PTR [r8+0x15],r12
+   119a4:	4d 85 68 15          	test   QWORD PTR [r8+0x15],r13
+   119a8:	4d 85 70 15          	test   QWORD PTR [r8+0x15],r14
+   119ac:	4d 85 78 15          	test   QWORD PTR [r8+0x15],r15
+   119b0:	49 85 41 15          	test   QWORD PTR [r9+0x15],rax
+   119b4:	49 85 49 15          	test   QWORD PTR [r9+0x15],rcx
+   119b8:	49 85 51 15          	test   QWORD PTR [r9+0x15],rdx
+   119bc:	49 85 59 15          	test   QWORD PTR [r9+0x15],rbx
+   119c0:	49 85 61 15          	test   QWORD PTR [r9+0x15],rsp
+   119c4:	49 85 69 15          	test   QWORD PTR [r9+0x15],rbp
+   119c8:	49 85 71 15          	test   QWORD PTR [r9+0x15],rsi
+   119cc:	49 85 79 15          	test   QWORD PTR [r9+0x15],rdi
+   119d0:	4d 85 41 15          	test   QWORD PTR [r9+0x15],r8
+   119d4:	4d 85 49 15          	test   QWORD PTR [r9+0x15],r9
+   119d8:	4d 85 51 15          	test   QWORD PTR [r9+0x15],r10
+   119dc:	4d 85 59 15          	test   QWORD PTR [r9+0x15],r11
+   119e0:	4d 85 61 15          	test   QWORD PTR [r9+0x15],r12
+   119e4:	4d 85 69 15          	test   QWORD PTR [r9+0x15],r13
+   119e8:	4d 85 71 15          	test   QWORD PTR [r9+0x15],r14
+   119ec:	4d 85 79 15          	test   QWORD PTR [r9+0x15],r15
+   119f0:	49 85 42 15          	test   QWORD PTR [r10+0x15],rax
+   119f4:	49 85 4a 15          	test   QWORD PTR [r10+0x15],rcx
+   119f8:	49 85 52 15          	test   QWORD PTR [r10+0x15],rdx
+   119fc:	49 85 5a 15          	test   QWORD PTR [r10+0x15],rbx
+   11a00:	49 85 62 15          	test   QWORD PTR [r10+0x15],rsp
+   11a04:	49 85 6a 15          	test   QWORD PTR [r10+0x15],rbp
+   11a08:	49 85 72 15          	test   QWORD PTR [r10+0x15],rsi
+   11a0c:	49 85 7a 15          	test   QWORD PTR [r10+0x15],rdi
+   11a10:	4d 85 42 15          	test   QWORD PTR [r10+0x15],r8
+   11a14:	4d 85 4a 15          	test   QWORD PTR [r10+0x15],r9
+   11a18:	4d 85 52 15          	test   QWORD PTR [r10+0x15],r10
+   11a1c:	4d 85 5a 15          	test   QWORD PTR [r10+0x15],r11
+   11a20:	4d 85 62 15          	test   QWORD PTR [r10+0x15],r12
+   11a24:	4d 85 6a 15          	test   QWORD PTR [r10+0x15],r13
+   11a28:	4d 85 72 15          	test   QWORD PTR [r10+0x15],r14
+   11a2c:	4d 85 7a 15          	test   QWORD PTR [r10+0x15],r15
+   11a30:	49 85 43 15          	test   QWORD PTR [r11+0x15],rax
+   11a34:	49 85 4b 15          	test   QWORD PTR [r11+0x15],rcx
+   11a38:	49 85 53 15          	test   QWORD PTR [r11+0x15],rdx
+   11a3c:	49 85 5b 15          	test   QWORD PTR [r11+0x15],rbx
+   11a40:	49 85 63 15          	test   QWORD PTR [r11+0x15],rsp
+   11a44:	49 85 6b 15          	test   QWORD PTR [r11+0x15],rbp
+   11a48:	49 85 73 15          	test   QWORD PTR [r11+0x15],rsi
+   11a4c:	49 85 7b 15          	test   QWORD PTR [r11+0x15],rdi
+   11a50:	4d 85 43 15          	test   QWORD PTR [r11+0x15],r8
+   11a54:	4d 85 4b 15          	test   QWORD PTR [r11+0x15],r9
+   11a58:	4d 85 53 15          	test   QWORD PTR [r11+0x15],r10
+   11a5c:	4d 85 5b 15          	test   QWORD PTR [r11+0x15],r11
+   11a60:	4d 85 63 15          	test   QWORD PTR [r11+0x15],r12
+   11a64:	4d 85 6b 15          	test   QWORD PTR [r11+0x15],r13
+   11a68:	4d 85 73 15          	test   QWORD PTR [r11+0x15],r14
+   11a6c:	4d 85 7b 15          	test   QWORD PTR [r11+0x15],r15
+   11a70:	49 85 44 24 15       	test   QWORD PTR [r12+0x15],rax
+   11a75:	49 85 4c 24 15       	test   QWORD PTR [r12+0x15],rcx
+   11a7a:	49 85 54 24 15       	test   QWORD PTR [r12+0x15],rdx
+   11a7f:	49 85 5c 24 15       	test   QWORD PTR [r12+0x15],rbx
+   11a84:	49 85 64 24 15       	test   QWORD PTR [r12+0x15],rsp
+   11a89:	49 85 6c 24 15       	test   QWORD PTR [r12+0x15],rbp
+   11a8e:	49 85 74 24 15       	test   QWORD PTR [r12+0x15],rsi
+   11a93:	49 85 7c 24 15       	test   QWORD PTR [r12+0x15],rdi
+   11a98:	4d 85 44 24 15       	test   QWORD PTR [r12+0x15],r8
+   11a9d:	4d 85 4c 24 15       	test   QWORD PTR [r12+0x15],r9
+   11aa2:	4d 85 54 24 15       	test   QWORD PTR [r12+0x15],r10
+   11aa7:	4d 85 5c 24 15       	test   QWORD PTR [r12+0x15],r11
+   11aac:	4d 85 64 24 15       	test   QWORD PTR [r12+0x15],r12
+   11ab1:	4d 85 6c 24 15       	test   QWORD PTR [r12+0x15],r13
+   11ab6:	4d 85 74 24 15       	test   QWORD PTR [r12+0x15],r14
+   11abb:	4d 85 7c 24 15       	test   QWORD PTR [r12+0x15],r15
+   11ac0:	49 85 45 15          	test   QWORD PTR [r13+0x15],rax
+   11ac4:	49 85 4d 15          	test   QWORD PTR [r13+0x15],rcx
+   11ac8:	49 85 55 15          	test   QWORD PTR [r13+0x15],rdx
+   11acc:	49 85 5d 15          	test   QWORD PTR [r13+0x15],rbx
+   11ad0:	49 85 65 15          	test   QWORD PTR [r13+0x15],rsp
+   11ad4:	49 85 6d 15          	test   QWORD PTR [r13+0x15],rbp
+   11ad8:	49 85 75 15          	test   QWORD PTR [r13+0x15],rsi
+   11adc:	49 85 7d 15          	test   QWORD PTR [r13+0x15],rdi
+   11ae0:	4d 85 45 15          	test   QWORD PTR [r13+0x15],r8
+   11ae4:	4d 85 4d 15          	test   QWORD PTR [r13+0x15],r9
+   11ae8:	4d 85 55 15          	test   QWORD PTR [r13+0x15],r10
+   11aec:	4d 85 5d 15          	test   QWORD PTR [r13+0x15],r11
+   11af0:	4d 85 65 15          	test   QWORD PTR [r13+0x15],r12
+   11af4:	4d 85 6d 15          	test   QWORD PTR [r13+0x15],r13
+   11af8:	4d 85 75 15          	test   QWORD PTR [r13+0x15],r14
+   11afc:	4d 85 7d 15          	test   QWORD PTR [r13+0x15],r15
+   11b00:	49 85 46 15          	test   QWORD PTR [r14+0x15],rax
+   11b04:	49 85 4e 15          	test   QWORD PTR [r14+0x15],rcx
+   11b08:	49 85 56 15          	test   QWORD PTR [r14+0x15],rdx
+   11b0c:	49 85 5e 15          	test   QWORD PTR [r14+0x15],rbx
+   11b10:	49 85 66 15          	test   QWORD PTR [r14+0x15],rsp
+   11b14:	49 85 6e 15          	test   QWORD PTR [r14+0x15],rbp
+   11b18:	49 85 76 15          	test   QWORD PTR [r14+0x15],rsi
+   11b1c:	49 85 7e 15          	test   QWORD PTR [r14+0x15],rdi
+   11b20:	4d 85 46 15          	test   QWORD PTR [r14+0x15],r8
+   11b24:	4d 85 4e 15          	test   QWORD PTR [r14+0x15],r9
+   11b28:	4d 85 56 15          	test   QWORD PTR [r14+0x15],r10
+   11b2c:	4d 85 5e 15          	test   QWORD PTR [r14+0x15],r11
+   11b30:	4d 85 66 15          	test   QWORD PTR [r14+0x15],r12
+   11b34:	4d 85 6e 15          	test   QWORD PTR [r14+0x15],r13
+   11b38:	4d 85 76 15          	test   QWORD PTR [r14+0x15],r14
+   11b3c:	4d 85 7e 15          	test   QWORD PTR [r14+0x15],r15
+   11b40:	49 85 47 15          	test   QWORD PTR [r15+0x15],rax
+   11b44:	49 85 4f 15          	test   QWORD PTR [r15+0x15],rcx
+   11b48:	49 85 57 15          	test   QWORD PTR [r15+0x15],rdx
+   11b4c:	49 85 5f 15          	test   QWORD PTR [r15+0x15],rbx
+   11b50:	49 85 67 15          	test   QWORD PTR [r15+0x15],rsp
+   11b54:	49 85 6f 15          	test   QWORD PTR [r15+0x15],rbp
+   11b58:	49 85 77 15          	test   QWORD PTR [r15+0x15],rsi
+   11b5c:	49 85 7f 15          	test   QWORD PTR [r15+0x15],rdi
+   11b60:	4d 85 47 15          	test   QWORD PTR [r15+0x15],r8
+   11b64:	4d 85 4f 15          	test   QWORD PTR [r15+0x15],r9
+   11b68:	4d 85 57 15          	test   QWORD PTR [r15+0x15],r10
+   11b6c:	4d 85 5f 15          	test   QWORD PTR [r15+0x15],r11
+   11b70:	4d 85 67 15          	test   QWORD PTR [r15+0x15],r12
+   11b74:	4d 85 6f 15          	test   QWORD PTR [r15+0x15],r13
+   11b78:	4d 85 77 15          	test   QWORD PTR [r15+0x15],r14
+   11b7c:	4d 85 7f 15          	test   QWORD PTR [r15+0x15],r15
+   11b80:	85 40 15             	test   DWORD PTR [rax+0x15],eax
+   11b83:	85 48 15             	test   DWORD PTR [rax+0x15],ecx
+   11b86:	85 50 15             	test   DWORD PTR [rax+0x15],edx
+   11b89:	85 58 15             	test   DWORD PTR [rax+0x15],ebx
+   11b8c:	85 60 15             	test   DWORD PTR [rax+0x15],esp
+   11b8f:	85 68 15             	test   DWORD PTR [rax+0x15],ebp
+   11b92:	85 70 15             	test   DWORD PTR [rax+0x15],esi
+   11b95:	85 78 15             	test   DWORD PTR [rax+0x15],edi
+   11b98:	44 85 40 15          	test   DWORD PTR [rax+0x15],r8d
+   11b9c:	44 85 48 15          	test   DWORD PTR [rax+0x15],r9d
+   11ba0:	44 85 50 15          	test   DWORD PTR [rax+0x15],r10d
+   11ba4:	44 85 58 15          	test   DWORD PTR [rax+0x15],r11d
+   11ba8:	44 85 60 15          	test   DWORD PTR [rax+0x15],r12d
+   11bac:	44 85 68 15          	test   DWORD PTR [rax+0x15],r13d
+   11bb0:	44 85 70 15          	test   DWORD PTR [rax+0x15],r14d
+   11bb4:	44 85 78 15          	test   DWORD PTR [rax+0x15],r15d
+   11bb8:	85 41 15             	test   DWORD PTR [rcx+0x15],eax
+   11bbb:	85 49 15             	test   DWORD PTR [rcx+0x15],ecx
+   11bbe:	85 51 15             	test   DWORD PTR [rcx+0x15],edx
+   11bc1:	85 59 15             	test   DWORD PTR [rcx+0x15],ebx
+   11bc4:	85 61 15             	test   DWORD PTR [rcx+0x15],esp
+   11bc7:	85 69 15             	test   DWORD PTR [rcx+0x15],ebp
+   11bca:	85 71 15             	test   DWORD PTR [rcx+0x15],esi
+   11bcd:	85 79 15             	test   DWORD PTR [rcx+0x15],edi
+   11bd0:	44 85 41 15          	test   DWORD PTR [rcx+0x15],r8d
+   11bd4:	44 85 49 15          	test   DWORD PTR [rcx+0x15],r9d
+   11bd8:	44 85 51 15          	test   DWORD PTR [rcx+0x15],r10d
+   11bdc:	44 85 59 15          	test   DWORD PTR [rcx+0x15],r11d
+   11be0:	44 85 61 15          	test   DWORD PTR [rcx+0x15],r12d
+   11be4:	44 85 69 15          	test   DWORD PTR [rcx+0x15],r13d
+   11be8:	44 85 71 15          	test   DWORD PTR [rcx+0x15],r14d
+   11bec:	44 85 79 15          	test   DWORD PTR [rcx+0x15],r15d
+   11bf0:	85 42 15             	test   DWORD PTR [rdx+0x15],eax
+   11bf3:	85 4a 15             	test   DWORD PTR [rdx+0x15],ecx
+   11bf6:	85 52 15             	test   DWORD PTR [rdx+0x15],edx
+   11bf9:	85 5a 15             	test   DWORD PTR [rdx+0x15],ebx
+   11bfc:	85 62 15             	test   DWORD PTR [rdx+0x15],esp
+   11bff:	85 6a 15             	test   DWORD PTR [rdx+0x15],ebp
+   11c02:	85 72 15             	test   DWORD PTR [rdx+0x15],esi
+   11c05:	85 7a 15             	test   DWORD PTR [rdx+0x15],edi
+   11c08:	44 85 42 15          	test   DWORD PTR [rdx+0x15],r8d
+   11c0c:	44 85 4a 15          	test   DWORD PTR [rdx+0x15],r9d
+   11c10:	44 85 52 15          	test   DWORD PTR [rdx+0x15],r10d
+   11c14:	44 85 5a 15          	test   DWORD PTR [rdx+0x15],r11d
+   11c18:	44 85 62 15          	test   DWORD PTR [rdx+0x15],r12d
+   11c1c:	44 85 6a 15          	test   DWORD PTR [rdx+0x15],r13d
+   11c20:	44 85 72 15          	test   DWORD PTR [rdx+0x15],r14d
+   11c24:	44 85 7a 15          	test   DWORD PTR [rdx+0x15],r15d
+   11c28:	85 43 15             	test   DWORD PTR [rbx+0x15],eax
+   11c2b:	85 4b 15             	test   DWORD PTR [rbx+0x15],ecx
+   11c2e:	85 53 15             	test   DWORD PTR [rbx+0x15],edx
+   11c31:	85 5b 15             	test   DWORD PTR [rbx+0x15],ebx
+   11c34:	85 63 15             	test   DWORD PTR [rbx+0x15],esp
+   11c37:	85 6b 15             	test   DWORD PTR [rbx+0x15],ebp
+   11c3a:	85 73 15             	test   DWORD PTR [rbx+0x15],esi
+   11c3d:	85 7b 15             	test   DWORD PTR [rbx+0x15],edi
+   11c40:	44 85 43 15          	test   DWORD PTR [rbx+0x15],r8d
+   11c44:	44 85 4b 15          	test   DWORD PTR [rbx+0x15],r9d
+   11c48:	44 85 53 15          	test   DWORD PTR [rbx+0x15],r10d
+   11c4c:	44 85 5b 15          	test   DWORD PTR [rbx+0x15],r11d
+   11c50:	44 85 63 15          	test   DWORD PTR [rbx+0x15],r12d
+   11c54:	44 85 6b 15          	test   DWORD PTR [rbx+0x15],r13d
+   11c58:	44 85 73 15          	test   DWORD PTR [rbx+0x15],r14d
+   11c5c:	44 85 7b 15          	test   DWORD PTR [rbx+0x15],r15d
+   11c60:	85 44 24 15          	test   DWORD PTR [rsp+0x15],eax
+   11c64:	85 4c 24 15          	test   DWORD PTR [rsp+0x15],ecx
+   11c68:	85 54 24 15          	test   DWORD PTR [rsp+0x15],edx
+   11c6c:	85 5c 24 15          	test   DWORD PTR [rsp+0x15],ebx
+   11c70:	85 64 24 15          	test   DWORD PTR [rsp+0x15],esp
+   11c74:	85 6c 24 15          	test   DWORD PTR [rsp+0x15],ebp
+   11c78:	85 74 24 15          	test   DWORD PTR [rsp+0x15],esi
+   11c7c:	85 7c 24 15          	test   DWORD PTR [rsp+0x15],edi
+   11c80:	44 85 44 24 15       	test   DWORD PTR [rsp+0x15],r8d
+   11c85:	44 85 4c 24 15       	test   DWORD PTR [rsp+0x15],r9d
+   11c8a:	44 85 54 24 15       	test   DWORD PTR [rsp+0x15],r10d
+   11c8f:	44 85 5c 24 15       	test   DWORD PTR [rsp+0x15],r11d
+   11c94:	44 85 64 24 15       	test   DWORD PTR [rsp+0x15],r12d
+   11c99:	44 85 6c 24 15       	test   DWORD PTR [rsp+0x15],r13d
+   11c9e:	44 85 74 24 15       	test   DWORD PTR [rsp+0x15],r14d
+   11ca3:	44 85 7c 24 15       	test   DWORD PTR [rsp+0x15],r15d
+   11ca8:	85 45 15             	test   DWORD PTR [rbp+0x15],eax
+   11cab:	85 4d 15             	test   DWORD PTR [rbp+0x15],ecx
+   11cae:	85 55 15             	test   DWORD PTR [rbp+0x15],edx
+   11cb1:	85 5d 15             	test   DWORD PTR [rbp+0x15],ebx
+   11cb4:	85 65 15             	test   DWORD PTR [rbp+0x15],esp
+   11cb7:	85 6d 15             	test   DWORD PTR [rbp+0x15],ebp
+   11cba:	85 75 15             	test   DWORD PTR [rbp+0x15],esi
+   11cbd:	85 7d 15             	test   DWORD PTR [rbp+0x15],edi
+   11cc0:	44 85 45 15          	test   DWORD PTR [rbp+0x15],r8d
+   11cc4:	44 85 4d 15          	test   DWORD PTR [rbp+0x15],r9d
+   11cc8:	44 85 55 15          	test   DWORD PTR [rbp+0x15],r10d
+   11ccc:	44 85 5d 15          	test   DWORD PTR [rbp+0x15],r11d
+   11cd0:	44 85 65 15          	test   DWORD PTR [rbp+0x15],r12d
+   11cd4:	44 85 6d 15          	test   DWORD PTR [rbp+0x15],r13d
+   11cd8:	44 85 75 15          	test   DWORD PTR [rbp+0x15],r14d
+   11cdc:	44 85 7d 15          	test   DWORD PTR [rbp+0x15],r15d
+   11ce0:	85 46 15             	test   DWORD PTR [rsi+0x15],eax
+   11ce3:	85 4e 15             	test   DWORD PTR [rsi+0x15],ecx
+   11ce6:	85 56 15             	test   DWORD PTR [rsi+0x15],edx
+   11ce9:	85 5e 15             	test   DWORD PTR [rsi+0x15],ebx
+   11cec:	85 66 15             	test   DWORD PTR [rsi+0x15],esp
+   11cef:	85 6e 15             	test   DWORD PTR [rsi+0x15],ebp
+   11cf2:	85 76 15             	test   DWORD PTR [rsi+0x15],esi
+   11cf5:	85 7e 15             	test   DWORD PTR [rsi+0x15],edi
+   11cf8:	44 85 46 15          	test   DWORD PTR [rsi+0x15],r8d
+   11cfc:	44 85 4e 15          	test   DWORD PTR [rsi+0x15],r9d
+   11d00:	44 85 56 15          	test   DWORD PTR [rsi+0x15],r10d
+   11d04:	44 85 5e 15          	test   DWORD PTR [rsi+0x15],r11d
+   11d08:	44 85 66 15          	test   DWORD PTR [rsi+0x15],r12d
+   11d0c:	44 85 6e 15          	test   DWORD PTR [rsi+0x15],r13d
+   11d10:	44 85 76 15          	test   DWORD PTR [rsi+0x15],r14d
+   11d14:	44 85 7e 15          	test   DWORD PTR [rsi+0x15],r15d
+   11d18:	85 47 15             	test   DWORD PTR [rdi+0x15],eax
+   11d1b:	85 4f 15             	test   DWORD PTR [rdi+0x15],ecx
+   11d1e:	85 57 15             	test   DWORD PTR [rdi+0x15],edx
+   11d21:	85 5f 15             	test   DWORD PTR [rdi+0x15],ebx
+   11d24:	85 67 15             	test   DWORD PTR [rdi+0x15],esp
+   11d27:	85 6f 15             	test   DWORD PTR [rdi+0x15],ebp
+   11d2a:	85 77 15             	test   DWORD PTR [rdi+0x15],esi
+   11d2d:	85 7f 15             	test   DWORD PTR [rdi+0x15],edi
+   11d30:	44 85 47 15          	test   DWORD PTR [rdi+0x15],r8d
+   11d34:	44 85 4f 15          	test   DWORD PTR [rdi+0x15],r9d
+   11d38:	44 85 57 15          	test   DWORD PTR [rdi+0x15],r10d
+   11d3c:	44 85 5f 15          	test   DWORD PTR [rdi+0x15],r11d
+   11d40:	44 85 67 15          	test   DWORD PTR [rdi+0x15],r12d
+   11d44:	44 85 6f 15          	test   DWORD PTR [rdi+0x15],r13d
+   11d48:	44 85 77 15          	test   DWORD PTR [rdi+0x15],r14d
+   11d4c:	44 85 7f 15          	test   DWORD PTR [rdi+0x15],r15d
+   11d50:	41 85 40 15          	test   DWORD PTR [r8+0x15],eax
+   11d54:	41 85 48 15          	test   DWORD PTR [r8+0x15],ecx
+   11d58:	41 85 50 15          	test   DWORD PTR [r8+0x15],edx
+   11d5c:	41 85 58 15          	test   DWORD PTR [r8+0x15],ebx
+   11d60:	41 85 60 15          	test   DWORD PTR [r8+0x15],esp
+   11d64:	41 85 68 15          	test   DWORD PTR [r8+0x15],ebp
+   11d68:	41 85 70 15          	test   DWORD PTR [r8+0x15],esi
+   11d6c:	41 85 78 15          	test   DWORD PTR [r8+0x15],edi
+   11d70:	45 85 40 15          	test   DWORD PTR [r8+0x15],r8d
+   11d74:	45 85 48 15          	test   DWORD PTR [r8+0x15],r9d
+   11d78:	45 85 50 15          	test   DWORD PTR [r8+0x15],r10d
+   11d7c:	45 85 58 15          	test   DWORD PTR [r8+0x15],r11d
+   11d80:	45 85 60 15          	test   DWORD PTR [r8+0x15],r12d
+   11d84:	45 85 68 15          	test   DWORD PTR [r8+0x15],r13d
+   11d88:	45 85 70 15          	test   DWORD PTR [r8+0x15],r14d
+   11d8c:	45 85 78 15          	test   DWORD PTR [r8+0x15],r15d
+   11d90:	41 85 41 15          	test   DWORD PTR [r9+0x15],eax
+   11d94:	41 85 49 15          	test   DWORD PTR [r9+0x15],ecx
+   11d98:	41 85 51 15          	test   DWORD PTR [r9+0x15],edx
+   11d9c:	41 85 59 15          	test   DWORD PTR [r9+0x15],ebx
+   11da0:	41 85 61 15          	test   DWORD PTR [r9+0x15],esp
+   11da4:	41 85 69 15          	test   DWORD PTR [r9+0x15],ebp
+   11da8:	41 85 71 15          	test   DWORD PTR [r9+0x15],esi
+   11dac:	41 85 79 15          	test   DWORD PTR [r9+0x15],edi
+   11db0:	45 85 41 15          	test   DWORD PTR [r9+0x15],r8d
+   11db4:	45 85 49 15          	test   DWORD PTR [r9+0x15],r9d
+   11db8:	45 85 51 15          	test   DWORD PTR [r9+0x15],r10d
+   11dbc:	45 85 59 15          	test   DWORD PTR [r9+0x15],r11d
+   11dc0:	45 85 61 15          	test   DWORD PTR [r9+0x15],r12d
+   11dc4:	45 85 69 15          	test   DWORD PTR [r9+0x15],r13d
+   11dc8:	45 85 71 15          	test   DWORD PTR [r9+0x15],r14d
+   11dcc:	45 85 79 15          	test   DWORD PTR [r9+0x15],r15d
+   11dd0:	41 85 42 15          	test   DWORD PTR [r10+0x15],eax
+   11dd4:	41 85 4a 15          	test   DWORD PTR [r10+0x15],ecx
+   11dd8:	41 85 52 15          	test   DWORD PTR [r10+0x15],edx
+   11ddc:	41 85 5a 15          	test   DWORD PTR [r10+0x15],ebx
+   11de0:	41 85 62 15          	test   DWORD PTR [r10+0x15],esp
+   11de4:	41 85 6a 15          	test   DWORD PTR [r10+0x15],ebp
+   11de8:	41 85 72 15          	test   DWORD PTR [r10+0x15],esi
+   11dec:	41 85 7a 15          	test   DWORD PTR [r10+0x15],edi
+   11df0:	45 85 42 15          	test   DWORD PTR [r10+0x15],r8d
+   11df4:	45 85 4a 15          	test   DWORD PTR [r10+0x15],r9d
+   11df8:	45 85 52 15          	test   DWORD PTR [r10+0x15],r10d
+   11dfc:	45 85 5a 15          	test   DWORD PTR [r10+0x15],r11d
+   11e00:	45 85 62 15          	test   DWORD PTR [r10+0x15],r12d
+   11e04:	45 85 6a 15          	test   DWORD PTR [r10+0x15],r13d
+   11e08:	45 85 72 15          	test   DWORD PTR [r10+0x15],r14d
+   11e0c:	45 85 7a 15          	test   DWORD PTR [r10+0x15],r15d
+   11e10:	41 85 43 15          	test   DWORD PTR [r11+0x15],eax
+   11e14:	41 85 4b 15          	test   DWORD PTR [r11+0x15],ecx
+   11e18:	41 85 53 15          	test   DWORD PTR [r11+0x15],edx
+   11e1c:	41 85 5b 15          	test   DWORD PTR [r11+0x15],ebx
+   11e20:	41 85 63 15          	test   DWORD PTR [r11+0x15],esp
+   11e24:	41 85 6b 15          	test   DWORD PTR [r11+0x15],ebp
+   11e28:	41 85 73 15          	test   DWORD PTR [r11+0x15],esi
+   11e2c:	41 85 7b 15          	test   DWORD PTR [r11+0x15],edi
+   11e30:	45 85 43 15          	test   DWORD PTR [r11+0x15],r8d
+   11e34:	45 85 4b 15          	test   DWORD PTR [r11+0x15],r9d
+   11e38:	45 85 53 15          	test   DWORD PTR [r11+0x15],r10d
+   11e3c:	45 85 5b 15          	test   DWORD PTR [r11+0x15],r11d
+   11e40:	45 85 63 15          	test   DWORD PTR [r11+0x15],r12d
+   11e44:	45 85 6b 15          	test   DWORD PTR [r11+0x15],r13d
+   11e48:	45 85 73 15          	test   DWORD PTR [r11+0x15],r14d
+   11e4c:	45 85 7b 15          	test   DWORD PTR [r11+0x15],r15d
+   11e50:	41 85 44 24 15       	test   DWORD PTR [r12+0x15],eax
+   11e55:	41 85 4c 24 15       	test   DWORD PTR [r12+0x15],ecx
+   11e5a:	41 85 54 24 15       	test   DWORD PTR [r12+0x15],edx
+   11e5f:	41 85 5c 24 15       	test   DWORD PTR [r12+0x15],ebx
+   11e64:	41 85 64 24 15       	test   DWORD PTR [r12+0x15],esp
+   11e69:	41 85 6c 24 15       	test   DWORD PTR [r12+0x15],ebp
+   11e6e:	41 85 74 24 15       	test   DWORD PTR [r12+0x15],esi
+   11e73:	41 85 7c 24 15       	test   DWORD PTR [r12+0x15],edi
+   11e78:	45 85 44 24 15       	test   DWORD PTR [r12+0x15],r8d
+   11e7d:	45 85 4c 24 15       	test   DWORD PTR [r12+0x15],r9d
+   11e82:	45 85 54 24 15       	test   DWORD PTR [r12+0x15],r10d
+   11e87:	45 85 5c 24 15       	test   DWORD PTR [r12+0x15],r11d
+   11e8c:	45 85 64 24 15       	test   DWORD PTR [r12+0x15],r12d
+   11e91:	45 85 6c 24 15       	test   DWORD PTR [r12+0x15],r13d
+   11e96:	45 85 74 24 15       	test   DWORD PTR [r12+0x15],r14d
+   11e9b:	45 85 7c 24 15       	test   DWORD PTR [r12+0x15],r15d
+   11ea0:	41 85 45 15          	test   DWORD PTR [r13+0x15],eax
+   11ea4:	41 85 4d 15          	test   DWORD PTR [r13+0x15],ecx
+   11ea8:	41 85 55 15          	test   DWORD PTR [r13+0x15],edx
+   11eac:	41 85 5d 15          	test   DWORD PTR [r13+0x15],ebx
+   11eb0:	41 85 65 15          	test   DWORD PTR [r13+0x15],esp
+   11eb4:	41 85 6d 15          	test   DWORD PTR [r13+0x15],ebp
+   11eb8:	41 85 75 15          	test   DWORD PTR [r13+0x15],esi
+   11ebc:	41 85 7d 15          	test   DWORD PTR [r13+0x15],edi
+   11ec0:	45 85 45 15          	test   DWORD PTR [r13+0x15],r8d
+   11ec4:	45 85 4d 15          	test   DWORD PTR [r13+0x15],r9d
+   11ec8:	45 85 55 15          	test   DWORD PTR [r13+0x15],r10d
+   11ecc:	45 85 5d 15          	test   DWORD PTR [r13+0x15],r11d
+   11ed0:	45 85 65 15          	test   DWORD PTR [r13+0x15],r12d
+   11ed4:	45 85 6d 15          	test   DWORD PTR [r13+0x15],r13d
+   11ed8:	45 85 75 15          	test   DWORD PTR [r13+0x15],r14d
+   11edc:	45 85 7d 15          	test   DWORD PTR [r13+0x15],r15d
+   11ee0:	41 85 46 15          	test   DWORD PTR [r14+0x15],eax
+   11ee4:	41 85 4e 15          	test   DWORD PTR [r14+0x15],ecx
+   11ee8:	41 85 56 15          	test   DWORD PTR [r14+0x15],edx
+   11eec:	41 85 5e 15          	test   DWORD PTR [r14+0x15],ebx
+   11ef0:	41 85 66 15          	test   DWORD PTR [r14+0x15],esp
+   11ef4:	41 85 6e 15          	test   DWORD PTR [r14+0x15],ebp
+   11ef8:	41 85 76 15          	test   DWORD PTR [r14+0x15],esi
+   11efc:	41 85 7e 15          	test   DWORD PTR [r14+0x15],edi
+   11f00:	45 85 46 15          	test   DWORD PTR [r14+0x15],r8d
+   11f04:	45 85 4e 15          	test   DWORD PTR [r14+0x15],r9d
+   11f08:	45 85 56 15          	test   DWORD PTR [r14+0x15],r10d
+   11f0c:	45 85 5e 15          	test   DWORD PTR [r14+0x15],r11d
+   11f10:	45 85 66 15          	test   DWORD PTR [r14+0x15],r12d
+   11f14:	45 85 6e 15          	test   DWORD PTR [r14+0x15],r13d
+   11f18:	45 85 76 15          	test   DWORD PTR [r14+0x15],r14d
+   11f1c:	45 85 7e 15          	test   DWORD PTR [r14+0x15],r15d
+   11f20:	41 85 47 15          	test   DWORD PTR [r15+0x15],eax
+   11f24:	41 85 4f 15          	test   DWORD PTR [r15+0x15],ecx
+   11f28:	41 85 57 15          	test   DWORD PTR [r15+0x15],edx
+   11f2c:	41 85 5f 15          	test   DWORD PTR [r15+0x15],ebx
+   11f30:	41 85 67 15          	test   DWORD PTR [r15+0x15],esp
+   11f34:	41 85 6f 15          	test   DWORD PTR [r15+0x15],ebp
+   11f38:	41 85 77 15          	test   DWORD PTR [r15+0x15],esi
+   11f3c:	41 85 7f 15          	test   DWORD PTR [r15+0x15],edi
+   11f40:	45 85 47 15          	test   DWORD PTR [r15+0x15],r8d
+   11f44:	45 85 4f 15          	test   DWORD PTR [r15+0x15],r9d
+   11f48:	45 85 57 15          	test   DWORD PTR [r15+0x15],r10d
+   11f4c:	45 85 5f 15          	test   DWORD PTR [r15+0x15],r11d
+   11f50:	45 85 67 15          	test   DWORD PTR [r15+0x15],r12d
+   11f54:	45 85 6f 15          	test   DWORD PTR [r15+0x15],r13d
+   11f58:	45 85 77 15          	test   DWORD PTR [r15+0x15],r14d
+   11f5c:	45 85 7f 15          	test   DWORD PTR [r15+0x15],r15d
+   11f60:	66 85 40 15          	test   WORD PTR [rax+0x15],ax
+   11f64:	66 85 48 15          	test   WORD PTR [rax+0x15],cx
+   11f68:	66 85 50 15          	test   WORD PTR [rax+0x15],dx
+   11f6c:	66 85 58 15          	test   WORD PTR [rax+0x15],bx
+   11f70:	66 85 60 15          	test   WORD PTR [rax+0x15],sp
+   11f74:	66 85 68 15          	test   WORD PTR [rax+0x15],bp
+   11f78:	66 85 70 15          	test   WORD PTR [rax+0x15],si
+   11f7c:	66 85 78 15          	test   WORD PTR [rax+0x15],di
+   11f80:	66 44 85 40 15       	test   WORD PTR [rax+0x15],r8w
+   11f85:	66 44 85 48 15       	test   WORD PTR [rax+0x15],r9w
+   11f8a:	66 44 85 50 15       	test   WORD PTR [rax+0x15],r10w
+   11f8f:	66 44 85 58 15       	test   WORD PTR [rax+0x15],r11w
+   11f94:	66 44 85 60 15       	test   WORD PTR [rax+0x15],r12w
+   11f99:	66 44 85 68 15       	test   WORD PTR [rax+0x15],r13w
+   11f9e:	66 44 85 70 15       	test   WORD PTR [rax+0x15],r14w
+   11fa3:	66 44 85 78 15       	test   WORD PTR [rax+0x15],r15w
+   11fa8:	66 85 41 15          	test   WORD PTR [rcx+0x15],ax
+   11fac:	66 85 49 15          	test   WORD PTR [rcx+0x15],cx
+   11fb0:	66 85 51 15          	test   WORD PTR [rcx+0x15],dx
+   11fb4:	66 85 59 15          	test   WORD PTR [rcx+0x15],bx
+   11fb8:	66 85 61 15          	test   WORD PTR [rcx+0x15],sp
+   11fbc:	66 85 69 15          	test   WORD PTR [rcx+0x15],bp
+   11fc0:	66 85 71 15          	test   WORD PTR [rcx+0x15],si
+   11fc4:	66 85 79 15          	test   WORD PTR [rcx+0x15],di
+   11fc8:	66 44 85 41 15       	test   WORD PTR [rcx+0x15],r8w
+   11fcd:	66 44 85 49 15       	test   WORD PTR [rcx+0x15],r9w
+   11fd2:	66 44 85 51 15       	test   WORD PTR [rcx+0x15],r10w
+   11fd7:	66 44 85 59 15       	test   WORD PTR [rcx+0x15],r11w
+   11fdc:	66 44 85 61 15       	test   WORD PTR [rcx+0x15],r12w
+   11fe1:	66 44 85 69 15       	test   WORD PTR [rcx+0x15],r13w
+   11fe6:	66 44 85 71 15       	test   WORD PTR [rcx+0x15],r14w
+   11feb:	66 44 85 79 15       	test   WORD PTR [rcx+0x15],r15w
+   11ff0:	66 85 42 15          	test   WORD PTR [rdx+0x15],ax
+   11ff4:	66 85 4a 15          	test   WORD PTR [rdx+0x15],cx
+   11ff8:	66 85 52 15          	test   WORD PTR [rdx+0x15],dx
+   11ffc:	66 85 5a 15          	test   WORD PTR [rdx+0x15],bx
+   12000:	66 85 62 15          	test   WORD PTR [rdx+0x15],sp
+   12004:	66 85 6a 15          	test   WORD PTR [rdx+0x15],bp
+   12008:	66 85 72 15          	test   WORD PTR [rdx+0x15],si
+   1200c:	66 85 7a 15          	test   WORD PTR [rdx+0x15],di
+   12010:	66 44 85 42 15       	test   WORD PTR [rdx+0x15],r8w
+   12015:	66 44 85 4a 15       	test   WORD PTR [rdx+0x15],r9w
+   1201a:	66 44 85 52 15       	test   WORD PTR [rdx+0x15],r10w
+   1201f:	66 44 85 5a 15       	test   WORD PTR [rdx+0x15],r11w
+   12024:	66 44 85 62 15       	test   WORD PTR [rdx+0x15],r12w
+   12029:	66 44 85 6a 15       	test   WORD PTR [rdx+0x15],r13w
+   1202e:	66 44 85 72 15       	test   WORD PTR [rdx+0x15],r14w
+   12033:	66 44 85 7a 15       	test   WORD PTR [rdx+0x15],r15w
+   12038:	66 85 43 15          	test   WORD PTR [rbx+0x15],ax
+   1203c:	66 85 4b 15          	test   WORD PTR [rbx+0x15],cx
+   12040:	66 85 53 15          	test   WORD PTR [rbx+0x15],dx
+   12044:	66 85 5b 15          	test   WORD PTR [rbx+0x15],bx
+   12048:	66 85 63 15          	test   WORD PTR [rbx+0x15],sp
+   1204c:	66 85 6b 15          	test   WORD PTR [rbx+0x15],bp
+   12050:	66 85 73 15          	test   WORD PTR [rbx+0x15],si
+   12054:	66 85 7b 15          	test   WORD PTR [rbx+0x15],di
+   12058:	66 44 85 43 15       	test   WORD PTR [rbx+0x15],r8w
+   1205d:	66 44 85 4b 15       	test   WORD PTR [rbx+0x15],r9w
+   12062:	66 44 85 53 15       	test   WORD PTR [rbx+0x15],r10w
+   12067:	66 44 85 5b 15       	test   WORD PTR [rbx+0x15],r11w
+   1206c:	66 44 85 63 15       	test   WORD PTR [rbx+0x15],r12w
+   12071:	66 44 85 6b 15       	test   WORD PTR [rbx+0x15],r13w
+   12076:	66 44 85 73 15       	test   WORD PTR [rbx+0x15],r14w
+   1207b:	66 44 85 7b 15       	test   WORD PTR [rbx+0x15],r15w
+   12080:	66 85 44 24 15       	test   WORD PTR [rsp+0x15],ax
+   12085:	66 85 4c 24 15       	test   WORD PTR [rsp+0x15],cx
+   1208a:	66 85 54 24 15       	test   WORD PTR [rsp+0x15],dx
+   1208f:	66 85 5c 24 15       	test   WORD PTR [rsp+0x15],bx
+   12094:	66 85 64 24 15       	test   WORD PTR [rsp+0x15],sp
+   12099:	66 85 6c 24 15       	test   WORD PTR [rsp+0x15],bp
+   1209e:	66 85 74 24 15       	test   WORD PTR [rsp+0x15],si
+   120a3:	66 85 7c 24 15       	test   WORD PTR [rsp+0x15],di
+   120a8:	66 44 85 44 24 15    	test   WORD PTR [rsp+0x15],r8w
+   120ae:	66 44 85 4c 24 15    	test   WORD PTR [rsp+0x15],r9w
+   120b4:	66 44 85 54 24 15    	test   WORD PTR [rsp+0x15],r10w
+   120ba:	66 44 85 5c 24 15    	test   WORD PTR [rsp+0x15],r11w
+   120c0:	66 44 85 64 24 15    	test   WORD PTR [rsp+0x15],r12w
+   120c6:	66 44 85 6c 24 15    	test   WORD PTR [rsp+0x15],r13w
+   120cc:	66 44 85 74 24 15    	test   WORD PTR [rsp+0x15],r14w
+   120d2:	66 44 85 7c 24 15    	test   WORD PTR [rsp+0x15],r15w
+   120d8:	66 85 45 15          	test   WORD PTR [rbp+0x15],ax
+   120dc:	66 85 4d 15          	test   WORD PTR [rbp+0x15],cx
+   120e0:	66 85 55 15          	test   WORD PTR [rbp+0x15],dx
+   120e4:	66 85 5d 15          	test   WORD PTR [rbp+0x15],bx
+   120e8:	66 85 65 15          	test   WORD PTR [rbp+0x15],sp
+   120ec:	66 85 6d 15          	test   WORD PTR [rbp+0x15],bp
+   120f0:	66 85 75 15          	test   WORD PTR [rbp+0x15],si
+   120f4:	66 85 7d 15          	test   WORD PTR [rbp+0x15],di
+   120f8:	66 44 85 45 15       	test   WORD PTR [rbp+0x15],r8w
+   120fd:	66 44 85 4d 15       	test   WORD PTR [rbp+0x15],r9w
+   12102:	66 44 85 55 15       	test   WORD PTR [rbp+0x15],r10w
+   12107:	66 44 85 5d 15       	test   WORD PTR [rbp+0x15],r11w
+   1210c:	66 44 85 65 15       	test   WORD PTR [rbp+0x15],r12w
+   12111:	66 44 85 6d 15       	test   WORD PTR [rbp+0x15],r13w
+   12116:	66 44 85 75 15       	test   WORD PTR [rbp+0x15],r14w
+   1211b:	66 44 85 7d 15       	test   WORD PTR [rbp+0x15],r15w
+   12120:	66 85 46 15          	test   WORD PTR [rsi+0x15],ax
+   12124:	66 85 4e 15          	test   WORD PTR [rsi+0x15],cx
+   12128:	66 85 56 15          	test   WORD PTR [rsi+0x15],dx
+   1212c:	66 85 5e 15          	test   WORD PTR [rsi+0x15],bx
+   12130:	66 85 66 15          	test   WORD PTR [rsi+0x15],sp
+   12134:	66 85 6e 15          	test   WORD PTR [rsi+0x15],bp
+   12138:	66 85 76 15          	test   WORD PTR [rsi+0x15],si
+   1213c:	66 85 7e 15          	test   WORD PTR [rsi+0x15],di
+   12140:	66 44 85 46 15       	test   WORD PTR [rsi+0x15],r8w
+   12145:	66 44 85 4e 15       	test   WORD PTR [rsi+0x15],r9w
+   1214a:	66 44 85 56 15       	test   WORD PTR [rsi+0x15],r10w
+   1214f:	66 44 85 5e 15       	test   WORD PTR [rsi+0x15],r11w
+   12154:	66 44 85 66 15       	test   WORD PTR [rsi+0x15],r12w
+   12159:	66 44 85 6e 15       	test   WORD PTR [rsi+0x15],r13w
+   1215e:	66 44 85 76 15       	test   WORD PTR [rsi+0x15],r14w
+   12163:	66 44 85 7e 15       	test   WORD PTR [rsi+0x15],r15w
+   12168:	66 85 47 15          	test   WORD PTR [rdi+0x15],ax
+   1216c:	66 85 4f 15          	test   WORD PTR [rdi+0x15],cx
+   12170:	66 85 57 15          	test   WORD PTR [rdi+0x15],dx
+   12174:	66 85 5f 15          	test   WORD PTR [rdi+0x15],bx
+   12178:	66 85 67 15          	test   WORD PTR [rdi+0x15],sp
+   1217c:	66 85 6f 15          	test   WORD PTR [rdi+0x15],bp
+   12180:	66 85 77 15          	test   WORD PTR [rdi+0x15],si
+   12184:	66 85 7f 15          	test   WORD PTR [rdi+0x15],di
+   12188:	66 44 85 47 15       	test   WORD PTR [rdi+0x15],r8w
+   1218d:	66 44 85 4f 15       	test   WORD PTR [rdi+0x15],r9w
+   12192:	66 44 85 57 15       	test   WORD PTR [rdi+0x15],r10w
+   12197:	66 44 85 5f 15       	test   WORD PTR [rdi+0x15],r11w
+   1219c:	66 44 85 67 15       	test   WORD PTR [rdi+0x15],r12w
+   121a1:	66 44 85 6f 15       	test   WORD PTR [rdi+0x15],r13w
+   121a6:	66 44 85 77 15       	test   WORD PTR [rdi+0x15],r14w
+   121ab:	66 44 85 7f 15       	test   WORD PTR [rdi+0x15],r15w
+   121b0:	66 41 85 40 15       	test   WORD PTR [r8+0x15],ax
+   121b5:	66 41 85 48 15       	test   WORD PTR [r8+0x15],cx
+   121ba:	66 41 85 50 15       	test   WORD PTR [r8+0x15],dx
+   121bf:	66 41 85 58 15       	test   WORD PTR [r8+0x15],bx
+   121c4:	66 41 85 60 15       	test   WORD PTR [r8+0x15],sp
+   121c9:	66 41 85 68 15       	test   WORD PTR [r8+0x15],bp
+   121ce:	66 41 85 70 15       	test   WORD PTR [r8+0x15],si
+   121d3:	66 41 85 78 15       	test   WORD PTR [r8+0x15],di
+   121d8:	66 45 85 40 15       	test   WORD PTR [r8+0x15],r8w
+   121dd:	66 45 85 48 15       	test   WORD PTR [r8+0x15],r9w
+   121e2:	66 45 85 50 15       	test   WORD PTR [r8+0x15],r10w
+   121e7:	66 45 85 58 15       	test   WORD PTR [r8+0x15],r11w
+   121ec:	66 45 85 60 15       	test   WORD PTR [r8+0x15],r12w
+   121f1:	66 45 85 68 15       	test   WORD PTR [r8+0x15],r13w
+   121f6:	66 45 85 70 15       	test   WORD PTR [r8+0x15],r14w
+   121fb:	66 45 85 78 15       	test   WORD PTR [r8+0x15],r15w
+   12200:	66 41 85 41 15       	test   WORD PTR [r9+0x15],ax
+   12205:	66 41 85 49 15       	test   WORD PTR [r9+0x15],cx
+   1220a:	66 41 85 51 15       	test   WORD PTR [r9+0x15],dx
+   1220f:	66 41 85 59 15       	test   WORD PTR [r9+0x15],bx
+   12214:	66 41 85 61 15       	test   WORD PTR [r9+0x15],sp
+   12219:	66 41 85 69 15       	test   WORD PTR [r9+0x15],bp
+   1221e:	66 41 85 71 15       	test   WORD PTR [r9+0x15],si
+   12223:	66 41 85 79 15       	test   WORD PTR [r9+0x15],di
+   12228:	66 45 85 41 15       	test   WORD PTR [r9+0x15],r8w
+   1222d:	66 45 85 49 15       	test   WORD PTR [r9+0x15],r9w
+   12232:	66 45 85 51 15       	test   WORD PTR [r9+0x15],r10w
+   12237:	66 45 85 59 15       	test   WORD PTR [r9+0x15],r11w
+   1223c:	66 45 85 61 15       	test   WORD PTR [r9+0x15],r12w
+   12241:	66 45 85 69 15       	test   WORD PTR [r9+0x15],r13w
+   12246:	66 45 85 71 15       	test   WORD PTR [r9+0x15],r14w
+   1224b:	66 45 85 79 15       	test   WORD PTR [r9+0x15],r15w
+   12250:	66 41 85 42 15       	test   WORD PTR [r10+0x15],ax
+   12255:	66 41 85 4a 15       	test   WORD PTR [r10+0x15],cx
+   1225a:	66 41 85 52 15       	test   WORD PTR [r10+0x15],dx
+   1225f:	66 41 85 5a 15       	test   WORD PTR [r10+0x15],bx
+   12264:	66 41 85 62 15       	test   WORD PTR [r10+0x15],sp
+   12269:	66 41 85 6a 15       	test   WORD PTR [r10+0x15],bp
+   1226e:	66 41 85 72 15       	test   WORD PTR [r10+0x15],si
+   12273:	66 41 85 7a 15       	test   WORD PTR [r10+0x15],di
+   12278:	66 45 85 42 15       	test   WORD PTR [r10+0x15],r8w
+   1227d:	66 45 85 4a 15       	test   WORD PTR [r10+0x15],r9w
+   12282:	66 45 85 52 15       	test   WORD PTR [r10+0x15],r10w
+   12287:	66 45 85 5a 15       	test   WORD PTR [r10+0x15],r11w
+   1228c:	66 45 85 62 15       	test   WORD PTR [r10+0x15],r12w
+   12291:	66 45 85 6a 15       	test   WORD PTR [r10+0x15],r13w
+   12296:	66 45 85 72 15       	test   WORD PTR [r10+0x15],r14w
+   1229b:	66 45 85 7a 15       	test   WORD PTR [r10+0x15],r15w
+   122a0:	66 41 85 43 15       	test   WORD PTR [r11+0x15],ax
+   122a5:	66 41 85 4b 15       	test   WORD PTR [r11+0x15],cx
+   122aa:	66 41 85 53 15       	test   WORD PTR [r11+0x15],dx
+   122af:	66 41 85 5b 15       	test   WORD PTR [r11+0x15],bx
+   122b4:	66 41 85 63 15       	test   WORD PTR [r11+0x15],sp
+   122b9:	66 41 85 6b 15       	test   WORD PTR [r11+0x15],bp
+   122be:	66 41 85 73 15       	test   WORD PTR [r11+0x15],si
+   122c3:	66 41 85 7b 15       	test   WORD PTR [r11+0x15],di
+   122c8:	66 45 85 43 15       	test   WORD PTR [r11+0x15],r8w
+   122cd:	66 45 85 4b 15       	test   WORD PTR [r11+0x15],r9w
+   122d2:	66 45 85 53 15       	test   WORD PTR [r11+0x15],r10w
+   122d7:	66 45 85 5b 15       	test   WORD PTR [r11+0x15],r11w
+   122dc:	66 45 85 63 15       	test   WORD PTR [r11+0x15],r12w
+   122e1:	66 45 85 6b 15       	test   WORD PTR [r11+0x15],r13w
+   122e6:	66 45 85 73 15       	test   WORD PTR [r11+0x15],r14w
+   122eb:	66 45 85 7b 15       	test   WORD PTR [r11+0x15],r15w
+   122f0:	66 41 85 44 24 15    	test   WORD PTR [r12+0x15],ax
+   122f6:	66 41 85 4c 24 15    	test   WORD PTR [r12+0x15],cx
+   122fc:	66 41 85 54 24 15    	test   WORD PTR [r12+0x15],dx
+   12302:	66 41 85 5c 24 15    	test   WORD PTR [r12+0x15],bx
+   12308:	66 41 85 64 24 15    	test   WORD PTR [r12+0x15],sp
+   1230e:	66 41 85 6c 24 15    	test   WORD PTR [r12+0x15],bp
+   12314:	66 41 85 74 24 15    	test   WORD PTR [r12+0x15],si
+   1231a:	66 41 85 7c 24 15    	test   WORD PTR [r12+0x15],di
+   12320:	66 45 85 44 24 15    	test   WORD PTR [r12+0x15],r8w
+   12326:	66 45 85 4c 24 15    	test   WORD PTR [r12+0x15],r9w
+   1232c:	66 45 85 54 24 15    	test   WORD PTR [r12+0x15],r10w
+   12332:	66 45 85 5c 24 15    	test   WORD PTR [r12+0x15],r11w
+   12338:	66 45 85 64 24 15    	test   WORD PTR [r12+0x15],r12w
+   1233e:	66 45 85 6c 24 15    	test   WORD PTR [r12+0x15],r13w
+   12344:	66 45 85 74 24 15    	test   WORD PTR [r12+0x15],r14w
+   1234a:	66 45 85 7c 24 15    	test   WORD PTR [r12+0x15],r15w
+   12350:	66 41 85 45 15       	test   WORD PTR [r13+0x15],ax
+   12355:	66 41 85 4d 15       	test   WORD PTR [r13+0x15],cx
+   1235a:	66 41 85 55 15       	test   WORD PTR [r13+0x15],dx
+   1235f:	66 41 85 5d 15       	test   WORD PTR [r13+0x15],bx
+   12364:	66 41 85 65 15       	test   WORD PTR [r13+0x15],sp
+   12369:	66 41 85 6d 15       	test   WORD PTR [r13+0x15],bp
+   1236e:	66 41 85 75 15       	test   WORD PTR [r13+0x15],si
+   12373:	66 41 85 7d 15       	test   WORD PTR [r13+0x15],di
+   12378:	66 45 85 45 15       	test   WORD PTR [r13+0x15],r8w
+   1237d:	66 45 85 4d 15       	test   WORD PTR [r13+0x15],r9w
+   12382:	66 45 85 55 15       	test   WORD PTR [r13+0x15],r10w
+   12387:	66 45 85 5d 15       	test   WORD PTR [r13+0x15],r11w
+   1238c:	66 45 85 65 15       	test   WORD PTR [r13+0x15],r12w
+   12391:	66 45 85 6d 15       	test   WORD PTR [r13+0x15],r13w
+   12396:	66 45 85 75 15       	test   WORD PTR [r13+0x15],r14w
+   1239b:	66 45 85 7d 15       	test   WORD PTR [r13+0x15],r15w
+   123a0:	66 41 85 46 15       	test   WORD PTR [r14+0x15],ax
+   123a5:	66 41 85 4e 15       	test   WORD PTR [r14+0x15],cx
+   123aa:	66 41 85 56 15       	test   WORD PTR [r14+0x15],dx
+   123af:	66 41 85 5e 15       	test   WORD PTR [r14+0x15],bx
+   123b4:	66 41 85 66 15       	test   WORD PTR [r14+0x15],sp
+   123b9:	66 41 85 6e 15       	test   WORD PTR [r14+0x15],bp
+   123be:	66 41 85 76 15       	test   WORD PTR [r14+0x15],si
+   123c3:	66 41 85 7e 15       	test   WORD PTR [r14+0x15],di
+   123c8:	66 45 85 46 15       	test   WORD PTR [r14+0x15],r8w
+   123cd:	66 45 85 4e 15       	test   WORD PTR [r14+0x15],r9w
+   123d2:	66 45 85 56 15       	test   WORD PTR [r14+0x15],r10w
+   123d7:	66 45 85 5e 15       	test   WORD PTR [r14+0x15],r11w
+   123dc:	66 45 85 66 15       	test   WORD PTR [r14+0x15],r12w
+   123e1:	66 45 85 6e 15       	test   WORD PTR [r14+0x15],r13w
+   123e6:	66 45 85 76 15       	test   WORD PTR [r14+0x15],r14w
+   123eb:	66 45 85 7e 15       	test   WORD PTR [r14+0x15],r15w
+   123f0:	66 41 85 47 15       	test   WORD PTR [r15+0x15],ax
+   123f5:	66 41 85 4f 15       	test   WORD PTR [r15+0x15],cx
+   123fa:	66 41 85 57 15       	test   WORD PTR [r15+0x15],dx
+   123ff:	66 41 85 5f 15       	test   WORD PTR [r15+0x15],bx
+   12404:	66 41 85 67 15       	test   WORD PTR [r15+0x15],sp
+   12409:	66 41 85 6f 15       	test   WORD PTR [r15+0x15],bp
+   1240e:	66 41 85 77 15       	test   WORD PTR [r15+0x15],si
+   12413:	66 41 85 7f 15       	test   WORD PTR [r15+0x15],di
+   12418:	66 45 85 47 15       	test   WORD PTR [r15+0x15],r8w
+   1241d:	66 45 85 4f 15       	test   WORD PTR [r15+0x15],r9w
+   12422:	66 45 85 57 15       	test   WORD PTR [r15+0x15],r10w
+   12427:	66 45 85 5f 15       	test   WORD PTR [r15+0x15],r11w
+   1242c:	66 45 85 67 15       	test   WORD PTR [r15+0x15],r12w
+   12431:	66 45 85 6f 15       	test   WORD PTR [r15+0x15],r13w
+   12436:	66 45 85 77 15       	test   WORD PTR [r15+0x15],r14w
+   1243b:	66 45 85 7f 15       	test   WORD PTR [r15+0x15],r15w
+   12440:	84 40 15             	test   BYTE PTR [rax+0x15],al
+   12443:	84 48 15             	test   BYTE PTR [rax+0x15],cl
+   12446:	84 50 15             	test   BYTE PTR [rax+0x15],dl
+   12449:	84 58 15             	test   BYTE PTR [rax+0x15],bl
+   1244c:	84 60 15             	test   BYTE PTR [rax+0x15],ah
+   1244f:	84 68 15             	test   BYTE PTR [rax+0x15],ch
+   12452:	84 70 15             	test   BYTE PTR [rax+0x15],dh
+   12455:	84 78 15             	test   BYTE PTR [rax+0x15],bh
+   12458:	44 84 40 15          	test   BYTE PTR [rax+0x15],r8b
+   1245c:	44 84 48 15          	test   BYTE PTR [rax+0x15],r9b
+   12460:	44 84 50 15          	test   BYTE PTR [rax+0x15],r10b
+   12464:	44 84 58 15          	test   BYTE PTR [rax+0x15],r11b
+   12468:	44 84 60 15          	test   BYTE PTR [rax+0x15],r12b
+   1246c:	44 84 68 15          	test   BYTE PTR [rax+0x15],r13b
+   12470:	44 84 70 15          	test   BYTE PTR [rax+0x15],r14b
+   12474:	44 84 78 15          	test   BYTE PTR [rax+0x15],r15b
+   12478:	40 84 60 15          	test   BYTE PTR [rax+0x15],spl
+   1247c:	40 84 68 15          	test   BYTE PTR [rax+0x15],bpl
+   12480:	40 84 70 15          	test   BYTE PTR [rax+0x15],sil
+   12484:	40 84 78 15          	test   BYTE PTR [rax+0x15],dil
+   12488:	84 41 15             	test   BYTE PTR [rcx+0x15],al
+   1248b:	84 49 15             	test   BYTE PTR [rcx+0x15],cl
+   1248e:	84 51 15             	test   BYTE PTR [rcx+0x15],dl
+   12491:	84 59 15             	test   BYTE PTR [rcx+0x15],bl
+   12494:	84 61 15             	test   BYTE PTR [rcx+0x15],ah
+   12497:	84 69 15             	test   BYTE PTR [rcx+0x15],ch
+   1249a:	84 71 15             	test   BYTE PTR [rcx+0x15],dh
+   1249d:	84 79 15             	test   BYTE PTR [rcx+0x15],bh
+   124a0:	44 84 41 15          	test   BYTE PTR [rcx+0x15],r8b
+   124a4:	44 84 49 15          	test   BYTE PTR [rcx+0x15],r9b
+   124a8:	44 84 51 15          	test   BYTE PTR [rcx+0x15],r10b
+   124ac:	44 84 59 15          	test   BYTE PTR [rcx+0x15],r11b
+   124b0:	44 84 61 15          	test   BYTE PTR [rcx+0x15],r12b
+   124b4:	44 84 69 15          	test   BYTE PTR [rcx+0x15],r13b
+   124b8:	44 84 71 15          	test   BYTE PTR [rcx+0x15],r14b
+   124bc:	44 84 79 15          	test   BYTE PTR [rcx+0x15],r15b
+   124c0:	40 84 61 15          	test   BYTE PTR [rcx+0x15],spl
+   124c4:	40 84 69 15          	test   BYTE PTR [rcx+0x15],bpl
+   124c8:	40 84 71 15          	test   BYTE PTR [rcx+0x15],sil
+   124cc:	40 84 79 15          	test   BYTE PTR [rcx+0x15],dil
+   124d0:	84 42 15             	test   BYTE PTR [rdx+0x15],al
+   124d3:	84 4a 15             	test   BYTE PTR [rdx+0x15],cl
+   124d6:	84 52 15             	test   BYTE PTR [rdx+0x15],dl
+   124d9:	84 5a 15             	test   BYTE PTR [rdx+0x15],bl
+   124dc:	84 62 15             	test   BYTE PTR [rdx+0x15],ah
+   124df:	84 6a 15             	test   BYTE PTR [rdx+0x15],ch
+   124e2:	84 72 15             	test   BYTE PTR [rdx+0x15],dh
+   124e5:	84 7a 15             	test   BYTE PTR [rdx+0x15],bh
+   124e8:	44 84 42 15          	test   BYTE PTR [rdx+0x15],r8b
+   124ec:	44 84 4a 15          	test   BYTE PTR [rdx+0x15],r9b
+   124f0:	44 84 52 15          	test   BYTE PTR [rdx+0x15],r10b
+   124f4:	44 84 5a 15          	test   BYTE PTR [rdx+0x15],r11b
+   124f8:	44 84 62 15          	test   BYTE PTR [rdx+0x15],r12b
+   124fc:	44 84 6a 15          	test   BYTE PTR [rdx+0x15],r13b
+   12500:	44 84 72 15          	test   BYTE PTR [rdx+0x15],r14b
+   12504:	44 84 7a 15          	test   BYTE PTR [rdx+0x15],r15b
+   12508:	40 84 62 15          	test   BYTE PTR [rdx+0x15],spl
+   1250c:	40 84 6a 15          	test   BYTE PTR [rdx+0x15],bpl
+   12510:	40 84 72 15          	test   BYTE PTR [rdx+0x15],sil
+   12514:	40 84 7a 15          	test   BYTE PTR [rdx+0x15],dil
+   12518:	84 43 15             	test   BYTE PTR [rbx+0x15],al
+   1251b:	84 4b 15             	test   BYTE PTR [rbx+0x15],cl
+   1251e:	84 53 15             	test   BYTE PTR [rbx+0x15],dl
+   12521:	84 5b 15             	test   BYTE PTR [rbx+0x15],bl
+   12524:	84 63 15             	test   BYTE PTR [rbx+0x15],ah
+   12527:	84 6b 15             	test   BYTE PTR [rbx+0x15],ch
+   1252a:	84 73 15             	test   BYTE PTR [rbx+0x15],dh
+   1252d:	84 7b 15             	test   BYTE PTR [rbx+0x15],bh
+   12530:	44 84 43 15          	test   BYTE PTR [rbx+0x15],r8b
+   12534:	44 84 4b 15          	test   BYTE PTR [rbx+0x15],r9b
+   12538:	44 84 53 15          	test   BYTE PTR [rbx+0x15],r10b
+   1253c:	44 84 5b 15          	test   BYTE PTR [rbx+0x15],r11b
+   12540:	44 84 63 15          	test   BYTE PTR [rbx+0x15],r12b
+   12544:	44 84 6b 15          	test   BYTE PTR [rbx+0x15],r13b
+   12548:	44 84 73 15          	test   BYTE PTR [rbx+0x15],r14b
+   1254c:	44 84 7b 15          	test   BYTE PTR [rbx+0x15],r15b
+   12550:	40 84 63 15          	test   BYTE PTR [rbx+0x15],spl
+   12554:	40 84 6b 15          	test   BYTE PTR [rbx+0x15],bpl
+   12558:	40 84 73 15          	test   BYTE PTR [rbx+0x15],sil
+   1255c:	40 84 7b 15          	test   BYTE PTR [rbx+0x15],dil
+   12560:	84 44 24 15          	test   BYTE PTR [rsp+0x15],al
+   12564:	84 4c 24 15          	test   BYTE PTR [rsp+0x15],cl
+   12568:	84 54 24 15          	test   BYTE PTR [rsp+0x15],dl
+   1256c:	84 5c 24 15          	test   BYTE PTR [rsp+0x15],bl
+   12570:	84 64 24 15          	test   BYTE PTR [rsp+0x15],ah
+   12574:	84 6c 24 15          	test   BYTE PTR [rsp+0x15],ch
+   12578:	84 74 24 15          	test   BYTE PTR [rsp+0x15],dh
+   1257c:	84 7c 24 15          	test   BYTE PTR [rsp+0x15],bh
+   12580:	44 84 44 24 15       	test   BYTE PTR [rsp+0x15],r8b
+   12585:	44 84 4c 24 15       	test   BYTE PTR [rsp+0x15],r9b
+   1258a:	44 84 54 24 15       	test   BYTE PTR [rsp+0x15],r10b
+   1258f:	44 84 5c 24 15       	test   BYTE PTR [rsp+0x15],r11b
+   12594:	44 84 64 24 15       	test   BYTE PTR [rsp+0x15],r12b
+   12599:	44 84 6c 24 15       	test   BYTE PTR [rsp+0x15],r13b
+   1259e:	44 84 74 24 15       	test   BYTE PTR [rsp+0x15],r14b
+   125a3:	44 84 7c 24 15       	test   BYTE PTR [rsp+0x15],r15b
+   125a8:	40 84 64 24 15       	test   BYTE PTR [rsp+0x15],spl
+   125ad:	40 84 6c 24 15       	test   BYTE PTR [rsp+0x15],bpl
+   125b2:	40 84 74 24 15       	test   BYTE PTR [rsp+0x15],sil
+   125b7:	40 84 7c 24 15       	test   BYTE PTR [rsp+0x15],dil
+   125bc:	84 45 15             	test   BYTE PTR [rbp+0x15],al
+   125bf:	84 4d 15             	test   BYTE PTR [rbp+0x15],cl
+   125c2:	84 55 15             	test   BYTE PTR [rbp+0x15],dl
+   125c5:	84 5d 15             	test   BYTE PTR [rbp+0x15],bl
+   125c8:	84 65 15             	test   BYTE PTR [rbp+0x15],ah
+   125cb:	84 6d 15             	test   BYTE PTR [rbp+0x15],ch
+   125ce:	84 75 15             	test   BYTE PTR [rbp+0x15],dh
+   125d1:	84 7d 15             	test   BYTE PTR [rbp+0x15],bh
+   125d4:	44 84 45 15          	test   BYTE PTR [rbp+0x15],r8b
+   125d8:	44 84 4d 15          	test   BYTE PTR [rbp+0x15],r9b
+   125dc:	44 84 55 15          	test   BYTE PTR [rbp+0x15],r10b
+   125e0:	44 84 5d 15          	test   BYTE PTR [rbp+0x15],r11b
+   125e4:	44 84 65 15          	test   BYTE PTR [rbp+0x15],r12b
+   125e8:	44 84 6d 15          	test   BYTE PTR [rbp+0x15],r13b
+   125ec:	44 84 75 15          	test   BYTE PTR [rbp+0x15],r14b
+   125f0:	44 84 7d 15          	test   BYTE PTR [rbp+0x15],r15b
+   125f4:	40 84 65 15          	test   BYTE PTR [rbp+0x15],spl
+   125f8:	40 84 6d 15          	test   BYTE PTR [rbp+0x15],bpl
+   125fc:	40 84 75 15          	test   BYTE PTR [rbp+0x15],sil
+   12600:	40 84 7d 15          	test   BYTE PTR [rbp+0x15],dil
+   12604:	84 46 15             	test   BYTE PTR [rsi+0x15],al
+   12607:	84 4e 15             	test   BYTE PTR [rsi+0x15],cl
+   1260a:	84 56 15             	test   BYTE PTR [rsi+0x15],dl
+   1260d:	84 5e 15             	test   BYTE PTR [rsi+0x15],bl
+   12610:	84 66 15             	test   BYTE PTR [rsi+0x15],ah
+   12613:	84 6e 15             	test   BYTE PTR [rsi+0x15],ch
+   12616:	84 76 15             	test   BYTE PTR [rsi+0x15],dh
+   12619:	84 7e 15             	test   BYTE PTR [rsi+0x15],bh
+   1261c:	44 84 46 15          	test   BYTE PTR [rsi+0x15],r8b
+   12620:	44 84 4e 15          	test   BYTE PTR [rsi+0x15],r9b
+   12624:	44 84 56 15          	test   BYTE PTR [rsi+0x15],r10b
+   12628:	44 84 5e 15          	test   BYTE PTR [rsi+0x15],r11b
+   1262c:	44 84 66 15          	test   BYTE PTR [rsi+0x15],r12b
+   12630:	44 84 6e 15          	test   BYTE PTR [rsi+0x15],r13b
+   12634:	44 84 76 15          	test   BYTE PTR [rsi+0x15],r14b
+   12638:	44 84 7e 15          	test   BYTE PTR [rsi+0x15],r15b
+   1263c:	40 84 66 15          	test   BYTE PTR [rsi+0x15],spl
+   12640:	40 84 6e 15          	test   BYTE PTR [rsi+0x15],bpl
+   12644:	40 84 76 15          	test   BYTE PTR [rsi+0x15],sil
+   12648:	40 84 7e 15          	test   BYTE PTR [rsi+0x15],dil
+   1264c:	84 47 15             	test   BYTE PTR [rdi+0x15],al
+   1264f:	84 4f 15             	test   BYTE PTR [rdi+0x15],cl
+   12652:	84 57 15             	test   BYTE PTR [rdi+0x15],dl
+   12655:	84 5f 15             	test   BYTE PTR [rdi+0x15],bl
+   12658:	84 67 15             	test   BYTE PTR [rdi+0x15],ah
+   1265b:	84 6f 15             	test   BYTE PTR [rdi+0x15],ch
+   1265e:	84 77 15             	test   BYTE PTR [rdi+0x15],dh
+   12661:	84 7f 15             	test   BYTE PTR [rdi+0x15],bh
+   12664:	44 84 47 15          	test   BYTE PTR [rdi+0x15],r8b
+   12668:	44 84 4f 15          	test   BYTE PTR [rdi+0x15],r9b
+   1266c:	44 84 57 15          	test   BYTE PTR [rdi+0x15],r10b
+   12670:	44 84 5f 15          	test   BYTE PTR [rdi+0x15],r11b
+   12674:	44 84 67 15          	test   BYTE PTR [rdi+0x15],r12b
+   12678:	44 84 6f 15          	test   BYTE PTR [rdi+0x15],r13b
+   1267c:	44 84 77 15          	test   BYTE PTR [rdi+0x15],r14b
+   12680:	44 84 7f 15          	test   BYTE PTR [rdi+0x15],r15b
+   12684:	40 84 67 15          	test   BYTE PTR [rdi+0x15],spl
+   12688:	40 84 6f 15          	test   BYTE PTR [rdi+0x15],bpl
+   1268c:	40 84 77 15          	test   BYTE PTR [rdi+0x15],sil
+   12690:	40 84 7f 15          	test   BYTE PTR [rdi+0x15],dil
+   12694:	41 84 40 15          	test   BYTE PTR [r8+0x15],al
+   12698:	41 84 48 15          	test   BYTE PTR [r8+0x15],cl
+   1269c:	41 84 50 15          	test   BYTE PTR [r8+0x15],dl
+   126a0:	41 84 58 15          	test   BYTE PTR [r8+0x15],bl
+   126a4:	41 84 60 15          	test   BYTE PTR [r8+0x15],spl
+   126a8:	41 84 68 15          	test   BYTE PTR [r8+0x15],bpl
+   126ac:	41 84 70 15          	test   BYTE PTR [r8+0x15],sil
+   126b0:	41 84 78 15          	test   BYTE PTR [r8+0x15],dil
+   126b4:	45 84 40 15          	test   BYTE PTR [r8+0x15],r8b
+   126b8:	45 84 48 15          	test   BYTE PTR [r8+0x15],r9b
+   126bc:	45 84 50 15          	test   BYTE PTR [r8+0x15],r10b
+   126c0:	45 84 58 15          	test   BYTE PTR [r8+0x15],r11b
+   126c4:	45 84 60 15          	test   BYTE PTR [r8+0x15],r12b
+   126c8:	45 84 68 15          	test   BYTE PTR [r8+0x15],r13b
+   126cc:	45 84 70 15          	test   BYTE PTR [r8+0x15],r14b
+   126d0:	45 84 78 15          	test   BYTE PTR [r8+0x15],r15b
+   126d4:	41 84 60 15          	test   BYTE PTR [r8+0x15],spl
+   126d8:	41 84 68 15          	test   BYTE PTR [r8+0x15],bpl
+   126dc:	41 84 70 15          	test   BYTE PTR [r8+0x15],sil
+   126e0:	41 84 78 15          	test   BYTE PTR [r8+0x15],dil
+   126e4:	41 84 41 15          	test   BYTE PTR [r9+0x15],al
+   126e8:	41 84 49 15          	test   BYTE PTR [r9+0x15],cl
+   126ec:	41 84 51 15          	test   BYTE PTR [r9+0x15],dl
+   126f0:	41 84 59 15          	test   BYTE PTR [r9+0x15],bl
+   126f4:	41 84 61 15          	test   BYTE PTR [r9+0x15],spl
+   126f8:	41 84 69 15          	test   BYTE PTR [r9+0x15],bpl
+   126fc:	41 84 71 15          	test   BYTE PTR [r9+0x15],sil
+   12700:	41 84 79 15          	test   BYTE PTR [r9+0x15],dil
+   12704:	45 84 41 15          	test   BYTE PTR [r9+0x15],r8b
+   12708:	45 84 49 15          	test   BYTE PTR [r9+0x15],r9b
+   1270c:	45 84 51 15          	test   BYTE PTR [r9+0x15],r10b
+   12710:	45 84 59 15          	test   BYTE PTR [r9+0x15],r11b
+   12714:	45 84 61 15          	test   BYTE PTR [r9+0x15],r12b
+   12718:	45 84 69 15          	test   BYTE PTR [r9+0x15],r13b
+   1271c:	45 84 71 15          	test   BYTE PTR [r9+0x15],r14b
+   12720:	45 84 79 15          	test   BYTE PTR [r9+0x15],r15b
+   12724:	41 84 61 15          	test   BYTE PTR [r9+0x15],spl
+   12728:	41 84 69 15          	test   BYTE PTR [r9+0x15],bpl
+   1272c:	41 84 71 15          	test   BYTE PTR [r9+0x15],sil
+   12730:	41 84 79 15          	test   BYTE PTR [r9+0x15],dil
+   12734:	41 84 42 15          	test   BYTE PTR [r10+0x15],al
+   12738:	41 84 4a 15          	test   BYTE PTR [r10+0x15],cl
+   1273c:	41 84 52 15          	test   BYTE PTR [r10+0x15],dl
+   12740:	41 84 5a 15          	test   BYTE PTR [r10+0x15],bl
+   12744:	41 84 62 15          	test   BYTE PTR [r10+0x15],spl
+   12748:	41 84 6a 15          	test   BYTE PTR [r10+0x15],bpl
+   1274c:	41 84 72 15          	test   BYTE PTR [r10+0x15],sil
+   12750:	41 84 7a 15          	test   BYTE PTR [r10+0x15],dil
+   12754:	45 84 42 15          	test   BYTE PTR [r10+0x15],r8b
+   12758:	45 84 4a 15          	test   BYTE PTR [r10+0x15],r9b
+   1275c:	45 84 52 15          	test   BYTE PTR [r10+0x15],r10b
+   12760:	45 84 5a 15          	test   BYTE PTR [r10+0x15],r11b
+   12764:	45 84 62 15          	test   BYTE PTR [r10+0x15],r12b
+   12768:	45 84 6a 15          	test   BYTE PTR [r10+0x15],r13b
+   1276c:	45 84 72 15          	test   BYTE PTR [r10+0x15],r14b
+   12770:	45 84 7a 15          	test   BYTE PTR [r10+0x15],r15b
+   12774:	41 84 62 15          	test   BYTE PTR [r10+0x15],spl
+   12778:	41 84 6a 15          	test   BYTE PTR [r10+0x15],bpl
+   1277c:	41 84 72 15          	test   BYTE PTR [r10+0x15],sil
+   12780:	41 84 7a 15          	test   BYTE PTR [r10+0x15],dil
+   12784:	41 84 43 15          	test   BYTE PTR [r11+0x15],al
+   12788:	41 84 4b 15          	test   BYTE PTR [r11+0x15],cl
+   1278c:	41 84 53 15          	test   BYTE PTR [r11+0x15],dl
+   12790:	41 84 5b 15          	test   BYTE PTR [r11+0x15],bl
+   12794:	41 84 63 15          	test   BYTE PTR [r11+0x15],spl
+   12798:	41 84 6b 15          	test   BYTE PTR [r11+0x15],bpl
+   1279c:	41 84 73 15          	test   BYTE PTR [r11+0x15],sil
+   127a0:	41 84 7b 15          	test   BYTE PTR [r11+0x15],dil
+   127a4:	45 84 43 15          	test   BYTE PTR [r11+0x15],r8b
+   127a8:	45 84 4b 15          	test   BYTE PTR [r11+0x15],r9b
+   127ac:	45 84 53 15          	test   BYTE PTR [r11+0x15],r10b
+   127b0:	45 84 5b 15          	test   BYTE PTR [r11+0x15],r11b
+   127b4:	45 84 63 15          	test   BYTE PTR [r11+0x15],r12b
+   127b8:	45 84 6b 15          	test   BYTE PTR [r11+0x15],r13b
+   127bc:	45 84 73 15          	test   BYTE PTR [r11+0x15],r14b
+   127c0:	45 84 7b 15          	test   BYTE PTR [r11+0x15],r15b
+   127c4:	41 84 63 15          	test   BYTE PTR [r11+0x15],spl
+   127c8:	41 84 6b 15          	test   BYTE PTR [r11+0x15],bpl
+   127cc:	41 84 73 15          	test   BYTE PTR [r11+0x15],sil
+   127d0:	41 84 7b 15          	test   BYTE PTR [r11+0x15],dil
+   127d4:	41 84 44 24 15       	test   BYTE PTR [r12+0x15],al
+   127d9:	41 84 4c 24 15       	test   BYTE PTR [r12+0x15],cl
+   127de:	41 84 54 24 15       	test   BYTE PTR [r12+0x15],dl
+   127e3:	41 84 5c 24 15       	test   BYTE PTR [r12+0x15],bl
+   127e8:	41 84 64 24 15       	test   BYTE PTR [r12+0x15],spl
+   127ed:	41 84 6c 24 15       	test   BYTE PTR [r12+0x15],bpl
+   127f2:	41 84 74 24 15       	test   BYTE PTR [r12+0x15],sil
+   127f7:	41 84 7c 24 15       	test   BYTE PTR [r12+0x15],dil
+   127fc:	45 84 44 24 15       	test   BYTE PTR [r12+0x15],r8b
+   12801:	45 84 4c 24 15       	test   BYTE PTR [r12+0x15],r9b
+   12806:	45 84 54 24 15       	test   BYTE PTR [r12+0x15],r10b
+   1280b:	45 84 5c 24 15       	test   BYTE PTR [r12+0x15],r11b
+   12810:	45 84 64 24 15       	test   BYTE PTR [r12+0x15],r12b
+   12815:	45 84 6c 24 15       	test   BYTE PTR [r12+0x15],r13b
+   1281a:	45 84 74 24 15       	test   BYTE PTR [r12+0x15],r14b
+   1281f:	45 84 7c 24 15       	test   BYTE PTR [r12+0x15],r15b
+   12824:	41 84 64 24 15       	test   BYTE PTR [r12+0x15],spl
+   12829:	41 84 6c 24 15       	test   BYTE PTR [r12+0x15],bpl
+   1282e:	41 84 74 24 15       	test   BYTE PTR [r12+0x15],sil
+   12833:	41 84 7c 24 15       	test   BYTE PTR [r12+0x15],dil
+   12838:	41 84 45 15          	test   BYTE PTR [r13+0x15],al
+   1283c:	41 84 4d 15          	test   BYTE PTR [r13+0x15],cl
+   12840:	41 84 55 15          	test   BYTE PTR [r13+0x15],dl
+   12844:	41 84 5d 15          	test   BYTE PTR [r13+0x15],bl
+   12848:	41 84 65 15          	test   BYTE PTR [r13+0x15],spl
+   1284c:	41 84 6d 15          	test   BYTE PTR [r13+0x15],bpl
+   12850:	41 84 75 15          	test   BYTE PTR [r13+0x15],sil
+   12854:	41 84 7d 15          	test   BYTE PTR [r13+0x15],dil
+   12858:	45 84 45 15          	test   BYTE PTR [r13+0x15],r8b
+   1285c:	45 84 4d 15          	test   BYTE PTR [r13+0x15],r9b
+   12860:	45 84 55 15          	test   BYTE PTR [r13+0x15],r10b
+   12864:	45 84 5d 15          	test   BYTE PTR [r13+0x15],r11b
+   12868:	45 84 65 15          	test   BYTE PTR [r13+0x15],r12b
+   1286c:	45 84 6d 15          	test   BYTE PTR [r13+0x15],r13b
+   12870:	45 84 75 15          	test   BYTE PTR [r13+0x15],r14b
+   12874:	45 84 7d 15          	test   BYTE PTR [r13+0x15],r15b
+   12878:	41 84 65 15          	test   BYTE PTR [r13+0x15],spl
+   1287c:	41 84 6d 15          	test   BYTE PTR [r13+0x15],bpl
+   12880:	41 84 75 15          	test   BYTE PTR [r13+0x15],sil
+   12884:	41 84 7d 15          	test   BYTE PTR [r13+0x15],dil
+   12888:	41 84 46 15          	test   BYTE PTR [r14+0x15],al
+   1288c:	41 84 4e 15          	test   BYTE PTR [r14+0x15],cl
+   12890:	41 84 56 15          	test   BYTE PTR [r14+0x15],dl
+   12894:	41 84 5e 15          	test   BYTE PTR [r14+0x15],bl
+   12898:	41 84 66 15          	test   BYTE PTR [r14+0x15],spl
+   1289c:	41 84 6e 15          	test   BYTE PTR [r14+0x15],bpl
+   128a0:	41 84 76 15          	test   BYTE PTR [r14+0x15],sil
+   128a4:	41 84 7e 15          	test   BYTE PTR [r14+0x15],dil
+   128a8:	45 84 46 15          	test   BYTE PTR [r14+0x15],r8b
+   128ac:	45 84 4e 15          	test   BYTE PTR [r14+0x15],r9b
+   128b0:	45 84 56 15          	test   BYTE PTR [r14+0x15],r10b
+   128b4:	45 84 5e 15          	test   BYTE PTR [r14+0x15],r11b
+   128b8:	45 84 66 15          	test   BYTE PTR [r14+0x15],r12b
+   128bc:	45 84 6e 15          	test   BYTE PTR [r14+0x15],r13b
+   128c0:	45 84 76 15          	test   BYTE PTR [r14+0x15],r14b
+   128c4:	45 84 7e 15          	test   BYTE PTR [r14+0x15],r15b
+   128c8:	41 84 66 15          	test   BYTE PTR [r14+0x15],spl
+   128cc:	41 84 6e 15          	test   BYTE PTR [r14+0x15],bpl
+   128d0:	41 84 76 15          	test   BYTE PTR [r14+0x15],sil
+   128d4:	41 84 7e 15          	test   BYTE PTR [r14+0x15],dil
+   128d8:	41 84 47 15          	test   BYTE PTR [r15+0x15],al
+   128dc:	41 84 4f 15          	test   BYTE PTR [r15+0x15],cl
+   128e0:	41 84 57 15          	test   BYTE PTR [r15+0x15],dl
+   128e4:	41 84 5f 15          	test   BYTE PTR [r15+0x15],bl
+   128e8:	41 84 67 15          	test   BYTE PTR [r15+0x15],spl
+   128ec:	41 84 6f 15          	test   BYTE PTR [r15+0x15],bpl
+   128f0:	41 84 77 15          	test   BYTE PTR [r15+0x15],sil
+   128f4:	41 84 7f 15          	test   BYTE PTR [r15+0x15],dil
+   128f8:	45 84 47 15          	test   BYTE PTR [r15+0x15],r8b
+   128fc:	45 84 4f 15          	test   BYTE PTR [r15+0x15],r9b
+   12900:	45 84 57 15          	test   BYTE PTR [r15+0x15],r10b
+   12904:	45 84 5f 15          	test   BYTE PTR [r15+0x15],r11b
+   12908:	45 84 67 15          	test   BYTE PTR [r15+0x15],r12b
+   1290c:	45 84 6f 15          	test   BYTE PTR [r15+0x15],r13b
+   12910:	45 84 77 15          	test   BYTE PTR [r15+0x15],r14b
+   12914:	45 84 7f 15          	test   BYTE PTR [r15+0x15],r15b
+   12918:	41 84 67 15          	test   BYTE PTR [r15+0x15],spl
+   1291c:	41 84 6f 15          	test   BYTE PTR [r15+0x15],bpl
+   12920:	41 84 77 15          	test   BYTE PTR [r15+0x15],sil
+   12924:	41 84 7f 15          	test   BYTE PTR [r15+0x15],dil
+   12928:	48 85 80 18 17 16 15 	test   QWORD PTR [rax+0x15161718],rax
+   1292f:	48 85 88 18 17 16 15 	test   QWORD PTR [rax+0x15161718],rcx
+   12936:	48 85 90 18 17 16 15 	test   QWORD PTR [rax+0x15161718],rdx
+   1293d:	48 85 98 18 17 16 15 	test   QWORD PTR [rax+0x15161718],rbx
+   12944:	48 85 a0 18 17 16 15 	test   QWORD PTR [rax+0x15161718],rsp
+   1294b:	48 85 a8 18 17 16 15 	test   QWORD PTR [rax+0x15161718],rbp
+   12952:	48 85 b0 18 17 16 15 	test   QWORD PTR [rax+0x15161718],rsi
+   12959:	48 85 b8 18 17 16 15 	test   QWORD PTR [rax+0x15161718],rdi
+   12960:	4c 85 80 18 17 16 15 	test   QWORD PTR [rax+0x15161718],r8
+   12967:	4c 85 88 18 17 16 15 	test   QWORD PTR [rax+0x15161718],r9
+   1296e:	4c 85 90 18 17 16 15 	test   QWORD PTR [rax+0x15161718],r10
+   12975:	4c 85 98 18 17 16 15 	test   QWORD PTR [rax+0x15161718],r11
+   1297c:	4c 85 a0 18 17 16 15 	test   QWORD PTR [rax+0x15161718],r12
+   12983:	4c 85 a8 18 17 16 15 	test   QWORD PTR [rax+0x15161718],r13
+   1298a:	4c 85 b0 18 17 16 15 	test   QWORD PTR [rax+0x15161718],r14
+   12991:	4c 85 b8 18 17 16 15 	test   QWORD PTR [rax+0x15161718],r15
+   12998:	48 85 81 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],rax
+   1299f:	48 85 89 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],rcx
+   129a6:	48 85 91 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],rdx
+   129ad:	48 85 99 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],rbx
+   129b4:	48 85 a1 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],rsp
+   129bb:	48 85 a9 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],rbp
+   129c2:	48 85 b1 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],rsi
+   129c9:	48 85 b9 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],rdi
+   129d0:	4c 85 81 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],r8
+   129d7:	4c 85 89 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],r9
+   129de:	4c 85 91 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],r10
+   129e5:	4c 85 99 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],r11
+   129ec:	4c 85 a1 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],r12
+   129f3:	4c 85 a9 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],r13
+   129fa:	4c 85 b1 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],r14
+   12a01:	4c 85 b9 18 17 16 15 	test   QWORD PTR [rcx+0x15161718],r15
+   12a08:	48 85 82 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],rax
+   12a0f:	48 85 8a 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],rcx
+   12a16:	48 85 92 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],rdx
+   12a1d:	48 85 9a 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],rbx
+   12a24:	48 85 a2 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],rsp
+   12a2b:	48 85 aa 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],rbp
+   12a32:	48 85 b2 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],rsi
+   12a39:	48 85 ba 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],rdi
+   12a40:	4c 85 82 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],r8
+   12a47:	4c 85 8a 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],r9
+   12a4e:	4c 85 92 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],r10
+   12a55:	4c 85 9a 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],r11
+   12a5c:	4c 85 a2 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],r12
+   12a63:	4c 85 aa 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],r13
+   12a6a:	4c 85 b2 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],r14
+   12a71:	4c 85 ba 18 17 16 15 	test   QWORD PTR [rdx+0x15161718],r15
+   12a78:	48 85 83 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],rax
+   12a7f:	48 85 8b 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],rcx
+   12a86:	48 85 93 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],rdx
+   12a8d:	48 85 9b 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],rbx
+   12a94:	48 85 a3 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],rsp
+   12a9b:	48 85 ab 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],rbp
+   12aa2:	48 85 b3 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],rsi
+   12aa9:	48 85 bb 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],rdi
+   12ab0:	4c 85 83 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],r8
+   12ab7:	4c 85 8b 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],r9
+   12abe:	4c 85 93 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],r10
+   12ac5:	4c 85 9b 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],r11
+   12acc:	4c 85 a3 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],r12
+   12ad3:	4c 85 ab 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],r13
+   12ada:	4c 85 b3 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],r14
+   12ae1:	4c 85 bb 18 17 16 15 	test   QWORD PTR [rbx+0x15161718],r15
+   12ae8:	48 85 84 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],rax
+   12af0:	48 85 8c 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],rcx
+   12af8:	48 85 94 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],rdx
+   12b00:	48 85 9c 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],rbx
+   12b08:	48 85 a4 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],rsp
+   12b10:	48 85 ac 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],rbp
+   12b18:	48 85 b4 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],rsi
+   12b20:	48 85 bc 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],rdi
+   12b28:	4c 85 84 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],r8
+   12b30:	4c 85 8c 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],r9
+   12b38:	4c 85 94 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],r10
+   12b40:	4c 85 9c 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],r11
+   12b48:	4c 85 a4 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],r12
+   12b50:	4c 85 ac 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],r13
+   12b58:	4c 85 b4 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],r14
+   12b60:	4c 85 bc 24 18 17 16 15 	test   QWORD PTR [rsp+0x15161718],r15
+   12b68:	48 85 85 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],rax
+   12b6f:	48 85 8d 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],rcx
+   12b76:	48 85 95 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],rdx
+   12b7d:	48 85 9d 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],rbx
+   12b84:	48 85 a5 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],rsp
+   12b8b:	48 85 ad 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],rbp
+   12b92:	48 85 b5 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],rsi
+   12b99:	48 85 bd 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],rdi
+   12ba0:	4c 85 85 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],r8
+   12ba7:	4c 85 8d 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],r9
+   12bae:	4c 85 95 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],r10
+   12bb5:	4c 85 9d 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],r11
+   12bbc:	4c 85 a5 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],r12
+   12bc3:	4c 85 ad 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],r13
+   12bca:	4c 85 b5 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],r14
+   12bd1:	4c 85 bd 18 17 16 15 	test   QWORD PTR [rbp+0x15161718],r15
+   12bd8:	48 85 86 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],rax
+   12bdf:	48 85 8e 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],rcx
+   12be6:	48 85 96 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],rdx
+   12bed:	48 85 9e 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],rbx
+   12bf4:	48 85 a6 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],rsp
+   12bfb:	48 85 ae 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],rbp
+   12c02:	48 85 b6 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],rsi
+   12c09:	48 85 be 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],rdi
+   12c10:	4c 85 86 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],r8
+   12c17:	4c 85 8e 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],r9
+   12c1e:	4c 85 96 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],r10
+   12c25:	4c 85 9e 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],r11
+   12c2c:	4c 85 a6 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],r12
+   12c33:	4c 85 ae 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],r13
+   12c3a:	4c 85 b6 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],r14
+   12c41:	4c 85 be 18 17 16 15 	test   QWORD PTR [rsi+0x15161718],r15
+   12c48:	48 85 87 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],rax
+   12c4f:	48 85 8f 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],rcx
+   12c56:	48 85 97 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],rdx
+   12c5d:	48 85 9f 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],rbx
+   12c64:	48 85 a7 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],rsp
+   12c6b:	48 85 af 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],rbp
+   12c72:	48 85 b7 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],rsi
+   12c79:	48 85 bf 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],rdi
+   12c80:	4c 85 87 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],r8
+   12c87:	4c 85 8f 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],r9
+   12c8e:	4c 85 97 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],r10
+   12c95:	4c 85 9f 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],r11
+   12c9c:	4c 85 a7 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],r12
+   12ca3:	4c 85 af 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],r13
+   12caa:	4c 85 b7 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],r14
+   12cb1:	4c 85 bf 18 17 16 15 	test   QWORD PTR [rdi+0x15161718],r15
+   12cb8:	49 85 80 18 17 16 15 	test   QWORD PTR [r8+0x15161718],rax
+   12cbf:	49 85 88 18 17 16 15 	test   QWORD PTR [r8+0x15161718],rcx
+   12cc6:	49 85 90 18 17 16 15 	test   QWORD PTR [r8+0x15161718],rdx
+   12ccd:	49 85 98 18 17 16 15 	test   QWORD PTR [r8+0x15161718],rbx
+   12cd4:	49 85 a0 18 17 16 15 	test   QWORD PTR [r8+0x15161718],rsp
+   12cdb:	49 85 a8 18 17 16 15 	test   QWORD PTR [r8+0x15161718],rbp
+   12ce2:	49 85 b0 18 17 16 15 	test   QWORD PTR [r8+0x15161718],rsi
+   12ce9:	49 85 b8 18 17 16 15 	test   QWORD PTR [r8+0x15161718],rdi
+   12cf0:	4d 85 80 18 17 16 15 	test   QWORD PTR [r8+0x15161718],r8
+   12cf7:	4d 85 88 18 17 16 15 	test   QWORD PTR [r8+0x15161718],r9
+   12cfe:	4d 85 90 18 17 16 15 	test   QWORD PTR [r8+0x15161718],r10
+   12d05:	4d 85 98 18 17 16 15 	test   QWORD PTR [r8+0x15161718],r11
+   12d0c:	4d 85 a0 18 17 16 15 	test   QWORD PTR [r8+0x15161718],r12
+   12d13:	4d 85 a8 18 17 16 15 	test   QWORD PTR [r8+0x15161718],r13
+   12d1a:	4d 85 b0 18 17 16 15 	test   QWORD PTR [r8+0x15161718],r14
+   12d21:	4d 85 b8 18 17 16 15 	test   QWORD PTR [r8+0x15161718],r15
+   12d28:	49 85 81 18 17 16 15 	test   QWORD PTR [r9+0x15161718],rax
+   12d2f:	49 85 89 18 17 16 15 	test   QWORD PTR [r9+0x15161718],rcx
+   12d36:	49 85 91 18 17 16 15 	test   QWORD PTR [r9+0x15161718],rdx
+   12d3d:	49 85 99 18 17 16 15 	test   QWORD PTR [r9+0x15161718],rbx
+   12d44:	49 85 a1 18 17 16 15 	test   QWORD PTR [r9+0x15161718],rsp
+   12d4b:	49 85 a9 18 17 16 15 	test   QWORD PTR [r9+0x15161718],rbp
+   12d52:	49 85 b1 18 17 16 15 	test   QWORD PTR [r9+0x15161718],rsi
+   12d59:	49 85 b9 18 17 16 15 	test   QWORD PTR [r9+0x15161718],rdi
+   12d60:	4d 85 81 18 17 16 15 	test   QWORD PTR [r9+0x15161718],r8
+   12d67:	4d 85 89 18 17 16 15 	test   QWORD PTR [r9+0x15161718],r9
+   12d6e:	4d 85 91 18 17 16 15 	test   QWORD PTR [r9+0x15161718],r10
+   12d75:	4d 85 99 18 17 16 15 	test   QWORD PTR [r9+0x15161718],r11
+   12d7c:	4d 85 a1 18 17 16 15 	test   QWORD PTR [r9+0x15161718],r12
+   12d83:	4d 85 a9 18 17 16 15 	test   QWORD PTR [r9+0x15161718],r13
+   12d8a:	4d 85 b1 18 17 16 15 	test   QWORD PTR [r9+0x15161718],r14
+   12d91:	4d 85 b9 18 17 16 15 	test   QWORD PTR [r9+0x15161718],r15
+   12d98:	49 85 82 18 17 16 15 	test   QWORD PTR [r10+0x15161718],rax
+   12d9f:	49 85 8a 18 17 16 15 	test   QWORD PTR [r10+0x15161718],rcx
+   12da6:	49 85 92 18 17 16 15 	test   QWORD PTR [r10+0x15161718],rdx
+   12dad:	49 85 9a 18 17 16 15 	test   QWORD PTR [r10+0x15161718],rbx
+   12db4:	49 85 a2 18 17 16 15 	test   QWORD PTR [r10+0x15161718],rsp
+   12dbb:	49 85 aa 18 17 16 15 	test   QWORD PTR [r10+0x15161718],rbp
+   12dc2:	49 85 b2 18 17 16 15 	test   QWORD PTR [r10+0x15161718],rsi
+   12dc9:	49 85 ba 18 17 16 15 	test   QWORD PTR [r10+0x15161718],rdi
+   12dd0:	4d 85 82 18 17 16 15 	test   QWORD PTR [r10+0x15161718],r8
+   12dd7:	4d 85 8a 18 17 16 15 	test   QWORD PTR [r10+0x15161718],r9
+   12dde:	4d 85 92 18 17 16 15 	test   QWORD PTR [r10+0x15161718],r10
+   12de5:	4d 85 9a 18 17 16 15 	test   QWORD PTR [r10+0x15161718],r11
+   12dec:	4d 85 a2 18 17 16 15 	test   QWORD PTR [r10+0x15161718],r12
+   12df3:	4d 85 aa 18 17 16 15 	test   QWORD PTR [r10+0x15161718],r13
+   12dfa:	4d 85 b2 18 17 16 15 	test   QWORD PTR [r10+0x15161718],r14
+   12e01:	4d 85 ba 18 17 16 15 	test   QWORD PTR [r10+0x15161718],r15
+   12e08:	49 85 83 18 17 16 15 	test   QWORD PTR [r11+0x15161718],rax
+   12e0f:	49 85 8b 18 17 16 15 	test   QWORD PTR [r11+0x15161718],rcx
+   12e16:	49 85 93 18 17 16 15 	test   QWORD PTR [r11+0x15161718],rdx
+   12e1d:	49 85 9b 18 17 16 15 	test   QWORD PTR [r11+0x15161718],rbx
+   12e24:	49 85 a3 18 17 16 15 	test   QWORD PTR [r11+0x15161718],rsp
+   12e2b:	49 85 ab 18 17 16 15 	test   QWORD PTR [r11+0x15161718],rbp
+   12e32:	49 85 b3 18 17 16 15 	test   QWORD PTR [r11+0x15161718],rsi
+   12e39:	49 85 bb 18 17 16 15 	test   QWORD PTR [r11+0x15161718],rdi
+   12e40:	4d 85 83 18 17 16 15 	test   QWORD PTR [r11+0x15161718],r8
+   12e47:	4d 85 8b 18 17 16 15 	test   QWORD PTR [r11+0x15161718],r9
+   12e4e:	4d 85 93 18 17 16 15 	test   QWORD PTR [r11+0x15161718],r10
+   12e55:	4d 85 9b 18 17 16 15 	test   QWORD PTR [r11+0x15161718],r11
+   12e5c:	4d 85 a3 18 17 16 15 	test   QWORD PTR [r11+0x15161718],r12
+   12e63:	4d 85 ab 18 17 16 15 	test   QWORD PTR [r11+0x15161718],r13
+   12e6a:	4d 85 b3 18 17 16 15 	test   QWORD PTR [r11+0x15161718],r14
+   12e71:	4d 85 bb 18 17 16 15 	test   QWORD PTR [r11+0x15161718],r15
+   12e78:	49 85 84 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],rax
+   12e80:	49 85 8c 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],rcx
+   12e88:	49 85 94 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],rdx
+   12e90:	49 85 9c 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],rbx
+   12e98:	49 85 a4 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],rsp
+   12ea0:	49 85 ac 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],rbp
+   12ea8:	49 85 b4 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],rsi
+   12eb0:	49 85 bc 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],rdi
+   12eb8:	4d 85 84 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],r8
+   12ec0:	4d 85 8c 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],r9
+   12ec8:	4d 85 94 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],r10
+   12ed0:	4d 85 9c 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],r11
+   12ed8:	4d 85 a4 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],r12
+   12ee0:	4d 85 ac 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],r13
+   12ee8:	4d 85 b4 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],r14
+   12ef0:	4d 85 bc 24 18 17 16 15 	test   QWORD PTR [r12+0x15161718],r15
+   12ef8:	49 85 85 18 17 16 15 	test   QWORD PTR [r13+0x15161718],rax
+   12eff:	49 85 8d 18 17 16 15 	test   QWORD PTR [r13+0x15161718],rcx
+   12f06:	49 85 95 18 17 16 15 	test   QWORD PTR [r13+0x15161718],rdx
+   12f0d:	49 85 9d 18 17 16 15 	test   QWORD PTR [r13+0x15161718],rbx
+   12f14:	49 85 a5 18 17 16 15 	test   QWORD PTR [r13+0x15161718],rsp
+   12f1b:	49 85 ad 18 17 16 15 	test   QWORD PTR [r13+0x15161718],rbp
+   12f22:	49 85 b5 18 17 16 15 	test   QWORD PTR [r13+0x15161718],rsi
+   12f29:	49 85 bd 18 17 16 15 	test   QWORD PTR [r13+0x15161718],rdi
+   12f30:	4d 85 85 18 17 16 15 	test   QWORD PTR [r13+0x15161718],r8
+   12f37:	4d 85 8d 18 17 16 15 	test   QWORD PTR [r13+0x15161718],r9
+   12f3e:	4d 85 95 18 17 16 15 	test   QWORD PTR [r13+0x15161718],r10
+   12f45:	4d 85 9d 18 17 16 15 	test   QWORD PTR [r13+0x15161718],r11
+   12f4c:	4d 85 a5 18 17 16 15 	test   QWORD PTR [r13+0x15161718],r12
+   12f53:	4d 85 ad 18 17 16 15 	test   QWORD PTR [r13+0x15161718],r13
+   12f5a:	4d 85 b5 18 17 16 15 	test   QWORD PTR [r13+0x15161718],r14
+   12f61:	4d 85 bd 18 17 16 15 	test   QWORD PTR [r13+0x15161718],r15
+   12f68:	49 85 86 18 17 16 15 	test   QWORD PTR [r14+0x15161718],rax
+   12f6f:	49 85 8e 18 17 16 15 	test   QWORD PTR [r14+0x15161718],rcx
+   12f76:	49 85 96 18 17 16 15 	test   QWORD PTR [r14+0x15161718],rdx
+   12f7d:	49 85 9e 18 17 16 15 	test   QWORD PTR [r14+0x15161718],rbx
+   12f84:	49 85 a6 18 17 16 15 	test   QWORD PTR [r14+0x15161718],rsp
+   12f8b:	49 85 ae 18 17 16 15 	test   QWORD PTR [r14+0x15161718],rbp
+   12f92:	49 85 b6 18 17 16 15 	test   QWORD PTR [r14+0x15161718],rsi
+   12f99:	49 85 be 18 17 16 15 	test   QWORD PTR [r14+0x15161718],rdi
+   12fa0:	4d 85 86 18 17 16 15 	test   QWORD PTR [r14+0x15161718],r8
+   12fa7:	4d 85 8e 18 17 16 15 	test   QWORD PTR [r14+0x15161718],r9
+   12fae:	4d 85 96 18 17 16 15 	test   QWORD PTR [r14+0x15161718],r10
+   12fb5:	4d 85 9e 18 17 16 15 	test   QWORD PTR [r14+0x15161718],r11
+   12fbc:	4d 85 a6 18 17 16 15 	test   QWORD PTR [r14+0x15161718],r12
+   12fc3:	4d 85 ae 18 17 16 15 	test   QWORD PTR [r14+0x15161718],r13
+   12fca:	4d 85 b6 18 17 16 15 	test   QWORD PTR [r14+0x15161718],r14
+   12fd1:	4d 85 be 18 17 16 15 	test   QWORD PTR [r14+0x15161718],r15
+   12fd8:	49 85 87 18 17 16 15 	test   QWORD PTR [r15+0x15161718],rax
+   12fdf:	49 85 8f 18 17 16 15 	test   QWORD PTR [r15+0x15161718],rcx
+   12fe6:	49 85 97 18 17 16 15 	test   QWORD PTR [r15+0x15161718],rdx
+   12fed:	49 85 9f 18 17 16 15 	test   QWORD PTR [r15+0x15161718],rbx
+   12ff4:	49 85 a7 18 17 16 15 	test   QWORD PTR [r15+0x15161718],rsp
+   12ffb:	49 85 af 18 17 16 15 	test   QWORD PTR [r15+0x15161718],rbp
+   13002:	49 85 b7 18 17 16 15 	test   QWORD PTR [r15+0x15161718],rsi
+   13009:	49 85 bf 18 17 16 15 	test   QWORD PTR [r15+0x15161718],rdi
+   13010:	4d 85 87 18 17 16 15 	test   QWORD PTR [r15+0x15161718],r8
+   13017:	4d 85 8f 18 17 16 15 	test   QWORD PTR [r15+0x15161718],r9
+   1301e:	4d 85 97 18 17 16 15 	test   QWORD PTR [r15+0x15161718],r10
+   13025:	4d 85 9f 18 17 16 15 	test   QWORD PTR [r15+0x15161718],r11
+   1302c:	4d 85 a7 18 17 16 15 	test   QWORD PTR [r15+0x15161718],r12
+   13033:	4d 85 af 18 17 16 15 	test   QWORD PTR [r15+0x15161718],r13
+   1303a:	4d 85 b7 18 17 16 15 	test   QWORD PTR [r15+0x15161718],r14
+   13041:	4d 85 bf 18 17 16 15 	test   QWORD PTR [r15+0x15161718],r15
+   13048:	85 80 18 17 16 15    	test   DWORD PTR [rax+0x15161718],eax
+   1304e:	85 88 18 17 16 15    	test   DWORD PTR [rax+0x15161718],ecx
+   13054:	85 90 18 17 16 15    	test   DWORD PTR [rax+0x15161718],edx
+   1305a:	85 98 18 17 16 15    	test   DWORD PTR [rax+0x15161718],ebx
+   13060:	85 a0 18 17 16 15    	test   DWORD PTR [rax+0x15161718],esp
+   13066:	85 a8 18 17 16 15    	test   DWORD PTR [rax+0x15161718],ebp
+   1306c:	85 b0 18 17 16 15    	test   DWORD PTR [rax+0x15161718],esi
+   13072:	85 b8 18 17 16 15    	test   DWORD PTR [rax+0x15161718],edi
+   13078:	44 85 80 18 17 16 15 	test   DWORD PTR [rax+0x15161718],r8d
+   1307f:	44 85 88 18 17 16 15 	test   DWORD PTR [rax+0x15161718],r9d
+   13086:	44 85 90 18 17 16 15 	test   DWORD PTR [rax+0x15161718],r10d
+   1308d:	44 85 98 18 17 16 15 	test   DWORD PTR [rax+0x15161718],r11d
+   13094:	44 85 a0 18 17 16 15 	test   DWORD PTR [rax+0x15161718],r12d
+   1309b:	44 85 a8 18 17 16 15 	test   DWORD PTR [rax+0x15161718],r13d
+   130a2:	44 85 b0 18 17 16 15 	test   DWORD PTR [rax+0x15161718],r14d
+   130a9:	44 85 b8 18 17 16 15 	test   DWORD PTR [rax+0x15161718],r15d
+   130b0:	85 81 18 17 16 15    	test   DWORD PTR [rcx+0x15161718],eax
+   130b6:	85 89 18 17 16 15    	test   DWORD PTR [rcx+0x15161718],ecx
+   130bc:	85 91 18 17 16 15    	test   DWORD PTR [rcx+0x15161718],edx
+   130c2:	85 99 18 17 16 15    	test   DWORD PTR [rcx+0x15161718],ebx
+   130c8:	85 a1 18 17 16 15    	test   DWORD PTR [rcx+0x15161718],esp
+   130ce:	85 a9 18 17 16 15    	test   DWORD PTR [rcx+0x15161718],ebp
+   130d4:	85 b1 18 17 16 15    	test   DWORD PTR [rcx+0x15161718],esi
+   130da:	85 b9 18 17 16 15    	test   DWORD PTR [rcx+0x15161718],edi
+   130e0:	44 85 81 18 17 16 15 	test   DWORD PTR [rcx+0x15161718],r8d
+   130e7:	44 85 89 18 17 16 15 	test   DWORD PTR [rcx+0x15161718],r9d
+   130ee:	44 85 91 18 17 16 15 	test   DWORD PTR [rcx+0x15161718],r10d
+   130f5:	44 85 99 18 17 16 15 	test   DWORD PTR [rcx+0x15161718],r11d
+   130fc:	44 85 a1 18 17 16 15 	test   DWORD PTR [rcx+0x15161718],r12d
+   13103:	44 85 a9 18 17 16 15 	test   DWORD PTR [rcx+0x15161718],r13d
+   1310a:	44 85 b1 18 17 16 15 	test   DWORD PTR [rcx+0x15161718],r14d
+   13111:	44 85 b9 18 17 16 15 	test   DWORD PTR [rcx+0x15161718],r15d
+   13118:	85 82 18 17 16 15    	test   DWORD PTR [rdx+0x15161718],eax
+   1311e:	85 8a 18 17 16 15    	test   DWORD PTR [rdx+0x15161718],ecx
+   13124:	85 92 18 17 16 15    	test   DWORD PTR [rdx+0x15161718],edx
+   1312a:	85 9a 18 17 16 15    	test   DWORD PTR [rdx+0x15161718],ebx
+   13130:	85 a2 18 17 16 15    	test   DWORD PTR [rdx+0x15161718],esp
+   13136:	85 aa 18 17 16 15    	test   DWORD PTR [rdx+0x15161718],ebp
+   1313c:	85 b2 18 17 16 15    	test   DWORD PTR [rdx+0x15161718],esi
+   13142:	85 ba 18 17 16 15    	test   DWORD PTR [rdx+0x15161718],edi
+   13148:	44 85 82 18 17 16 15 	test   DWORD PTR [rdx+0x15161718],r8d
+   1314f:	44 85 8a 18 17 16 15 	test   DWORD PTR [rdx+0x15161718],r9d
+   13156:	44 85 92 18 17 16 15 	test   DWORD PTR [rdx+0x15161718],r10d
+   1315d:	44 85 9a 18 17 16 15 	test   DWORD PTR [rdx+0x15161718],r11d
+   13164:	44 85 a2 18 17 16 15 	test   DWORD PTR [rdx+0x15161718],r12d
+   1316b:	44 85 aa 18 17 16 15 	test   DWORD PTR [rdx+0x15161718],r13d
+   13172:	44 85 b2 18 17 16 15 	test   DWORD PTR [rdx+0x15161718],r14d
+   13179:	44 85 ba 18 17 16 15 	test   DWORD PTR [rdx+0x15161718],r15d
+   13180:	85 83 18 17 16 15    	test   DWORD PTR [rbx+0x15161718],eax
+   13186:	85 8b 18 17 16 15    	test   DWORD PTR [rbx+0x15161718],ecx
+   1318c:	85 93 18 17 16 15    	test   DWORD PTR [rbx+0x15161718],edx
+   13192:	85 9b 18 17 16 15    	test   DWORD PTR [rbx+0x15161718],ebx
+   13198:	85 a3 18 17 16 15    	test   DWORD PTR [rbx+0x15161718],esp
+   1319e:	85 ab 18 17 16 15    	test   DWORD PTR [rbx+0x15161718],ebp
+   131a4:	85 b3 18 17 16 15    	test   DWORD PTR [rbx+0x15161718],esi
+   131aa:	85 bb 18 17 16 15    	test   DWORD PTR [rbx+0x15161718],edi
+   131b0:	44 85 83 18 17 16 15 	test   DWORD PTR [rbx+0x15161718],r8d
+   131b7:	44 85 8b 18 17 16 15 	test   DWORD PTR [rbx+0x15161718],r9d
+   131be:	44 85 93 18 17 16 15 	test   DWORD PTR [rbx+0x15161718],r10d
+   131c5:	44 85 9b 18 17 16 15 	test   DWORD PTR [rbx+0x15161718],r11d
+   131cc:	44 85 a3 18 17 16 15 	test   DWORD PTR [rbx+0x15161718],r12d
+   131d3:	44 85 ab 18 17 16 15 	test   DWORD PTR [rbx+0x15161718],r13d
+   131da:	44 85 b3 18 17 16 15 	test   DWORD PTR [rbx+0x15161718],r14d
+   131e1:	44 85 bb 18 17 16 15 	test   DWORD PTR [rbx+0x15161718],r15d
+   131e8:	85 84 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],eax
+   131ef:	85 8c 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],ecx
+   131f6:	85 94 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],edx
+   131fd:	85 9c 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],ebx
+   13204:	85 a4 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],esp
+   1320b:	85 ac 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],ebp
+   13212:	85 b4 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],esi
+   13219:	85 bc 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],edi
+   13220:	44 85 84 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],r8d
+   13228:	44 85 8c 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],r9d
+   13230:	44 85 94 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],r10d
+   13238:	44 85 9c 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],r11d
+   13240:	44 85 a4 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],r12d
+   13248:	44 85 ac 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],r13d
+   13250:	44 85 b4 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],r14d
+   13258:	44 85 bc 24 18 17 16 15 	test   DWORD PTR [rsp+0x15161718],r15d
+   13260:	85 85 18 17 16 15    	test   DWORD PTR [rbp+0x15161718],eax
+   13266:	85 8d 18 17 16 15    	test   DWORD PTR [rbp+0x15161718],ecx
+   1326c:	85 95 18 17 16 15    	test   DWORD PTR [rbp+0x15161718],edx
+   13272:	85 9d 18 17 16 15    	test   DWORD PTR [rbp+0x15161718],ebx
+   13278:	85 a5 18 17 16 15    	test   DWORD PTR [rbp+0x15161718],esp
+   1327e:	85 ad 18 17 16 15    	test   DWORD PTR [rbp+0x15161718],ebp
+   13284:	85 b5 18 17 16 15    	test   DWORD PTR [rbp+0x15161718],esi
+   1328a:	85 bd 18 17 16 15    	test   DWORD PTR [rbp+0x15161718],edi
+   13290:	44 85 85 18 17 16 15 	test   DWORD PTR [rbp+0x15161718],r8d
+   13297:	44 85 8d 18 17 16 15 	test   DWORD PTR [rbp+0x15161718],r9d
+   1329e:	44 85 95 18 17 16 15 	test   DWORD PTR [rbp+0x15161718],r10d
+   132a5:	44 85 9d 18 17 16 15 	test   DWORD PTR [rbp+0x15161718],r11d
+   132ac:	44 85 a5 18 17 16 15 	test   DWORD PTR [rbp+0x15161718],r12d
+   132b3:	44 85 ad 18 17 16 15 	test   DWORD PTR [rbp+0x15161718],r13d
+   132ba:	44 85 b5 18 17 16 15 	test   DWORD PTR [rbp+0x15161718],r14d
+   132c1:	44 85 bd 18 17 16 15 	test   DWORD PTR [rbp+0x15161718],r15d
+   132c8:	85 86 18 17 16 15    	test   DWORD PTR [rsi+0x15161718],eax
+   132ce:	85 8e 18 17 16 15    	test   DWORD PTR [rsi+0x15161718],ecx
+   132d4:	85 96 18 17 16 15    	test   DWORD PTR [rsi+0x15161718],edx
+   132da:	85 9e 18 17 16 15    	test   DWORD PTR [rsi+0x15161718],ebx
+   132e0:	85 a6 18 17 16 15    	test   DWORD PTR [rsi+0x15161718],esp
+   132e6:	85 ae 18 17 16 15    	test   DWORD PTR [rsi+0x15161718],ebp
+   132ec:	85 b6 18 17 16 15    	test   DWORD PTR [rsi+0x15161718],esi
+   132f2:	85 be 18 17 16 15    	test   DWORD PTR [rsi+0x15161718],edi
+   132f8:	44 85 86 18 17 16 15 	test   DWORD PTR [rsi+0x15161718],r8d
+   132ff:	44 85 8e 18 17 16 15 	test   DWORD PTR [rsi+0x15161718],r9d
+   13306:	44 85 96 18 17 16 15 	test   DWORD PTR [rsi+0x15161718],r10d
+   1330d:	44 85 9e 18 17 16 15 	test   DWORD PTR [rsi+0x15161718],r11d
+   13314:	44 85 a6 18 17 16 15 	test   DWORD PTR [rsi+0x15161718],r12d
+   1331b:	44 85 ae 18 17 16 15 	test   DWORD PTR [rsi+0x15161718],r13d
+   13322:	44 85 b6 18 17 16 15 	test   DWORD PTR [rsi+0x15161718],r14d
+   13329:	44 85 be 18 17 16 15 	test   DWORD PTR [rsi+0x15161718],r15d
+   13330:	85 87 18 17 16 15    	test   DWORD PTR [rdi+0x15161718],eax
+   13336:	85 8f 18 17 16 15    	test   DWORD PTR [rdi+0x15161718],ecx
+   1333c:	85 97 18 17 16 15    	test   DWORD PTR [rdi+0x15161718],edx
+   13342:	85 9f 18 17 16 15    	test   DWORD PTR [rdi+0x15161718],ebx
+   13348:	85 a7 18 17 16 15    	test   DWORD PTR [rdi+0x15161718],esp
+   1334e:	85 af 18 17 16 15    	test   DWORD PTR [rdi+0x15161718],ebp
+   13354:	85 b7 18 17 16 15    	test   DWORD PTR [rdi+0x15161718],esi
+   1335a:	85 bf 18 17 16 15    	test   DWORD PTR [rdi+0x15161718],edi
+   13360:	44 85 87 18 17 16 15 	test   DWORD PTR [rdi+0x15161718],r8d
+   13367:	44 85 8f 18 17 16 15 	test   DWORD PTR [rdi+0x15161718],r9d
+   1336e:	44 85 97 18 17 16 15 	test   DWORD PTR [rdi+0x15161718],r10d
+   13375:	44 85 9f 18 17 16 15 	test   DWORD PTR [rdi+0x15161718],r11d
+   1337c:	44 85 a7 18 17 16 15 	test   DWORD PTR [rdi+0x15161718],r12d
+   13383:	44 85 af 18 17 16 15 	test   DWORD PTR [rdi+0x15161718],r13d
+   1338a:	44 85 b7 18 17 16 15 	test   DWORD PTR [rdi+0x15161718],r14d
+   13391:	44 85 bf 18 17 16 15 	test   DWORD PTR [rdi+0x15161718],r15d
+   13398:	41 85 80 18 17 16 15 	test   DWORD PTR [r8+0x15161718],eax
+   1339f:	41 85 88 18 17 16 15 	test   DWORD PTR [r8+0x15161718],ecx
+   133a6:	41 85 90 18 17 16 15 	test   DWORD PTR [r8+0x15161718],edx
+   133ad:	41 85 98 18 17 16 15 	test   DWORD PTR [r8+0x15161718],ebx
+   133b4:	41 85 a0 18 17 16 15 	test   DWORD PTR [r8+0x15161718],esp
+   133bb:	41 85 a8 18 17 16 15 	test   DWORD PTR [r8+0x15161718],ebp
+   133c2:	41 85 b0 18 17 16 15 	test   DWORD PTR [r8+0x15161718],esi
+   133c9:	41 85 b8 18 17 16 15 	test   DWORD PTR [r8+0x15161718],edi
+   133d0:	45 85 80 18 17 16 15 	test   DWORD PTR [r8+0x15161718],r8d
+   133d7:	45 85 88 18 17 16 15 	test   DWORD PTR [r8+0x15161718],r9d
+   133de:	45 85 90 18 17 16 15 	test   DWORD PTR [r8+0x15161718],r10d
+   133e5:	45 85 98 18 17 16 15 	test   DWORD PTR [r8+0x15161718],r11d
+   133ec:	45 85 a0 18 17 16 15 	test   DWORD PTR [r8+0x15161718],r12d
+   133f3:	45 85 a8 18 17 16 15 	test   DWORD PTR [r8+0x15161718],r13d
+   133fa:	45 85 b0 18 17 16 15 	test   DWORD PTR [r8+0x15161718],r14d
+   13401:	45 85 b8 18 17 16 15 	test   DWORD PTR [r8+0x15161718],r15d
+   13408:	41 85 81 18 17 16 15 	test   DWORD PTR [r9+0x15161718],eax
+   1340f:	41 85 89 18 17 16 15 	test   DWORD PTR [r9+0x15161718],ecx
+   13416:	41 85 91 18 17 16 15 	test   DWORD PTR [r9+0x15161718],edx
+   1341d:	41 85 99 18 17 16 15 	test   DWORD PTR [r9+0x15161718],ebx
+   13424:	41 85 a1 18 17 16 15 	test   DWORD PTR [r9+0x15161718],esp
+   1342b:	41 85 a9 18 17 16 15 	test   DWORD PTR [r9+0x15161718],ebp
+   13432:	41 85 b1 18 17 16 15 	test   DWORD PTR [r9+0x15161718],esi
+   13439:	41 85 b9 18 17 16 15 	test   DWORD PTR [r9+0x15161718],edi
+   13440:	45 85 81 18 17 16 15 	test   DWORD PTR [r9+0x15161718],r8d
+   13447:	45 85 89 18 17 16 15 	test   DWORD PTR [r9+0x15161718],r9d
+   1344e:	45 85 91 18 17 16 15 	test   DWORD PTR [r9+0x15161718],r10d
+   13455:	45 85 99 18 17 16 15 	test   DWORD PTR [r9+0x15161718],r11d
+   1345c:	45 85 a1 18 17 16 15 	test   DWORD PTR [r9+0x15161718],r12d
+   13463:	45 85 a9 18 17 16 15 	test   DWORD PTR [r9+0x15161718],r13d
+   1346a:	45 85 b1 18 17 16 15 	test   DWORD PTR [r9+0x15161718],r14d
+   13471:	45 85 b9 18 17 16 15 	test   DWORD PTR [r9+0x15161718],r15d
+   13478:	41 85 82 18 17 16 15 	test   DWORD PTR [r10+0x15161718],eax
+   1347f:	41 85 8a 18 17 16 15 	test   DWORD PTR [r10+0x15161718],ecx
+   13486:	41 85 92 18 17 16 15 	test   DWORD PTR [r10+0x15161718],edx
+   1348d:	41 85 9a 18 17 16 15 	test   DWORD PTR [r10+0x15161718],ebx
+   13494:	41 85 a2 18 17 16 15 	test   DWORD PTR [r10+0x15161718],esp
+   1349b:	41 85 aa 18 17 16 15 	test   DWORD PTR [r10+0x15161718],ebp
+   134a2:	41 85 b2 18 17 16 15 	test   DWORD PTR [r10+0x15161718],esi
+   134a9:	41 85 ba 18 17 16 15 	test   DWORD PTR [r10+0x15161718],edi
+   134b0:	45 85 82 18 17 16 15 	test   DWORD PTR [r10+0x15161718],r8d
+   134b7:	45 85 8a 18 17 16 15 	test   DWORD PTR [r10+0x15161718],r9d
+   134be:	45 85 92 18 17 16 15 	test   DWORD PTR [r10+0x15161718],r10d
+   134c5:	45 85 9a 18 17 16 15 	test   DWORD PTR [r10+0x15161718],r11d
+   134cc:	45 85 a2 18 17 16 15 	test   DWORD PTR [r10+0x15161718],r12d
+   134d3:	45 85 aa 18 17 16 15 	test   DWORD PTR [r10+0x15161718],r13d
+   134da:	45 85 b2 18 17 16 15 	test   DWORD PTR [r10+0x15161718],r14d
+   134e1:	45 85 ba 18 17 16 15 	test   DWORD PTR [r10+0x15161718],r15d
+   134e8:	41 85 83 18 17 16 15 	test   DWORD PTR [r11+0x15161718],eax
+   134ef:	41 85 8b 18 17 16 15 	test   DWORD PTR [r11+0x15161718],ecx
+   134f6:	41 85 93 18 17 16 15 	test   DWORD PTR [r11+0x15161718],edx
+   134fd:	41 85 9b 18 17 16 15 	test   DWORD PTR [r11+0x15161718],ebx
+   13504:	41 85 a3 18 17 16 15 	test   DWORD PTR [r11+0x15161718],esp
+   1350b:	41 85 ab 18 17 16 15 	test   DWORD PTR [r11+0x15161718],ebp
+   13512:	41 85 b3 18 17 16 15 	test   DWORD PTR [r11+0x15161718],esi
+   13519:	41 85 bb 18 17 16 15 	test   DWORD PTR [r11+0x15161718],edi
+   13520:	45 85 83 18 17 16 15 	test   DWORD PTR [r11+0x15161718],r8d
+   13527:	45 85 8b 18 17 16 15 	test   DWORD PTR [r11+0x15161718],r9d
+   1352e:	45 85 93 18 17 16 15 	test   DWORD PTR [r11+0x15161718],r10d
+   13535:	45 85 9b 18 17 16 15 	test   DWORD PTR [r11+0x15161718],r11d
+   1353c:	45 85 a3 18 17 16 15 	test   DWORD PTR [r11+0x15161718],r12d
+   13543:	45 85 ab 18 17 16 15 	test   DWORD PTR [r11+0x15161718],r13d
+   1354a:	45 85 b3 18 17 16 15 	test   DWORD PTR [r11+0x15161718],r14d
+   13551:	45 85 bb 18 17 16 15 	test   DWORD PTR [r11+0x15161718],r15d
+   13558:	41 85 84 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],eax
+   13560:	41 85 8c 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],ecx
+   13568:	41 85 94 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],edx
+   13570:	41 85 9c 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],ebx
+   13578:	41 85 a4 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],esp
+   13580:	41 85 ac 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],ebp
+   13588:	41 85 b4 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],esi
+   13590:	41 85 bc 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],edi
+   13598:	45 85 84 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],r8d
+   135a0:	45 85 8c 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],r9d
+   135a8:	45 85 94 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],r10d
+   135b0:	45 85 9c 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],r11d
+   135b8:	45 85 a4 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],r12d
+   135c0:	45 85 ac 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],r13d
+   135c8:	45 85 b4 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],r14d
+   135d0:	45 85 bc 24 18 17 16 15 	test   DWORD PTR [r12+0x15161718],r15d
+   135d8:	41 85 85 18 17 16 15 	test   DWORD PTR [r13+0x15161718],eax
+   135df:	41 85 8d 18 17 16 15 	test   DWORD PTR [r13+0x15161718],ecx
+   135e6:	41 85 95 18 17 16 15 	test   DWORD PTR [r13+0x15161718],edx
+   135ed:	41 85 9d 18 17 16 15 	test   DWORD PTR [r13+0x15161718],ebx
+   135f4:	41 85 a5 18 17 16 15 	test   DWORD PTR [r13+0x15161718],esp
+   135fb:	41 85 ad 18 17 16 15 	test   DWORD PTR [r13+0x15161718],ebp
+   13602:	41 85 b5 18 17 16 15 	test   DWORD PTR [r13+0x15161718],esi
+   13609:	41 85 bd 18 17 16 15 	test   DWORD PTR [r13+0x15161718],edi
+   13610:	45 85 85 18 17 16 15 	test   DWORD PTR [r13+0x15161718],r8d
+   13617:	45 85 8d 18 17 16 15 	test   DWORD PTR [r13+0x15161718],r9d
+   1361e:	45 85 95 18 17 16 15 	test   DWORD PTR [r13+0x15161718],r10d
+   13625:	45 85 9d 18 17 16 15 	test   DWORD PTR [r13+0x15161718],r11d
+   1362c:	45 85 a5 18 17 16 15 	test   DWORD PTR [r13+0x15161718],r12d
+   13633:	45 85 ad 18 17 16 15 	test   DWORD PTR [r13+0x15161718],r13d
+   1363a:	45 85 b5 18 17 16 15 	test   DWORD PTR [r13+0x15161718],r14d
+   13641:	45 85 bd 18 17 16 15 	test   DWORD PTR [r13+0x15161718],r15d
+   13648:	41 85 86 18 17 16 15 	test   DWORD PTR [r14+0x15161718],eax
+   1364f:	41 85 8e 18 17 16 15 	test   DWORD PTR [r14+0x15161718],ecx
+   13656:	41 85 96 18 17 16 15 	test   DWORD PTR [r14+0x15161718],edx
+   1365d:	41 85 9e 18 17 16 15 	test   DWORD PTR [r14+0x15161718],ebx
+   13664:	41 85 a6 18 17 16 15 	test   DWORD PTR [r14+0x15161718],esp
+   1366b:	41 85 ae 18 17 16 15 	test   DWORD PTR [r14+0x15161718],ebp
+   13672:	41 85 b6 18 17 16 15 	test   DWORD PTR [r14+0x15161718],esi
+   13679:	41 85 be 18 17 16 15 	test   DWORD PTR [r14+0x15161718],edi
+   13680:	45 85 86 18 17 16 15 	test   DWORD PTR [r14+0x15161718],r8d
+   13687:	45 85 8e 18 17 16 15 	test   DWORD PTR [r14+0x15161718],r9d
+   1368e:	45 85 96 18 17 16 15 	test   DWORD PTR [r14+0x15161718],r10d
+   13695:	45 85 9e 18 17 16 15 	test   DWORD PTR [r14+0x15161718],r11d
+   1369c:	45 85 a6 18 17 16 15 	test   DWORD PTR [r14+0x15161718],r12d
+   136a3:	45 85 ae 18 17 16 15 	test   DWORD PTR [r14+0x15161718],r13d
+   136aa:	45 85 b6 18 17 16 15 	test   DWORD PTR [r14+0x15161718],r14d
+   136b1:	45 85 be 18 17 16 15 	test   DWORD PTR [r14+0x15161718],r15d
+   136b8:	41 85 87 18 17 16 15 	test   DWORD PTR [r15+0x15161718],eax
+   136bf:	41 85 8f 18 17 16 15 	test   DWORD PTR [r15+0x15161718],ecx
+   136c6:	41 85 97 18 17 16 15 	test   DWORD PTR [r15+0x15161718],edx
+   136cd:	41 85 9f 18 17 16 15 	test   DWORD PTR [r15+0x15161718],ebx
+   136d4:	41 85 a7 18 17 16 15 	test   DWORD PTR [r15+0x15161718],esp
+   136db:	41 85 af 18 17 16 15 	test   DWORD PTR [r15+0x15161718],ebp
+   136e2:	41 85 b7 18 17 16 15 	test   DWORD PTR [r15+0x15161718],esi
+   136e9:	41 85 bf 18 17 16 15 	test   DWORD PTR [r15+0x15161718],edi
+   136f0:	45 85 87 18 17 16 15 	test   DWORD PTR [r15+0x15161718],r8d
+   136f7:	45 85 8f 18 17 16 15 	test   DWORD PTR [r15+0x15161718],r9d
+   136fe:	45 85 97 18 17 16 15 	test   DWORD PTR [r15+0x15161718],r10d
+   13705:	45 85 9f 18 17 16 15 	test   DWORD PTR [r15+0x15161718],r11d
+   1370c:	45 85 a7 18 17 16 15 	test   DWORD PTR [r15+0x15161718],r12d
+   13713:	45 85 af 18 17 16 15 	test   DWORD PTR [r15+0x15161718],r13d
+   1371a:	45 85 b7 18 17 16 15 	test   DWORD PTR [r15+0x15161718],r14d
+   13721:	45 85 bf 18 17 16 15 	test   DWORD PTR [r15+0x15161718],r15d
+   13728:	66 85 80 18 17 16 15 	test   WORD PTR [rax+0x15161718],ax
+   1372f:	66 85 88 18 17 16 15 	test   WORD PTR [rax+0x15161718],cx
+   13736:	66 85 90 18 17 16 15 	test   WORD PTR [rax+0x15161718],dx
+   1373d:	66 85 98 18 17 16 15 	test   WORD PTR [rax+0x15161718],bx
+   13744:	66 85 a0 18 17 16 15 	test   WORD PTR [rax+0x15161718],sp
+   1374b:	66 85 a8 18 17 16 15 	test   WORD PTR [rax+0x15161718],bp
+   13752:	66 85 b0 18 17 16 15 	test   WORD PTR [rax+0x15161718],si
+   13759:	66 85 b8 18 17 16 15 	test   WORD PTR [rax+0x15161718],di
+   13760:	66 44 85 80 18 17 16 15 	test   WORD PTR [rax+0x15161718],r8w
+   13768:	66 44 85 88 18 17 16 15 	test   WORD PTR [rax+0x15161718],r9w
+   13770:	66 44 85 90 18 17 16 15 	test   WORD PTR [rax+0x15161718],r10w
+   13778:	66 44 85 98 18 17 16 15 	test   WORD PTR [rax+0x15161718],r11w
+   13780:	66 44 85 a0 18 17 16 15 	test   WORD PTR [rax+0x15161718],r12w
+   13788:	66 44 85 a8 18 17 16 15 	test   WORD PTR [rax+0x15161718],r13w
+   13790:	66 44 85 b0 18 17 16 15 	test   WORD PTR [rax+0x15161718],r14w
+   13798:	66 44 85 b8 18 17 16 15 	test   WORD PTR [rax+0x15161718],r15w
+   137a0:	66 85 81 18 17 16 15 	test   WORD PTR [rcx+0x15161718],ax
+   137a7:	66 85 89 18 17 16 15 	test   WORD PTR [rcx+0x15161718],cx
+   137ae:	66 85 91 18 17 16 15 	test   WORD PTR [rcx+0x15161718],dx
+   137b5:	66 85 99 18 17 16 15 	test   WORD PTR [rcx+0x15161718],bx
+   137bc:	66 85 a1 18 17 16 15 	test   WORD PTR [rcx+0x15161718],sp
+   137c3:	66 85 a9 18 17 16 15 	test   WORD PTR [rcx+0x15161718],bp
+   137ca:	66 85 b1 18 17 16 15 	test   WORD PTR [rcx+0x15161718],si
+   137d1:	66 85 b9 18 17 16 15 	test   WORD PTR [rcx+0x15161718],di
+   137d8:	66 44 85 81 18 17 16 15 	test   WORD PTR [rcx+0x15161718],r8w
+   137e0:	66 44 85 89 18 17 16 15 	test   WORD PTR [rcx+0x15161718],r9w
+   137e8:	66 44 85 91 18 17 16 15 	test   WORD PTR [rcx+0x15161718],r10w
+   137f0:	66 44 85 99 18 17 16 15 	test   WORD PTR [rcx+0x15161718],r11w
+   137f8:	66 44 85 a1 18 17 16 15 	test   WORD PTR [rcx+0x15161718],r12w
+   13800:	66 44 85 a9 18 17 16 15 	test   WORD PTR [rcx+0x15161718],r13w
+   13808:	66 44 85 b1 18 17 16 15 	test   WORD PTR [rcx+0x15161718],r14w
+   13810:	66 44 85 b9 18 17 16 15 	test   WORD PTR [rcx+0x15161718],r15w
+   13818:	66 85 82 18 17 16 15 	test   WORD PTR [rdx+0x15161718],ax
+   1381f:	66 85 8a 18 17 16 15 	test   WORD PTR [rdx+0x15161718],cx
+   13826:	66 85 92 18 17 16 15 	test   WORD PTR [rdx+0x15161718],dx
+   1382d:	66 85 9a 18 17 16 15 	test   WORD PTR [rdx+0x15161718],bx
+   13834:	66 85 a2 18 17 16 15 	test   WORD PTR [rdx+0x15161718],sp
+   1383b:	66 85 aa 18 17 16 15 	test   WORD PTR [rdx+0x15161718],bp
+   13842:	66 85 b2 18 17 16 15 	test   WORD PTR [rdx+0x15161718],si
+   13849:	66 85 ba 18 17 16 15 	test   WORD PTR [rdx+0x15161718],di
+   13850:	66 44 85 82 18 17 16 15 	test   WORD PTR [rdx+0x15161718],r8w
+   13858:	66 44 85 8a 18 17 16 15 	test   WORD PTR [rdx+0x15161718],r9w
+   13860:	66 44 85 92 18 17 16 15 	test   WORD PTR [rdx+0x15161718],r10w
+   13868:	66 44 85 9a 18 17 16 15 	test   WORD PTR [rdx+0x15161718],r11w
+   13870:	66 44 85 a2 18 17 16 15 	test   WORD PTR [rdx+0x15161718],r12w
+   13878:	66 44 85 aa 18 17 16 15 	test   WORD PTR [rdx+0x15161718],r13w
+   13880:	66 44 85 b2 18 17 16 15 	test   WORD PTR [rdx+0x15161718],r14w
+   13888:	66 44 85 ba 18 17 16 15 	test   WORD PTR [rdx+0x15161718],r15w
+   13890:	66 85 83 18 17 16 15 	test   WORD PTR [rbx+0x15161718],ax
+   13897:	66 85 8b 18 17 16 15 	test   WORD PTR [rbx+0x15161718],cx
+   1389e:	66 85 93 18 17 16 15 	test   WORD PTR [rbx+0x15161718],dx
+   138a5:	66 85 9b 18 17 16 15 	test   WORD PTR [rbx+0x15161718],bx
+   138ac:	66 85 a3 18 17 16 15 	test   WORD PTR [rbx+0x15161718],sp
+   138b3:	66 85 ab 18 17 16 15 	test   WORD PTR [rbx+0x15161718],bp
+   138ba:	66 85 b3 18 17 16 15 	test   WORD PTR [rbx+0x15161718],si
+   138c1:	66 85 bb 18 17 16 15 	test   WORD PTR [rbx+0x15161718],di
+   138c8:	66 44 85 83 18 17 16 15 	test   WORD PTR [rbx+0x15161718],r8w
+   138d0:	66 44 85 8b 18 17 16 15 	test   WORD PTR [rbx+0x15161718],r9w
+   138d8:	66 44 85 93 18 17 16 15 	test   WORD PTR [rbx+0x15161718],r10w
+   138e0:	66 44 85 9b 18 17 16 15 	test   WORD PTR [rbx+0x15161718],r11w
+   138e8:	66 44 85 a3 18 17 16 15 	test   WORD PTR [rbx+0x15161718],r12w
+   138f0:	66 44 85 ab 18 17 16 15 	test   WORD PTR [rbx+0x15161718],r13w
+   138f8:	66 44 85 b3 18 17 16 15 	test   WORD PTR [rbx+0x15161718],r14w
+   13900:	66 44 85 bb 18 17 16 15 	test   WORD PTR [rbx+0x15161718],r15w
+   13908:	66 85 84 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],ax
+   13910:	66 85 8c 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],cx
+   13918:	66 85 94 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],dx
+   13920:	66 85 9c 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],bx
+   13928:	66 85 a4 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],sp
+   13930:	66 85 ac 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],bp
+   13938:	66 85 b4 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],si
+   13940:	66 85 bc 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],di
+   13948:	66 44 85 84 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],r8w
+   13951:	66 44 85 8c 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],r9w
+   1395a:	66 44 85 94 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],r10w
+   13963:	66 44 85 9c 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],r11w
+   1396c:	66 44 85 a4 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],r12w
+   13975:	66 44 85 ac 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],r13w
+   1397e:	66 44 85 b4 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],r14w
+   13987:	66 44 85 bc 24 18 17 16 15 	test   WORD PTR [rsp+0x15161718],r15w
+   13990:	66 85 85 18 17 16 15 	test   WORD PTR [rbp+0x15161718],ax
+   13997:	66 85 8d 18 17 16 15 	test   WORD PTR [rbp+0x15161718],cx
+   1399e:	66 85 95 18 17 16 15 	test   WORD PTR [rbp+0x15161718],dx
+   139a5:	66 85 9d 18 17 16 15 	test   WORD PTR [rbp+0x15161718],bx
+   139ac:	66 85 a5 18 17 16 15 	test   WORD PTR [rbp+0x15161718],sp
+   139b3:	66 85 ad 18 17 16 15 	test   WORD PTR [rbp+0x15161718],bp
+   139ba:	66 85 b5 18 17 16 15 	test   WORD PTR [rbp+0x15161718],si
+   139c1:	66 85 bd 18 17 16 15 	test   WORD PTR [rbp+0x15161718],di
+   139c8:	66 44 85 85 18 17 16 15 	test   WORD PTR [rbp+0x15161718],r8w
+   139d0:	66 44 85 8d 18 17 16 15 	test   WORD PTR [rbp+0x15161718],r9w
+   139d8:	66 44 85 95 18 17 16 15 	test   WORD PTR [rbp+0x15161718],r10w
+   139e0:	66 44 85 9d 18 17 16 15 	test   WORD PTR [rbp+0x15161718],r11w
+   139e8:	66 44 85 a5 18 17 16 15 	test   WORD PTR [rbp+0x15161718],r12w
+   139f0:	66 44 85 ad 18 17 16 15 	test   WORD PTR [rbp+0x15161718],r13w
+   139f8:	66 44 85 b5 18 17 16 15 	test   WORD PTR [rbp+0x15161718],r14w
+   13a00:	66 44 85 bd 18 17 16 15 	test   WORD PTR [rbp+0x15161718],r15w
+   13a08:	66 85 86 18 17 16 15 	test   WORD PTR [rsi+0x15161718],ax
+   13a0f:	66 85 8e 18 17 16 15 	test   WORD PTR [rsi+0x15161718],cx
+   13a16:	66 85 96 18 17 16 15 	test   WORD PTR [rsi+0x15161718],dx
+   13a1d:	66 85 9e 18 17 16 15 	test   WORD PTR [rsi+0x15161718],bx
+   13a24:	66 85 a6 18 17 16 15 	test   WORD PTR [rsi+0x15161718],sp
+   13a2b:	66 85 ae 18 17 16 15 	test   WORD PTR [rsi+0x15161718],bp
+   13a32:	66 85 b6 18 17 16 15 	test   WORD PTR [rsi+0x15161718],si
+   13a39:	66 85 be 18 17 16 15 	test   WORD PTR [rsi+0x15161718],di
+   13a40:	66 44 85 86 18 17 16 15 	test   WORD PTR [rsi+0x15161718],r8w
+   13a48:	66 44 85 8e 18 17 16 15 	test   WORD PTR [rsi+0x15161718],r9w
+   13a50:	66 44 85 96 18 17 16 15 	test   WORD PTR [rsi+0x15161718],r10w
+   13a58:	66 44 85 9e 18 17 16 15 	test   WORD PTR [rsi+0x15161718],r11w
+   13a60:	66 44 85 a6 18 17 16 15 	test   WORD PTR [rsi+0x15161718],r12w
+   13a68:	66 44 85 ae 18 17 16 15 	test   WORD PTR [rsi+0x15161718],r13w
+   13a70:	66 44 85 b6 18 17 16 15 	test   WORD PTR [rsi+0x15161718],r14w
+   13a78:	66 44 85 be 18 17 16 15 	test   WORD PTR [rsi+0x15161718],r15w
+   13a80:	66 85 87 18 17 16 15 	test   WORD PTR [rdi+0x15161718],ax
+   13a87:	66 85 8f 18 17 16 15 	test   WORD PTR [rdi+0x15161718],cx
+   13a8e:	66 85 97 18 17 16 15 	test   WORD PTR [rdi+0x15161718],dx
+   13a95:	66 85 9f 18 17 16 15 	test   WORD PTR [rdi+0x15161718],bx
+   13a9c:	66 85 a7 18 17 16 15 	test   WORD PTR [rdi+0x15161718],sp
+   13aa3:	66 85 af 18 17 16 15 	test   WORD PTR [rdi+0x15161718],bp
+   13aaa:	66 85 b7 18 17 16 15 	test   WORD PTR [rdi+0x15161718],si
+   13ab1:	66 85 bf 18 17 16 15 	test   WORD PTR [rdi+0x15161718],di
+   13ab8:	66 44 85 87 18 17 16 15 	test   WORD PTR [rdi+0x15161718],r8w
+   13ac0:	66 44 85 8f 18 17 16 15 	test   WORD PTR [rdi+0x15161718],r9w
+   13ac8:	66 44 85 97 18 17 16 15 	test   WORD PTR [rdi+0x15161718],r10w
+   13ad0:	66 44 85 9f 18 17 16 15 	test   WORD PTR [rdi+0x15161718],r11w
+   13ad8:	66 44 85 a7 18 17 16 15 	test   WORD PTR [rdi+0x15161718],r12w
+   13ae0:	66 44 85 af 18 17 16 15 	test   WORD PTR [rdi+0x15161718],r13w
+   13ae8:	66 44 85 b7 18 17 16 15 	test   WORD PTR [rdi+0x15161718],r14w
+   13af0:	66 44 85 bf 18 17 16 15 	test   WORD PTR [rdi+0x15161718],r15w
+   13af8:	66 41 85 80 18 17 16 15 	test   WORD PTR [r8+0x15161718],ax
+   13b00:	66 41 85 88 18 17 16 15 	test   WORD PTR [r8+0x15161718],cx
+   13b08:	66 41 85 90 18 17 16 15 	test   WORD PTR [r8+0x15161718],dx
+   13b10:	66 41 85 98 18 17 16 15 	test   WORD PTR [r8+0x15161718],bx
+   13b18:	66 41 85 a0 18 17 16 15 	test   WORD PTR [r8+0x15161718],sp
+   13b20:	66 41 85 a8 18 17 16 15 	test   WORD PTR [r8+0x15161718],bp
+   13b28:	66 41 85 b0 18 17 16 15 	test   WORD PTR [r8+0x15161718],si
+   13b30:	66 41 85 b8 18 17 16 15 	test   WORD PTR [r8+0x15161718],di
+   13b38:	66 45 85 80 18 17 16 15 	test   WORD PTR [r8+0x15161718],r8w
+   13b40:	66 45 85 88 18 17 16 15 	test   WORD PTR [r8+0x15161718],r9w
+   13b48:	66 45 85 90 18 17 16 15 	test   WORD PTR [r8+0x15161718],r10w
+   13b50:	66 45 85 98 18 17 16 15 	test   WORD PTR [r8+0x15161718],r11w
+   13b58:	66 45 85 a0 18 17 16 15 	test   WORD PTR [r8+0x15161718],r12w
+   13b60:	66 45 85 a8 18 17 16 15 	test   WORD PTR [r8+0x15161718],r13w
+   13b68:	66 45 85 b0 18 17 16 15 	test   WORD PTR [r8+0x15161718],r14w
+   13b70:	66 45 85 b8 18 17 16 15 	test   WORD PTR [r8+0x15161718],r15w
+   13b78:	66 41 85 81 18 17 16 15 	test   WORD PTR [r9+0x15161718],ax
+   13b80:	66 41 85 89 18 17 16 15 	test   WORD PTR [r9+0x15161718],cx
+   13b88:	66 41 85 91 18 17 16 15 	test   WORD PTR [r9+0x15161718],dx
+   13b90:	66 41 85 99 18 17 16 15 	test   WORD PTR [r9+0x15161718],bx
+   13b98:	66 41 85 a1 18 17 16 15 	test   WORD PTR [r9+0x15161718],sp
+   13ba0:	66 41 85 a9 18 17 16 15 	test   WORD PTR [r9+0x15161718],bp
+   13ba8:	66 41 85 b1 18 17 16 15 	test   WORD PTR [r9+0x15161718],si
+   13bb0:	66 41 85 b9 18 17 16 15 	test   WORD PTR [r9+0x15161718],di
+   13bb8:	66 45 85 81 18 17 16 15 	test   WORD PTR [r9+0x15161718],r8w
+   13bc0:	66 45 85 89 18 17 16 15 	test   WORD PTR [r9+0x15161718],r9w
+   13bc8:	66 45 85 91 18 17 16 15 	test   WORD PTR [r9+0x15161718],r10w
+   13bd0:	66 45 85 99 18 17 16 15 	test   WORD PTR [r9+0x15161718],r11w
+   13bd8:	66 45 85 a1 18 17 16 15 	test   WORD PTR [r9+0x15161718],r12w
+   13be0:	66 45 85 a9 18 17 16 15 	test   WORD PTR [r9+0x15161718],r13w
+   13be8:	66 45 85 b1 18 17 16 15 	test   WORD PTR [r9+0x15161718],r14w
+   13bf0:	66 45 85 b9 18 17 16 15 	test   WORD PTR [r9+0x15161718],r15w
+   13bf8:	66 41 85 82 18 17 16 15 	test   WORD PTR [r10+0x15161718],ax
+   13c00:	66 41 85 8a 18 17 16 15 	test   WORD PTR [r10+0x15161718],cx
+   13c08:	66 41 85 92 18 17 16 15 	test   WORD PTR [r10+0x15161718],dx
+   13c10:	66 41 85 9a 18 17 16 15 	test   WORD PTR [r10+0x15161718],bx
+   13c18:	66 41 85 a2 18 17 16 15 	test   WORD PTR [r10+0x15161718],sp
+   13c20:	66 41 85 aa 18 17 16 15 	test   WORD PTR [r10+0x15161718],bp
+   13c28:	66 41 85 b2 18 17 16 15 	test   WORD PTR [r10+0x15161718],si
+   13c30:	66 41 85 ba 18 17 16 15 	test   WORD PTR [r10+0x15161718],di
+   13c38:	66 45 85 82 18 17 16 15 	test   WORD PTR [r10+0x15161718],r8w
+   13c40:	66 45 85 8a 18 17 16 15 	test   WORD PTR [r10+0x15161718],r9w
+   13c48:	66 45 85 92 18 17 16 15 	test   WORD PTR [r10+0x15161718],r10w
+   13c50:	66 45 85 9a 18 17 16 15 	test   WORD PTR [r10+0x15161718],r11w
+   13c58:	66 45 85 a2 18 17 16 15 	test   WORD PTR [r10+0x15161718],r12w
+   13c60:	66 45 85 aa 18 17 16 15 	test   WORD PTR [r10+0x15161718],r13w
+   13c68:	66 45 85 b2 18 17 16 15 	test   WORD PTR [r10+0x15161718],r14w
+   13c70:	66 45 85 ba 18 17 16 15 	test   WORD PTR [r10+0x15161718],r15w
+   13c78:	66 41 85 83 18 17 16 15 	test   WORD PTR [r11+0x15161718],ax
+   13c80:	66 41 85 8b 18 17 16 15 	test   WORD PTR [r11+0x15161718],cx
+   13c88:	66 41 85 93 18 17 16 15 	test   WORD PTR [r11+0x15161718],dx
+   13c90:	66 41 85 9b 18 17 16 15 	test   WORD PTR [r11+0x15161718],bx
+   13c98:	66 41 85 a3 18 17 16 15 	test   WORD PTR [r11+0x15161718],sp
+   13ca0:	66 41 85 ab 18 17 16 15 	test   WORD PTR [r11+0x15161718],bp
+   13ca8:	66 41 85 b3 18 17 16 15 	test   WORD PTR [r11+0x15161718],si
+   13cb0:	66 41 85 bb 18 17 16 15 	test   WORD PTR [r11+0x15161718],di
+   13cb8:	66 45 85 83 18 17 16 15 	test   WORD PTR [r11+0x15161718],r8w
+   13cc0:	66 45 85 8b 18 17 16 15 	test   WORD PTR [r11+0x15161718],r9w
+   13cc8:	66 45 85 93 18 17 16 15 	test   WORD PTR [r11+0x15161718],r10w
+   13cd0:	66 45 85 9b 18 17 16 15 	test   WORD PTR [r11+0x15161718],r11w
+   13cd8:	66 45 85 a3 18 17 16 15 	test   WORD PTR [r11+0x15161718],r12w
+   13ce0:	66 45 85 ab 18 17 16 15 	test   WORD PTR [r11+0x15161718],r13w
+   13ce8:	66 45 85 b3 18 17 16 15 	test   WORD PTR [r11+0x15161718],r14w
+   13cf0:	66 45 85 bb 18 17 16 15 	test   WORD PTR [r11+0x15161718],r15w
+   13cf8:	66 41 85 84 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],ax
+   13d01:	66 41 85 8c 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],cx
+   13d0a:	66 41 85 94 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],dx
+   13d13:	66 41 85 9c 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],bx
+   13d1c:	66 41 85 a4 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],sp
+   13d25:	66 41 85 ac 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],bp
+   13d2e:	66 41 85 b4 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],si
+   13d37:	66 41 85 bc 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],di
+   13d40:	66 45 85 84 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],r8w
+   13d49:	66 45 85 8c 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],r9w
+   13d52:	66 45 85 94 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],r10w
+   13d5b:	66 45 85 9c 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],r11w
+   13d64:	66 45 85 a4 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],r12w
+   13d6d:	66 45 85 ac 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],r13w
+   13d76:	66 45 85 b4 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],r14w
+   13d7f:	66 45 85 bc 24 18 17 16 15 	test   WORD PTR [r12+0x15161718],r15w
+   13d88:	66 41 85 85 18 17 16 15 	test   WORD PTR [r13+0x15161718],ax
+   13d90:	66 41 85 8d 18 17 16 15 	test   WORD PTR [r13+0x15161718],cx
+   13d98:	66 41 85 95 18 17 16 15 	test   WORD PTR [r13+0x15161718],dx
+   13da0:	66 41 85 9d 18 17 16 15 	test   WORD PTR [r13+0x15161718],bx
+   13da8:	66 41 85 a5 18 17 16 15 	test   WORD PTR [r13+0x15161718],sp
+   13db0:	66 41 85 ad 18 17 16 15 	test   WORD PTR [r13+0x15161718],bp
+   13db8:	66 41 85 b5 18 17 16 15 	test   WORD PTR [r13+0x15161718],si
+   13dc0:	66 41 85 bd 18 17 16 15 	test   WORD PTR [r13+0x15161718],di
+   13dc8:	66 45 85 85 18 17 16 15 	test   WORD PTR [r13+0x15161718],r8w
+   13dd0:	66 45 85 8d 18 17 16 15 	test   WORD PTR [r13+0x15161718],r9w
+   13dd8:	66 45 85 95 18 17 16 15 	test   WORD PTR [r13+0x15161718],r10w
+   13de0:	66 45 85 9d 18 17 16 15 	test   WORD PTR [r13+0x15161718],r11w
+   13de8:	66 45 85 a5 18 17 16 15 	test   WORD PTR [r13+0x15161718],r12w
+   13df0:	66 45 85 ad 18 17 16 15 	test   WORD PTR [r13+0x15161718],r13w
+   13df8:	66 45 85 b5 18 17 16 15 	test   WORD PTR [r13+0x15161718],r14w
+   13e00:	66 45 85 bd 18 17 16 15 	test   WORD PTR [r13+0x15161718],r15w
+   13e08:	66 41 85 86 18 17 16 15 	test   WORD PTR [r14+0x15161718],ax
+   13e10:	66 41 85 8e 18 17 16 15 	test   WORD PTR [r14+0x15161718],cx
+   13e18:	66 41 85 96 18 17 16 15 	test   WORD PTR [r14+0x15161718],dx
+   13e20:	66 41 85 9e 18 17 16 15 	test   WORD PTR [r14+0x15161718],bx
+   13e28:	66 41 85 a6 18 17 16 15 	test   WORD PTR [r14+0x15161718],sp
+   13e30:	66 41 85 ae 18 17 16 15 	test   WORD PTR [r14+0x15161718],bp
+   13e38:	66 41 85 b6 18 17 16 15 	test   WORD PTR [r14+0x15161718],si
+   13e40:	66 41 85 be 18 17 16 15 	test   WORD PTR [r14+0x15161718],di
+   13e48:	66 45 85 86 18 17 16 15 	test   WORD PTR [r14+0x15161718],r8w
+   13e50:	66 45 85 8e 18 17 16 15 	test   WORD PTR [r14+0x15161718],r9w
+   13e58:	66 45 85 96 18 17 16 15 	test   WORD PTR [r14+0x15161718],r10w
+   13e60:	66 45 85 9e 18 17 16 15 	test   WORD PTR [r14+0x15161718],r11w
+   13e68:	66 45 85 a6 18 17 16 15 	test   WORD PTR [r14+0x15161718],r12w
+   13e70:	66 45 85 ae 18 17 16 15 	test   WORD PTR [r14+0x15161718],r13w
+   13e78:	66 45 85 b6 18 17 16 15 	test   WORD PTR [r14+0x15161718],r14w
+   13e80:	66 45 85 be 18 17 16 15 	test   WORD PTR [r14+0x15161718],r15w
+   13e88:	66 41 85 87 18 17 16 15 	test   WORD PTR [r15+0x15161718],ax
+   13e90:	66 41 85 8f 18 17 16 15 	test   WORD PTR [r15+0x15161718],cx
+   13e98:	66 41 85 97 18 17 16 15 	test   WORD PTR [r15+0x15161718],dx
+   13ea0:	66 41 85 9f 18 17 16 15 	test   WORD PTR [r15+0x15161718],bx
+   13ea8:	66 41 85 a7 18 17 16 15 	test   WORD PTR [r15+0x15161718],sp
+   13eb0:	66 41 85 af 18 17 16 15 	test   WORD PTR [r15+0x15161718],bp
+   13eb8:	66 41 85 b7 18 17 16 15 	test   WORD PTR [r15+0x15161718],si
+   13ec0:	66 41 85 bf 18 17 16 15 	test   WORD PTR [r15+0x15161718],di
+   13ec8:	66 45 85 87 18 17 16 15 	test   WORD PTR [r15+0x15161718],r8w
+   13ed0:	66 45 85 8f 18 17 16 15 	test   WORD PTR [r15+0x15161718],r9w
+   13ed8:	66 45 85 97 18 17 16 15 	test   WORD PTR [r15+0x15161718],r10w
+   13ee0:	66 45 85 9f 18 17 16 15 	test   WORD PTR [r15+0x15161718],r11w
+   13ee8:	66 45 85 a7 18 17 16 15 	test   WORD PTR [r15+0x15161718],r12w
+   13ef0:	66 45 85 af 18 17 16 15 	test   WORD PTR [r15+0x15161718],r13w
+   13ef8:	66 45 85 b7 18 17 16 15 	test   WORD PTR [r15+0x15161718],r14w
+   13f00:	66 45 85 bf 18 17 16 15 	test   WORD PTR [r15+0x15161718],r15w
+   13f08:	84 80 18 17 16 15    	test   BYTE PTR [rax+0x15161718],al
+   13f0e:	84 88 18 17 16 15    	test   BYTE PTR [rax+0x15161718],cl
+   13f14:	84 90 18 17 16 15    	test   BYTE PTR [rax+0x15161718],dl
+   13f1a:	84 98 18 17 16 15    	test   BYTE PTR [rax+0x15161718],bl
+   13f20:	84 a0 18 17 16 15    	test   BYTE PTR [rax+0x15161718],ah
+   13f26:	84 a8 18 17 16 15    	test   BYTE PTR [rax+0x15161718],ch
+   13f2c:	84 b0 18 17 16 15    	test   BYTE PTR [rax+0x15161718],dh
+   13f32:	84 b8 18 17 16 15    	test   BYTE PTR [rax+0x15161718],bh
+   13f38:	44 84 80 18 17 16 15 	test   BYTE PTR [rax+0x15161718],r8b
+   13f3f:	44 84 88 18 17 16 15 	test   BYTE PTR [rax+0x15161718],r9b
+   13f46:	44 84 90 18 17 16 15 	test   BYTE PTR [rax+0x15161718],r10b
+   13f4d:	44 84 98 18 17 16 15 	test   BYTE PTR [rax+0x15161718],r11b
+   13f54:	44 84 a0 18 17 16 15 	test   BYTE PTR [rax+0x15161718],r12b
+   13f5b:	44 84 a8 18 17 16 15 	test   BYTE PTR [rax+0x15161718],r13b
+   13f62:	44 84 b0 18 17 16 15 	test   BYTE PTR [rax+0x15161718],r14b
+   13f69:	44 84 b8 18 17 16 15 	test   BYTE PTR [rax+0x15161718],r15b
+   13f70:	40 84 a0 18 17 16 15 	test   BYTE PTR [rax+0x15161718],spl
+   13f77:	40 84 a8 18 17 16 15 	test   BYTE PTR [rax+0x15161718],bpl
+   13f7e:	40 84 b0 18 17 16 15 	test   BYTE PTR [rax+0x15161718],sil
+   13f85:	40 84 b8 18 17 16 15 	test   BYTE PTR [rax+0x15161718],dil
+   13f8c:	84 81 18 17 16 15    	test   BYTE PTR [rcx+0x15161718],al
+   13f92:	84 89 18 17 16 15    	test   BYTE PTR [rcx+0x15161718],cl
+   13f98:	84 91 18 17 16 15    	test   BYTE PTR [rcx+0x15161718],dl
+   13f9e:	84 99 18 17 16 15    	test   BYTE PTR [rcx+0x15161718],bl
+   13fa4:	84 a1 18 17 16 15    	test   BYTE PTR [rcx+0x15161718],ah
+   13faa:	84 a9 18 17 16 15    	test   BYTE PTR [rcx+0x15161718],ch
+   13fb0:	84 b1 18 17 16 15    	test   BYTE PTR [rcx+0x15161718],dh
+   13fb6:	84 b9 18 17 16 15    	test   BYTE PTR [rcx+0x15161718],bh
+   13fbc:	44 84 81 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],r8b
+   13fc3:	44 84 89 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],r9b
+   13fca:	44 84 91 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],r10b
+   13fd1:	44 84 99 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],r11b
+   13fd8:	44 84 a1 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],r12b
+   13fdf:	44 84 a9 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],r13b
+   13fe6:	44 84 b1 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],r14b
+   13fed:	44 84 b9 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],r15b
+   13ff4:	40 84 a1 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],spl
+   13ffb:	40 84 a9 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],bpl
+   14002:	40 84 b1 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],sil
+   14009:	40 84 b9 18 17 16 15 	test   BYTE PTR [rcx+0x15161718],dil
+   14010:	84 82 18 17 16 15    	test   BYTE PTR [rdx+0x15161718],al
+   14016:	84 8a 18 17 16 15    	test   BYTE PTR [rdx+0x15161718],cl
+   1401c:	84 92 18 17 16 15    	test   BYTE PTR [rdx+0x15161718],dl
+   14022:	84 9a 18 17 16 15    	test   BYTE PTR [rdx+0x15161718],bl
+   14028:	84 a2 18 17 16 15    	test   BYTE PTR [rdx+0x15161718],ah
+   1402e:	84 aa 18 17 16 15    	test   BYTE PTR [rdx+0x15161718],ch
+   14034:	84 b2 18 17 16 15    	test   BYTE PTR [rdx+0x15161718],dh
+   1403a:	84 ba 18 17 16 15    	test   BYTE PTR [rdx+0x15161718],bh
+   14040:	44 84 82 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],r8b
+   14047:	44 84 8a 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],r9b
+   1404e:	44 84 92 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],r10b
+   14055:	44 84 9a 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],r11b
+   1405c:	44 84 a2 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],r12b
+   14063:	44 84 aa 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],r13b
+   1406a:	44 84 b2 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],r14b
+   14071:	44 84 ba 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],r15b
+   14078:	40 84 a2 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],spl
+   1407f:	40 84 aa 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],bpl
+   14086:	40 84 b2 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],sil
+   1408d:	40 84 ba 18 17 16 15 	test   BYTE PTR [rdx+0x15161718],dil
+   14094:	84 83 18 17 16 15    	test   BYTE PTR [rbx+0x15161718],al
+   1409a:	84 8b 18 17 16 15    	test   BYTE PTR [rbx+0x15161718],cl
+   140a0:	84 93 18 17 16 15    	test   BYTE PTR [rbx+0x15161718],dl
+   140a6:	84 9b 18 17 16 15    	test   BYTE PTR [rbx+0x15161718],bl
+   140ac:	84 a3 18 17 16 15    	test   BYTE PTR [rbx+0x15161718],ah
+   140b2:	84 ab 18 17 16 15    	test   BYTE PTR [rbx+0x15161718],ch
+   140b8:	84 b3 18 17 16 15    	test   BYTE PTR [rbx+0x15161718],dh
+   140be:	84 bb 18 17 16 15    	test   BYTE PTR [rbx+0x15161718],bh
+   140c4:	44 84 83 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],r8b
+   140cb:	44 84 8b 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],r9b
+   140d2:	44 84 93 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],r10b
+   140d9:	44 84 9b 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],r11b
+   140e0:	44 84 a3 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],r12b
+   140e7:	44 84 ab 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],r13b
+   140ee:	44 84 b3 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],r14b
+   140f5:	44 84 bb 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],r15b
+   140fc:	40 84 a3 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],spl
+   14103:	40 84 ab 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],bpl
+   1410a:	40 84 b3 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],sil
+   14111:	40 84 bb 18 17 16 15 	test   BYTE PTR [rbx+0x15161718],dil
+   14118:	84 84 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],al
+   1411f:	84 8c 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],cl
+   14126:	84 94 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],dl
+   1412d:	84 9c 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],bl
+   14134:	84 a4 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],ah
+   1413b:	84 ac 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],ch
+   14142:	84 b4 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],dh
+   14149:	84 bc 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],bh
+   14150:	44 84 84 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],r8b
+   14158:	44 84 8c 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],r9b
+   14160:	44 84 94 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],r10b
+   14168:	44 84 9c 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],r11b
+   14170:	44 84 a4 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],r12b
+   14178:	44 84 ac 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],r13b
+   14180:	44 84 b4 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],r14b
+   14188:	44 84 bc 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],r15b
+   14190:	40 84 a4 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],spl
+   14198:	40 84 ac 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],bpl
+   141a0:	40 84 b4 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],sil
+   141a8:	40 84 bc 24 18 17 16 15 	test   BYTE PTR [rsp+0x15161718],dil
+   141b0:	84 85 18 17 16 15    	test   BYTE PTR [rbp+0x15161718],al
+   141b6:	84 8d 18 17 16 15    	test   BYTE PTR [rbp+0x15161718],cl
+   141bc:	84 95 18 17 16 15    	test   BYTE PTR [rbp+0x15161718],dl
+   141c2:	84 9d 18 17 16 15    	test   BYTE PTR [rbp+0x15161718],bl
+   141c8:	84 a5 18 17 16 15    	test   BYTE PTR [rbp+0x15161718],ah
+   141ce:	84 ad 18 17 16 15    	test   BYTE PTR [rbp+0x15161718],ch
+   141d4:	84 b5 18 17 16 15    	test   BYTE PTR [rbp+0x15161718],dh
+   141da:	84 bd 18 17 16 15    	test   BYTE PTR [rbp+0x15161718],bh
+   141e0:	44 84 85 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],r8b
+   141e7:	44 84 8d 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],r9b
+   141ee:	44 84 95 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],r10b
+   141f5:	44 84 9d 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],r11b
+   141fc:	44 84 a5 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],r12b
+   14203:	44 84 ad 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],r13b
+   1420a:	44 84 b5 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],r14b
+   14211:	44 84 bd 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],r15b
+   14218:	40 84 a5 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],spl
+   1421f:	40 84 ad 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],bpl
+   14226:	40 84 b5 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],sil
+   1422d:	40 84 bd 18 17 16 15 	test   BYTE PTR [rbp+0x15161718],dil
+   14234:	84 86 18 17 16 15    	test   BYTE PTR [rsi+0x15161718],al
+   1423a:	84 8e 18 17 16 15    	test   BYTE PTR [rsi+0x15161718],cl
+   14240:	84 96 18 17 16 15    	test   BYTE PTR [rsi+0x15161718],dl
+   14246:	84 9e 18 17 16 15    	test   BYTE PTR [rsi+0x15161718],bl
+   1424c:	84 a6 18 17 16 15    	test   BYTE PTR [rsi+0x15161718],ah
+   14252:	84 ae 18 17 16 15    	test   BYTE PTR [rsi+0x15161718],ch
+   14258:	84 b6 18 17 16 15    	test   BYTE PTR [rsi+0x15161718],dh
+   1425e:	84 be 18 17 16 15    	test   BYTE PTR [rsi+0x15161718],bh
+   14264:	44 84 86 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],r8b
+   1426b:	44 84 8e 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],r9b
+   14272:	44 84 96 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],r10b
+   14279:	44 84 9e 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],r11b
+   14280:	44 84 a6 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],r12b
+   14287:	44 84 ae 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],r13b
+   1428e:	44 84 b6 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],r14b
+   14295:	44 84 be 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],r15b
+   1429c:	40 84 a6 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],spl
+   142a3:	40 84 ae 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],bpl
+   142aa:	40 84 b6 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],sil
+   142b1:	40 84 be 18 17 16 15 	test   BYTE PTR [rsi+0x15161718],dil
+   142b8:	84 87 18 17 16 15    	test   BYTE PTR [rdi+0x15161718],al
+   142be:	84 8f 18 17 16 15    	test   BYTE PTR [rdi+0x15161718],cl
+   142c4:	84 97 18 17 16 15    	test   BYTE PTR [rdi+0x15161718],dl
+   142ca:	84 9f 18 17 16 15    	test   BYTE PTR [rdi+0x15161718],bl
+   142d0:	84 a7 18 17 16 15    	test   BYTE PTR [rdi+0x15161718],ah
+   142d6:	84 af 18 17 16 15    	test   BYTE PTR [rdi+0x15161718],ch
+   142dc:	84 b7 18 17 16 15    	test   BYTE PTR [rdi+0x15161718],dh
+   142e2:	84 bf 18 17 16 15    	test   BYTE PTR [rdi+0x15161718],bh
+   142e8:	44 84 87 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],r8b
+   142ef:	44 84 8f 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],r9b
+   142f6:	44 84 97 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],r10b
+   142fd:	44 84 9f 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],r11b
+   14304:	44 84 a7 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],r12b
+   1430b:	44 84 af 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],r13b
+   14312:	44 84 b7 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],r14b
+   14319:	44 84 bf 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],r15b
+   14320:	40 84 a7 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],spl
+   14327:	40 84 af 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],bpl
+   1432e:	40 84 b7 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],sil
+   14335:	40 84 bf 18 17 16 15 	test   BYTE PTR [rdi+0x15161718],dil
+   1433c:	41 84 80 18 17 16 15 	test   BYTE PTR [r8+0x15161718],al
+   14343:	41 84 88 18 17 16 15 	test   BYTE PTR [r8+0x15161718],cl
+   1434a:	41 84 90 18 17 16 15 	test   BYTE PTR [r8+0x15161718],dl
+   14351:	41 84 98 18 17 16 15 	test   BYTE PTR [r8+0x15161718],bl
+   14358:	41 84 a0 18 17 16 15 	test   BYTE PTR [r8+0x15161718],spl
+   1435f:	41 84 a8 18 17 16 15 	test   BYTE PTR [r8+0x15161718],bpl
+   14366:	41 84 b0 18 17 16 15 	test   BYTE PTR [r8+0x15161718],sil
+   1436d:	41 84 b8 18 17 16 15 	test   BYTE PTR [r8+0x15161718],dil
+   14374:	45 84 80 18 17 16 15 	test   BYTE PTR [r8+0x15161718],r8b
+   1437b:	45 84 88 18 17 16 15 	test   BYTE PTR [r8+0x15161718],r9b
+   14382:	45 84 90 18 17 16 15 	test   BYTE PTR [r8+0x15161718],r10b
+   14389:	45 84 98 18 17 16 15 	test   BYTE PTR [r8+0x15161718],r11b
+   14390:	45 84 a0 18 17 16 15 	test   BYTE PTR [r8+0x15161718],r12b
+   14397:	45 84 a8 18 17 16 15 	test   BYTE PTR [r8+0x15161718],r13b
+   1439e:	45 84 b0 18 17 16 15 	test   BYTE PTR [r8+0x15161718],r14b
+   143a5:	45 84 b8 18 17 16 15 	test   BYTE PTR [r8+0x15161718],r15b
+   143ac:	41 84 a0 18 17 16 15 	test   BYTE PTR [r8+0x15161718],spl
+   143b3:	41 84 a8 18 17 16 15 	test   BYTE PTR [r8+0x15161718],bpl
+   143ba:	41 84 b0 18 17 16 15 	test   BYTE PTR [r8+0x15161718],sil
+   143c1:	41 84 b8 18 17 16 15 	test   BYTE PTR [r8+0x15161718],dil
+   143c8:	41 84 81 18 17 16 15 	test   BYTE PTR [r9+0x15161718],al
+   143cf:	41 84 89 18 17 16 15 	test   BYTE PTR [r9+0x15161718],cl
+   143d6:	41 84 91 18 17 16 15 	test   BYTE PTR [r9+0x15161718],dl
+   143dd:	41 84 99 18 17 16 15 	test   BYTE PTR [r9+0x15161718],bl
+   143e4:	41 84 a1 18 17 16 15 	test   BYTE PTR [r9+0x15161718],spl
+   143eb:	41 84 a9 18 17 16 15 	test   BYTE PTR [r9+0x15161718],bpl
+   143f2:	41 84 b1 18 17 16 15 	test   BYTE PTR [r9+0x15161718],sil
+   143f9:	41 84 b9 18 17 16 15 	test   BYTE PTR [r9+0x15161718],dil
+   14400:	45 84 81 18 17 16 15 	test   BYTE PTR [r9+0x15161718],r8b
+   14407:	45 84 89 18 17 16 15 	test   BYTE PTR [r9+0x15161718],r9b
+   1440e:	45 84 91 18 17 16 15 	test   BYTE PTR [r9+0x15161718],r10b
+   14415:	45 84 99 18 17 16 15 	test   BYTE PTR [r9+0x15161718],r11b
+   1441c:	45 84 a1 18 17 16 15 	test   BYTE PTR [r9+0x15161718],r12b
+   14423:	45 84 a9 18 17 16 15 	test   BYTE PTR [r9+0x15161718],r13b
+   1442a:	45 84 b1 18 17 16 15 	test   BYTE PTR [r9+0x15161718],r14b
+   14431:	45 84 b9 18 17 16 15 	test   BYTE PTR [r9+0x15161718],r15b
+   14438:	41 84 a1 18 17 16 15 	test   BYTE PTR [r9+0x15161718],spl
+   1443f:	41 84 a9 18 17 16 15 	test   BYTE PTR [r9+0x15161718],bpl
+   14446:	41 84 b1 18 17 16 15 	test   BYTE PTR [r9+0x15161718],sil
+   1444d:	41 84 b9 18 17 16 15 	test   BYTE PTR [r9+0x15161718],dil
+   14454:	41 84 82 18 17 16 15 	test   BYTE PTR [r10+0x15161718],al
+   1445b:	41 84 8a 18 17 16 15 	test   BYTE PTR [r10+0x15161718],cl
+   14462:	41 84 92 18 17 16 15 	test   BYTE PTR [r10+0x15161718],dl
+   14469:	41 84 9a 18 17 16 15 	test   BYTE PTR [r10+0x15161718],bl
+   14470:	41 84 a2 18 17 16 15 	test   BYTE PTR [r10+0x15161718],spl
+   14477:	41 84 aa 18 17 16 15 	test   BYTE PTR [r10+0x15161718],bpl
+   1447e:	41 84 b2 18 17 16 15 	test   BYTE PTR [r10+0x15161718],sil
+   14485:	41 84 ba 18 17 16 15 	test   BYTE PTR [r10+0x15161718],dil
+   1448c:	45 84 82 18 17 16 15 	test   BYTE PTR [r10+0x15161718],r8b
+   14493:	45 84 8a 18 17 16 15 	test   BYTE PTR [r10+0x15161718],r9b
+   1449a:	45 84 92 18 17 16 15 	test   BYTE PTR [r10+0x15161718],r10b
+   144a1:	45 84 9a 18 17 16 15 	test   BYTE PTR [r10+0x15161718],r11b
+   144a8:	45 84 a2 18 17 16 15 	test   BYTE PTR [r10+0x15161718],r12b
+   144af:	45 84 aa 18 17 16 15 	test   BYTE PTR [r10+0x15161718],r13b
+   144b6:	45 84 b2 18 17 16 15 	test   BYTE PTR [r10+0x15161718],r14b
+   144bd:	45 84 ba 18 17 16 15 	test   BYTE PTR [r10+0x15161718],r15b
+   144c4:	41 84 a2 18 17 16 15 	test   BYTE PTR [r10+0x15161718],spl
+   144cb:	41 84 aa 18 17 16 15 	test   BYTE PTR [r10+0x15161718],bpl
+   144d2:	41 84 b2 18 17 16 15 	test   BYTE PTR [r10+0x15161718],sil
+   144d9:	41 84 ba 18 17 16 15 	test   BYTE PTR [r10+0x15161718],dil
+   144e0:	41 84 83 18 17 16 15 	test   BYTE PTR [r11+0x15161718],al
+   144e7:	41 84 8b 18 17 16 15 	test   BYTE PTR [r11+0x15161718],cl
+   144ee:	41 84 93 18 17 16 15 	test   BYTE PTR [r11+0x15161718],dl
+   144f5:	41 84 9b 18 17 16 15 	test   BYTE PTR [r11+0x15161718],bl
+   144fc:	41 84 a3 18 17 16 15 	test   BYTE PTR [r11+0x15161718],spl
+   14503:	41 84 ab 18 17 16 15 	test   BYTE PTR [r11+0x15161718],bpl
+   1450a:	41 84 b3 18 17 16 15 	test   BYTE PTR [r11+0x15161718],sil
+   14511:	41 84 bb 18 17 16 15 	test   BYTE PTR [r11+0x15161718],dil
+   14518:	45 84 83 18 17 16 15 	test   BYTE PTR [r11+0x15161718],r8b
+   1451f:	45 84 8b 18 17 16 15 	test   BYTE PTR [r11+0x15161718],r9b
+   14526:	45 84 93 18 17 16 15 	test   BYTE PTR [r11+0x15161718],r10b
+   1452d:	45 84 9b 18 17 16 15 	test   BYTE PTR [r11+0x15161718],r11b
+   14534:	45 84 a3 18 17 16 15 	test   BYTE PTR [r11+0x15161718],r12b
+   1453b:	45 84 ab 18 17 16 15 	test   BYTE PTR [r11+0x15161718],r13b
+   14542:	45 84 b3 18 17 16 15 	test   BYTE PTR [r11+0x15161718],r14b
+   14549:	45 84 bb 18 17 16 15 	test   BYTE PTR [r11+0x15161718],r15b
+   14550:	41 84 a3 18 17 16 15 	test   BYTE PTR [r11+0x15161718],spl
+   14557:	41 84 ab 18 17 16 15 	test   BYTE PTR [r11+0x15161718],bpl
+   1455e:	41 84 b3 18 17 16 15 	test   BYTE PTR [r11+0x15161718],sil
+   14565:	41 84 bb 18 17 16 15 	test   BYTE PTR [r11+0x15161718],dil
+   1456c:	41 84 84 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],al
+   14574:	41 84 8c 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],cl
+   1457c:	41 84 94 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],dl
+   14584:	41 84 9c 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],bl
+   1458c:	41 84 a4 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],spl
+   14594:	41 84 ac 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],bpl
+   1459c:	41 84 b4 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],sil
+   145a4:	41 84 bc 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],dil
+   145ac:	45 84 84 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],r8b
+   145b4:	45 84 8c 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],r9b
+   145bc:	45 84 94 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],r10b
+   145c4:	45 84 9c 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],r11b
+   145cc:	45 84 a4 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],r12b
+   145d4:	45 84 ac 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],r13b
+   145dc:	45 84 b4 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],r14b
+   145e4:	45 84 bc 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],r15b
+   145ec:	41 84 a4 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],spl
+   145f4:	41 84 ac 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],bpl
+   145fc:	41 84 b4 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],sil
+   14604:	41 84 bc 24 18 17 16 15 	test   BYTE PTR [r12+0x15161718],dil
+   1460c:	41 84 85 18 17 16 15 	test   BYTE PTR [r13+0x15161718],al
+   14613:	41 84 8d 18 17 16 15 	test   BYTE PTR [r13+0x15161718],cl
+   1461a:	41 84 95 18 17 16 15 	test   BYTE PTR [r13+0x15161718],dl
+   14621:	41 84 9d 18 17 16 15 	test   BYTE PTR [r13+0x15161718],bl
+   14628:	41 84 a5 18 17 16 15 	test   BYTE PTR [r13+0x15161718],spl
+   1462f:	41 84 ad 18 17 16 15 	test   BYTE PTR [r13+0x15161718],bpl
+   14636:	41 84 b5 18 17 16 15 	test   BYTE PTR [r13+0x15161718],sil
+   1463d:	41 84 bd 18 17 16 15 	test   BYTE PTR [r13+0x15161718],dil
+   14644:	45 84 85 18 17 16 15 	test   BYTE PTR [r13+0x15161718],r8b
+   1464b:	45 84 8d 18 17 16 15 	test   BYTE PTR [r13+0x15161718],r9b
+   14652:	45 84 95 18 17 16 15 	test   BYTE PTR [r13+0x15161718],r10b
+   14659:	45 84 9d 18 17 16 15 	test   BYTE PTR [r13+0x15161718],r11b
+   14660:	45 84 a5 18 17 16 15 	test   BYTE PTR [r13+0x15161718],r12b
+   14667:	45 84 ad 18 17 16 15 	test   BYTE PTR [r13+0x15161718],r13b
+   1466e:	45 84 b5 18 17 16 15 	test   BYTE PTR [r13+0x15161718],r14b
+   14675:	45 84 bd 18 17 16 15 	test   BYTE PTR [r13+0x15161718],r15b
+   1467c:	41 84 a5 18 17 16 15 	test   BYTE PTR [r13+0x15161718],spl
+   14683:	41 84 ad 18 17 16 15 	test   BYTE PTR [r13+0x15161718],bpl
+   1468a:	41 84 b5 18 17 16 15 	test   BYTE PTR [r13+0x15161718],sil
+   14691:	41 84 bd 18 17 16 15 	test   BYTE PTR [r13+0x15161718],dil
+   14698:	41 84 86 18 17 16 15 	test   BYTE PTR [r14+0x15161718],al
+   1469f:	41 84 8e 18 17 16 15 	test   BYTE PTR [r14+0x15161718],cl
+   146a6:	41 84 96 18 17 16 15 	test   BYTE PTR [r14+0x15161718],dl
+   146ad:	41 84 9e 18 17 16 15 	test   BYTE PTR [r14+0x15161718],bl
+   146b4:	41 84 a6 18 17 16 15 	test   BYTE PTR [r14+0x15161718],spl
+   146bb:	41 84 ae 18 17 16 15 	test   BYTE PTR [r14+0x15161718],bpl
+   146c2:	41 84 b6 18 17 16 15 	test   BYTE PTR [r14+0x15161718],sil
+   146c9:	41 84 be 18 17 16 15 	test   BYTE PTR [r14+0x15161718],dil
+   146d0:	45 84 86 18 17 16 15 	test   BYTE PTR [r14+0x15161718],r8b
+   146d7:	45 84 8e 18 17 16 15 	test   BYTE PTR [r14+0x15161718],r9b
+   146de:	45 84 96 18 17 16 15 	test   BYTE PTR [r14+0x15161718],r10b
+   146e5:	45 84 9e 18 17 16 15 	test   BYTE PTR [r14+0x15161718],r11b
+   146ec:	45 84 a6 18 17 16 15 	test   BYTE PTR [r14+0x15161718],r12b
+   146f3:	45 84 ae 18 17 16 15 	test   BYTE PTR [r14+0x15161718],r13b
+   146fa:	45 84 b6 18 17 16 15 	test   BYTE PTR [r14+0x15161718],r14b
+   14701:	45 84 be 18 17 16 15 	test   BYTE PTR [r14+0x15161718],r15b
+   14708:	41 84 a6 18 17 16 15 	test   BYTE PTR [r14+0x15161718],spl
+   1470f:	41 84 ae 18 17 16 15 	test   BYTE PTR [r14+0x15161718],bpl
+   14716:	41 84 b6 18 17 16 15 	test   BYTE PTR [r14+0x15161718],sil
+   1471d:	41 84 be 18 17 16 15 	test   BYTE PTR [r14+0x15161718],dil
+   14724:	41 84 87 18 17 16 15 	test   BYTE PTR [r15+0x15161718],al
+   1472b:	41 84 8f 18 17 16 15 	test   BYTE PTR [r15+0x15161718],cl
+   14732:	41 84 97 18 17 16 15 	test   BYTE PTR [r15+0x15161718],dl
+   14739:	41 84 9f 18 17 16 15 	test   BYTE PTR [r15+0x15161718],bl
+   14740:	41 84 a7 18 17 16 15 	test   BYTE PTR [r15+0x15161718],spl
+   14747:	41 84 af 18 17 16 15 	test   BYTE PTR [r15+0x15161718],bpl
+   1474e:	41 84 b7 18 17 16 15 	test   BYTE PTR [r15+0x15161718],sil
+   14755:	41 84 bf 18 17 16 15 	test   BYTE PTR [r15+0x15161718],dil
+   1475c:	45 84 87 18 17 16 15 	test   BYTE PTR [r15+0x15161718],r8b
+   14763:	45 84 8f 18 17 16 15 	test   BYTE PTR [r15+0x15161718],r9b
+   1476a:	45 84 97 18 17 16 15 	test   BYTE PTR [r15+0x15161718],r10b
+   14771:	45 84 9f 18 17 16 15 	test   BYTE PTR [r15+0x15161718],r11b
+   14778:	45 84 a7 18 17 16 15 	test   BYTE PTR [r15+0x15161718],r12b
+   1477f:	45 84 af 18 17 16 15 	test   BYTE PTR [r15+0x15161718],r13b
+   14786:	45 84 b7 18 17 16 15 	test   BYTE PTR [r15+0x15161718],r14b
+   1478d:	45 84 bf 18 17 16 15 	test   BYTE PTR [r15+0x15161718],r15b
+   14794:	41 84 a7 18 17 16 15 	test   BYTE PTR [r15+0x15161718],spl
+   1479b:	41 84 af 18 17 16 15 	test   BYTE PTR [r15+0x15161718],bpl
+   147a2:	41 84 b7 18 17 16 15 	test   BYTE PTR [r15+0x15161718],sil
+   147a9:	41 84 bf 18 17 16 15 	test   BYTE PTR [r15+0x15161718],dil
+   147b0:	4a 85 04 28          	test   QWORD PTR [rax+r13*1],rax
+   147b4:	4a 85 0c 28          	test   QWORD PTR [rax+r13*1],rcx
+   147b8:	4a 85 14 28          	test   QWORD PTR [rax+r13*1],rdx
+   147bc:	4a 85 1c 28          	test   QWORD PTR [rax+r13*1],rbx
+   147c0:	4a 85 24 28          	test   QWORD PTR [rax+r13*1],rsp
+   147c4:	4a 85 2c 28          	test   QWORD PTR [rax+r13*1],rbp
+   147c8:	4a 85 34 28          	test   QWORD PTR [rax+r13*1],rsi
+   147cc:	4a 85 3c 28          	test   QWORD PTR [rax+r13*1],rdi
+   147d0:	4e 85 04 28          	test   QWORD PTR [rax+r13*1],r8
+   147d4:	4e 85 0c 28          	test   QWORD PTR [rax+r13*1],r9
+   147d8:	4e 85 14 28          	test   QWORD PTR [rax+r13*1],r10
+   147dc:	4e 85 1c 28          	test   QWORD PTR [rax+r13*1],r11
+   147e0:	4e 85 24 28          	test   QWORD PTR [rax+r13*1],r12
+   147e4:	4e 85 2c 28          	test   QWORD PTR [rax+r13*1],r13
+   147e8:	4e 85 34 28          	test   QWORD PTR [rax+r13*1],r14
+   147ec:	4e 85 3c 28          	test   QWORD PTR [rax+r13*1],r15
+   147f0:	4a 85 04 29          	test   QWORD PTR [rcx+r13*1],rax
+   147f4:	4a 85 0c 29          	test   QWORD PTR [rcx+r13*1],rcx
+   147f8:	4a 85 14 29          	test   QWORD PTR [rcx+r13*1],rdx
+   147fc:	4a 85 1c 29          	test   QWORD PTR [rcx+r13*1],rbx
+   14800:	4a 85 24 29          	test   QWORD PTR [rcx+r13*1],rsp
+   14804:	4a 85 2c 29          	test   QWORD PTR [rcx+r13*1],rbp
+   14808:	4a 85 34 29          	test   QWORD PTR [rcx+r13*1],rsi
+   1480c:	4a 85 3c 29          	test   QWORD PTR [rcx+r13*1],rdi
+   14810:	4e 85 04 29          	test   QWORD PTR [rcx+r13*1],r8
+   14814:	4e 85 0c 29          	test   QWORD PTR [rcx+r13*1],r9
+   14818:	4e 85 14 29          	test   QWORD PTR [rcx+r13*1],r10
+   1481c:	4e 85 1c 29          	test   QWORD PTR [rcx+r13*1],r11
+   14820:	4e 85 24 29          	test   QWORD PTR [rcx+r13*1],r12
+   14824:	4e 85 2c 29          	test   QWORD PTR [rcx+r13*1],r13
+   14828:	4e 85 34 29          	test   QWORD PTR [rcx+r13*1],r14
+   1482c:	4e 85 3c 29          	test   QWORD PTR [rcx+r13*1],r15
+   14830:	4a 85 04 2a          	test   QWORD PTR [rdx+r13*1],rax
+   14834:	4a 85 0c 2a          	test   QWORD PTR [rdx+r13*1],rcx
+   14838:	4a 85 14 2a          	test   QWORD PTR [rdx+r13*1],rdx
+   1483c:	4a 85 1c 2a          	test   QWORD PTR [rdx+r13*1],rbx
+   14840:	4a 85 24 2a          	test   QWORD PTR [rdx+r13*1],rsp
+   14844:	4a 85 2c 2a          	test   QWORD PTR [rdx+r13*1],rbp
+   14848:	4a 85 34 2a          	test   QWORD PTR [rdx+r13*1],rsi
+   1484c:	4a 85 3c 2a          	test   QWORD PTR [rdx+r13*1],rdi
+   14850:	4e 85 04 2a          	test   QWORD PTR [rdx+r13*1],r8
+   14854:	4e 85 0c 2a          	test   QWORD PTR [rdx+r13*1],r9
+   14858:	4e 85 14 2a          	test   QWORD PTR [rdx+r13*1],r10
+   1485c:	4e 85 1c 2a          	test   QWORD PTR [rdx+r13*1],r11
+   14860:	4e 85 24 2a          	test   QWORD PTR [rdx+r13*1],r12
+   14864:	4e 85 2c 2a          	test   QWORD PTR [rdx+r13*1],r13
+   14868:	4e 85 34 2a          	test   QWORD PTR [rdx+r13*1],r14
+   1486c:	4e 85 3c 2a          	test   QWORD PTR [rdx+r13*1],r15
+   14870:	4a 85 04 2b          	test   QWORD PTR [rbx+r13*1],rax
+   14874:	4a 85 0c 2b          	test   QWORD PTR [rbx+r13*1],rcx
+   14878:	4a 85 14 2b          	test   QWORD PTR [rbx+r13*1],rdx
+   1487c:	4a 85 1c 2b          	test   QWORD PTR [rbx+r13*1],rbx
+   14880:	4a 85 24 2b          	test   QWORD PTR [rbx+r13*1],rsp
+   14884:	4a 85 2c 2b          	test   QWORD PTR [rbx+r13*1],rbp
+   14888:	4a 85 34 2b          	test   QWORD PTR [rbx+r13*1],rsi
+   1488c:	4a 85 3c 2b          	test   QWORD PTR [rbx+r13*1],rdi
+   14890:	4e 85 04 2b          	test   QWORD PTR [rbx+r13*1],r8
+   14894:	4e 85 0c 2b          	test   QWORD PTR [rbx+r13*1],r9
+   14898:	4e 85 14 2b          	test   QWORD PTR [rbx+r13*1],r10
+   1489c:	4e 85 1c 2b          	test   QWORD PTR [rbx+r13*1],r11
+   148a0:	4e 85 24 2b          	test   QWORD PTR [rbx+r13*1],r12
+   148a4:	4e 85 2c 2b          	test   QWORD PTR [rbx+r13*1],r13
+   148a8:	4e 85 34 2b          	test   QWORD PTR [rbx+r13*1],r14
+   148ac:	4e 85 3c 2b          	test   QWORD PTR [rbx+r13*1],r15
+   148b0:	4a 85 04 2c          	test   QWORD PTR [rsp+r13*1],rax
+   148b4:	4a 85 0c 2c          	test   QWORD PTR [rsp+r13*1],rcx
+   148b8:	4a 85 14 2c          	test   QWORD PTR [rsp+r13*1],rdx
+   148bc:	4a 85 1c 2c          	test   QWORD PTR [rsp+r13*1],rbx
+   148c0:	4a 85 24 2c          	test   QWORD PTR [rsp+r13*1],rsp
+   148c4:	4a 85 2c 2c          	test   QWORD PTR [rsp+r13*1],rbp
+   148c8:	4a 85 34 2c          	test   QWORD PTR [rsp+r13*1],rsi
+   148cc:	4a 85 3c 2c          	test   QWORD PTR [rsp+r13*1],rdi
+   148d0:	4e 85 04 2c          	test   QWORD PTR [rsp+r13*1],r8
+   148d4:	4e 85 0c 2c          	test   QWORD PTR [rsp+r13*1],r9
+   148d8:	4e 85 14 2c          	test   QWORD PTR [rsp+r13*1],r10
+   148dc:	4e 85 1c 2c          	test   QWORD PTR [rsp+r13*1],r11
+   148e0:	4e 85 24 2c          	test   QWORD PTR [rsp+r13*1],r12
+   148e4:	4e 85 2c 2c          	test   QWORD PTR [rsp+r13*1],r13
+   148e8:	4e 85 34 2c          	test   QWORD PTR [rsp+r13*1],r14
+   148ec:	4e 85 3c 2c          	test   QWORD PTR [rsp+r13*1],r15
+   148f0:	49 85 44 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],rax
+   148f5:	49 85 4c 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],rcx
+   148fa:	49 85 54 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],rdx
+   148ff:	49 85 5c 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],rbx
+   14904:	49 85 64 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],rsp
+   14909:	49 85 6c 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],rbp
+   1490e:	49 85 74 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],rsi
+   14913:	49 85 7c 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],rdi
+   14918:	4d 85 44 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],r8
+   1491d:	4d 85 4c 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],r9
+   14922:	4d 85 54 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],r10
+   14927:	4d 85 5c 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],r11
+   1492c:	4d 85 64 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],r12
+   14931:	4d 85 6c 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],r13
+   14936:	4d 85 74 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],r14
+   1493b:	4d 85 7c 2d 00       	test   QWORD PTR [r13+rbp*1+0x0],r15
+   14940:	4a 85 04 2e          	test   QWORD PTR [rsi+r13*1],rax
+   14944:	4a 85 0c 2e          	test   QWORD PTR [rsi+r13*1],rcx
+   14948:	4a 85 14 2e          	test   QWORD PTR [rsi+r13*1],rdx
+   1494c:	4a 85 1c 2e          	test   QWORD PTR [rsi+r13*1],rbx
+   14950:	4a 85 24 2e          	test   QWORD PTR [rsi+r13*1],rsp
+   14954:	4a 85 2c 2e          	test   QWORD PTR [rsi+r13*1],rbp
+   14958:	4a 85 34 2e          	test   QWORD PTR [rsi+r13*1],rsi
+   1495c:	4a 85 3c 2e          	test   QWORD PTR [rsi+r13*1],rdi
+   14960:	4e 85 04 2e          	test   QWORD PTR [rsi+r13*1],r8
+   14964:	4e 85 0c 2e          	test   QWORD PTR [rsi+r13*1],r9
+   14968:	4e 85 14 2e          	test   QWORD PTR [rsi+r13*1],r10
+   1496c:	4e 85 1c 2e          	test   QWORD PTR [rsi+r13*1],r11
+   14970:	4e 85 24 2e          	test   QWORD PTR [rsi+r13*1],r12
+   14974:	4e 85 2c 2e          	test   QWORD PTR [rsi+r13*1],r13
+   14978:	4e 85 34 2e          	test   QWORD PTR [rsi+r13*1],r14
+   1497c:	4e 85 3c 2e          	test   QWORD PTR [rsi+r13*1],r15
+   14980:	4a 85 04 2f          	test   QWORD PTR [rdi+r13*1],rax
+   14984:	4a 85 0c 2f          	test   QWORD PTR [rdi+r13*1],rcx
+   14988:	4a 85 14 2f          	test   QWORD PTR [rdi+r13*1],rdx
+   1498c:	4a 85 1c 2f          	test   QWORD PTR [rdi+r13*1],rbx
+   14990:	4a 85 24 2f          	test   QWORD PTR [rdi+r13*1],rsp
+   14994:	4a 85 2c 2f          	test   QWORD PTR [rdi+r13*1],rbp
+   14998:	4a 85 34 2f          	test   QWORD PTR [rdi+r13*1],rsi
+   1499c:	4a 85 3c 2f          	test   QWORD PTR [rdi+r13*1],rdi
+   149a0:	4e 85 04 2f          	test   QWORD PTR [rdi+r13*1],r8
+   149a4:	4e 85 0c 2f          	test   QWORD PTR [rdi+r13*1],r9
+   149a8:	4e 85 14 2f          	test   QWORD PTR [rdi+r13*1],r10
+   149ac:	4e 85 1c 2f          	test   QWORD PTR [rdi+r13*1],r11
+   149b0:	4e 85 24 2f          	test   QWORD PTR [rdi+r13*1],r12
+   149b4:	4e 85 2c 2f          	test   QWORD PTR [rdi+r13*1],r13
+   149b8:	4e 85 34 2f          	test   QWORD PTR [rdi+r13*1],r14
+   149bc:	4e 85 3c 2f          	test   QWORD PTR [rdi+r13*1],r15
+   149c0:	4b 85 04 28          	test   QWORD PTR [r8+r13*1],rax
+   149c4:	4b 85 0c 28          	test   QWORD PTR [r8+r13*1],rcx
+   149c8:	4b 85 14 28          	test   QWORD PTR [r8+r13*1],rdx
+   149cc:	4b 85 1c 28          	test   QWORD PTR [r8+r13*1],rbx
+   149d0:	4b 85 24 28          	test   QWORD PTR [r8+r13*1],rsp
+   149d4:	4b 85 2c 28          	test   QWORD PTR [r8+r13*1],rbp
+   149d8:	4b 85 34 28          	test   QWORD PTR [r8+r13*1],rsi
+   149dc:	4b 85 3c 28          	test   QWORD PTR [r8+r13*1],rdi
+   149e0:	4f 85 04 28          	test   QWORD PTR [r8+r13*1],r8
+   149e4:	4f 85 0c 28          	test   QWORD PTR [r8+r13*1],r9
+   149e8:	4f 85 14 28          	test   QWORD PTR [r8+r13*1],r10
+   149ec:	4f 85 1c 28          	test   QWORD PTR [r8+r13*1],r11
+   149f0:	4f 85 24 28          	test   QWORD PTR [r8+r13*1],r12
+   149f4:	4f 85 2c 28          	test   QWORD PTR [r8+r13*1],r13
+   149f8:	4f 85 34 28          	test   QWORD PTR [r8+r13*1],r14
+   149fc:	4f 85 3c 28          	test   QWORD PTR [r8+r13*1],r15
+   14a00:	4b 85 04 29          	test   QWORD PTR [r9+r13*1],rax
+   14a04:	4b 85 0c 29          	test   QWORD PTR [r9+r13*1],rcx
+   14a08:	4b 85 14 29          	test   QWORD PTR [r9+r13*1],rdx
+   14a0c:	4b 85 1c 29          	test   QWORD PTR [r9+r13*1],rbx
+   14a10:	4b 85 24 29          	test   QWORD PTR [r9+r13*1],rsp
+   14a14:	4b 85 2c 29          	test   QWORD PTR [r9+r13*1],rbp
+   14a18:	4b 85 34 29          	test   QWORD PTR [r9+r13*1],rsi
+   14a1c:	4b 85 3c 29          	test   QWORD PTR [r9+r13*1],rdi
+   14a20:	4f 85 04 29          	test   QWORD PTR [r9+r13*1],r8
+   14a24:	4f 85 0c 29          	test   QWORD PTR [r9+r13*1],r9
+   14a28:	4f 85 14 29          	test   QWORD PTR [r9+r13*1],r10
+   14a2c:	4f 85 1c 29          	test   QWORD PTR [r9+r13*1],r11
+   14a30:	4f 85 24 29          	test   QWORD PTR [r9+r13*1],r12
+   14a34:	4f 85 2c 29          	test   QWORD PTR [r9+r13*1],r13
+   14a38:	4f 85 34 29          	test   QWORD PTR [r9+r13*1],r14
+   14a3c:	4f 85 3c 29          	test   QWORD PTR [r9+r13*1],r15
+   14a40:	4b 85 04 2a          	test   QWORD PTR [r10+r13*1],rax
+   14a44:	4b 85 0c 2a          	test   QWORD PTR [r10+r13*1],rcx
+   14a48:	4b 85 14 2a          	test   QWORD PTR [r10+r13*1],rdx
+   14a4c:	4b 85 1c 2a          	test   QWORD PTR [r10+r13*1],rbx
+   14a50:	4b 85 24 2a          	test   QWORD PTR [r10+r13*1],rsp
+   14a54:	4b 85 2c 2a          	test   QWORD PTR [r10+r13*1],rbp
+   14a58:	4b 85 34 2a          	test   QWORD PTR [r10+r13*1],rsi
+   14a5c:	4b 85 3c 2a          	test   QWORD PTR [r10+r13*1],rdi
+   14a60:	4f 85 04 2a          	test   QWORD PTR [r10+r13*1],r8
+   14a64:	4f 85 0c 2a          	test   QWORD PTR [r10+r13*1],r9
+   14a68:	4f 85 14 2a          	test   QWORD PTR [r10+r13*1],r10
+   14a6c:	4f 85 1c 2a          	test   QWORD PTR [r10+r13*1],r11
+   14a70:	4f 85 24 2a          	test   QWORD PTR [r10+r13*1],r12
+   14a74:	4f 85 2c 2a          	test   QWORD PTR [r10+r13*1],r13
+   14a78:	4f 85 34 2a          	test   QWORD PTR [r10+r13*1],r14
+   14a7c:	4f 85 3c 2a          	test   QWORD PTR [r10+r13*1],r15
+   14a80:	4b 85 04 2b          	test   QWORD PTR [r11+r13*1],rax
+   14a84:	4b 85 0c 2b          	test   QWORD PTR [r11+r13*1],rcx
+   14a88:	4b 85 14 2b          	test   QWORD PTR [r11+r13*1],rdx
+   14a8c:	4b 85 1c 2b          	test   QWORD PTR [r11+r13*1],rbx
+   14a90:	4b 85 24 2b          	test   QWORD PTR [r11+r13*1],rsp
+   14a94:	4b 85 2c 2b          	test   QWORD PTR [r11+r13*1],rbp
+   14a98:	4b 85 34 2b          	test   QWORD PTR [r11+r13*1],rsi
+   14a9c:	4b 85 3c 2b          	test   QWORD PTR [r11+r13*1],rdi
+   14aa0:	4f 85 04 2b          	test   QWORD PTR [r11+r13*1],r8
+   14aa4:	4f 85 0c 2b          	test   QWORD PTR [r11+r13*1],r9
+   14aa8:	4f 85 14 2b          	test   QWORD PTR [r11+r13*1],r10
+   14aac:	4f 85 1c 2b          	test   QWORD PTR [r11+r13*1],r11
+   14ab0:	4f 85 24 2b          	test   QWORD PTR [r11+r13*1],r12
+   14ab4:	4f 85 2c 2b          	test   QWORD PTR [r11+r13*1],r13
+   14ab8:	4f 85 34 2b          	test   QWORD PTR [r11+r13*1],r14
+   14abc:	4f 85 3c 2b          	test   QWORD PTR [r11+r13*1],r15
+   14ac0:	4b 85 04 2c          	test   QWORD PTR [r12+r13*1],rax
+   14ac4:	4b 85 0c 2c          	test   QWORD PTR [r12+r13*1],rcx
+   14ac8:	4b 85 14 2c          	test   QWORD PTR [r12+r13*1],rdx
+   14acc:	4b 85 1c 2c          	test   QWORD PTR [r12+r13*1],rbx
+   14ad0:	4b 85 24 2c          	test   QWORD PTR [r12+r13*1],rsp
+   14ad4:	4b 85 2c 2c          	test   QWORD PTR [r12+r13*1],rbp
+   14ad8:	4b 85 34 2c          	test   QWORD PTR [r12+r13*1],rsi
+   14adc:	4b 85 3c 2c          	test   QWORD PTR [r12+r13*1],rdi
+   14ae0:	4f 85 04 2c          	test   QWORD PTR [r12+r13*1],r8
+   14ae4:	4f 85 0c 2c          	test   QWORD PTR [r12+r13*1],r9
+   14ae8:	4f 85 14 2c          	test   QWORD PTR [r12+r13*1],r10
+   14aec:	4f 85 1c 2c          	test   QWORD PTR [r12+r13*1],r11
+   14af0:	4f 85 24 2c          	test   QWORD PTR [r12+r13*1],r12
+   14af4:	4f 85 2c 2c          	test   QWORD PTR [r12+r13*1],r13
+   14af8:	4f 85 34 2c          	test   QWORD PTR [r12+r13*1],r14
+   14afc:	4f 85 3c 2c          	test   QWORD PTR [r12+r13*1],r15
+   14b00:	4b 85 44 2d 00       	test   QWORD PTR [r13+r13*1+0x0],rax
+   14b05:	4b 85 4c 2d 00       	test   QWORD PTR [r13+r13*1+0x0],rcx
+   14b0a:	4b 85 54 2d 00       	test   QWORD PTR [r13+r13*1+0x0],rdx
+   14b0f:	4b 85 5c 2d 00       	test   QWORD PTR [r13+r13*1+0x0],rbx
+   14b14:	4b 85 64 2d 00       	test   QWORD PTR [r13+r13*1+0x0],rsp
+   14b19:	4b 85 6c 2d 00       	test   QWORD PTR [r13+r13*1+0x0],rbp
+   14b1e:	4b 85 74 2d 00       	test   QWORD PTR [r13+r13*1+0x0],rsi
+   14b23:	4b 85 7c 2d 00       	test   QWORD PTR [r13+r13*1+0x0],rdi
+   14b28:	4f 85 44 2d 00       	test   QWORD PTR [r13+r13*1+0x0],r8
+   14b2d:	4f 85 4c 2d 00       	test   QWORD PTR [r13+r13*1+0x0],r9
+   14b32:	4f 85 54 2d 00       	test   QWORD PTR [r13+r13*1+0x0],r10
+   14b37:	4f 85 5c 2d 00       	test   QWORD PTR [r13+r13*1+0x0],r11
+   14b3c:	4f 85 64 2d 00       	test   QWORD PTR [r13+r13*1+0x0],r12
+   14b41:	4f 85 6c 2d 00       	test   QWORD PTR [r13+r13*1+0x0],r13
+   14b46:	4f 85 74 2d 00       	test   QWORD PTR [r13+r13*1+0x0],r14
+   14b4b:	4f 85 7c 2d 00       	test   QWORD PTR [r13+r13*1+0x0],r15
+   14b50:	4b 85 04 2e          	test   QWORD PTR [r14+r13*1],rax
+   14b54:	4b 85 0c 2e          	test   QWORD PTR [r14+r13*1],rcx
+   14b58:	4b 85 14 2e          	test   QWORD PTR [r14+r13*1],rdx
+   14b5c:	4b 85 1c 2e          	test   QWORD PTR [r14+r13*1],rbx
+   14b60:	4b 85 24 2e          	test   QWORD PTR [r14+r13*1],rsp
+   14b64:	4b 85 2c 2e          	test   QWORD PTR [r14+r13*1],rbp
+   14b68:	4b 85 34 2e          	test   QWORD PTR [r14+r13*1],rsi
+   14b6c:	4b 85 3c 2e          	test   QWORD PTR [r14+r13*1],rdi
+   14b70:	4f 85 04 2e          	test   QWORD PTR [r14+r13*1],r8
+   14b74:	4f 85 0c 2e          	test   QWORD PTR [r14+r13*1],r9
+   14b78:	4f 85 14 2e          	test   QWORD PTR [r14+r13*1],r10
+   14b7c:	4f 85 1c 2e          	test   QWORD PTR [r14+r13*1],r11
+   14b80:	4f 85 24 2e          	test   QWORD PTR [r14+r13*1],r12
+   14b84:	4f 85 2c 2e          	test   QWORD PTR [r14+r13*1],r13
+   14b88:	4f 85 34 2e          	test   QWORD PTR [r14+r13*1],r14
+   14b8c:	4f 85 3c 2e          	test   QWORD PTR [r14+r13*1],r15
+   14b90:	4b 85 04 2f          	test   QWORD PTR [r15+r13*1],rax
+   14b94:	4b 85 0c 2f          	test   QWORD PTR [r15+r13*1],rcx
+   14b98:	4b 85 14 2f          	test   QWORD PTR [r15+r13*1],rdx
+   14b9c:	4b 85 1c 2f          	test   QWORD PTR [r15+r13*1],rbx
+   14ba0:	4b 85 24 2f          	test   QWORD PTR [r15+r13*1],rsp
+   14ba4:	4b 85 2c 2f          	test   QWORD PTR [r15+r13*1],rbp
+   14ba8:	4b 85 34 2f          	test   QWORD PTR [r15+r13*1],rsi
+   14bac:	4b 85 3c 2f          	test   QWORD PTR [r15+r13*1],rdi
+   14bb0:	4f 85 04 2f          	test   QWORD PTR [r15+r13*1],r8
+   14bb4:	4f 85 0c 2f          	test   QWORD PTR [r15+r13*1],r9
+   14bb8:	4f 85 14 2f          	test   QWORD PTR [r15+r13*1],r10
+   14bbc:	4f 85 1c 2f          	test   QWORD PTR [r15+r13*1],r11
+   14bc0:	4f 85 24 2f          	test   QWORD PTR [r15+r13*1],r12
+   14bc4:	4f 85 2c 2f          	test   QWORD PTR [r15+r13*1],r13
+   14bc8:	4f 85 34 2f          	test   QWORD PTR [r15+r13*1],r14
+   14bcc:	4f 85 3c 2f          	test   QWORD PTR [r15+r13*1],r15
+   14bd0:	42 85 04 28          	test   DWORD PTR [rax+r13*1],eax
+   14bd4:	42 85 0c 28          	test   DWORD PTR [rax+r13*1],ecx
+   14bd8:	42 85 14 28          	test   DWORD PTR [rax+r13*1],edx
+   14bdc:	42 85 1c 28          	test   DWORD PTR [rax+r13*1],ebx
+   14be0:	42 85 24 28          	test   DWORD PTR [rax+r13*1],esp
+   14be4:	42 85 2c 28          	test   DWORD PTR [rax+r13*1],ebp
+   14be8:	42 85 34 28          	test   DWORD PTR [rax+r13*1],esi
+   14bec:	42 85 3c 28          	test   DWORD PTR [rax+r13*1],edi
+   14bf0:	46 85 04 28          	test   DWORD PTR [rax+r13*1],r8d
+   14bf4:	46 85 0c 28          	test   DWORD PTR [rax+r13*1],r9d
+   14bf8:	46 85 14 28          	test   DWORD PTR [rax+r13*1],r10d
+   14bfc:	46 85 1c 28          	test   DWORD PTR [rax+r13*1],r11d
+   14c00:	46 85 24 28          	test   DWORD PTR [rax+r13*1],r12d
+   14c04:	46 85 2c 28          	test   DWORD PTR [rax+r13*1],r13d
+   14c08:	46 85 34 28          	test   DWORD PTR [rax+r13*1],r14d
+   14c0c:	46 85 3c 28          	test   DWORD PTR [rax+r13*1],r15d
+   14c10:	42 85 04 29          	test   DWORD PTR [rcx+r13*1],eax
+   14c14:	42 85 0c 29          	test   DWORD PTR [rcx+r13*1],ecx
+   14c18:	42 85 14 29          	test   DWORD PTR [rcx+r13*1],edx
+   14c1c:	42 85 1c 29          	test   DWORD PTR [rcx+r13*1],ebx
+   14c20:	42 85 24 29          	test   DWORD PTR [rcx+r13*1],esp
+   14c24:	42 85 2c 29          	test   DWORD PTR [rcx+r13*1],ebp
+   14c28:	42 85 34 29          	test   DWORD PTR [rcx+r13*1],esi
+   14c2c:	42 85 3c 29          	test   DWORD PTR [rcx+r13*1],edi
+   14c30:	46 85 04 29          	test   DWORD PTR [rcx+r13*1],r8d
+   14c34:	46 85 0c 29          	test   DWORD PTR [rcx+r13*1],r9d
+   14c38:	46 85 14 29          	test   DWORD PTR [rcx+r13*1],r10d
+   14c3c:	46 85 1c 29          	test   DWORD PTR [rcx+r13*1],r11d
+   14c40:	46 85 24 29          	test   DWORD PTR [rcx+r13*1],r12d
+   14c44:	46 85 2c 29          	test   DWORD PTR [rcx+r13*1],r13d
+   14c48:	46 85 34 29          	test   DWORD PTR [rcx+r13*1],r14d
+   14c4c:	46 85 3c 29          	test   DWORD PTR [rcx+r13*1],r15d
+   14c50:	42 85 04 2a          	test   DWORD PTR [rdx+r13*1],eax
+   14c54:	42 85 0c 2a          	test   DWORD PTR [rdx+r13*1],ecx
+   14c58:	42 85 14 2a          	test   DWORD PTR [rdx+r13*1],edx
+   14c5c:	42 85 1c 2a          	test   DWORD PTR [rdx+r13*1],ebx
+   14c60:	42 85 24 2a          	test   DWORD PTR [rdx+r13*1],esp
+   14c64:	42 85 2c 2a          	test   DWORD PTR [rdx+r13*1],ebp
+   14c68:	42 85 34 2a          	test   DWORD PTR [rdx+r13*1],esi
+   14c6c:	42 85 3c 2a          	test   DWORD PTR [rdx+r13*1],edi
+   14c70:	46 85 04 2a          	test   DWORD PTR [rdx+r13*1],r8d
+   14c74:	46 85 0c 2a          	test   DWORD PTR [rdx+r13*1],r9d
+   14c78:	46 85 14 2a          	test   DWORD PTR [rdx+r13*1],r10d
+   14c7c:	46 85 1c 2a          	test   DWORD PTR [rdx+r13*1],r11d
+   14c80:	46 85 24 2a          	test   DWORD PTR [rdx+r13*1],r12d
+   14c84:	46 85 2c 2a          	test   DWORD PTR [rdx+r13*1],r13d
+   14c88:	46 85 34 2a          	test   DWORD PTR [rdx+r13*1],r14d
+   14c8c:	46 85 3c 2a          	test   DWORD PTR [rdx+r13*1],r15d
+   14c90:	42 85 04 2b          	test   DWORD PTR [rbx+r13*1],eax
+   14c94:	42 85 0c 2b          	test   DWORD PTR [rbx+r13*1],ecx
+   14c98:	42 85 14 2b          	test   DWORD PTR [rbx+r13*1],edx
+   14c9c:	42 85 1c 2b          	test   DWORD PTR [rbx+r13*1],ebx
+   14ca0:	42 85 24 2b          	test   DWORD PTR [rbx+r13*1],esp
+   14ca4:	42 85 2c 2b          	test   DWORD PTR [rbx+r13*1],ebp
+   14ca8:	42 85 34 2b          	test   DWORD PTR [rbx+r13*1],esi
+   14cac:	42 85 3c 2b          	test   DWORD PTR [rbx+r13*1],edi
+   14cb0:	46 85 04 2b          	test   DWORD PTR [rbx+r13*1],r8d
+   14cb4:	46 85 0c 2b          	test   DWORD PTR [rbx+r13*1],r9d
+   14cb8:	46 85 14 2b          	test   DWORD PTR [rbx+r13*1],r10d
+   14cbc:	46 85 1c 2b          	test   DWORD PTR [rbx+r13*1],r11d
+   14cc0:	46 85 24 2b          	test   DWORD PTR [rbx+r13*1],r12d
+   14cc4:	46 85 2c 2b          	test   DWORD PTR [rbx+r13*1],r13d
+   14cc8:	46 85 34 2b          	test   DWORD PTR [rbx+r13*1],r14d
+   14ccc:	46 85 3c 2b          	test   DWORD PTR [rbx+r13*1],r15d
+   14cd0:	42 85 04 2c          	test   DWORD PTR [rsp+r13*1],eax
+   14cd4:	42 85 0c 2c          	test   DWORD PTR [rsp+r13*1],ecx
+   14cd8:	42 85 14 2c          	test   DWORD PTR [rsp+r13*1],edx
+   14cdc:	42 85 1c 2c          	test   DWORD PTR [rsp+r13*1],ebx
+   14ce0:	42 85 24 2c          	test   DWORD PTR [rsp+r13*1],esp
+   14ce4:	42 85 2c 2c          	test   DWORD PTR [rsp+r13*1],ebp
+   14ce8:	42 85 34 2c          	test   DWORD PTR [rsp+r13*1],esi
+   14cec:	42 85 3c 2c          	test   DWORD PTR [rsp+r13*1],edi
+   14cf0:	46 85 04 2c          	test   DWORD PTR [rsp+r13*1],r8d
+   14cf4:	46 85 0c 2c          	test   DWORD PTR [rsp+r13*1],r9d
+   14cf8:	46 85 14 2c          	test   DWORD PTR [rsp+r13*1],r10d
+   14cfc:	46 85 1c 2c          	test   DWORD PTR [rsp+r13*1],r11d
+   14d00:	46 85 24 2c          	test   DWORD PTR [rsp+r13*1],r12d
+   14d04:	46 85 2c 2c          	test   DWORD PTR [rsp+r13*1],r13d
+   14d08:	46 85 34 2c          	test   DWORD PTR [rsp+r13*1],r14d
+   14d0c:	46 85 3c 2c          	test   DWORD PTR [rsp+r13*1],r15d
+   14d10:	41 85 44 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],eax
+   14d15:	41 85 4c 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],ecx
+   14d1a:	41 85 54 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],edx
+   14d1f:	41 85 5c 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],ebx
+   14d24:	41 85 64 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],esp
+   14d29:	41 85 6c 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],ebp
+   14d2e:	41 85 74 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],esi
+   14d33:	41 85 7c 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],edi
+   14d38:	45 85 44 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],r8d
+   14d3d:	45 85 4c 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],r9d
+   14d42:	45 85 54 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],r10d
+   14d47:	45 85 5c 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],r11d
+   14d4c:	45 85 64 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],r12d
+   14d51:	45 85 6c 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],r13d
+   14d56:	45 85 74 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],r14d
+   14d5b:	45 85 7c 2d 00       	test   DWORD PTR [r13+rbp*1+0x0],r15d
+   14d60:	42 85 04 2e          	test   DWORD PTR [rsi+r13*1],eax
+   14d64:	42 85 0c 2e          	test   DWORD PTR [rsi+r13*1],ecx
+   14d68:	42 85 14 2e          	test   DWORD PTR [rsi+r13*1],edx
+   14d6c:	42 85 1c 2e          	test   DWORD PTR [rsi+r13*1],ebx
+   14d70:	42 85 24 2e          	test   DWORD PTR [rsi+r13*1],esp
+   14d74:	42 85 2c 2e          	test   DWORD PTR [rsi+r13*1],ebp
+   14d78:	42 85 34 2e          	test   DWORD PTR [rsi+r13*1],esi
+   14d7c:	42 85 3c 2e          	test   DWORD PTR [rsi+r13*1],edi
+   14d80:	46 85 04 2e          	test   DWORD PTR [rsi+r13*1],r8d
+   14d84:	46 85 0c 2e          	test   DWORD PTR [rsi+r13*1],r9d
+   14d88:	46 85 14 2e          	test   DWORD PTR [rsi+r13*1],r10d
+   14d8c:	46 85 1c 2e          	test   DWORD PTR [rsi+r13*1],r11d
+   14d90:	46 85 24 2e          	test   DWORD PTR [rsi+r13*1],r12d
+   14d94:	46 85 2c 2e          	test   DWORD PTR [rsi+r13*1],r13d
+   14d98:	46 85 34 2e          	test   DWORD PTR [rsi+r13*1],r14d
+   14d9c:	46 85 3c 2e          	test   DWORD PTR [rsi+r13*1],r15d
+   14da0:	42 85 04 2f          	test   DWORD PTR [rdi+r13*1],eax
+   14da4:	42 85 0c 2f          	test   DWORD PTR [rdi+r13*1],ecx
+   14da8:	42 85 14 2f          	test   DWORD PTR [rdi+r13*1],edx
+   14dac:	42 85 1c 2f          	test   DWORD PTR [rdi+r13*1],ebx
+   14db0:	42 85 24 2f          	test   DWORD PTR [rdi+r13*1],esp
+   14db4:	42 85 2c 2f          	test   DWORD PTR [rdi+r13*1],ebp
+   14db8:	42 85 34 2f          	test   DWORD PTR [rdi+r13*1],esi
+   14dbc:	42 85 3c 2f          	test   DWORD PTR [rdi+r13*1],edi
+   14dc0:	46 85 04 2f          	test   DWORD PTR [rdi+r13*1],r8d
+   14dc4:	46 85 0c 2f          	test   DWORD PTR [rdi+r13*1],r9d
+   14dc8:	46 85 14 2f          	test   DWORD PTR [rdi+r13*1],r10d
+   14dcc:	46 85 1c 2f          	test   DWORD PTR [rdi+r13*1],r11d
+   14dd0:	46 85 24 2f          	test   DWORD PTR [rdi+r13*1],r12d
+   14dd4:	46 85 2c 2f          	test   DWORD PTR [rdi+r13*1],r13d
+   14dd8:	46 85 34 2f          	test   DWORD PTR [rdi+r13*1],r14d
+   14ddc:	46 85 3c 2f          	test   DWORD PTR [rdi+r13*1],r15d
+   14de0:	43 85 04 28          	test   DWORD PTR [r8+r13*1],eax
+   14de4:	43 85 0c 28          	test   DWORD PTR [r8+r13*1],ecx
+   14de8:	43 85 14 28          	test   DWORD PTR [r8+r13*1],edx
+   14dec:	43 85 1c 28          	test   DWORD PTR [r8+r13*1],ebx
+   14df0:	43 85 24 28          	test   DWORD PTR [r8+r13*1],esp
+   14df4:	43 85 2c 28          	test   DWORD PTR [r8+r13*1],ebp
+   14df8:	43 85 34 28          	test   DWORD PTR [r8+r13*1],esi
+   14dfc:	43 85 3c 28          	test   DWORD PTR [r8+r13*1],edi
+   14e00:	47 85 04 28          	test   DWORD PTR [r8+r13*1],r8d
+   14e04:	47 85 0c 28          	test   DWORD PTR [r8+r13*1],r9d
+   14e08:	47 85 14 28          	test   DWORD PTR [r8+r13*1],r10d
+   14e0c:	47 85 1c 28          	test   DWORD PTR [r8+r13*1],r11d
+   14e10:	47 85 24 28          	test   DWORD PTR [r8+r13*1],r12d
+   14e14:	47 85 2c 28          	test   DWORD PTR [r8+r13*1],r13d
+   14e18:	47 85 34 28          	test   DWORD PTR [r8+r13*1],r14d
+   14e1c:	47 85 3c 28          	test   DWORD PTR [r8+r13*1],r15d
+   14e20:	43 85 04 29          	test   DWORD PTR [r9+r13*1],eax
+   14e24:	43 85 0c 29          	test   DWORD PTR [r9+r13*1],ecx
+   14e28:	43 85 14 29          	test   DWORD PTR [r9+r13*1],edx
+   14e2c:	43 85 1c 29          	test   DWORD PTR [r9+r13*1],ebx
+   14e30:	43 85 24 29          	test   DWORD PTR [r9+r13*1],esp
+   14e34:	43 85 2c 29          	test   DWORD PTR [r9+r13*1],ebp
+   14e38:	43 85 34 29          	test   DWORD PTR [r9+r13*1],esi
+   14e3c:	43 85 3c 29          	test   DWORD PTR [r9+r13*1],edi
+   14e40:	47 85 04 29          	test   DWORD PTR [r9+r13*1],r8d
+   14e44:	47 85 0c 29          	test   DWORD PTR [r9+r13*1],r9d
+   14e48:	47 85 14 29          	test   DWORD PTR [r9+r13*1],r10d
+   14e4c:	47 85 1c 29          	test   DWORD PTR [r9+r13*1],r11d
+   14e50:	47 85 24 29          	test   DWORD PTR [r9+r13*1],r12d
+   14e54:	47 85 2c 29          	test   DWORD PTR [r9+r13*1],r13d
+   14e58:	47 85 34 29          	test   DWORD PTR [r9+r13*1],r14d
+   14e5c:	47 85 3c 29          	test   DWORD PTR [r9+r13*1],r15d
+   14e60:	43 85 04 2a          	test   DWORD PTR [r10+r13*1],eax
+   14e64:	43 85 0c 2a          	test   DWORD PTR [r10+r13*1],ecx
+   14e68:	43 85 14 2a          	test   DWORD PTR [r10+r13*1],edx
+   14e6c:	43 85 1c 2a          	test   DWORD PTR [r10+r13*1],ebx
+   14e70:	43 85 24 2a          	test   DWORD PTR [r10+r13*1],esp
+   14e74:	43 85 2c 2a          	test   DWORD PTR [r10+r13*1],ebp
+   14e78:	43 85 34 2a          	test   DWORD PTR [r10+r13*1],esi
+   14e7c:	43 85 3c 2a          	test   DWORD PTR [r10+r13*1],edi
+   14e80:	47 85 04 2a          	test   DWORD PTR [r10+r13*1],r8d
+   14e84:	47 85 0c 2a          	test   DWORD PTR [r10+r13*1],r9d
+   14e88:	47 85 14 2a          	test   DWORD PTR [r10+r13*1],r10d
+   14e8c:	47 85 1c 2a          	test   DWORD PTR [r10+r13*1],r11d
+   14e90:	47 85 24 2a          	test   DWORD PTR [r10+r13*1],r12d
+   14e94:	47 85 2c 2a          	test   DWORD PTR [r10+r13*1],r13d
+   14e98:	47 85 34 2a          	test   DWORD PTR [r10+r13*1],r14d
+   14e9c:	47 85 3c 2a          	test   DWORD PTR [r10+r13*1],r15d
+   14ea0:	43 85 04 2b          	test   DWORD PTR [r11+r13*1],eax
+   14ea4:	43 85 0c 2b          	test   DWORD PTR [r11+r13*1],ecx
+   14ea8:	43 85 14 2b          	test   DWORD PTR [r11+r13*1],edx
+   14eac:	43 85 1c 2b          	test   DWORD PTR [r11+r13*1],ebx
+   14eb0:	43 85 24 2b          	test   DWORD PTR [r11+r13*1],esp
+   14eb4:	43 85 2c 2b          	test   DWORD PTR [r11+r13*1],ebp
+   14eb8:	43 85 34 2b          	test   DWORD PTR [r11+r13*1],esi
+   14ebc:	43 85 3c 2b          	test   DWORD PTR [r11+r13*1],edi
+   14ec0:	47 85 04 2b          	test   DWORD PTR [r11+r13*1],r8d
+   14ec4:	47 85 0c 2b          	test   DWORD PTR [r11+r13*1],r9d
+   14ec8:	47 85 14 2b          	test   DWORD PTR [r11+r13*1],r10d
+   14ecc:	47 85 1c 2b          	test   DWORD PTR [r11+r13*1],r11d
+   14ed0:	47 85 24 2b          	test   DWORD PTR [r11+r13*1],r12d
+   14ed4:	47 85 2c 2b          	test   DWORD PTR [r11+r13*1],r13d
+   14ed8:	47 85 34 2b          	test   DWORD PTR [r11+r13*1],r14d
+   14edc:	47 85 3c 2b          	test   DWORD PTR [r11+r13*1],r15d
+   14ee0:	43 85 04 2c          	test   DWORD PTR [r12+r13*1],eax
+   14ee4:	43 85 0c 2c          	test   DWORD PTR [r12+r13*1],ecx
+   14ee8:	43 85 14 2c          	test   DWORD PTR [r12+r13*1],edx
+   14eec:	43 85 1c 2c          	test   DWORD PTR [r12+r13*1],ebx
+   14ef0:	43 85 24 2c          	test   DWORD PTR [r12+r13*1],esp
+   14ef4:	43 85 2c 2c          	test   DWORD PTR [r12+r13*1],ebp
+   14ef8:	43 85 34 2c          	test   DWORD PTR [r12+r13*1],esi
+   14efc:	43 85 3c 2c          	test   DWORD PTR [r12+r13*1],edi
+   14f00:	47 85 04 2c          	test   DWORD PTR [r12+r13*1],r8d
+   14f04:	47 85 0c 2c          	test   DWORD PTR [r12+r13*1],r9d
+   14f08:	47 85 14 2c          	test   DWORD PTR [r12+r13*1],r10d
+   14f0c:	47 85 1c 2c          	test   DWORD PTR [r12+r13*1],r11d
+   14f10:	47 85 24 2c          	test   DWORD PTR [r12+r13*1],r12d
+   14f14:	47 85 2c 2c          	test   DWORD PTR [r12+r13*1],r13d
+   14f18:	47 85 34 2c          	test   DWORD PTR [r12+r13*1],r14d
+   14f1c:	47 85 3c 2c          	test   DWORD PTR [r12+r13*1],r15d
+   14f20:	43 85 44 2d 00       	test   DWORD PTR [r13+r13*1+0x0],eax
+   14f25:	43 85 4c 2d 00       	test   DWORD PTR [r13+r13*1+0x0],ecx
+   14f2a:	43 85 54 2d 00       	test   DWORD PTR [r13+r13*1+0x0],edx
+   14f2f:	43 85 5c 2d 00       	test   DWORD PTR [r13+r13*1+0x0],ebx
+   14f34:	43 85 64 2d 00       	test   DWORD PTR [r13+r13*1+0x0],esp
+   14f39:	43 85 6c 2d 00       	test   DWORD PTR [r13+r13*1+0x0],ebp
+   14f3e:	43 85 74 2d 00       	test   DWORD PTR [r13+r13*1+0x0],esi
+   14f43:	43 85 7c 2d 00       	test   DWORD PTR [r13+r13*1+0x0],edi
+   14f48:	47 85 44 2d 00       	test   DWORD PTR [r13+r13*1+0x0],r8d
+   14f4d:	47 85 4c 2d 00       	test   DWORD PTR [r13+r13*1+0x0],r9d
+   14f52:	47 85 54 2d 00       	test   DWORD PTR [r13+r13*1+0x0],r10d
+   14f57:	47 85 5c 2d 00       	test   DWORD PTR [r13+r13*1+0x0],r11d
+   14f5c:	47 85 64 2d 00       	test   DWORD PTR [r13+r13*1+0x0],r12d
+   14f61:	47 85 6c 2d 00       	test   DWORD PTR [r13+r13*1+0x0],r13d
+   14f66:	47 85 74 2d 00       	test   DWORD PTR [r13+r13*1+0x0],r14d
+   14f6b:	47 85 7c 2d 00       	test   DWORD PTR [r13+r13*1+0x0],r15d
+   14f70:	43 85 04 2e          	test   DWORD PTR [r14+r13*1],eax
+   14f74:	43 85 0c 2e          	test   DWORD PTR [r14+r13*1],ecx
+   14f78:	43 85 14 2e          	test   DWORD PTR [r14+r13*1],edx
+   14f7c:	43 85 1c 2e          	test   DWORD PTR [r14+r13*1],ebx
+   14f80:	43 85 24 2e          	test   DWORD PTR [r14+r13*1],esp
+   14f84:	43 85 2c 2e          	test   DWORD PTR [r14+r13*1],ebp
+   14f88:	43 85 34 2e          	test   DWORD PTR [r14+r13*1],esi
+   14f8c:	43 85 3c 2e          	test   DWORD PTR [r14+r13*1],edi
+   14f90:	47 85 04 2e          	test   DWORD PTR [r14+r13*1],r8d
+   14f94:	47 85 0c 2e          	test   DWORD PTR [r14+r13*1],r9d
+   14f98:	47 85 14 2e          	test   DWORD PTR [r14+r13*1],r10d
+   14f9c:	47 85 1c 2e          	test   DWORD PTR [r14+r13*1],r11d
+   14fa0:	47 85 24 2e          	test   DWORD PTR [r14+r13*1],r12d
+   14fa4:	47 85 2c 2e          	test   DWORD PTR [r14+r13*1],r13d
+   14fa8:	47 85 34 2e          	test   DWORD PTR [r14+r13*1],r14d
+   14fac:	47 85 3c 2e          	test   DWORD PTR [r14+r13*1],r15d
+   14fb0:	43 85 04 2f          	test   DWORD PTR [r15+r13*1],eax
+   14fb4:	43 85 0c 2f          	test   DWORD PTR [r15+r13*1],ecx
+   14fb8:	43 85 14 2f          	test   DWORD PTR [r15+r13*1],edx
+   14fbc:	43 85 1c 2f          	test   DWORD PTR [r15+r13*1],ebx
+   14fc0:	43 85 24 2f          	test   DWORD PTR [r15+r13*1],esp
+   14fc4:	43 85 2c 2f          	test   DWORD PTR [r15+r13*1],ebp
+   14fc8:	43 85 34 2f          	test   DWORD PTR [r15+r13*1],esi
+   14fcc:	43 85 3c 2f          	test   DWORD PTR [r15+r13*1],edi
+   14fd0:	47 85 04 2f          	test   DWORD PTR [r15+r13*1],r8d
+   14fd4:	47 85 0c 2f          	test   DWORD PTR [r15+r13*1],r9d
+   14fd8:	47 85 14 2f          	test   DWORD PTR [r15+r13*1],r10d
+   14fdc:	47 85 1c 2f          	test   DWORD PTR [r15+r13*1],r11d
+   14fe0:	47 85 24 2f          	test   DWORD PTR [r15+r13*1],r12d
+   14fe4:	47 85 2c 2f          	test   DWORD PTR [r15+r13*1],r13d
+   14fe8:	47 85 34 2f          	test   DWORD PTR [r15+r13*1],r14d
+   14fec:	47 85 3c 2f          	test   DWORD PTR [r15+r13*1],r15d
+   14ff0:	66 42 85 04 28       	test   WORD PTR [rax+r13*1],ax
+   14ff5:	66 42 85 0c 28       	test   WORD PTR [rax+r13*1],cx
+   14ffa:	66 42 85 14 28       	test   WORD PTR [rax+r13*1],dx
+   14fff:	66 42 85 1c 28       	test   WORD PTR [rax+r13*1],bx
+   15004:	66 42 85 24 28       	test   WORD PTR [rax+r13*1],sp
+   15009:	66 42 85 2c 28       	test   WORD PTR [rax+r13*1],bp
+   1500e:	66 42 85 34 28       	test   WORD PTR [rax+r13*1],si
+   15013:	66 42 85 3c 28       	test   WORD PTR [rax+r13*1],di
+   15018:	66 46 85 04 28       	test   WORD PTR [rax+r13*1],r8w
+   1501d:	66 46 85 0c 28       	test   WORD PTR [rax+r13*1],r9w
+   15022:	66 46 85 14 28       	test   WORD PTR [rax+r13*1],r10w
+   15027:	66 46 85 1c 28       	test   WORD PTR [rax+r13*1],r11w
+   1502c:	66 46 85 24 28       	test   WORD PTR [rax+r13*1],r12w
+   15031:	66 46 85 2c 28       	test   WORD PTR [rax+r13*1],r13w
+   15036:	66 46 85 34 28       	test   WORD PTR [rax+r13*1],r14w
+   1503b:	66 46 85 3c 28       	test   WORD PTR [rax+r13*1],r15w
+   15040:	66 42 85 04 29       	test   WORD PTR [rcx+r13*1],ax
+   15045:	66 42 85 0c 29       	test   WORD PTR [rcx+r13*1],cx
+   1504a:	66 42 85 14 29       	test   WORD PTR [rcx+r13*1],dx
+   1504f:	66 42 85 1c 29       	test   WORD PTR [rcx+r13*1],bx
+   15054:	66 42 85 24 29       	test   WORD PTR [rcx+r13*1],sp
+   15059:	66 42 85 2c 29       	test   WORD PTR [rcx+r13*1],bp
+   1505e:	66 42 85 34 29       	test   WORD PTR [rcx+r13*1],si
+   15063:	66 42 85 3c 29       	test   WORD PTR [rcx+r13*1],di
+   15068:	66 46 85 04 29       	test   WORD PTR [rcx+r13*1],r8w
+   1506d:	66 46 85 0c 29       	test   WORD PTR [rcx+r13*1],r9w
+   15072:	66 46 85 14 29       	test   WORD PTR [rcx+r13*1],r10w
+   15077:	66 46 85 1c 29       	test   WORD PTR [rcx+r13*1],r11w
+   1507c:	66 46 85 24 29       	test   WORD PTR [rcx+r13*1],r12w
+   15081:	66 46 85 2c 29       	test   WORD PTR [rcx+r13*1],r13w
+   15086:	66 46 85 34 29       	test   WORD PTR [rcx+r13*1],r14w
+   1508b:	66 46 85 3c 29       	test   WORD PTR [rcx+r13*1],r15w
+   15090:	66 42 85 04 2a       	test   WORD PTR [rdx+r13*1],ax
+   15095:	66 42 85 0c 2a       	test   WORD PTR [rdx+r13*1],cx
+   1509a:	66 42 85 14 2a       	test   WORD PTR [rdx+r13*1],dx
+   1509f:	66 42 85 1c 2a       	test   WORD PTR [rdx+r13*1],bx
+   150a4:	66 42 85 24 2a       	test   WORD PTR [rdx+r13*1],sp
+   150a9:	66 42 85 2c 2a       	test   WORD PTR [rdx+r13*1],bp
+   150ae:	66 42 85 34 2a       	test   WORD PTR [rdx+r13*1],si
+   150b3:	66 42 85 3c 2a       	test   WORD PTR [rdx+r13*1],di
+   150b8:	66 46 85 04 2a       	test   WORD PTR [rdx+r13*1],r8w
+   150bd:	66 46 85 0c 2a       	test   WORD PTR [rdx+r13*1],r9w
+   150c2:	66 46 85 14 2a       	test   WORD PTR [rdx+r13*1],r10w
+   150c7:	66 46 85 1c 2a       	test   WORD PTR [rdx+r13*1],r11w
+   150cc:	66 46 85 24 2a       	test   WORD PTR [rdx+r13*1],r12w
+   150d1:	66 46 85 2c 2a       	test   WORD PTR [rdx+r13*1],r13w
+   150d6:	66 46 85 34 2a       	test   WORD PTR [rdx+r13*1],r14w
+   150db:	66 46 85 3c 2a       	test   WORD PTR [rdx+r13*1],r15w
+   150e0:	66 42 85 04 2b       	test   WORD PTR [rbx+r13*1],ax
+   150e5:	66 42 85 0c 2b       	test   WORD PTR [rbx+r13*1],cx
+   150ea:	66 42 85 14 2b       	test   WORD PTR [rbx+r13*1],dx
+   150ef:	66 42 85 1c 2b       	test   WORD PTR [rbx+r13*1],bx
+   150f4:	66 42 85 24 2b       	test   WORD PTR [rbx+r13*1],sp
+   150f9:	66 42 85 2c 2b       	test   WORD PTR [rbx+r13*1],bp
+   150fe:	66 42 85 34 2b       	test   WORD PTR [rbx+r13*1],si
+   15103:	66 42 85 3c 2b       	test   WORD PTR [rbx+r13*1],di
+   15108:	66 46 85 04 2b       	test   WORD PTR [rbx+r13*1],r8w
+   1510d:	66 46 85 0c 2b       	test   WORD PTR [rbx+r13*1],r9w
+   15112:	66 46 85 14 2b       	test   WORD PTR [rbx+r13*1],r10w
+   15117:	66 46 85 1c 2b       	test   WORD PTR [rbx+r13*1],r11w
+   1511c:	66 46 85 24 2b       	test   WORD PTR [rbx+r13*1],r12w
+   15121:	66 46 85 2c 2b       	test   WORD PTR [rbx+r13*1],r13w
+   15126:	66 46 85 34 2b       	test   WORD PTR [rbx+r13*1],r14w
+   1512b:	66 46 85 3c 2b       	test   WORD PTR [rbx+r13*1],r15w
+   15130:	66 42 85 04 2c       	test   WORD PTR [rsp+r13*1],ax
+   15135:	66 42 85 0c 2c       	test   WORD PTR [rsp+r13*1],cx
+   1513a:	66 42 85 14 2c       	test   WORD PTR [rsp+r13*1],dx
+   1513f:	66 42 85 1c 2c       	test   WORD PTR [rsp+r13*1],bx
+   15144:	66 42 85 24 2c       	test   WORD PTR [rsp+r13*1],sp
+   15149:	66 42 85 2c 2c       	test   WORD PTR [rsp+r13*1],bp
+   1514e:	66 42 85 34 2c       	test   WORD PTR [rsp+r13*1],si
+   15153:	66 42 85 3c 2c       	test   WORD PTR [rsp+r13*1],di
+   15158:	66 46 85 04 2c       	test   WORD PTR [rsp+r13*1],r8w
+   1515d:	66 46 85 0c 2c       	test   WORD PTR [rsp+r13*1],r9w
+   15162:	66 46 85 14 2c       	test   WORD PTR [rsp+r13*1],r10w
+   15167:	66 46 85 1c 2c       	test   WORD PTR [rsp+r13*1],r11w
+   1516c:	66 46 85 24 2c       	test   WORD PTR [rsp+r13*1],r12w
+   15171:	66 46 85 2c 2c       	test   WORD PTR [rsp+r13*1],r13w
+   15176:	66 46 85 34 2c       	test   WORD PTR [rsp+r13*1],r14w
+   1517b:	66 46 85 3c 2c       	test   WORD PTR [rsp+r13*1],r15w
+   15180:	66 41 85 44 2d 00    	test   WORD PTR [r13+rbp*1+0x0],ax
+   15186:	66 41 85 4c 2d 00    	test   WORD PTR [r13+rbp*1+0x0],cx
+   1518c:	66 41 85 54 2d 00    	test   WORD PTR [r13+rbp*1+0x0],dx
+   15192:	66 41 85 5c 2d 00    	test   WORD PTR [r13+rbp*1+0x0],bx
+   15198:	66 41 85 64 2d 00    	test   WORD PTR [r13+rbp*1+0x0],sp
+   1519e:	66 41 85 6c 2d 00    	test   WORD PTR [r13+rbp*1+0x0],bp
+   151a4:	66 41 85 74 2d 00    	test   WORD PTR [r13+rbp*1+0x0],si
+   151aa:	66 41 85 7c 2d 00    	test   WORD PTR [r13+rbp*1+0x0],di
+   151b0:	66 45 85 44 2d 00    	test   WORD PTR [r13+rbp*1+0x0],r8w
+   151b6:	66 45 85 4c 2d 00    	test   WORD PTR [r13+rbp*1+0x0],r9w
+   151bc:	66 45 85 54 2d 00    	test   WORD PTR [r13+rbp*1+0x0],r10w
+   151c2:	66 45 85 5c 2d 00    	test   WORD PTR [r13+rbp*1+0x0],r11w
+   151c8:	66 45 85 64 2d 00    	test   WORD PTR [r13+rbp*1+0x0],r12w
+   151ce:	66 45 85 6c 2d 00    	test   WORD PTR [r13+rbp*1+0x0],r13w
+   151d4:	66 45 85 74 2d 00    	test   WORD PTR [r13+rbp*1+0x0],r14w
+   151da:	66 45 85 7c 2d 00    	test   WORD PTR [r13+rbp*1+0x0],r15w
+   151e0:	66 42 85 04 2e       	test   WORD PTR [rsi+r13*1],ax
+   151e5:	66 42 85 0c 2e       	test   WORD PTR [rsi+r13*1],cx
+   151ea:	66 42 85 14 2e       	test   WORD PTR [rsi+r13*1],dx
+   151ef:	66 42 85 1c 2e       	test   WORD PTR [rsi+r13*1],bx
+   151f4:	66 42 85 24 2e       	test   WORD PTR [rsi+r13*1],sp
+   151f9:	66 42 85 2c 2e       	test   WORD PTR [rsi+r13*1],bp
+   151fe:	66 42 85 34 2e       	test   WORD PTR [rsi+r13*1],si
+   15203:	66 42 85 3c 2e       	test   WORD PTR [rsi+r13*1],di
+   15208:	66 46 85 04 2e       	test   WORD PTR [rsi+r13*1],r8w
+   1520d:	66 46 85 0c 2e       	test   WORD PTR [rsi+r13*1],r9w
+   15212:	66 46 85 14 2e       	test   WORD PTR [rsi+r13*1],r10w
+   15217:	66 46 85 1c 2e       	test   WORD PTR [rsi+r13*1],r11w
+   1521c:	66 46 85 24 2e       	test   WORD PTR [rsi+r13*1],r12w
+   15221:	66 46 85 2c 2e       	test   WORD PTR [rsi+r13*1],r13w
+   15226:	66 46 85 34 2e       	test   WORD PTR [rsi+r13*1],r14w
+   1522b:	66 46 85 3c 2e       	test   WORD PTR [rsi+r13*1],r15w
+   15230:	66 42 85 04 2f       	test   WORD PTR [rdi+r13*1],ax
+   15235:	66 42 85 0c 2f       	test   WORD PTR [rdi+r13*1],cx
+   1523a:	66 42 85 14 2f       	test   WORD PTR [rdi+r13*1],dx
+   1523f:	66 42 85 1c 2f       	test   WORD PTR [rdi+r13*1],bx
+   15244:	66 42 85 24 2f       	test   WORD PTR [rdi+r13*1],sp
+   15249:	66 42 85 2c 2f       	test   WORD PTR [rdi+r13*1],bp
+   1524e:	66 42 85 34 2f       	test   WORD PTR [rdi+r13*1],si
+   15253:	66 42 85 3c 2f       	test   WORD PTR [rdi+r13*1],di
+   15258:	66 46 85 04 2f       	test   WORD PTR [rdi+r13*1],r8w
+   1525d:	66 46 85 0c 2f       	test   WORD PTR [rdi+r13*1],r9w
+   15262:	66 46 85 14 2f       	test   WORD PTR [rdi+r13*1],r10w
+   15267:	66 46 85 1c 2f       	test   WORD PTR [rdi+r13*1],r11w
+   1526c:	66 46 85 24 2f       	test   WORD PTR [rdi+r13*1],r12w
+   15271:	66 46 85 2c 2f       	test   WORD PTR [rdi+r13*1],r13w
+   15276:	66 46 85 34 2f       	test   WORD PTR [rdi+r13*1],r14w
+   1527b:	66 46 85 3c 2f       	test   WORD PTR [rdi+r13*1],r15w
+   15280:	66 43 85 04 28       	test   WORD PTR [r8+r13*1],ax
+   15285:	66 43 85 0c 28       	test   WORD PTR [r8+r13*1],cx
+   1528a:	66 43 85 14 28       	test   WORD PTR [r8+r13*1],dx
+   1528f:	66 43 85 1c 28       	test   WORD PTR [r8+r13*1],bx
+   15294:	66 43 85 24 28       	test   WORD PTR [r8+r13*1],sp
+   15299:	66 43 85 2c 28       	test   WORD PTR [r8+r13*1],bp
+   1529e:	66 43 85 34 28       	test   WORD PTR [r8+r13*1],si
+   152a3:	66 43 85 3c 28       	test   WORD PTR [r8+r13*1],di
+   152a8:	66 47 85 04 28       	test   WORD PTR [r8+r13*1],r8w
+   152ad:	66 47 85 0c 28       	test   WORD PTR [r8+r13*1],r9w
+   152b2:	66 47 85 14 28       	test   WORD PTR [r8+r13*1],r10w
+   152b7:	66 47 85 1c 28       	test   WORD PTR [r8+r13*1],r11w
+   152bc:	66 47 85 24 28       	test   WORD PTR [r8+r13*1],r12w
+   152c1:	66 47 85 2c 28       	test   WORD PTR [r8+r13*1],r13w
+   152c6:	66 47 85 34 28       	test   WORD PTR [r8+r13*1],r14w
+   152cb:	66 47 85 3c 28       	test   WORD PTR [r8+r13*1],r15w
+   152d0:	66 43 85 04 29       	test   WORD PTR [r9+r13*1],ax
+   152d5:	66 43 85 0c 29       	test   WORD PTR [r9+r13*1],cx
+   152da:	66 43 85 14 29       	test   WORD PTR [r9+r13*1],dx
+   152df:	66 43 85 1c 29       	test   WORD PTR [r9+r13*1],bx
+   152e4:	66 43 85 24 29       	test   WORD PTR [r9+r13*1],sp
+   152e9:	66 43 85 2c 29       	test   WORD PTR [r9+r13*1],bp
+   152ee:	66 43 85 34 29       	test   WORD PTR [r9+r13*1],si
+   152f3:	66 43 85 3c 29       	test   WORD PTR [r9+r13*1],di
+   152f8:	66 47 85 04 29       	test   WORD PTR [r9+r13*1],r8w
+   152fd:	66 47 85 0c 29       	test   WORD PTR [r9+r13*1],r9w
+   15302:	66 47 85 14 29       	test   WORD PTR [r9+r13*1],r10w
+   15307:	66 47 85 1c 29       	test   WORD PTR [r9+r13*1],r11w
+   1530c:	66 47 85 24 29       	test   WORD PTR [r9+r13*1],r12w
+   15311:	66 47 85 2c 29       	test   WORD PTR [r9+r13*1],r13w
+   15316:	66 47 85 34 29       	test   WORD PTR [r9+r13*1],r14w
+   1531b:	66 47 85 3c 29       	test   WORD PTR [r9+r13*1],r15w
+   15320:	66 43 85 04 2a       	test   WORD PTR [r10+r13*1],ax
+   15325:	66 43 85 0c 2a       	test   WORD PTR [r10+r13*1],cx
+   1532a:	66 43 85 14 2a       	test   WORD PTR [r10+r13*1],dx
+   1532f:	66 43 85 1c 2a       	test   WORD PTR [r10+r13*1],bx
+   15334:	66 43 85 24 2a       	test   WORD PTR [r10+r13*1],sp
+   15339:	66 43 85 2c 2a       	test   WORD PTR [r10+r13*1],bp
+   1533e:	66 43 85 34 2a       	test   WORD PTR [r10+r13*1],si
+   15343:	66 43 85 3c 2a       	test   WORD PTR [r10+r13*1],di
+   15348:	66 47 85 04 2a       	test   WORD PTR [r10+r13*1],r8w
+   1534d:	66 47 85 0c 2a       	test   WORD PTR [r10+r13*1],r9w
+   15352:	66 47 85 14 2a       	test   WORD PTR [r10+r13*1],r10w
+   15357:	66 47 85 1c 2a       	test   WORD PTR [r10+r13*1],r11w
+   1535c:	66 47 85 24 2a       	test   WORD PTR [r10+r13*1],r12w
+   15361:	66 47 85 2c 2a       	test   WORD PTR [r10+r13*1],r13w
+   15366:	66 47 85 34 2a       	test   WORD PTR [r10+r13*1],r14w
+   1536b:	66 47 85 3c 2a       	test   WORD PTR [r10+r13*1],r15w
+   15370:	66 43 85 04 2b       	test   WORD PTR [r11+r13*1],ax
+   15375:	66 43 85 0c 2b       	test   WORD PTR [r11+r13*1],cx
+   1537a:	66 43 85 14 2b       	test   WORD PTR [r11+r13*1],dx
+   1537f:	66 43 85 1c 2b       	test   WORD PTR [r11+r13*1],bx
+   15384:	66 43 85 24 2b       	test   WORD PTR [r11+r13*1],sp
+   15389:	66 43 85 2c 2b       	test   WORD PTR [r11+r13*1],bp
+   1538e:	66 43 85 34 2b       	test   WORD PTR [r11+r13*1],si
+   15393:	66 43 85 3c 2b       	test   WORD PTR [r11+r13*1],di
+   15398:	66 47 85 04 2b       	test   WORD PTR [r11+r13*1],r8w
+   1539d:	66 47 85 0c 2b       	test   WORD PTR [r11+r13*1],r9w
+   153a2:	66 47 85 14 2b       	test   WORD PTR [r11+r13*1],r10w
+   153a7:	66 47 85 1c 2b       	test   WORD PTR [r11+r13*1],r11w
+   153ac:	66 47 85 24 2b       	test   WORD PTR [r11+r13*1],r12w
+   153b1:	66 47 85 2c 2b       	test   WORD PTR [r11+r13*1],r13w
+   153b6:	66 47 85 34 2b       	test   WORD PTR [r11+r13*1],r14w
+   153bb:	66 47 85 3c 2b       	test   WORD PTR [r11+r13*1],r15w
+   153c0:	66 43 85 04 2c       	test   WORD PTR [r12+r13*1],ax
+   153c5:	66 43 85 0c 2c       	test   WORD PTR [r12+r13*1],cx
+   153ca:	66 43 85 14 2c       	test   WORD PTR [r12+r13*1],dx
+   153cf:	66 43 85 1c 2c       	test   WORD PTR [r12+r13*1],bx
+   153d4:	66 43 85 24 2c       	test   WORD PTR [r12+r13*1],sp
+   153d9:	66 43 85 2c 2c       	test   WORD PTR [r12+r13*1],bp
+   153de:	66 43 85 34 2c       	test   WORD PTR [r12+r13*1],si
+   153e3:	66 43 85 3c 2c       	test   WORD PTR [r12+r13*1],di
+   153e8:	66 47 85 04 2c       	test   WORD PTR [r12+r13*1],r8w
+   153ed:	66 47 85 0c 2c       	test   WORD PTR [r12+r13*1],r9w
+   153f2:	66 47 85 14 2c       	test   WORD PTR [r12+r13*1],r10w
+   153f7:	66 47 85 1c 2c       	test   WORD PTR [r12+r13*1],r11w
+   153fc:	66 47 85 24 2c       	test   WORD PTR [r12+r13*1],r12w
+   15401:	66 47 85 2c 2c       	test   WORD PTR [r12+r13*1],r13w
+   15406:	66 47 85 34 2c       	test   WORD PTR [r12+r13*1],r14w
+   1540b:	66 47 85 3c 2c       	test   WORD PTR [r12+r13*1],r15w
+   15410:	66 43 85 44 2d 00    	test   WORD PTR [r13+r13*1+0x0],ax
+   15416:	66 43 85 4c 2d 00    	test   WORD PTR [r13+r13*1+0x0],cx
+   1541c:	66 43 85 54 2d 00    	test   WORD PTR [r13+r13*1+0x0],dx
+   15422:	66 43 85 5c 2d 00    	test   WORD PTR [r13+r13*1+0x0],bx
+   15428:	66 43 85 64 2d 00    	test   WORD PTR [r13+r13*1+0x0],sp
+   1542e:	66 43 85 6c 2d 00    	test   WORD PTR [r13+r13*1+0x0],bp
+   15434:	66 43 85 74 2d 00    	test   WORD PTR [r13+r13*1+0x0],si
+   1543a:	66 43 85 7c 2d 00    	test   WORD PTR [r13+r13*1+0x0],di
+   15440:	66 47 85 44 2d 00    	test   WORD PTR [r13+r13*1+0x0],r8w
+   15446:	66 47 85 4c 2d 00    	test   WORD PTR [r13+r13*1+0x0],r9w
+   1544c:	66 47 85 54 2d 00    	test   WORD PTR [r13+r13*1+0x0],r10w
+   15452:	66 47 85 5c 2d 00    	test   WORD PTR [r13+r13*1+0x0],r11w
+   15458:	66 47 85 64 2d 00    	test   WORD PTR [r13+r13*1+0x0],r12w
+   1545e:	66 47 85 6c 2d 00    	test   WORD PTR [r13+r13*1+0x0],r13w
+   15464:	66 47 85 74 2d 00    	test   WORD PTR [r13+r13*1+0x0],r14w
+   1546a:	66 47 85 7c 2d 00    	test   WORD PTR [r13+r13*1+0x0],r15w
+   15470:	66 43 85 04 2e       	test   WORD PTR [r14+r13*1],ax
+   15475:	66 43 85 0c 2e       	test   WORD PTR [r14+r13*1],cx
+   1547a:	66 43 85 14 2e       	test   WORD PTR [r14+r13*1],dx
+   1547f:	66 43 85 1c 2e       	test   WORD PTR [r14+r13*1],bx
+   15484:	66 43 85 24 2e       	test   WORD PTR [r14+r13*1],sp
+   15489:	66 43 85 2c 2e       	test   WORD PTR [r14+r13*1],bp
+   1548e:	66 43 85 34 2e       	test   WORD PTR [r14+r13*1],si
+   15493:	66 43 85 3c 2e       	test   WORD PTR [r14+r13*1],di
+   15498:	66 47 85 04 2e       	test   WORD PTR [r14+r13*1],r8w
+   1549d:	66 47 85 0c 2e       	test   WORD PTR [r14+r13*1],r9w
+   154a2:	66 47 85 14 2e       	test   WORD PTR [r14+r13*1],r10w
+   154a7:	66 47 85 1c 2e       	test   WORD PTR [r14+r13*1],r11w
+   154ac:	66 47 85 24 2e       	test   WORD PTR [r14+r13*1],r12w
+   154b1:	66 47 85 2c 2e       	test   WORD PTR [r14+r13*1],r13w
+   154b6:	66 47 85 34 2e       	test   WORD PTR [r14+r13*1],r14w
+   154bb:	66 47 85 3c 2e       	test   WORD PTR [r14+r13*1],r15w
+   154c0:	66 43 85 04 2f       	test   WORD PTR [r15+r13*1],ax
+   154c5:	66 43 85 0c 2f       	test   WORD PTR [r15+r13*1],cx
+   154ca:	66 43 85 14 2f       	test   WORD PTR [r15+r13*1],dx
+   154cf:	66 43 85 1c 2f       	test   WORD PTR [r15+r13*1],bx
+   154d4:	66 43 85 24 2f       	test   WORD PTR [r15+r13*1],sp
+   154d9:	66 43 85 2c 2f       	test   WORD PTR [r15+r13*1],bp
+   154de:	66 43 85 34 2f       	test   WORD PTR [r15+r13*1],si
+   154e3:	66 43 85 3c 2f       	test   WORD PTR [r15+r13*1],di
+   154e8:	66 47 85 04 2f       	test   WORD PTR [r15+r13*1],r8w
+   154ed:	66 47 85 0c 2f       	test   WORD PTR [r15+r13*1],r9w
+   154f2:	66 47 85 14 2f       	test   WORD PTR [r15+r13*1],r10w
+   154f7:	66 47 85 1c 2f       	test   WORD PTR [r15+r13*1],r11w
+   154fc:	66 47 85 24 2f       	test   WORD PTR [r15+r13*1],r12w
+   15501:	66 47 85 2c 2f       	test   WORD PTR [r15+r13*1],r13w
+   15506:	66 47 85 34 2f       	test   WORD PTR [r15+r13*1],r14w
+   1550b:	66 47 85 3c 2f       	test   WORD PTR [r15+r13*1],r15w
+   15510:	42 84 04 28          	test   BYTE PTR [rax+r13*1],al
+   15514:	42 84 0c 28          	test   BYTE PTR [rax+r13*1],cl
+   15518:	42 84 14 28          	test   BYTE PTR [rax+r13*1],dl
+   1551c:	42 84 1c 28          	test   BYTE PTR [rax+r13*1],bl
+   15520:	42 84 24 28          	test   BYTE PTR [rax+r13*1],spl
+   15524:	42 84 2c 28          	test   BYTE PTR [rax+r13*1],bpl
+   15528:	42 84 34 28          	test   BYTE PTR [rax+r13*1],sil
+   1552c:	42 84 3c 28          	test   BYTE PTR [rax+r13*1],dil
+   15530:	46 84 04 28          	test   BYTE PTR [rax+r13*1],r8b
+   15534:	46 84 0c 28          	test   BYTE PTR [rax+r13*1],r9b
+   15538:	46 84 14 28          	test   BYTE PTR [rax+r13*1],r10b
+   1553c:	46 84 1c 28          	test   BYTE PTR [rax+r13*1],r11b
+   15540:	46 84 24 28          	test   BYTE PTR [rax+r13*1],r12b
+   15544:	46 84 2c 28          	test   BYTE PTR [rax+r13*1],r13b
+   15548:	46 84 34 28          	test   BYTE PTR [rax+r13*1],r14b
+   1554c:	46 84 3c 28          	test   BYTE PTR [rax+r13*1],r15b
+   15550:	42 84 24 28          	test   BYTE PTR [rax+r13*1],spl
+   15554:	42 84 2c 28          	test   BYTE PTR [rax+r13*1],bpl
+   15558:	42 84 34 28          	test   BYTE PTR [rax+r13*1],sil
+   1555c:	42 84 3c 28          	test   BYTE PTR [rax+r13*1],dil
+   15560:	42 84 04 29          	test   BYTE PTR [rcx+r13*1],al
+   15564:	42 84 0c 29          	test   BYTE PTR [rcx+r13*1],cl
+   15568:	42 84 14 29          	test   BYTE PTR [rcx+r13*1],dl
+   1556c:	42 84 1c 29          	test   BYTE PTR [rcx+r13*1],bl
+   15570:	42 84 24 29          	test   BYTE PTR [rcx+r13*1],spl
+   15574:	42 84 2c 29          	test   BYTE PTR [rcx+r13*1],bpl
+   15578:	42 84 34 29          	test   BYTE PTR [rcx+r13*1],sil
+   1557c:	42 84 3c 29          	test   BYTE PTR [rcx+r13*1],dil
+   15580:	46 84 04 29          	test   BYTE PTR [rcx+r13*1],r8b
+   15584:	46 84 0c 29          	test   BYTE PTR [rcx+r13*1],r9b
+   15588:	46 84 14 29          	test   BYTE PTR [rcx+r13*1],r10b
+   1558c:	46 84 1c 29          	test   BYTE PTR [rcx+r13*1],r11b
+   15590:	46 84 24 29          	test   BYTE PTR [rcx+r13*1],r12b
+   15594:	46 84 2c 29          	test   BYTE PTR [rcx+r13*1],r13b
+   15598:	46 84 34 29          	test   BYTE PTR [rcx+r13*1],r14b
+   1559c:	46 84 3c 29          	test   BYTE PTR [rcx+r13*1],r15b
+   155a0:	42 84 24 29          	test   BYTE PTR [rcx+r13*1],spl
+   155a4:	42 84 2c 29          	test   BYTE PTR [rcx+r13*1],bpl
+   155a8:	42 84 34 29          	test   BYTE PTR [rcx+r13*1],sil
+   155ac:	42 84 3c 29          	test   BYTE PTR [rcx+r13*1],dil
+   155b0:	42 84 04 2a          	test   BYTE PTR [rdx+r13*1],al
+   155b4:	42 84 0c 2a          	test   BYTE PTR [rdx+r13*1],cl
+   155b8:	42 84 14 2a          	test   BYTE PTR [rdx+r13*1],dl
+   155bc:	42 84 1c 2a          	test   BYTE PTR [rdx+r13*1],bl
+   155c0:	42 84 24 2a          	test   BYTE PTR [rdx+r13*1],spl
+   155c4:	42 84 2c 2a          	test   BYTE PTR [rdx+r13*1],bpl
+   155c8:	42 84 34 2a          	test   BYTE PTR [rdx+r13*1],sil
+   155cc:	42 84 3c 2a          	test   BYTE PTR [rdx+r13*1],dil
+   155d0:	46 84 04 2a          	test   BYTE PTR [rdx+r13*1],r8b
+   155d4:	46 84 0c 2a          	test   BYTE PTR [rdx+r13*1],r9b
+   155d8:	46 84 14 2a          	test   BYTE PTR [rdx+r13*1],r10b
+   155dc:	46 84 1c 2a          	test   BYTE PTR [rdx+r13*1],r11b
+   155e0:	46 84 24 2a          	test   BYTE PTR [rdx+r13*1],r12b
+   155e4:	46 84 2c 2a          	test   BYTE PTR [rdx+r13*1],r13b
+   155e8:	46 84 34 2a          	test   BYTE PTR [rdx+r13*1],r14b
+   155ec:	46 84 3c 2a          	test   BYTE PTR [rdx+r13*1],r15b
+   155f0:	42 84 24 2a          	test   BYTE PTR [rdx+r13*1],spl
+   155f4:	42 84 2c 2a          	test   BYTE PTR [rdx+r13*1],bpl
+   155f8:	42 84 34 2a          	test   BYTE PTR [rdx+r13*1],sil
+   155fc:	42 84 3c 2a          	test   BYTE PTR [rdx+r13*1],dil
+   15600:	42 84 04 2b          	test   BYTE PTR [rbx+r13*1],al
+   15604:	42 84 0c 2b          	test   BYTE PTR [rbx+r13*1],cl
+   15608:	42 84 14 2b          	test   BYTE PTR [rbx+r13*1],dl
+   1560c:	42 84 1c 2b          	test   BYTE PTR [rbx+r13*1],bl
+   15610:	42 84 24 2b          	test   BYTE PTR [rbx+r13*1],spl
+   15614:	42 84 2c 2b          	test   BYTE PTR [rbx+r13*1],bpl
+   15618:	42 84 34 2b          	test   BYTE PTR [rbx+r13*1],sil
+   1561c:	42 84 3c 2b          	test   BYTE PTR [rbx+r13*1],dil
+   15620:	46 84 04 2b          	test   BYTE PTR [rbx+r13*1],r8b
+   15624:	46 84 0c 2b          	test   BYTE PTR [rbx+r13*1],r9b
+   15628:	46 84 14 2b          	test   BYTE PTR [rbx+r13*1],r10b
+   1562c:	46 84 1c 2b          	test   BYTE PTR [rbx+r13*1],r11b
+   15630:	46 84 24 2b          	test   BYTE PTR [rbx+r13*1],r12b
+   15634:	46 84 2c 2b          	test   BYTE PTR [rbx+r13*1],r13b
+   15638:	46 84 34 2b          	test   BYTE PTR [rbx+r13*1],r14b
+   1563c:	46 84 3c 2b          	test   BYTE PTR [rbx+r13*1],r15b
+   15640:	42 84 24 2b          	test   BYTE PTR [rbx+r13*1],spl
+   15644:	42 84 2c 2b          	test   BYTE PTR [rbx+r13*1],bpl
+   15648:	42 84 34 2b          	test   BYTE PTR [rbx+r13*1],sil
+   1564c:	42 84 3c 2b          	test   BYTE PTR [rbx+r13*1],dil
+   15650:	42 84 04 2c          	test   BYTE PTR [rsp+r13*1],al
+   15654:	42 84 0c 2c          	test   BYTE PTR [rsp+r13*1],cl
+   15658:	42 84 14 2c          	test   BYTE PTR [rsp+r13*1],dl
+   1565c:	42 84 1c 2c          	test   BYTE PTR [rsp+r13*1],bl
+   15660:	42 84 24 2c          	test   BYTE PTR [rsp+r13*1],spl
+   15664:	42 84 2c 2c          	test   BYTE PTR [rsp+r13*1],bpl
+   15668:	42 84 34 2c          	test   BYTE PTR [rsp+r13*1],sil
+   1566c:	42 84 3c 2c          	test   BYTE PTR [rsp+r13*1],dil
+   15670:	46 84 04 2c          	test   BYTE PTR [rsp+r13*1],r8b
+   15674:	46 84 0c 2c          	test   BYTE PTR [rsp+r13*1],r9b
+   15678:	46 84 14 2c          	test   BYTE PTR [rsp+r13*1],r10b
+   1567c:	46 84 1c 2c          	test   BYTE PTR [rsp+r13*1],r11b
+   15680:	46 84 24 2c          	test   BYTE PTR [rsp+r13*1],r12b
+   15684:	46 84 2c 2c          	test   BYTE PTR [rsp+r13*1],r13b
+   15688:	46 84 34 2c          	test   BYTE PTR [rsp+r13*1],r14b
+   1568c:	46 84 3c 2c          	test   BYTE PTR [rsp+r13*1],r15b
+   15690:	42 84 24 2c          	test   BYTE PTR [rsp+r13*1],spl
+   15694:	42 84 2c 2c          	test   BYTE PTR [rsp+r13*1],bpl
+   15698:	42 84 34 2c          	test   BYTE PTR [rsp+r13*1],sil
+   1569c:	42 84 3c 2c          	test   BYTE PTR [rsp+r13*1],dil
+   156a0:	41 84 44 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],al
+   156a5:	41 84 4c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],cl
+   156aa:	41 84 54 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],dl
+   156af:	41 84 5c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],bl
+   156b4:	41 84 64 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],spl
+   156b9:	41 84 6c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],bpl
+   156be:	41 84 74 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],sil
+   156c3:	41 84 7c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],dil
+   156c8:	45 84 44 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],r8b
+   156cd:	45 84 4c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],r9b
+   156d2:	45 84 54 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],r10b
+   156d7:	45 84 5c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],r11b
+   156dc:	45 84 64 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],r12b
+   156e1:	45 84 6c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],r13b
+   156e6:	45 84 74 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],r14b
+   156eb:	45 84 7c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],r15b
+   156f0:	41 84 64 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],spl
+   156f5:	41 84 6c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],bpl
+   156fa:	41 84 74 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],sil
+   156ff:	41 84 7c 2d 00       	test   BYTE PTR [r13+rbp*1+0x0],dil
+   15704:	42 84 04 2e          	test   BYTE PTR [rsi+r13*1],al
+   15708:	42 84 0c 2e          	test   BYTE PTR [rsi+r13*1],cl
+   1570c:	42 84 14 2e          	test   BYTE PTR [rsi+r13*1],dl
+   15710:	42 84 1c 2e          	test   BYTE PTR [rsi+r13*1],bl
+   15714:	42 84 24 2e          	test   BYTE PTR [rsi+r13*1],spl
+   15718:	42 84 2c 2e          	test   BYTE PTR [rsi+r13*1],bpl
+   1571c:	42 84 34 2e          	test   BYTE PTR [rsi+r13*1],sil
+   15720:	42 84 3c 2e          	test   BYTE PTR [rsi+r13*1],dil
+   15724:	46 84 04 2e          	test   BYTE PTR [rsi+r13*1],r8b
+   15728:	46 84 0c 2e          	test   BYTE PTR [rsi+r13*1],r9b
+   1572c:	46 84 14 2e          	test   BYTE PTR [rsi+r13*1],r10b
+   15730:	46 84 1c 2e          	test   BYTE PTR [rsi+r13*1],r11b
+   15734:	46 84 24 2e          	test   BYTE PTR [rsi+r13*1],r12b
+   15738:	46 84 2c 2e          	test   BYTE PTR [rsi+r13*1],r13b
+   1573c:	46 84 34 2e          	test   BYTE PTR [rsi+r13*1],r14b
+   15740:	46 84 3c 2e          	test   BYTE PTR [rsi+r13*1],r15b
+   15744:	42 84 24 2e          	test   BYTE PTR [rsi+r13*1],spl
+   15748:	42 84 2c 2e          	test   BYTE PTR [rsi+r13*1],bpl
+   1574c:	42 84 34 2e          	test   BYTE PTR [rsi+r13*1],sil
+   15750:	42 84 3c 2e          	test   BYTE PTR [rsi+r13*1],dil
+   15754:	42 84 04 2f          	test   BYTE PTR [rdi+r13*1],al
+   15758:	42 84 0c 2f          	test   BYTE PTR [rdi+r13*1],cl
+   1575c:	42 84 14 2f          	test   BYTE PTR [rdi+r13*1],dl
+   15760:	42 84 1c 2f          	test   BYTE PTR [rdi+r13*1],bl
+   15764:	42 84 24 2f          	test   BYTE PTR [rdi+r13*1],spl
+   15768:	42 84 2c 2f          	test   BYTE PTR [rdi+r13*1],bpl
+   1576c:	42 84 34 2f          	test   BYTE PTR [rdi+r13*1],sil
+   15770:	42 84 3c 2f          	test   BYTE PTR [rdi+r13*1],dil
+   15774:	46 84 04 2f          	test   BYTE PTR [rdi+r13*1],r8b
+   15778:	46 84 0c 2f          	test   BYTE PTR [rdi+r13*1],r9b
+   1577c:	46 84 14 2f          	test   BYTE PTR [rdi+r13*1],r10b
+   15780:	46 84 1c 2f          	test   BYTE PTR [rdi+r13*1],r11b
+   15784:	46 84 24 2f          	test   BYTE PTR [rdi+r13*1],r12b
+   15788:	46 84 2c 2f          	test   BYTE PTR [rdi+r13*1],r13b
+   1578c:	46 84 34 2f          	test   BYTE PTR [rdi+r13*1],r14b
+   15790:	46 84 3c 2f          	test   BYTE PTR [rdi+r13*1],r15b
+   15794:	42 84 24 2f          	test   BYTE PTR [rdi+r13*1],spl
+   15798:	42 84 2c 2f          	test   BYTE PTR [rdi+r13*1],bpl
+   1579c:	42 84 34 2f          	test   BYTE PTR [rdi+r13*1],sil
+   157a0:	42 84 3c 2f          	test   BYTE PTR [rdi+r13*1],dil
+   157a4:	43 84 04 28          	test   BYTE PTR [r8+r13*1],al
+   157a8:	43 84 0c 28          	test   BYTE PTR [r8+r13*1],cl
+   157ac:	43 84 14 28          	test   BYTE PTR [r8+r13*1],dl
+   157b0:	43 84 1c 28          	test   BYTE PTR [r8+r13*1],bl
+   157b4:	43 84 24 28          	test   BYTE PTR [r8+r13*1],spl
+   157b8:	43 84 2c 28          	test   BYTE PTR [r8+r13*1],bpl
+   157bc:	43 84 34 28          	test   BYTE PTR [r8+r13*1],sil
+   157c0:	43 84 3c 28          	test   BYTE PTR [r8+r13*1],dil
+   157c4:	47 84 04 28          	test   BYTE PTR [r8+r13*1],r8b
+   157c8:	47 84 0c 28          	test   BYTE PTR [r8+r13*1],r9b
+   157cc:	47 84 14 28          	test   BYTE PTR [r8+r13*1],r10b
+   157d0:	47 84 1c 28          	test   BYTE PTR [r8+r13*1],r11b
+   157d4:	47 84 24 28          	test   BYTE PTR [r8+r13*1],r12b
+   157d8:	47 84 2c 28          	test   BYTE PTR [r8+r13*1],r13b
+   157dc:	47 84 34 28          	test   BYTE PTR [r8+r13*1],r14b
+   157e0:	47 84 3c 28          	test   BYTE PTR [r8+r13*1],r15b
+   157e4:	43 84 24 28          	test   BYTE PTR [r8+r13*1],spl
+   157e8:	43 84 2c 28          	test   BYTE PTR [r8+r13*1],bpl
+   157ec:	43 84 34 28          	test   BYTE PTR [r8+r13*1],sil
+   157f0:	43 84 3c 28          	test   BYTE PTR [r8+r13*1],dil
+   157f4:	43 84 04 29          	test   BYTE PTR [r9+r13*1],al
+   157f8:	43 84 0c 29          	test   BYTE PTR [r9+r13*1],cl
+   157fc:	43 84 14 29          	test   BYTE PTR [r9+r13*1],dl
+   15800:	43 84 1c 29          	test   BYTE PTR [r9+r13*1],bl
+   15804:	43 84 24 29          	test   BYTE PTR [r9+r13*1],spl
+   15808:	43 84 2c 29          	test   BYTE PTR [r9+r13*1],bpl
+   1580c:	43 84 34 29          	test   BYTE PTR [r9+r13*1],sil
+   15810:	43 84 3c 29          	test   BYTE PTR [r9+r13*1],dil
+   15814:	47 84 04 29          	test   BYTE PTR [r9+r13*1],r8b
+   15818:	47 84 0c 29          	test   BYTE PTR [r9+r13*1],r9b
+   1581c:	47 84 14 29          	test   BYTE PTR [r9+r13*1],r10b
+   15820:	47 84 1c 29          	test   BYTE PTR [r9+r13*1],r11b
+   15824:	47 84 24 29          	test   BYTE PTR [r9+r13*1],r12b
+   15828:	47 84 2c 29          	test   BYTE PTR [r9+r13*1],r13b
+   1582c:	47 84 34 29          	test   BYTE PTR [r9+r13*1],r14b
+   15830:	47 84 3c 29          	test   BYTE PTR [r9+r13*1],r15b
+   15834:	43 84 24 29          	test   BYTE PTR [r9+r13*1],spl
+   15838:	43 84 2c 29          	test   BYTE PTR [r9+r13*1],bpl
+   1583c:	43 84 34 29          	test   BYTE PTR [r9+r13*1],sil
+   15840:	43 84 3c 29          	test   BYTE PTR [r9+r13*1],dil
+   15844:	43 84 04 2a          	test   BYTE PTR [r10+r13*1],al
+   15848:	43 84 0c 2a          	test   BYTE PTR [r10+r13*1],cl
+   1584c:	43 84 14 2a          	test   BYTE PTR [r10+r13*1],dl
+   15850:	43 84 1c 2a          	test   BYTE PTR [r10+r13*1],bl
+   15854:	43 84 24 2a          	test   BYTE PTR [r10+r13*1],spl
+   15858:	43 84 2c 2a          	test   BYTE PTR [r10+r13*1],bpl
+   1585c:	43 84 34 2a          	test   BYTE PTR [r10+r13*1],sil
+   15860:	43 84 3c 2a          	test   BYTE PTR [r10+r13*1],dil
+   15864:	47 84 04 2a          	test   BYTE PTR [r10+r13*1],r8b
+   15868:	47 84 0c 2a          	test   BYTE PTR [r10+r13*1],r9b
+   1586c:	47 84 14 2a          	test   BYTE PTR [r10+r13*1],r10b
+   15870:	47 84 1c 2a          	test   BYTE PTR [r10+r13*1],r11b
+   15874:	47 84 24 2a          	test   BYTE PTR [r10+r13*1],r12b
+   15878:	47 84 2c 2a          	test   BYTE PTR [r10+r13*1],r13b
+   1587c:	47 84 34 2a          	test   BYTE PTR [r10+r13*1],r14b
+   15880:	47 84 3c 2a          	test   BYTE PTR [r10+r13*1],r15b
+   15884:	43 84 24 2a          	test   BYTE PTR [r10+r13*1],spl
+   15888:	43 84 2c 2a          	test   BYTE PTR [r10+r13*1],bpl
+   1588c:	43 84 34 2a          	test   BYTE PTR [r10+r13*1],sil
+   15890:	43 84 3c 2a          	test   BYTE PTR [r10+r13*1],dil
+   15894:	43 84 04 2b          	test   BYTE PTR [r11+r13*1],al
+   15898:	43 84 0c 2b          	test   BYTE PTR [r11+r13*1],cl
+   1589c:	43 84 14 2b          	test   BYTE PTR [r11+r13*1],dl
+   158a0:	43 84 1c 2b          	test   BYTE PTR [r11+r13*1],bl
+   158a4:	43 84 24 2b          	test   BYTE PTR [r11+r13*1],spl
+   158a8:	43 84 2c 2b          	test   BYTE PTR [r11+r13*1],bpl
+   158ac:	43 84 34 2b          	test   BYTE PTR [r11+r13*1],sil
+   158b0:	43 84 3c 2b          	test   BYTE PTR [r11+r13*1],dil
+   158b4:	47 84 04 2b          	test   BYTE PTR [r11+r13*1],r8b
+   158b8:	47 84 0c 2b          	test   BYTE PTR [r11+r13*1],r9b
+   158bc:	47 84 14 2b          	test   BYTE PTR [r11+r13*1],r10b
+   158c0:	47 84 1c 2b          	test   BYTE PTR [r11+r13*1],r11b
+   158c4:	47 84 24 2b          	test   BYTE PTR [r11+r13*1],r12b
+   158c8:	47 84 2c 2b          	test   BYTE PTR [r11+r13*1],r13b
+   158cc:	47 84 34 2b          	test   BYTE PTR [r11+r13*1],r14b
+   158d0:	47 84 3c 2b          	test   BYTE PTR [r11+r13*1],r15b
+   158d4:	43 84 24 2b          	test   BYTE PTR [r11+r13*1],spl
+   158d8:	43 84 2c 2b          	test   BYTE PTR [r11+r13*1],bpl
+   158dc:	43 84 34 2b          	test   BYTE PTR [r11+r13*1],sil
+   158e0:	43 84 3c 2b          	test   BYTE PTR [r11+r13*1],dil
+   158e4:	43 84 04 2c          	test   BYTE PTR [r12+r13*1],al
+   158e8:	43 84 0c 2c          	test   BYTE PTR [r12+r13*1],cl
+   158ec:	43 84 14 2c          	test   BYTE PTR [r12+r13*1],dl
+   158f0:	43 84 1c 2c          	test   BYTE PTR [r12+r13*1],bl
+   158f4:	43 84 24 2c          	test   BYTE PTR [r12+r13*1],spl
+   158f8:	43 84 2c 2c          	test   BYTE PTR [r12+r13*1],bpl
+   158fc:	43 84 34 2c          	test   BYTE PTR [r12+r13*1],sil
+   15900:	43 84 3c 2c          	test   BYTE PTR [r12+r13*1],dil
+   15904:	47 84 04 2c          	test   BYTE PTR [r12+r13*1],r8b
+   15908:	47 84 0c 2c          	test   BYTE PTR [r12+r13*1],r9b
+   1590c:	47 84 14 2c          	test   BYTE PTR [r12+r13*1],r10b
+   15910:	47 84 1c 2c          	test   BYTE PTR [r12+r13*1],r11b
+   15914:	47 84 24 2c          	test   BYTE PTR [r12+r13*1],r12b
+   15918:	47 84 2c 2c          	test   BYTE PTR [r12+r13*1],r13b
+   1591c:	47 84 34 2c          	test   BYTE PTR [r12+r13*1],r14b
+   15920:	47 84 3c 2c          	test   BYTE PTR [r12+r13*1],r15b
+   15924:	43 84 24 2c          	test   BYTE PTR [r12+r13*1],spl
+   15928:	43 84 2c 2c          	test   BYTE PTR [r12+r13*1],bpl
+   1592c:	43 84 34 2c          	test   BYTE PTR [r12+r13*1],sil
+   15930:	43 84 3c 2c          	test   BYTE PTR [r12+r13*1],dil
+   15934:	43 84 44 2d 00       	test   BYTE PTR [r13+r13*1+0x0],al
+   15939:	43 84 4c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],cl
+   1593e:	43 84 54 2d 00       	test   BYTE PTR [r13+r13*1+0x0],dl
+   15943:	43 84 5c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],bl
+   15948:	43 84 64 2d 00       	test   BYTE PTR [r13+r13*1+0x0],spl
+   1594d:	43 84 6c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],bpl
+   15952:	43 84 74 2d 00       	test   BYTE PTR [r13+r13*1+0x0],sil
+   15957:	43 84 7c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],dil
+   1595c:	47 84 44 2d 00       	test   BYTE PTR [r13+r13*1+0x0],r8b
+   15961:	47 84 4c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],r9b
+   15966:	47 84 54 2d 00       	test   BYTE PTR [r13+r13*1+0x0],r10b
+   1596b:	47 84 5c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],r11b
+   15970:	47 84 64 2d 00       	test   BYTE PTR [r13+r13*1+0x0],r12b
+   15975:	47 84 6c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],r13b
+   1597a:	47 84 74 2d 00       	test   BYTE PTR [r13+r13*1+0x0],r14b
+   1597f:	47 84 7c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],r15b
+   15984:	43 84 64 2d 00       	test   BYTE PTR [r13+r13*1+0x0],spl
+   15989:	43 84 6c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],bpl
+   1598e:	43 84 74 2d 00       	test   BYTE PTR [r13+r13*1+0x0],sil
+   15993:	43 84 7c 2d 00       	test   BYTE PTR [r13+r13*1+0x0],dil
+   15998:	43 84 04 2e          	test   BYTE PTR [r14+r13*1],al
+   1599c:	43 84 0c 2e          	test   BYTE PTR [r14+r13*1],cl
+   159a0:	43 84 14 2e          	test   BYTE PTR [r14+r13*1],dl
+   159a4:	43 84 1c 2e          	test   BYTE PTR [r14+r13*1],bl
+   159a8:	43 84 24 2e          	test   BYTE PTR [r14+r13*1],spl
+   159ac:	43 84 2c 2e          	test   BYTE PTR [r14+r13*1],bpl
+   159b0:	43 84 34 2e          	test   BYTE PTR [r14+r13*1],sil
+   159b4:	43 84 3c 2e          	test   BYTE PTR [r14+r13*1],dil
+   159b8:	47 84 04 2e          	test   BYTE PTR [r14+r13*1],r8b
+   159bc:	47 84 0c 2e          	test   BYTE PTR [r14+r13*1],r9b
+   159c0:	47 84 14 2e          	test   BYTE PTR [r14+r13*1],r10b
+   159c4:	47 84 1c 2e          	test   BYTE PTR [r14+r13*1],r11b
+   159c8:	47 84 24 2e          	test   BYTE PTR [r14+r13*1],r12b
+   159cc:	47 84 2c 2e          	test   BYTE PTR [r14+r13*1],r13b
+   159d0:	47 84 34 2e          	test   BYTE PTR [r14+r13*1],r14b
+   159d4:	47 84 3c 2e          	test   BYTE PTR [r14+r13*1],r15b
+   159d8:	43 84 24 2e          	test   BYTE PTR [r14+r13*1],spl
+   159dc:	43 84 2c 2e          	test   BYTE PTR [r14+r13*1],bpl
+   159e0:	43 84 34 2e          	test   BYTE PTR [r14+r13*1],sil
+   159e4:	43 84 3c 2e          	test   BYTE PTR [r14+r13*1],dil
+   159e8:	43 84 04 2f          	test   BYTE PTR [r15+r13*1],al
+   159ec:	43 84 0c 2f          	test   BYTE PTR [r15+r13*1],cl
+   159f0:	43 84 14 2f          	test   BYTE PTR [r15+r13*1],dl
+   159f4:	43 84 1c 2f          	test   BYTE PTR [r15+r13*1],bl
+   159f8:	43 84 24 2f          	test   BYTE PTR [r15+r13*1],spl
+   159fc:	43 84 2c 2f          	test   BYTE PTR [r15+r13*1],bpl
+   15a00:	43 84 34 2f          	test   BYTE PTR [r15+r13*1],sil
+   15a04:	43 84 3c 2f          	test   BYTE PTR [r15+r13*1],dil
+   15a08:	47 84 04 2f          	test   BYTE PTR [r15+r13*1],r8b
+   15a0c:	47 84 0c 2f          	test   BYTE PTR [r15+r13*1],r9b
+   15a10:	47 84 14 2f          	test   BYTE PTR [r15+r13*1],r10b
+   15a14:	47 84 1c 2f          	test   BYTE PTR [r15+r13*1],r11b
+   15a18:	47 84 24 2f          	test   BYTE PTR [r15+r13*1],r12b
+   15a1c:	47 84 2c 2f          	test   BYTE PTR [r15+r13*1],r13b
+   15a20:	47 84 34 2f          	test   BYTE PTR [r15+r13*1],r14b
+   15a24:	47 84 3c 2f          	test   BYTE PTR [r15+r13*1],r15b
+   15a28:	43 84 24 2f          	test   BYTE PTR [r15+r13*1],spl
+   15a2c:	43 84 2c 2f          	test   BYTE PTR [r15+r13*1],bpl
+   15a30:	43 84 34 2f          	test   BYTE PTR [r15+r13*1],sil
+   15a34:	43 84 3c 2f          	test   BYTE PTR [r15+r13*1],dil
+   15a38:	4a 85 44 68 15       	test   QWORD PTR [rax+r13*2+0x15],rax
+   15a3d:	4a 85 4c 68 15       	test   QWORD PTR [rax+r13*2+0x15],rcx
+   15a42:	4a 85 54 68 15       	test   QWORD PTR [rax+r13*2+0x15],rdx
+   15a47:	4a 85 5c 68 15       	test   QWORD PTR [rax+r13*2+0x15],rbx
+   15a4c:	4a 85 64 68 15       	test   QWORD PTR [rax+r13*2+0x15],rsp
+   15a51:	4a 85 6c 68 15       	test   QWORD PTR [rax+r13*2+0x15],rbp
+   15a56:	4a 85 74 68 15       	test   QWORD PTR [rax+r13*2+0x15],rsi
+   15a5b:	4a 85 7c 68 15       	test   QWORD PTR [rax+r13*2+0x15],rdi
+   15a60:	4e 85 44 68 15       	test   QWORD PTR [rax+r13*2+0x15],r8
+   15a65:	4e 85 4c 68 15       	test   QWORD PTR [rax+r13*2+0x15],r9
+   15a6a:	4e 85 54 68 15       	test   QWORD PTR [rax+r13*2+0x15],r10
+   15a6f:	4e 85 5c 68 15       	test   QWORD PTR [rax+r13*2+0x15],r11
+   15a74:	4e 85 64 68 15       	test   QWORD PTR [rax+r13*2+0x15],r12
+   15a79:	4e 85 6c 68 15       	test   QWORD PTR [rax+r13*2+0x15],r13
+   15a7e:	4e 85 74 68 15       	test   QWORD PTR [rax+r13*2+0x15],r14
+   15a83:	4e 85 7c 68 15       	test   QWORD PTR [rax+r13*2+0x15],r15
+   15a88:	4a 85 44 69 15       	test   QWORD PTR [rcx+r13*2+0x15],rax
+   15a8d:	4a 85 4c 69 15       	test   QWORD PTR [rcx+r13*2+0x15],rcx
+   15a92:	4a 85 54 69 15       	test   QWORD PTR [rcx+r13*2+0x15],rdx
+   15a97:	4a 85 5c 69 15       	test   QWORD PTR [rcx+r13*2+0x15],rbx
+   15a9c:	4a 85 64 69 15       	test   QWORD PTR [rcx+r13*2+0x15],rsp
+   15aa1:	4a 85 6c 69 15       	test   QWORD PTR [rcx+r13*2+0x15],rbp
+   15aa6:	4a 85 74 69 15       	test   QWORD PTR [rcx+r13*2+0x15],rsi
+   15aab:	4a 85 7c 69 15       	test   QWORD PTR [rcx+r13*2+0x15],rdi
+   15ab0:	4e 85 44 69 15       	test   QWORD PTR [rcx+r13*2+0x15],r8
+   15ab5:	4e 85 4c 69 15       	test   QWORD PTR [rcx+r13*2+0x15],r9
+   15aba:	4e 85 54 69 15       	test   QWORD PTR [rcx+r13*2+0x15],r10
+   15abf:	4e 85 5c 69 15       	test   QWORD PTR [rcx+r13*2+0x15],r11
+   15ac4:	4e 85 64 69 15       	test   QWORD PTR [rcx+r13*2+0x15],r12
+   15ac9:	4e 85 6c 69 15       	test   QWORD PTR [rcx+r13*2+0x15],r13
+   15ace:	4e 85 74 69 15       	test   QWORD PTR [rcx+r13*2+0x15],r14
+   15ad3:	4e 85 7c 69 15       	test   QWORD PTR [rcx+r13*2+0x15],r15
+   15ad8:	4a 85 44 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],rax
+   15add:	4a 85 4c 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],rcx
+   15ae2:	4a 85 54 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],rdx
+   15ae7:	4a 85 5c 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],rbx
+   15aec:	4a 85 64 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],rsp
+   15af1:	4a 85 6c 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],rbp
+   15af6:	4a 85 74 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],rsi
+   15afb:	4a 85 7c 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],rdi
+   15b00:	4e 85 44 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],r8
+   15b05:	4e 85 4c 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],r9
+   15b0a:	4e 85 54 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],r10
+   15b0f:	4e 85 5c 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],r11
+   15b14:	4e 85 64 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],r12
+   15b19:	4e 85 6c 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],r13
+   15b1e:	4e 85 74 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],r14
+   15b23:	4e 85 7c 6a 15       	test   QWORD PTR [rdx+r13*2+0x15],r15
+   15b28:	4a 85 44 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],rax
+   15b2d:	4a 85 4c 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],rcx
+   15b32:	4a 85 54 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],rdx
+   15b37:	4a 85 5c 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],rbx
+   15b3c:	4a 85 64 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],rsp
+   15b41:	4a 85 6c 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],rbp
+   15b46:	4a 85 74 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],rsi
+   15b4b:	4a 85 7c 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],rdi
+   15b50:	4e 85 44 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],r8
+   15b55:	4e 85 4c 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],r9
+   15b5a:	4e 85 54 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],r10
+   15b5f:	4e 85 5c 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],r11
+   15b64:	4e 85 64 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],r12
+   15b69:	4e 85 6c 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],r13
+   15b6e:	4e 85 74 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],r14
+   15b73:	4e 85 7c 6b 15       	test   QWORD PTR [rbx+r13*2+0x15],r15
+   15b78:	4a 85 44 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],rax
+   15b7d:	4a 85 4c 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],rcx
+   15b82:	4a 85 54 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],rdx
+   15b87:	4a 85 5c 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],rbx
+   15b8c:	4a 85 64 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],rsp
+   15b91:	4a 85 6c 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],rbp
+   15b96:	4a 85 74 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],rsi
+   15b9b:	4a 85 7c 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],rdi
+   15ba0:	4e 85 44 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],r8
+   15ba5:	4e 85 4c 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],r9
+   15baa:	4e 85 54 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],r10
+   15baf:	4e 85 5c 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],r11
+   15bb4:	4e 85 64 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],r12
+   15bb9:	4e 85 6c 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],r13
+   15bbe:	4e 85 74 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],r14
+   15bc3:	4e 85 7c 6c 15       	test   QWORD PTR [rsp+r13*2+0x15],r15
+   15bc8:	4a 85 44 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],rax
+   15bcd:	4a 85 4c 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],rcx
+   15bd2:	4a 85 54 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],rdx
+   15bd7:	4a 85 5c 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],rbx
+   15bdc:	4a 85 64 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],rsp
+   15be1:	4a 85 6c 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],rbp
+   15be6:	4a 85 74 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],rsi
+   15beb:	4a 85 7c 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],rdi
+   15bf0:	4e 85 44 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],r8
+   15bf5:	4e 85 4c 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],r9
+   15bfa:	4e 85 54 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],r10
+   15bff:	4e 85 5c 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],r11
+   15c04:	4e 85 64 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],r12
+   15c09:	4e 85 6c 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],r13
+   15c0e:	4e 85 74 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],r14
+   15c13:	4e 85 7c 6d 15       	test   QWORD PTR [rbp+r13*2+0x15],r15
+   15c18:	4a 85 44 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],rax
+   15c1d:	4a 85 4c 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],rcx
+   15c22:	4a 85 54 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],rdx
+   15c27:	4a 85 5c 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],rbx
+   15c2c:	4a 85 64 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],rsp
+   15c31:	4a 85 6c 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],rbp
+   15c36:	4a 85 74 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],rsi
+   15c3b:	4a 85 7c 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],rdi
+   15c40:	4e 85 44 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],r8
+   15c45:	4e 85 4c 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],r9
+   15c4a:	4e 85 54 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],r10
+   15c4f:	4e 85 5c 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],r11
+   15c54:	4e 85 64 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],r12
+   15c59:	4e 85 6c 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],r13
+   15c5e:	4e 85 74 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],r14
+   15c63:	4e 85 7c 6e 15       	test   QWORD PTR [rsi+r13*2+0x15],r15
+   15c68:	4a 85 44 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],rax
+   15c6d:	4a 85 4c 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],rcx
+   15c72:	4a 85 54 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],rdx
+   15c77:	4a 85 5c 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],rbx
+   15c7c:	4a 85 64 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],rsp
+   15c81:	4a 85 6c 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],rbp
+   15c86:	4a 85 74 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],rsi
+   15c8b:	4a 85 7c 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],rdi
+   15c90:	4e 85 44 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],r8
+   15c95:	4e 85 4c 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],r9
+   15c9a:	4e 85 54 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],r10
+   15c9f:	4e 85 5c 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],r11
+   15ca4:	4e 85 64 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],r12
+   15ca9:	4e 85 6c 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],r13
+   15cae:	4e 85 74 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],r14
+   15cb3:	4e 85 7c 6f 15       	test   QWORD PTR [rdi+r13*2+0x15],r15
+   15cb8:	4b 85 44 68 15       	test   QWORD PTR [r8+r13*2+0x15],rax
+   15cbd:	4b 85 4c 68 15       	test   QWORD PTR [r8+r13*2+0x15],rcx
+   15cc2:	4b 85 54 68 15       	test   QWORD PTR [r8+r13*2+0x15],rdx
+   15cc7:	4b 85 5c 68 15       	test   QWORD PTR [r8+r13*2+0x15],rbx
+   15ccc:	4b 85 64 68 15       	test   QWORD PTR [r8+r13*2+0x15],rsp
+   15cd1:	4b 85 6c 68 15       	test   QWORD PTR [r8+r13*2+0x15],rbp
+   15cd6:	4b 85 74 68 15       	test   QWORD PTR [r8+r13*2+0x15],rsi
+   15cdb:	4b 85 7c 68 15       	test   QWORD PTR [r8+r13*2+0x15],rdi
+   15ce0:	4f 85 44 68 15       	test   QWORD PTR [r8+r13*2+0x15],r8
+   15ce5:	4f 85 4c 68 15       	test   QWORD PTR [r8+r13*2+0x15],r9
+   15cea:	4f 85 54 68 15       	test   QWORD PTR [r8+r13*2+0x15],r10
+   15cef:	4f 85 5c 68 15       	test   QWORD PTR [r8+r13*2+0x15],r11
+   15cf4:	4f 85 64 68 15       	test   QWORD PTR [r8+r13*2+0x15],r12
+   15cf9:	4f 85 6c 68 15       	test   QWORD PTR [r8+r13*2+0x15],r13
+   15cfe:	4f 85 74 68 15       	test   QWORD PTR [r8+r13*2+0x15],r14
+   15d03:	4f 85 7c 68 15       	test   QWORD PTR [r8+r13*2+0x15],r15
+   15d08:	4b 85 44 69 15       	test   QWORD PTR [r9+r13*2+0x15],rax
+   15d0d:	4b 85 4c 69 15       	test   QWORD PTR [r9+r13*2+0x15],rcx
+   15d12:	4b 85 54 69 15       	test   QWORD PTR [r9+r13*2+0x15],rdx
+   15d17:	4b 85 5c 69 15       	test   QWORD PTR [r9+r13*2+0x15],rbx
+   15d1c:	4b 85 64 69 15       	test   QWORD PTR [r9+r13*2+0x15],rsp
+   15d21:	4b 85 6c 69 15       	test   QWORD PTR [r9+r13*2+0x15],rbp
+   15d26:	4b 85 74 69 15       	test   QWORD PTR [r9+r13*2+0x15],rsi
+   15d2b:	4b 85 7c 69 15       	test   QWORD PTR [r9+r13*2+0x15],rdi
+   15d30:	4f 85 44 69 15       	test   QWORD PTR [r9+r13*2+0x15],r8
+   15d35:	4f 85 4c 69 15       	test   QWORD PTR [r9+r13*2+0x15],r9
+   15d3a:	4f 85 54 69 15       	test   QWORD PTR [r9+r13*2+0x15],r10
+   15d3f:	4f 85 5c 69 15       	test   QWORD PTR [r9+r13*2+0x15],r11
+   15d44:	4f 85 64 69 15       	test   QWORD PTR [r9+r13*2+0x15],r12
+   15d49:	4f 85 6c 69 15       	test   QWORD PTR [r9+r13*2+0x15],r13
+   15d4e:	4f 85 74 69 15       	test   QWORD PTR [r9+r13*2+0x15],r14
+   15d53:	4f 85 7c 69 15       	test   QWORD PTR [r9+r13*2+0x15],r15
+   15d58:	4b 85 44 6a 15       	test   QWORD PTR [r10+r13*2+0x15],rax
+   15d5d:	4b 85 4c 6a 15       	test   QWORD PTR [r10+r13*2+0x15],rcx
+   15d62:	4b 85 54 6a 15       	test   QWORD PTR [r10+r13*2+0x15],rdx
+   15d67:	4b 85 5c 6a 15       	test   QWORD PTR [r10+r13*2+0x15],rbx
+   15d6c:	4b 85 64 6a 15       	test   QWORD PTR [r10+r13*2+0x15],rsp
+   15d71:	4b 85 6c 6a 15       	test   QWORD PTR [r10+r13*2+0x15],rbp
+   15d76:	4b 85 74 6a 15       	test   QWORD PTR [r10+r13*2+0x15],rsi
+   15d7b:	4b 85 7c 6a 15       	test   QWORD PTR [r10+r13*2+0x15],rdi
+   15d80:	4f 85 44 6a 15       	test   QWORD PTR [r10+r13*2+0x15],r8
+   15d85:	4f 85 4c 6a 15       	test   QWORD PTR [r10+r13*2+0x15],r9
+   15d8a:	4f 85 54 6a 15       	test   QWORD PTR [r10+r13*2+0x15],r10
+   15d8f:	4f 85 5c 6a 15       	test   QWORD PTR [r10+r13*2+0x15],r11
+   15d94:	4f 85 64 6a 15       	test   QWORD PTR [r10+r13*2+0x15],r12
+   15d99:	4f 85 6c 6a 15       	test   QWORD PTR [r10+r13*2+0x15],r13
+   15d9e:	4f 85 74 6a 15       	test   QWORD PTR [r10+r13*2+0x15],r14
+   15da3:	4f 85 7c 6a 15       	test   QWORD PTR [r10+r13*2+0x15],r15
+   15da8:	4b 85 44 6b 15       	test   QWORD PTR [r11+r13*2+0x15],rax
+   15dad:	4b 85 4c 6b 15       	test   QWORD PTR [r11+r13*2+0x15],rcx
+   15db2:	4b 85 54 6b 15       	test   QWORD PTR [r11+r13*2+0x15],rdx
+   15db7:	4b 85 5c 6b 15       	test   QWORD PTR [r11+r13*2+0x15],rbx
+   15dbc:	4b 85 64 6b 15       	test   QWORD PTR [r11+r13*2+0x15],rsp
+   15dc1:	4b 85 6c 6b 15       	test   QWORD PTR [r11+r13*2+0x15],rbp
+   15dc6:	4b 85 74 6b 15       	test   QWORD PTR [r11+r13*2+0x15],rsi
+   15dcb:	4b 85 7c 6b 15       	test   QWORD PTR [r11+r13*2+0x15],rdi
+   15dd0:	4f 85 44 6b 15       	test   QWORD PTR [r11+r13*2+0x15],r8
+   15dd5:	4f 85 4c 6b 15       	test   QWORD PTR [r11+r13*2+0x15],r9
+   15dda:	4f 85 54 6b 15       	test   QWORD PTR [r11+r13*2+0x15],r10
+   15ddf:	4f 85 5c 6b 15       	test   QWORD PTR [r11+r13*2+0x15],r11
+   15de4:	4f 85 64 6b 15       	test   QWORD PTR [r11+r13*2+0x15],r12
+   15de9:	4f 85 6c 6b 15       	test   QWORD PTR [r11+r13*2+0x15],r13
+   15dee:	4f 85 74 6b 15       	test   QWORD PTR [r11+r13*2+0x15],r14
+   15df3:	4f 85 7c 6b 15       	test   QWORD PTR [r11+r13*2+0x15],r15
+   15df8:	4b 85 44 6c 15       	test   QWORD PTR [r12+r13*2+0x15],rax
+   15dfd:	4b 85 4c 6c 15       	test   QWORD PTR [r12+r13*2+0x15],rcx
+   15e02:	4b 85 54 6c 15       	test   QWORD PTR [r12+r13*2+0x15],rdx
+   15e07:	4b 85 5c 6c 15       	test   QWORD PTR [r12+r13*2+0x15],rbx
+   15e0c:	4b 85 64 6c 15       	test   QWORD PTR [r12+r13*2+0x15],rsp
+   15e11:	4b 85 6c 6c 15       	test   QWORD PTR [r12+r13*2+0x15],rbp
+   15e16:	4b 85 74 6c 15       	test   QWORD PTR [r12+r13*2+0x15],rsi
+   15e1b:	4b 85 7c 6c 15       	test   QWORD PTR [r12+r13*2+0x15],rdi
+   15e20:	4f 85 44 6c 15       	test   QWORD PTR [r12+r13*2+0x15],r8
+   15e25:	4f 85 4c 6c 15       	test   QWORD PTR [r12+r13*2+0x15],r9
+   15e2a:	4f 85 54 6c 15       	test   QWORD PTR [r12+r13*2+0x15],r10
+   15e2f:	4f 85 5c 6c 15       	test   QWORD PTR [r12+r13*2+0x15],r11
+   15e34:	4f 85 64 6c 15       	test   QWORD PTR [r12+r13*2+0x15],r12
+   15e39:	4f 85 6c 6c 15       	test   QWORD PTR [r12+r13*2+0x15],r13
+   15e3e:	4f 85 74 6c 15       	test   QWORD PTR [r12+r13*2+0x15],r14
+   15e43:	4f 85 7c 6c 15       	test   QWORD PTR [r12+r13*2+0x15],r15
+   15e48:	4b 85 44 6d 15       	test   QWORD PTR [r13+r13*2+0x15],rax
+   15e4d:	4b 85 4c 6d 15       	test   QWORD PTR [r13+r13*2+0x15],rcx
+   15e52:	4b 85 54 6d 15       	test   QWORD PTR [r13+r13*2+0x15],rdx
+   15e57:	4b 85 5c 6d 15       	test   QWORD PTR [r13+r13*2+0x15],rbx
+   15e5c:	4b 85 64 6d 15       	test   QWORD PTR [r13+r13*2+0x15],rsp
+   15e61:	4b 85 6c 6d 15       	test   QWORD PTR [r13+r13*2+0x15],rbp
+   15e66:	4b 85 74 6d 15       	test   QWORD PTR [r13+r13*2+0x15],rsi
+   15e6b:	4b 85 7c 6d 15       	test   QWORD PTR [r13+r13*2+0x15],rdi
+   15e70:	4f 85 44 6d 15       	test   QWORD PTR [r13+r13*2+0x15],r8
+   15e75:	4f 85 4c 6d 15       	test   QWORD PTR [r13+r13*2+0x15],r9
+   15e7a:	4f 85 54 6d 15       	test   QWORD PTR [r13+r13*2+0x15],r10
+   15e7f:	4f 85 5c 6d 15       	test   QWORD PTR [r13+r13*2+0x15],r11
+   15e84:	4f 85 64 6d 15       	test   QWORD PTR [r13+r13*2+0x15],r12
+   15e89:	4f 85 6c 6d 15       	test   QWORD PTR [r13+r13*2+0x15],r13
+   15e8e:	4f 85 74 6d 15       	test   QWORD PTR [r13+r13*2+0x15],r14
+   15e93:	4f 85 7c 6d 15       	test   QWORD PTR [r13+r13*2+0x15],r15
+   15e98:	4b 85 44 6e 15       	test   QWORD PTR [r14+r13*2+0x15],rax
+   15e9d:	4b 85 4c 6e 15       	test   QWORD PTR [r14+r13*2+0x15],rcx
+   15ea2:	4b 85 54 6e 15       	test   QWORD PTR [r14+r13*2+0x15],rdx
+   15ea7:	4b 85 5c 6e 15       	test   QWORD PTR [r14+r13*2+0x15],rbx
+   15eac:	4b 85 64 6e 15       	test   QWORD PTR [r14+r13*2+0x15],rsp
+   15eb1:	4b 85 6c 6e 15       	test   QWORD PTR [r14+r13*2+0x15],rbp
+   15eb6:	4b 85 74 6e 15       	test   QWORD PTR [r14+r13*2+0x15],rsi
+   15ebb:	4b 85 7c 6e 15       	test   QWORD PTR [r14+r13*2+0x15],rdi
+   15ec0:	4f 85 44 6e 15       	test   QWORD PTR [r14+r13*2+0x15],r8
+   15ec5:	4f 85 4c 6e 15       	test   QWORD PTR [r14+r13*2+0x15],r9
+   15eca:	4f 85 54 6e 15       	test   QWORD PTR [r14+r13*2+0x15],r10
+   15ecf:	4f 85 5c 6e 15       	test   QWORD PTR [r14+r13*2+0x15],r11
+   15ed4:	4f 85 64 6e 15       	test   QWORD PTR [r14+r13*2+0x15],r12
+   15ed9:	4f 85 6c 6e 15       	test   QWORD PTR [r14+r13*2+0x15],r13
+   15ede:	4f 85 74 6e 15       	test   QWORD PTR [r14+r13*2+0x15],r14
+   15ee3:	4f 85 7c 6e 15       	test   QWORD PTR [r14+r13*2+0x15],r15
+   15ee8:	4b 85 44 6f 15       	test   QWORD PTR [r15+r13*2+0x15],rax
+   15eed:	4b 85 4c 6f 15       	test   QWORD PTR [r15+r13*2+0x15],rcx
+   15ef2:	4b 85 54 6f 15       	test   QWORD PTR [r15+r13*2+0x15],rdx
+   15ef7:	4b 85 5c 6f 15       	test   QWORD PTR [r15+r13*2+0x15],rbx
+   15efc:	4b 85 64 6f 15       	test   QWORD PTR [r15+r13*2+0x15],rsp
+   15f01:	4b 85 6c 6f 15       	test   QWORD PTR [r15+r13*2+0x15],rbp
+   15f06:	4b 85 74 6f 15       	test   QWORD PTR [r15+r13*2+0x15],rsi
+   15f0b:	4b 85 7c 6f 15       	test   QWORD PTR [r15+r13*2+0x15],rdi
+   15f10:	4f 85 44 6f 15       	test   QWORD PTR [r15+r13*2+0x15],r8
+   15f15:	4f 85 4c 6f 15       	test   QWORD PTR [r15+r13*2+0x15],r9
+   15f1a:	4f 85 54 6f 15       	test   QWORD PTR [r15+r13*2+0x15],r10
+   15f1f:	4f 85 5c 6f 15       	test   QWORD PTR [r15+r13*2+0x15],r11
+   15f24:	4f 85 64 6f 15       	test   QWORD PTR [r15+r13*2+0x15],r12
+   15f29:	4f 85 6c 6f 15       	test   QWORD PTR [r15+r13*2+0x15],r13
+   15f2e:	4f 85 74 6f 15       	test   QWORD PTR [r15+r13*2+0x15],r14
+   15f33:	4f 85 7c 6f 15       	test   QWORD PTR [r15+r13*2+0x15],r15
+   15f38:	42 85 44 68 15       	test   DWORD PTR [rax+r13*2+0x15],eax
+   15f3d:	42 85 4c 68 15       	test   DWORD PTR [rax+r13*2+0x15],ecx
+   15f42:	42 85 54 68 15       	test   DWORD PTR [rax+r13*2+0x15],edx
+   15f47:	42 85 5c 68 15       	test   DWORD PTR [rax+r13*2+0x15],ebx
+   15f4c:	42 85 64 68 15       	test   DWORD PTR [rax+r13*2+0x15],esp
+   15f51:	42 85 6c 68 15       	test   DWORD PTR [rax+r13*2+0x15],ebp
+   15f56:	42 85 74 68 15       	test   DWORD PTR [rax+r13*2+0x15],esi
+   15f5b:	42 85 7c 68 15       	test   DWORD PTR [rax+r13*2+0x15],edi
+   15f60:	46 85 44 68 15       	test   DWORD PTR [rax+r13*2+0x15],r8d
+   15f65:	46 85 4c 68 15       	test   DWORD PTR [rax+r13*2+0x15],r9d
+   15f6a:	46 85 54 68 15       	test   DWORD PTR [rax+r13*2+0x15],r10d
+   15f6f:	46 85 5c 68 15       	test   DWORD PTR [rax+r13*2+0x15],r11d
+   15f74:	46 85 64 68 15       	test   DWORD PTR [rax+r13*2+0x15],r12d
+   15f79:	46 85 6c 68 15       	test   DWORD PTR [rax+r13*2+0x15],r13d
+   15f7e:	46 85 74 68 15       	test   DWORD PTR [rax+r13*2+0x15],r14d
+   15f83:	46 85 7c 68 15       	test   DWORD PTR [rax+r13*2+0x15],r15d
+   15f88:	42 85 44 69 15       	test   DWORD PTR [rcx+r13*2+0x15],eax
+   15f8d:	42 85 4c 69 15       	test   DWORD PTR [rcx+r13*2+0x15],ecx
+   15f92:	42 85 54 69 15       	test   DWORD PTR [rcx+r13*2+0x15],edx
+   15f97:	42 85 5c 69 15       	test   DWORD PTR [rcx+r13*2+0x15],ebx
+   15f9c:	42 85 64 69 15       	test   DWORD PTR [rcx+r13*2+0x15],esp
+   15fa1:	42 85 6c 69 15       	test   DWORD PTR [rcx+r13*2+0x15],ebp
+   15fa6:	42 85 74 69 15       	test   DWORD PTR [rcx+r13*2+0x15],esi
+   15fab:	42 85 7c 69 15       	test   DWORD PTR [rcx+r13*2+0x15],edi
+   15fb0:	46 85 44 69 15       	test   DWORD PTR [rcx+r13*2+0x15],r8d
+   15fb5:	46 85 4c 69 15       	test   DWORD PTR [rcx+r13*2+0x15],r9d
+   15fba:	46 85 54 69 15       	test   DWORD PTR [rcx+r13*2+0x15],r10d
+   15fbf:	46 85 5c 69 15       	test   DWORD PTR [rcx+r13*2+0x15],r11d
+   15fc4:	46 85 64 69 15       	test   DWORD PTR [rcx+r13*2+0x15],r12d
+   15fc9:	46 85 6c 69 15       	test   DWORD PTR [rcx+r13*2+0x15],r13d
+   15fce:	46 85 74 69 15       	test   DWORD PTR [rcx+r13*2+0x15],r14d
+   15fd3:	46 85 7c 69 15       	test   DWORD PTR [rcx+r13*2+0x15],r15d
+   15fd8:	42 85 44 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],eax
+   15fdd:	42 85 4c 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],ecx
+   15fe2:	42 85 54 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],edx
+   15fe7:	42 85 5c 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],ebx
+   15fec:	42 85 64 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],esp
+   15ff1:	42 85 6c 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],ebp
+   15ff6:	42 85 74 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],esi
+   15ffb:	42 85 7c 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],edi
+   16000:	46 85 44 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],r8d
+   16005:	46 85 4c 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],r9d
+   1600a:	46 85 54 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],r10d
+   1600f:	46 85 5c 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],r11d
+   16014:	46 85 64 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],r12d
+   16019:	46 85 6c 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],r13d
+   1601e:	46 85 74 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],r14d
+   16023:	46 85 7c 6a 15       	test   DWORD PTR [rdx+r13*2+0x15],r15d
+   16028:	42 85 44 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],eax
+   1602d:	42 85 4c 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],ecx
+   16032:	42 85 54 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],edx
+   16037:	42 85 5c 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],ebx
+   1603c:	42 85 64 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],esp
+   16041:	42 85 6c 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],ebp
+   16046:	42 85 74 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],esi
+   1604b:	42 85 7c 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],edi
+   16050:	46 85 44 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],r8d
+   16055:	46 85 4c 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],r9d
+   1605a:	46 85 54 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],r10d
+   1605f:	46 85 5c 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],r11d
+   16064:	46 85 64 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],r12d
+   16069:	46 85 6c 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],r13d
+   1606e:	46 85 74 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],r14d
+   16073:	46 85 7c 6b 15       	test   DWORD PTR [rbx+r13*2+0x15],r15d
+   16078:	42 85 44 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],eax
+   1607d:	42 85 4c 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],ecx
+   16082:	42 85 54 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],edx
+   16087:	42 85 5c 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],ebx
+   1608c:	42 85 64 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],esp
+   16091:	42 85 6c 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],ebp
+   16096:	42 85 74 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],esi
+   1609b:	42 85 7c 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],edi
+   160a0:	46 85 44 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],r8d
+   160a5:	46 85 4c 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],r9d
+   160aa:	46 85 54 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],r10d
+   160af:	46 85 5c 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],r11d
+   160b4:	46 85 64 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],r12d
+   160b9:	46 85 6c 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],r13d
+   160be:	46 85 74 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],r14d
+   160c3:	46 85 7c 6c 15       	test   DWORD PTR [rsp+r13*2+0x15],r15d
+   160c8:	42 85 44 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],eax
+   160cd:	42 85 4c 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],ecx
+   160d2:	42 85 54 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],edx
+   160d7:	42 85 5c 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],ebx
+   160dc:	42 85 64 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],esp
+   160e1:	42 85 6c 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],ebp
+   160e6:	42 85 74 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],esi
+   160eb:	42 85 7c 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],edi
+   160f0:	46 85 44 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],r8d
+   160f5:	46 85 4c 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],r9d
+   160fa:	46 85 54 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],r10d
+   160ff:	46 85 5c 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],r11d
+   16104:	46 85 64 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],r12d
+   16109:	46 85 6c 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],r13d
+   1610e:	46 85 74 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],r14d
+   16113:	46 85 7c 6d 15       	test   DWORD PTR [rbp+r13*2+0x15],r15d
+   16118:	42 85 44 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],eax
+   1611d:	42 85 4c 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],ecx
+   16122:	42 85 54 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],edx
+   16127:	42 85 5c 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],ebx
+   1612c:	42 85 64 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],esp
+   16131:	42 85 6c 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],ebp
+   16136:	42 85 74 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],esi
+   1613b:	42 85 7c 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],edi
+   16140:	46 85 44 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],r8d
+   16145:	46 85 4c 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],r9d
+   1614a:	46 85 54 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],r10d
+   1614f:	46 85 5c 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],r11d
+   16154:	46 85 64 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],r12d
+   16159:	46 85 6c 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],r13d
+   1615e:	46 85 74 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],r14d
+   16163:	46 85 7c 6e 15       	test   DWORD PTR [rsi+r13*2+0x15],r15d
+   16168:	42 85 44 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],eax
+   1616d:	42 85 4c 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],ecx
+   16172:	42 85 54 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],edx
+   16177:	42 85 5c 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],ebx
+   1617c:	42 85 64 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],esp
+   16181:	42 85 6c 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],ebp
+   16186:	42 85 74 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],esi
+   1618b:	42 85 7c 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],edi
+   16190:	46 85 44 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],r8d
+   16195:	46 85 4c 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],r9d
+   1619a:	46 85 54 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],r10d
+   1619f:	46 85 5c 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],r11d
+   161a4:	46 85 64 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],r12d
+   161a9:	46 85 6c 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],r13d
+   161ae:	46 85 74 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],r14d
+   161b3:	46 85 7c 6f 15       	test   DWORD PTR [rdi+r13*2+0x15],r15d
+   161b8:	43 85 44 68 15       	test   DWORD PTR [r8+r13*2+0x15],eax
+   161bd:	43 85 4c 68 15       	test   DWORD PTR [r8+r13*2+0x15],ecx
+   161c2:	43 85 54 68 15       	test   DWORD PTR [r8+r13*2+0x15],edx
+   161c7:	43 85 5c 68 15       	test   DWORD PTR [r8+r13*2+0x15],ebx
+   161cc:	43 85 64 68 15       	test   DWORD PTR [r8+r13*2+0x15],esp
+   161d1:	43 85 6c 68 15       	test   DWORD PTR [r8+r13*2+0x15],ebp
+   161d6:	43 85 74 68 15       	test   DWORD PTR [r8+r13*2+0x15],esi
+   161db:	43 85 7c 68 15       	test   DWORD PTR [r8+r13*2+0x15],edi
+   161e0:	47 85 44 68 15       	test   DWORD PTR [r8+r13*2+0x15],r8d
+   161e5:	47 85 4c 68 15       	test   DWORD PTR [r8+r13*2+0x15],r9d
+   161ea:	47 85 54 68 15       	test   DWORD PTR [r8+r13*2+0x15],r10d
+   161ef:	47 85 5c 68 15       	test   DWORD PTR [r8+r13*2+0x15],r11d
+   161f4:	47 85 64 68 15       	test   DWORD PTR [r8+r13*2+0x15],r12d
+   161f9:	47 85 6c 68 15       	test   DWORD PTR [r8+r13*2+0x15],r13d
+   161fe:	47 85 74 68 15       	test   DWORD PTR [r8+r13*2+0x15],r14d
+   16203:	47 85 7c 68 15       	test   DWORD PTR [r8+r13*2+0x15],r15d
+   16208:	43 85 44 69 15       	test   DWORD PTR [r9+r13*2+0x15],eax
+   1620d:	43 85 4c 69 15       	test   DWORD PTR [r9+r13*2+0x15],ecx
+   16212:	43 85 54 69 15       	test   DWORD PTR [r9+r13*2+0x15],edx
+   16217:	43 85 5c 69 15       	test   DWORD PTR [r9+r13*2+0x15],ebx
+   1621c:	43 85 64 69 15       	test   DWORD PTR [r9+r13*2+0x15],esp
+   16221:	43 85 6c 69 15       	test   DWORD PTR [r9+r13*2+0x15],ebp
+   16226:	43 85 74 69 15       	test   DWORD PTR [r9+r13*2+0x15],esi
+   1622b:	43 85 7c 69 15       	test   DWORD PTR [r9+r13*2+0x15],edi
+   16230:	47 85 44 69 15       	test   DWORD PTR [r9+r13*2+0x15],r8d
+   16235:	47 85 4c 69 15       	test   DWORD PTR [r9+r13*2+0x15],r9d
+   1623a:	47 85 54 69 15       	test   DWORD PTR [r9+r13*2+0x15],r10d
+   1623f:	47 85 5c 69 15       	test   DWORD PTR [r9+r13*2+0x15],r11d
+   16244:	47 85 64 69 15       	test   DWORD PTR [r9+r13*2+0x15],r12d
+   16249:	47 85 6c 69 15       	test   DWORD PTR [r9+r13*2+0x15],r13d
+   1624e:	47 85 74 69 15       	test   DWORD PTR [r9+r13*2+0x15],r14d
+   16253:	47 85 7c 69 15       	test   DWORD PTR [r9+r13*2+0x15],r15d
+   16258:	43 85 44 6a 15       	test   DWORD PTR [r10+r13*2+0x15],eax
+   1625d:	43 85 4c 6a 15       	test   DWORD PTR [r10+r13*2+0x15],ecx
+   16262:	43 85 54 6a 15       	test   DWORD PTR [r10+r13*2+0x15],edx
+   16267:	43 85 5c 6a 15       	test   DWORD PTR [r10+r13*2+0x15],ebx
+   1626c:	43 85 64 6a 15       	test   DWORD PTR [r10+r13*2+0x15],esp
+   16271:	43 85 6c 6a 15       	test   DWORD PTR [r10+r13*2+0x15],ebp
+   16276:	43 85 74 6a 15       	test   DWORD PTR [r10+r13*2+0x15],esi
+   1627b:	43 85 7c 6a 15       	test   DWORD PTR [r10+r13*2+0x15],edi
+   16280:	47 85 44 6a 15       	test   DWORD PTR [r10+r13*2+0x15],r8d
+   16285:	47 85 4c 6a 15       	test   DWORD PTR [r10+r13*2+0x15],r9d
+   1628a:	47 85 54 6a 15       	test   DWORD PTR [r10+r13*2+0x15],r10d
+   1628f:	47 85 5c 6a 15       	test   DWORD PTR [r10+r13*2+0x15],r11d
+   16294:	47 85 64 6a 15       	test   DWORD PTR [r10+r13*2+0x15],r12d
+   16299:	47 85 6c 6a 15       	test   DWORD PTR [r10+r13*2+0x15],r13d
+   1629e:	47 85 74 6a 15       	test   DWORD PTR [r10+r13*2+0x15],r14d
+   162a3:	47 85 7c 6a 15       	test   DWORD PTR [r10+r13*2+0x15],r15d
+   162a8:	43 85 44 6b 15       	test   DWORD PTR [r11+r13*2+0x15],eax
+   162ad:	43 85 4c 6b 15       	test   DWORD PTR [r11+r13*2+0x15],ecx
+   162b2:	43 85 54 6b 15       	test   DWORD PTR [r11+r13*2+0x15],edx
+   162b7:	43 85 5c 6b 15       	test   DWORD PTR [r11+r13*2+0x15],ebx
+   162bc:	43 85 64 6b 15       	test   DWORD PTR [r11+r13*2+0x15],esp
+   162c1:	43 85 6c 6b 15       	test   DWORD PTR [r11+r13*2+0x15],ebp
+   162c6:	43 85 74 6b 15       	test   DWORD PTR [r11+r13*2+0x15],esi
+   162cb:	43 85 7c 6b 15       	test   DWORD PTR [r11+r13*2+0x15],edi
+   162d0:	47 85 44 6b 15       	test   DWORD PTR [r11+r13*2+0x15],r8d
+   162d5:	47 85 4c 6b 15       	test   DWORD PTR [r11+r13*2+0x15],r9d
+   162da:	47 85 54 6b 15       	test   DWORD PTR [r11+r13*2+0x15],r10d
+   162df:	47 85 5c 6b 15       	test   DWORD PTR [r11+r13*2+0x15],r11d
+   162e4:	47 85 64 6b 15       	test   DWORD PTR [r11+r13*2+0x15],r12d
+   162e9:	47 85 6c 6b 15       	test   DWORD PTR [r11+r13*2+0x15],r13d
+   162ee:	47 85 74 6b 15       	test   DWORD PTR [r11+r13*2+0x15],r14d
+   162f3:	47 85 7c 6b 15       	test   DWORD PTR [r11+r13*2+0x15],r15d
+   162f8:	43 85 44 6c 15       	test   DWORD PTR [r12+r13*2+0x15],eax
+   162fd:	43 85 4c 6c 15       	test   DWORD PTR [r12+r13*2+0x15],ecx
+   16302:	43 85 54 6c 15       	test   DWORD PTR [r12+r13*2+0x15],edx
+   16307:	43 85 5c 6c 15       	test   DWORD PTR [r12+r13*2+0x15],ebx
+   1630c:	43 85 64 6c 15       	test   DWORD PTR [r12+r13*2+0x15],esp
+   16311:	43 85 6c 6c 15       	test   DWORD PTR [r12+r13*2+0x15],ebp
+   16316:	43 85 74 6c 15       	test   DWORD PTR [r12+r13*2+0x15],esi
+   1631b:	43 85 7c 6c 15       	test   DWORD PTR [r12+r13*2+0x15],edi
+   16320:	47 85 44 6c 15       	test   DWORD PTR [r12+r13*2+0x15],r8d
+   16325:	47 85 4c 6c 15       	test   DWORD PTR [r12+r13*2+0x15],r9d
+   1632a:	47 85 54 6c 15       	test   DWORD PTR [r12+r13*2+0x15],r10d
+   1632f:	47 85 5c 6c 15       	test   DWORD PTR [r12+r13*2+0x15],r11d
+   16334:	47 85 64 6c 15       	test   DWORD PTR [r12+r13*2+0x15],r12d
+   16339:	47 85 6c 6c 15       	test   DWORD PTR [r12+r13*2+0x15],r13d
+   1633e:	47 85 74 6c 15       	test   DWORD PTR [r12+r13*2+0x15],r14d
+   16343:	47 85 7c 6c 15       	test   DWORD PTR [r12+r13*2+0x15],r15d
+   16348:	43 85 44 6d 15       	test   DWORD PTR [r13+r13*2+0x15],eax
+   1634d:	43 85 4c 6d 15       	test   DWORD PTR [r13+r13*2+0x15],ecx
+   16352:	43 85 54 6d 15       	test   DWORD PTR [r13+r13*2+0x15],edx
+   16357:	43 85 5c 6d 15       	test   DWORD PTR [r13+r13*2+0x15],ebx
+   1635c:	43 85 64 6d 15       	test   DWORD PTR [r13+r13*2+0x15],esp
+   16361:	43 85 6c 6d 15       	test   DWORD PTR [r13+r13*2+0x15],ebp
+   16366:	43 85 74 6d 15       	test   DWORD PTR [r13+r13*2+0x15],esi
+   1636b:	43 85 7c 6d 15       	test   DWORD PTR [r13+r13*2+0x15],edi
+   16370:	47 85 44 6d 15       	test   DWORD PTR [r13+r13*2+0x15],r8d
+   16375:	47 85 4c 6d 15       	test   DWORD PTR [r13+r13*2+0x15],r9d
+   1637a:	47 85 54 6d 15       	test   DWORD PTR [r13+r13*2+0x15],r10d
+   1637f:	47 85 5c 6d 15       	test   DWORD PTR [r13+r13*2+0x15],r11d
+   16384:	47 85 64 6d 15       	test   DWORD PTR [r13+r13*2+0x15],r12d
+   16389:	47 85 6c 6d 15       	test   DWORD PTR [r13+r13*2+0x15],r13d
+   1638e:	47 85 74 6d 15       	test   DWORD PTR [r13+r13*2+0x15],r14d
+   16393:	47 85 7c 6d 15       	test   DWORD PTR [r13+r13*2+0x15],r15d
+   16398:	43 85 44 6e 15       	test   DWORD PTR [r14+r13*2+0x15],eax
+   1639d:	43 85 4c 6e 15       	test   DWORD PTR [r14+r13*2+0x15],ecx
+   163a2:	43 85 54 6e 15       	test   DWORD PTR [r14+r13*2+0x15],edx
+   163a7:	43 85 5c 6e 15       	test   DWORD PTR [r14+r13*2+0x15],ebx
+   163ac:	43 85 64 6e 15       	test   DWORD PTR [r14+r13*2+0x15],esp
+   163b1:	43 85 6c 6e 15       	test   DWORD PTR [r14+r13*2+0x15],ebp
+   163b6:	43 85 74 6e 15       	test   DWORD PTR [r14+r13*2+0x15],esi
+   163bb:	43 85 7c 6e 15       	test   DWORD PTR [r14+r13*2+0x15],edi
+   163c0:	47 85 44 6e 15       	test   DWORD PTR [r14+r13*2+0x15],r8d
+   163c5:	47 85 4c 6e 15       	test   DWORD PTR [r14+r13*2+0x15],r9d
+   163ca:	47 85 54 6e 15       	test   DWORD PTR [r14+r13*2+0x15],r10d
+   163cf:	47 85 5c 6e 15       	test   DWORD PTR [r14+r13*2+0x15],r11d
+   163d4:	47 85 64 6e 15       	test   DWORD PTR [r14+r13*2+0x15],r12d
+   163d9:	47 85 6c 6e 15       	test   DWORD PTR [r14+r13*2+0x15],r13d
+   163de:	47 85 74 6e 15       	test   DWORD PTR [r14+r13*2+0x15],r14d
+   163e3:	47 85 7c 6e 15       	test   DWORD PTR [r14+r13*2+0x15],r15d
+   163e8:	43 85 44 6f 15       	test   DWORD PTR [r15+r13*2+0x15],eax
+   163ed:	43 85 4c 6f 15       	test   DWORD PTR [r15+r13*2+0x15],ecx
+   163f2:	43 85 54 6f 15       	test   DWORD PTR [r15+r13*2+0x15],edx
+   163f7:	43 85 5c 6f 15       	test   DWORD PTR [r15+r13*2+0x15],ebx
+   163fc:	43 85 64 6f 15       	test   DWORD PTR [r15+r13*2+0x15],esp
+   16401:	43 85 6c 6f 15       	test   DWORD PTR [r15+r13*2+0x15],ebp
+   16406:	43 85 74 6f 15       	test   DWORD PTR [r15+r13*2+0x15],esi
+   1640b:	43 85 7c 6f 15       	test   DWORD PTR [r15+r13*2+0x15],edi
+   16410:	47 85 44 6f 15       	test   DWORD PTR [r15+r13*2+0x15],r8d
+   16415:	47 85 4c 6f 15       	test   DWORD PTR [r15+r13*2+0x15],r9d
+   1641a:	47 85 54 6f 15       	test   DWORD PTR [r15+r13*2+0x15],r10d
+   1641f:	47 85 5c 6f 15       	test   DWORD PTR [r15+r13*2+0x15],r11d
+   16424:	47 85 64 6f 15       	test   DWORD PTR [r15+r13*2+0x15],r12d
+   16429:	47 85 6c 6f 15       	test   DWORD PTR [r15+r13*2+0x15],r13d
+   1642e:	47 85 74 6f 15       	test   DWORD PTR [r15+r13*2+0x15],r14d
+   16433:	47 85 7c 6f 15       	test   DWORD PTR [r15+r13*2+0x15],r15d
+   16438:	66 42 85 44 68 15    	test   WORD PTR [rax+r13*2+0x15],ax
+   1643e:	66 42 85 4c 68 15    	test   WORD PTR [rax+r13*2+0x15],cx
+   16444:	66 42 85 54 68 15    	test   WORD PTR [rax+r13*2+0x15],dx
+   1644a:	66 42 85 5c 68 15    	test   WORD PTR [rax+r13*2+0x15],bx
+   16450:	66 42 85 64 68 15    	test   WORD PTR [rax+r13*2+0x15],sp
+   16456:	66 42 85 6c 68 15    	test   WORD PTR [rax+r13*2+0x15],bp
+   1645c:	66 42 85 74 68 15    	test   WORD PTR [rax+r13*2+0x15],si
+   16462:	66 42 85 7c 68 15    	test   WORD PTR [rax+r13*2+0x15],di
+   16468:	66 46 85 44 68 15    	test   WORD PTR [rax+r13*2+0x15],r8w
+   1646e:	66 46 85 4c 68 15    	test   WORD PTR [rax+r13*2+0x15],r9w
+   16474:	66 46 85 54 68 15    	test   WORD PTR [rax+r13*2+0x15],r10w
+   1647a:	66 46 85 5c 68 15    	test   WORD PTR [rax+r13*2+0x15],r11w
+   16480:	66 46 85 64 68 15    	test   WORD PTR [rax+r13*2+0x15],r12w
+   16486:	66 46 85 6c 68 15    	test   WORD PTR [rax+r13*2+0x15],r13w
+   1648c:	66 46 85 74 68 15    	test   WORD PTR [rax+r13*2+0x15],r14w
+   16492:	66 46 85 7c 68 15    	test   WORD PTR [rax+r13*2+0x15],r15w
+   16498:	66 42 85 44 69 15    	test   WORD PTR [rcx+r13*2+0x15],ax
+   1649e:	66 42 85 4c 69 15    	test   WORD PTR [rcx+r13*2+0x15],cx
+   164a4:	66 42 85 54 69 15    	test   WORD PTR [rcx+r13*2+0x15],dx
+   164aa:	66 42 85 5c 69 15    	test   WORD PTR [rcx+r13*2+0x15],bx
+   164b0:	66 42 85 64 69 15    	test   WORD PTR [rcx+r13*2+0x15],sp
+   164b6:	66 42 85 6c 69 15    	test   WORD PTR [rcx+r13*2+0x15],bp
+   164bc:	66 42 85 74 69 15    	test   WORD PTR [rcx+r13*2+0x15],si
+   164c2:	66 42 85 7c 69 15    	test   WORD PTR [rcx+r13*2+0x15],di
+   164c8:	66 46 85 44 69 15    	test   WORD PTR [rcx+r13*2+0x15],r8w
+   164ce:	66 46 85 4c 69 15    	test   WORD PTR [rcx+r13*2+0x15],r9w
+   164d4:	66 46 85 54 69 15    	test   WORD PTR [rcx+r13*2+0x15],r10w
+   164da:	66 46 85 5c 69 15    	test   WORD PTR [rcx+r13*2+0x15],r11w
+   164e0:	66 46 85 64 69 15    	test   WORD PTR [rcx+r13*2+0x15],r12w
+   164e6:	66 46 85 6c 69 15    	test   WORD PTR [rcx+r13*2+0x15],r13w
+   164ec:	66 46 85 74 69 15    	test   WORD PTR [rcx+r13*2+0x15],r14w
+   164f2:	66 46 85 7c 69 15    	test   WORD PTR [rcx+r13*2+0x15],r15w
+   164f8:	66 42 85 44 6a 15    	test   WORD PTR [rdx+r13*2+0x15],ax
+   164fe:	66 42 85 4c 6a 15    	test   WORD PTR [rdx+r13*2+0x15],cx
+   16504:	66 42 85 54 6a 15    	test   WORD PTR [rdx+r13*2+0x15],dx
+   1650a:	66 42 85 5c 6a 15    	test   WORD PTR [rdx+r13*2+0x15],bx
+   16510:	66 42 85 64 6a 15    	test   WORD PTR [rdx+r13*2+0x15],sp
+   16516:	66 42 85 6c 6a 15    	test   WORD PTR [rdx+r13*2+0x15],bp
+   1651c:	66 42 85 74 6a 15    	test   WORD PTR [rdx+r13*2+0x15],si
+   16522:	66 42 85 7c 6a 15    	test   WORD PTR [rdx+r13*2+0x15],di
+   16528:	66 46 85 44 6a 15    	test   WORD PTR [rdx+r13*2+0x15],r8w
+   1652e:	66 46 85 4c 6a 15    	test   WORD PTR [rdx+r13*2+0x15],r9w
+   16534:	66 46 85 54 6a 15    	test   WORD PTR [rdx+r13*2+0x15],r10w
+   1653a:	66 46 85 5c 6a 15    	test   WORD PTR [rdx+r13*2+0x15],r11w
+   16540:	66 46 85 64 6a 15    	test   WORD PTR [rdx+r13*2+0x15],r12w
+   16546:	66 46 85 6c 6a 15    	test   WORD PTR [rdx+r13*2+0x15],r13w
+   1654c:	66 46 85 74 6a 15    	test   WORD PTR [rdx+r13*2+0x15],r14w
+   16552:	66 46 85 7c 6a 15    	test   WORD PTR [rdx+r13*2+0x15],r15w
+   16558:	66 42 85 44 6b 15    	test   WORD PTR [rbx+r13*2+0x15],ax
+   1655e:	66 42 85 4c 6b 15    	test   WORD PTR [rbx+r13*2+0x15],cx
+   16564:	66 42 85 54 6b 15    	test   WORD PTR [rbx+r13*2+0x15],dx
+   1656a:	66 42 85 5c 6b 15    	test   WORD PTR [rbx+r13*2+0x15],bx
+   16570:	66 42 85 64 6b 15    	test   WORD PTR [rbx+r13*2+0x15],sp
+   16576:	66 42 85 6c 6b 15    	test   WORD PTR [rbx+r13*2+0x15],bp
+   1657c:	66 42 85 74 6b 15    	test   WORD PTR [rbx+r13*2+0x15],si
+   16582:	66 42 85 7c 6b 15    	test   WORD PTR [rbx+r13*2+0x15],di
+   16588:	66 46 85 44 6b 15    	test   WORD PTR [rbx+r13*2+0x15],r8w
+   1658e:	66 46 85 4c 6b 15    	test   WORD PTR [rbx+r13*2+0x15],r9w
+   16594:	66 46 85 54 6b 15    	test   WORD PTR [rbx+r13*2+0x15],r10w
+   1659a:	66 46 85 5c 6b 15    	test   WORD PTR [rbx+r13*2+0x15],r11w
+   165a0:	66 46 85 64 6b 15    	test   WORD PTR [rbx+r13*2+0x15],r12w
+   165a6:	66 46 85 6c 6b 15    	test   WORD PTR [rbx+r13*2+0x15],r13w
+   165ac:	66 46 85 74 6b 15    	test   WORD PTR [rbx+r13*2+0x15],r14w
+   165b2:	66 46 85 7c 6b 15    	test   WORD PTR [rbx+r13*2+0x15],r15w
+   165b8:	66 42 85 44 6c 15    	test   WORD PTR [rsp+r13*2+0x15],ax
+   165be:	66 42 85 4c 6c 15    	test   WORD PTR [rsp+r13*2+0x15],cx
+   165c4:	66 42 85 54 6c 15    	test   WORD PTR [rsp+r13*2+0x15],dx
+   165ca:	66 42 85 5c 6c 15    	test   WORD PTR [rsp+r13*2+0x15],bx
+   165d0:	66 42 85 64 6c 15    	test   WORD PTR [rsp+r13*2+0x15],sp
+   165d6:	66 42 85 6c 6c 15    	test   WORD PTR [rsp+r13*2+0x15],bp
+   165dc:	66 42 85 74 6c 15    	test   WORD PTR [rsp+r13*2+0x15],si
+   165e2:	66 42 85 7c 6c 15    	test   WORD PTR [rsp+r13*2+0x15],di
+   165e8:	66 46 85 44 6c 15    	test   WORD PTR [rsp+r13*2+0x15],r8w
+   165ee:	66 46 85 4c 6c 15    	test   WORD PTR [rsp+r13*2+0x15],r9w
+   165f4:	66 46 85 54 6c 15    	test   WORD PTR [rsp+r13*2+0x15],r10w
+   165fa:	66 46 85 5c 6c 15    	test   WORD PTR [rsp+r13*2+0x15],r11w
+   16600:	66 46 85 64 6c 15    	test   WORD PTR [rsp+r13*2+0x15],r12w
+   16606:	66 46 85 6c 6c 15    	test   WORD PTR [rsp+r13*2+0x15],r13w
+   1660c:	66 46 85 74 6c 15    	test   WORD PTR [rsp+r13*2+0x15],r14w
+   16612:	66 46 85 7c 6c 15    	test   WORD PTR [rsp+r13*2+0x15],r15w
+   16618:	66 42 85 44 6d 15    	test   WORD PTR [rbp+r13*2+0x15],ax
+   1661e:	66 42 85 4c 6d 15    	test   WORD PTR [rbp+r13*2+0x15],cx
+   16624:	66 42 85 54 6d 15    	test   WORD PTR [rbp+r13*2+0x15],dx
+   1662a:	66 42 85 5c 6d 15    	test   WORD PTR [rbp+r13*2+0x15],bx
+   16630:	66 42 85 64 6d 15    	test   WORD PTR [rbp+r13*2+0x15],sp
+   16636:	66 42 85 6c 6d 15    	test   WORD PTR [rbp+r13*2+0x15],bp
+   1663c:	66 42 85 74 6d 15    	test   WORD PTR [rbp+r13*2+0x15],si
+   16642:	66 42 85 7c 6d 15    	test   WORD PTR [rbp+r13*2+0x15],di
+   16648:	66 46 85 44 6d 15    	test   WORD PTR [rbp+r13*2+0x15],r8w
+   1664e:	66 46 85 4c 6d 15    	test   WORD PTR [rbp+r13*2+0x15],r9w
+   16654:	66 46 85 54 6d 15    	test   WORD PTR [rbp+r13*2+0x15],r10w
+   1665a:	66 46 85 5c 6d 15    	test   WORD PTR [rbp+r13*2+0x15],r11w
+   16660:	66 46 85 64 6d 15    	test   WORD PTR [rbp+r13*2+0x15],r12w
+   16666:	66 46 85 6c 6d 15    	test   WORD PTR [rbp+r13*2+0x15],r13w
+   1666c:	66 46 85 74 6d 15    	test   WORD PTR [rbp+r13*2+0x15],r14w
+   16672:	66 46 85 7c 6d 15    	test   WORD PTR [rbp+r13*2+0x15],r15w
+   16678:	66 42 85 44 6e 15    	test   WORD PTR [rsi+r13*2+0x15],ax
+   1667e:	66 42 85 4c 6e 15    	test   WORD PTR [rsi+r13*2+0x15],cx
+   16684:	66 42 85 54 6e 15    	test   WORD PTR [rsi+r13*2+0x15],dx
+   1668a:	66 42 85 5c 6e 15    	test   WORD PTR [rsi+r13*2+0x15],bx
+   16690:	66 42 85 64 6e 15    	test   WORD PTR [rsi+r13*2+0x15],sp
+   16696:	66 42 85 6c 6e 15    	test   WORD PTR [rsi+r13*2+0x15],bp
+   1669c:	66 42 85 74 6e 15    	test   WORD PTR [rsi+r13*2+0x15],si
+   166a2:	66 42 85 7c 6e 15    	test   WORD PTR [rsi+r13*2+0x15],di
+   166a8:	66 46 85 44 6e 15    	test   WORD PTR [rsi+r13*2+0x15],r8w
+   166ae:	66 46 85 4c 6e 15    	test   WORD PTR [rsi+r13*2+0x15],r9w
+   166b4:	66 46 85 54 6e 15    	test   WORD PTR [rsi+r13*2+0x15],r10w
+   166ba:	66 46 85 5c 6e 15    	test   WORD PTR [rsi+r13*2+0x15],r11w
+   166c0:	66 46 85 64 6e 15    	test   WORD PTR [rsi+r13*2+0x15],r12w
+   166c6:	66 46 85 6c 6e 15    	test   WORD PTR [rsi+r13*2+0x15],r13w
+   166cc:	66 46 85 74 6e 15    	test   WORD PTR [rsi+r13*2+0x15],r14w
+   166d2:	66 46 85 7c 6e 15    	test   WORD PTR [rsi+r13*2+0x15],r15w
+   166d8:	66 42 85 44 6f 15    	test   WORD PTR [rdi+r13*2+0x15],ax
+   166de:	66 42 85 4c 6f 15    	test   WORD PTR [rdi+r13*2+0x15],cx
+   166e4:	66 42 85 54 6f 15    	test   WORD PTR [rdi+r13*2+0x15],dx
+   166ea:	66 42 85 5c 6f 15    	test   WORD PTR [rdi+r13*2+0x15],bx
+   166f0:	66 42 85 64 6f 15    	test   WORD PTR [rdi+r13*2+0x15],sp
+   166f6:	66 42 85 6c 6f 15    	test   WORD PTR [rdi+r13*2+0x15],bp
+   166fc:	66 42 85 74 6f 15    	test   WORD PTR [rdi+r13*2+0x15],si
+   16702:	66 42 85 7c 6f 15    	test   WORD PTR [rdi+r13*2+0x15],di
+   16708:	66 46 85 44 6f 15    	test   WORD PTR [rdi+r13*2+0x15],r8w
+   1670e:	66 46 85 4c 6f 15    	test   WORD PTR [rdi+r13*2+0x15],r9w
+   16714:	66 46 85 54 6f 15    	test   WORD PTR [rdi+r13*2+0x15],r10w
+   1671a:	66 46 85 5c 6f 15    	test   WORD PTR [rdi+r13*2+0x15],r11w
+   16720:	66 46 85 64 6f 15    	test   WORD PTR [rdi+r13*2+0x15],r12w
+   16726:	66 46 85 6c 6f 15    	test   WORD PTR [rdi+r13*2+0x15],r13w
+   1672c:	66 46 85 74 6f 15    	test   WORD PTR [rdi+r13*2+0x15],r14w
+   16732:	66 46 85 7c 6f 15    	test   WORD PTR [rdi+r13*2+0x15],r15w
+   16738:	66 43 85 44 68 15    	test   WORD PTR [r8+r13*2+0x15],ax
+   1673e:	66 43 85 4c 68 15    	test   WORD PTR [r8+r13*2+0x15],cx
+   16744:	66 43 85 54 68 15    	test   WORD PTR [r8+r13*2+0x15],dx
+   1674a:	66 43 85 5c 68 15    	test   WORD PTR [r8+r13*2+0x15],bx
+   16750:	66 43 85 64 68 15    	test   WORD PTR [r8+r13*2+0x15],sp
+   16756:	66 43 85 6c 68 15    	test   WORD PTR [r8+r13*2+0x15],bp
+   1675c:	66 43 85 74 68 15    	test   WORD PTR [r8+r13*2+0x15],si
+   16762:	66 43 85 7c 68 15    	test   WORD PTR [r8+r13*2+0x15],di
+   16768:	66 47 85 44 68 15    	test   WORD PTR [r8+r13*2+0x15],r8w
+   1676e:	66 47 85 4c 68 15    	test   WORD PTR [r8+r13*2+0x15],r9w
+   16774:	66 47 85 54 68 15    	test   WORD PTR [r8+r13*2+0x15],r10w
+   1677a:	66 47 85 5c 68 15    	test   WORD PTR [r8+r13*2+0x15],r11w
+   16780:	66 47 85 64 68 15    	test   WORD PTR [r8+r13*2+0x15],r12w
+   16786:	66 47 85 6c 68 15    	test   WORD PTR [r8+r13*2+0x15],r13w
+   1678c:	66 47 85 74 68 15    	test   WORD PTR [r8+r13*2+0x15],r14w
+   16792:	66 47 85 7c 68 15    	test   WORD PTR [r8+r13*2+0x15],r15w
+   16798:	66 43 85 44 69 15    	test   WORD PTR [r9+r13*2+0x15],ax
+   1679e:	66 43 85 4c 69 15    	test   WORD PTR [r9+r13*2+0x15],cx
+   167a4:	66 43 85 54 69 15    	test   WORD PTR [r9+r13*2+0x15],dx
+   167aa:	66 43 85 5c 69 15    	test   WORD PTR [r9+r13*2+0x15],bx
+   167b0:	66 43 85 64 69 15    	test   WORD PTR [r9+r13*2+0x15],sp
+   167b6:	66 43 85 6c 69 15    	test   WORD PTR [r9+r13*2+0x15],bp
+   167bc:	66 43 85 74 69 15    	test   WORD PTR [r9+r13*2+0x15],si
+   167c2:	66 43 85 7c 69 15    	test   WORD PTR [r9+r13*2+0x15],di
+   167c8:	66 47 85 44 69 15    	test   WORD PTR [r9+r13*2+0x15],r8w
+   167ce:	66 47 85 4c 69 15    	test   WORD PTR [r9+r13*2+0x15],r9w
+   167d4:	66 47 85 54 69 15    	test   WORD PTR [r9+r13*2+0x15],r10w
+   167da:	66 47 85 5c 69 15    	test   WORD PTR [r9+r13*2+0x15],r11w
+   167e0:	66 47 85 64 69 15    	test   WORD PTR [r9+r13*2+0x15],r12w
+   167e6:	66 47 85 6c 69 15    	test   WORD PTR [r9+r13*2+0x15],r13w
+   167ec:	66 47 85 74 69 15    	test   WORD PTR [r9+r13*2+0x15],r14w
+   167f2:	66 47 85 7c 69 15    	test   WORD PTR [r9+r13*2+0x15],r15w
+   167f8:	66 43 85 44 6a 15    	test   WORD PTR [r10+r13*2+0x15],ax
+   167fe:	66 43 85 4c 6a 15    	test   WORD PTR [r10+r13*2+0x15],cx
+   16804:	66 43 85 54 6a 15    	test   WORD PTR [r10+r13*2+0x15],dx
+   1680a:	66 43 85 5c 6a 15    	test   WORD PTR [r10+r13*2+0x15],bx
+   16810:	66 43 85 64 6a 15    	test   WORD PTR [r10+r13*2+0x15],sp
+   16816:	66 43 85 6c 6a 15    	test   WORD PTR [r10+r13*2+0x15],bp
+   1681c:	66 43 85 74 6a 15    	test   WORD PTR [r10+r13*2+0x15],si
+   16822:	66 43 85 7c 6a 15    	test   WORD PTR [r10+r13*2+0x15],di
+   16828:	66 47 85 44 6a 15    	test   WORD PTR [r10+r13*2+0x15],r8w
+   1682e:	66 47 85 4c 6a 15    	test   WORD PTR [r10+r13*2+0x15],r9w
+   16834:	66 47 85 54 6a 15    	test   WORD PTR [r10+r13*2+0x15],r10w
+   1683a:	66 47 85 5c 6a 15    	test   WORD PTR [r10+r13*2+0x15],r11w
+   16840:	66 47 85 64 6a 15    	test   WORD PTR [r10+r13*2+0x15],r12w
+   16846:	66 47 85 6c 6a 15    	test   WORD PTR [r10+r13*2+0x15],r13w
+   1684c:	66 47 85 74 6a 15    	test   WORD PTR [r10+r13*2+0x15],r14w
+   16852:	66 47 85 7c 6a 15    	test   WORD PTR [r10+r13*2+0x15],r15w
+   16858:	66 43 85 44 6b 15    	test   WORD PTR [r11+r13*2+0x15],ax
+   1685e:	66 43 85 4c 6b 15    	test   WORD PTR [r11+r13*2+0x15],cx
+   16864:	66 43 85 54 6b 15    	test   WORD PTR [r11+r13*2+0x15],dx
+   1686a:	66 43 85 5c 6b 15    	test   WORD PTR [r11+r13*2+0x15],bx
+   16870:	66 43 85 64 6b 15    	test   WORD PTR [r11+r13*2+0x15],sp
+   16876:	66 43 85 6c 6b 15    	test   WORD PTR [r11+r13*2+0x15],bp
+   1687c:	66 43 85 74 6b 15    	test   WORD PTR [r11+r13*2+0x15],si
+   16882:	66 43 85 7c 6b 15    	test   WORD PTR [r11+r13*2+0x15],di
+   16888:	66 47 85 44 6b 15    	test   WORD PTR [r11+r13*2+0x15],r8w
+   1688e:	66 47 85 4c 6b 15    	test   WORD PTR [r11+r13*2+0x15],r9w
+   16894:	66 47 85 54 6b 15    	test   WORD PTR [r11+r13*2+0x15],r10w
+   1689a:	66 47 85 5c 6b 15    	test   WORD PTR [r11+r13*2+0x15],r11w
+   168a0:	66 47 85 64 6b 15    	test   WORD PTR [r11+r13*2+0x15],r12w
+   168a6:	66 47 85 6c 6b 15    	test   WORD PTR [r11+r13*2+0x15],r13w
+   168ac:	66 47 85 74 6b 15    	test   WORD PTR [r11+r13*2+0x15],r14w
+   168b2:	66 47 85 7c 6b 15    	test   WORD PTR [r11+r13*2+0x15],r15w
+   168b8:	66 43 85 44 6c 15    	test   WORD PTR [r12+r13*2+0x15],ax
+   168be:	66 43 85 4c 6c 15    	test   WORD PTR [r12+r13*2+0x15],cx
+   168c4:	66 43 85 54 6c 15    	test   WORD PTR [r12+r13*2+0x15],dx
+   168ca:	66 43 85 5c 6c 15    	test   WORD PTR [r12+r13*2+0x15],bx
+   168d0:	66 43 85 64 6c 15    	test   WORD PTR [r12+r13*2+0x15],sp
+   168d6:	66 43 85 6c 6c 15    	test   WORD PTR [r12+r13*2+0x15],bp
+   168dc:	66 43 85 74 6c 15    	test   WORD PTR [r12+r13*2+0x15],si
+   168e2:	66 43 85 7c 6c 15    	test   WORD PTR [r12+r13*2+0x15],di
+   168e8:	66 47 85 44 6c 15    	test   WORD PTR [r12+r13*2+0x15],r8w
+   168ee:	66 47 85 4c 6c 15    	test   WORD PTR [r12+r13*2+0x15],r9w
+   168f4:	66 47 85 54 6c 15    	test   WORD PTR [r12+r13*2+0x15],r10w
+   168fa:	66 47 85 5c 6c 15    	test   WORD PTR [r12+r13*2+0x15],r11w
+   16900:	66 47 85 64 6c 15    	test   WORD PTR [r12+r13*2+0x15],r12w
+   16906:	66 47 85 6c 6c 15    	test   WORD PTR [r12+r13*2+0x15],r13w
+   1690c:	66 47 85 74 6c 15    	test   WORD PTR [r12+r13*2+0x15],r14w
+   16912:	66 47 85 7c 6c 15    	test   WORD PTR [r12+r13*2+0x15],r15w
+   16918:	66 43 85 44 6d 15    	test   WORD PTR [r13+r13*2+0x15],ax
+   1691e:	66 43 85 4c 6d 15    	test   WORD PTR [r13+r13*2+0x15],cx
+   16924:	66 43 85 54 6d 15    	test   WORD PTR [r13+r13*2+0x15],dx
+   1692a:	66 43 85 5c 6d 15    	test   WORD PTR [r13+r13*2+0x15],bx
+   16930:	66 43 85 64 6d 15    	test   WORD PTR [r13+r13*2+0x15],sp
+   16936:	66 43 85 6c 6d 15    	test   WORD PTR [r13+r13*2+0x15],bp
+   1693c:	66 43 85 74 6d 15    	test   WORD PTR [r13+r13*2+0x15],si
+   16942:	66 43 85 7c 6d 15    	test   WORD PTR [r13+r13*2+0x15],di
+   16948:	66 47 85 44 6d 15    	test   WORD PTR [r13+r13*2+0x15],r8w
+   1694e:	66 47 85 4c 6d 15    	test   WORD PTR [r13+r13*2+0x15],r9w
+   16954:	66 47 85 54 6d 15    	test   WORD PTR [r13+r13*2+0x15],r10w
+   1695a:	66 47 85 5c 6d 15    	test   WORD PTR [r13+r13*2+0x15],r11w
+   16960:	66 47 85 64 6d 15    	test   WORD PTR [r13+r13*2+0x15],r12w
+   16966:	66 47 85 6c 6d 15    	test   WORD PTR [r13+r13*2+0x15],r13w
+   1696c:	66 47 85 74 6d 15    	test   WORD PTR [r13+r13*2+0x15],r14w
+   16972:	66 47 85 7c 6d 15    	test   WORD PTR [r13+r13*2+0x15],r15w
+   16978:	66 43 85 44 6e 15    	test   WORD PTR [r14+r13*2+0x15],ax
+   1697e:	66 43 85 4c 6e 15    	test   WORD PTR [r14+r13*2+0x15],cx
+   16984:	66 43 85 54 6e 15    	test   WORD PTR [r14+r13*2+0x15],dx
+   1698a:	66 43 85 5c 6e 15    	test   WORD PTR [r14+r13*2+0x15],bx
+   16990:	66 43 85 64 6e 15    	test   WORD PTR [r14+r13*2+0x15],sp
+   16996:	66 43 85 6c 6e 15    	test   WORD PTR [r14+r13*2+0x15],bp
+   1699c:	66 43 85 74 6e 15    	test   WORD PTR [r14+r13*2+0x15],si
+   169a2:	66 43 85 7c 6e 15    	test   WORD PTR [r14+r13*2+0x15],di
+   169a8:	66 47 85 44 6e 15    	test   WORD PTR [r14+r13*2+0x15],r8w
+   169ae:	66 47 85 4c 6e 15    	test   WORD PTR [r14+r13*2+0x15],r9w
+   169b4:	66 47 85 54 6e 15    	test   WORD PTR [r14+r13*2+0x15],r10w
+   169ba:	66 47 85 5c 6e 15    	test   WORD PTR [r14+r13*2+0x15],r11w
+   169c0:	66 47 85 64 6e 15    	test   WORD PTR [r14+r13*2+0x15],r12w
+   169c6:	66 47 85 6c 6e 15    	test   WORD PTR [r14+r13*2+0x15],r13w
+   169cc:	66 47 85 74 6e 15    	test   WORD PTR [r14+r13*2+0x15],r14w
+   169d2:	66 47 85 7c 6e 15    	test   WORD PTR [r14+r13*2+0x15],r15w
+   169d8:	66 43 85 44 6f 15    	test   WORD PTR [r15+r13*2+0x15],ax
+   169de:	66 43 85 4c 6f 15    	test   WORD PTR [r15+r13*2+0x15],cx
+   169e4:	66 43 85 54 6f 15    	test   WORD PTR [r15+r13*2+0x15],dx
+   169ea:	66 43 85 5c 6f 15    	test   WORD PTR [r15+r13*2+0x15],bx
+   169f0:	66 43 85 64 6f 15    	test   WORD PTR [r15+r13*2+0x15],sp
+   169f6:	66 43 85 6c 6f 15    	test   WORD PTR [r15+r13*2+0x15],bp
+   169fc:	66 43 85 74 6f 15    	test   WORD PTR [r15+r13*2+0x15],si
+   16a02:	66 43 85 7c 6f 15    	test   WORD PTR [r15+r13*2+0x15],di
+   16a08:	66 47 85 44 6f 15    	test   WORD PTR [r15+r13*2+0x15],r8w
+   16a0e:	66 47 85 4c 6f 15    	test   WORD PTR [r15+r13*2+0x15],r9w
+   16a14:	66 47 85 54 6f 15    	test   WORD PTR [r15+r13*2+0x15],r10w
+   16a1a:	66 47 85 5c 6f 15    	test   WORD PTR [r15+r13*2+0x15],r11w
+   16a20:	66 47 85 64 6f 15    	test   WORD PTR [r15+r13*2+0x15],r12w
+   16a26:	66 47 85 6c 6f 15    	test   WORD PTR [r15+r13*2+0x15],r13w
+   16a2c:	66 47 85 74 6f 15    	test   WORD PTR [r15+r13*2+0x15],r14w
+   16a32:	66 47 85 7c 6f 15    	test   WORD PTR [r15+r13*2+0x15],r15w
+   16a38:	42 84 44 68 15       	test   BYTE PTR [rax+r13*2+0x15],al
+   16a3d:	42 84 4c 68 15       	test   BYTE PTR [rax+r13*2+0x15],cl
+   16a42:	42 84 54 68 15       	test   BYTE PTR [rax+r13*2+0x15],dl
+   16a47:	42 84 5c 68 15       	test   BYTE PTR [rax+r13*2+0x15],bl
+   16a4c:	42 84 64 68 15       	test   BYTE PTR [rax+r13*2+0x15],spl
+   16a51:	42 84 6c 68 15       	test   BYTE PTR [rax+r13*2+0x15],bpl
+   16a56:	42 84 74 68 15       	test   BYTE PTR [rax+r13*2+0x15],sil
+   16a5b:	42 84 7c 68 15       	test   BYTE PTR [rax+r13*2+0x15],dil
+   16a60:	46 84 44 68 15       	test   BYTE PTR [rax+r13*2+0x15],r8b
+   16a65:	46 84 4c 68 15       	test   BYTE PTR [rax+r13*2+0x15],r9b
+   16a6a:	46 84 54 68 15       	test   BYTE PTR [rax+r13*2+0x15],r10b
+   16a6f:	46 84 5c 68 15       	test   BYTE PTR [rax+r13*2+0x15],r11b
+   16a74:	46 84 64 68 15       	test   BYTE PTR [rax+r13*2+0x15],r12b
+   16a79:	46 84 6c 68 15       	test   BYTE PTR [rax+r13*2+0x15],r13b
+   16a7e:	46 84 74 68 15       	test   BYTE PTR [rax+r13*2+0x15],r14b
+   16a83:	46 84 7c 68 15       	test   BYTE PTR [rax+r13*2+0x15],r15b
+   16a88:	42 84 64 68 15       	test   BYTE PTR [rax+r13*2+0x15],spl
+   16a8d:	42 84 6c 68 15       	test   BYTE PTR [rax+r13*2+0x15],bpl
+   16a92:	42 84 74 68 15       	test   BYTE PTR [rax+r13*2+0x15],sil
+   16a97:	42 84 7c 68 15       	test   BYTE PTR [rax+r13*2+0x15],dil
+   16a9c:	42 84 44 69 15       	test   BYTE PTR [rcx+r13*2+0x15],al
+   16aa1:	42 84 4c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],cl
+   16aa6:	42 84 54 69 15       	test   BYTE PTR [rcx+r13*2+0x15],dl
+   16aab:	42 84 5c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],bl
+   16ab0:	42 84 64 69 15       	test   BYTE PTR [rcx+r13*2+0x15],spl
+   16ab5:	42 84 6c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],bpl
+   16aba:	42 84 74 69 15       	test   BYTE PTR [rcx+r13*2+0x15],sil
+   16abf:	42 84 7c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],dil
+   16ac4:	46 84 44 69 15       	test   BYTE PTR [rcx+r13*2+0x15],r8b
+   16ac9:	46 84 4c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],r9b
+   16ace:	46 84 54 69 15       	test   BYTE PTR [rcx+r13*2+0x15],r10b
+   16ad3:	46 84 5c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],r11b
+   16ad8:	46 84 64 69 15       	test   BYTE PTR [rcx+r13*2+0x15],r12b
+   16add:	46 84 6c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],r13b
+   16ae2:	46 84 74 69 15       	test   BYTE PTR [rcx+r13*2+0x15],r14b
+   16ae7:	46 84 7c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],r15b
+   16aec:	42 84 64 69 15       	test   BYTE PTR [rcx+r13*2+0x15],spl
+   16af1:	42 84 6c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],bpl
+   16af6:	42 84 74 69 15       	test   BYTE PTR [rcx+r13*2+0x15],sil
+   16afb:	42 84 7c 69 15       	test   BYTE PTR [rcx+r13*2+0x15],dil
+   16b00:	42 84 44 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],al
+   16b05:	42 84 4c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],cl
+   16b0a:	42 84 54 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],dl
+   16b0f:	42 84 5c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],bl
+   16b14:	42 84 64 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],spl
+   16b19:	42 84 6c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],bpl
+   16b1e:	42 84 74 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],sil
+   16b23:	42 84 7c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],dil
+   16b28:	46 84 44 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],r8b
+   16b2d:	46 84 4c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],r9b
+   16b32:	46 84 54 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],r10b
+   16b37:	46 84 5c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],r11b
+   16b3c:	46 84 64 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],r12b
+   16b41:	46 84 6c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],r13b
+   16b46:	46 84 74 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],r14b
+   16b4b:	46 84 7c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],r15b
+   16b50:	42 84 64 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],spl
+   16b55:	42 84 6c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],bpl
+   16b5a:	42 84 74 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],sil
+   16b5f:	42 84 7c 6a 15       	test   BYTE PTR [rdx+r13*2+0x15],dil
+   16b64:	42 84 44 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],al
+   16b69:	42 84 4c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],cl
+   16b6e:	42 84 54 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],dl
+   16b73:	42 84 5c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],bl
+   16b78:	42 84 64 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],spl
+   16b7d:	42 84 6c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],bpl
+   16b82:	42 84 74 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],sil
+   16b87:	42 84 7c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],dil
+   16b8c:	46 84 44 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],r8b
+   16b91:	46 84 4c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],r9b
+   16b96:	46 84 54 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],r10b
+   16b9b:	46 84 5c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],r11b
+   16ba0:	46 84 64 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],r12b
+   16ba5:	46 84 6c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],r13b
+   16baa:	46 84 74 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],r14b
+   16baf:	46 84 7c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],r15b
+   16bb4:	42 84 64 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],spl
+   16bb9:	42 84 6c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],bpl
+   16bbe:	42 84 74 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],sil
+   16bc3:	42 84 7c 6b 15       	test   BYTE PTR [rbx+r13*2+0x15],dil
+   16bc8:	42 84 44 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],al
+   16bcd:	42 84 4c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],cl
+   16bd2:	42 84 54 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],dl
+   16bd7:	42 84 5c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],bl
+   16bdc:	42 84 64 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],spl
+   16be1:	42 84 6c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],bpl
+   16be6:	42 84 74 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],sil
+   16beb:	42 84 7c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],dil
+   16bf0:	46 84 44 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],r8b
+   16bf5:	46 84 4c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],r9b
+   16bfa:	46 84 54 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],r10b
+   16bff:	46 84 5c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],r11b
+   16c04:	46 84 64 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],r12b
+   16c09:	46 84 6c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],r13b
+   16c0e:	46 84 74 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],r14b
+   16c13:	46 84 7c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],r15b
+   16c18:	42 84 64 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],spl
+   16c1d:	42 84 6c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],bpl
+   16c22:	42 84 74 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],sil
+   16c27:	42 84 7c 6c 15       	test   BYTE PTR [rsp+r13*2+0x15],dil
+   16c2c:	42 84 44 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],al
+   16c31:	42 84 4c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],cl
+   16c36:	42 84 54 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],dl
+   16c3b:	42 84 5c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],bl
+   16c40:	42 84 64 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],spl
+   16c45:	42 84 6c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],bpl
+   16c4a:	42 84 74 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],sil
+   16c4f:	42 84 7c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],dil
+   16c54:	46 84 44 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],r8b
+   16c59:	46 84 4c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],r9b
+   16c5e:	46 84 54 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],r10b
+   16c63:	46 84 5c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],r11b
+   16c68:	46 84 64 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],r12b
+   16c6d:	46 84 6c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],r13b
+   16c72:	46 84 74 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],r14b
+   16c77:	46 84 7c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],r15b
+   16c7c:	42 84 64 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],spl
+   16c81:	42 84 6c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],bpl
+   16c86:	42 84 74 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],sil
+   16c8b:	42 84 7c 6d 15       	test   BYTE PTR [rbp+r13*2+0x15],dil
+   16c90:	42 84 44 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],al
+   16c95:	42 84 4c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],cl
+   16c9a:	42 84 54 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],dl
+   16c9f:	42 84 5c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],bl
+   16ca4:	42 84 64 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],spl
+   16ca9:	42 84 6c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],bpl
+   16cae:	42 84 74 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],sil
+   16cb3:	42 84 7c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],dil
+   16cb8:	46 84 44 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],r8b
+   16cbd:	46 84 4c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],r9b
+   16cc2:	46 84 54 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],r10b
+   16cc7:	46 84 5c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],r11b
+   16ccc:	46 84 64 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],r12b
+   16cd1:	46 84 6c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],r13b
+   16cd6:	46 84 74 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],r14b
+   16cdb:	46 84 7c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],r15b
+   16ce0:	42 84 64 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],spl
+   16ce5:	42 84 6c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],bpl
+   16cea:	42 84 74 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],sil
+   16cef:	42 84 7c 6e 15       	test   BYTE PTR [rsi+r13*2+0x15],dil
+   16cf4:	42 84 44 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],al
+   16cf9:	42 84 4c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],cl
+   16cfe:	42 84 54 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],dl
+   16d03:	42 84 5c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],bl
+   16d08:	42 84 64 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],spl
+   16d0d:	42 84 6c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],bpl
+   16d12:	42 84 74 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],sil
+   16d17:	42 84 7c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],dil
+   16d1c:	46 84 44 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],r8b
+   16d21:	46 84 4c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],r9b
+   16d26:	46 84 54 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],r10b
+   16d2b:	46 84 5c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],r11b
+   16d30:	46 84 64 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],r12b
+   16d35:	46 84 6c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],r13b
+   16d3a:	46 84 74 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],r14b
+   16d3f:	46 84 7c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],r15b
+   16d44:	42 84 64 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],spl
+   16d49:	42 84 6c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],bpl
+   16d4e:	42 84 74 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],sil
+   16d53:	42 84 7c 6f 15       	test   BYTE PTR [rdi+r13*2+0x15],dil
+   16d58:	43 84 44 68 15       	test   BYTE PTR [r8+r13*2+0x15],al
+   16d5d:	43 84 4c 68 15       	test   BYTE PTR [r8+r13*2+0x15],cl
+   16d62:	43 84 54 68 15       	test   BYTE PTR [r8+r13*2+0x15],dl
+   16d67:	43 84 5c 68 15       	test   BYTE PTR [r8+r13*2+0x15],bl
+   16d6c:	43 84 64 68 15       	test   BYTE PTR [r8+r13*2+0x15],spl
+   16d71:	43 84 6c 68 15       	test   BYTE PTR [r8+r13*2+0x15],bpl
+   16d76:	43 84 74 68 15       	test   BYTE PTR [r8+r13*2+0x15],sil
+   16d7b:	43 84 7c 68 15       	test   BYTE PTR [r8+r13*2+0x15],dil
+   16d80:	47 84 44 68 15       	test   BYTE PTR [r8+r13*2+0x15],r8b
+   16d85:	47 84 4c 68 15       	test   BYTE PTR [r8+r13*2+0x15],r9b
+   16d8a:	47 84 54 68 15       	test   BYTE PTR [r8+r13*2+0x15],r10b
+   16d8f:	47 84 5c 68 15       	test   BYTE PTR [r8+r13*2+0x15],r11b
+   16d94:	47 84 64 68 15       	test   BYTE PTR [r8+r13*2+0x15],r12b
+   16d99:	47 84 6c 68 15       	test   BYTE PTR [r8+r13*2+0x15],r13b
+   16d9e:	47 84 74 68 15       	test   BYTE PTR [r8+r13*2+0x15],r14b
+   16da3:	47 84 7c 68 15       	test   BYTE PTR [r8+r13*2+0x15],r15b
+   16da8:	43 84 64 68 15       	test   BYTE PTR [r8+r13*2+0x15],spl
+   16dad:	43 84 6c 68 15       	test   BYTE PTR [r8+r13*2+0x15],bpl
+   16db2:	43 84 74 68 15       	test   BYTE PTR [r8+r13*2+0x15],sil
+   16db7:	43 84 7c 68 15       	test   BYTE PTR [r8+r13*2+0x15],dil
+   16dbc:	43 84 44 69 15       	test   BYTE PTR [r9+r13*2+0x15],al
+   16dc1:	43 84 4c 69 15       	test   BYTE PTR [r9+r13*2+0x15],cl
+   16dc6:	43 84 54 69 15       	test   BYTE PTR [r9+r13*2+0x15],dl
+   16dcb:	43 84 5c 69 15       	test   BYTE PTR [r9+r13*2+0x15],bl
+   16dd0:	43 84 64 69 15       	test   BYTE PTR [r9+r13*2+0x15],spl
+   16dd5:	43 84 6c 69 15       	test   BYTE PTR [r9+r13*2+0x15],bpl
+   16dda:	43 84 74 69 15       	test   BYTE PTR [r9+r13*2+0x15],sil
+   16ddf:	43 84 7c 69 15       	test   BYTE PTR [r9+r13*2+0x15],dil
+   16de4:	47 84 44 69 15       	test   BYTE PTR [r9+r13*2+0x15],r8b
+   16de9:	47 84 4c 69 15       	test   BYTE PTR [r9+r13*2+0x15],r9b
+   16dee:	47 84 54 69 15       	test   BYTE PTR [r9+r13*2+0x15],r10b
+   16df3:	47 84 5c 69 15       	test   BYTE PTR [r9+r13*2+0x15],r11b
+   16df8:	47 84 64 69 15       	test   BYTE PTR [r9+r13*2+0x15],r12b
+   16dfd:	47 84 6c 69 15       	test   BYTE PTR [r9+r13*2+0x15],r13b
+   16e02:	47 84 74 69 15       	test   BYTE PTR [r9+r13*2+0x15],r14b
+   16e07:	47 84 7c 69 15       	test   BYTE PTR [r9+r13*2+0x15],r15b
+   16e0c:	43 84 64 69 15       	test   BYTE PTR [r9+r13*2+0x15],spl
+   16e11:	43 84 6c 69 15       	test   BYTE PTR [r9+r13*2+0x15],bpl
+   16e16:	43 84 74 69 15       	test   BYTE PTR [r9+r13*2+0x15],sil
+   16e1b:	43 84 7c 69 15       	test   BYTE PTR [r9+r13*2+0x15],dil
+   16e20:	43 84 44 6a 15       	test   BYTE PTR [r10+r13*2+0x15],al
+   16e25:	43 84 4c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],cl
+   16e2a:	43 84 54 6a 15       	test   BYTE PTR [r10+r13*2+0x15],dl
+   16e2f:	43 84 5c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],bl
+   16e34:	43 84 64 6a 15       	test   BYTE PTR [r10+r13*2+0x15],spl
+   16e39:	43 84 6c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],bpl
+   16e3e:	43 84 74 6a 15       	test   BYTE PTR [r10+r13*2+0x15],sil
+   16e43:	43 84 7c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],dil
+   16e48:	47 84 44 6a 15       	test   BYTE PTR [r10+r13*2+0x15],r8b
+   16e4d:	47 84 4c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],r9b
+   16e52:	47 84 54 6a 15       	test   BYTE PTR [r10+r13*2+0x15],r10b
+   16e57:	47 84 5c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],r11b
+   16e5c:	47 84 64 6a 15       	test   BYTE PTR [r10+r13*2+0x15],r12b
+   16e61:	47 84 6c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],r13b
+   16e66:	47 84 74 6a 15       	test   BYTE PTR [r10+r13*2+0x15],r14b
+   16e6b:	47 84 7c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],r15b
+   16e70:	43 84 64 6a 15       	test   BYTE PTR [r10+r13*2+0x15],spl
+   16e75:	43 84 6c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],bpl
+   16e7a:	43 84 74 6a 15       	test   BYTE PTR [r10+r13*2+0x15],sil
+   16e7f:	43 84 7c 6a 15       	test   BYTE PTR [r10+r13*2+0x15],dil
+   16e84:	43 84 44 6b 15       	test   BYTE PTR [r11+r13*2+0x15],al
+   16e89:	43 84 4c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],cl
+   16e8e:	43 84 54 6b 15       	test   BYTE PTR [r11+r13*2+0x15],dl
+   16e93:	43 84 5c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],bl
+   16e98:	43 84 64 6b 15       	test   BYTE PTR [r11+r13*2+0x15],spl
+   16e9d:	43 84 6c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],bpl
+   16ea2:	43 84 74 6b 15       	test   BYTE PTR [r11+r13*2+0x15],sil
+   16ea7:	43 84 7c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],dil
+   16eac:	47 84 44 6b 15       	test   BYTE PTR [r11+r13*2+0x15],r8b
+   16eb1:	47 84 4c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],r9b
+   16eb6:	47 84 54 6b 15       	test   BYTE PTR [r11+r13*2+0x15],r10b
+   16ebb:	47 84 5c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],r11b
+   16ec0:	47 84 64 6b 15       	test   BYTE PTR [r11+r13*2+0x15],r12b
+   16ec5:	47 84 6c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],r13b
+   16eca:	47 84 74 6b 15       	test   BYTE PTR [r11+r13*2+0x15],r14b
+   16ecf:	47 84 7c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],r15b
+   16ed4:	43 84 64 6b 15       	test   BYTE PTR [r11+r13*2+0x15],spl
+   16ed9:	43 84 6c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],bpl
+   16ede:	43 84 74 6b 15       	test   BYTE PTR [r11+r13*2+0x15],sil
+   16ee3:	43 84 7c 6b 15       	test   BYTE PTR [r11+r13*2+0x15],dil
+   16ee8:	43 84 44 6c 15       	test   BYTE PTR [r12+r13*2+0x15],al
+   16eed:	43 84 4c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],cl
+   16ef2:	43 84 54 6c 15       	test   BYTE PTR [r12+r13*2+0x15],dl
+   16ef7:	43 84 5c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],bl
+   16efc:	43 84 64 6c 15       	test   BYTE PTR [r12+r13*2+0x15],spl
+   16f01:	43 84 6c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],bpl
+   16f06:	43 84 74 6c 15       	test   BYTE PTR [r12+r13*2+0x15],sil
+   16f0b:	43 84 7c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],dil
+   16f10:	47 84 44 6c 15       	test   BYTE PTR [r12+r13*2+0x15],r8b
+   16f15:	47 84 4c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],r9b
+   16f1a:	47 84 54 6c 15       	test   BYTE PTR [r12+r13*2+0x15],r10b
+   16f1f:	47 84 5c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],r11b
+   16f24:	47 84 64 6c 15       	test   BYTE PTR [r12+r13*2+0x15],r12b
+   16f29:	47 84 6c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],r13b
+   16f2e:	47 84 74 6c 15       	test   BYTE PTR [r12+r13*2+0x15],r14b
+   16f33:	47 84 7c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],r15b
+   16f38:	43 84 64 6c 15       	test   BYTE PTR [r12+r13*2+0x15],spl
+   16f3d:	43 84 6c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],bpl
+   16f42:	43 84 74 6c 15       	test   BYTE PTR [r12+r13*2+0x15],sil
+   16f47:	43 84 7c 6c 15       	test   BYTE PTR [r12+r13*2+0x15],dil
+   16f4c:	43 84 44 6d 15       	test   BYTE PTR [r13+r13*2+0x15],al
+   16f51:	43 84 4c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],cl
+   16f56:	43 84 54 6d 15       	test   BYTE PTR [r13+r13*2+0x15],dl
+   16f5b:	43 84 5c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],bl
+   16f60:	43 84 64 6d 15       	test   BYTE PTR [r13+r13*2+0x15],spl
+   16f65:	43 84 6c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],bpl
+   16f6a:	43 84 74 6d 15       	test   BYTE PTR [r13+r13*2+0x15],sil
+   16f6f:	43 84 7c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],dil
+   16f74:	47 84 44 6d 15       	test   BYTE PTR [r13+r13*2+0x15],r8b
+   16f79:	47 84 4c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],r9b
+   16f7e:	47 84 54 6d 15       	test   BYTE PTR [r13+r13*2+0x15],r10b
+   16f83:	47 84 5c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],r11b
+   16f88:	47 84 64 6d 15       	test   BYTE PTR [r13+r13*2+0x15],r12b
+   16f8d:	47 84 6c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],r13b
+   16f92:	47 84 74 6d 15       	test   BYTE PTR [r13+r13*2+0x15],r14b
+   16f97:	47 84 7c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],r15b
+   16f9c:	43 84 64 6d 15       	test   BYTE PTR [r13+r13*2+0x15],spl
+   16fa1:	43 84 6c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],bpl
+   16fa6:	43 84 74 6d 15       	test   BYTE PTR [r13+r13*2+0x15],sil
+   16fab:	43 84 7c 6d 15       	test   BYTE PTR [r13+r13*2+0x15],dil
+   16fb0:	43 84 44 6e 15       	test   BYTE PTR [r14+r13*2+0x15],al
+   16fb5:	43 84 4c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],cl
+   16fba:	43 84 54 6e 15       	test   BYTE PTR [r14+r13*2+0x15],dl
+   16fbf:	43 84 5c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],bl
+   16fc4:	43 84 64 6e 15       	test   BYTE PTR [r14+r13*2+0x15],spl
+   16fc9:	43 84 6c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],bpl
+   16fce:	43 84 74 6e 15       	test   BYTE PTR [r14+r13*2+0x15],sil
+   16fd3:	43 84 7c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],dil
+   16fd8:	47 84 44 6e 15       	test   BYTE PTR [r14+r13*2+0x15],r8b
+   16fdd:	47 84 4c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],r9b
+   16fe2:	47 84 54 6e 15       	test   BYTE PTR [r14+r13*2+0x15],r10b
+   16fe7:	47 84 5c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],r11b
+   16fec:	47 84 64 6e 15       	test   BYTE PTR [r14+r13*2+0x15],r12b
+   16ff1:	47 84 6c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],r13b
+   16ff6:	47 84 74 6e 15       	test   BYTE PTR [r14+r13*2+0x15],r14b
+   16ffb:	47 84 7c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],r15b
+   17000:	43 84 64 6e 15       	test   BYTE PTR [r14+r13*2+0x15],spl
+   17005:	43 84 6c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],bpl
+   1700a:	43 84 74 6e 15       	test   BYTE PTR [r14+r13*2+0x15],sil
+   1700f:	43 84 7c 6e 15       	test   BYTE PTR [r14+r13*2+0x15],dil
+   17014:	43 84 44 6f 15       	test   BYTE PTR [r15+r13*2+0x15],al
+   17019:	43 84 4c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],cl
+   1701e:	43 84 54 6f 15       	test   BYTE PTR [r15+r13*2+0x15],dl
+   17023:	43 84 5c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],bl
+   17028:	43 84 64 6f 15       	test   BYTE PTR [r15+r13*2+0x15],spl
+   1702d:	43 84 6c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],bpl
+   17032:	43 84 74 6f 15       	test   BYTE PTR [r15+r13*2+0x15],sil
+   17037:	43 84 7c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],dil
+   1703c:	47 84 44 6f 15       	test   BYTE PTR [r15+r13*2+0x15],r8b
+   17041:	47 84 4c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],r9b
+   17046:	47 84 54 6f 15       	test   BYTE PTR [r15+r13*2+0x15],r10b
+   1704b:	47 84 5c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],r11b
+   17050:	47 84 64 6f 15       	test   BYTE PTR [r15+r13*2+0x15],r12b
+   17055:	47 84 6c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],r13b
+   1705a:	47 84 74 6f 15       	test   BYTE PTR [r15+r13*2+0x15],r14b
+   1705f:	47 84 7c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],r15b
+   17064:	43 84 64 6f 15       	test   BYTE PTR [r15+r13*2+0x15],spl
+   17069:	43 84 6c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],bpl
+   1706e:	43 84 74 6f 15       	test   BYTE PTR [r15+r13*2+0x15],sil
+   17073:	43 84 7c 6f 15       	test   BYTE PTR [r15+r13*2+0x15],dil
+   17078:	4a 85 84 e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],rax
+   17080:	4a 85 8c e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],rcx
+   17088:	4a 85 94 e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],rdx
+   17090:	4a 85 9c e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],rbx
+   17098:	4a 85 a4 e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],rsp
+   170a0:	4a 85 ac e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],rbp
+   170a8:	4a 85 b4 e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],rsi
+   170b0:	4a 85 bc e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],rdi
+   170b8:	4e 85 84 e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],r8
+   170c0:	4e 85 8c e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],r9
+   170c8:	4e 85 94 e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],r10
+   170d0:	4e 85 9c e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],r11
+   170d8:	4e 85 a4 e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],r12
+   170e0:	4e 85 ac e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],r13
+   170e8:	4e 85 b4 e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],r14
+   170f0:	4e 85 bc e8 18 17 16 15 	test   QWORD PTR [rax+r13*8+0x15161718],r15
+   170f8:	4a 85 84 e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],rax
+   17100:	4a 85 8c e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],rcx
+   17108:	4a 85 94 e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],rdx
+   17110:	4a 85 9c e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],rbx
+   17118:	4a 85 a4 e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],rsp
+   17120:	4a 85 ac e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],rbp
+   17128:	4a 85 b4 e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],rsi
+   17130:	4a 85 bc e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],rdi
+   17138:	4e 85 84 e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],r8
+   17140:	4e 85 8c e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],r9
+   17148:	4e 85 94 e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],r10
+   17150:	4e 85 9c e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],r11
+   17158:	4e 85 a4 e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],r12
+   17160:	4e 85 ac e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],r13
+   17168:	4e 85 b4 e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],r14
+   17170:	4e 85 bc e9 18 17 16 15 	test   QWORD PTR [rcx+r13*8+0x15161718],r15
+   17178:	4a 85 84 ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],rax
+   17180:	4a 85 8c ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],rcx
+   17188:	4a 85 94 ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],rdx
+   17190:	4a 85 9c ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],rbx
+   17198:	4a 85 a4 ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],rsp
+   171a0:	4a 85 ac ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],rbp
+   171a8:	4a 85 b4 ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],rsi
+   171b0:	4a 85 bc ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],rdi
+   171b8:	4e 85 84 ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],r8
+   171c0:	4e 85 8c ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],r9
+   171c8:	4e 85 94 ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],r10
+   171d0:	4e 85 9c ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],r11
+   171d8:	4e 85 a4 ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],r12
+   171e0:	4e 85 ac ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],r13
+   171e8:	4e 85 b4 ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],r14
+   171f0:	4e 85 bc ea 18 17 16 15 	test   QWORD PTR [rdx+r13*8+0x15161718],r15
+   171f8:	4a 85 84 eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],rax
+   17200:	4a 85 8c eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],rcx
+   17208:	4a 85 94 eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],rdx
+   17210:	4a 85 9c eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],rbx
+   17218:	4a 85 a4 eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],rsp
+   17220:	4a 85 ac eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],rbp
+   17228:	4a 85 b4 eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],rsi
+   17230:	4a 85 bc eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],rdi
+   17238:	4e 85 84 eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],r8
+   17240:	4e 85 8c eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],r9
+   17248:	4e 85 94 eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],r10
+   17250:	4e 85 9c eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],r11
+   17258:	4e 85 a4 eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],r12
+   17260:	4e 85 ac eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],r13
+   17268:	4e 85 b4 eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],r14
+   17270:	4e 85 bc eb 18 17 16 15 	test   QWORD PTR [rbx+r13*8+0x15161718],r15
+   17278:	4a 85 84 ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],rax
+   17280:	4a 85 8c ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],rcx
+   17288:	4a 85 94 ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],rdx
+   17290:	4a 85 9c ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],rbx
+   17298:	4a 85 a4 ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],rsp
+   172a0:	4a 85 ac ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],rbp
+   172a8:	4a 85 b4 ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],rsi
+   172b0:	4a 85 bc ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],rdi
+   172b8:	4e 85 84 ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],r8
+   172c0:	4e 85 8c ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],r9
+   172c8:	4e 85 94 ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],r10
+   172d0:	4e 85 9c ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],r11
+   172d8:	4e 85 a4 ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],r12
+   172e0:	4e 85 ac ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],r13
+   172e8:	4e 85 b4 ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],r14
+   172f0:	4e 85 bc ec 18 17 16 15 	test   QWORD PTR [rsp+r13*8+0x15161718],r15
+   172f8:	4a 85 84 ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],rax
+   17300:	4a 85 8c ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],rcx
+   17308:	4a 85 94 ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],rdx
+   17310:	4a 85 9c ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],rbx
+   17318:	4a 85 a4 ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],rsp
+   17320:	4a 85 ac ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],rbp
+   17328:	4a 85 b4 ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],rsi
+   17330:	4a 85 bc ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],rdi
+   17338:	4e 85 84 ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],r8
+   17340:	4e 85 8c ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],r9
+   17348:	4e 85 94 ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],r10
+   17350:	4e 85 9c ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],r11
+   17358:	4e 85 a4 ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],r12
+   17360:	4e 85 ac ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],r13
+   17368:	4e 85 b4 ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],r14
+   17370:	4e 85 bc ed 18 17 16 15 	test   QWORD PTR [rbp+r13*8+0x15161718],r15
+   17378:	4a 85 84 ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],rax
+   17380:	4a 85 8c ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],rcx
+   17388:	4a 85 94 ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],rdx
+   17390:	4a 85 9c ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],rbx
+   17398:	4a 85 a4 ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],rsp
+   173a0:	4a 85 ac ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],rbp
+   173a8:	4a 85 b4 ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],rsi
+   173b0:	4a 85 bc ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],rdi
+   173b8:	4e 85 84 ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],r8
+   173c0:	4e 85 8c ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],r9
+   173c8:	4e 85 94 ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],r10
+   173d0:	4e 85 9c ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],r11
+   173d8:	4e 85 a4 ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],r12
+   173e0:	4e 85 ac ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],r13
+   173e8:	4e 85 b4 ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],r14
+   173f0:	4e 85 bc ee 18 17 16 15 	test   QWORD PTR [rsi+r13*8+0x15161718],r15
+   173f8:	4a 85 84 ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],rax
+   17400:	4a 85 8c ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],rcx
+   17408:	4a 85 94 ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],rdx
+   17410:	4a 85 9c ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],rbx
+   17418:	4a 85 a4 ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],rsp
+   17420:	4a 85 ac ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],rbp
+   17428:	4a 85 b4 ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],rsi
+   17430:	4a 85 bc ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],rdi
+   17438:	4e 85 84 ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],r8
+   17440:	4e 85 8c ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],r9
+   17448:	4e 85 94 ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],r10
+   17450:	4e 85 9c ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],r11
+   17458:	4e 85 a4 ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],r12
+   17460:	4e 85 ac ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],r13
+   17468:	4e 85 b4 ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],r14
+   17470:	4e 85 bc ef 18 17 16 15 	test   QWORD PTR [rdi+r13*8+0x15161718],r15
+   17478:	4b 85 84 e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],rax
+   17480:	4b 85 8c e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],rcx
+   17488:	4b 85 94 e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],rdx
+   17490:	4b 85 9c e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],rbx
+   17498:	4b 85 a4 e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],rsp
+   174a0:	4b 85 ac e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],rbp
+   174a8:	4b 85 b4 e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],rsi
+   174b0:	4b 85 bc e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],rdi
+   174b8:	4f 85 84 e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],r8
+   174c0:	4f 85 8c e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],r9
+   174c8:	4f 85 94 e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],r10
+   174d0:	4f 85 9c e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],r11
+   174d8:	4f 85 a4 e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],r12
+   174e0:	4f 85 ac e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],r13
+   174e8:	4f 85 b4 e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],r14
+   174f0:	4f 85 bc e8 18 17 16 15 	test   QWORD PTR [r8+r13*8+0x15161718],r15
+   174f8:	4b 85 84 e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],rax
+   17500:	4b 85 8c e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],rcx
+   17508:	4b 85 94 e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],rdx
+   17510:	4b 85 9c e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],rbx
+   17518:	4b 85 a4 e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],rsp
+   17520:	4b 85 ac e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],rbp
+   17528:	4b 85 b4 e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],rsi
+   17530:	4b 85 bc e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],rdi
+   17538:	4f 85 84 e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],r8
+   17540:	4f 85 8c e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],r9
+   17548:	4f 85 94 e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],r10
+   17550:	4f 85 9c e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],r11
+   17558:	4f 85 a4 e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],r12
+   17560:	4f 85 ac e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],r13
+   17568:	4f 85 b4 e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],r14
+   17570:	4f 85 bc e9 18 17 16 15 	test   QWORD PTR [r9+r13*8+0x15161718],r15
+   17578:	4b 85 84 ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],rax
+   17580:	4b 85 8c ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],rcx
+   17588:	4b 85 94 ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],rdx
+   17590:	4b 85 9c ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],rbx
+   17598:	4b 85 a4 ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],rsp
+   175a0:	4b 85 ac ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],rbp
+   175a8:	4b 85 b4 ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],rsi
+   175b0:	4b 85 bc ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],rdi
+   175b8:	4f 85 84 ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],r8
+   175c0:	4f 85 8c ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],r9
+   175c8:	4f 85 94 ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],r10
+   175d0:	4f 85 9c ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],r11
+   175d8:	4f 85 a4 ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],r12
+   175e0:	4f 85 ac ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],r13
+   175e8:	4f 85 b4 ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],r14
+   175f0:	4f 85 bc ea 18 17 16 15 	test   QWORD PTR [r10+r13*8+0x15161718],r15
+   175f8:	4b 85 84 eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],rax
+   17600:	4b 85 8c eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],rcx
+   17608:	4b 85 94 eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],rdx
+   17610:	4b 85 9c eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],rbx
+   17618:	4b 85 a4 eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],rsp
+   17620:	4b 85 ac eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],rbp
+   17628:	4b 85 b4 eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],rsi
+   17630:	4b 85 bc eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],rdi
+   17638:	4f 85 84 eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],r8
+   17640:	4f 85 8c eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],r9
+   17648:	4f 85 94 eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],r10
+   17650:	4f 85 9c eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],r11
+   17658:	4f 85 a4 eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],r12
+   17660:	4f 85 ac eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],r13
+   17668:	4f 85 b4 eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],r14
+   17670:	4f 85 bc eb 18 17 16 15 	test   QWORD PTR [r11+r13*8+0x15161718],r15
+   17678:	4b 85 84 ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],rax
+   17680:	4b 85 8c ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],rcx
+   17688:	4b 85 94 ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],rdx
+   17690:	4b 85 9c ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],rbx
+   17698:	4b 85 a4 ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],rsp
+   176a0:	4b 85 ac ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],rbp
+   176a8:	4b 85 b4 ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],rsi
+   176b0:	4b 85 bc ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],rdi
+   176b8:	4f 85 84 ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],r8
+   176c0:	4f 85 8c ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],r9
+   176c8:	4f 85 94 ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],r10
+   176d0:	4f 85 9c ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],r11
+   176d8:	4f 85 a4 ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],r12
+   176e0:	4f 85 ac ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],r13
+   176e8:	4f 85 b4 ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],r14
+   176f0:	4f 85 bc ec 18 17 16 15 	test   QWORD PTR [r12+r13*8+0x15161718],r15
+   176f8:	4b 85 84 ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],rax
+   17700:	4b 85 8c ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],rcx
+   17708:	4b 85 94 ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],rdx
+   17710:	4b 85 9c ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],rbx
+   17718:	4b 85 a4 ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],rsp
+   17720:	4b 85 ac ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],rbp
+   17728:	4b 85 b4 ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],rsi
+   17730:	4b 85 bc ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],rdi
+   17738:	4f 85 84 ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],r8
+   17740:	4f 85 8c ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],r9
+   17748:	4f 85 94 ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],r10
+   17750:	4f 85 9c ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],r11
+   17758:	4f 85 a4 ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],r12
+   17760:	4f 85 ac ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],r13
+   17768:	4f 85 b4 ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],r14
+   17770:	4f 85 bc ed 18 17 16 15 	test   QWORD PTR [r13+r13*8+0x15161718],r15
+   17778:	4b 85 84 ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],rax
+   17780:	4b 85 8c ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],rcx
+   17788:	4b 85 94 ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],rdx
+   17790:	4b 85 9c ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],rbx
+   17798:	4b 85 a4 ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],rsp
+   177a0:	4b 85 ac ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],rbp
+   177a8:	4b 85 b4 ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],rsi
+   177b0:	4b 85 bc ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],rdi
+   177b8:	4f 85 84 ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],r8
+   177c0:	4f 85 8c ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],r9
+   177c8:	4f 85 94 ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],r10
+   177d0:	4f 85 9c ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],r11
+   177d8:	4f 85 a4 ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],r12
+   177e0:	4f 85 ac ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],r13
+   177e8:	4f 85 b4 ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],r14
+   177f0:	4f 85 bc ee 18 17 16 15 	test   QWORD PTR [r14+r13*8+0x15161718],r15
+   177f8:	4b 85 84 ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],rax
+   17800:	4b 85 8c ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],rcx
+   17808:	4b 85 94 ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],rdx
+   17810:	4b 85 9c ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],rbx
+   17818:	4b 85 a4 ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],rsp
+   17820:	4b 85 ac ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],rbp
+   17828:	4b 85 b4 ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],rsi
+   17830:	4b 85 bc ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],rdi
+   17838:	4f 85 84 ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],r8
+   17840:	4f 85 8c ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],r9
+   17848:	4f 85 94 ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],r10
+   17850:	4f 85 9c ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],r11
+   17858:	4f 85 a4 ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],r12
+   17860:	4f 85 ac ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],r13
+   17868:	4f 85 b4 ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],r14
+   17870:	4f 85 bc ef 18 17 16 15 	test   QWORD PTR [r15+r13*8+0x15161718],r15
+   17878:	42 85 84 e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],eax
+   17880:	42 85 8c e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],ecx
+   17888:	42 85 94 e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],edx
+   17890:	42 85 9c e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],ebx
+   17898:	42 85 a4 e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],esp
+   178a0:	42 85 ac e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],ebp
+   178a8:	42 85 b4 e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],esi
+   178b0:	42 85 bc e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],edi
+   178b8:	46 85 84 e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],r8d
+   178c0:	46 85 8c e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],r9d
+   178c8:	46 85 94 e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],r10d
+   178d0:	46 85 9c e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],r11d
+   178d8:	46 85 a4 e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],r12d
+   178e0:	46 85 ac e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],r13d
+   178e8:	46 85 b4 e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],r14d
+   178f0:	46 85 bc e8 18 17 16 15 	test   DWORD PTR [rax+r13*8+0x15161718],r15d
+   178f8:	42 85 84 e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],eax
+   17900:	42 85 8c e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],ecx
+   17908:	42 85 94 e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],edx
+   17910:	42 85 9c e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],ebx
+   17918:	42 85 a4 e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],esp
+   17920:	42 85 ac e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],ebp
+   17928:	42 85 b4 e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],esi
+   17930:	42 85 bc e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],edi
+   17938:	46 85 84 e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],r8d
+   17940:	46 85 8c e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],r9d
+   17948:	46 85 94 e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],r10d
+   17950:	46 85 9c e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],r11d
+   17958:	46 85 a4 e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],r12d
+   17960:	46 85 ac e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],r13d
+   17968:	46 85 b4 e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],r14d
+   17970:	46 85 bc e9 18 17 16 15 	test   DWORD PTR [rcx+r13*8+0x15161718],r15d
+   17978:	42 85 84 ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],eax
+   17980:	42 85 8c ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],ecx
+   17988:	42 85 94 ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],edx
+   17990:	42 85 9c ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],ebx
+   17998:	42 85 a4 ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],esp
+   179a0:	42 85 ac ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],ebp
+   179a8:	42 85 b4 ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],esi
+   179b0:	42 85 bc ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],edi
+   179b8:	46 85 84 ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],r8d
+   179c0:	46 85 8c ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],r9d
+   179c8:	46 85 94 ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],r10d
+   179d0:	46 85 9c ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],r11d
+   179d8:	46 85 a4 ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],r12d
+   179e0:	46 85 ac ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],r13d
+   179e8:	46 85 b4 ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],r14d
+   179f0:	46 85 bc ea 18 17 16 15 	test   DWORD PTR [rdx+r13*8+0x15161718],r15d
+   179f8:	42 85 84 eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],eax
+   17a00:	42 85 8c eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],ecx
+   17a08:	42 85 94 eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],edx
+   17a10:	42 85 9c eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],ebx
+   17a18:	42 85 a4 eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],esp
+   17a20:	42 85 ac eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],ebp
+   17a28:	42 85 b4 eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],esi
+   17a30:	42 85 bc eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],edi
+   17a38:	46 85 84 eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],r8d
+   17a40:	46 85 8c eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],r9d
+   17a48:	46 85 94 eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],r10d
+   17a50:	46 85 9c eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],r11d
+   17a58:	46 85 a4 eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],r12d
+   17a60:	46 85 ac eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],r13d
+   17a68:	46 85 b4 eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],r14d
+   17a70:	46 85 bc eb 18 17 16 15 	test   DWORD PTR [rbx+r13*8+0x15161718],r15d
+   17a78:	42 85 84 ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],eax
+   17a80:	42 85 8c ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],ecx
+   17a88:	42 85 94 ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],edx
+   17a90:	42 85 9c ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],ebx
+   17a98:	42 85 a4 ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],esp
+   17aa0:	42 85 ac ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],ebp
+   17aa8:	42 85 b4 ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],esi
+   17ab0:	42 85 bc ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],edi
+   17ab8:	46 85 84 ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],r8d
+   17ac0:	46 85 8c ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],r9d
+   17ac8:	46 85 94 ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],r10d
+   17ad0:	46 85 9c ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],r11d
+   17ad8:	46 85 a4 ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],r12d
+   17ae0:	46 85 ac ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],r13d
+   17ae8:	46 85 b4 ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],r14d
+   17af0:	46 85 bc ec 18 17 16 15 	test   DWORD PTR [rsp+r13*8+0x15161718],r15d
+   17af8:	42 85 84 ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],eax
+   17b00:	42 85 8c ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],ecx
+   17b08:	42 85 94 ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],edx
+   17b10:	42 85 9c ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],ebx
+   17b18:	42 85 a4 ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],esp
+   17b20:	42 85 ac ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],ebp
+   17b28:	42 85 b4 ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],esi
+   17b30:	42 85 bc ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],edi
+   17b38:	46 85 84 ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],r8d
+   17b40:	46 85 8c ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],r9d
+   17b48:	46 85 94 ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],r10d
+   17b50:	46 85 9c ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],r11d
+   17b58:	46 85 a4 ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],r12d
+   17b60:	46 85 ac ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],r13d
+   17b68:	46 85 b4 ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],r14d
+   17b70:	46 85 bc ed 18 17 16 15 	test   DWORD PTR [rbp+r13*8+0x15161718],r15d
+   17b78:	42 85 84 ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],eax
+   17b80:	42 85 8c ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],ecx
+   17b88:	42 85 94 ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],edx
+   17b90:	42 85 9c ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],ebx
+   17b98:	42 85 a4 ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],esp
+   17ba0:	42 85 ac ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],ebp
+   17ba8:	42 85 b4 ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],esi
+   17bb0:	42 85 bc ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],edi
+   17bb8:	46 85 84 ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],r8d
+   17bc0:	46 85 8c ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],r9d
+   17bc8:	46 85 94 ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],r10d
+   17bd0:	46 85 9c ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],r11d
+   17bd8:	46 85 a4 ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],r12d
+   17be0:	46 85 ac ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],r13d
+   17be8:	46 85 b4 ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],r14d
+   17bf0:	46 85 bc ee 18 17 16 15 	test   DWORD PTR [rsi+r13*8+0x15161718],r15d
+   17bf8:	42 85 84 ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],eax
+   17c00:	42 85 8c ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],ecx
+   17c08:	42 85 94 ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],edx
+   17c10:	42 85 9c ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],ebx
+   17c18:	42 85 a4 ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],esp
+   17c20:	42 85 ac ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],ebp
+   17c28:	42 85 b4 ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],esi
+   17c30:	42 85 bc ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],edi
+   17c38:	46 85 84 ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],r8d
+   17c40:	46 85 8c ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],r9d
+   17c48:	46 85 94 ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],r10d
+   17c50:	46 85 9c ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],r11d
+   17c58:	46 85 a4 ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],r12d
+   17c60:	46 85 ac ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],r13d
+   17c68:	46 85 b4 ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],r14d
+   17c70:	46 85 bc ef 18 17 16 15 	test   DWORD PTR [rdi+r13*8+0x15161718],r15d
+   17c78:	43 85 84 e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],eax
+   17c80:	43 85 8c e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],ecx
+   17c88:	43 85 94 e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],edx
+   17c90:	43 85 9c e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],ebx
+   17c98:	43 85 a4 e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],esp
+   17ca0:	43 85 ac e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],ebp
+   17ca8:	43 85 b4 e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],esi
+   17cb0:	43 85 bc e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],edi
+   17cb8:	47 85 84 e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],r8d
+   17cc0:	47 85 8c e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],r9d
+   17cc8:	47 85 94 e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],r10d
+   17cd0:	47 85 9c e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],r11d
+   17cd8:	47 85 a4 e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],r12d
+   17ce0:	47 85 ac e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],r13d
+   17ce8:	47 85 b4 e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],r14d
+   17cf0:	47 85 bc e8 18 17 16 15 	test   DWORD PTR [r8+r13*8+0x15161718],r15d
+   17cf8:	43 85 84 e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],eax
+   17d00:	43 85 8c e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],ecx
+   17d08:	43 85 94 e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],edx
+   17d10:	43 85 9c e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],ebx
+   17d18:	43 85 a4 e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],esp
+   17d20:	43 85 ac e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],ebp
+   17d28:	43 85 b4 e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],esi
+   17d30:	43 85 bc e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],edi
+   17d38:	47 85 84 e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],r8d
+   17d40:	47 85 8c e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],r9d
+   17d48:	47 85 94 e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],r10d
+   17d50:	47 85 9c e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],r11d
+   17d58:	47 85 a4 e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],r12d
+   17d60:	47 85 ac e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],r13d
+   17d68:	47 85 b4 e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],r14d
+   17d70:	47 85 bc e9 18 17 16 15 	test   DWORD PTR [r9+r13*8+0x15161718],r15d
+   17d78:	43 85 84 ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],eax
+   17d80:	43 85 8c ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],ecx
+   17d88:	43 85 94 ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],edx
+   17d90:	43 85 9c ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],ebx
+   17d98:	43 85 a4 ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],esp
+   17da0:	43 85 ac ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],ebp
+   17da8:	43 85 b4 ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],esi
+   17db0:	43 85 bc ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],edi
+   17db8:	47 85 84 ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],r8d
+   17dc0:	47 85 8c ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],r9d
+   17dc8:	47 85 94 ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],r10d
+   17dd0:	47 85 9c ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],r11d
+   17dd8:	47 85 a4 ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],r12d
+   17de0:	47 85 ac ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],r13d
+   17de8:	47 85 b4 ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],r14d
+   17df0:	47 85 bc ea 18 17 16 15 	test   DWORD PTR [r10+r13*8+0x15161718],r15d
+   17df8:	43 85 84 eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],eax
+   17e00:	43 85 8c eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],ecx
+   17e08:	43 85 94 eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],edx
+   17e10:	43 85 9c eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],ebx
+   17e18:	43 85 a4 eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],esp
+   17e20:	43 85 ac eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],ebp
+   17e28:	43 85 b4 eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],esi
+   17e30:	43 85 bc eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],edi
+   17e38:	47 85 84 eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],r8d
+   17e40:	47 85 8c eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],r9d
+   17e48:	47 85 94 eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],r10d
+   17e50:	47 85 9c eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],r11d
+   17e58:	47 85 a4 eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],r12d
+   17e60:	47 85 ac eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],r13d
+   17e68:	47 85 b4 eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],r14d
+   17e70:	47 85 bc eb 18 17 16 15 	test   DWORD PTR [r11+r13*8+0x15161718],r15d
+   17e78:	43 85 84 ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],eax
+   17e80:	43 85 8c ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],ecx
+   17e88:	43 85 94 ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],edx
+   17e90:	43 85 9c ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],ebx
+   17e98:	43 85 a4 ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],esp
+   17ea0:	43 85 ac ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],ebp
+   17ea8:	43 85 b4 ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],esi
+   17eb0:	43 85 bc ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],edi
+   17eb8:	47 85 84 ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],r8d
+   17ec0:	47 85 8c ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],r9d
+   17ec8:	47 85 94 ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],r10d
+   17ed0:	47 85 9c ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],r11d
+   17ed8:	47 85 a4 ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],r12d
+   17ee0:	47 85 ac ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],r13d
+   17ee8:	47 85 b4 ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],r14d
+   17ef0:	47 85 bc ec 18 17 16 15 	test   DWORD PTR [r12+r13*8+0x15161718],r15d
+   17ef8:	43 85 84 ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],eax
+   17f00:	43 85 8c ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],ecx
+   17f08:	43 85 94 ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],edx
+   17f10:	43 85 9c ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],ebx
+   17f18:	43 85 a4 ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],esp
+   17f20:	43 85 ac ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],ebp
+   17f28:	43 85 b4 ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],esi
+   17f30:	43 85 bc ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],edi
+   17f38:	47 85 84 ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],r8d
+   17f40:	47 85 8c ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],r9d
+   17f48:	47 85 94 ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],r10d
+   17f50:	47 85 9c ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],r11d
+   17f58:	47 85 a4 ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],r12d
+   17f60:	47 85 ac ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],r13d
+   17f68:	47 85 b4 ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],r14d
+   17f70:	47 85 bc ed 18 17 16 15 	test   DWORD PTR [r13+r13*8+0x15161718],r15d
+   17f78:	43 85 84 ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],eax
+   17f80:	43 85 8c ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],ecx
+   17f88:	43 85 94 ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],edx
+   17f90:	43 85 9c ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],ebx
+   17f98:	43 85 a4 ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],esp
+   17fa0:	43 85 ac ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],ebp
+   17fa8:	43 85 b4 ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],esi
+   17fb0:	43 85 bc ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],edi
+   17fb8:	47 85 84 ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],r8d
+   17fc0:	47 85 8c ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],r9d
+   17fc8:	47 85 94 ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],r10d
+   17fd0:	47 85 9c ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],r11d
+   17fd8:	47 85 a4 ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],r12d
+   17fe0:	47 85 ac ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],r13d
+   17fe8:	47 85 b4 ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],r14d
+   17ff0:	47 85 bc ee 18 17 16 15 	test   DWORD PTR [r14+r13*8+0x15161718],r15d
+   17ff8:	43 85 84 ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],eax
+   18000:	43 85 8c ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],ecx
+   18008:	43 85 94 ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],edx
+   18010:	43 85 9c ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],ebx
+   18018:	43 85 a4 ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],esp
+   18020:	43 85 ac ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],ebp
+   18028:	43 85 b4 ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],esi
+   18030:	43 85 bc ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],edi
+   18038:	47 85 84 ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],r8d
+   18040:	47 85 8c ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],r9d
+   18048:	47 85 94 ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],r10d
+   18050:	47 85 9c ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],r11d
+   18058:	47 85 a4 ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],r12d
+   18060:	47 85 ac ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],r13d
+   18068:	47 85 b4 ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],r14d
+   18070:	47 85 bc ef 18 17 16 15 	test   DWORD PTR [r15+r13*8+0x15161718],r15d
+   18078:	66 42 85 84 e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],ax
+   18081:	66 42 85 8c e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],cx
+   1808a:	66 42 85 94 e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],dx
+   18093:	66 42 85 9c e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],bx
+   1809c:	66 42 85 a4 e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],sp
+   180a5:	66 42 85 ac e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],bp
+   180ae:	66 42 85 b4 e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],si
+   180b7:	66 42 85 bc e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],di
+   180c0:	66 46 85 84 e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],r8w
+   180c9:	66 46 85 8c e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],r9w
+   180d2:	66 46 85 94 e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],r10w
+   180db:	66 46 85 9c e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],r11w
+   180e4:	66 46 85 a4 e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],r12w
+   180ed:	66 46 85 ac e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],r13w
+   180f6:	66 46 85 b4 e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],r14w
+   180ff:	66 46 85 bc e8 18 17 16 15 	test   WORD PTR [rax+r13*8+0x15161718],r15w
+   18108:	66 42 85 84 e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],ax
+   18111:	66 42 85 8c e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],cx
+   1811a:	66 42 85 94 e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],dx
+   18123:	66 42 85 9c e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],bx
+   1812c:	66 42 85 a4 e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],sp
+   18135:	66 42 85 ac e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],bp
+   1813e:	66 42 85 b4 e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],si
+   18147:	66 42 85 bc e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],di
+   18150:	66 46 85 84 e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],r8w
+   18159:	66 46 85 8c e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],r9w
+   18162:	66 46 85 94 e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],r10w
+   1816b:	66 46 85 9c e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],r11w
+   18174:	66 46 85 a4 e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],r12w
+   1817d:	66 46 85 ac e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],r13w
+   18186:	66 46 85 b4 e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],r14w
+   1818f:	66 46 85 bc e9 18 17 16 15 	test   WORD PTR [rcx+r13*8+0x15161718],r15w
+   18198:	66 42 85 84 ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],ax
+   181a1:	66 42 85 8c ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],cx
+   181aa:	66 42 85 94 ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],dx
+   181b3:	66 42 85 9c ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],bx
+   181bc:	66 42 85 a4 ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],sp
+   181c5:	66 42 85 ac ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],bp
+   181ce:	66 42 85 b4 ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],si
+   181d7:	66 42 85 bc ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],di
+   181e0:	66 46 85 84 ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],r8w
+   181e9:	66 46 85 8c ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],r9w
+   181f2:	66 46 85 94 ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],r10w
+   181fb:	66 46 85 9c ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],r11w
+   18204:	66 46 85 a4 ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],r12w
+   1820d:	66 46 85 ac ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],r13w
+   18216:	66 46 85 b4 ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],r14w
+   1821f:	66 46 85 bc ea 18 17 16 15 	test   WORD PTR [rdx+r13*8+0x15161718],r15w
+   18228:	66 42 85 84 eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],ax
+   18231:	66 42 85 8c eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],cx
+   1823a:	66 42 85 94 eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],dx
+   18243:	66 42 85 9c eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],bx
+   1824c:	66 42 85 a4 eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],sp
+   18255:	66 42 85 ac eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],bp
+   1825e:	66 42 85 b4 eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],si
+   18267:	66 42 85 bc eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],di
+   18270:	66 46 85 84 eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],r8w
+   18279:	66 46 85 8c eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],r9w
+   18282:	66 46 85 94 eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],r10w
+   1828b:	66 46 85 9c eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],r11w
+   18294:	66 46 85 a4 eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],r12w
+   1829d:	66 46 85 ac eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],r13w
+   182a6:	66 46 85 b4 eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],r14w
+   182af:	66 46 85 bc eb 18 17 16 15 	test   WORD PTR [rbx+r13*8+0x15161718],r15w
+   182b8:	66 42 85 84 ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],ax
+   182c1:	66 42 85 8c ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],cx
+   182ca:	66 42 85 94 ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],dx
+   182d3:	66 42 85 9c ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],bx
+   182dc:	66 42 85 a4 ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],sp
+   182e5:	66 42 85 ac ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],bp
+   182ee:	66 42 85 b4 ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],si
+   182f7:	66 42 85 bc ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],di
+   18300:	66 46 85 84 ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],r8w
+   18309:	66 46 85 8c ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],r9w
+   18312:	66 46 85 94 ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],r10w
+   1831b:	66 46 85 9c ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],r11w
+   18324:	66 46 85 a4 ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],r12w
+   1832d:	66 46 85 ac ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],r13w
+   18336:	66 46 85 b4 ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],r14w
+   1833f:	66 46 85 bc ec 18 17 16 15 	test   WORD PTR [rsp+r13*8+0x15161718],r15w
+   18348:	66 42 85 84 ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],ax
+   18351:	66 42 85 8c ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],cx
+   1835a:	66 42 85 94 ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],dx
+   18363:	66 42 85 9c ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],bx
+   1836c:	66 42 85 a4 ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],sp
+   18375:	66 42 85 ac ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],bp
+   1837e:	66 42 85 b4 ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],si
+   18387:	66 42 85 bc ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],di
+   18390:	66 46 85 84 ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],r8w
+   18399:	66 46 85 8c ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],r9w
+   183a2:	66 46 85 94 ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],r10w
+   183ab:	66 46 85 9c ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],r11w
+   183b4:	66 46 85 a4 ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],r12w
+   183bd:	66 46 85 ac ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],r13w
+   183c6:	66 46 85 b4 ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],r14w
+   183cf:	66 46 85 bc ed 18 17 16 15 	test   WORD PTR [rbp+r13*8+0x15161718],r15w
+   183d8:	66 42 85 84 ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],ax
+   183e1:	66 42 85 8c ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],cx
+   183ea:	66 42 85 94 ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],dx
+   183f3:	66 42 85 9c ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],bx
+   183fc:	66 42 85 a4 ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],sp
+   18405:	66 42 85 ac ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],bp
+   1840e:	66 42 85 b4 ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],si
+   18417:	66 42 85 bc ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],di
+   18420:	66 46 85 84 ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],r8w
+   18429:	66 46 85 8c ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],r9w
+   18432:	66 46 85 94 ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],r10w
+   1843b:	66 46 85 9c ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],r11w
+   18444:	66 46 85 a4 ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],r12w
+   1844d:	66 46 85 ac ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],r13w
+   18456:	66 46 85 b4 ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],r14w
+   1845f:	66 46 85 bc ee 18 17 16 15 	test   WORD PTR [rsi+r13*8+0x15161718],r15w
+   18468:	66 42 85 84 ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],ax
+   18471:	66 42 85 8c ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],cx
+   1847a:	66 42 85 94 ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],dx
+   18483:	66 42 85 9c ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],bx
+   1848c:	66 42 85 a4 ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],sp
+   18495:	66 42 85 ac ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],bp
+   1849e:	66 42 85 b4 ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],si
+   184a7:	66 42 85 bc ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],di
+   184b0:	66 46 85 84 ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],r8w
+   184b9:	66 46 85 8c ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],r9w
+   184c2:	66 46 85 94 ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],r10w
+   184cb:	66 46 85 9c ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],r11w
+   184d4:	66 46 85 a4 ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],r12w
+   184dd:	66 46 85 ac ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],r13w
+   184e6:	66 46 85 b4 ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],r14w
+   184ef:	66 46 85 bc ef 18 17 16 15 	test   WORD PTR [rdi+r13*8+0x15161718],r15w
+   184f8:	66 43 85 84 e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],ax
+   18501:	66 43 85 8c e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],cx
+   1850a:	66 43 85 94 e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],dx
+   18513:	66 43 85 9c e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],bx
+   1851c:	66 43 85 a4 e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],sp
+   18525:	66 43 85 ac e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],bp
+   1852e:	66 43 85 b4 e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],si
+   18537:	66 43 85 bc e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],di
+   18540:	66 47 85 84 e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],r8w
+   18549:	66 47 85 8c e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],r9w
+   18552:	66 47 85 94 e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],r10w
+   1855b:	66 47 85 9c e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],r11w
+   18564:	66 47 85 a4 e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],r12w
+   1856d:	66 47 85 ac e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],r13w
+   18576:	66 47 85 b4 e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],r14w
+   1857f:	66 47 85 bc e8 18 17 16 15 	test   WORD PTR [r8+r13*8+0x15161718],r15w
+   18588:	66 43 85 84 e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],ax
+   18591:	66 43 85 8c e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],cx
+   1859a:	66 43 85 94 e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],dx
+   185a3:	66 43 85 9c e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],bx
+   185ac:	66 43 85 a4 e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],sp
+   185b5:	66 43 85 ac e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],bp
+   185be:	66 43 85 b4 e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],si
+   185c7:	66 43 85 bc e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],di
+   185d0:	66 47 85 84 e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],r8w
+   185d9:	66 47 85 8c e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],r9w
+   185e2:	66 47 85 94 e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],r10w
+   185eb:	66 47 85 9c e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],r11w
+   185f4:	66 47 85 a4 e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],r12w
+   185fd:	66 47 85 ac e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],r13w
+   18606:	66 47 85 b4 e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],r14w
+   1860f:	66 47 85 bc e9 18 17 16 15 	test   WORD PTR [r9+r13*8+0x15161718],r15w
+   18618:	66 43 85 84 ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],ax
+   18621:	66 43 85 8c ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],cx
+   1862a:	66 43 85 94 ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],dx
+   18633:	66 43 85 9c ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],bx
+   1863c:	66 43 85 a4 ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],sp
+   18645:	66 43 85 ac ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],bp
+   1864e:	66 43 85 b4 ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],si
+   18657:	66 43 85 bc ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],di
+   18660:	66 47 85 84 ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],r8w
+   18669:	66 47 85 8c ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],r9w
+   18672:	66 47 85 94 ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],r10w
+   1867b:	66 47 85 9c ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],r11w
+   18684:	66 47 85 a4 ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],r12w
+   1868d:	66 47 85 ac ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],r13w
+   18696:	66 47 85 b4 ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],r14w
+   1869f:	66 47 85 bc ea 18 17 16 15 	test   WORD PTR [r10+r13*8+0x15161718],r15w
+   186a8:	66 43 85 84 eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],ax
+   186b1:	66 43 85 8c eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],cx
+   186ba:	66 43 85 94 eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],dx
+   186c3:	66 43 85 9c eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],bx
+   186cc:	66 43 85 a4 eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],sp
+   186d5:	66 43 85 ac eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],bp
+   186de:	66 43 85 b4 eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],si
+   186e7:	66 43 85 bc eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],di
+   186f0:	66 47 85 84 eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],r8w
+   186f9:	66 47 85 8c eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],r9w
+   18702:	66 47 85 94 eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],r10w
+   1870b:	66 47 85 9c eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],r11w
+   18714:	66 47 85 a4 eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],r12w
+   1871d:	66 47 85 ac eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],r13w
+   18726:	66 47 85 b4 eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],r14w
+   1872f:	66 47 85 bc eb 18 17 16 15 	test   WORD PTR [r11+r13*8+0x15161718],r15w
+   18738:	66 43 85 84 ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],ax
+   18741:	66 43 85 8c ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],cx
+   1874a:	66 43 85 94 ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],dx
+   18753:	66 43 85 9c ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],bx
+   1875c:	66 43 85 a4 ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],sp
+   18765:	66 43 85 ac ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],bp
+   1876e:	66 43 85 b4 ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],si
+   18777:	66 43 85 bc ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],di
+   18780:	66 47 85 84 ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],r8w
+   18789:	66 47 85 8c ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],r9w
+   18792:	66 47 85 94 ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],r10w
+   1879b:	66 47 85 9c ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],r11w
+   187a4:	66 47 85 a4 ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],r12w
+   187ad:	66 47 85 ac ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],r13w
+   187b6:	66 47 85 b4 ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],r14w
+   187bf:	66 47 85 bc ec 18 17 16 15 	test   WORD PTR [r12+r13*8+0x15161718],r15w
+   187c8:	66 43 85 84 ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],ax
+   187d1:	66 43 85 8c ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],cx
+   187da:	66 43 85 94 ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],dx
+   187e3:	66 43 85 9c ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],bx
+   187ec:	66 43 85 a4 ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],sp
+   187f5:	66 43 85 ac ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],bp
+   187fe:	66 43 85 b4 ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],si
+   18807:	66 43 85 bc ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],di
+   18810:	66 47 85 84 ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],r8w
+   18819:	66 47 85 8c ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],r9w
+   18822:	66 47 85 94 ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],r10w
+   1882b:	66 47 85 9c ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],r11w
+   18834:	66 47 85 a4 ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],r12w
+   1883d:	66 47 85 ac ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],r13w
+   18846:	66 47 85 b4 ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],r14w
+   1884f:	66 47 85 bc ed 18 17 16 15 	test   WORD PTR [r13+r13*8+0x15161718],r15w
+   18858:	66 43 85 84 ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],ax
+   18861:	66 43 85 8c ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],cx
+   1886a:	66 43 85 94 ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],dx
+   18873:	66 43 85 9c ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],bx
+   1887c:	66 43 85 a4 ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],sp
+   18885:	66 43 85 ac ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],bp
+   1888e:	66 43 85 b4 ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],si
+   18897:	66 43 85 bc ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],di
+   188a0:	66 47 85 84 ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],r8w
+   188a9:	66 47 85 8c ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],r9w
+   188b2:	66 47 85 94 ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],r10w
+   188bb:	66 47 85 9c ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],r11w
+   188c4:	66 47 85 a4 ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],r12w
+   188cd:	66 47 85 ac ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],r13w
+   188d6:	66 47 85 b4 ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],r14w
+   188df:	66 47 85 bc ee 18 17 16 15 	test   WORD PTR [r14+r13*8+0x15161718],r15w
+   188e8:	66 43 85 84 ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],ax
+   188f1:	66 43 85 8c ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],cx
+   188fa:	66 43 85 94 ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],dx
+   18903:	66 43 85 9c ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],bx
+   1890c:	66 43 85 a4 ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],sp
+   18915:	66 43 85 ac ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],bp
+   1891e:	66 43 85 b4 ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],si
+   18927:	66 43 85 bc ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],di
+   18930:	66 47 85 84 ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],r8w
+   18939:	66 47 85 8c ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],r9w
+   18942:	66 47 85 94 ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],r10w
+   1894b:	66 47 85 9c ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],r11w
+   18954:	66 47 85 a4 ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],r12w
+   1895d:	66 47 85 ac ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],r13w
+   18966:	66 47 85 b4 ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],r14w
+   1896f:	66 47 85 bc ef 18 17 16 15 	test   WORD PTR [r15+r13*8+0x15161718],r15w
+   18978:	42 84 84 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],al
+   18980:	42 84 8c e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],cl
+   18988:	42 84 94 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],dl
+   18990:	42 84 9c e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],bl
+   18998:	42 84 a4 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],spl
+   189a0:	42 84 ac e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],bpl
+   189a8:	42 84 b4 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],sil
+   189b0:	42 84 bc e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],dil
+   189b8:	46 84 84 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],r8b
+   189c0:	46 84 8c e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],r9b
+   189c8:	46 84 94 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],r10b
+   189d0:	46 84 9c e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],r11b
+   189d8:	46 84 a4 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],r12b
+   189e0:	46 84 ac e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],r13b
+   189e8:	46 84 b4 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],r14b
+   189f0:	46 84 bc e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],r15b
+   189f8:	42 84 a4 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],spl
+   18a00:	42 84 ac e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],bpl
+   18a08:	42 84 b4 e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],sil
+   18a10:	42 84 bc e8 18 17 16 15 	test   BYTE PTR [rax+r13*8+0x15161718],dil
+   18a18:	42 84 84 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],al
+   18a20:	42 84 8c e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],cl
+   18a28:	42 84 94 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],dl
+   18a30:	42 84 9c e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],bl
+   18a38:	42 84 a4 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],spl
+   18a40:	42 84 ac e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],bpl
+   18a48:	42 84 b4 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],sil
+   18a50:	42 84 bc e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],dil
+   18a58:	46 84 84 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],r8b
+   18a60:	46 84 8c e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],r9b
+   18a68:	46 84 94 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],r10b
+   18a70:	46 84 9c e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],r11b
+   18a78:	46 84 a4 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],r12b
+   18a80:	46 84 ac e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],r13b
+   18a88:	46 84 b4 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],r14b
+   18a90:	46 84 bc e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],r15b
+   18a98:	42 84 a4 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],spl
+   18aa0:	42 84 ac e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],bpl
+   18aa8:	42 84 b4 e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],sil
+   18ab0:	42 84 bc e9 18 17 16 15 	test   BYTE PTR [rcx+r13*8+0x15161718],dil
+   18ab8:	42 84 84 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],al
+   18ac0:	42 84 8c ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],cl
+   18ac8:	42 84 94 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],dl
+   18ad0:	42 84 9c ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],bl
+   18ad8:	42 84 a4 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],spl
+   18ae0:	42 84 ac ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],bpl
+   18ae8:	42 84 b4 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],sil
+   18af0:	42 84 bc ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],dil
+   18af8:	46 84 84 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],r8b
+   18b00:	46 84 8c ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],r9b
+   18b08:	46 84 94 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],r10b
+   18b10:	46 84 9c ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],r11b
+   18b18:	46 84 a4 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],r12b
+   18b20:	46 84 ac ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],r13b
+   18b28:	46 84 b4 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],r14b
+   18b30:	46 84 bc ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],r15b
+   18b38:	42 84 a4 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],spl
+   18b40:	42 84 ac ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],bpl
+   18b48:	42 84 b4 ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],sil
+   18b50:	42 84 bc ea 18 17 16 15 	test   BYTE PTR [rdx+r13*8+0x15161718],dil
+   18b58:	42 84 84 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],al
+   18b60:	42 84 8c eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],cl
+   18b68:	42 84 94 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],dl
+   18b70:	42 84 9c eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],bl
+   18b78:	42 84 a4 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],spl
+   18b80:	42 84 ac eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],bpl
+   18b88:	42 84 b4 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],sil
+   18b90:	42 84 bc eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],dil
+   18b98:	46 84 84 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],r8b
+   18ba0:	46 84 8c eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],r9b
+   18ba8:	46 84 94 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],r10b
+   18bb0:	46 84 9c eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],r11b
+   18bb8:	46 84 a4 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],r12b
+   18bc0:	46 84 ac eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],r13b
+   18bc8:	46 84 b4 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],r14b
+   18bd0:	46 84 bc eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],r15b
+   18bd8:	42 84 a4 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],spl
+   18be0:	42 84 ac eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],bpl
+   18be8:	42 84 b4 eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],sil
+   18bf0:	42 84 bc eb 18 17 16 15 	test   BYTE PTR [rbx+r13*8+0x15161718],dil
+   18bf8:	42 84 84 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],al
+   18c00:	42 84 8c ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],cl
+   18c08:	42 84 94 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],dl
+   18c10:	42 84 9c ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],bl
+   18c18:	42 84 a4 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],spl
+   18c20:	42 84 ac ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],bpl
+   18c28:	42 84 b4 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],sil
+   18c30:	42 84 bc ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],dil
+   18c38:	46 84 84 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],r8b
+   18c40:	46 84 8c ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],r9b
+   18c48:	46 84 94 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],r10b
+   18c50:	46 84 9c ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],r11b
+   18c58:	46 84 a4 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],r12b
+   18c60:	46 84 ac ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],r13b
+   18c68:	46 84 b4 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],r14b
+   18c70:	46 84 bc ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],r15b
+   18c78:	42 84 a4 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],spl
+   18c80:	42 84 ac ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],bpl
+   18c88:	42 84 b4 ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],sil
+   18c90:	42 84 bc ec 18 17 16 15 	test   BYTE PTR [rsp+r13*8+0x15161718],dil
+   18c98:	42 84 84 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],al
+   18ca0:	42 84 8c ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],cl
+   18ca8:	42 84 94 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],dl
+   18cb0:	42 84 9c ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],bl
+   18cb8:	42 84 a4 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],spl
+   18cc0:	42 84 ac ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],bpl
+   18cc8:	42 84 b4 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],sil
+   18cd0:	42 84 bc ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],dil
+   18cd8:	46 84 84 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],r8b
+   18ce0:	46 84 8c ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],r9b
+   18ce8:	46 84 94 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],r10b
+   18cf0:	46 84 9c ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],r11b
+   18cf8:	46 84 a4 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],r12b
+   18d00:	46 84 ac ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],r13b
+   18d08:	46 84 b4 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],r14b
+   18d10:	46 84 bc ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],r15b
+   18d18:	42 84 a4 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],spl
+   18d20:	42 84 ac ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],bpl
+   18d28:	42 84 b4 ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],sil
+   18d30:	42 84 bc ed 18 17 16 15 	test   BYTE PTR [rbp+r13*8+0x15161718],dil
+   18d38:	42 84 84 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],al
+   18d40:	42 84 8c ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],cl
+   18d48:	42 84 94 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],dl
+   18d50:	42 84 9c ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],bl
+   18d58:	42 84 a4 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],spl
+   18d60:	42 84 ac ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],bpl
+   18d68:	42 84 b4 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],sil
+   18d70:	42 84 bc ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],dil
+   18d78:	46 84 84 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],r8b
+   18d80:	46 84 8c ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],r9b
+   18d88:	46 84 94 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],r10b
+   18d90:	46 84 9c ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],r11b
+   18d98:	46 84 a4 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],r12b
+   18da0:	46 84 ac ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],r13b
+   18da8:	46 84 b4 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],r14b
+   18db0:	46 84 bc ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],r15b
+   18db8:	42 84 a4 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],spl
+   18dc0:	42 84 ac ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],bpl
+   18dc8:	42 84 b4 ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],sil
+   18dd0:	42 84 bc ee 18 17 16 15 	test   BYTE PTR [rsi+r13*8+0x15161718],dil
+   18dd8:	42 84 84 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],al
+   18de0:	42 84 8c ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],cl
+   18de8:	42 84 94 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],dl
+   18df0:	42 84 9c ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],bl
+   18df8:	42 84 a4 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],spl
+   18e00:	42 84 ac ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],bpl
+   18e08:	42 84 b4 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],sil
+   18e10:	42 84 bc ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],dil
+   18e18:	46 84 84 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],r8b
+   18e20:	46 84 8c ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],r9b
+   18e28:	46 84 94 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],r10b
+   18e30:	46 84 9c ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],r11b
+   18e38:	46 84 a4 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],r12b
+   18e40:	46 84 ac ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],r13b
+   18e48:	46 84 b4 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],r14b
+   18e50:	46 84 bc ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],r15b
+   18e58:	42 84 a4 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],spl
+   18e60:	42 84 ac ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],bpl
+   18e68:	42 84 b4 ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],sil
+   18e70:	42 84 bc ef 18 17 16 15 	test   BYTE PTR [rdi+r13*8+0x15161718],dil
+   18e78:	43 84 84 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],al
+   18e80:	43 84 8c e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],cl
+   18e88:	43 84 94 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],dl
+   18e90:	43 84 9c e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],bl
+   18e98:	43 84 a4 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],spl
+   18ea0:	43 84 ac e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],bpl
+   18ea8:	43 84 b4 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],sil
+   18eb0:	43 84 bc e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],dil
+   18eb8:	47 84 84 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],r8b
+   18ec0:	47 84 8c e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],r9b
+   18ec8:	47 84 94 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],r10b
+   18ed0:	47 84 9c e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],r11b
+   18ed8:	47 84 a4 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],r12b
+   18ee0:	47 84 ac e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],r13b
+   18ee8:	47 84 b4 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],r14b
+   18ef0:	47 84 bc e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],r15b
+   18ef8:	43 84 a4 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],spl
+   18f00:	43 84 ac e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],bpl
+   18f08:	43 84 b4 e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],sil
+   18f10:	43 84 bc e8 18 17 16 15 	test   BYTE PTR [r8+r13*8+0x15161718],dil
+   18f18:	43 84 84 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],al
+   18f20:	43 84 8c e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],cl
+   18f28:	43 84 94 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],dl
+   18f30:	43 84 9c e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],bl
+   18f38:	43 84 a4 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],spl
+   18f40:	43 84 ac e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],bpl
+   18f48:	43 84 b4 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],sil
+   18f50:	43 84 bc e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],dil
+   18f58:	47 84 84 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],r8b
+   18f60:	47 84 8c e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],r9b
+   18f68:	47 84 94 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],r10b
+   18f70:	47 84 9c e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],r11b
+   18f78:	47 84 a4 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],r12b
+   18f80:	47 84 ac e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],r13b
+   18f88:	47 84 b4 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],r14b
+   18f90:	47 84 bc e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],r15b
+   18f98:	43 84 a4 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],spl
+   18fa0:	43 84 ac e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],bpl
+   18fa8:	43 84 b4 e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],sil
+   18fb0:	43 84 bc e9 18 17 16 15 	test   BYTE PTR [r9+r13*8+0x15161718],dil
+   18fb8:	43 84 84 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],al
+   18fc0:	43 84 8c ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],cl
+   18fc8:	43 84 94 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],dl
+   18fd0:	43 84 9c ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],bl
+   18fd8:	43 84 a4 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],spl
+   18fe0:	43 84 ac ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],bpl
+   18fe8:	43 84 b4 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],sil
+   18ff0:	43 84 bc ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],dil
+   18ff8:	47 84 84 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],r8b
+   19000:	47 84 8c ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],r9b
+   19008:	47 84 94 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],r10b
+   19010:	47 84 9c ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],r11b
+   19018:	47 84 a4 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],r12b
+   19020:	47 84 ac ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],r13b
+   19028:	47 84 b4 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],r14b
+   19030:	47 84 bc ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],r15b
+   19038:	43 84 a4 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],spl
+   19040:	43 84 ac ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],bpl
+   19048:	43 84 b4 ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],sil
+   19050:	43 84 bc ea 18 17 16 15 	test   BYTE PTR [r10+r13*8+0x15161718],dil
+   19058:	43 84 84 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],al
+   19060:	43 84 8c eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],cl
+   19068:	43 84 94 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],dl
+   19070:	43 84 9c eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],bl
+   19078:	43 84 a4 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],spl
+   19080:	43 84 ac eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],bpl
+   19088:	43 84 b4 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],sil
+   19090:	43 84 bc eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],dil
+   19098:	47 84 84 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],r8b
+   190a0:	47 84 8c eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],r9b
+   190a8:	47 84 94 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],r10b
+   190b0:	47 84 9c eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],r11b
+   190b8:	47 84 a4 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],r12b
+   190c0:	47 84 ac eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],r13b
+   190c8:	47 84 b4 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],r14b
+   190d0:	47 84 bc eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],r15b
+   190d8:	43 84 a4 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],spl
+   190e0:	43 84 ac eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],bpl
+   190e8:	43 84 b4 eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],sil
+   190f0:	43 84 bc eb 18 17 16 15 	test   BYTE PTR [r11+r13*8+0x15161718],dil
+   190f8:	43 84 84 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],al
+   19100:	43 84 8c ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],cl
+   19108:	43 84 94 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],dl
+   19110:	43 84 9c ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],bl
+   19118:	43 84 a4 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],spl
+   19120:	43 84 ac ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],bpl
+   19128:	43 84 b4 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],sil
+   19130:	43 84 bc ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],dil
+   19138:	47 84 84 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],r8b
+   19140:	47 84 8c ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],r9b
+   19148:	47 84 94 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],r10b
+   19150:	47 84 9c ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],r11b
+   19158:	47 84 a4 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],r12b
+   19160:	47 84 ac ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],r13b
+   19168:	47 84 b4 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],r14b
+   19170:	47 84 bc ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],r15b
+   19178:	43 84 a4 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],spl
+   19180:	43 84 ac ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],bpl
+   19188:	43 84 b4 ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],sil
+   19190:	43 84 bc ec 18 17 16 15 	test   BYTE PTR [r12+r13*8+0x15161718],dil
+   19198:	43 84 84 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],al
+   191a0:	43 84 8c ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],cl
+   191a8:	43 84 94 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],dl
+   191b0:	43 84 9c ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],bl
+   191b8:	43 84 a4 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],spl
+   191c0:	43 84 ac ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],bpl
+   191c8:	43 84 b4 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],sil
+   191d0:	43 84 bc ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],dil
+   191d8:	47 84 84 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],r8b
+   191e0:	47 84 8c ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],r9b
+   191e8:	47 84 94 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],r10b
+   191f0:	47 84 9c ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],r11b
+   191f8:	47 84 a4 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],r12b
+   19200:	47 84 ac ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],r13b
+   19208:	47 84 b4 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],r14b
+   19210:	47 84 bc ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],r15b
+   19218:	43 84 a4 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],spl
+   19220:	43 84 ac ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],bpl
+   19228:	43 84 b4 ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],sil
+   19230:	43 84 bc ed 18 17 16 15 	test   BYTE PTR [r13+r13*8+0x15161718],dil
+   19238:	43 84 84 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],al
+   19240:	43 84 8c ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],cl
+   19248:	43 84 94 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],dl
+   19250:	43 84 9c ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],bl
+   19258:	43 84 a4 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],spl
+   19260:	43 84 ac ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],bpl
+   19268:	43 84 b4 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],sil
+   19270:	43 84 bc ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],dil
+   19278:	47 84 84 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],r8b
+   19280:	47 84 8c ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],r9b
+   19288:	47 84 94 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],r10b
+   19290:	47 84 9c ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],r11b
+   19298:	47 84 a4 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],r12b
+   192a0:	47 84 ac ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],r13b
+   192a8:	47 84 b4 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],r14b
+   192b0:	47 84 bc ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],r15b
+   192b8:	43 84 a4 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],spl
+   192c0:	43 84 ac ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],bpl
+   192c8:	43 84 b4 ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],sil
+   192d0:	43 84 bc ee 18 17 16 15 	test   BYTE PTR [r14+r13*8+0x15161718],dil
+   192d8:	43 84 84 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],al
+   192e0:	43 84 8c ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],cl
+   192e8:	43 84 94 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],dl
+   192f0:	43 84 9c ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],bl
+   192f8:	43 84 a4 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],spl
+   19300:	43 84 ac ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],bpl
+   19308:	43 84 b4 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],sil
+   19310:	43 84 bc ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],dil
+   19318:	47 84 84 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],r8b
+   19320:	47 84 8c ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],r9b
+   19328:	47 84 94 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],r10b
+   19330:	47 84 9c ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],r11b
+   19338:	47 84 a4 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],r12b
+   19340:	47 84 ac ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],r13b
+   19348:	47 84 b4 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],r14b
+   19350:	47 84 bc ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],r15b
+   19358:	43 84 a4 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],spl
+   19360:	43 84 ac ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],bpl
+   19368:	43 84 b4 ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],sil
+   19370:	43 84 bc ef 18 17 16 15 	test   BYTE PTR [r15+r13*8+0x15161718],dil
+   19378:	a8 15                	test   al,0x15
+   1937a:	66 a9 16 15          	test   ax,0x1516
+   1937e:	a9 18 17 16 15       	test   eax,0x15161718
+   19383:	48 a9 18 17 16 15    	test   rax,0x15161718

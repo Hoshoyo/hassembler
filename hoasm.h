@@ -267,7 +267,7 @@ register_equivalent(X64_Register r, X64_Register c)
 	if(r <= R15W && c <= R15W) return register_representation(r) == register_representation(c);
 	if (r == RSP && c == SPL) return true;
 	if (r == RBP && c == BPL) return true;
-	return r == c;
+	return register_representation(r) == register_representation(c);
 }
 
 static bool
@@ -794,6 +794,17 @@ mk_i(u32 immediate, s32 immediate_bitsize)
 }
 
 static X64_AddrMode
+mk_i_reg(X64_Register rm, u32 immediate, s32 immediate_bitsize)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_I);
+	result.rm = rm;
+	result.reg = REG_NONE;
+	result.immediate = immediate;
+	result.immediate_bitsize = (immediate_bitsize == 0) ? MAX(8, value_bitsize(immediate)) : immediate_bitsize;
+	return result;
+}
+
+static X64_AddrMode
 mk_fd(X64_Register base, u64 offset, X64_AddrSize bitsize)
 {
 	assert(register_is_segment(base) || base == REG_NONE);
@@ -931,3 +942,4 @@ u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode
 u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode);
 u8* emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrMode amode);
 u8* emit_lea(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_test(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
