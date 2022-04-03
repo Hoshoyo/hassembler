@@ -94,13 +94,13 @@ emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {
     if(amode.mode_type == ADDR_MODE_M)
     {
-        //assert(amode.ptr_bitsize == 64);
+        assert(amode.ptr_bitsize == 64);
         s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
         X64_Opcode opcode = {.byte_count = 1};
         opcode.bytes[0] = 0xff;
         amode.reg = JMP_RM_SEG_DIGIT;
-        //if(bitsize == 64)
-        //    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+        if(bitsize == 64)
+            amode.flags |= ADDRMODE_FLAG_NO_REXW;
         stream = emit_instruction(out_info, stream, amode, opcode);
     }
     return stream;

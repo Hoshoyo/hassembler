@@ -238,9 +238,10 @@ emit_jmp_test(u8* stream)
 #endif
 
     // TODO check this
-#if 0
-    for(X64_Register i = EAX; i <= R15D; ++i)
+#if 1
+    for(X64_Register i = RAX; i <= R15D; ++i)
     {
+        if(i == 0) *stream++= 0x48;
         stream = emit_fjmp(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
     }
 #endif
@@ -272,5 +273,6 @@ int main()
 	fclose(out);
 
     system("objdump -D -Mintel,x86-64 -b binary -m i386 -w " FILENAME);
+    //system("ndisasm -b 64 " FILENAME);
     return 0;
 }
