@@ -144,6 +144,11 @@ typedef enum {
 	SSE_CMP_EQ = 0,
 	SSE_CMP_LT = 1,
 	SSE_CMP_LE = 2,
+	SSE_CMP_UNORD = 3,
+	SSE_CMP_NE = 4,
+	SSE_CMP_NL = 5,
+	SSE_CMP_NLE = 6,
+	SSE_CMP_ORD = 7
 } X64_SSE_Compare_Flag;
 
 typedef enum {
@@ -363,6 +368,8 @@ typedef enum {
 	ADDR_MODE_I,
 	ADDR_MODE_O,
 	ADDR_MODE_D,
+	ADDR_MODE_A,
+	ADDR_MODE_B,
 } X64_AddrMode_Type;
 
 #define ADDRMODE_FLAG_NO_SIZE_OVERRIDE (1 << 0)
@@ -622,6 +629,57 @@ mk_rmi_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_S
 	result.immediate_bitsize = immediate_bitsize;
 	result.reg = reg;
 
+	return result;
+}
+
+static X64_AddrMode
+mk_a_direct(X64_XMM_Register reg, X64_XMM_Register rm)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_A);
+	result.reg = reg;
+	result.rm = rm;
+	return result;
+}
+
+static X64_AddrMode
+mk_a_indirect(X64_XMM_Register reg, X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_m_indirect(rm, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_A;
+	result.reg = reg;
+	return result;
+}
+
+static X64_AddrMode
+mk_a_indirect_sib(X64_XMM_Register reg, X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_A;
+	result.reg = reg;
+
+	return result;
+}
+
+static X64_AddrMode
+mk_b_direct(X64_XMM_Register reg, X64_XMM_Register rm)
+{
+	X64_AddrMode result = mk_a_direct(reg, rm);
+	result.mode_type = ADDR_MODE_B;
+	return result;
+}
+static X64_AddrMode
+mk_b_indirect(X64_XMM_Register reg, X64_Register rm, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_a_indirect(reg, rm, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_B;
+	return result;
+}
+
+static X64_AddrMode
+mk_b_indirect_sib(X64_XMM_Register reg, X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_a_indirect_sib(reg, rm, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_B;
 	return result;
 }
 
@@ -939,7 +997,82 @@ u8* emit_leave(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_leave16(Instr_Emit_Result* out_info, u8* stream);
 
 u8* emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode);
+u8* emit_instruction_prefixed(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode, u8 prefix);
 u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode);
 u8* emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrMode amode);
 u8* emit_lea(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_test(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_addps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_addss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_addpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_addsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_subps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_subss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_subpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_subsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_andps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_andpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_andnotps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_andnotpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_orps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_orpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_xorps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_xorpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_cmpps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_SSE_Compare_Flag cmp_predicate);
+u8* emit_cmppd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_SSE_Compare_Flag cmp_predicate);
+u8* emit_cmpss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_SSE_Compare_Flag cmp_predicate);
+u8* emit_cmpsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_SSE_Compare_Flag cmp_predicate);
+
+u8* emit_comiss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_comisd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_ucomiss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_ucomisd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_cvtpi2ps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtpi2pd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtps2pi(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtpd2pi(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtsi2ss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtss2si(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtss2sd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtsd2ss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtdq2pd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtdq2ps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtpd2dq(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtpd2ps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtps2dq(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtps2pd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtsd2si(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvtsi2sd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_cvttpd2dq(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvttpd2pi(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvttps2dq(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvttsd2si(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvttss2si(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cvttps2pi(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_divpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_divsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_divps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_divss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_mulpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_mulps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_mulss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_mulsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_movaps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movapd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movups(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movupd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movhps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movhpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movlpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_movlps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
