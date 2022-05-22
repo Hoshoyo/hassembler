@@ -71,6 +71,7 @@ int main()
     check_file("test_mul.exe", "mul_result.res", "mul.test");
     check_file("test_jmp.exe", "jmp_result.res", "jmp.test");
     check_file("test_shift.exe", "shift_result.res", "shift.test");
+    check_file("test_bit.exe", "bit_result.res", "bit.test");
 
     return 0;
 }

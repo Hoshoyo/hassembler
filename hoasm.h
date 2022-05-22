@@ -73,6 +73,13 @@ typedef enum {
 } X64_Arithmetic_Instr;
 
 typedef enum {
+	BITTEST = 4,
+	BITTEST_COMPLEMENT = 7,
+	BITTEST_RESET = 6,
+	BITTEST_SET = 5
+} X64_BitTest_Instr;
+
+typedef enum {
 	ROL = 0,	// Rotate left
 	ROR = 1,	// Rotate right
 	RCL = 2,	// Rotate left + 1
@@ -375,6 +382,7 @@ typedef enum {
 #define ADDRMODE_FLAG_NO_SIZE_OVERRIDE (1 << 0)
 #define ADDRMODE_FLAG_NO_REX  (1 << 1)
 #define ADDRMODE_FLAG_NO_REXW (1 << 2)
+#define ADDRMODE_FLAG_REXW    (1 << 3)
 
 typedef struct {
 	X64_AddrMode_Type   mode_type;
@@ -431,6 +439,8 @@ emit_rex(u8* stream, X64_Register reg, X64_Register rm, X64_Register index, X64_
 	w = (mode == DIRECT) ? register_get_bitsize(rm) == 64 : ptr_size == 64;
 	if(flags & ADDRMODE_FLAG_NO_REXW)
 		w = 0;
+	if(flags & ADDRMODE_FLAG_REXW)
+		w = 1;
 
     if(index == REG_NONE && base == REG_NONE)
     {
@@ -1002,6 +1012,10 @@ u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Inst
 u8* emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrMode amode);
 u8* emit_lea(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_test(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_bsf(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_bsr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_bswap(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_bt(Instr_Emit_Result* out_info, u8* stream, X64_BitTest_Instr instr, X64_AddrMode amode);
 
 u8* emit_addps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_addss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
