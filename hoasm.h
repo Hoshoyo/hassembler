@@ -717,6 +717,14 @@ mk_zo_reg_bitsize(X64_Register reg, s32 bitsize)
 }
 
 static X64_AddrMode
+mk_zo_bitsize(s32 bitsize)
+{
+	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_ZO);
+	result.ptr_bitsize = bitsize;
+	return result;
+}
+
+static X64_AddrMode
 mk_o(X64_Register reg)
 {
 	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_O);
@@ -1016,6 +1024,30 @@ u8* emit_bsf(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_bsr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_bswap(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_bt(Instr_Emit_Result* out_info, u8* stream, X64_BitTest_Instr instr, X64_AddrMode amode);
+u8* emit_cbw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_clc(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_cld(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_cli(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_clts(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_stc(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_std(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_sti(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_cmc(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_cpuid(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_hlt(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_invd(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_iret(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_lahf(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_sahf(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_popf(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_pushf(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_rdmsr(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_rdpmc(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_rdtsc(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_rsm(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_sysenter(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_wbinvd(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_wrmsr(Instr_Emit_Result* out_info, u8* stream);
 
 u8* emit_addps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_addss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

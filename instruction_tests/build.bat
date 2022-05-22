@@ -10,5 +10,6 @@ cl /Zi /nologo /I../.. ../test_shift.c ../../*.c
 cl /Zi /nologo /I../.. ../test_jmp.c ../../*.c
 cl /Zi /nologo /I../.. ../test_sse.c ../../*.c
 cl /Zi /nologo /I../.. ../test_bit.c ../../*.c
+cl /Zi /nologo /I../.. ../test_cvt.c ../../*.c
 
 popd
