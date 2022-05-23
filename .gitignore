@@ -4,3 +4,4 @@
 *.pdb
 *.ilk
 *.test
+instruction_tests/bin/[a-zA-Z_]*
