@@ -46,6 +46,14 @@ emit_stos(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
     return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? STOS8 : STOS);
 }
 
+#define LODS 0xad
+#define LODS8 0xac
+u8*
+emit_lods(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? LODS8 : LODS);
+}
+
 u8*
 emit_cmpxchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {
@@ -71,6 +79,26 @@ emit_ins(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
             *stream++ = INS;
         } break;
         case 32: *stream++ = INS; break;
+        default: assert(0); break;
+    }
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+}
+
+#define OUTS 0x6f
+#define OUTS8 0x6e
+u8*
+emit_outs(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    u8* start = stream;
+    switch(ptr_bitsize)
+    {
+        case 8:  *stream++ = OUTS8; break;
+        case 16: {
+            *stream++ = 0x66;
+            *stream++ = OUTS;
+        } break;
+        case 32: *stream++ = OUTS; break;
         default: assert(0); break;
     }
     fill_outinfo(out_info, (s8)(stream - start), -1, -1);

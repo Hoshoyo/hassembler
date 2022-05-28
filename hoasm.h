@@ -1153,5 +1153,7 @@ u8* emit_movlps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_cmps(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
 u8* emit_cmpxchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_ins(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
+u8* emit_outs(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
 u8* emit_scas(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
 u8* emit_stos(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
+u8* emit_lods(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);

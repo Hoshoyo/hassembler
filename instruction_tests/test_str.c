@@ -66,11 +66,32 @@ emit_stos_test(u8* stream)
 }
 
 u8*
+emit_lods_test(u8* stream)
+{
+    stream = emit_lods(0, stream, ADDR_BYTEPTR);
+    stream = emit_lods(0, stream, ADDR_WORDPTR);
+    stream = emit_lods(0, stream, ADDR_DWORDPTR);
+    stream = emit_lods(0, stream, ADDR_QWORDPTR);
+
+    return stream;
+}
+
+u8*
 emit_ins_test(u8* stream)
 {
     stream = emit_ins(0, stream, ADDR_BYTEPTR);
     stream = emit_ins(0, stream, ADDR_WORDPTR);
     stream = emit_ins(0, stream, ADDR_DWORDPTR);
+
+    return stream;
+}
+
+u8*
+emit_outs_test(u8* stream)
+{
+    stream = emit_outs(0, stream, ADDR_BYTEPTR);
+    stream = emit_outs(0, stream, ADDR_WORDPTR);
+    stream = emit_outs(0, stream, ADDR_DWORDPTR);
 
     return stream;
 }
@@ -366,8 +387,10 @@ int main()
         end = emit_cmpxchg_test(end);
         end = emit_cmpxchg_sib_test(end);
         end = emit_ins_test(end);
+        end = emit_outs_test(end);
         end = emit_scas_test(end);
         end = emit_stos_test(end);
+        end = emit_lods_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);
