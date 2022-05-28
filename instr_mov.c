@@ -104,3 +104,15 @@ emit_cmovcc(Instr_Emit_Result* out_info, u8* stream, X64_CMOVcc_Instruction inst
     opcode.bytes[1] = (u8)instr;
     return emit_instruction(out_info, stream, amode, opcode);
 }
+
+u8*
+emit_setcc(Instr_Emit_Result* out_info, u8* stream, X64_SETcc_Instruction instr, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT && amode.ptr_bitsize == ADDR_BYTEPTR);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = (u8)instr;
+    amode.reg = RAX;
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_instruction(out_info, stream, amode, opcode);
+}

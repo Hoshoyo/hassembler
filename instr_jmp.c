@@ -160,3 +160,41 @@ emit_fcall(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     }
     return stream;
 }
+
+#define LGDT_DIGIT 2
+u8*
+emit_lgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_M)
+    {
+        s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+        assert(bitsize == 64);
+        X64_Opcode opcode = {.byte_count = 2};
+        opcode.bytes[0] = 0x0f;
+        opcode.bytes[1] = 0x01;
+        amode.reg = LGDT_DIGIT;
+        if(bitsize == 64)
+            amode.flags |= ADDRMODE_FLAG_NO_REXW;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    return stream;
+}
+
+#define LIDT_DIGIT 3
+u8*
+emit_lidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_M)
+    {
+        s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+        assert(bitsize == 64);
+        X64_Opcode opcode = {.byte_count = 2};
+        opcode.bytes[0] = 0x0f;
+        opcode.bytes[1] = 0x01;
+        amode.reg = LIDT_DIGIT;
+        if(bitsize == 64)
+            amode.flags |= ADDRMODE_FLAG_NO_REXW;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    return stream;
+}

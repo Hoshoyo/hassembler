@@ -205,6 +205,39 @@ typedef enum {
 } X64_CMOVcc_Instruction;
 
 typedef enum {
+	SETE   = 0x94,	// equal
+	SETZ   = 0x94, 	// zero
+	SETNE  = 0x95,	// not equal
+	SETNZ  = 0x95, 	// not zero
+	SETA   = 0x97,	// above
+	SETNBE = 0x97, 	// not below or equal
+	SETAE  = 0x93,	// above or equal
+	SETNB  = 0x93, 	// not below
+	SETNC  = 0x93, 	// not carry
+	SETB   = 0x92,	// below
+	SETC   = 0x92,	// carry = 1
+	SETNAE = 0x92, 	// not above or equal
+	SETBE  = 0x96,	// below or equal
+	SETNA  = 0x96, 	// not above
+	SETG   = 0x9f,	// greater
+	SETNLE = 0x9f, 	// not less or equal
+	SETGE  = 0x9d,	// greater or equal
+	SETNL  = 0x9d,	// not less
+	SETL   = 0x9c,	// less
+	SETNGE = 0x9c, 	// not greater or equal
+	SETLE  = 0x9e,	// less or equal
+	SETNG  = 0x9e, 	// not greater
+	SETNO  = 0x91, 	// not overflow
+	SETNP  = 0x9b, 	// not parity
+	SETPO  = 0x9b, 	// parity odd
+	SETNS  = 0x99, 	// not sign
+	SETO   = 0x90, 	// overflow
+	SETP   = 0x9a, 	// parity
+	SETPE  = 0x9a, 	// parity even
+	SETS   = 0x98, 	// sign
+} X64_SETcc_Instruction;
+
+typedef enum {
 	RET_NEAR,
 	RET_FAR,
 } X64_Ret_Instruction;
@@ -1003,6 +1036,7 @@ u8* emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_cmovcc(Instr_Emit_Result* out_info, u8* stream, X64_CMOVcc_Instruction instr, X64_AddrMode amode);
+u8* emit_setcc(Instr_Emit_Result* out_info, u8* stream, X64_SETcc_Instruction instr, X64_AddrMode amode);
 
 u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
 u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
@@ -1012,6 +1046,8 @@ u8* emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_call(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_fcall(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_loopcc(Instr_Emit_Result* out_info, u8* stream, X64_Loop_Short instr, s8 rel);
+u8* emit_lgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_lidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 imm);
 u8* emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

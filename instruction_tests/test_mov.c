@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MOV_TEST 0
+#define MOV_TEST 1
+#define SET_TEST 1
 
 // MR
 #define TEST_MR_DIRECT_64 1
@@ -1559,6 +1560,70 @@ emit_cmovcc_sib_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_setcc_test(u8* stream)
+{
+    // Indirect
+#if SET_TEST
+    for(X64_SETcc_Instruction i = SETE; i <= SETG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_setcc(0, stream, i, mk_m_indirect(j, 0, ADDR_BYTEPTR));
+        }
+    }
+#endif
+
+    // Indirect byte displaced
+#if SET_TEST
+    for(X64_SETcc_Instruction i = SETE; i <= SETG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_setcc(0, stream, i, mk_m_indirect(j, 0x15, ADDR_BYTEPTR));
+        }
+    }
+#endif
+
+    // Indirect dword displaced
+#if SET_TEST
+    for(X64_SETcc_Instruction i = SETE; i <= SETG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_setcc(0, stream, i, mk_m_indirect(j, 0x15161718, ADDR_BYTEPTR));
+        }
+    }
+#endif
+    return stream;
+}
+
+u8*
+emit_setcc_sib_test(u8* stream)
+{
+    X64_Register index = R13;
+
+#if SET_TEST
+    for(X64_SETcc_Instruction i = SETE; i <= SETG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_setcc(0, stream, i, mk_m_indirect_sib(j, index, SIB_X1, 0, ADDR_BYTEPTR));
+        }
+    }
+#endif
+#if SET_TEST
+    for(X64_SETcc_Instruction i = SETE; i <= SETG; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_setcc(0, stream, i, mk_m_indirect_sib(j, index, SIB_X8, 0x15161718, ADDR_BYTEPTR));
+        }
+    }
+#endif
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_mov.bin"
@@ -1586,6 +1651,10 @@ int main()
     {
         end = emit_cmovcc_test(end);
         end = emit_cmovcc_sib_test(end);
+    }
+    {
+        end = emit_setcc_test(end);
+        end = emit_setcc_sib_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

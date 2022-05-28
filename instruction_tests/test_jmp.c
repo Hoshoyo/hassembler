@@ -3,6 +3,8 @@
 #include <stdlib.h>
 
 #define TEST_JMP 1
+#define TEST_LIDT 0
+#define TEST_LGDT 1
 
 u8*
 emit_ret_test(u8* stream)
@@ -300,6 +302,57 @@ emit_call_test(u8* stream)
 }
 
 u8*
+emit_lidt_test(u8* stream)
+{
+    *stream++ = 0xf;
+    *stream++ = 0x1;
+    *stream++ = 0x14;
+    *stream++ = 0x45;
+    *stream++ = 0x23;
+    *stream++ = 0x01;
+    *stream++ = 0x0;
+    // TODO check this
+#if TEST_LIDT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_lidt(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
+    }
+#endif
+#if TEST_LIDT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_lidt(0, stream, mk_m_indirect(i, 0x15, ADDR_QWORDPTR));
+    }
+#endif
+#if TEST_LIDT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_lidt(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
+    }
+#endif
+
+#if TEST_LGDT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_lgdt(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
+    }
+#endif
+#if TEST_LGDT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_lgdt(0, stream, mk_m_indirect(i, 0x15, ADDR_QWORDPTR));
+    }
+#endif
+#if TEST_LGDT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_lgdt(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
+    }
+#endif
+    return stream;
+}
+
+u8*
 emit_loopcc_test(u8* stream)
 {
     stream = emit_loopcc(0, stream, LOOP, 10);
@@ -370,6 +423,7 @@ int main()
         end = emit_pop_sib_test(end);
         end = emit_jmp_test(end);
         end = emit_call_test(end);
+        end = emit_lidt_test(end);
         end = emit_loopcc_test(end);
         end = emit_enter_test(end);
         end = emit_in_test(end);
