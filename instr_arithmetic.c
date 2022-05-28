@@ -140,3 +140,15 @@ emit_lea(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     assert(amode.addr_mode != DIRECT);
     return emit_instruction(out_info, stream, amode, opcode);
 }
+
+u8*
+emit_xadd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_MR);
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = (bitsize == 8) ? 0xc0 : 0xc1;
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}
