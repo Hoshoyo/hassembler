@@ -420,7 +420,7 @@ emit_size_override(u8* stream, X64_AddrSize ptr_size, X64_Register rm, X64_Addre
         *stream++ = 0x67;
     }
 
-    if(mode != DIRECT && ptr_size == 16)
+    if(/*mode != DIRECT &&*/ ptr_size == 16)
     {
         // Operand-size override prefix is encoded using 66H
         *stream++ = 0x66;

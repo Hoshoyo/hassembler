@@ -154,25 +154,30 @@ emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     {
         opcode.bytes[1] = 0xbf;
         if(register_get_bitsize(amode.reg) == 64)
-            amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0); // just to ignore the override prefix
+        {
+            if(amode.addr_mode != DIRECT)
+            {
+                amode.flags |= ADDRMODE_FLAG_REXW;
+                amode.ptr_bitsize = register_get_bitsize(amode.rm); // just to ignore the 16 bit override prefix
+            }
+            else
+                amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
+        }
         else if (register_get_bitsize(amode.reg) == 32)
-            amode.rm = register_representation(amode.rm) + EAX + ((extended) ? R8 : 0);
-        if (amode.addr_mode != DIRECT)
-            amode.ptr_bitsize = register_get_bitsize(amode.rm); // just to ignore the 16 bit override prefix
+            amode.ptr_bitsize = 32;
     }
     else
     {
         opcode.bytes[1] = 0xbe;
-        if(register_get_bitsize(amode.reg) == 16)
-            amode.rm = register_representation(amode.rm) + AX + ((extended) ? R8 : 0); // just to ignore the override prefix
-        if(register_get_bitsize(amode.reg) == 16 && amode.addr_mode != DIRECT)
-            *stream++ = 0x66;
         if(register_get_bitsize(amode.reg) == 64)
         {
             if(amode.addr_mode != DIRECT)
-                amode.ptr_bitsize = register_get_bitsize(amode.rm);
-            amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
+                amode.flags |= ADDRMODE_FLAG_REXW;
+            else
+                amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
         }
+        else if(register_get_bitsize(amode.reg) == 16)
+            amode.ptr_bitsize = 16;
     }
 
     assert(register_get_bitsize(amode.reg) > 8);

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MOV_TEST 1
+#define MOV_TEST 0
 
 // MR
 #define TEST_MR_DIRECT_64 1
@@ -1172,9 +1172,8 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R64_R8
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
-            // TODO(psv): check why 32 register addressing doesnt always work
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0, ADDR_BYTEPTR));
         }
     }
@@ -1183,7 +1182,7 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R32_R8
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0, ADDR_BYTEPTR));
         }
@@ -1193,7 +1192,7 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R16_R8
     for(X64_Register i = AX; i <= R15W; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0, ADDR_BYTEPTR));
         }
@@ -1203,7 +1202,7 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R64_R16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0, ADDR_WORDPTR));
         }
@@ -1213,7 +1212,7 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R32_R16
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0, ADDR_WORDPTR));
         }
@@ -1225,9 +1224,8 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect BD R64_R8
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
-            // TODO(psv): check why 32 register addressing doesnt always work
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_BYTEPTR));
         }
     }
@@ -1236,7 +1234,7 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R32_R8
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_BYTEPTR));
         }
@@ -1246,7 +1244,7 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R16_R8
     for(X64_Register i = AX; i <= R15W; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_BYTEPTR));
         }
@@ -1256,7 +1254,7 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R64_R16
     for(X64_Register i = RAX; i <= R15; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_WORDPTR));
         }
@@ -1266,7 +1264,7 @@ emit_movsx_rm_test(u8* stream)
     // RM Indirect R32_R16
     for(X64_Register i = EAX; i <= R15D; ++i)
     {
-        for(X64_Register j = RAX; j <= R15; ++j)
+        for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsx(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_WORDPTR));
         }
@@ -1474,6 +1472,7 @@ int main()
     FILE* out = fopen(FILENAME, "wb");
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;
+    /*
     {
         end = emit_mov_mi_test(end);
         end = emit_mov_oi_test(end);
@@ -1487,13 +1486,14 @@ int main()
         end = emit_mov_rm_sib_test_sreg(end);
         end = emit_mov_moffs_test(end);
     }
+    */
     {
         end = emit_movsx_rm_test(end);
         //end = emit_movsxd_rm_test(end);
     }
     {
-        end = emit_cmovcc_test(end);
-        end = emit_cmovcc_sib_test(end);
+        //end = emit_cmovcc_test(end);
+        //end = emit_cmovcc_sib_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);
