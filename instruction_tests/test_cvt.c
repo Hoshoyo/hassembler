@@ -2,13 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TEST_LLDT 1
-#define TEST_LMSW 1
-#define TEST_LTR 1
-#define TEST_STR 1
-#define TEST_SGDT 1
-#define TEST_SIDT 1
-#define TEST_SLDT 1
+#define TEST_LLDT 0
+#define TEST_LMSW 0
+#define TEST_LTR 0
+#define TEST_STR 0
+#define TEST_SGDT 0
+#define TEST_SIDT 0
+#define TEST_SLDT 0
+#define TEST_INVPLG 0
 
 u8*
 emit_cvt_test(u8* stream)
@@ -50,7 +51,11 @@ emit_misc_test(u8* stream)
     stream = emit_rdpmc(0, stream);
     stream = emit_rdtsc(0, stream);
     stream = emit_rsm(0, stream);
+    stream = emit_xlat(0, stream, false);
+    stream = emit_xlat(0, stream, true);
     stream = emit_sysenter(0, stream);
+    stream = emit_sysexit(0, stream, false);
+    stream = emit_sysexit(0, stream, true);
     stream = emit_wbinvd(0, stream);
     stream = emit_wrmsr(0, stream);
     return stream;
@@ -68,6 +73,54 @@ emit_iret_test(u8* stream)
 
     stream = emit_pushf(0, stream, mk_zo_bitsize(16));
     stream = emit_pushf(0, stream, mk_zo_bitsize(64));
+    return stream;
+}
+
+u8*
+emit_invplg_test(u8* stream)
+{
+#if TEST_INVPLG
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_invplg(0, stream, mk_m_indirect(i, 0, ADDR_BYTEPTR));
+    }
+#endif
+    // Indirect byte displaced
+#if TEST_INVPLG
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_invplg(0, stream, mk_m_indirect(i, 0x15, ADDR_BYTEPTR));
+    }
+#endif
+    // Indirect dword displaced
+#if TEST_INVPLG
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_invplg(0, stream, mk_m_indirect(i, 0x15161718, ADDR_BYTEPTR));
+    }
+#endif
+
+    // Indirect sib
+#if TEST_INVPLG
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_invplg(0, stream, mk_m_indirect_sib(i, R13, SIB_X1, 0, ADDR_BYTEPTR));
+    }
+#endif
+    // Indirect sib byte displaced
+#if TEST_INVPLG
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_invplg(0, stream, mk_m_indirect_sib(i, R13, SIB_X2, 0x15, ADDR_BYTEPTR));
+    }
+#endif
+    // Indirect sib dword displaced
+#if TEST_INVPLG
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_invplg(0, stream, mk_m_indirect_sib(i, R13, SIB_X8, 0x15161718, ADDR_BYTEPTR));
+    }
+#endif
     return stream;
 }
 
@@ -462,7 +515,8 @@ int main()
         //end = emit_str_test(end);
         //end = emit_sgdt_test(end);
         //end = emit_sidt_test(end);
-        end = emit_sldt_test(end);
+        //end = emit_sldt_test(end);
+        end = emit_invplg_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

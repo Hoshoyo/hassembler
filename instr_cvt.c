@@ -257,6 +257,16 @@ emit_sysenter(Instr_Emit_Result* out_info, u8* stream)
 }
 
 u8*
+emit_sysexit(Instr_Emit_Result* out_info, u8* stream, bool b64)
+{
+    if(b64) *stream++ = make_rex(0, 0, 0, 1);
+    *stream++ = 0x0f;
+    *stream++ = 0x35;
+    fill_outinfo(out_info, (b64) ? 3 : 2, -1, -1);
+    return stream;
+}
+
+u8*
 emit_wbinvd(Instr_Emit_Result* out_info, u8* stream)
 {
     *stream++ = 0x0f;
@@ -271,6 +281,15 @@ emit_wrmsr(Instr_Emit_Result* out_info, u8* stream)
     *stream++ = 0x0f;
     *stream++ = 0x30;
     fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_xlat(Instr_Emit_Result* out_info, u8* stream, bool b64)
+{
+    if(b64) *stream++ = make_rex(0, 0, 0, 1);
+    *stream++ = 0xd7;
+    fill_outinfo(out_info, (b64) ? 2 : 1, -1, -1);
     return stream;
 }
 
@@ -341,4 +360,21 @@ emit_sldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {
     assert(amode.addr_mode != DIRECT);
     return emit_l(out_info, stream, amode, SLDT_DIGIT, 0);
+}
+
+#define INVPLG_DIGIT 7
+// DIRECT mode for this instruction produces the instruction SWAPGS
+u8*
+emit_invplg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_M);
+    assert(amode.addr_mode != DIRECT);
+    assert(amode.ptr_bitsize == 8);
+
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x01;
+    amode.reg = INVPLG_DIGIT;
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_instruction(out_info, stream, amode, opcode);
 }

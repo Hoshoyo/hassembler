@@ -1,27 +1,49 @@
 #include "hoasm.h"
 
-#define CMPS 0xa7
-#define CMPS8 0xa6
 u8*
-emit_cmps(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+emit_strinstr(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize, u8 op)
 {
     u8* start = stream;
     switch(ptr_bitsize)
     {
-        case 8:  *stream++ = CMPS8; break;
+        case 8:  *stream++ = op; break;
         case 16: {
             *stream++ = 0x66;
-            *stream++ = CMPS;
+            *stream++ = op;
         } break;
-        case 32: *stream++ = CMPS; break;
+        case 32: *stream++ = op; break;
         case 64: {
             *stream++ = make_rex(0, 0, 0, 1);
-            *stream++ = CMPS;
+            *stream++ = op;
         } break;
         default: assert(0); break;
     }
     fill_outinfo(out_info, (s8)(stream - start), -1, -1);
     return stream;
+}
+
+#define CMPS 0xa7
+#define CMPS8 0xa6
+u8*
+emit_cmps(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? CMPS8 : CMPS);
+}
+
+#define SCAS 0xaf
+#define SCAS8 0xae
+u8*
+emit_scas(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? SCAS8 : SCAS);
+}
+
+#define STOS 0xab
+#define STOS8 0xaa
+u8*
+emit_stos(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? STOS8 : STOS);
 }
 
 u8*
@@ -33,4 +55,24 @@ emit_cmpxchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     opcode.bytes[0] = 0x0f;
     opcode.bytes[1] = (bitsize == 8) ? 0xb0 : 0xb1;
     return emit_instruction(out_info, stream, amode, opcode);
+}
+
+#define INS 0x6d
+#define INS8 0x6c
+u8*
+emit_ins(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    u8* start = stream;
+    switch(ptr_bitsize)
+    {
+        case 8:  *stream++ = INS8; break;
+        case 16: {
+            *stream++ = 0x66;
+            *stream++ = INS;
+        } break;
+        case 32: *stream++ = INS; break;
+        default: assert(0); break;
+    }
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
 }

@@ -3,34 +3,34 @@
 #include <stdlib.h>
 
 // MR
-#define TEST_MR_DIRECT_64 0
-#define TEST_MR_DIRECT_32 0
-#define TEST_MR_DIRECT_16 0
-#define TEST_MR_DIRECT_8  0
-#define TEST_MR_INDIRECT_64 0
-#define TEST_MR_INDIRECT_32 0
-#define TEST_MR_INDIRECT_16 0
-#define TEST_MR_INDIRECT_8  0
-#define TEST_MR_INDIRECT_BYTE_DISPLACED_64 0
-#define TEST_MR_INDIRECT_BYTE_DISPLACED_32 0
-#define TEST_MR_INDIRECT_BYTE_DISPLACED_16 0
-#define TEST_MR_INDIRECT_BYTE_DISPLACED_8  0
-#define TEST_MR_INDIRECT_DWORD_DISPLACED_64 0
-#define TEST_MR_INDIRECT_DWORD_DISPLACED_32 0
-#define TEST_MR_INDIRECT_DWORD_DISPLACED_16 0
-#define TEST_MR_INDIRECT_DWORD_DISPLACED_8  0
-#define TEST_MR_SIB_X1_64 0
-#define TEST_MR_SIB_X1_32 0
-#define TEST_MR_SIB_X1_16 0
-#define TEST_MR_SIB_X1_8  0
-#define TEST_MR_SIB_BYTE_DISPLACED_X2_64 0
-#define TEST_MR_SIB_BYTE_DISPLACED_X2_32 0
-#define TEST_MR_SIB_BYTE_DISPLACED_X2_16 0
-#define TEST_MR_SIB_BYTE_DISPLACED_X2_8  0
-#define TEST_MR_SIB_DWORD_DISPLACED_X8_64 0
-#define TEST_MR_SIB_DWORD_DISPLACED_X8_32 0
-#define TEST_MR_SIB_DWORD_DISPLACED_X8_16 0
-#define TEST_MR_SIB_DWORD_DISPLACED_X8_8  0
+#define TEST_MR_DIRECT_64 1
+#define TEST_MR_DIRECT_32 1
+#define TEST_MR_DIRECT_16 1
+#define TEST_MR_DIRECT_8  1
+#define TEST_MR_INDIRECT_64 1
+#define TEST_MR_INDIRECT_32 1
+#define TEST_MR_INDIRECT_16 1
+#define TEST_MR_INDIRECT_8  1
+#define TEST_MR_INDIRECT_BYTE_DISPLACED_64 1
+#define TEST_MR_INDIRECT_BYTE_DISPLACED_32 1
+#define TEST_MR_INDIRECT_BYTE_DISPLACED_16 1
+#define TEST_MR_INDIRECT_BYTE_DISPLACED_8  1
+#define TEST_MR_INDIRECT_DWORD_DISPLACED_64 1
+#define TEST_MR_INDIRECT_DWORD_DISPLACED_32 1
+#define TEST_MR_INDIRECT_DWORD_DISPLACED_16 1
+#define TEST_MR_INDIRECT_DWORD_DISPLACED_8  1
+#define TEST_MR_SIB_X1_64 1
+#define TEST_MR_SIB_X1_32 1
+#define TEST_MR_SIB_X1_16 1
+#define TEST_MR_SIB_X1_8  1
+#define TEST_MR_SIB_BYTE_DISPLACED_X2_64 1
+#define TEST_MR_SIB_BYTE_DISPLACED_X2_32 1
+#define TEST_MR_SIB_BYTE_DISPLACED_X2_16 1
+#define TEST_MR_SIB_BYTE_DISPLACED_X2_8  1
+#define TEST_MR_SIB_DWORD_DISPLACED_X8_64 1
+#define TEST_MR_SIB_DWORD_DISPLACED_X8_32 1
+#define TEST_MR_SIB_DWORD_DISPLACED_X8_16 1
+#define TEST_MR_SIB_DWORD_DISPLACED_X8_8  1
 
 u8*
 emit_cmps_test(u8* stream)
@@ -39,6 +39,38 @@ emit_cmps_test(u8* stream)
     stream = emit_cmps(0, stream, ADDR_WORDPTR);
     stream = emit_cmps(0, stream, ADDR_DWORDPTR);
     stream = emit_cmps(0, stream, ADDR_QWORDPTR);
+
+    return stream;
+}
+
+u8*
+emit_scas_test(u8* stream)
+{
+    stream = emit_scas(0, stream, ADDR_BYTEPTR);
+    stream = emit_scas(0, stream, ADDR_WORDPTR);
+    stream = emit_scas(0, stream, ADDR_DWORDPTR);
+    stream = emit_scas(0, stream, ADDR_QWORDPTR);
+
+    return stream;
+}
+
+u8*
+emit_stos_test(u8* stream)
+{
+    stream = emit_stos(0, stream, ADDR_BYTEPTR);
+    stream = emit_stos(0, stream, ADDR_WORDPTR);
+    stream = emit_stos(0, stream, ADDR_DWORDPTR);
+    stream = emit_stos(0, stream, ADDR_QWORDPTR);
+
+    return stream;
+}
+
+u8*
+emit_ins_test(u8* stream)
+{
+    stream = emit_ins(0, stream, ADDR_BYTEPTR);
+    stream = emit_ins(0, stream, ADDR_WORDPTR);
+    stream = emit_ins(0, stream, ADDR_DWORDPTR);
 
     return stream;
 }
@@ -330,9 +362,12 @@ int main()
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;
     {
-        //end = emit_cmps_test(end);
+        end = emit_cmps_test(end);
         end = emit_cmpxchg_test(end);
         end = emit_cmpxchg_sib_test(end);
+        end = emit_ins_test(end);
+        end = emit_scas_test(end);
+        end = emit_stos_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

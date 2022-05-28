@@ -1063,8 +1063,10 @@ u8* emit_rdpmc(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_rdtsc(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_rsm(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_sysenter(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_sysexit(Instr_Emit_Result* out_info, u8* stream, bool b64);
 u8* emit_wbinvd(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_wrmsr(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_xlat(Instr_Emit_Result* out_info, u8* stream, bool b64);
 u8* emit_lldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_lmsw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_ltr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
@@ -1072,6 +1074,7 @@ u8* emit_str(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_sgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_sidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_sldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_invplg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_addps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_addss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
@@ -1149,3 +1152,6 @@ u8* emit_movlps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_cmps(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
 u8* emit_cmpxchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_ins(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
+u8* emit_scas(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
+u8* emit_stos(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
