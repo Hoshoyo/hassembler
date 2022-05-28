@@ -10,6 +10,7 @@
 #define TEST_SIDT 0
 #define TEST_SLDT 0
 #define TEST_INVPLG 0
+#define TEST_VER 0
 
 u8*
 emit_cvt_test(u8* stream)
@@ -498,6 +499,69 @@ emit_sldt_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_ver_test(u8* stream)
+{
+    // Direct
+#if TEST_VER
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        stream = emit_verr(0, stream, mk_m_direct(i));
+        stream = emit_verw(0, stream, mk_m_direct(i));
+    }
+#endif
+    // Indirect
+#if TEST_VER
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_verr(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
+        stream = emit_verw(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
+    }
+#endif
+    // Indirect byte displaced
+#if TEST_VER
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_verr(0, stream, mk_m_indirect(i, 0x15, ADDR_WORDPTR));
+        stream = emit_verw(0, stream, mk_m_indirect(i, 0x15, ADDR_WORDPTR));
+    }
+#endif
+    // Indirect dword displaced
+#if TEST_VER
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_verr(0, stream, mk_m_indirect(i, 0x15161718, ADDR_WORDPTR));
+        stream = emit_verw(0, stream, mk_m_indirect(i, 0x15161718, ADDR_WORDPTR));
+    }
+#endif
+
+    // Indirect sib
+#if TEST_VER
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_verr(0, stream, mk_m_indirect_sib(i, R13, SIB_X1, 0, ADDR_WORDPTR));
+        stream = emit_verw(0, stream, mk_m_indirect_sib(i, R13, SIB_X1, 0, ADDR_WORDPTR));
+    }
+#endif
+    // Indirect sib byte displaced
+#if TEST_VER
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_verr(0, stream, mk_m_indirect_sib(i, R13, SIB_X2, 0x15, ADDR_WORDPTR));
+        stream = emit_verw(0, stream, mk_m_indirect_sib(i, R13, SIB_X2, 0x15, ADDR_WORDPTR));
+    }
+#endif
+    // Indirect sib dword displaced
+#if TEST_VER
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_verr(0, stream, mk_m_indirect_sib(i, R13, SIB_X8, 0x15161718, ADDR_WORDPTR));
+        stream = emit_verw(0, stream, mk_m_indirect_sib(i, R13, SIB_X8, 0x15161718, ADDR_WORDPTR));
+    }
+#endif
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_bit.bin"
@@ -505,18 +569,19 @@ int main()
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;
     {
-        //end = emit_cvt_test(end);
-        //end = emit_clc_test(end);
-        //end = emit_misc_test(end);
-        //end = emit_iret_test(end);
-        //end = emit_lldt_test(end);
-        //end = emit_llsw_test(end);
-        //end = emit_ltr_test(end);
-        //end = emit_str_test(end);
-        //end = emit_sgdt_test(end);
-        //end = emit_sidt_test(end);
-        //end = emit_sldt_test(end);
+        end = emit_cvt_test(end);
+        end = emit_clc_test(end);
+        end = emit_misc_test(end);
+        end = emit_iret_test(end);
+        end = emit_lldt_test(end);
+        end = emit_llsw_test(end);
+        end = emit_ltr_test(end);
+        end = emit_str_test(end);
+        end = emit_sgdt_test(end);
+        end = emit_sidt_test(end);
+        end = emit_sldt_test(end);
         end = emit_invplg_test(end);
+        end = emit_ver_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

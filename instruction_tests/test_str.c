@@ -77,6 +77,17 @@ emit_lods_test(u8* stream)
 }
 
 u8*
+emit_movs_test(u8* stream)
+{
+    stream = emit_movs(0, stream, ADDR_BYTEPTR);
+    stream = emit_movs(0, stream, ADDR_WORDPTR);
+    stream = emit_movs(0, stream, ADDR_DWORDPTR);
+    stream = emit_movs(0, stream, ADDR_QWORDPTR);
+
+    return stream;
+}
+
+u8*
 emit_ins_test(u8* stream)
 {
     stream = emit_ins(0, stream, ADDR_BYTEPTR);
@@ -391,6 +402,7 @@ int main()
         end = emit_scas_test(end);
         end = emit_stos_test(end);
         end = emit_lods_test(end);
+        end = emit_movs_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

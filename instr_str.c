@@ -54,6 +54,14 @@ emit_lods(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
     return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? LODS8 : LODS);
 }
 
+#define MOVS 0xa5
+#define MOVS8 0xa4
+u8*
+emit_movs(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? MOVS8 : MOVS);
+}
+
 u8*
 emit_cmpxchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {

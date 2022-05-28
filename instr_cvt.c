@@ -378,3 +378,32 @@ emit_invplg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     amode.flags |= ADDRMODE_FLAG_NO_REXW;
     return emit_instruction(out_info, stream, amode, opcode);
 }
+
+static u8*
+emit_ver(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, u8 digit)
+{
+    assert(amode.mode_type == ADDR_MODE_M);
+
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x00;
+    amode.reg = digit;
+    amode.flags |= (ADDRMODE_FLAG_NO_REXW|((amode.addr_mode == DIRECT) ? ADDRMODE_FLAG_NO_SIZE_OVERRIDE: 0));
+    if(amode.addr_mode != DIRECT)
+        amode.ptr_bitsize = 64; // this is to ignore 16bit size override
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+#define VERR_DIGIT 4
+#define VERW_DIGIT 5
+u8*
+emit_verr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_ver(out_info, stream, amode, VERR_DIGIT);
+}
+
+u8*
+emit_verw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_ver(out_info, stream, amode, VERW_DIGIT);
+}
