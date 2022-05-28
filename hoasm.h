@@ -1135,3 +1135,5 @@ u8* emit_movhps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movhpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movlpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movlps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+
+u8* emit_cmps(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
