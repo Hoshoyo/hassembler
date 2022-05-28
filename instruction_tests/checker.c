@@ -30,16 +30,31 @@ check_file(const char* exe, const char* result, const char* test)
     char buffer[1024] = {0};
 
     size_t arith_result_size = 0;
+#if defined(_WIN32) || defined(_WIN64)
     sprintf(buffer, ".\\bin\\%s", result);
     char* res_data = read_entire_file(buffer, &arith_result_size);
 
     sprintf(buffer, "bin\\%s > bin\\%s", exe, test);
+
     system(buffer);
     sprintf(buffer, "objdump -D -Mintel,x86-64 -b binary -m i386 -w %s", test);
 
     size_t arith_test_size = 0;
     sprintf(buffer, ".\\bin\\%s", test);
     char* test_data = read_entire_file(buffer, &arith_test_size);
+#else
+    sprintf(buffer, "./bin/%s", result);
+    char* res_data = read_entire_file(buffer, &arith_result_size);
+
+    sprintf(buffer, "bin/%s > bin/%s", exe, test);
+
+    system(buffer);
+    sprintf(buffer, "objdump -D -Mintel,x86-64 -b binary -m i386 -w %s", test);
+
+    size_t arith_test_size = 0;
+    sprintf(buffer, "./bin/%s", test);
+    char* test_data = read_entire_file(buffer, &arith_test_size);
+#endif
 
     if(arith_test_size != arith_result_size)
     {
@@ -66,12 +81,21 @@ check_file(const char* exe, const char* result, const char* test)
 
 int main()
 {
+#if defined(_WIN32) || defined(_WIN64)
     check_file("test_arith.exe", "arith_result.res", "arith.test");
     check_file("test_mov.exe", "mov_result.res", "mov.test");
     check_file("test_mul.exe", "mul_result.res", "mul.test");
     check_file("test_jmp.exe", "jmp_result.res", "jmp.test");
     check_file("test_shift.exe", "shift_result.res", "shift.test");
     check_file("test_bit.exe", "bit_result.res", "bit.test");
+#else
+    check_file("test_arith", "arith_result.res", "arith.test");
+    check_file("test_mov", "mov_result.res", "mov.test");
+    check_file("test_mul", "mul_result.res", "mul.test");
+    check_file("test_jmp", "jmp_result.res", "jmp.test");
+    check_file("test_shift", "shift_result.res", "shift.test");
+    check_file("test_bit", "bit_result.res", "bit.test");
+#endif
 
     return 0;
 }
