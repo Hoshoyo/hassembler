@@ -1565,7 +1565,7 @@ int main()
     FILE* out = fopen(FILENAME, "wb");
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;
-    /*
+
     {
         end = emit_mov_mi_test(end);
         end = emit_mov_oi_test(end);
@@ -1579,14 +1579,13 @@ int main()
         end = emit_mov_rm_sib_test_sreg(end);
         end = emit_mov_moffs_test(end);
     }
-    */
     {
-        //end = emit_movsx_rm_test(end);
+        end = emit_movsx_rm_test(end);
         end = emit_movsxd_rm_test(end);
     }
     {
-        //end = emit_cmovcc_test(end);
-        //end = emit_cmovcc_sib_test(end);
+        end = emit_cmovcc_test(end);
+        end = emit_cmovcc_sib_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

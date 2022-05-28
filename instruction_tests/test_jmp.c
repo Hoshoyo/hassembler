@@ -318,13 +318,13 @@ int main()
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;
     {
-        //end = emit_ret_test(end);
-        //end = emit_push_test(end);
-        //end = emit_push_sib_test(end);
-        //end = emit_pop_test(end);
-        //end = emit_pop_sib_test(end);
-        //end = emit_jmp_test(end);
-        //end = emit_call_test(end);
+        end = emit_ret_test(end);
+        end = emit_push_test(end);
+        end = emit_push_sib_test(end);
+        end = emit_pop_test(end);
+        end = emit_pop_sib_test(end);
+        end = emit_jmp_test(end);
+        end = emit_call_test(end);
         end = emit_loopcc_test(end);
     }
 

@@ -9,6 +9,10 @@ emit_cvt_test(u8* stream)
     stream = emit_cbw(0, stream, mk_zo_reg(AX));
     stream = emit_cbw(0, stream, mk_zo_reg(EAX));
 
+    stream = emit_cwd(0, stream);
+    stream = emit_cdq(0, stream);
+    stream = emit_cqo(0, stream);
+
     return stream;
 }
 

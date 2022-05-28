@@ -22,6 +22,32 @@ emit_cbw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 }
 
 u8*
+emit_cwd(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x66;
+    *stream++ = 0x99;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_cdq(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x99;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_cqo(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = make_rex(0, 0, 0, 1);
+    *stream++ = 0x99;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
 emit_clc(Instr_Emit_Result* out_info, u8* stream)
 {
     *stream++ = 0xf8;

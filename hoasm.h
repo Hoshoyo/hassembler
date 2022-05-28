@@ -423,13 +423,13 @@ emit_size_override(u8* stream, X64_AddrSize ptr_size, X64_Register rm, X64_Addre
 	// TODO(psv): commenting this might break something, test instructions
 	// that reach this case. This was commented because MOVSX could not
 	// utilize 0x67 and 0x66 prefix at the same time and it had to.
+	// @Indirect16Override
     if(/*mode != DIRECT &&*/ ptr_size == 16)
     {
         // Operand-size override prefix is encoded using 66H
         *stream++ = 0x66;
     }
-
-	if(mode == DIRECT && register_get_bitsize(rm) == 16)
+	else if(mode == DIRECT && register_get_bitsize(rm) == 16)
 	{
 		*stream++ = 0x66;
 	}
@@ -1035,6 +1035,9 @@ u8* emit_bsr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_bswap(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_bt(Instr_Emit_Result* out_info, u8* stream, X64_BitTest_Instr instr, X64_AddrMode amode);
 u8* emit_cbw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_cwd(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_cdq(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_cqo(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_clc(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_cld(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_cli(Instr_Emit_Result* out_info, u8* stream);
