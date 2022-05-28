@@ -132,11 +132,18 @@ emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     bool extended = register_is_extended(amode.rm);
 
     assert(register_get_bitsize(amode.reg) > 8);
-    assert((amode.addr_mode != DIRECT) || register_get_bitsize(amode.reg) > 32 && bitsize == 32);
-    assert((amode.addr_mode == DIRECT) || register_get_bitsize(amode.reg) != amode.ptr_bitsize);
+    //assert((amode.addr_mode != DIRECT) || register_get_bitsize(amode.reg) > 32 && bitsize == 32);
 
     if(register_get_bitsize(amode.reg) == 64)
-        amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0); // just to ignore the override prefix
+    {
+        // We require a 32 ptrsize just to know that we are using a up-cast 32bit->64bit sign extended
+        assert(amode.ptr_bitsize == 32 || amode.addr_mode == DIRECT);
+        // override the 32, because the instruction encodes 32 by default since its an up-cast.
+        if (amode.addr_mode == DIRECT)
+            amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
+        else
+            amode.ptr_bitsize = 64;
+    }
     
     return emit_instruction(out_info, stream, amode, opcode);
 }

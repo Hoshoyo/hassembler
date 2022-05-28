@@ -420,6 +420,9 @@ emit_size_override(u8* stream, X64_AddrSize ptr_size, X64_Register rm, X64_Addre
         *stream++ = 0x67;
     }
 
+	// TODO(psv): commenting this might break something, test instructions
+	// that reach this case. This was commented because MOVSX could not
+	// utilize 0x67 and 0x66 prefix at the same time and it had to.
     if(/*mode != DIRECT &&*/ ptr_size == 16)
     {
         // Operand-size override prefix is encoded using 66H

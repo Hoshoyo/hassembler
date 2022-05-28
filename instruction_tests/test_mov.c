@@ -1066,8 +1066,14 @@ emit_mov_rm_sib_test(u8* stream)
 u8*
 emit_movsxd_rm_test(u8* stream)
 {
+    // This instruction encoding as R16_R32, R16_M32, R32_R32 and R32_M32 is discourage by intel, 
+    // it says in the manual:
+    // "The use of MOVSXD without REX.W in 64-bit mode is discouraged. 
+    // Regular MOV should be used instead of using MOVSXD without REX.W."
+
 #if MOV_TEST
     // RM Direct
+    // R64_R32
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = EAX; j <= R15D; ++j)
@@ -1076,10 +1082,33 @@ emit_movsxd_rm_test(u8* stream)
         }
     }
 #endif
+#if MOV_TEST
+    // RM Direct
+    // R32_R32
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = EAX; j <= R15D; ++j)
+        {
+            stream = emit_movsxd(0, stream, mk_rm_direct(i, j));
+        }
+    }
+#endif
+#if MOV_TEST
+    // RM Direct
+    // R16_R32 it says in the manual R16_R16, but all the disassemblers show R16_R32 instead, idk why.
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = AX; j <= R15W; ++j)
+        {
+            stream = emit_movsxd(0, stream, mk_rm_direct(i, j));
+        }
+    }
+#endif
 
     // Indirect
 #if MOV_TEST
-    for(X64_Register i = RAX; i <= R15D; ++i)
+    // R64_M32
+    for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15D; ++j)
         {
@@ -1087,9 +1116,32 @@ emit_movsxd_rm_test(u8* stream)
         }
     }
 #endif
+#if MOV_TEST
+    // R32_M32
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_movsxd(0, stream, mk_rm_indirect(i, j, 0, ADDR_DWORDPTR));
+        }
+    }
+#endif
+#if MOV_TEST
+    // R16_M32
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            // TODO(psv): assert that this must be ADDR_WORDPTR, since otherwise
+            // the instruction encodes it as a 32 bit copy
+            stream = emit_movsxd(0, stream, mk_rm_indirect(i, j, 0, ADDR_WORDPTR));
+        }
+    }
+#endif
 
     // Indirect byte displaced
 #if MOV_TEST
+    // R64_M32 BD
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15D; ++j)
@@ -1098,14 +1150,55 @@ emit_movsxd_rm_test(u8* stream)
         }
     }
 #endif
+#if MOV_TEST
+    // R32_M32 BD
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_movsxd(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_DWORDPTR));
+        }
+    }
+#endif
+#if MOV_TEST
+    // R16_M32 BD
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_movsxd(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_WORDPTR));
+        }
+    }
+#endif
 
     // Indirect dword displaced
 #if MOV_TEST
+    // R64_M32
     for(X64_Register i = RAX; i <= R15; ++i)
     {
         for(X64_Register j = RAX; j <= R15D; ++j)
         {
             stream = emit_movsxd(0, stream, mk_rm_indirect(i, j, 0x15161718, ADDR_DWORDPTR));
+        }
+    }
+#endif
+#if MOV_TEST
+    // R32_M32
+    for(X64_Register i = EAX; i <= R15D; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_movsxd(0, stream, mk_rm_indirect(i, j, 0x15161718, ADDR_DWORDPTR));
+        }
+    }
+#endif
+#if MOV_TEST
+    // R16_M32
+    for(X64_Register i = AX; i <= R15W; ++i)
+    {
+        for(X64_Register j = RAX; j <= R15D; ++j)
+        {
+            stream = emit_movsxd(0, stream, mk_rm_indirect(i, j, 0x15161718, ADDR_WORDPTR));
         }
     }
 #endif
@@ -1488,8 +1581,8 @@ int main()
     }
     */
     {
-        end = emit_movsx_rm_test(end);
-        //end = emit_movsxd_rm_test(end);
+        //end = emit_movsx_rm_test(end);
+        end = emit_movsxd_rm_test(end);
     }
     {
         //end = emit_cmovcc_test(end);
