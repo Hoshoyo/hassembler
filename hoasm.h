@@ -547,6 +547,7 @@ mk_m_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32
 
 	if(sib_mode == SIB_X1 && register_equivalent(RBP, rm))
 	{
+		// TODO(psv): assert that the registers are the same size
 		X64_Register temp = index;
 		index = rm;
 		rm = temp;
@@ -1137,3 +1138,4 @@ u8* emit_movlpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movlps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_cmps(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
+u8* emit_cmpxchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

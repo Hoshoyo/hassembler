@@ -23,3 +23,14 @@ emit_cmps(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
     fill_outinfo(out_info, (s8)(stream - start), -1, -1);
     return stream;
 }
+
+u8*
+emit_cmpxchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    assert(amode.mode_type == ADDR_MODE_MR);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = (bitsize == 8) ? 0xb0 : 0xb1;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
