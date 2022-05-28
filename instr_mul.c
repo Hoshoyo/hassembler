@@ -155,7 +155,6 @@ emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     X64_Opcode opcode = {.byte_count = 2};
     opcode.bytes[0] = 0x0f;
     bool extended = register_is_extended(amode.rm);
-    bool rm_extended = register_is_extended(amode.reg);
 
     if(bitsize == 16)
     {

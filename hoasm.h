@@ -1062,6 +1062,7 @@ u8* emit_rsm(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_sysenter(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_wbinvd(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_wrmsr(Instr_Emit_Result* out_info, u8* stream);
+u8* emit_lldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_addps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_addss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
