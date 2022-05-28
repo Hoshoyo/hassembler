@@ -311,6 +311,21 @@ emit_loopcc_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_enter_test(u8* stream)
+{
+    stream = emit_enter(0, stream, 0x1234, 0, false);
+    stream = emit_enter(0, stream, 0x1234, 1, false);
+    stream = emit_enter(0, stream, 0x1234, 25, false);
+    stream = emit_enter(0, stream, 0x1234, 255, false);
+
+    stream = emit_enter(0, stream, 0x1234, 0, true);
+    stream = emit_enter(0, stream, 0x1234, 1, true);
+    stream = emit_enter(0, stream, 0x1234, 25, true);
+    stream = emit_enter(0, stream, 0x1234, 255, true);
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_jmp.bin"
@@ -326,6 +341,7 @@ int main()
         end = emit_jmp_test(end);
         end = emit_call_test(end);
         end = emit_loopcc_test(end);
+        end = emit_enter_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

@@ -177,3 +177,17 @@ emit_pop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     }
     return stream;
 }
+
+u8* 
+emit_enter(Instr_Emit_Result* out_info, u8* stream, u16 storage_size, u8 lex_nest_level, bool b16)
+{
+    u8* start = stream;
+    if(b16) *stream++ = 0x66;
+    *stream++ = 0xc8;
+    s8 imm_offset = (s8)(stream - start);
+    *((u16*)stream) = storage_size;
+    stream += sizeof(u16);
+    *stream++ = lex_nest_level;
+    fill_outinfo(out_info, (s8)(stream - start), -1, imm_offset);
+    return stream;
+}

@@ -279,6 +279,8 @@ emit_wrmsr(Instr_Emit_Result* out_info, u8* stream)
 #define LTR_DIGIT 3
 #define STR_DIGIT 1
 #define SGDT_DIGIT 0
+#define SIDT_DIGIT 1
+#define SLDT_DIGIT 0
 
 static u8*
 emit_l(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, u8 digit, u8 op)
@@ -325,4 +327,18 @@ emit_sgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 {
     assert(amode.addr_mode != DIRECT);
     return emit_l(out_info, stream, amode, SGDT_DIGIT, 1);
+}
+
+u8*
+emit_sidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    return emit_l(out_info, stream, amode, SIDT_DIGIT, 1);
+}
+
+u8*
+emit_sldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    return emit_l(out_info, stream, amode, SLDT_DIGIT, 0);
 }
