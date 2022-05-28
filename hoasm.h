@@ -1017,6 +1017,8 @@ u8* emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u
 u8* emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_pop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_enter(Instr_Emit_Result* out_info, u8* stream, u16 storage_size, u8 lex_nest_level, bool b16);
+u8* emit_in(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_out(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_int3(Instr_Emit_Result* out_info, u8* stream);
 u8* emit_int0(Instr_Emit_Result* out_info, u8* stream);

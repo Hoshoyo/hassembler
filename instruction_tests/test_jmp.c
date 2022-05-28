@@ -326,6 +326,36 @@ emit_enter_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_in_test(u8* stream)
+{
+    stream = emit_in(0, stream, mk_i(0x15, 8));
+    stream = emit_in(0, stream, mk_i(0, 8));
+    stream = emit_in(0, stream, mk_i_reg(AL, 0x15, 8));
+    stream = emit_in(0, stream, mk_i_reg(AX, 0x16, 8));
+    stream = emit_in(0, stream, mk_i_reg(EAX, 0x17, 8));
+
+    stream = emit_in(0, stream, mk_zo_bitsize(8));
+    stream = emit_in(0, stream, mk_zo_bitsize(16));
+    stream = emit_in(0, stream, mk_zo_bitsize(32));
+    return stream;
+}
+
+u8*
+emit_out_test(u8* stream)
+{
+    stream = emit_out(0, stream, mk_i(0x15, 8));
+    stream = emit_out(0, stream, mk_i(0, 8));
+    stream = emit_out(0, stream, mk_i_reg(AL, 0x15, 8));
+    stream = emit_out(0, stream, mk_i_reg(AX, 0x16, 8));
+    stream = emit_out(0, stream, mk_i_reg(EAX, 0x17, 8));
+
+    stream = emit_out(0, stream, mk_zo_bitsize(8));
+    stream = emit_out(0, stream, mk_zo_bitsize(16));
+    stream = emit_out(0, stream, mk_zo_bitsize(32));
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_jmp.bin"
@@ -342,6 +372,8 @@ int main()
         end = emit_call_test(end);
         end = emit_loopcc_test(end);
         end = emit_enter_test(end);
+        end = emit_in_test(end);
+        end = emit_out_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

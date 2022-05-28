@@ -191,3 +191,37 @@ emit_enter(Instr_Emit_Result* out_info, u8* stream, u16 storage_size, u8 lex_nes
     fill_outinfo(out_info, (s8)(stream - start), -1, imm_offset);
     return stream;
 }
+
+u8*
+emit_in(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 1};
+    if(amode.mode_type == ADDR_MODE_I)
+    {
+        assert(amode.immediate_bitsize == 8);
+        opcode.bytes[0] = (register_get_bitsize(amode.rm) == 8) ? 0xe4 : 0xe5;
+        assert(amode.rm == REG_NONE || register_equivalent(RAX, amode.rm));
+    }
+    else if(amode.mode_type == ADDR_MODE_ZO)
+    {
+        opcode.bytes[0] = (amode.ptr_bitsize == 8) ? 0xec : 0xed;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_out(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 1};
+    if(amode.mode_type == ADDR_MODE_I)
+    {
+        assert(amode.immediate_bitsize == 8);
+        opcode.bytes[0] = (register_get_bitsize(amode.rm) == 8) ? 0xe6 : 0xe7;
+        assert(amode.rm == REG_NONE || register_equivalent(RAX, amode.rm));
+    }
+    else if(amode.mode_type == ADDR_MODE_ZO)
+    {
+        opcode.bytes[0] = (amode.ptr_bitsize == 8) ? 0xee : 0xef;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
