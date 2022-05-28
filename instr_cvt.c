@@ -274,18 +274,55 @@ emit_wrmsr(Instr_Emit_Result* out_info, u8* stream)
     return stream;
 }
 
-u8*
-emit_lldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+#define LLDT_DIGIT 2
+#define LLSW_DIGIT 6
+#define LTR_DIGIT 3
+#define STR_DIGIT 1
+#define SGDT_DIGIT 0
+
+static u8*
+emit_l(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, u8 digit, u8 op)
 {
     assert((amode.addr_mode == DIRECT && register_get_bitsize(amode.rm) == 16) || (amode.addr_mode != DIRECT && register_get_bitsize(amode.rm) >= 32));
     bool extended = register_is_extended(amode.rm);
     X64_Opcode opcode = {.byte_count = 2};
     opcode.bytes[0] = 0x0f;
-    opcode.bytes[1] = 0;
+    opcode.bytes[1] = op;
     amode.ptr_bitsize = 32; // ignore 16 bit size override
     amode.flags |= ADDRMODE_FLAG_NO_REXW;
-    amode.reg = 2; // instruction digit /2
+    amode.reg = digit;
     if(amode.addr_mode == DIRECT)
         amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
     return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_lldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_l(out_info, stream, amode, LLDT_DIGIT, 0);
+}
+
+u8*
+emit_lmsw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_l(out_info, stream, amode, LLSW_DIGIT, 1);
+}
+
+u8*
+emit_ltr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_l(out_info, stream, amode, LTR_DIGIT, 0);
+}
+
+u8*
+emit_str(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_l(out_info, stream, amode, STR_DIGIT, 0);
+}
+
+u8*
+emit_sgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    return emit_l(out_info, stream, amode, SGDT_DIGIT, 1);
 }
