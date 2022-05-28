@@ -47,6 +47,15 @@ emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel)
     return stream;
 }
 
+u8*
+emit_loopcc(Instr_Emit_Result* out_info, u8* stream, X64_Loop_Short instr, s8 rel)
+{
+    *stream++ = (u8)instr;
+    *stream++ = (u8)rel;
+    fill_outinfo(out_info, 2, -1, 1);
+    return stream;
+}
+
 /*
 m16:16, m16:32 & m16:64 — A memory operand containing a far pointer composed of two numbers. The
 number to the left of the colon corresponds to the pointer's segment selector. The number to the right

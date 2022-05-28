@@ -141,6 +141,12 @@ typedef enum {
 } X64_Jump_Conditional_Short;
 
 typedef enum {
+	LOOP	= 0xe2,
+	LOOPE	= 0xe1,
+	LOOPNE	= 0xe0,
+} X64_Loop_Short;
+
+typedef enum {
 	XMM_ADDS = 0x58,
 	XMM_SUBS = 0x5C,
 	XMM_MULS = 0x59,
@@ -1001,6 +1007,7 @@ u8* emit_jmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_call(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_fcall(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_loopcc(Instr_Emit_Result* out_info, u8* stream, X64_Loop_Short instr, s8 rel);
 
 u8* emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 imm);
 u8* emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
