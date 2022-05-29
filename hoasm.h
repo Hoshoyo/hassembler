@@ -156,6 +156,12 @@ typedef enum {
 } X64_Loop_Short;
 
 typedef enum {
+	UD0 = 0xff,
+	UD1 = 0xb9,
+	UD2 = 0x0b,
+} X64_UD_Instruction;
+
+typedef enum {
 	XMM_ADDS = 0x58,
 	XMM_SUBS = 0x5C,
 	XMM_MULS = 0x59,
@@ -415,6 +421,8 @@ typedef enum {
 	ADDR_MODE_OI,
 	ADDR_MODE_MI,
 	ADDR_MODE_RMI,
+	ADDR_MODE_MRI,
+	ADDR_MODE_MRC,
 	ADDR_MODE_TD,
 	ADDR_MODE_FD,
 	ADDR_MODE_ZO,
@@ -695,6 +703,24 @@ mk_rmi_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_S
 }
 
 static X64_AddrMode
+mk_mri_direct(X64_Register rm, X64_Register reg, u8 imm8)
+{
+	X64_AddrMode result = mk_mr_direct(rm, reg);
+	result.mode_type = ADDR_MODE_MRI;
+	result.immediate_bitsize = 8;
+	result.immediate = imm8;
+	return result;
+}
+
+static X64_AddrMode
+mk_mrc_direct(X64_Register rm, X64_Register reg)
+{
+	X64_AddrMode result = mk_mr_direct(rm, reg);
+	result.mode_type = ADDR_MODE_MRC;
+	return result;
+}
+
+static X64_AddrMode
 mk_a_direct(X64_XMM_Register reg, X64_XMM_Register rm)
 {
 	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_A);
@@ -805,6 +831,24 @@ mk_mr_indirect(X64_Register rm, X64_Register reg, u32 displacement, X64_AddrSize
 }
 
 static X64_AddrMode
+mk_mri_indirect(X64_Register rm, X64_Register reg, u32 displacement, X64_AddrSize ptr_bitsize, u8 imm8)
+{
+	X64_AddrMode result = mk_mr_indirect(rm, reg, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MRI;
+	result.immediate_bitsize = 8;
+	result.immediate = imm8;
+	return result;
+}
+
+static X64_AddrMode
+mk_mrc_indirect(X64_Register rm, X64_Register reg, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_mr_indirect(rm, reg, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MRC;
+	return result;
+}
+
+static X64_AddrMode
 mk_rm_indirect_sib(X64_Register reg, X64_Register rm, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize)
 {
 	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
@@ -820,6 +864,26 @@ mk_mr_indirect_sib(X64_Register rm, X64_Register reg, X64_Register index, X64_Si
 	X64_AddrMode result = mk_m_indirect_sib(rm, index, sib_mode, displacement, ptr_bitsize);
 	result.mode_type = ADDR_MODE_MR;
 	result.reg = reg;
+
+	return result;
+}
+
+static X64_AddrMode
+mk_mri_indirect_sib(X64_Register rm, X64_Register reg, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize, u8 imm8)
+{
+	X64_AddrMode result = mk_mr_indirect_sib(rm, reg, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MRI;
+	result.immediate_bitsize = 8;
+	result.immediate = imm8;
+
+	return result;
+}
+
+static X64_AddrMode
+mk_mrc_indirect_sib(X64_Register rm, X64_Register reg, X64_Register index, X64_SibMode sib_mode, u32 displacement, X64_AddrSize ptr_bitsize)
+{
+	X64_AddrMode result = mk_mr_indirect_sib(rm, reg, index, sib_mode, displacement, ptr_bitsize);
+	result.mode_type = ADDR_MODE_MRC;
 
 	return result;
 }
@@ -1059,6 +1123,7 @@ u8* emit_fcall(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_loopcc(Instr_Emit_Result* out_info, u8* stream, X64_Loop_Short instr, s8 rel);
 u8* emit_lgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_lidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_ud(Instr_Emit_Result* out_info, u8* stream, X64_UD_Instruction instr, X64_AddrMode amode);
 
 u8* emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 imm);
 u8* emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
@@ -1081,6 +1146,8 @@ u8* emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Inst
 u8* emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr_digit, X64_AddrMode amode);
 u8* emit_lea(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_test(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_shld(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_shrd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_bsf(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_bsr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_bswap(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

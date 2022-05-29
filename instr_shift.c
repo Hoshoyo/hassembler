@@ -48,3 +48,38 @@ emit_test(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     }
     return emit_instruction(out_info, stream, amode, opcode);
 }
+
+
+u8*
+emit_shld(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(((amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize) > 8);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    if(amode.mode_type == ADDR_MODE_MRI)
+    {
+        opcode.bytes[1] = 0xa4;
+    }
+    else if(amode.mode_type == ADDR_MODE_MRC)
+    {
+        opcode.bytes[1] = 0xa5;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_shrd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(((amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize) > 8);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    if(amode.mode_type == ADDR_MODE_MRI)
+    {
+        opcode.bytes[1] = 0xac;
+    }
+    else if(amode.mode_type == ADDR_MODE_MRC)
+    {
+        opcode.bytes[1] = 0xad;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}

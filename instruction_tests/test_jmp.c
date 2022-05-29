@@ -409,6 +409,17 @@ emit_out_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_ud_test(u8* stream)
+{
+    // TODO(psv): docs says it should be like this, but the disassembler shows
+    // the 0xc3 at the end as a ret instruction, so idk, verify
+    stream = emit_ud(0, stream, UD2, mk_zo());
+    stream = emit_ud(0, stream, UD0, mk_rm_direct(EAX, EBX));
+    stream = emit_ud(0, stream, UD1, mk_rm_direct(EAX, EBX));
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_jmp.bin"
@@ -428,6 +439,7 @@ int main()
         end = emit_enter_test(end);
         end = emit_in_test(end);
         end = emit_out_test(end);
+        end = emit_ud_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

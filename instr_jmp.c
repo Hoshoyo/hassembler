@@ -198,3 +198,26 @@ emit_lidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     }
     return stream;
 }
+
+u8*
+emit_ud(Instr_Emit_Result* out_info, u8* stream, X64_UD_Instruction instr, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_RM)
+    {
+        X64_Opcode opcode = {.byte_count = 2};
+        opcode.bytes[0] = 0x0f;
+        opcode.bytes[1] = (u8)instr;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    else if(amode.mode_type == ADDR_MODE_ZO)
+    {
+        // UD2
+        *stream++ = 0x0f;
+        *stream++ = (u8)instr;
+    }
+    else
+    {
+        assert(0);
+    }
+    return stream;
+}

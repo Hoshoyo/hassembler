@@ -9,6 +9,11 @@ X64_Shift_Instruction sinstr = SHR;
 #define TEST_M1_DIRECT_32 1
 #define TEST_M1_DIRECT_64 1
 
+#define TEST_MRI_DIRECT 1
+#define TEST_MRI_INDIRECT 1
+#define TEST_MRC_DIRECT 1
+#define TEST_MRC_INDIRECT 1
+
 #define TEST_M1_INDIRECT 1
 #define TEST_M1_INDIRECT_BYTE_DISPLACED 1
 #define TEST_M1_INDIRECT_DWORD_DISPLACED 1
@@ -992,12 +997,482 @@ emit_test_i_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_test_mri_shld(u8* stream)
+{
+    // Direct
+#if TEST_MRI_DIRECT
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mri_direct(i, j, 0x15));
+#endif
+#if TEST_MRI_DIRECT
+    for(X64_Register i = EAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mri_direct(i, j, 0x15));
+#endif
+#if TEST_MRI_DIRECT
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mri_direct(i, j, 0x15));
+#endif
+#if TEST_MRI_DIRECT
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mri_direct(i, j, 0x15));
+#endif
+
+    // Indirect
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0, ADDR_QWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0, ADDR_DWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0, ADDR_WORDPTR, 0x15));
+#endif
+
+    // Indirect BD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0x17, ADDR_QWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0x17, ADDR_DWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0x17, ADDR_WORDPTR, 0x15));
+#endif
+
+    // Indirect DD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0x17181920, ADDR_QWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0x17181920, ADDR_DWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect(i, j, 0x17181920, ADDR_WORDPTR, 0x15));
+#endif
+    return stream;
+}
+
+u8*
+emit_test_mri_sib_shld(u8* stream)
+{
+    X64_Register index = R13;
+    // Indirect SIB
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X1, 0, ADDR_QWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X2, 0, ADDR_DWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X4, 0, ADDR_WORDPTR, 0x15));
+#endif
+
+    // Indirect SIB BD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X1, 0x18, ADDR_QWORDPTR, 0x15));
+#endif
+
+    // Indirect SIB DD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X8, 0x12345678, ADDR_DWORDPTR, 0x15));
+#endif
+    return stream;
+}
+
+u8*
+emit_test_mrc_shld(u8* stream)
+{
+    // Direct
+#if TEST_MRC_DIRECT
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mrc_direct(i, j));
+#endif
+#if TEST_MRC_DIRECT
+    for(X64_Register i = EAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mrc_direct(i, j));
+#endif
+#if TEST_MRC_DIRECT
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mrc_direct(i, j));
+#endif
+#if TEST_MRC_DIRECT
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mrc_direct(i, j));
+#endif
+
+    // Indirect
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0, ADDR_QWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0, ADDR_DWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0, ADDR_WORDPTR));
+#endif
+
+    // Indirect BD
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0x17, ADDR_QWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0x17, ADDR_DWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0x17, ADDR_WORDPTR));
+#endif
+
+    // Indirect DD
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0x17181920, ADDR_QWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0x17181920, ADDR_DWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect(i, j, 0x17181920, ADDR_WORDPTR));
+#endif
+    return stream;
+}
+
+u8*
+emit_test_mrc_sib_shld(u8* stream)
+{
+    X64_Register index = R13;
+    // Indirect SIB
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X1, 0, ADDR_QWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X2, 0, ADDR_DWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X4, 0, ADDR_WORDPTR));
+#endif
+
+    // Indirect SIB BD
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X1, 0x18, ADDR_QWORDPTR));
+#endif
+
+    // Indirect SIB DD
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shld(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X8, 0x12345678, ADDR_DWORDPTR));
+#endif
+
+    return stream;
+}
+
+u8*
+emit_test_mri_shrd(u8* stream)
+{
+    // Direct
+#if TEST_MRI_DIRECT
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mri_direct(i, j, 0x15));
+#endif
+#if TEST_MRI_DIRECT
+    for(X64_Register i = EAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mri_direct(i, j, 0x15));
+#endif
+#if TEST_MRI_DIRECT
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mri_direct(i, j, 0x15));
+#endif
+#if TEST_MRI_DIRECT
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mri_direct(i, j, 0x15));
+#endif
+
+    // Indirect
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0, ADDR_QWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0, ADDR_DWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0, ADDR_WORDPTR, 0x15));
+#endif
+
+    // Indirect BD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0x17, ADDR_QWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0x17, ADDR_DWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0x17, ADDR_WORDPTR, 0x15));
+#endif
+
+    // Indirect DD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0x17181920, ADDR_QWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0x17181920, ADDR_DWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect(i, j, 0x17181920, ADDR_WORDPTR, 0x15));
+#endif
+    return stream;
+}
+
+u8*
+emit_test_mri_sib_shrd(u8* stream)
+{
+    X64_Register index = R13;
+    // Indirect SIB
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X1, 0, ADDR_QWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X2, 0, ADDR_DWORDPTR, 0x15));
+#endif
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X4, 0, ADDR_WORDPTR, 0x15));
+#endif
+
+    // Indirect SIB BD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X1, 0x18, ADDR_QWORDPTR, 0x15));
+#endif
+
+    // Indirect SIB DD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X8, 0x12345678, ADDR_DWORDPTR, 0x15));
+#endif
+
+    // Indirect SIB DD
+#if TEST_MRI_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mri_indirect_sib(i, j, index, SIB_X4, 0x12345678, ADDR_WORDPTR, 0x15));
+#endif
+    return stream;
+}
+
+u8*
+emit_test_mrc_shrd(u8* stream)
+{
+    // Direct
+#if TEST_MRC_DIRECT
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_direct(i, j));
+#endif
+#if TEST_MRC_DIRECT
+    for(X64_Register i = EAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_direct(i, j));
+#endif
+#if TEST_MRC_DIRECT
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_direct(i, j));
+#endif
+#if TEST_MRC_DIRECT
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_direct(i, j));
+#endif
+
+    // Indirect
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0, ADDR_QWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0, ADDR_DWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0, ADDR_WORDPTR));
+#endif
+
+    // Indirect BD
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0x17, ADDR_QWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0x17, ADDR_DWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0x17, ADDR_WORDPTR));
+#endif
+
+    // Indirect DD
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0x17181920, ADDR_QWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0x17181920, ADDR_DWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect(i, j, 0x17181920, ADDR_WORDPTR));
+#endif
+    return stream;
+}
+
+u8*
+emit_test_mrc_sib_shrd(u8* stream)
+{
+    X64_Register index = R13;
+    // Indirect SIB
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X1, 0, ADDR_QWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X2, 0, ADDR_DWORDPTR));
+#endif
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X4, 0, ADDR_WORDPTR));
+#endif
+
+    // Indirect SIB BD
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X1, 0x18, ADDR_QWORDPTR));
+#endif
+
+    // Indirect SIB DD
+#if TEST_MRC_INDIRECT
+    for(X64_Register i = RAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_shrd(0, stream, mk_mrc_indirect_sib(i, j, index, SIB_X8, 0x12345678, ADDR_DWORDPTR));
+#endif
+
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "../test_shift.bin"
     FILE* out = fopen(FILENAME, "wb");
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;
+
     {
         end = emit_shift_m1_test(end);
         end = emit_shift_m1_test_sib(end);
@@ -1012,6 +1487,16 @@ int main()
         end = emit_test_mr_test(end);
         end = emit_test_mr_sib_test(end);
         end = emit_test_i_test(end);
+    }
+    {
+        end = emit_test_mri_shld(end);
+        end = emit_test_mri_sib_shld(end);
+        end = emit_test_mrc_shld(end);
+        end = emit_test_mrc_sib_shld(end);
+        end = emit_test_mri_shrd(end);
+        end = emit_test_mri_sib_shrd(end);
+        end = emit_test_mrc_shrd(end);
+        end = emit_test_mrc_sib_shrd(end);
     }
 
     fwrite(stream, 1, end - stream, out);
