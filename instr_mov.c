@@ -116,3 +116,33 @@ emit_setcc(Instr_Emit_Result* out_info, u8* stream, X64_SETcc_Instruction instr,
     amode.flags |= ADDRMODE_FLAG_NO_REXW;
     return emit_instruction(out_info, stream, amode, opcode);
 }
+
+u8*
+emit_lar(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_RM);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x02;
+
+    assert((amode.addr_mode == DIRECT && register_get_bitsize(amode.reg) == register_get_bitsize(amode.rm)) ||
+        (amode.addr_mode != DIRECT && register_get_bitsize(amode.rm) >= 32 && amode.ptr_bitsize == 16));
+    amode.ptr_bitsize = register_get_bitsize(amode.reg);
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_lsl(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_RM);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x03;
+
+    assert((amode.addr_mode == DIRECT && register_get_bitsize(amode.reg) == register_get_bitsize(amode.rm)) ||
+        (amode.addr_mode != DIRECT && register_get_bitsize(amode.rm) >= 32 && amode.ptr_bitsize == 16));
+    amode.ptr_bitsize = register_get_bitsize(amode.reg);
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}

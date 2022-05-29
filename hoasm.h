@@ -1114,6 +1114,9 @@ u8* emit_invplg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_verr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_verw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_xadd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_xchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_lar(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_lsl(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_addps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_addss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

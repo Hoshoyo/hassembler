@@ -152,3 +152,32 @@ emit_xadd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 
     return emit_instruction(out_info, stream, amode, opcode);
 }
+
+u8*
+emit_xchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 1};
+    if(amode.mode_type == ADDR_MODE_O)
+    {    
+        assert(register_get_bitsize(amode.reg) > 8);
+        u8* start = stream;
+        if(amode.addr_mode == DIRECT) amode.rm = amode.reg;
+        // size override
+        stream = emit_size_override(stream, amode.ptr_bitsize, amode.rm, amode.addr_mode);
+
+        // rex
+        if(register_is_extended(amode.reg) || register_get_bitsize(amode.reg) == 64)
+            *stream++ = make_rex(register_is_extended(amode.reg), 0, 0, register_get_bitsize(amode.reg) == 64);
+
+        // opcode
+        *stream++ = 0x90 | (0x7 & amode.reg);
+        
+        fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+        return stream;
+    }
+    else if(amode.mode_type == ADDR_MODE_RM || amode.mode_type == ADDR_MODE_MR)
+    {
+        opcode.bytes[0] = (register_get_bitsize(amode.reg) == 8) ? 0x86 : 0x87;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}

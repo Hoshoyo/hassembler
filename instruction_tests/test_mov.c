@@ -4,6 +4,8 @@
 
 #define MOV_TEST 1
 #define SET_TEST 1
+#define LAR_TEST 1
+#define LSL_TEST 1
 
 // MR
 #define TEST_MR_DIRECT_64 1
@@ -1624,6 +1626,110 @@ emit_setcc_sib_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_lar_test(u8* stream)
+{
+    X64_Register index = R13;
+#if LAR_TEST
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_lar(0, stream, mk_rm_direct(i, j));
+#endif
+#if LAR_TEST
+    for(X64_Register i = EAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_lar(0, stream, mk_rm_direct(i, j));
+#endif
+#if LAR_TEST
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_lar(0, stream, mk_rm_direct(i, j));
+#endif
+#if LAR_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lar(0, stream, mk_rm_indirect(i, j, 0, ADDR_WORDPTR));
+#endif
+#if LAR_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lar(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_WORDPTR));
+#endif
+#if LAR_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lar(0, stream, mk_rm_indirect(i, j, 0x15161718, ADDR_WORDPTR));
+#endif
+#if LAR_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lar(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X1, 0, ADDR_WORDPTR));
+#endif
+#if LAR_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lar(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X2, 0x15, ADDR_WORDPTR));
+#endif
+#if LAR_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lar(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X8, 0x15161718, ADDR_WORDPTR));
+#endif
+    return stream;
+}
+
+u8*
+emit_lsl_test(u8* stream)
+{
+    X64_Register index = R13;
+#if LSL_TEST
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = RAX; j <= R15; ++j)
+            stream = emit_lsl(0, stream, mk_rm_direct(i, j));
+#endif
+#if LSL_TEST
+    for(X64_Register i = EAX; i <= R15D; ++i)
+        for(X64_Register j = EAX; j <= R15D; ++j)
+            stream = emit_lsl(0, stream, mk_rm_direct(i, j));
+#endif
+#if LSL_TEST
+    for(X64_Register i = AX; i <= R15W; ++i)
+        for(X64_Register j = AX; j <= R15W; ++j)
+            stream = emit_lsl(0, stream, mk_rm_direct(i, j));
+#endif
+#if LSL_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lsl(0, stream, mk_rm_indirect(i, j, 0, ADDR_WORDPTR));
+#endif
+#if LSL_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lsl(0, stream, mk_rm_indirect(i, j, 0x15, ADDR_WORDPTR));
+#endif
+#if LSL_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lsl(0, stream, mk_rm_indirect(i, j, 0x15161718, ADDR_WORDPTR));
+#endif
+#if LSL_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lsl(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X1, 0, ADDR_WORDPTR));
+#endif
+#if LSL_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lsl(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X2, 0x15, ADDR_WORDPTR));
+#endif
+#if LSL_TEST
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        for(X64_Register j = RAX; j <= R15D; ++j)
+            stream = emit_lsl(0, stream, mk_rm_indirect_sib(i, j, index, SIB_X8, 0x15161718, ADDR_WORDPTR));
+#endif
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_mov.bin"
@@ -1655,6 +1761,10 @@ int main()
     {
         end = emit_setcc_test(end);
         end = emit_setcc_sib_test(end);
+    }
+    {
+        end = emit_lar_test(end);
+        end = emit_lsl_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);
