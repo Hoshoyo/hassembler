@@ -2,15 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TEST_LLDT 0
-#define TEST_LMSW 0
-#define TEST_LTR 0
-#define TEST_STR 0
-#define TEST_SGDT 0
-#define TEST_SIDT 0
-#define TEST_SLDT 0
-#define TEST_INVPLG 0
-#define TEST_VER 0
+#define TEST_LLDT 1
+#define TEST_LMSW 1
+#define TEST_LTR 1
+#define TEST_STR 1
+#define TEST_SGDT 1
+#define TEST_SIDT 1
+#define TEST_SLDT 1
+#define TEST_INVPLG 1
+#define TEST_VER 1
+#define TEST_SMSW 1
 
 u8*
 emit_cvt_test(u8* stream)
@@ -562,6 +563,60 @@ emit_ver_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_smsw_test(u8* stream)
+{
+    // Direct
+#if TEST_SMSW
+    for(X64_Register i = RAX; i <= R15W; ++i)
+        stream = emit_smsw(0, stream, mk_m_direct(i));
+#endif
+    // Indirect
+#if TEST_SMSW
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_smsw(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
+    }
+#endif
+    // Indirect byte displaced
+#if TEST_SMSW
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_smsw(0, stream, mk_m_indirect(i, 0x15, ADDR_WORDPTR));
+    }
+#endif
+    // Indirect dword displaced
+#if TEST_SMSW
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_smsw(0, stream, mk_m_indirect(i, 0x15161718, ADDR_WORDPTR));
+    }
+#endif
+
+    // Indirect sib
+#if TEST_SMSW
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_smsw(0, stream, mk_m_indirect_sib(i, R13, SIB_X1, 0, ADDR_WORDPTR));
+    }
+#endif
+    // Indirect sib byte displaced
+#if TEST_SMSW
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_smsw(0, stream, mk_m_indirect_sib(i, R13, SIB_X2, 0x15, ADDR_WORDPTR));
+    }
+#endif
+    // Indirect sib dword displaced
+#if TEST_SMSW
+    for(X64_Register i = RAX; i <= R15D; ++i)
+    {
+        stream = emit_smsw(0, stream, mk_m_indirect_sib(i, R13, SIB_X8, 0x15161718, ADDR_WORDPTR));
+    }
+#endif
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_bit.bin"
@@ -582,6 +637,7 @@ int main()
         end = emit_sldt_test(end);
         end = emit_invplg_test(end);
         end = emit_ver_test(end);
+        end = emit_smsw_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

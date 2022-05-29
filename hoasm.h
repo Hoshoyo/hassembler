@@ -1189,6 +1189,7 @@ u8* emit_sgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_sidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_sldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_invplg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_smsw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_verr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_verw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_xadd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

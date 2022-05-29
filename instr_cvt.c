@@ -379,6 +379,22 @@ emit_invplg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     return emit_instruction(out_info, stream, amode, opcode);
 }
 
+#define SMSW_DIGIT 4
+u8*
+emit_smsw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_M);
+    assert(amode.ptr_bitsize == 16 || amode.addr_mode == DIRECT);
+    if(amode.addr_mode != DIRECT)
+        amode.ptr_bitsize = 32; // ignore 16 bit override prefix
+
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x01;
+    amode.reg = SMSW_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
 static u8*
 emit_ver(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, u8 digit)
 {
