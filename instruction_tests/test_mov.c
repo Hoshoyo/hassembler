@@ -6,6 +6,7 @@
 #define SET_TEST 1
 #define LAR_TEST 1
 #define LSL_TEST 1
+#define MOV_DBGREG 1
 
 // MR
 #define TEST_MR_DIRECT_64 1
@@ -1730,6 +1731,40 @@ emit_lsl_test(u8* stream)
     return stream;
 }
 
+u8*
+emit_movdbg_test(u8* stream)
+{
+    // TODO(psv): indirect doesnt work, but generated direct ?? check this
+#if MOV_DBGREG
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = DR0; j <= DR7; ++j)
+            stream = emit_mov_debug_reg(0, stream, mk_mr_direct(i, j));
+#endif
+#if MOV_DBGREG
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = DR0; j <= DR7; ++j)
+            stream = emit_mov_debug_reg(0, stream, mk_rm_direct(j, i));
+#endif
+    return stream;
+}
+
+u8*
+emit_movcontrol_test(u8* stream)
+{
+    // TODO(psv): indirect doesnt work, but generated direct ?? check this
+#if MOV_DBGREG
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = CR0; j <= CR15; ++j)
+            stream = emit_mov_control_reg(0, stream, mk_mr_direct(i, j));
+#endif
+#if MOV_DBGREG
+    for(X64_Register i = RAX; i <= R15; ++i)
+        for(X64_Register j = CR0; j <= CR15; ++j)
+            stream = emit_mov_control_reg(0, stream, mk_rm_direct(j, i));
+#endif
+    return stream;
+}
+
 int main()
 {
     #define FILENAME "test_mov.bin"
@@ -1765,6 +1800,10 @@ int main()
     {
         end = emit_lar_test(end);
         end = emit_lsl_test(end);
+    }
+    {
+        end = emit_movdbg_test(end);
+        end = emit_movcontrol_test(end);
     }
 
     fwrite(stream, 1, end - stream, out);

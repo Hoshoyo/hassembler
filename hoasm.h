@@ -50,6 +50,15 @@ typedef enum {
 } X64_Register;
 
 typedef enum {
+	DR0 = 0, DR1, DR2, DR3, DR4, DR5, DR6, DR7
+} X64_DebugRegister;
+
+typedef enum {
+	CR0 = 0, CR1, CR2, CR3, CR4, CR5, CR6, CR7,
+	CR8, CR9, CR10, CR11, CR12, CR13, CR14, CR15, // Extended
+} X64_ControlRegister;
+
+typedef enum {
 	XMM0 = 0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6, XMM7, XMM8
 } X64_XMM_Register;
 
@@ -1037,6 +1046,8 @@ u8* emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_cmovcc(Instr_Emit_Result* out_info, u8* stream, X64_CMOVcc_Instruction instr, X64_AddrMode amode);
 u8* emit_setcc(Instr_Emit_Result* out_info, u8* stream, X64_SETcc_Instruction instr, X64_AddrMode amode);
+u8* emit_mov_debug_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
+u8* emit_mov_control_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
 u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
 u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);

@@ -146,3 +146,34 @@ emit_lsl(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
 
     return emit_instruction(out_info, stream, amode, opcode);
 }
+
+u8*
+emit_mov_debug_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_MR || amode.mode_type == ADDR_MODE_RM);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    if(amode.mode_type == ADDR_MODE_MR)
+        opcode.bytes[1] = 0x21;
+    else if(amode.mode_type == ADDR_MODE_RM)
+        opcode.bytes[1] = 0x23;
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_mov_control_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_MR || amode.mode_type == ADDR_MODE_RM);
+
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    if(amode.mode_type == ADDR_MODE_MR)
+        opcode.bytes[1] = 0x20;
+    else if(amode.mode_type == ADDR_MODE_RM)
+        opcode.bytes[1] = 0x22;
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}
