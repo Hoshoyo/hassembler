@@ -1,6 +1,6 @@
 @echo off 
 
-SET CompileLine=cl /Zi /nologo /I../.. ../../*.c
+SET CompileLine=cl /Zi /nologo /I../..
 
 pushd bin
 

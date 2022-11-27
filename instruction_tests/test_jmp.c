@@ -1,3 +1,4 @@
+#define HO_ASSEMBLER_IMPLEMENT
 #include "hoasm.h"
 #include <stdio.h>
 #include <stdlib.h>

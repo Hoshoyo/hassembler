@@ -1,3 +1,4 @@
+#define HO_ASSEMBLER_IMPLEMENT
 #include "hoasm.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -619,7 +620,7 @@ emit_smsw_test(u8* stream)
 
 int main()
 {
-    #define FILENAME "test_bit.bin"
+    #define FILENAME "test_cvt.bin"
     FILE* out = fopen(FILENAME, "wb");
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;

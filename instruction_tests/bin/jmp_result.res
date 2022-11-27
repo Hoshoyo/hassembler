@@ -2581,3 +2581,135 @@ Disassembly of section .data:
     3e00:	67 41 ff 5d 00       	call   FWORD PTR [r13d+0x0]
     3e05:	67 41 ff 1e          	call   FWORD PTR [r14d]
     3e09:	67 41 ff 1f          	call   FWORD PTR [r15d]
+    3e0d:	0f 01 14 45 23 01 00 0f 	lgdt   [rax*2+0xf000123]
+    3e15:	01 10                	add    DWORD PTR [rax],edx
+    3e17:	0f 01 11             	lgdt   [rcx]
+    3e1a:	0f 01 12             	lgdt   [rdx]
+    3e1d:	0f 01 13             	lgdt   [rbx]
+    3e20:	0f 01 14 24          	lgdt   [rsp]
+    3e24:	0f 01 55 00          	lgdt   [rbp+0x0]
+    3e28:	0f 01 16             	lgdt   [rsi]
+    3e2b:	0f 01 17             	lgdt   [rdi]
+    3e2e:	41 0f 01 10          	lgdt   [r8]
+    3e32:	41 0f 01 11          	lgdt   [r9]
+    3e36:	41 0f 01 12          	lgdt   [r10]
+    3e3a:	41 0f 01 13          	lgdt   [r11]
+    3e3e:	41 0f 01 14 24       	lgdt   [r12]
+    3e43:	41 0f 01 55 00       	lgdt   [r13+0x0]
+    3e48:	41 0f 01 16          	lgdt   [r14]
+    3e4c:	41 0f 01 17          	lgdt   [r15]
+    3e50:	67 0f 01 10          	lgdt   [eax]
+    3e54:	67 0f 01 11          	lgdt   [ecx]
+    3e58:	67 0f 01 12          	lgdt   [edx]
+    3e5c:	67 0f 01 13          	lgdt   [ebx]
+    3e60:	67 0f 01 14 24       	lgdt   [esp]
+    3e65:	67 0f 01 55 00       	lgdt   [ebp+0x0]
+    3e6a:	67 0f 01 16          	lgdt   [esi]
+    3e6e:	67 0f 01 17          	lgdt   [edi]
+    3e72:	67 41 0f 01 10       	lgdt   [r8d]
+    3e77:	67 41 0f 01 11       	lgdt   [r9d]
+    3e7c:	67 41 0f 01 12       	lgdt   [r10d]
+    3e81:	67 41 0f 01 13       	lgdt   [r11d]
+    3e86:	67 41 0f 01 14 24    	lgdt   [r12d]
+    3e8c:	67 41 0f 01 55 00    	lgdt   [r13d+0x0]
+    3e92:	67 41 0f 01 16       	lgdt   [r14d]
+    3e97:	67 41 0f 01 17       	lgdt   [r15d]
+    3e9c:	0f 01 50 15          	lgdt   [rax+0x15]
+    3ea0:	0f 01 51 15          	lgdt   [rcx+0x15]
+    3ea4:	0f 01 52 15          	lgdt   [rdx+0x15]
+    3ea8:	0f 01 53 15          	lgdt   [rbx+0x15]
+    3eac:	0f 01 54 24 15       	lgdt   [rsp+0x15]
+    3eb1:	0f 01 55 15          	lgdt   [rbp+0x15]
+    3eb5:	0f 01 56 15          	lgdt   [rsi+0x15]
+    3eb9:	0f 01 57 15          	lgdt   [rdi+0x15]
+    3ebd:	41 0f 01 50 15       	lgdt   [r8+0x15]
+    3ec2:	41 0f 01 51 15       	lgdt   [r9+0x15]
+    3ec7:	41 0f 01 52 15       	lgdt   [r10+0x15]
+    3ecc:	41 0f 01 53 15       	lgdt   [r11+0x15]
+    3ed1:	41 0f 01 54 24 15    	lgdt   [r12+0x15]
+    3ed7:	41 0f 01 55 15       	lgdt   [r13+0x15]
+    3edc:	41 0f 01 56 15       	lgdt   [r14+0x15]
+    3ee1:	41 0f 01 57 15       	lgdt   [r15+0x15]
+    3ee6:	67 0f 01 50 15       	lgdt   [eax+0x15]
+    3eeb:	67 0f 01 51 15       	lgdt   [ecx+0x15]
+    3ef0:	67 0f 01 52 15       	lgdt   [edx+0x15]
+    3ef5:	67 0f 01 53 15       	lgdt   [ebx+0x15]
+    3efa:	67 0f 01 54 24 15    	lgdt   [esp+0x15]
+    3f00:	67 0f 01 55 15       	lgdt   [ebp+0x15]
+    3f05:	67 0f 01 56 15       	lgdt   [esi+0x15]
+    3f0a:	67 0f 01 57 15       	lgdt   [edi+0x15]
+    3f0f:	67 41 0f 01 50 15    	lgdt   [r8d+0x15]
+    3f15:	67 41 0f 01 51 15    	lgdt   [r9d+0x15]
+    3f1b:	67 41 0f 01 52 15    	lgdt   [r10d+0x15]
+    3f21:	67 41 0f 01 53 15    	lgdt   [r11d+0x15]
+    3f27:	67 41 0f 01 54 24 15 	lgdt   [r12d+0x15]
+    3f2e:	67 41 0f 01 55 15    	lgdt   [r13d+0x15]
+    3f34:	67 41 0f 01 56 15    	lgdt   [r14d+0x15]
+    3f3a:	67 41 0f 01 57 15    	lgdt   [r15d+0x15]
+    3f40:	0f 01 90 18 17 16 15 	lgdt   [rax+0x15161718]
+    3f47:	0f 01 91 18 17 16 15 	lgdt   [rcx+0x15161718]
+    3f4e:	0f 01 92 18 17 16 15 	lgdt   [rdx+0x15161718]
+    3f55:	0f 01 93 18 17 16 15 	lgdt   [rbx+0x15161718]
+    3f5c:	0f 01 94 24 18 17 16 15 	lgdt   [rsp+0x15161718]
+    3f64:	0f 01 95 18 17 16 15 	lgdt   [rbp+0x15161718]
+    3f6b:	0f 01 96 18 17 16 15 	lgdt   [rsi+0x15161718]
+    3f72:	0f 01 97 18 17 16 15 	lgdt   [rdi+0x15161718]
+    3f79:	41 0f 01 90 18 17 16 15 	lgdt   [r8+0x15161718]
+    3f81:	41 0f 01 91 18 17 16 15 	lgdt   [r9+0x15161718]
+    3f89:	41 0f 01 92 18 17 16 15 	lgdt   [r10+0x15161718]
+    3f91:	41 0f 01 93 18 17 16 15 	lgdt   [r11+0x15161718]
+    3f99:	41 0f 01 94 24 18 17 16 15 	lgdt   [r12+0x15161718]
+    3fa2:	41 0f 01 95 18 17 16 15 	lgdt   [r13+0x15161718]
+    3faa:	41 0f 01 96 18 17 16 15 	lgdt   [r14+0x15161718]
+    3fb2:	41 0f 01 97 18 17 16 15 	lgdt   [r15+0x15161718]
+    3fba:	67 0f 01 90 18 17 16 15 	lgdt   [eax+0x15161718]
+    3fc2:	67 0f 01 91 18 17 16 15 	lgdt   [ecx+0x15161718]
+    3fca:	67 0f 01 92 18 17 16 15 	lgdt   [edx+0x15161718]
+    3fd2:	67 0f 01 93 18 17 16 15 	lgdt   [ebx+0x15161718]
+    3fda:	67 0f 01 94 24 18 17 16 15 	lgdt   [esp+0x15161718]
+    3fe3:	67 0f 01 95 18 17 16 15 	lgdt   [ebp+0x15161718]
+    3feb:	67 0f 01 96 18 17 16 15 	lgdt   [esi+0x15161718]
+    3ff3:	67 0f 01 97 18 17 16 15 	lgdt   [edi+0x15161718]
+    3ffb:	67 41 0f 01 90 18 17 16 15 	lgdt   [r8d+0x15161718]
+    4004:	67 41 0f 01 91 18 17 16 15 	lgdt   [r9d+0x15161718]
+    400d:	67 41 0f 01 92 18 17 16 15 	lgdt   [r10d+0x15161718]
+    4016:	67 41 0f 01 93 18 17 16 15 	lgdt   [r11d+0x15161718]
+    401f:	67 41 0f 01 94 24 18 17 16 15 	lgdt   [r12d+0x15161718]
+    4029:	67 41 0f 01 95 18 17 16 15 	lgdt   [r13d+0x15161718]
+    4032:	67 41 0f 01 96 18 17 16 15 	lgdt   [r14d+0x15161718]
+    403b:	67 41 0f 01 97 18 17 16 15 	lgdt   [r15d+0x15161718]
+    4044:	e2 0a                	loop   0x4050
+    4046:	e1 80                	loope  0x3fc8
+    4048:	e0 80                	loopne 0x3fca
+    404a:	e2 7f                	loop   0x40cb
+    404c:	e1 7f                	loope  0x40cd
+    404e:	e0 7f                	loopne 0x40cf
+    4050:	c8 34 12 00          	enter  0x1234,0x0
+    4054:	c8 34 12 01          	enter  0x1234,0x1
+    4058:	c8 34 12 19          	enter  0x1234,0x19
+    405c:	c8 34 12 ff          	enter  0x1234,0xff
+    4060:	66 c8 34 12 00       	enterw 0x1234,0x0
+    4065:	66 c8 34 12 01       	enterw 0x1234,0x1
+    406a:	66 c8 34 12 19       	enterw 0x1234,0x19
+    406f:	66 c8 34 12 ff       	enterw 0x1234,0xff
+    4074:	e4 15                	in     al,0x15
+    4076:	e4 00                	in     al,0x0
+    4078:	e4 15                	in     al,0x15
+    407a:	66 e5 16             	in     ax,0x16
+    407d:	e5 17                	in     eax,0x17
+    407f:	ec                   	in     al,dx
+    4080:	66 ed                	in     ax,dx
+    4082:	ed                   	in     eax,dx
+    4083:	e6 15                	out    0x15,al
+    4085:	e6 00                	out    0x0,al
+    4087:	e6 15                	out    0x15,al
+    4089:	66 e7 16             	out    0x16,ax
+    408c:	e7 17                	out    0x17,eax
+    408e:	ee                   	out    dx,al
+    408f:	66 ef                	out    dx,ax
+    4091:	ef                   	out    dx,eax
+    4092:	0f 0b                	ud2    
+    4094:	0f ff                	(bad)  
+    4096:	c3                   	ret    
+    4097:	0f b9                	ud1    
+    4099:	c3                   	ret    

@@ -1,11 +1,11 @@
+#define HO_ASSEMBLER_IMPLEMENT
 #include "hoasm.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 u8*
-emit_addps_test(u8* stream)
+emit_test_sse(u8* stream)
 {
-#if 0
     stream = emit_cvttps2pi(0, stream, mk_rm_direct(XMM0, RAX));
     stream = emit_cvttps2pi(0, stream, mk_rm_indirect(XMM0, RAX, 0, 64));
     stream = emit_cvttps2pi(0, stream, mk_rm_indirect_sib(XMM0, RAX, RCX, SIB_X1, 0, 64));
@@ -203,24 +203,22 @@ emit_addps_test(u8* stream)
         stream = emit_cmpps(0, stream, mk_a_direct(XMM0, XMM1), i);
     for (X64_SSE_Compare_Flag i = SSE_CMP_EQ; i <= SSE_CMP_ORD; ++i)
         stream = emit_cmppd(0, stream, mk_a_direct(XMM0, XMM1), i);
-    #endif
     
     return stream;
 }
 
 int main()
 {
-    #define FILENAME "../test_sse.bin"
+    #define FILENAME "test_sse.bin"
     FILE* out = fopen(FILENAME, "wb");
 	u8* stream = (u8*)calloc(1, 1024*1024);
     u8* end = stream;
     {
-        end = emit_addps_test(end);
+        end = emit_test_sse(end);
     }
     fwrite(stream, 1, end - stream, out);
 	fclose(out);
 
-    //system("objdump -D -Mintel,x86-64 -b binary -m i386 -w " FILENAME " > arith_result.res");
     system("objdump -D -Mintel,x86-64 -b binary -m i386 -w " FILENAME);
     
     return 0;

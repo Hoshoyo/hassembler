@@ -1279,3 +1279,2276 @@ u8* emit_scas(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
 u8* emit_stos(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
 u8* emit_lods(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
 u8* emit_movs(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize);
+
+#ifdef HO_ASSEMBLER_IMPLEMENT 
+u8*
+emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode)
+{
+    u8* start = stream;    
+
+    // Prefix size override
+    if(!(amode.flags & ADDRMODE_FLAG_NO_SIZE_OVERRIDE))
+        stream = emit_size_override(stream, amode.ptr_bitsize, amode.rm, amode.addr_mode);
+
+    // REX prefix
+    if(!(amode.flags & ADDRMODE_FLAG_NO_REX))
+        stream = emit_rex(stream, amode.reg, amode.rm, amode.sib_index, amode.sib_base, amode.ptr_bitsize, amode.addr_mode, amode.flags);
+
+    // Opcode
+    for(int i = 0; i < opcode.byte_count; ++i) *stream++ = opcode.bytes[i];
+
+    // Mod/RM
+    if(amode.rm != REG_NONE && amode.reg != REG_NONE)
+        *stream++ = make_modrm(amode.addr_mode, register_representation(amode.reg), register_representation(amode.rm));
+
+    // SIB
+    if(amode.sib_mode != MODE_NONE)
+        *stream++ = make_sib(amode.sib_mode, register_representation(amode.sib_index), register_representation(amode.sib_base));
+
+    // Displacement
+    s8 disp_offset = stream - start;
+    stream = emit_value_raw(stream, amode.displacement, amode.displacement_bitsize);
+    disp_offset = (disp_offset == (stream - start)) ? -1 : disp_offset;
+
+    // Immediate
+    s8 imm_offset = stream - start;
+    stream = emit_value_raw(stream, amode.immediate, amode.immediate_bitsize);
+    imm_offset = (imm_offset == (stream - start)) ? -1 : imm_offset;
+
+    fill_outinfo(out_info, stream - start, disp_offset, imm_offset);
+    
+    return stream;
+}
+
+u8*
+emit_instruction_prefixed(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_Opcode opcode, u8 prefix)
+{
+    u8* start = stream;    
+
+    // Prefix size override
+    *stream++ = prefix;
+
+    // REX prefix
+    if(!(amode.flags & ADDRMODE_FLAG_NO_REX))
+        stream = emit_rex(stream, amode.reg, amode.rm, amode.sib_index, amode.sib_base, amode.ptr_bitsize, amode.addr_mode, amode.flags);
+
+    // Opcode
+    for(int i = 0; i < opcode.byte_count; ++i) *stream++ = opcode.bytes[i];
+
+    // Mod/RM
+    if(amode.rm != REG_NONE && amode.reg != REG_NONE)
+        *stream++ = make_modrm(amode.addr_mode, register_representation(amode.reg), register_representation(amode.rm));
+
+    // SIB
+    if(amode.sib_mode != MODE_NONE)
+        *stream++ = make_sib(amode.sib_mode, register_representation(amode.sib_index), register_representation(amode.sib_base));
+
+    // Displacement
+    s8 disp_offset = stream - start;
+    stream = emit_value_raw(stream, amode.displacement, amode.displacement_bitsize);
+    disp_offset = (disp_offset == (stream - start)) ? -1 : disp_offset;
+
+    // Immediate
+    s8 imm_offset = stream - start;
+    stream = emit_value_raw(stream, amode.immediate, amode.immediate_bitsize);
+    imm_offset = (imm_offset == (stream - start)) ? -1 : imm_offset;
+
+    fill_outinfo(out_info, stream - start, disp_offset, imm_offset);
+    
+    return stream;
+} 
+#define AND_IMM8 0x80
+#define AND_IMM 0x81
+#define ADD_IMM8 0x80
+#define ADD_IMM 0x81
+#define ADDS_IMM8 0x83
+#define ADD_MR 0x01
+#define ADD_RM 0x03
+#define ADD_AL 0x04
+#define ADD_A 0x05
+#define AND_AL 0x24
+#define AND_A 0x25
+#define OR_AL 0xc
+#define OR_A 0xd
+#define ADC_AL 0x14
+#define ADC_A 0x15
+#define SBB_AL 0x1c
+#define SBB_A 0x1d
+#define SUB_AL 0x2c
+#define SUB_A 0x2d
+#define XOR_AL 0x34
+#define XOR_A 0x35
+#define CMP_AL 0x3c
+#define CMP_A 0x3d
+
+#define ADD_MR8 0x00
+#define CMP_MR8 0x38
+#define AND_MR8 0x20
+#define ADC_MR8 0x10
+#define SBB_MR8 0x18
+#define SUB_MR8 0x28
+#define XOR_MR8 0x30
+#define OR_MR8 0x08
+
+#define ADD_RM8 0x02
+#define CMP_RM8 0x3A
+#define AND_RM8 0x22
+#define ADC_RM8 0x12
+#define SBB_RM8 0x1A
+#define SUB_RM8 0x2A
+#define XOR_RM8 0x32
+#define OR_RM8 0x0A
+
+static u8
+mi_opcode_a(X64_Arithmetic_Instr instr, int bitsize)
+{
+    u8 opcode = 0;
+    switch(instr)
+    {
+        case ARITH_AND: opcode = AND_AL; break;
+        case ARITH_OR:  opcode = OR_AL; break;
+        case ARITH_XOR: opcode = XOR_AL; break;
+        case ARITH_ADD: opcode = ADD_AL; break;
+        case ARITH_ADC: opcode = ADC_AL; break;
+        case ARITH_SUB: opcode = SUB_AL; break;
+        case ARITH_SBB: opcode = SBB_AL; break;
+        case ARITH_CMP: opcode = CMP_AL; break;
+        default: assert(0 && "invalid instruction"); break;
+    }
+    if(bitsize > 8) opcode += 1;
+    return opcode;
+}
+
+static u8
+mr_opcode(X64_Arithmetic_Instr instr, int bitsize)
+{
+    u8 opcode = 0;
+    switch(instr)
+    {
+        case ARITH_AND: opcode = AND_MR8; break;
+        case ARITH_OR:  opcode = OR_MR8; break;
+        case ARITH_XOR: opcode = XOR_MR8; break;
+        case ARITH_ADD: opcode = ADD_MR8; break;
+        case ARITH_ADC: opcode = ADC_MR8; break;
+        case ARITH_SUB: opcode = SUB_MR8; break;
+        case ARITH_SBB: opcode = SBB_MR8; break;
+        case ARITH_CMP: opcode = CMP_MR8; break;
+        default: assert(0 && "invalid instruction"); break;
+    }
+    if(bitsize > 8) opcode += 1;
+    return opcode;
+}
+
+static u8
+rm_opcode(X64_Arithmetic_Instr instr, int bitsize)
+{
+    u8 opcode = 0;
+    switch(instr)
+    {
+        case ARITH_AND: opcode = AND_RM8; break;
+        case ARITH_OR:  opcode = OR_RM8; break;
+        case ARITH_XOR: opcode = XOR_RM8; break;
+        case ARITH_ADD: opcode = ADD_RM8; break;
+        case ARITH_ADC: opcode = ADC_RM8; break;
+        case ARITH_SUB: opcode = SUB_RM8; break;
+        case ARITH_SBB: opcode = SBB_RM8; break;
+        case ARITH_CMP: opcode = CMP_RM8; break;
+        default: assert(0 && "invalid instruction"); break;
+    }
+    if(bitsize > 8) opcode += 1;
+    return opcode;
+}
+
+u8*
+emit_arithmetic(Instr_Emit_Result* out_info, u8* stream, X64_Arithmetic_Instr instr, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    if(amode.immediate_bitsize > 0)
+    {
+        u8 op = 0x80; // imm8
+        if(bitsize > 8) op += 1;    // 0x81
+        if(amode.immediate_bitsize == 8 && bitsize > 8) op += 2;   // 0x83
+        opcode.bytes[0] = op;
+
+        if(amode.addr_mode == DIRECT && amode.immediate_bitsize == 16 && register_get_bitsize(amode.rm) > 16)
+            amode.immediate_bitsize = 32;
+        else if(amode.addr_mode != DIRECT && amode.immediate_bitsize == 16 && amode.ptr_bitsize > 16)
+            amode.immediate_bitsize = 32;
+        amode.reg = instr;
+    }
+    else if(amode.mode_type == ADDR_MODE_RM)
+    {
+        opcode.bytes[0] = rm_opcode(instr, bitsize);
+    }
+    else if(amode.mode_type == ADDR_MODE_MR)
+    {
+        opcode.bytes[0] = mr_opcode(instr, bitsize);
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_lea(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = 0x8d;
+    assert(register_get_bitsize(amode.reg) > 8);
+    assert(amode.addr_mode != DIRECT);
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_xadd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_MR);
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = (bitsize == 8) ? 0xc0 : 0xc1;
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_xchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 1};
+    if(amode.mode_type == ADDR_MODE_O)
+    {    
+        assert(register_get_bitsize(amode.reg) > 8);
+        u8* start = stream;
+        if(amode.addr_mode == DIRECT) amode.rm = amode.reg;
+        // size override
+        stream = emit_size_override(stream, amode.ptr_bitsize, amode.rm, amode.addr_mode);
+
+        // rex
+        if(register_is_extended(amode.reg) || register_get_bitsize(amode.reg) == 64)
+            *stream++ = make_rex(register_is_extended(amode.reg), 0, 0, register_get_bitsize(amode.reg) == 64);
+
+        // opcode
+        *stream++ = 0x90 | (0x7 & amode.reg);
+        
+        fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+        return stream;
+    }
+    else if(amode.mode_type == ADDR_MODE_RM || amode.mode_type == ADDR_MODE_MR)
+    {
+        opcode.bytes[0] = (register_get_bitsize(amode.reg) == 8) ? 0x86 : 0x87;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+} 
+u8*
+emit_bsf(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    assert(bitsize > 8);
+
+    X64_Opcode opcode = {0};
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_RM: {
+            opcode.byte_count = 2;
+            opcode.bytes[0] = 0x0f;
+            opcode.bytes[1] = 0xbc;
+        } break;
+        default: assert(0); break;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_bsr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    assert(bitsize > 8);
+
+    X64_Opcode opcode = {0};
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_RM: {
+            opcode.byte_count = 2;
+            opcode.bytes[0] = 0x0f;
+            opcode.bytes[1] = 0xbd;
+        } break;
+        default: assert(0); break;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_bswap(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_O);
+    
+    u8* start = stream;
+    if(register_is_extended(amode.reg) || register_get_bitsize(amode.reg) == 64)
+        *stream++ = make_rex(register_is_extended(amode.reg), 0, 0, register_get_bitsize(amode.reg) == 64);
+
+    // opcode
+    *stream++ = 0x0f;
+    *stream++ = 0xc8 | (0x7 & amode.reg);
+    
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+}
+
+static u8 bittest_opcode_mr(X64_BitTest_Instr instr)
+{
+    switch(instr)
+    {
+        case BITTEST:               return 0xa3;
+        case BITTEST_COMPLEMENT:    return 0xbb;
+        case BITTEST_RESET:         return 0xb3;
+        case BITTEST_SET:           return 0xab;
+        default: assert(0); return 0;
+    }
+}
+
+u8*
+emit_bt(Instr_Emit_Result* out_info, u8* stream, X64_BitTest_Instr instr, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    assert(bitsize > 8);
+
+    X64_Opcode opcode = {0};
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_MR: {
+            opcode.byte_count = 2;
+            opcode.bytes[0] = 0x0f;
+            opcode.bytes[1] = bittest_opcode_mr(instr);
+        } break;
+        case ADDR_MODE_MI: {
+            opcode.byte_count = 2;
+            opcode.bytes[0] = 0x0f;
+            opcode.bytes[1] = 0xba;
+            amode.reg = instr;
+            assert(amode.immediate_bitsize == 8);
+        } break;
+        default: assert(0); break;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+} 
+u8*
+emit_cbw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    u8* start = stream;
+    assert(register_equivalent(amode.reg, RAX));
+    switch(amode.reg)
+    {
+        case AX: break;
+        case AL: {
+            stream = emit_size_override(stream, 16, AX, DIRECT);
+        } break;
+        case EAX: {
+            *stream++ = make_rex(0, 0, 0, 1);
+        } break;
+        default: assert(0);
+    }
+    *stream++ = 0x98;
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+}
+
+u8*
+emit_cwd(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x66;
+    *stream++ = 0x99;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_cdq(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x99;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_cqo(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = make_rex(0, 0, 0, 1);
+    *stream++ = 0x99;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_clc(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0xf8;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_cld(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0xfc;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_cli(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0xfa;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_clts(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0x06;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_stc(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0xf9;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_std(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0xfd;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_sti(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0xfb;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_cmc(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0xf5;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_cpuid(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0xa2;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_hlt(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0xf4;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_invd(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0x08;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_iret(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    u8* start = stream;
+
+    switch(amode.ptr_bitsize)
+    {
+        case 16: {
+            stream = emit_size_override(stream, 16, AX, DIRECT);
+        } break;
+        case 32: break;
+        case 64: {
+            *stream++ = make_rex(0, 0, 0, 1);
+        } break;
+        default: assert(0);
+    }
+    *stream++ = 0xcf;
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+}
+
+u8*
+emit_lahf(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x9f;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_sahf(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x9e;
+    fill_outinfo(out_info, 1, -1, -1);
+    return stream;
+}
+
+u8*
+emit_popf(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    u8* start = stream;
+
+    switch(amode.ptr_bitsize)
+    {
+        case 16: {
+            stream = emit_size_override(stream, 16, AX, DIRECT);
+        } break;
+        case 64: break;
+        default: assert(0);
+    }
+    *stream++ = 0x9d;
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+}
+
+u8*
+emit_pushf(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    u8* start = stream;
+
+    switch(amode.ptr_bitsize)
+    {
+        case 16: {
+            stream = emit_size_override(stream, 16, AX, DIRECT);
+        } break;
+        case 64: break;
+        default: assert(0);
+    }
+    *stream++ = 0x9c;
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+}
+
+u8*
+emit_rdmsr(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0x32;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_rdpmc(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0x33;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_rdtsc(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0x31;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_rsm(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0xaa;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_sysenter(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0x34;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_sysexit(Instr_Emit_Result* out_info, u8* stream, bool b64)
+{
+    if(b64) *stream++ = make_rex(0, 0, 0, 1);
+    *stream++ = 0x0f;
+    *stream++ = 0x35;
+    fill_outinfo(out_info, (b64) ? 3 : 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_wbinvd(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0x09;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_wrmsr(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x0f;
+    *stream++ = 0x30;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_xlat(Instr_Emit_Result* out_info, u8* stream, bool b64)
+{
+    if(b64) *stream++ = make_rex(0, 0, 0, 1);
+    *stream++ = 0xd7;
+    fill_outinfo(out_info, (b64) ? 2 : 1, -1, -1);
+    return stream;
+}
+
+#define LLDT_DIGIT 2
+#define LLSW_DIGIT 6
+#define LTR_DIGIT 3
+#define STR_DIGIT 1
+#define SGDT_DIGIT 0
+#define SIDT_DIGIT 1
+#define SLDT_DIGIT 0
+
+static u8*
+emit_l(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, u8 digit, u8 op)
+{
+    assert((amode.addr_mode == DIRECT && register_get_bitsize(amode.rm) == 16) || (amode.addr_mode != DIRECT && register_get_bitsize(amode.rm) >= 32));
+    bool extended = register_is_extended(amode.rm);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = op;
+    amode.ptr_bitsize = 32; // ignore 16 bit size override
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    amode.reg = digit;
+    if(amode.addr_mode == DIRECT)
+        amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_lldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_l(out_info, stream, amode, LLDT_DIGIT, 0);
+}
+
+u8*
+emit_lmsw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_l(out_info, stream, amode, LLSW_DIGIT, 1);
+}
+
+u8*
+emit_ltr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_l(out_info, stream, amode, LTR_DIGIT, 0);
+}
+
+u8*
+emit_str(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_l(out_info, stream, amode, STR_DIGIT, 0);
+}
+
+u8*
+emit_sgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    return emit_l(out_info, stream, amode, SGDT_DIGIT, 1);
+}
+
+u8*
+emit_sidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    return emit_l(out_info, stream, amode, SIDT_DIGIT, 1);
+}
+
+u8*
+emit_sldt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    return emit_l(out_info, stream, amode, SLDT_DIGIT, 0);
+}
+
+#define INVPLG_DIGIT 7
+// DIRECT mode for this instruction produces the instruction SWAPGS
+u8*
+emit_invplg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_M);
+    assert(amode.addr_mode != DIRECT);
+    assert(amode.ptr_bitsize == 8);
+
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x01;
+    amode.reg = INVPLG_DIGIT;
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+#define SMSW_DIGIT 4
+u8*
+emit_smsw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_M);
+    assert(amode.ptr_bitsize == 16 || amode.addr_mode == DIRECT);
+    if(amode.addr_mode != DIRECT)
+        amode.ptr_bitsize = 32; // ignore 16 bit override prefix
+
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x01;
+    amode.reg = SMSW_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+static u8*
+emit_ver(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, u8 digit)
+{
+    assert(amode.mode_type == ADDR_MODE_M);
+
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x00;
+    amode.reg = digit;
+    amode.flags |= (ADDRMODE_FLAG_NO_REXW|((amode.addr_mode == DIRECT) ? ADDRMODE_FLAG_NO_SIZE_OVERRIDE: 0));
+    if(amode.addr_mode != DIRECT)
+        amode.ptr_bitsize = 64; // this is to ignore 16bit size override
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+#define VERR_DIGIT 4
+#define VERW_DIGIT 5
+u8*
+emit_verr(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_ver(out_info, stream, amode, VERR_DIGIT);
+}
+
+u8*
+emit_verw(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_ver(out_info, stream, amode, VERW_DIGIT);
+} 
+u8*
+emit_jcc_prefix(u8* stream, s32 rel_bitsize)
+{
+    if(rel_bitsize == 16)
+        *stream++ = 0x66;
+    if(rel_bitsize > 8)
+        *stream++ = 0x0f;
+    return stream;
+}
+
+u8*
+emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize)
+{
+    assert(rel_bitsize == 8 || rel_bitsize == 16 || rel_bitsize == 32);
+
+    u8* start = stream;
+    s8 imm_offset = -1;
+
+    stream = emit_jcc_prefix(stream, rel_bitsize);
+    *stream++ = (u8)(condition + ((rel_bitsize > 8) ? 0x10 : 0));
+    imm_offset = (s8)(stream - start);
+    stream = emit_value_raw(stream, rel, rel_bitsize);
+
+    fill_outinfo(out_info, stream - start, -1, imm_offset);
+
+    return stream;
+}
+
+u8*
+emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel)
+{
+    *stream++ = 0x67; // 32 bit size override prefix
+    *stream++ = (u8)JECXZ;
+    *stream++ = rel;
+    fill_outinfo(out_info, 3, -1, 2);
+    return stream;
+}
+
+u8*
+emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel)
+{
+    *stream++ = (u8)JECXZ;
+    *stream++ = rel;
+    fill_outinfo(out_info, 2, -1, 1);
+    return stream;
+}
+
+u8*
+emit_loopcc(Instr_Emit_Result* out_info, u8* stream, X64_Loop_Short instr, s8 rel)
+{
+    *stream++ = (u8)instr;
+    *stream++ = (u8)rel;
+    fill_outinfo(out_info, 2, -1, 1);
+    return stream;
+}
+
+/*
+m16:16, m16:32 & m16:64 — A memory operand containing a far pointer composed of two numbers. The
+number to the left of the colon corresponds to the pointer's segment selector. The number to the right
+corresponds to its offset.
+*/
+#define JMP_M_DIGIT 4
+#define JMP_M_SEG_DIGIT 5
+u8*
+emit_jmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_D: {
+            assert(amode.immediate_bitsize == 8 || amode.immediate_bitsize == 32);
+            if(amode.immediate_bitsize == 8)
+            {
+                *stream++ = 0xeb;
+                *stream++ = (u8)amode.immediate;
+                fill_outinfo(out_info, 1 + sizeof(u8), -1, 1);
+            }
+            else
+            {
+                *stream++ = 0xe9;
+                *(u32*)stream = (u32)amode.immediate;
+                stream += sizeof(u32);
+                fill_outinfo(out_info, 1 + sizeof(u32), -1, 1);
+            }
+        } break;
+        case ADDR_MODE_M: {
+            s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+            assert(bitsize == 64);
+            X64_Opcode opcode = {.byte_count = 1};
+            opcode.bytes[0] = 0xff;
+            amode.reg = JMP_M_DIGIT;
+            if(bitsize == 64)
+                amode.flags |= ADDRMODE_FLAG_NO_REXW;
+            stream = emit_instruction(out_info, stream, amode, opcode);
+        } break;
+    }
+    return stream;
+}
+
+u8*
+emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_M)
+    {
+        s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+        assert(bitsize == 64);
+        X64_Opcode opcode = {.byte_count = 1};
+        opcode.bytes[0] = 0xff;
+        amode.reg = JMP_M_SEG_DIGIT;
+        if(bitsize == 64)
+            amode.flags |= ADDRMODE_FLAG_NO_REXW;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    return stream;
+}
+
+#define CALL_M_DIGIT 2
+#define CALL_M_SEG_DIGIT 3
+
+u8*
+emit_call(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_D: {
+            assert(amode.immediate_bitsize == 32);
+            *stream++ = 0xe8;
+            *(u32*)stream = (u32)amode.immediate;
+            stream += sizeof(u32);
+            fill_outinfo(out_info, 1 + sizeof(u32), -1, 1);
+        } break;
+        case ADDR_MODE_M: {
+            s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+            assert(bitsize == 64);
+            X64_Opcode opcode = {.byte_count = 1};
+            opcode.bytes[0] = 0xff;
+            amode.reg = CALL_M_DIGIT;
+            if(bitsize == 64)
+                amode.flags |= ADDRMODE_FLAG_NO_REXW;
+            stream = emit_instruction(out_info, stream, amode, opcode);
+        } break;
+    }
+    return stream;
+}
+
+u8*
+emit_fcall(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_M)
+    {
+        s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+        assert(bitsize == 64);
+        X64_Opcode opcode = {.byte_count = 1};
+        opcode.bytes[0] = 0xff;
+        amode.reg = CALL_M_SEG_DIGIT;
+        if(bitsize == 64)
+            amode.flags |= ADDRMODE_FLAG_NO_REXW;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    return stream;
+}
+
+#define LGDT_DIGIT 2
+u8*
+emit_lgdt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_M)
+    {
+        s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+        assert(bitsize == 64);
+        X64_Opcode opcode = {.byte_count = 2};
+        opcode.bytes[0] = 0x0f;
+        opcode.bytes[1] = 0x01;
+        amode.reg = LGDT_DIGIT;
+        if(bitsize == 64)
+            amode.flags |= ADDRMODE_FLAG_NO_REXW;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    return stream;
+}
+
+#define LIDT_DIGIT 3
+u8*
+emit_lidt(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_M)
+    {
+        s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;            
+        assert(bitsize == 64);
+        X64_Opcode opcode = {.byte_count = 2};
+        opcode.bytes[0] = 0x0f;
+        opcode.bytes[1] = 0x01;
+        amode.reg = LIDT_DIGIT;
+        if(bitsize == 64)
+            amode.flags |= ADDRMODE_FLAG_NO_REXW;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    return stream;
+}
+
+u8*
+emit_ud(Instr_Emit_Result* out_info, u8* stream, X64_UD_Instruction instr, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_RM)
+    {
+        X64_Opcode opcode = {.byte_count = 2};
+        opcode.bytes[0] = 0x0f;
+        opcode.bytes[1] = (u8)instr;
+        stream = emit_instruction(out_info, stream, amode, opcode);
+    }
+    else if(amode.mode_type == ADDR_MODE_ZO)
+    {
+        // UD2
+        *stream++ = 0x0f;
+        *stream++ = (u8)instr;
+    }
+    else
+    {
+        assert(0);
+    }
+    return stream;
+} 
+/*
+• 2EH — CS segment override (use with any branch instruction is reserved).
+• 36H — SS segment override prefix (use with any branch instruction is reserved).
+• 3EH — DS segment override prefix (use with any branch instruction is reserved).
+• 26H — ES segment override prefix (use with any branch instruction is reserved).
+• 64H — FS segment override prefix (use with any branch instruction is reserved).
+• 65H — GS segment override prefix (use with any branch instruction is reserved).
+*/
+
+// ------------
+u8*
+emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    s8 extra_byte = 0;
+
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_OI: {
+            // TODO(psv): assert invalid cases here
+            opcode.bytes[0] = ((bitsize > 8) ? 0xB8 : 0xB0) | register_representation(amode.rm);
+        } break;
+        case ADDR_MODE_MI: {
+            assert(value_bitsize(amode.immediate) <= bitsize && amode.immediate_bitsize < 64);
+
+            u8 op = 0xC6;               // imm8
+            if(bitsize > 8) op += 1;    // 0xC7
+            opcode.bytes[0] = op;
+
+            if(amode.addr_mode == DIRECT && amode.immediate_bitsize == 16 && register_get_bitsize(amode.rm) > 16)
+                amode.immediate_bitsize = 32;
+            else if(amode.addr_mode != DIRECT && amode.immediate_bitsize == 16 && amode.ptr_bitsize > 16)
+                amode.immediate_bitsize = 32;
+            amode.reg = 0; // /0
+        } break;
+        case ADDR_MODE_MR: {
+            opcode.bytes[0] = (bitsize > 8) ? 0x89 : 0x88;
+            if(register_is_segment(amode.reg))
+                opcode.bytes[0] = 0x8C;
+            if (amode.addr_mode != DIRECT && amode.ptr_bitsize == 16)
+                amode.ptr_bitsize = 32;
+        } break;
+        case ADDR_MODE_RM: {
+            opcode.bytes[0] = (bitsize > 8) ? 0x8B : 0x8A;
+            if(register_is_segment(amode.reg))
+                opcode.bytes[0] = 0x8E;
+            if (amode.addr_mode != DIRECT && amode.ptr_bitsize == 16)
+                amode.ptr_bitsize = 32;
+        } break;
+        case ADDR_MODE_FD: {
+            opcode.bytes[0] = (bitsize > 8) ? 0xA1 : 0xA0;
+            if(amode.rm != REG_NONE)
+            {
+                switch(amode.moffs_base)
+                {
+                    case CS: *stream++ = 0x2e; break;
+                    case SS: *stream++ = 0x36; break;
+                    case DS: *stream++ = 0x3e; break;
+                    case ES: *stream++ = 0x26; break;
+                    case FS: *stream++ = 0x64; break;
+                    case GS: *stream++ = 0x65; break;
+                    default: break;
+                }
+                extra_byte = 1;
+            }
+        } break;
+        case ADDR_MODE_TD: {
+            opcode.bytes[0] = (bitsize > 8) ? 0xA3 : 0xA2;
+            if(amode.rm != REG_NONE)
+            {
+                switch(amode.moffs_base)
+                {
+                    case CS: *stream++ = 0x2e; break;
+                    case SS: *stream++ = 0x36; break;
+                    case DS: *stream++ = 0x3e; break;
+                    case ES: *stream++ = 0x26; break;
+                    case FS: *stream++ = 0x64; break;
+                    case GS: *stream++ = 0x65; break;
+                    default: break;
+                }
+                extra_byte = 1;
+            }
+        } break;
+    }
+
+    u8* result = emit_instruction(out_info, stream, amode, opcode);
+    if(out_info && extra_byte > 0)
+    {
+        out_info->instr_byte_size += extra_byte;
+        out_info->immediate_offset += ((out_info->immediate_offset != -1) ? extra_byte : 0);
+        out_info->diplacement_offset += ((out_info->diplacement_offset != -1) ? extra_byte : 0);
+    }
+    return result;
+}
+
+u8*
+emit_cmovcc(Instr_Emit_Result* out_info, u8* stream, X64_CMOVcc_Instruction instr, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = (u8)instr;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_setcc(Instr_Emit_Result* out_info, u8* stream, X64_SETcc_Instruction instr, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT && amode.ptr_bitsize == ADDR_BYTEPTR);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = (u8)instr;
+    amode.reg = RAX;
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_lar(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_RM);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x02;
+
+    assert((amode.addr_mode == DIRECT && register_get_bitsize(amode.reg) == register_get_bitsize(amode.rm)) ||
+        (amode.addr_mode != DIRECT && register_get_bitsize(amode.rm) >= 32 && amode.ptr_bitsize == 16));
+    amode.ptr_bitsize = register_get_bitsize(amode.reg);
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_lsl(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_RM);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = 0x03;
+
+    assert((amode.addr_mode == DIRECT && register_get_bitsize(amode.reg) == register_get_bitsize(amode.rm)) ||
+        (amode.addr_mode != DIRECT && register_get_bitsize(amode.rm) >= 32 && amode.ptr_bitsize == 16));
+    amode.ptr_bitsize = register_get_bitsize(amode.reg);
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_mov_debug_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_MR || amode.mode_type == ADDR_MODE_RM);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    if(amode.mode_type == ADDR_MODE_MR)
+        opcode.bytes[1] = 0x21;
+    else if(amode.mode_type == ADDR_MODE_RM)
+        opcode.bytes[1] = 0x23;
+
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_mov_control_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.mode_type == ADDR_MODE_MR || amode.mode_type == ADDR_MODE_RM);
+
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    if(amode.mode_type == ADDR_MODE_MR)
+        opcode.bytes[1] = 0x20;
+    else if(amode.mode_type == ADDR_MODE_RM)
+        opcode.bytes[1] = 0x22;
+
+    return emit_instruction(out_info, stream, amode, opcode);
+} 
+#define INC_DIGIT 0
+#define DEC_DIGIT 1
+#define NOT_DIGIT 2
+#define NEG_DIGIT 3
+#define MUL_DIGIT 4
+#define DIV_DIGIT 6
+#define IDIV_DIGIT 7
+#define IMUL_DIGIT 5
+#define NOP_DIGIT 0
+
+u8*
+emit_mul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xf6 : 0xf7;
+    amode.reg = MUL_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_div(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xf6 : 0xf7;
+    amode.reg = DIV_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_idiv(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xf6 : 0xf7;
+    amode.reg = IDIV_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_neg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xf6 : 0xf7;
+    amode.reg = NEG_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_not(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xf6 : 0xf7;
+    amode.reg = NOT_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_dec(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xfe : 0xff;
+    amode.reg = DEC_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_inc(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xfe : 0xff;
+    amode.reg = INC_DIGIT;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_nop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    if(amode.mode_type == ADDR_MODE_ZO)
+    {
+        return emit_single_byte_instruction(out_info, stream, 0x90);
+    }
+    else
+    {
+        s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+        X64_Opcode opcode = {.byte_count = 2};
+        opcode.bytes[0] = 0x0f;
+        opcode.bytes[1] = 0x1f;
+        amode.reg = NOP_DIGIT;
+        return emit_instruction(out_info, stream, amode, opcode);
+    }
+}
+
+u8*
+emit_imul(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = (bitsize == 8) ? 0xf6 : 0xf7;
+    
+    if(amode.immediate_bitsize > 0)
+    {
+        assert((register_get_bitsize(amode.reg) > 8 && amode.immediate_bitsize == 8) || 
+               (register_get_bitsize(amode.reg) == amode.immediate_bitsize) ||
+               (register_get_bitsize(amode.reg) == 64 && amode.immediate_bitsize == 32));
+        opcode.bytes[0] = (amode.immediate_bitsize == 8) ? 0x6B : 0x69;
+    }
+    else if(amode.reg != REG_NONE)
+    {
+        assert(register_get_bitsize(amode.reg) > 8);
+
+        opcode.bytes[0] = 0x0f;
+        opcode.bytes[1] = 0xaf;
+        opcode.byte_count = 2;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_movsxd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    opcode.bytes[0] = 0x63;
+    bool extended = register_is_extended(amode.rm);
+
+    assert(register_get_bitsize(amode.reg) > 8);
+    //assert((amode.addr_mode != DIRECT) || register_get_bitsize(amode.reg) > 32 && bitsize == 32);
+
+    if(register_get_bitsize(amode.reg) == 64)
+    {
+        // We require a 32 ptrsize just to know that we are using a up-cast 32bit->64bit sign extended
+        assert(amode.ptr_bitsize == 32 || amode.addr_mode == DIRECT);
+        // override the 32, because the instruction encodes 32 by default since its an up-cast.
+        if (amode.addr_mode == DIRECT)
+            amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
+        else
+            amode.ptr_bitsize = 64;
+    }
+    
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_movsx(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    bool extended = register_is_extended(amode.rm);
+
+    if(bitsize == 16)
+    {
+        opcode.bytes[1] = 0xbf;
+        if(register_get_bitsize(amode.reg) == 64)
+        {
+            if(amode.addr_mode != DIRECT)
+            {
+                amode.flags |= ADDRMODE_FLAG_REXW;
+                amode.ptr_bitsize = register_get_bitsize(amode.rm); // just to ignore the 16 bit override prefix
+            }
+            else
+                amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
+        }
+        else if (register_get_bitsize(amode.reg) == 32)
+            amode.ptr_bitsize = 32;
+    }
+    else
+    {
+        opcode.bytes[1] = 0xbe;
+        if(register_get_bitsize(amode.reg) == 64)
+        {
+            if(amode.addr_mode != DIRECT)
+                amode.flags |= ADDRMODE_FLAG_REXW;
+            else
+                amode.rm = register_representation(amode.rm) + ((extended) ? R8 : 0);
+        }
+        else if(register_get_bitsize(amode.reg) == 16)
+            amode.ptr_bitsize = 16;
+    }
+
+    assert(register_get_bitsize(amode.reg) > 8);
+
+    return emit_instruction(out_info, stream, amode, opcode);
+} 
+u8*
+emit_shift(Instr_Emit_Result* out_info, u8* stream, X64_Shift_Instruction instr, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    X64_Opcode opcode = {.byte_count = 1};
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_M1: {
+            opcode.bytes[0] = (bitsize > 8) ? 0xD1 : 0xD0;
+            amode.reg = instr;
+        } break;
+        case ADDR_MODE_MC: {
+            opcode.bytes[0] = (bitsize > 8) ? 0xD3 : 0xD2;
+            amode.reg = instr;
+        } break;
+        case ADDR_MODE_MI: {
+            assert(amode.immediate_bitsize == 8);
+            opcode.bytes[0] = (bitsize > 8) ? 0xC1 : 0xC0;
+            amode.reg = instr;
+        } break;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_test(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+
+    X64_Opcode opcode = {.byte_count = 1};
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_I: {
+            assert(amode.immediate_bitsize <= 32);
+            assert(register_equivalent(amode.rm, RAX));
+            opcode.bytes[0] = (bitsize > 8) ? 0xA9 : 0xA8;
+        } break;
+        case ADDR_MODE_MI: {
+            assert(MIN(32, bitsize) == amode.immediate_bitsize);
+            opcode.bytes[0] = (bitsize > 8) ? 0xF7 : 0xF6;
+            amode.reg = 0;
+        } break;
+        case ADDR_MODE_MR: {
+            opcode.bytes[0] = (bitsize > 8) ? 0x85 : 0x84;
+        } break;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+
+u8*
+emit_shld(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(((amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize) > 8);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    if(amode.mode_type == ADDR_MODE_MRI)
+    {
+        opcode.bytes[1] = 0xa4;
+    }
+    else if(amode.mode_type == ADDR_MODE_MRC)
+    {
+        opcode.bytes[1] = 0xa5;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_shrd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(((amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize) > 8);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    if(amode.mode_type == ADDR_MODE_MRI)
+    {
+        opcode.bytes[1] = 0xac;
+    }
+    else if(amode.mode_type == ADDR_MODE_MRC)
+    {
+        opcode.bytes[1] = 0xad;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+} 
+u8*
+emit_p3(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, u8 prefix, u8 op)
+{
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = op;
+    return emit_instruction_prefixed(out_info, stream, amode, opcode, prefix);
+}
+
+u8*
+emit_p2(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, u8 op)
+{
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = op;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+// ----------------------------------------------------------------------
+// ------------------------------ SSE -----------------------------------
+u8* 
+emit_addps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x58);
+}
+
+u8* 
+emit_addss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf3, 0x58);
+}
+
+u8* 
+emit_subps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x5c);
+}
+
+u8* 
+emit_subss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf3, 0x5c);
+}
+
+u8* 
+emit_andps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x54);
+}
+
+u8* 
+emit_orps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x56);
+}
+
+u8* 
+emit_xorps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x57);
+}
+
+u8* 
+emit_andnotps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x55);
+}
+
+u8* 
+emit_divps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x5e);
+}
+
+u8* 
+emit_divss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf3, 0x5e);
+}
+
+u8* 
+emit_mulps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x59);
+}
+
+u8* 
+emit_mulss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf3, 0x59);
+}
+
+u8* 
+emit_cmpps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_SSE_Compare_Flag cmp_predicate)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    amode.immediate_bitsize = 8;
+    amode.immediate = cmp_predicate;
+    return emit_p2(out_info, stream, amode, 0xC2);
+}
+
+u8* 
+emit_cmpss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_SSE_Compare_Flag cmp_predicate)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    amode.immediate_bitsize = 8;
+    amode.immediate = cmp_predicate;
+    return emit_p3(out_info, stream, amode, 0xf3, 0xC2);
+}
+
+u8* 
+emit_comiss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x2f);
+}
+
+u8* 
+emit_ucomiss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x2e);
+}
+
+u8* 
+emit_cvtpi2ps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x2a);
+}
+
+u8* 
+emit_cvtps2pi(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x2d);
+}
+
+u8* 
+emit_cvttps2pi(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x2c);
+}
+
+u8* 
+emit_cvtsi2ss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_p3(out_info, stream, amode, 0xf3, 0x2a);
+}
+
+u8* 
+emit_cvtss2si(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_p3(out_info, stream, amode, 0xf3, 0x2d);
+}
+
+u8* 
+emit_cvttss2si(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_p3(out_info, stream, amode, 0xf3, 0x2c);
+}
+
+// Load
+u8* 
+emit_movaps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_A:
+            return emit_p2(out_info, stream, amode, 0x28);
+        case ADDR_MODE_B:
+            return emit_p2(out_info, stream, amode, 0x29);
+        default: break;
+    }
+    return stream;
+}
+
+u8* 
+emit_movups(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x10);
+}
+
+u8* 
+emit_movhps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x16);
+}
+
+u8* 
+emit_movlps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x12);
+}
+
+u8* 
+emit_movss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf3, 0x10);
+}
+
+// ----------------------------------------------------------------------
+// ------------------------------ SSE2 ----------------------------------
+
+u8* 
+emit_addpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x58);
+}
+
+u8* 
+emit_addsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf2, 0x58);
+}
+
+u8* 
+emit_subpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x5c);
+}
+
+u8* 
+emit_subsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf2, 0x5c);
+}
+
+u8* 
+emit_andpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x54);
+}
+
+u8* 
+emit_orpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x56);
+}
+
+u8* 
+emit_xorpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x57);
+}
+
+u8* 
+emit_andnotpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x55);
+}
+
+u8* 
+emit_divpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x5e);
+}
+
+u8* 
+emit_divsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf2, 0x5e);
+}
+
+u8* 
+emit_mulpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x59);
+}
+
+u8* 
+emit_mulsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf2, 0x59);
+}
+
+u8* 
+emit_cmppd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_SSE_Compare_Flag cmp_predicate)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    amode.immediate_bitsize = 8;
+    amode.immediate = cmp_predicate;
+    return emit_p3(out_info, stream, amode, 0x66, 0xC2);
+}
+
+u8* 
+emit_cmpsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X64_SSE_Compare_Flag cmp_predicate)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    amode.immediate_bitsize = 8;
+    amode.immediate = cmp_predicate;
+    return emit_p3(out_info, stream, amode, 0xf2, 0xC2);
+}
+
+u8* 
+emit_comisd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x2f);
+}
+
+u8* 
+emit_ucomisd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x2e);
+}
+
+u8* 
+emit_cvtpi2pd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x2a);
+}
+
+u8* 
+emit_cvtpd2pi(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x2d);
+}
+
+u8* 
+emit_cvtss2sd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf3, 0x5a);
+}
+
+u8* 
+emit_cvtsd2ss(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf2, 0x5a);
+}
+
+u8* 
+emit_cvtdq2pd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf3, 0xe6);
+}
+
+u8* 
+emit_cvtdq2ps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x5b);
+}
+
+u8* 
+emit_cvtpd2dq(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf2, 0xe6);
+}
+
+u8* 
+emit_cvtpd2ps(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x5a);
+}
+
+u8* 
+emit_cvtps2dq(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x5b);
+}
+
+u8* 
+emit_cvtps2pd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p2(out_info, stream, amode, 0x5a);
+}
+
+u8* 
+emit_cvtsd2si(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_p3(out_info, stream, amode, 0xf2, 0x2d);
+}
+
+u8* 
+emit_cvtsi2sd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_p3(out_info, stream, amode, 0xf2, 0x2a);
+}
+
+u8* 
+emit_cvttpd2dq(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0xe6);
+}
+
+u8* 
+emit_cvttpd2pi(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0x66, 0x2c);
+}
+
+u8* 
+emit_cvttps2dq(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    amode.flags |= ADDRMODE_FLAG_NO_REXW;
+    return emit_p3(out_info, stream, amode, 0xf3, 0x5b);
+}
+
+u8* 
+emit_cvttsd2si(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_p3(out_info, stream, amode, 0xf2, 0x2c);
+}
+
+// Load
+u8* 
+emit_movapd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_A:
+            return emit_p3(out_info, stream, amode, 0x66, 0x28);
+        case ADDR_MODE_B:
+            return emit_p3(out_info, stream, amode, 0x66, 0x29);
+        default: break;
+    }
+    return stream;
+}
+
+u8* 
+emit_movupd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_p3(out_info, stream, amode, 0x66, 0x10);
+}
+
+u8* 
+emit_movhpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    return emit_p3(out_info, stream, amode, 0x66, 0x16);
+}
+
+u8* 
+emit_movlpd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    assert(amode.addr_mode != DIRECT);
+    return emit_p3(out_info, stream, amode, 0x66, 0x12);
+}
+
+u8* 
+emit_movsd(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    return emit_p3(out_info, stream, amode, 0xf2, 0x10);
+} 
+u8*
+emit_int3(Instr_Emit_Result* out_info, u8* stream)
+{
+    return emit_single_byte_instruction(out_info, stream, 0xcc);
+}
+
+u8*
+emit_int1(Instr_Emit_Result* out_info, u8* stream)
+{
+    return emit_single_byte_instruction(out_info, stream, 0xf1);
+}
+
+u8*
+emit_int(Instr_Emit_Result* out_info, u8* stream, u8 rel)
+{
+    *stream++ = 0xcd;
+    *stream++ = rel;
+    fill_outinfo(out_info, 2, -1, 1);
+    return stream;
+}
+
+u8*
+emit_leave(Instr_Emit_Result* out_info, u8* stream)
+{
+    return emit_single_byte_instruction(out_info, stream, 0xc9);
+}
+
+u8*
+emit_leave16(Instr_Emit_Result* out_info, u8* stream)
+{
+    *stream++ = 0x66;
+    *stream++ = 0xc9;
+    fill_outinfo(out_info, 2, -1, -1);
+    return stream;
+}
+
+u8*
+emit_ret(Instr_Emit_Result* out_info, u8* stream, X64_Ret_Instruction ret, u16 imm)
+{
+    if(imm == 0) 
+    {
+        switch(ret)
+        {
+            case RET_NEAR: {
+                *stream++ = 0xc3;
+            } break;
+            case RET_FAR: {
+                *stream++ = 0xcb;
+            } break;            
+        }
+        fill_outinfo(out_info, 1, -1, -1);
+    }
+    else
+    {
+        switch(ret)
+        {
+            case RET_NEAR: {
+                *stream++ = 0xc2;
+                *(uint16_t*)stream = imm;
+                stream += sizeof(uint16_t);
+            } break;
+            case RET_FAR: {
+                *stream++ = 0xca;
+                *(uint16_t*)stream = imm;
+                stream += sizeof(uint16_t);
+            } break;
+        }
+        fill_outinfo(out_info, 3, -1, 1);
+    }
+    return stream;
+}
+
+#define PUSH_DIGIT 6
+#define POP_DIGIT 0
+
+u8*
+emit_push(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    u8* start = stream;
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_I: {
+            s8 imm_offset = 1;
+            switch(amode.immediate_bitsize)
+            {
+                case 8: {
+                    *stream++ = 0x6A;
+                } break;
+                case 16: {
+                    *stream++ = 0x66;
+                    imm_offset = 2;
+                } 
+                case 32: {
+                    *stream++ =0x68;
+                } break;
+            }
+            stream = emit_value_raw(stream, amode.immediate, amode.immediate_bitsize);
+            fill_outinfo(out_info, stream - start, -1, imm_offset);
+        } break;
+        case ADDR_MODE_ZO: {
+            assert(amode.reg == FS || amode.reg == GS);
+
+            *stream++ = 0x0F;
+            if(amode.reg == FS)
+                *stream++ = 0xA0;
+            else if(amode.reg == GS)
+                *stream++ = 0xA8;
+            fill_outinfo(out_info, stream - start, -1, -1);
+        } break;
+        case ADDR_MODE_O: {
+            assert(register_get_bitsize(amode.reg) == 16 || register_get_bitsize(amode.reg) == 64);
+            
+            if(register_get_bitsize(amode.reg) == 16)
+                *stream++ = 0x66;
+            if(register_is_extended(amode.reg))
+                *stream++ = make_rex(1, 0, 0, 0);
+            *stream++ = 0x50 | (0x7 & register_representation(amode.reg));            
+            fill_outinfo(out_info, stream - start, -1, -1);
+        } break;
+        case ADDR_MODE_M: {
+            s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+            assert(bitsize == 16 || bitsize == 64);
+            X64_Opcode opcode = {.byte_count = 1};
+            opcode.bytes[0] = 0xff;
+            amode.reg = PUSH_DIGIT;
+            if(bitsize == 64)
+                amode.flags |= ADDRMODE_FLAG_NO_REXW;
+
+            stream = emit_instruction(out_info, stream, amode, opcode);
+        } break;
+    }
+    return stream;
+}
+
+u8* 
+emit_pop(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    u8* start = stream;
+    switch(amode.mode_type)
+    {
+        case ADDR_MODE_ZO: {
+            assert(amode.reg == FS || amode.reg == GS);
+
+            if(amode.ptr_bitsize == 16)
+                *stream++ = 0x66;
+
+            *stream++ = 0x0F;
+            if(amode.reg == FS)
+                *stream++ = 0xA1;
+            else if(amode.reg == GS)
+                *stream++ = 0xA9;
+            fill_outinfo(out_info, stream - start, -1, -1);
+        } break;
+        case ADDR_MODE_O: {
+            assert(register_get_bitsize(amode.reg) == 16 || register_get_bitsize(amode.reg) == 64);
+            
+            if(register_get_bitsize(amode.reg) == 16)
+                *stream++ = 0x66;
+            if(register_is_extended(amode.reg))
+                *stream++ = make_rex(1, 0, 0, 0);
+            *stream++ = 0x58 | (0x7 & register_representation(amode.reg));            
+            fill_outinfo(out_info, stream - start, -1, -1);
+        } break;
+        case ADDR_MODE_M: {
+            s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+            assert(bitsize == 16 || bitsize == 64);
+            X64_Opcode opcode = {.byte_count = 1};
+            opcode.bytes[0] = 0x8f;
+            amode.reg = POP_DIGIT;
+            if(bitsize == 64)
+                amode.flags |= ADDRMODE_FLAG_NO_REXW;
+
+            stream = emit_instruction(out_info, stream, amode, opcode);
+        } break;
+    }
+    return stream;
+}
+
+u8* 
+emit_enter(Instr_Emit_Result* out_info, u8* stream, u16 storage_size, u8 lex_nest_level, bool b16)
+{
+    u8* start = stream;
+    if(b16) *stream++ = 0x66;
+    *stream++ = 0xc8;
+    s8 imm_offset = (s8)(stream - start);
+    *((u16*)stream) = storage_size;
+    stream += sizeof(u16);
+    *stream++ = lex_nest_level;
+    fill_outinfo(out_info, (s8)(stream - start), -1, imm_offset);
+    return stream;
+}
+
+u8*
+emit_in(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 1};
+    if(amode.mode_type == ADDR_MODE_I)
+    {
+        assert(amode.immediate_bitsize == 8);
+        opcode.bytes[0] = (register_get_bitsize(amode.rm) == 8) ? 0xe4 : 0xe5;
+        assert(amode.rm == REG_NONE || register_equivalent(RAX, amode.rm));
+    }
+    else if(amode.mode_type == ADDR_MODE_ZO)
+    {
+        opcode.bytes[0] = (amode.ptr_bitsize == 8) ? 0xec : 0xed;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+u8*
+emit_out(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    X64_Opcode opcode = {.byte_count = 1};
+    if(amode.mode_type == ADDR_MODE_I)
+    {
+        assert(amode.immediate_bitsize == 8);
+        opcode.bytes[0] = (register_get_bitsize(amode.rm) == 8) ? 0xe6 : 0xe7;
+        assert(amode.rm == REG_NONE || register_equivalent(RAX, amode.rm));
+    }
+    else if(amode.mode_type == ADDR_MODE_ZO)
+    {
+        opcode.bytes[0] = (amode.ptr_bitsize == 8) ? 0xee : 0xef;
+    }
+    return emit_instruction(out_info, stream, amode, opcode);
+} 
+u8*
+emit_strinstr(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize, u8 op)
+{
+    u8* start = stream;
+    switch(ptr_bitsize)
+    {
+        case 8:  *stream++ = op; break;
+        case 16: {
+            *stream++ = 0x66;
+            *stream++ = op;
+        } break;
+        case 32: *stream++ = op; break;
+        case 64: {
+            *stream++ = make_rex(0, 0, 0, 1);
+            *stream++ = op;
+        } break;
+        default: assert(0); break;
+    }
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+}
+
+#define CMPS 0xa7
+#define CMPS8 0xa6
+u8*
+emit_cmps(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? CMPS8 : CMPS);
+}
+
+#define SCAS 0xaf
+#define SCAS8 0xae
+u8*
+emit_scas(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? SCAS8 : SCAS);
+}
+
+#define STOS 0xab
+#define STOS8 0xaa
+u8*
+emit_stos(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? STOS8 : STOS);
+}
+
+#define LODS 0xad
+#define LODS8 0xac
+u8*
+emit_lods(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? LODS8 : LODS);
+}
+
+#define MOVS 0xa5
+#define MOVS8 0xa4
+u8*
+emit_movs(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    return emit_strinstr(out_info, stream, ptr_bitsize, (ptr_bitsize == 8) ? MOVS8 : MOVS);
+}
+
+u8*
+emit_cmpxchg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
+{
+    s32 bitsize = (amode.addr_mode == DIRECT) ? register_get_bitsize(amode.rm) : amode.ptr_bitsize;
+    assert(amode.mode_type == ADDR_MODE_MR);
+    X64_Opcode opcode = {.byte_count = 2};
+    opcode.bytes[0] = 0x0f;
+    opcode.bytes[1] = (bitsize == 8) ? 0xb0 : 0xb1;
+    return emit_instruction(out_info, stream, amode, opcode);
+}
+
+#define INS 0x6d
+#define INS8 0x6c
+u8*
+emit_ins(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    u8* start = stream;
+    switch(ptr_bitsize)
+    {
+        case 8:  *stream++ = INS8; break;
+        case 16: {
+            *stream++ = 0x66;
+            *stream++ = INS;
+        } break;
+        case 32: *stream++ = INS; break;
+        default: assert(0); break;
+    }
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+}
+
+#define OUTS 0x6f
+#define OUTS8 0x6e
+u8*
+emit_outs(Instr_Emit_Result* out_info, u8* stream, X64_AddrSize ptr_bitsize)
+{
+    u8* start = stream;
+    switch(ptr_bitsize)
+    {
+        case 8:  *stream++ = OUTS8; break;
+        case 16: {
+            *stream++ = 0x66;
+            *stream++ = OUTS;
+        } break;
+        case 32: *stream++ = OUTS; break;
+        default: assert(0); break;
+    }
+    fill_outinfo(out_info, (s8)(stream - start), -1, -1);
+    return stream;
+} 
+ 
+#endif // HO_ASSEMBLER_IMPLEMENT 

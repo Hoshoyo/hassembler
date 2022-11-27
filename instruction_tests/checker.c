@@ -58,7 +58,7 @@ check_file(const char* exe, const char* result, const char* test)
 
     if(arith_test_size != arith_result_size)
     {
-        fprintf(stdout, "Test failed: Different file sizes(Result x Test): %llu vs %llu\n", arith_result_size, arith_test_size);
+        fprintf(stdout, "Test failed: %s Different file sizes(Result x Test): %llu vs %llu\n", test, arith_result_size, arith_test_size);
         free(res_data);
         free(test_data);
         return 1;
@@ -88,6 +88,9 @@ int main()
     check_file("test_jmp.exe", "jmp_result.res", "jmp.test");
     check_file("test_shift.exe", "shift_result.res", "shift.test");
     check_file("test_bit.exe", "bit_result.res", "bit.test");
+    check_file("test_sse.exe", "sse_result.res", "sse.test");
+    check_file("test_cvt.exe", "cvt_result.res", "cvt.test");
+    check_file("test_str.exe", "str_result.res", "str.test");
 #else
     check_file("test_arith", "arith_result.res", "arith.test");
     check_file("test_mov", "mov_result.res", "mov.test");
@@ -95,6 +98,9 @@ int main()
     check_file("test_jmp", "jmp_result.res", "jmp.test");
     check_file("test_shift", "shift_result.res", "shift.test");
     check_file("test_bit", "bit_result.res", "bit.test");
+    check_file("test_sse", "sse_result.res", "sse.test");
+    check_file("test_cvt", "cvt_result.res", "cvt.test");
+    check_file("test_str", "str_result.res", "str.test");
 #endif
 
     return 0;
