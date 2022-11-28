@@ -1113,9 +1113,9 @@ u8* emit_setcc(Instr_Emit_Result* out_info, u8* stream, X64_SETcc_Instruction in
 u8* emit_mov_debug_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_mov_control_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
-u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
-u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
-u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
+u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, s32 rel, s32 rel_bitsize);
+u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, s8 rel);
+u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, s8 rel);
 u8* emit_jmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_call(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
@@ -2064,7 +2064,7 @@ emit_jcc_prefix(u8* stream, s32 rel_bitsize)
 }
 
 u8*
-emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize)
+emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, s32 rel, s32 rel_bitsize)
 {
     assert(rel_bitsize == 8 || rel_bitsize == 16 || rel_bitsize == 32);
 
@@ -2074,6 +2074,13 @@ emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short con
     stream = emit_jcc_prefix(stream, rel_bitsize);
     *stream++ = (u8)(condition + ((rel_bitsize > 8) ? 0x10 : 0));
     imm_offset = (s8)(stream - start);
+    
+    // Takes into account the size of the current instruction
+    if((s32)rel <= 0)
+        rel -= (rel_bitsize / 8 + (stream - start));
+    else
+        rel += (rel_bitsize / 8 + (stream - start));
+
     stream = emit_value_raw(stream, rel, rel_bitsize);
 
     fill_outinfo(out_info, stream - start, -1, imm_offset);
@@ -2082,20 +2089,21 @@ emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short con
 }
 
 u8*
-emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel)
+emit_jecxz(Instr_Emit_Result* out_info, u8* stream, s8 rel)
 {
     *stream++ = 0x67; // 32 bit size override prefix
     *stream++ = (u8)JECXZ;
-    *stream++ = rel;
+    *stream++ = (u8)((rel <= 0) ? (rel - 2) : (rel + 2));
     fill_outinfo(out_info, 3, -1, 2);
     return stream;
 }
 
 u8*
-emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel)
+emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, s8 rel)
 {
     *stream++ = (u8)JECXZ;
-    *stream++ = rel;
+    // Takes into account the size of the current instruction
+    *stream++ = (u8)((rel <= 0) ? (rel - 2) : (rel + 2));
     fill_outinfo(out_info, 2, -1, 1);
     return stream;
 }
@@ -2104,7 +2112,8 @@ u8*
 emit_loopcc(Instr_Emit_Result* out_info, u8* stream, X64_Loop_Short instr, s8 rel)
 {
     *stream++ = (u8)instr;
-    *stream++ = (u8)rel;
+    // Takes into account the size of the current instruction
+    *stream++ = (u8)((rel <= 0) ? (rel - 2) : (rel + 2));
     fill_outinfo(out_info, 2, -1, 1);
     return stream;
 }
@@ -2125,14 +2134,23 @@ emit_jmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
             assert(amode.immediate_bitsize == 8 || amode.immediate_bitsize == 32);
             if(amode.immediate_bitsize == 8)
             {
+                const s8 instruction_size = 2;
                 *stream++ = 0xeb;
-                *stream++ = (u8)amode.immediate;
+                // Takes into account the size of the current instruction
+                if((s8)amode.immediate <= 0)
+                    *stream++ = (u8)(amode.immediate - instruction_size);
+                else
+                    *stream++ = (u8)(amode.immediate + instruction_size);
                 fill_outinfo(out_info, 1 + sizeof(u8), -1, 1);
             }
             else
             {
                 *stream++ = 0xe9;
-                *(u32*)stream = (u32)amode.immediate;
+                // Takes into account the size of the current instruction
+                if((s32)amode.immediate <= 0)
+                    *(u32*)stream = (u32)(amode.immediate - (1 + sizeof(u32)));
+                else
+                    *(u32*)stream = (u32)(amode.immediate + (1 + sizeof(u32)));
                 stream += sizeof(u32);
                 fill_outinfo(out_info, 1 + sizeof(u32), -1, 1);
             }
@@ -2179,7 +2197,11 @@ emit_call(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
         case ADDR_MODE_D: {
             assert(amode.immediate_bitsize == 32);
             *stream++ = 0xe8;
-            *(u32*)stream = (u32)amode.immediate;
+            // Takes into account the size of the current instruction
+            if((s32)amode.immediate <= 0)
+                *(u32*)stream = (u32)(amode.immediate - (1 + sizeof(u32)));
+            else
+                *(u32*)stream = (u32)(amode.immediate + (1 + sizeof(u32)));
             stream += sizeof(u32);
             fill_outinfo(out_info, 1 + sizeof(u32), -1, 1);
         } break;

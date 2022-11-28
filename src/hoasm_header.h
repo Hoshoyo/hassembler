@@ -1113,9 +1113,9 @@ u8* emit_setcc(Instr_Emit_Result* out_info, u8* stream, X64_SETcc_Instruction in
 u8* emit_mov_debug_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_mov_control_reg(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 
-u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, u32 rel, s32 rel_bitsize);
-u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
-u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, u8 rel);
+u8* emit_jcc(Instr_Emit_Result* out_info, u8* stream, X64_Jump_Conditional_Short condition, s32 rel, s32 rel_bitsize);
+u8* emit_jecxz(Instr_Emit_Result* out_info, u8* stream, s8 rel);
+u8* emit_jrcxz(Instr_Emit_Result* out_info, u8* stream, s8 rel);
 u8* emit_jmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_fjmp(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);
 u8* emit_call(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode);

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #define TEST_JMP 1
-#define TEST_LIDT 0
+#define TEST_LIDT 1
 #define TEST_LGDT 1
 
 u8*
@@ -242,21 +242,11 @@ emit_jmp_test(u8* stream)
     }
 #endif
 
-    // TODO check this
 #if TEST_JMP
     for(X64_Register i = RAX; i <= R15D; ++i)
     {
         stream = emit_fjmp(0, stream, mk_m_indirect(i, 0, ADDR_QWORDPTR));
     }
-#endif
-#if TEST_JMP
-    // TODO(psv): check why this shows DWORD PTR
-    /*
-    for(X64_Register i = AX; i <= R15W; ++i)
-    {
-        stream = emit_fjmp(0, stream, mk_m_indirect(i, 0, ADDR_WORDPTR));
-    }
-    */
 #endif
     return stream;
 }
@@ -291,8 +281,6 @@ emit_call_test(u8* stream)
         stream = emit_call(0, stream, mk_m_indirect(i, 0x15161718, ADDR_QWORDPTR));
     }
 #endif
-
-    // TODO check this
 #if TEST_JMP
     for(X64_Register i = RAX; i <= R15D; ++i)
     {
@@ -305,14 +293,6 @@ emit_call_test(u8* stream)
 u8*
 emit_lidt_test(u8* stream)
 {
-    *stream++ = 0xf;
-    *stream++ = 0x1;
-    *stream++ = 0x14;
-    *stream++ = 0x45;
-    *stream++ = 0x23;
-    *stream++ = 0x01;
-    *stream++ = 0x0;
-    // TODO check this
 #if TEST_LIDT
     for(X64_Register i = RAX; i <= R15D; ++i)
     {
@@ -413,11 +393,12 @@ emit_out_test(u8* stream)
 u8*
 emit_ud_test(u8* stream)
 {
-    // TODO(psv): docs says it should be like this, but the disassembler shows
-    // the 0xc3 at the end as a ret instruction, so idk, verify
     stream = emit_ud(0, stream, UD2, mk_zo());
-    stream = emit_ud(0, stream, UD0, mk_rm_direct(EAX, EBX));
-    stream = emit_ud(0, stream, UD1, mk_rm_direct(EAX, EBX));
+    // Docs says that ud0 and ud1 should have a ModRM byte, 
+    // but the disassembler shows another instruction after
+    // the ud's, so we keep it with the zo.
+    stream = emit_ud(0, stream, UD0, mk_zo());
+    stream = emit_ud(0, stream, UD1, mk_zo());
     return stream;
 }
 
@@ -440,7 +421,7 @@ int main()
         end = emit_enter_test(end);
         end = emit_in_test(end);
         end = emit_out_test(end);
-        end = emit_ud_test(end);
+        end = emit_ud_test(end);        
     }
 
     fwrite(stream, 1, end - stream, out);
