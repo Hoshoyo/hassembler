@@ -6,3 +6,5 @@
 *.test
 instruction_tests/bin/[a-zA-Z_]*
 instruction_tests/bin/
+examples/bin/
+examples/*.txt
