@@ -198,7 +198,7 @@ emit_in(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     {
         assert(amode.immediate_bitsize == 8);
         opcode.bytes[0] = (register_get_bitsize(amode.rm) == 8) ? 0xe4 : 0xe5;
-        assert(amode.rm == REG_NONE || register_equivalent(RAX, amode.rm));
+        assert(amode.rm == REGISTER_NONE || register_equivalent(RAX, amode.rm));
     }
     else if(amode.mode_type == ADDR_MODE_ZO)
     {
@@ -215,7 +215,7 @@ emit_out(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
     {
         assert(amode.immediate_bitsize == 8);
         opcode.bytes[0] = (register_get_bitsize(amode.rm) == 8) ? 0xe6 : 0xe7;
-        assert(amode.rm == REG_NONE || register_equivalent(RAX, amode.rm));
+        assert(amode.rm == REGISTER_NONE || register_equivalent(RAX, amode.rm));
     }
     else if(amode.mode_type == ADDR_MODE_ZO)
     {

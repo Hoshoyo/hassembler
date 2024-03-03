@@ -15,7 +15,7 @@ emit_instruction(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode, X6
     for(int i = 0; i < opcode.byte_count; ++i) *stream++ = opcode.bytes[i];
 
     // Mod/RM
-    if(amode.rm != REG_NONE && amode.reg != REG_NONE)
+    if(amode.rm != REGISTER_NONE && amode.reg != REGISTER_NONE)
         *stream++ = make_modrm(amode.addr_mode, register_representation(amode.reg), register_representation(amode.rm));
 
     // SIB
@@ -53,7 +53,7 @@ emit_instruction_prefixed(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode 
     for(int i = 0; i < opcode.byte_count; ++i) *stream++ = opcode.bytes[i];
 
     // Mod/RM
-    if(amode.rm != REG_NONE && amode.reg != REG_NONE)
+    if(amode.rm != REGISTER_NONE && amode.reg != REGISTER_NONE)
         *stream++ = make_modrm(amode.addr_mode, register_representation(amode.reg), register_representation(amode.rm));
 
     // SIB

@@ -50,7 +50,7 @@ emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
         } break;
         case ADDR_MODE_FD: {
             opcode.bytes[0] = (bitsize > 8) ? 0xA1 : 0xA0;
-            if(amode.rm != REG_NONE)
+            if(amode.rm != REGISTER_NONE)
             {
                 switch(amode.moffs_base)
                 {
@@ -67,7 +67,7 @@ emit_mov(Instr_Emit_Result* out_info, u8* stream, X64_AddrMode amode)
         } break;
         case ADDR_MODE_TD: {
             opcode.bytes[0] = (bitsize > 8) ? 0xA3 : 0xA2;
-            if(amode.rm != REG_NONE)
+            if(amode.rm != REGISTER_NONE)
             {
                 switch(amode.moffs_base)
                 {
