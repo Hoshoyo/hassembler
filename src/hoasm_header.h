@@ -966,7 +966,7 @@ mk_mi_indirect_sib(X64_Register rm, X64_Register index, X64_SibMode sib_mode, u3
 }
 
 static X64_AddrMode
-mk_oi(X64_Register rm, u32 immediate, s32 immediate_bitsize)
+mk_oi(X64_Register rm, u64 immediate, s32 immediate_bitsize)
 {
 	X64_AddrMode result = mk_base(DIRECT, ADDR_MODE_OI);
 	result.rm = rm;
